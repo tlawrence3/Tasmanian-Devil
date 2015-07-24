@@ -1,0 +1,19 @@
+#iMM904
+python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected.xml 20150722132206_l_u_g_m_n_iMM904_NADcorrected_1127_MTHFDi.pkl 141013_GCR1A R_biomass_published
+
+python 150723_02_04.py iMM904_NADcorrected.xml 20150722132206_l_u_g_m_n_iMM904_NADcorrected_1127_MTHFDi.pkl 141013_GCR1A R_biomass_published 1
+
+#Recon2
+python 150720_01_findZeroAndHighFreqRxns_1.py Recon2.v04.mat 20150721210414_m_n_c_Recon2.v04.pkl 150708_SKCM_TM_20 R_biomass_reaction
+
+python 150720_01_findZeroAndHighFreqRxns_1.py Recon2.v04.mat 20150721210414_m_n_c_Recon2.v04.pkl 150708_SKCM_TP_20 R_biomass_reaction
+
+python 150723_02_04.py Recon2.v04.mat 20150721210414_m_n_c_Recon2.v04.pkl 150708_SKCM_TM_20 R_biomass_reaction 1
+
+python 150723_02_04.py Recon2.v04.mat 20150721210414_m_n_c_Recon2.v04.pkl 150708_SKCM_TP_20 R_biomass_reaction 1
+
+#iAF1260
+python 150720_01_findZeroAndHighFreqRxns_1.py iAF1260.xml 20150722125653_iAF1260.pkl 150616_iAF1260 R_Ec_biomass_iAF1260_core_59p81M 1
+
+python 150723_02_04.py iAF1260.xml 20150722125653_iAF1260.pkl 150616_iAF1260 R_Ec_biomass_iAF1260_core_59p81M 1
+
