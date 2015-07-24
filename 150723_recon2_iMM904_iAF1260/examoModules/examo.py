@@ -508,10 +508,7 @@ class MipSeparateFwdRev(object):
         # Modify lb of irreversible mfr
         for rxn in set(self.mfr) - set(self.mfrRev):
             ind = self.m0.idRs.index(rxn)
-	    if (self.m0.lb[ind] == 0):
-            	self.m0.lb[ind] = self.eps
-	    if (self.m0.lb[ind] <= 0):
-		self.m0.ub[ind] = -self.eps
+            self.m0.lb[ind] = self.eps
         # 3. separate reversible rxns into fwd and rev reactions
         self.m = self.m0.separateFwdRevRxns()     
         #copying the S for the construction of the lhs
@@ -617,7 +614,6 @@ class MipSeparateFwdRev_gurobi(MipSeparateFwdRev):
         # adding constraints
         lhs = coo_matrix((self.lhsVals, (self.lhsRows, self.lhsCols))).toarray()
         for i, row in enumerate(lhs):
-	    nz = row.nonzero()[0]
             nz = row.nonzero()[0]
             pair = zip(row[nz], array(self.colNames)[nz])
             s = ''
@@ -633,32 +629,7 @@ class MipSeparateFwdRev_gurobi(MipSeparateFwdRev):
             exec 'self.guro.addConstr( %s, "%s")' % (s, self.rowNames[i])
             #}}}
 
-
     def minSumFluxes_gurobi(self):
-        #{{{
-        # setting the objective
-	#EG 9/1/13 instead only limit extracellular flux uptake		
-#	EX_rev_sp = []	
-#	Ex_rev = ['R_EX_13BDglcn_e__rev', 'R_EX_2hb_e__rev', 'R_EX_2mbac_e__rev', 'R_EX_2mbald_e__rev', 'R_EX_2mbtoh_e__rev', 'R_EX_2mppal_e__rev', 'R_EX_2phetoh_e__rev', 'R_EX_3c3hmp_e__rev', 'R_EX_3mbald_e__rev', 'R_EX_3mop_e__rev', 'R_EX_4abut_e__rev', 'R_EX_4abz_e__rev', 'R_EX_5aop_e__rev', 'R_EX_Nbfortyr_e__rev', 'R_EX_abt_e__rev', 'R_EX_ac_e__rev', 'R_EX_acald_e__rev', 'R_EX_aces_e__rev', 'R_EX_ade_e__rev', 'R_EX_adn_e__rev', 'R_EX_akg_e__rev', 'R_EX_ala_L_e__rev', 'R_EX_alltn_e__rev', 'R_EX_alltt_e__rev', 'R_EX_amet_e__rev', 'R_EX_arab_L_e__rev', 'R_EX_arg_L_e__rev', 'R_EX_asn_L_e__rev', 'R_EX_asp_L_e__rev', 'R_EX_btd_RR_e__rev', 'R_EX_chol_e__rev', 'R_EX_cit_e__rev', 'R_EX_co2_e__rev', 'R_EX_csn_e__rev', 'R_EX_cys_L_e__rev', 'R_EX_cytd_e__rev', 'R_EX_dad_2_e__rev', 'R_EX_dca_e__rev', 'R_EX_dcyt_e__rev', 'R_EX_ddca_e__rev', 'R_EX_dgsn_e__rev', 'R_EX_din_e__rev', 'R_EX_dttp_e__rev', 'R_EX_duri_e__rev', 'R_EX_epist_e__rev', 'R_EX_epistest_SC_e__rev', 'R_EX_ergst_e__rev', 'R_EX_ergstest_SC_e__rev', 'R_EX_etha_e__rev', 'R_EX_etoh_e__rev', 'R_EX_fe2_e__rev', 'R_EX_fecost_e__rev', 'R_EX_fecostest_SC_e__rev', 'R_EX_fmn_e__rev', 'R_EX_for_e__rev', 'R_EX_fru_e__rev', 'R_EX_fum_e__rev', 'R_EX_g3pc_e__rev', 'R_EX_g3pi_e__rev', 'R_EX_gal_e__rev', 'R_EX_galur_e__rev', 'R_EX_gam6p_e__rev', 'R_EX_gcald_e__rev', 'R_EX_glc_e__rev', 'R_EX_gln_L_e__rev', 'R_EX_glu_L_e__rev', 'R_EX_glx_e__rev', 'R_EX_gly_e__rev', 'R_EX_glyc_e__rev', 'R_EX_gsn_e__rev', 'R_EX_gthox_e__rev', 'R_EX_gthrd_e__rev', 'R_EX_gua_e__rev', 'R_EX_h2o_e__rev', 'R_EX_h_e__rev', 'R_EX_hdca_e__rev', 'R_EX_hdcea_e__rev', 'R_EX_hexc_e__rev', 'R_EX_his_L_e__rev', 'R_EX_hxan_e__rev', 'R_EX_iamac_e__rev', 'R_EX_iamoh_e__rev', 'R_EX_ibutac_e__rev', 'R_EX_ibutoh_e__rev', 'R_EX_id3acald_e__rev', 'R_EX_ile_L_e__rev', 'R_EX_ind3eth_e__rev', 'R_EX_inost_e__rev', 'R_EX_ins_e__rev', 'R_EX_lac_D_e__rev', 'R_EX_lac_L_e__rev', 'R_EX_lanost_e__rev', 'R_EX_lanostest_SC_e__rev', 'R_EX_leu_L_e__rev', 'R_EX_lys_L_e__rev', 'R_EX_mal_L_e__rev', 'R_EX_malt_e__rev', 'R_EX_man_e__rev', 'R_EX_melib_e__rev', 'R_EX_met_L_e__rev', 'R_EX_nac_e__rev', 'R_EX_nadp_e__rev', 'R_EX_nh4_e__rev', 'R_EX_nmn_e__rev', 'R_EX_o2_e__rev', 'R_EX_oaa_e__rev', 'R_EX_ocdca_e__rev', 'R_EX_ocdcea_e__rev', 'R_EX_ocdcya_e__rev', 'R_EX_orn_e__rev', 'R_EX_pacald_e__rev', 'R_EX_pap_e__rev', 'R_EX_pc_SC_e__rev', 'R_EX_pectin_e__rev', 'R_EX_phe_L_e__rev', 'R_EX_pheac_e__rev', 'R_EX_pi_e__rev', 'R_EX_pnto_R_e__rev', 'R_EX_pro_L_e__rev', 'R_EX_ptd1ino_SC_e__rev', 'R_EX_ptrc_e__rev', 'R_EX_pyr_e__rev', 'R_EX_rib_D_e__rev', 'R_EX_ribflv_e__rev', 'R_EX_sbt_D_e__rev', 'R_EX_sbt_L_e__rev', 'R_EX_ser_L_e__rev', 'R_EX_so3_e__rev', 'R_EX_so4_e__rev', 'R_EX_spmd_e__rev', 'R_EX_sprm_e__rev', 'R_EX_srb_L_e__rev', 'R_EX_succ_e__rev', 'R_EX_sucr_e__rev', 'R_EX_thm_e__rev', 'R_EX_thmmp_e__rev', 'R_EX_thmpp_e__rev', 'R_EX_thr_L_e__rev', 'R_EX_thym_e__rev', 'R_EX_thymd_e__rev', 'R_EX_tre_e__rev', 'R_EX_trp_L_e__rev', 'R_EX_ttdca_e__rev', 'R_EX_tyr_L_e__rev', 'R_EX_ura_e__rev', 'R_EX_urea_e__rev', 'R_EX_uri_e__rev', 'R_EX_val_L_e__rev', 'R_EX_xan_e__rev', 'R_EX_xtsn_e__rev', 'R_EX_xyl_D_e__rev', 'R_EX_xylt_e__rev', 'R_EX_zymst_e__rev', 'R_EX_zymstest_SC_e__rev']	
-#  	for i in self.m.idRs:	
-#		if i in Ex_rev:	
-#			i = 'self.' + i 			
-#			EX_rev_sp.append(i)
-
-#        s = 'self.linobj = LinExpr([1.0] * len(self.m.idRs), ['
-#        for var in self.guro.getVars():
-#            if 'y_' not in var.varName[:2]:#excluding binary variables
-#                s += 'self.%s, ' % var.varName
-#        s = s.rstrip(', ')
-#        s += '])'
-#        exec s
-#        for rxn in self.m.idRs:
-#            if rxn == "R_biomass_published":
-#                # reseting the objective
-#                self.guro.setObjective(0)
-#                exec 'self.guro.setObjective(self.%s, GRB.MINIMIZE)' % rxn
-#		self.guro.optimize()
-
         #{{{
         # setting the objective
         s = 'self.linobj = LinExpr([1.0] * len(self.m.idRs), ['
@@ -671,14 +642,6 @@ class MipSeparateFwdRev_gurobi(MipSeparateFwdRev):
         self.guro.setObjective(self.linobj, GRB.MINIMIZE)#1 for minimize
         self.guro.optimize()
         self.initialized = 1
-        #}}}
-
-
-
-
-#        self.guro.setObjective(self.linobj, 1)#1 for minimize
-#        self.guro.optimize()
-#        self.initialized = 1
         #}}}
 
 

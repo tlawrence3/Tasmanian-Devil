@@ -61,9 +61,9 @@ biomassRxn = sys.argv[4]
 
 #Create necessary variables and import the model
 if model[-4:] == '.xml':
-	cobra_model = cobra.io.read_sbml_model('data/%s' % model)
+    cobra_model = cobra.io.read_sbml_model('data/%s' % model)
 if model[-4:] == '.mat':
-	cobra_model = cobra.io.mat.load_matlab_model('data/%s' % model)
+    cobra_model = cobra.io.mat.load_matlab_model('data/%s' % model)
 
 # model dictionary of the original model with blocked reactions deleted
 fModelDict = 'data/%s' % pickle_model
@@ -74,7 +74,6 @@ cobra_model.optimize(solver='gurobi')
 getcontext().rounding = ROUND_DOWN
 getcontext().prec = 4
 lb_biomass = Decimal(cobra_model.solution.f) + Decimal('0.0')
-print lb_biomass
 
 # Algorithm variables
 #threshold above which a flux is considered to be larger than zero
@@ -103,8 +102,8 @@ idRs.remove(biomassRxn)
 m.lb[m.idRs.index(biomassRxn)] = lb_biomass
 
 for i in m.idRs:
-	if ((md['rxns'][i]['lb'] <= 0) and (md['rxns'][i]['ub'] == 0)):
-		m.ub[m.idRs.index(i)] = 1000
+    if ((md['rxns'][i]['lb'] <= 0) and (md['rxns'][i]['ub'] == 0)):
+        m.ub[m.idRs.index(i)] = 1000
 
 ########################################
 # 1. Classify reactions by expression

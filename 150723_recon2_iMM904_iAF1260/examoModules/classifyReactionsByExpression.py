@@ -91,61 +91,60 @@ def createRxnGeneCalls(geneCalls, gene2rxn, modelGenes):
     orderedGeneLengths.sort(reverse = True)
     rxnGeneCalls = {}
     for rxn in set(gene2rxn.keys()) - orphanRxns:
-        # lowly expressed genes are evaluated to -1 while higly expressed
-        # genes are evaluated to 1. Lowly expressed reactions are those
+        # lowly expressed genes are evaluated to -1 while higly expressed genes are evaluated to 1. Lowly expressed reactions are those
         # for which their Boolean expression evaluates to -1
         g2r = gene2rxn[rxn]
         for length in orderedGeneLengths:
             g2r = substituteGeneNamesByCalls(g2r, geneNamesByLength[length], 
                     geneCalls, {-1 : '-1', 0 : '0', 1 : '1'})
-	g2r = str(g2r)
-	i = re.split('or',g2r)
-	count = 0
-	countdict = {}
-	countdict_calls = {}
-	for j in i:
-		count += 1
-		j = re.split('and', j)
-		genedict = []
-		for k in j:
-			k = re.sub(' ', '', k)
-			k = re.sub('\(', '', k)
-			k = re.sub('\)', '', k)
-			if k == '':
-				continue
-			else:
-				genedict.append(k)
-		countdict[count] = genedict
-	for i in countdict:
-		one_count = 0
-		negative_one_count = 0
-		for j in countdict[i]:
-			if int(j) == 1:
-				one_count += 1
-			if int(j) == -1:
-				negative_one_count += 1
-		if len(countdict[i]) == one_count:
-			countdict_calls[i] = 1
-		elif negative_one_count > 0:
-			countdict_calls[i] = -1
-		else:
-			countdict_calls[i] = 0
-	call_one = 0
-	call_zero = 0
-	call_negative_one = 0
-	for i in countdict_calls:
-		if countdict_calls[i] == 1:
-			call_one += 1
-		elif countdict_calls[i] == 0:
-			call_zero += 1
-		else:
-			call_negative_one += 1
-	if call_one >= 1:
-		rxnGeneCalls[rxn] = 1
-	elif call_zero >= 1:	
-		rxnGeneCalls[rxn] = 0
-	else:
-		rxnGeneCalls[rxn] = -1 
+        g2r = str(g2r)
+        i = re.split('or',g2r)
+        count = 0
+        countdict = {}
+        countdict_calls = {}
+        for j in i:
+            count += 1
+            j = re.split('and', j)
+            genedict = []
+            for k in j:
+                k = re.sub(' ', '', k)
+                k = re.sub('\(', '', k)
+                k = re.sub('\)', '', k)
+                if k == '':
+                    continue
+                else:
+                    genedict.append(k)
+            countdict[count] = genedict
+        for i in countdict:
+            one_count = 0
+            negative_one_count = 0
+            for j in countdict[i]:
+                if int(j) == 1:
+                    one_count += 1
+                if int(j) == -1:
+                    negative_one_count += 1
+            if len(countdict[i]) == one_count:
+                countdict_calls[i] = 1
+            elif negative_one_count > 0:
+                countdict_calls[i] = -1
+            else:
+                countdict_calls[i] = 0
+        call_one = 0
+        call_zero = 0
+        call_negative_one = 0
+        for i in countdict_calls:
+            if countdict_calls[i] == 1:
+                call_one += 1
+            elif countdict_calls[i] == 0:
+                call_zero += 1
+            else:
+                call_negative_one += 1
+        if call_one >= 1:
+            rxnGeneCalls[rxn] = 1
+        elif call_zero >= 1:	
+            rxnGeneCalls[rxn] = 0
+        else:
+            rxnGeneCalls[rxn] = -1 
     return rxnGeneCalls
 
 def classifyRxnsByExpression(geneCalls, gene2rxn, modelGenes):
