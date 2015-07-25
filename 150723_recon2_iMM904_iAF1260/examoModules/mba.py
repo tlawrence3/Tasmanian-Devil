@@ -129,161 +129,71 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         for i in act:
             if i in cH:
                 actlist.add(i)
-        exception = 0
-        fOutModel = 'examoModules/data/%s_%s/%s_%s.pkl'
-        fOutModeldict = 'examoModules/data/%s_%s/%s_%s_dict.pkl'
-        m0 = deleteCbmRxns(cbm, rxntodelete)
-        exportPickle(m0, fOutModel % (description, str(repetition),
-                                      description, os.getpid()))
-        rev = [0 if val >= 0 else 1 for val in m0.lb]
-        gene2rxn = {}
-        rxns = {}
-        for rxn in m0.rxns:
-            gene2rxn[rxn] = m0.rxns[rxn]['genes']
-            rxns[rxn] = m0.rxns[rxn]
-        mDict = {
-        'S' : m0.S,
-        'idSp' : m0.idSp,
-        'idRs' : m0.idRs,
-        'lb' : m0.lb,
-        'ub' : m0.ub,
-        'rev' : rev,
-        'genes' : m0.genes,
-        'gene2rxn' : gene2rxn,
-        'rxns' : rxns,
-        'descrip' : 'examo %s' % description}
-
-        exportPickle(mDict, fOutModeldict % (description, str(repetition),
-                                             description, os.getpid()))
-        #EG End of the original 3rd script
-
-        #EG Beginning of the 4th script
+        if (len(cH - set(actlist)) != 0):#not all cH rxns are active
+            #print "not all active 1"
+            return cbm
         #######################################################################
         # INPUTS
         eps = 1E-10
         activityThreshold = 1E-10
-        fModelExamo = 'examoModules/data/%s_%s/%s_%s_dict.pkl'
         fFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
-        fOutMetabState = 'examoModules/data/%s_%s/%s_%s.csv'
         #######################################################################
         # STATEMENTS
-
         hfr = importPickle(fFreqBasedRxns % description)['hfr']
-        md = importPickle(fModelExamo % (description, str(repetition),
-                                         description, os.getpid()))
-        mtry1 = CbModel(md['S'], md['idSp'], md['idRs'], md['lb'],
-                        md['ub'], md['rxns'], md['genes'])
-        hfr = hfr & set(mtry1.idRs)
+        hfr = hfr & set(m0.idRs)
         #forcing biomass production
-        mtry1.lb[mtry1.idRs.index(biomassRxn)] = lb_biomass
+        m0.lb[m0.idRs.index(biomassRxn)] = lb_biomass
         #minimizingg the sum of fluxes
-        mtry1result = MipSeparateFwdRev_gurobi(mtry1, hfr, eps)
+        mtry1result = MipSeparateFwdRev_gurobi(m0, hfr, eps)
         mtry1result.initMipGurobi()
         mtry1result.minSumFluxes_gurobi()
-        #EG Added activityThreshold and the md['rxns'] dictionary to the
+        #EG Added activityThreshold and the m0.rxns dictionary to the
         #function, so that the reactants and products could be written out
-        nz = getNzRxnsGurobi(mtry1result, activityThreshold, md['rxns'])[1]
-        # reporting the flux distribution obtained
-        f = open(fOutMetabState % (description, str(repetition),
-                                   description, os.getpid()), 'w')
-        csv.writer(f).writerows(nz)
-        f.close()
+        nz = getNzRxnsGurobi(mtry1result, activityThreshold, m0.rxns)[1]
     except:
-        exception = 1
-        print "exception 1"
+        #print "exception 1"
         return cbm
-    if (len(cH - set(actlist)) != 0):#not all cH rxns are active
-        print "not all active 1"
-        return cbm
-    else:
         #EG Identify the reactions that became inactive after the
         #reaction was deleted. If extra deleted reactions cause the
         #model to be unsolvable, or if extra deleted inactive reactions
         #cause any of the hfrs to become inactive, or if a solution
         #cannot be obtained with a biomass flux, only delete the one
         #reaction. Otherwise, delete the inactive reactions.
-        try:
-            inact = set(m0.idRs) - act - cH
-            m1 = deleteCbmRxns(m0, inact)
-            act2 = findActiveRxns(m1, thresh, cH)
-            actlist2 = set()
-            for j in act2:
-                if j in cH:
-                    actlist2.add(j)
-            exception2 = 0
-            fOutModel2 = 'examoModules/data/%s_%s/%s_%s2.pkl'
-            fOutModeldict2 = 'examoModules/data/%s_%s/%s_%s_dict2.pkl'
-            m1 = deleteCbmRxns(m0, inact)
-            exportPickle(m1, fOutModel2 % (description, str(repetition),
-                                           description, os.getpid()))
-            rev = [0 if val >= 0 else 1 for val in m1.lb]
-            gene2rxn = {}
-            rxns = {}
-            for rxn in m1.rxns:
-                gene2rxn[rxn] = m1.rxns[rxn]['genes']
-                rxns[rxn] = m1.rxns[rxn]
-            mDict = {
-            'S' : m1.S,
-            'idSp' : m1.idSp,
-            'idRs' : m1.idRs,
-            'lb' : m1.lb,
-            'ub' : m1.ub,
-            'rev' : rev,
-            'genes' : m1.genes,
-            'gene2rxn' : gene2rxn,
-            'rxns' : rxns,
-            'descrip' : 'iMM904 examo %s' % (description)}
-            exportPickle(mDict, fOutModeldict2 % (description, str(repetition),
-                                                  description, os.getpid()))
-            #EG End of the original 3rd script
-
-            #EG Beginning of the 4th script
-            ###################################################################
-            # INPUTS
-            eps = 1E-10
-            activityThreshold = 1E-10
-
-            fModelExamo2 = 'examoModules/data/%s_%s/%s_%s_dict2.pkl'
-            fFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
-
-            fOutMetabState2 = 'examoModules/data/%s_%s/%s_%s2.csv'
-
-            ###################################################################
-            # STATEMENTS
-
-            hfr = importPickle(fFreqBasedRxns % description)['hfr']
-            md = importPickle(fModelExamo2 % (description, str(repetition),
-                                              description, os.getpid()))
-            mtry2 = CbModel(md['S'], md['idSp'], md['idRs'], md['lb'],
-                            md['ub'], md['rxns'], md['genes'])
-            hfr = hfr & set(mtry2.idRs)
-            #forcing biomass production
-            mtry2.lb[mtry2.idRs.index(biomassRxn)] = lb_biomass
-            #minimizing the sum of fluxes
-            mtry2result = MipSeparateFwdRev_gurobi(mtry2, hfr, eps)
-            mtry2result.initMipGurobi()
-            mtry2result.minSumFluxes_gurobi()
-            #EG Added activityThreshold and the md['rxns'] dictionary
-            #to the function, so that the reactants and products could
-            #be written out
-            nz = getNzRxnsGurobi(mtry2result, activityThreshold, md['rxns'])[1]
-            # reporting the flux distribution obtained
-            f = open(fOutMetabState2 % (description, str(repetition),
-                                        description, os.getpid()), 'w')
-            csv.writer(f).writerows(nz)
-            f.close()
-            if (len(cH - set(actlist2)) != 0):#not all cH rxns are active
-                m0 = deleteCbmRxns(cbm, rxntodelete)
-                print rxntodelete
-                return m0
-            else:
-                print inact
-                return m1
-        except:
-            exception2 = 1
-            m0 = deleteCbmRxns(cbm, rxntodelete)
-            print "exception 2"
+    try:
+        inact = set(m0.idRs) - act - cH
+        m1 = deleteCbmRxns(m0, inact)
+        act2 = findActiveRxns(m1, thresh, cH)
+        actlist2 = set()
+        for j in act2:
+            if j in cH:
+                actlist2.add(j)
+        if (len(cH - set(actlist2)) != 0):#not all cH rxns are active
+            #print rxntodelete
             return m0
+        ###################################################################
+        # INPUTS
+        eps = 1E-10
+        activityThreshold = 1E-10
+        fFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
+        ###################################################################
+        # STATEMENTS
+        hfr = importPickle(fFreqBasedRxns % description)['hfr']
+        hfr = hfr & set(m1.idRs)
+        #forcing biomass production
+        m1.lb[m1.idRs.index(biomassRxn)] = lb_biomass
+        #minimizing the sum of fluxes
+        mtry2result = MipSeparateFwdRev_gurobi(m1, hfr, eps)
+        mtry2result.initMipGurobi()
+        mtry2result.minSumFluxes_gurobi()
+        #EG Added activityThreshold and the m1.rxns dictionary
+        #to the function, so that the reactants and products could
+        #be written out
+        nz = getNzRxnsGurobi(mtry2result, activityThreshold, m1.rxns)[1]
+        #print inact
+        return m1
+    except:
+        #print "exception 2"
+        return m0
 
 #EG 131112 Avoided creating sets for prunableRxns so that randomness
 #would be preserverd, and first try pruning transport reactions before
