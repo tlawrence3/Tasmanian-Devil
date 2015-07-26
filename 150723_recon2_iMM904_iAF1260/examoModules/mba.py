@@ -294,12 +294,9 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
     """
     solver can be 'cplex', 'glpk' or 'gurobi'
     """
-    semilla = int((time.time() * 1E6) * os.getpid())
-    random.seed(semilla)
     if len(EXrxns) > 0:
         EXrxnsprune = list(set(list(EXrxns)) - cH)
-        for j in range(i+1):
-            random.shuffle(EXrxnsprune)
+        random.shuffle(EXrxnsprune)
         while EXrxnsprune:
             rxn1 = EXrxnsprune.pop()
             try:
@@ -309,9 +306,8 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                 for k in mTemp1.idRs:
                     if k in EXrxnsprune:
                         EXrxnsprune2.append(k)
-                for l in range(len(EXrxnsprune2)):
-                    random.shuffle(EXrxnsprune2)
-                    EXrxnsprune = EXrxnsprune2
+                random.shuffle(EXrxnsprune2)
+                EXrxnsprune = EXrxnsprune2
             except NameError:
                 mTemp1 = pruneRxn(m, cH, rxn1, thresh, description,
                                   repetition, biomassRxn, lb_biomass)
@@ -319,17 +315,15 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                 for k in mTemp1.idRs:
                     if k in EXrxnsprune:
                         EXrxnsprune2.append(k)
-                for l in range(len(EXrxnsprune2)):
-                    random.shuffle(EXrxnsprune2)
-                    EXrxnsprune = EXrxnsprune2
+                random.shuffle(EXrxnsprune2)
+                EXrxnsprune = EXrxnsprune2
     if len(EXtrrxns) > 0:
         EXtrrxnsprune = list(set(list(EXtrrxns)) - cH)
         EXtrrxnsprunelist = []
         for j in EXtrrxnsprune:
             if j in mTemp1.idRs:
                 EXtrrxnsprunelist.append(j)
-        for j in range(i+1):
-            random.shuffle(EXtrrxnsprune)
+        random.shuffle(EXtrrxnsprune)
         while EXtrrxnsprune:
             rxn2 = EXtrrxnsprune.pop()
             try:
@@ -339,9 +333,8 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                 for k in mTemp1.idRs:
                     if k in EXtrrxnsprune:
                         EXtrrxnsprune2.append(k)
-                for l in range(len(EXtrrxnsprune2)):
-                    random.shuffle(EXtrrxnsprune2)
-                    EXtrrxnsprune = EXtrrxnsprune2
+                random.shuffle(EXtrrxnsprune2)
+                EXtrrxnsprune = EXtrrxnsprune2
             except NameError:
                 mTemp1 = pruneRxn(m, cH, rxn2, thresh, description,
                                   repetition, biomassRxn, lb_biomass)
@@ -349,9 +342,8 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                 for k in mTemp1.idRs:
                     if k in EXtrrxnsprune:
                         EXtrrxnsprune2.append(k)
-                for l in range(len(EXtrrxnsprune2)):
-                    random.shuffle(EXtrrxnsprune2)
-                    EXtrrxnsprune = EXtrrxnsprune2
+                random.shuffle(EXtrrxnsprune2)
+                EXtrrxnsprune = EXtrrxnsprune2
 
     prunableRxns = []
     try:
@@ -368,10 +360,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                     if j not in EXtrrxns:
                         if j not in Othertrrxns:
                             prunableRxns.append(j)
-    semilla = int((time.time() * 1E6) * os.getpid())
-    random.seed(semilla)
-    for j in range(i+1):
-        random.shuffle(prunableRxns)
+    random.shuffle(prunableRxns)
     while prunableRxns:
         rxn3 = prunableRxns.pop()
         try:
@@ -381,9 +370,8 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
             for k in mTemp1.idRs:
                 if k in prunableRxns:
                     prunableRxns2.append(k)
-            for l in range(len(prunableRxns2)):
-                random.shuffle(prunableRxns2)
-                prunableRxns = prunableRxns2
+            random.shuffle(prunableRxns2)
+            prunableRxns = prunableRxns2
         except NameError:
             mTemp1 = pruneRxn(m, cH, rxn3, thresh, description,
                               repetition, biomassRxn, lb_biomass)
@@ -391,9 +379,8 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
             for k in mTemp1.idRs:
                 if k in prunableRxns:
                     prunableRxns2.append(k)
-            for l in range(len(prunableRxns2)):
-                random.shuffle(prunableRxns2)
-                prunableRxns = prunableRxns2
+            random.shuffle(prunableRxns2)
+            prunableRxns = prunableRxns2
     return mTemp1.idRs
 
 if __name__ == '__main__':
