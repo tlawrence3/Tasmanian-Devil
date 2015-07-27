@@ -125,12 +125,9 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         m0 = deleteCbmRxns(cbm, rxntodelete)
         #NOTE the threshold for is set a bit higher for cH rxns
         act = findActiveRxns(m0, thresh, cH)
-        actlist = set()
-        for i in act:
-            if i in cH:
-                actlist.add(i)
-        if (len(cH - set(actlist)) != 0):#not all cH rxns are active
-            #print "not all active 1"
+        cH_act = cH & act
+        if (len(cH - cH_act) != 0):#not all cH rxns are active
+            print "not all active 1"
             return cbm
         #######################################################################
         # INPUTS
@@ -151,7 +148,7 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         #function, so that the reactants and products could be written out
         nz = getNzRxnsGurobi(mtry1result, activityThreshold, m0.rxns)[1]
     except:
-        #print "exception 1"
+        print "exception 1"
         return cbm
         #EG Identify the reactions that became inactive after the
         #reaction was deleted. If extra deleted reactions cause the
@@ -163,12 +160,9 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         inact = set(m0.idRs) - act - cH
         m1 = deleteCbmRxns(m0, inact)
         act2 = findActiveRxns(m1, thresh, cH)
-        actlist2 = set()
-        for j in act2:
-            if j in cH:
-                actlist2.add(j)
-        if (len(cH - set(actlist2)) != 0):#not all cH rxns are active
-            #print rxntodelete
+        cH_act2 = cH & act2
+        if (len(cH - cH_act2) != 0):#not all cH rxns are active
+            print rxntodelete
             return m0
         ###################################################################
         # INPUTS
@@ -189,10 +183,10 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         #to the function, so that the reactants and products could
         #be written out
         nz = getNzRxnsGurobi(mtry2result, activityThreshold, m1.rxns)[1]
-        #print inact
+        print inact
         return m1
     except:
-        #print "exception 2"
+        print "exception 2"
         return m0
 
 #EG 131112 Avoided creating sets for prunableRxns so that randomness
@@ -282,6 +276,13 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                     prunableRxns2.append(k)
             random.shuffle(prunableRxns2)
             prunableRxns = prunableRxns2
+            #prunableRxns2_appended = prunableRxns.append()
+            #prunableRxns2_appended k for k in mTemp1.idRs if k in prunableRnxs
+            #for k in mTemp1.idRs:
+            #    if k in prunableRxns:
+            #        prunableRxns2.append(k)
+            #random.shuffle(prunableRxns2_appended)
+            #prunableRxns = prunableRxns2_appended
         except NameError:
             mTemp1 = pruneRxn(m, cH, rxn3, thresh, description,
                               repetition, biomassRxn, lb_biomass)
@@ -291,6 +292,15 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                     prunableRxns2.append(k)
             random.shuffle(prunableRxns2)
             prunableRxns = prunableRxns2
+            #prunableRxns2_appended = prunableRxns.append()
+            #prunableRxns2_appended k for k in mTemp1.idRs if k in prunableRnxs
+            #random.shuffle(prunableRxns2_appended)
+            #prunableRxns = prunableRxns2_appended
+            #for k in mTemp1.idRs:
+            #    if k in prunableRxns:
+            #        prunableRxns2.append(k)
+            #random.shuffle(prunableRxns2)
+            #prunableRxns = prunableRxns2
     return mTemp1.idRs
 
 if __name__ == '__main__':
