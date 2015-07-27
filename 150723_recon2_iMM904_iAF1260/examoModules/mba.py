@@ -192,6 +192,7 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
 #EG 131112 Avoided creating sets for prunableRxns so that randomness
 #would be preserverd, and first try pruning transport reactions before
 #other reactions in the model
+@profile
 def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                       repetition, thresh = 1E-10, EXrxns = [],
                       EXtrrxns = [], Othertrrxns = []):
