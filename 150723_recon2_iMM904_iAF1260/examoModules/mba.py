@@ -119,7 +119,7 @@ def findActiveRxns(cbm, thresh, rl = []):
                 act.update(arrayIdRs[indices])
     return act
 
-@profile
+#@profile
 def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
              lb_biomass):
     try:
@@ -137,7 +137,7 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         # INPUTS
         eps = 1E-10
         activityThreshold = 1E-10
-        fFreqBasedRxns = '../data/freqBasedRxns_%s.pkl'
+        fFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
         #######################################################################
         # STATEMENTS
         hfr = importPickle(fFreqBasedRxns % description)['hfr']
@@ -172,7 +172,7 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         # INPUTS
         eps = 1E-10
         activityThreshold = 1E-10
-        fFreqBasedRxns = '../data/freqBasedRxns_%s.pkl'
+        fFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
         ###################################################################
         # STATEMENTS
         hfr = importPickle(fFreqBasedRxns % description)['hfr']
