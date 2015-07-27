@@ -24,12 +24,15 @@ from gurobipy import *
 import random
 import time
 import os
-import csv
+import shutil
+import sys
 import re
 
 from sys import path; path.append('./modules/')
 from utilities import importPickle, exportPickle
 from examo import *
+from decimal import Decimal, getcontext, ROUND_DOWN
+import cobra
 
 
 
@@ -134,7 +137,7 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         # INPUTS
         eps = 1E-10
         activityThreshold = 1E-10
-        fFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
+        fFreqBasedRxns = '../data/freqBasedRxns_%s.pkl'
         #######################################################################
         # STATEMENTS
         hfr = importPickle(fFreqBasedRxns % description)['hfr']
@@ -169,7 +172,7 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         # INPUTS
         eps = 1E-10
         activityThreshold = 1E-10
-        fFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
+        fFreqBasedRxns = '../data/freqBasedRxns_%s.pkl'
         ###################################################################
         # STATEMENTS
         hfr = importPickle(fFreqBasedRxns % description)['hfr']
@@ -306,36 +309,159 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
     return mTemp1.idRs
 
 if __name__ == '__main__':
+#    ########################################
+#    # INPUTS
+#    md = importPickle('../data/iMM904_blkRxnsDeleted_dict.pkl')
+#    rH = importPickle('../data/rxnsClassifiedByExprssion_eth_15_85.pkl')['rH']
+#    fOutMbaCandRxns = '../data/mbaCandRxns/mbaCandRxns_%s.pkl'
+#
+#    activityThreshold = 1E-10
+#    descrip = 'eth_15_85'
+#    ########################################
+#    # STATEMENTS
+#    m = CbModel(md['S'], md['idSp'], md['idRs'], md['lb'], md['ub'], md['rxns'],
+#        md['genes'])
+#    #act = findActiveRxns(m, activityThreshold, m.idRs)
+#    #mT = pruneRxn(m, rH, 'R_PFK', activityThreshold)
+#    #iterativePrunning(m, rH, activityThreshold)
+#    numProc = 2
+#    numRep = 2
+#    # making sure that all rH reactions are active to begin with
+#    act = findActiveRxns(m, 1E-10, rH)
+#    cH = rH & act
+#    cH.add('R_biomass_published')
+#    #print '%i processes and %i repetitions' % (numProc, numRep)
+#    for i in range(numProc):
+#        pid = os.fork()
+#        if pid == 0:
+#            for j in range(numRep):
+#                locTime = time.localtime()
+#                pid = os.getpid()
+#                timeStr = '%i%02i%02i%02i%02i%02i' % locTime[:6]
+#                tag = '%s_%s_%s' % (descrip, pid, timeStr)
+#                cr = iterativePrunning(m, cH, activityThreshold, m.idRs[:10])
+#                exportPickle(cr, fOutMbaCandRxns % tag)
+#            os._exit(0)
+
+
     ########################################
     # INPUTS
-    md = importPickle('../data/iMM904_blkRxnsDeleted_dict.pkl')
-    rH = importPickle('../data/rxnsClassifiedByExprssion_eth_15_85.pkl')['rH']
-    fOutMbaCandRxns = '../data/mbaCandRxns/mbaCandRxns_%s.pkl'
+    model = sys.argv[1]
+    pickle_model = sys.argv[2]
+    description = sys.argv[3]
+    biomassRxn = sys.argv[4]
+    repetitions = int(sys.argv[5])
 
+    #Create necessary variables and import the model
+    if model[-4:] == '.xml':
+        cobra_model = cobra.io.read_sbml_model('../data/%s' % model)
+    if model[-4:] == '.mat':
+        cobra_model = cobra.io.mat.load_matlab_model('../data/%s' % model)
+
+    # model dictionary of the original model with blocked reactions deleted
+    fModelDict = '../data/%s' % pickle_model
+
+    cobra_model.optimize(solver='gurobi')
+    getcontext().rounding = ROUND_DOWN
+    getcontext().prec = 4
+    lb_biomass = Decimal(cobra_model.solution.f) + Decimal('0.0')
+
+    # Algorithm variables
+    #threshold above which a flux is considered to be larger than zero
     activityThreshold = 1E-10
-    descrip = 'eth_15_85'
-    ########################################
-    # STATEMENTS
-    m = CbModel(md['S'], md['idSp'], md['idRs'], md['lb'], md['ub'], md['rxns'],
-        md['genes'])
-    #act = findActiveRxns(m, activityThreshold, m.idRs)
-    #mT = pruneRxn(m, rH, 'R_PFK', activityThreshold)
-    #iterativePrunning(m, rH, activityThreshold)
-    numProc = 2
-    numRep = 2
-    # making sure that all rH reactions are active to begin with
-    act = findActiveRxns(m, 1E-10, rH)
-    cH = rH & act
-    cH.add('R_biomass_published')
-    #print '%i processes and %i repetitions' % (numProc, numRep)
-    for i in range(numProc):
-        pid = os.fork()
-        if pid == 0:
-            for j in range(numRep):
-                locTime = time.localtime()
-                pid = os.getpid()
-                timeStr = '%i%02i%02i%02i%02i%02i' % locTime[:6]
-                tag = '%s_%s_%s' % (descrip, pid, timeStr)
-                cr = iterativePrunning(m, cH, activityThreshold, m.idRs[:10])
-                exportPickle(cr, fOutMbaCandRxns % tag)
-            os._exit(0)
+
+    for repetition in range(repetitions):
+
+	################################################################################
+        # _02_minimizeNetwork_part_A.py
+
+	################################################################################
+        # INPUTS
+
+        numProc = 1# 100	#number of parallel processes used
+        numRep =1# 10		#number of times each process is repeated
+
+        md = importPickle(fModelDict)
+
+        # Importing model information
+        fbr = importPickle('../data/freqBasedRxns_%s.pkl' % description)
+
+        #EG Making subdirectories for candidate reactions
+        mbaCandRxnsDirectory = '../data/mbaCandRxns/%s_%s/' % (description, str(repetition))
+        if os.path.exists(mbaCandRxnsDirectory):
+            shutil.rmtree(mbaCandRxnsDirectory)
+            os.mkdir(mbaCandRxnsDirectory, 0777)
+        else:
+            os.mkdir(mbaCandRxnsDirectory, 0777)
+
+        fOutMbaCandRxns = ''.join((mbaCandRxnsDirectory, "mbaCandRxns_%s.pkl"))
+
+	################################################################################
+        # STATEMENTS
+        # Instantiating CbModel 
+        m0 = CbModel(md['S'], md['idSp'], md['idRs'], md['lb'], md['ub'], md['rxns'],
+		    md['genes'])
+        #EG Changed the minimum biomass flux to be the maximum amount with default boundary constraints 
+        m0.lb[m0.idRs.index(biomassRxn)] = lb_biomass
+
+        for i in m0.idRs:
+            if ((md['rxns'][i]['lb'] <= 0) and (md['rxns'][i]['ub'] == 0)):
+                m0.ub[m0.idRs.index(i)] = 1000
+  
+        biomass_set = {biomassRxn}
+        new_hfr = fbr['hfr'].union(biomass_set)
+
+        zfr_check = 0
+        try:
+            m = deleteCbmRxns(m0, fbr['zfr'])
+            act = findActiveRxns(m, 1E-10, new_hfr)
+            cH = new_hfr & act
+            act = findActiveRxns(m, 1E-10, cH)
+            cH2 = cH & act
+        except:
+            zfr_check = 1
+	
+        if zfr_check == 1:
+            zfr_list = []
+            for i in fbr['zfr']:
+                try:
+                    m1 = deleteCbmRxns(m0, i)
+                    act = findActiveRnxs(m1, 1E-10, new_hfr)
+                    m0 = m1
+                    zfr_list.append(i)
+                except:
+                    continue
+            m = deleteCbmRxns(m0, zfr_list)
+            act = findActiveRxns(m, 1E-10, new_hfr)
+            cH = new_hfr & act
+            act = findActiveRxns(m, 1E-10, cH)
+            cH2 = cH & act		
+
+        #EG Create lists of extracellular reactions, extracellular transport reactions, and other compartmental transport reactions, so that the reactions can be pruned in that order first.
+        EXrxns = []
+
+        EXtrrxns = [] 
+
+        Othertrrxns = []
+
+        #EG Make a directory for temporary files for every time a rxn is pruned
+        mbaCandRxnsDirectorySubset = '../data/%s_%s/' % (description, str(repetition))
+        if not os.path.exists(mbaCandRxnsDirectorySubset):
+            os.mkdir(mbaCandRxnsDirectorySubset, 0777)
+
+        #Run the MBA
+        for i in range(numProc):
+            pid = os.fork()
+            if pid == 0:
+                for j in range(numRep):
+                    locTime = time.localtime()
+                    pid = os.getpid()
+                    timeStr = '%i%02i%02i%02i%02i%02i' % locTime[:6]
+                    tag = '%s_%s_%s' % (description, pid, timeStr)
+                    try:
+                        #EG Added despricription, repetition, and lists of compartmental reactions to the function
+                        cr = iterativePrunning(i, m, cH2, description, biomassRxn, lb_biomass, repetition, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
+                        exportPickle(cr, fOutMbaCandRxns % tag)
+                    except:
+                        print 'gurobi error, no solution found %s'  % description
+                os._exit(0)
