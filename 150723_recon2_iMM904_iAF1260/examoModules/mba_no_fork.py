@@ -134,14 +134,12 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         if (len(cH - cH_act) != 0):#not all cH rxns are active
             print "not all active 1"
             return cbm
-        ###################################################################
+        #######################################################################
         # INPUTS
         eps = 1E-10
         activityThreshold = 1E-10
-        #change to '../data/freqBasedRxns_%s.pkl' if testing the script 
-        #itself
-        fFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
-        ###################################################################
+        fFreqBasedRxns = '../data/freqBasedRxns_%s.pkl'
+        #######################################################################
         # STATEMENTS
         hfr = importPickle(fFreqBasedRxns % description)['hfr']
         hfr = hfr & set(m0.idRs)
@@ -175,9 +173,7 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         # INPUTS
         eps = 1E-10
         activityThreshold = 1E-10
-        #change to '../data/freqBasedRxns_%s.pkl' if testing the script 
-        #itself
-        fFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
+        fFreqBasedRxns = '../data/freqBasedRxns_%s.pkl'
         ###################################################################
         # STATEMENTS
         hfr = importPickle(fFreqBasedRxns % description)['hfr']
