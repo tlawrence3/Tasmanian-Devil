@@ -107,7 +107,7 @@ class CbModel():
             s = ['({} * self.{})'.format(p[0], p[1]) for p in pair]
             sjoin = ' + '.join(s)
             sjoin += ' == 0.'
-            exec 'self.guro.addConstr( {}, "{}")'.format(s, self.idSp[i])
+            exec 'self.guro.addConstr( {}, "{}")'.format(sjoin, self.idSp[i])
 
     def setObjective(self, obj, optSense = 'max'):
         s = ''
