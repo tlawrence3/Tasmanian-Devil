@@ -439,7 +439,7 @@ if __name__ == '__main__':
             for i in fbr['zfr']:
                 try:
                     m1 = deleteCbmRxns(m0, i)
-                    act = findActiveRnxs(m1, 1E-10, new_hfr)
+                    act = findActiveRxns(m1, 1E-10, new_hfr)
                     m0 = m1
                     zfr_list.append(i)
                 except:
