@@ -98,9 +98,7 @@ class CbModel():
         #turning off the writing of the gurobi.log file
         self.guro.setParam('OutputFlag', 0) 
         for i, rxn in enumerate(self.idRs):
-            exec 'self.{0} = self.guro.addVar(lb = {1}, ub = {2}, 
-            vtype = GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.lb[i], 
-                                                     self.ub[i])
+            exec 'self.{0} = self.guro.addVar(lb = {1}, ub = {2},vtype = GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.lb[i], self.ub[i])
         self.guro.update()
         # adding constraints
         for i, row in enumerate(self.S.toarray()):
@@ -108,7 +106,7 @@ class CbModel():
             pair = zip(row[nz], array(self.idRs)[nz])
             s = ['({} * self.{})'.format(p[0], p[1]) for p in pair]
             sjoin = ' + '.join(s)
-            s += ' == 0.'
+            sjoin += ' == 0.'
             exec 'self.guro.addConstr( {}, "{}")'.format(s, self.idSp[i])
 
     def setObjective(self, obj, optSense = 'max'):
