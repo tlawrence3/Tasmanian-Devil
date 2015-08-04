@@ -39,32 +39,6 @@ import cobra
 ######################################################################
 # FUNCTIONS
 
-def findActivefromZfr(cbm, thresh, rl = []):
-    act = set()
-    arrayIdRs = array(cbm.idRs[:])
-    cbm.initLp()
-    if rl:
-        idRs = rl
-    else:
-        idRs = cbm.idRs[:]
-    # maximizing all reactions at once
-    # reseting the objective
-    cbm.guro.setObjective(0)
-    # setting the objective
-    s = 'cbm.linobj = LinExpr([1.0] * len(cbm.idRs), ['
-    for var in cbm.guro.getVars():
-        s += 'cbm.%s, ' % var.varName
-    s = s.rstrip(', ')
-    s += '])'
-    exec s
-    #EG Initially set the objective to maximize
-    cbm.guro.setObjective(cbm.linobj, 1)#1 for maximize
-    cbm.guro.optimize()
-    sol = abs(array([v.x for v in cbm.guro.getVars()]))
-    indices = (sol > thresh).nonzero()[0]
-    act.update(arrayIdRs[indices])
-    return act
-
 #@profile
 def findActiveRxns(cbm, thresh, rl = []):
     act = set()
@@ -85,7 +59,7 @@ def findActiveRxns(cbm, thresh, rl = []):
     s += '])'
     exec s
     #EG Initially set the objective to maximize
-    cbm.guro.setObjective(cbm.linobj, 1)#1 for maximize
+    cbm.guro.setObjective(cbm.linobj)#1 for maximize
     cbm.guro.optimize()
     sol = abs(array([v.x for v in cbm.guro.getVars()]))
     indices = (sol > thresh).nonzero()[0]

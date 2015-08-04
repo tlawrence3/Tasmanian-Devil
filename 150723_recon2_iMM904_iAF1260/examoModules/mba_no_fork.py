@@ -65,11 +65,12 @@ def findActivefromZfr(cbm, thresh, rl = []):
     act.update(arrayIdRs[indices])
     return act
 
-#@profile
+@profile
 def findActiveRxns(cbm, thresh, rl = []):
     act = set()
     arrayIdRs = array(cbm.idRs[:])
-    cbm.initLp()
+    init = cbm.initLp()
+    init 
     if rl:
         idRs = rl
     else:
@@ -85,7 +86,7 @@ def findActiveRxns(cbm, thresh, rl = []):
     s += '])'
     exec s
     #EG Initially set the objective to maximize
-    cbm.guro.setObjective(cbm.linobj, 1)#1 for maximize
+    cbm.guro.setObjective(cbm.linobj)#1 for maximize
     cbm.guro.optimize()
     sol = abs(array([v.x for v in cbm.guro.getVars()]))
     indices = (sol > thresh).nonzero()[0]
@@ -103,7 +104,12 @@ def findActiveRxns(cbm, thresh, rl = []):
                 cbm.guro.optimize()
                 sol = abs(array([v.x for v in cbm.guro.getVars()]))
                 indices = (sol > thresh).nonzero()[0]
+                #act2 = act.copy()
                 act.update(arrayIdRs[indices])
+                #if act2 != act:
+                    #print "added 1"
+                    #if rxn in act:
+                        #print rxn
     idRs = list(set(idRs) - act)
     # minimizing
     for rxn in idRs:
@@ -116,11 +122,21 @@ def findActiveRxns(cbm, thresh, rl = []):
                 exec 'cbm.guro.setObjective(cbm.%s, GRB.MINIMIZE)' % rxn
                 cbm.guro.optimize()
                 sol = abs(array([v.x for v in cbm.guro.getVars()]))
+                sol_no_absolute = array([v.x for v in cbm.guro.getVars()])
                 indices = (sol > thresh).nonzero()[0]
+                #act2 = act.copy()
                 act.update(arrayIdRs[indices])
+                #if act2 != act:
+                    #print "added 2"
+                    #if rxn in act:
+                        #print rxn
+                        #print sol
+                        #print sol_no_absolute
+                        #print indices
+                        #print arrayIdRs
     return act
 
-#@profile
+@profile
 def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
              lb_biomass):
     try:
@@ -132,7 +148,7 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         act = findActiveRxns(m0, thresh, cH)
         cH_act = cH & act
         if (len(cH - cH_act) != 0):#not all cH rxns are active
-            print "not all active 1"
+            #print "not all active 1"
             return cbm
         #######################################################################
         # INPUTS
@@ -153,7 +169,7 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         #function, so that the reactants and products could be written out
         nz = getNzRxnsGurobi(mtry1result, activityThreshold, m0.rxns)[1]
     except:
-        print "exception 1"
+        #print "exception 1"
         return cbm
         #EG Identify the reactions that became inactive after the
         #reaction was deleted. If extra deleted reactions cause the
@@ -167,7 +183,7 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         act2 = findActiveRxns(m1, thresh, cH)
         cH_act2 = cH & act2
         if (len(cH - cH_act2) != 0):#not all cH rxns are active
-            print rxntodelete
+            #print rxntodelete
             return m0
         ###################################################################
         # INPUTS
@@ -188,16 +204,16 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         #to the function, so that the reactants and products could
         #be written out
         nz = getNzRxnsGurobi(mtry2result, activityThreshold, m1.rxns)[1]
-        print inact
+        #print inact
         return m1
     except:
-        print "exception 2"
+        #print "exception 2"
         return m0
 
 #EG 131112 Avoided creating sets for prunableRxns so that randomness
 #would be preserverd, and first try pruning transport reactions before
 #other reactions in the model
-#@profile
+@profile
 def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                       repetition, thresh = 1E-10, EXrxns = [],
                       EXtrrxns = [], Othertrrxns = []):
@@ -423,7 +439,7 @@ if __name__ == '__main__':
             for i in fbr['zfr']:
                 try:
                     m1 = deleteCbmRxns(m0, i)
-                    act = findActiveRnxs(m1, 1E-10, new_hfr)
+                    act = findActiveRxns(m1, 1E-10, new_hfr)
                     m0 = m1
                     zfr_list.append(i)
                 except:

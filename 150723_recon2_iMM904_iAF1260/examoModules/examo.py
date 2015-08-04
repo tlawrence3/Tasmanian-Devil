@@ -92,6 +92,7 @@ class CbModel():
         return cbmNew 
         #}}}
 
+    @profile
     def initLp(self, name = 'unnamed'):
         from numpy import array
         self.guro = Model(name)
