@@ -164,7 +164,7 @@ class CbModel():
 
 class MetabGeneExpModel(object):
     #{{{
-    def __init__(self, idSp, idRs, S, lb, ub, rH, rL, eps = 1E-10):
+    def __init__(self, idSp, idRs, S, lb, ub, rH, rL, eps = 1E-1):
         """
         idSp [list] strings with the names of species
         idRs [list] strings with the names of reactions
@@ -640,7 +640,7 @@ class MipSeparateFwdRev_gurobi(MipSeparateFwdRev):
         s = s.rstrip(', ')
         s += '])'
         exec s
-        self.guro.setObjective(self.linobj, GRB.MINIMIZE)#1 for minimize
+        self.guro.setObjective(self.linobj, GRB.MINIMIZE)
         self.guro.optimize()
         self.initialized = 1
         #}}}
