@@ -2,7 +2,7 @@
 
 egibb@filipp05:~/Desktop/Conversion_Script$ python 150722_import_cobra_model_46.py iMM904_NADcorrected_1127_MTHFDi.xml R_biomass_published _e -l iMM904_NADcorrected_1127_MTHFDi_lb_AA_AC_B_Polyamine_Sterol.txt -u iMM904_NADcorrected_1127_MTHFDi_ub.txt -g iMM904_NADcorrected_1127_MTHFDi_genes_genes2rxns.txt -m 150723_iMM904_NADcorrected_1127_MTHFDi_metabolite_mappings.pkl -n 150723_iMM904_NADcorrected_1127_MTHFDi_nucleotide_conversions.pkl > 150723_iMM904_NADcorrected_1127_MTHFDi_rxns_l_u_g_m_n.txt
 
-egibb@filipp05:~/Dekstop/Conversion_Script$ python 150722_import_cobra_model_46.py Recon2.v04.mat R_biomass_reaction _e_ -m 150722_Recon2.v04_metabolite_mappings.pkl -n 150722_Recon2.v04_nucleotide_conversions.pkl -c recon2_metabolite_dict4.csv
+egibb@filipp05:~/Dekstop/Conversion_Script$ python 150722_import_cobra_model_46.py Recon2.v04.mat R_biomass_reaction _e_ -m 150722_Recon2.v04_metabolite_mappings.pkl -n 150721_Recon2.v04_nucleotide_conversions.pkl -c recon2_metabolite_carbon_dict4.csv
 
 
 egibb@filipp05:~/Desktop/Conversion_Script$ python 150722_import_cobra_model_46.py iAF1260.xml R_Ec_biomass_iAF1260_core_59p81M _e

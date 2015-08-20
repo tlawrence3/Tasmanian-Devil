@@ -39,33 +39,7 @@ import cobra
 ######################################################################
 # FUNCTIONS
 
-def findActivefromZfr(cbm, thresh, rl = []):
-    act = set()
-    arrayIdRs = array(cbm.idRs[:])
-    cbm.initLp()
-    if rl:
-        idRs = rl
-    else:
-        idRs = cbm.idRs[:]
-    # maximizing all reactions at once
-    # reseting the objective
-    cbm.guro.setObjective(0)
-    # setting the objective
-    s = 'cbm.linobj = LinExpr([1.0] * len(cbm.idRs), ['
-    for var in cbm.guro.getVars():
-        s += 'cbm.%s, ' % var.varName
-    s = s.rstrip(', ')
-    s += '])'
-    exec s
-    #EG Initially set the objective to maximize
-    cbm.guro.setObjective(cbm.linobj, 1)#1 for maximize
-    cbm.guro.optimize()
-    sol = abs(array([v.x for v in cbm.guro.getVars()]))
-    indices = (sol > thresh).nonzero()[0]
-    act.update(arrayIdRs[indices])
-    return act
-
-@profile
+#@profile
 def findActiveRxns(cbm, thresh, rl = []):
     act = set()
     arrayIdRs = array(cbm.idRs[:])
@@ -95,49 +69,28 @@ def findActiveRxns(cbm, thresh, rl = []):
     # maximizing
     for rxn in idRs:
         if rxn not in act:
-        #EG Reduce the number of reactions that need to be investigated
-        #based off of upper boundary constraints
-            if cbm.ub[cbm.idRs.index(rxn)] != 0:
-                # reseting the objective
-                cbm.guro.setObjective(0)
-                exec 'cbm.guro.setObjective(cbm.%s, GRB.MAXIMIZE)' % rxn
-                cbm.guro.optimize()
-                sol = abs(array([v.x for v in cbm.guro.getVars()]))
-                indices = (sol > thresh).nonzero()[0]
-                #act2 = act.copy()
-                act.update(arrayIdRs[indices])
-                #if act2 != act:
-                    #print "added 1"
-                    #if rxn in act:
-                        #print rxn
+            # reseting the objective
+            cbm.guro.setObjective(0)
+            exec 'cbm.guro.setObjective(cbm.%s, GRB.MAXIMIZE)' % rxn
+            cbm.guro.optimize()
+            sol = abs(array([v.x for v in cbm.guro.getVars()]))
+            indices = (sol > thresh).nonzero()[0]
+            act.update(arrayIdRs[indices])
     idRs = list(set(idRs) - act)
     # minimizing
     for rxn in idRs:
         if rxn not in act:
-        #EG Reduce the number of reactions that need to be investigated
-        #based off of lower boundary constraints
-            if cbm.lb[cbm.idRs.index(rxn)] != 0:
-                # reseting the objective
-                cbm.guro.setObjective(0)
-                exec 'cbm.guro.setObjective(cbm.%s, GRB.MINIMIZE)' % rxn
-                cbm.guro.optimize()
-                sol = abs(array([v.x for v in cbm.guro.getVars()]))
-                sol_no_absolute = array([v.x for v in cbm.guro.getVars()])
-                indices = (sol > thresh).nonzero()[0]
-                #act2 = act.copy()
-                act.update(arrayIdRs[indices])
-                #if act2 != act:
-                    #print "added 2"
-                    #if rxn in act:
-                        #print rxn
-                        #print sol
-                        #print sol_no_absolute
-                        #print indices
-                        #print arrayIdRs
+            # reseting the objective
+            cbm.guro.setObjective(0)
+            exec 'cbm.guro.setObjective(cbm.%s, GRB.MINIMIZE)' % rxn
+            cbm.guro.optimize()
+            sol = abs(array([v.x for v in cbm.guro.getVars()]))
+            indices = (sol > thresh).nonzero()[0]
+            act.update(arrayIdRs[indices])
     return act
 
-@profile
-def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
+#@profile
+def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, repetition, biomassRxn,
              lb_biomass):
     try:
         #EG Prune a reaction. If a flux soltuion cannot be obtained
@@ -148,12 +101,10 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         act = findActiveRxns(m0, thresh, cH)
         cH_act = cH & act
         if (len(cH - cH_act) != 0):#not all cH rxns are active
-            #print "not all active 1"
+            print "not all active 1"
             return cbm
         #######################################################################
         # INPUTS
-        eps = 1E-10
-        activityThreshold = 1E-10
         fFreqBasedRxns = '../data/freqBasedRxns_%s.pkl'
         #######################################################################
         # STATEMENTS
@@ -169,7 +120,7 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         #function, so that the reactants and products could be written out
         nz = getNzRxnsGurobi(mtry1result, activityThreshold, m0.rxns)[1]
     except:
-        #print "exception 1"
+        print "exception 1"
         return cbm
         #EG Identify the reactions that became inactive after the
         #reaction was deleted. If extra deleted reactions cause the
@@ -183,14 +134,8 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         act2 = findActiveRxns(m1, thresh, cH)
         cH_act2 = cH & act2
         if (len(cH - cH_act2) != 0):#not all cH rxns are active
-            #print rxntodelete
+            print rxntodelete
             return m0
-        ###################################################################
-        # INPUTS
-        eps = 1E-10
-        activityThreshold = 1E-10
-        fFreqBasedRxns = '../data/freqBasedRxns_%s.pkl'
-        ###################################################################
         # STATEMENTS
         hfr = importPickle(fFreqBasedRxns % description)['hfr']
         hfr = hfr & set(m1.idRs)
@@ -204,18 +149,18 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         #to the function, so that the reactants and products could
         #be written out
         nz = getNzRxnsGurobi(mtry2result, activityThreshold, m1.rxns)[1]
-        #print inact
+        print inact
         return m1
     except:
-        #print "exception 2"
+        print "exception 2"
         return m0
 
 #EG 131112 Avoided creating sets for prunableRxns so that randomness
 #would be preserverd, and first try pruning transport reactions before
 #other reactions in the model
-@profile
+#@profile
 def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
-                      repetition, thresh = 1E-10, EXrxns = [],
+                      repetition, thresh = 1E-10, eps = 1E-10, activityThreshold = 1E-10, EXrxns = [],
                       EXtrrxns = [], Othertrrxns = []):
     """
     solver can be 'cplex', 'glpk' or 'gurobi'
@@ -226,7 +171,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
         while EXrxnsprune:
             rxn1 = EXrxnsprune.pop()
             try:
-                mTemp1 = pruneRxn(mTemp1, cH, rxn1, thresh, description,
+                mTemp1 = pruneRxn(mTemp1, cH, rxn1, thresh, eps, activityThreshold, description,
                                   repetition, biomassRxn, lb_biomass)
                 EXrxnsprune2 = []
                 for k in mTemp1.idRs:
@@ -235,7 +180,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                 random.shuffle(EXrxnsprune2)
                 EXrxnsprune = EXrxnsprune2
             except NameError:
-                mTemp1 = pruneRxn(m, cH, rxn1, thresh, description,
+                mTemp1 = pruneRxn(m, cH, rxn1, thresh, eps, activityThreshold, description,
                                   repetition, biomassRxn, lb_biomass)
                 EXrxnsprune2 = []
                 for k in mTemp1.idRs:
@@ -253,7 +198,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
         while EXtrrxnsprune:
             rxn2 = EXtrrxnsprune.pop()
             try:
-                mTemp1 = pruneRxn(mTemp1, cH, rxn2, thresh, description,
+                mTemp1 = pruneRxn(mTemp1, cH, rxn2, thresh, eps, activityThreshold, description,
                                   repetition, biomassRxn, lb_biomass)
                 EXtrrxnsprune2 = []
                 for k in mTemp1.idRs:
@@ -262,7 +207,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                 random.shuffle(EXtrrxnsprune2)
                 EXtrrxnsprune = EXtrrxnsprune2
             except NameError:
-                mTemp1 = pruneRxn(m, cH, rxn2, thresh, description,
+                mTemp1 = pruneRxn(m, cH, rxn2, thresh, eps, activityThreshold, description,
                                   repetition, biomassRxn, lb_biomass)
                 EXtrrxnsprune2 = []
                 for k in mTemp1.idRs:
@@ -290,7 +235,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
     while prunableRxns:
         rxn3 = prunableRxns.pop()
         try:
-            mTemp1 = pruneRxn(mTemp1, cH, rxn3, thresh, description,
+            mTemp1 = pruneRxn(mTemp1, cH, rxn3, thresh, eps, activityThreshold, description,
                               repetition, biomassRxn, lb_biomass)
             prunableRxns2 = []
             for k in mTemp1.idRs:
@@ -298,15 +243,8 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                     prunableRxns2.append(k)
             random.shuffle(prunableRxns2)
             prunableRxns = prunableRxns2
-            #prunableRxns2_appended = prunableRxns.append()
-            #prunableRxns2_appended k for k in mTemp1.idRs if k in prunableRnxs
-            #for k in mTemp1.idRs:
-            #    if k in prunableRxns:
-            #        prunableRxns2.append(k)
-            #random.shuffle(prunableRxns2_appended)
-            #prunableRxns = prunableRxns2_appended
         except NameError:
-            mTemp1 = pruneRxn(m, cH, rxn3, thresh, description,
+            mTemp1 = pruneRxn(m, cH, rxn3, thresh, eps, activityThreshold, description,
                               repetition, biomassRxn, lb_biomass)
             prunableRxns2 = []
             for k in mTemp1.idRs:
@@ -314,15 +252,6 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                     prunableRxns2.append(k)
             random.shuffle(prunableRxns2)
             prunableRxns = prunableRxns2
-            #prunableRxns2_appended = prunableRxns.append()
-            #prunableRxns2_appended k for k in mTemp1.idRs if k in prunableRnxs
-            #random.shuffle(prunableRxns2_appended)
-            #prunableRxns = prunableRxns2_appended
-            #for k in mTemp1.idRs:
-            #    if k in prunableRxns:
-            #        prunableRxns2.append(k)
-            #random.shuffle(prunableRxns2)
-            #prunableRxns = prunableRxns2
     return mTemp1.idRs
 
 if __name__ == '__main__':
@@ -383,6 +312,8 @@ if __name__ == '__main__':
 
     # Algorithm variables
     #threshold above which a flux is considered to be larger than zero
+    thresh = 1E-10
+    eps = 1E-10
     activityThreshold = 1E-10
     for repetition in range(repetitions):
 	################################################################################
@@ -435,6 +366,7 @@ if __name__ == '__main__':
             zfr_check = 1
 	
         if zfr_check == 1:
+            print "entered"
             zfr_list = []
             for i in fbr['zfr']:
                 try:
@@ -469,7 +401,7 @@ if __name__ == '__main__':
                 tag = '%s_%s_%s' % (description, pid, timeStr)
                 try:
                     #EG Added despricription, repetition, and lists of compartmental reactions to the function
-                    cr = iterativePrunning(i, m, cH2, description, biomassRxn, lb_biomass, repetition, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
+                    cr = iterativePrunning(i, m, cH2, description, biomassRxn, lb_biomass, repetition, thresh, eps, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
                     exportPickle(cr, fOutMbaCandRxns % tag)
                 except:
                     print 'gurobi error, no solution found %s'  % description

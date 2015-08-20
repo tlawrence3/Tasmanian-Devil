@@ -31,6 +31,7 @@ def importPickle(fileName, mode = 'rb'):
     f = open(fileName, mode)
     return pickle.load(f)
 
+#@profile
 def exportPickle(obj, fileName, mode = 'wb', protocol = -1):
     """
     Exports an object as a pickle file. By default it writes as binary (wb).

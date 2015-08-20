@@ -57,6 +57,8 @@ lb_biomass = Decimal(cobra_model.solution.f) + Decimal('0.0')
 
 # Algorithm variables
 #threshold above which a flux is considered to be larger than zero
+thresh = 1E-10
+eps = 1E-10
 activityThreshold = 1E-10
 
 for repetition in range(repetitions):
@@ -149,7 +151,7 @@ for repetition in range(repetitions):
                 tag = '%s_%s_%s' % (description, pid, timeStr)
                 try:
                     #EG Added despricription, repetition, and lists of compartmental reactions to the function
-                    cr = iterativePrunning(i, m, cH2, description, biomassRxn, lb_biomass, repetition, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
+                    cr = iterativePrunning(i, m, cH2, description, biomassRxn, lb_biomass, repetition, thresh, eps, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
                     exportPickle(cr, fOutMbaCandRxns % tag)
                 except:
                     print 'gurobi error, no solution found %s'  % description
