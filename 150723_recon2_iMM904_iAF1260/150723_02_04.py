@@ -33,6 +33,7 @@ from examoModules import *
 from decimal import Decimal, getcontext, ROUND_DOWN
 import cobra
 import argparse
+from Crypto.Random import atfork
 
 ################################################################################
 # INPUTS
@@ -46,6 +47,9 @@ parser.add_argument('r', nargs="+", type=int, help='Necessary variable: number o
 parser.add_argument('-e', type=float, default=1E-10, help='Minimum value for active flux of reversible reactions in an irreversible model; default value: 1E-10')
 parser.add_argument('-a', type=float, default=1E-10, help='Activity threshold (above which a flux is considered to be larger than 0); default value: 1E-10')
 parser.add_argument('-t', type=float, default=1E-10, help='Activity threshold for finding active reactions; default value: 1E-10')
+#parser.add_argument('-EXrxns', type=str, default=[], help='Pickle file containing extracellular reactions list')
+#parser.add_argument('-EXtrrxns', type=str, default=[], help='Pickle file containing extracellular transport reactions list')
+#parser.add_argument('-Othertrrxns', type=str, default=[], help='Pickle file containing other compartmental transport reactions list')
 
 args = parser.parse_args()
 
@@ -59,12 +63,18 @@ biomassRxn = str(args.b)
 biomassRxn = biomassRxn[2:-2]
 repetitions = str(args.r)
 repetitions = int(repetitions[1:-1])
-if args.e is not None:
-    eps = args.e
-if args.a is not None:
-    activityThreshold = args.a
-if args.t is not None:
-    thresh = args.t
+eps = args.e
+activityThreshold = args.a
+thresh = args.t
+#if args.EXrxns is not None:
+#    EXrxns_file = str(args.EXrxns)
+#    EXrxns_file = EXrxns_file[2:-2]
+#if args.EXtrrxns is not None:
+#    EXtrrxns_file = str(args.EXtrrxns)
+#    EXtrrxns_file = EXtrrxns_file[2:-2]
+#if args.Othertrrxns is not None:
+#    Othertrrxns_file = str(args.Othertrrxns)
+#    Othertrrxns_file = Othertrrxns_file[2:-2]
 
 #Create necessary variables and import the model
 if model[-4:] == '.xml':
@@ -72,7 +82,7 @@ if model[-4:] == '.xml':
 if model[-4:] == '.mat':
     cobra_model = cobra.io.mat.load_matlab_model('data/%s' % model)
 
-# model dictionary of the original model with blocked reactions deleted
+#model dictionary of the original model with blocked reactions deleted
 fModelDict = 'data/%s' % pickle_model
 
 cobra_model.optimize(solver='gurobi')
@@ -88,7 +98,7 @@ for repetition in range(repetitions):
 	################################################################################
     # INPUTS
 
-    numProc = 1# 100	#number of parallel processes used
+    numProc = 7# 100	#number of parallel processes used
     numRep =1# 10		#number of times each process is repeated
 
     md = importPickle(fModelDict)
@@ -162,7 +172,9 @@ for repetition in range(repetitions):
     #Run the MBA
     for i in range(numProc):
         pid = os.fork()
+        atfork()
         if pid == 0:
+            atfork()
             for j in range(numRep):
                 locTime = time.localtime()
                 pid = os.getpid()
