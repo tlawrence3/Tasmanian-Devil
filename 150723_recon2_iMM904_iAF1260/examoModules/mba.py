@@ -51,20 +51,20 @@ def findActiveRxns(cbm, thresh, rl = []):
         idRs = cbm.idRs[:]
     # maximizing all reactions at once
     # reseting the objective
-    cbm.guro.setObjective(0)
+    #cbm.guro.setObjective(0)
     # setting the objective
-    s = 'cbm.linobj = LinExpr([1.0] * len(cbm.idRs), ['
-    for var in cbm.guro.getVars():
-        s += 'cbm.%s, ' % var.varName
-    s = s.rstrip(', ')
-    s += '])'
-    exec s
+    #s = 'cbm.linobj = LinExpr([1.0] * len(cbm.idRs), ['
+    #for var in cbm.guro.getVars():
+    #    s += 'cbm.%s, ' % var.varName
+    #s = s.rstrip(', ')
+    #s += '])'
+    #exec s
     #EG Initially set the objective to maximize
-    cbm.guro.setObjective(cbm.linobj)
-    cbm.guro.optimize()
-    sol = abs(array([v.x for v in cbm.guro.getVars()]))
-    indices = (sol > thresh).nonzero()[0]
-    act.update(arrayIdRs[indices])
+    #cbm.guro.setObjective(cbm.linobj)
+    #cbm.guro.optimize()
+    #sol = abs(array([v.x for v in cbm.guro.getVars()]))
+    #indices = (sol > thresh).nonzero()[0]
+    #act.update(arrayIdRs[indices])
     idRs = list(set(idRs) - act)
     # maximizing
     for rxn in idRs:
@@ -97,7 +97,6 @@ def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, repetiti
         #or if the biomass flux becomes inactive, stop pruning.
         rxntodelete = rxn
         m0 = deleteCbmRxns(cbm, rxntodelete)
-        #NOTE the threshold is set a bit higher for cH rxns
         act = findActiveRxns(m0, thresh, cH)
         cH_act = cH & act
         if (len(cH - cH_act) != 0):#not all cH rxns are active
@@ -170,6 +169,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
         random.shuffle(EXrxnsprune)
         while EXrxnsprune:
             rxn1 = EXrxnsprune.pop()
+            #print rxn1
             try:
                 mTemp1 = pruneRxn(mTemp1, cH, rxn1, thresh, eps, activityThreshold, description,
                                   repetition, biomassRxn, lb_biomass)
@@ -197,6 +197,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
         random.shuffle(EXtrrxnsprune)
         while EXtrrxnsprune:
             rxn2 = EXtrrxnsprune.pop()
+            #print rxn2
             try:
                 mTemp1 = pruneRxn(mTemp1, cH, rxn2, thresh, eps, activityThreshold, description,
                                   repetition, biomassRxn, lb_biomass)

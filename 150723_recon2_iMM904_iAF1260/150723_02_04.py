@@ -34,6 +34,7 @@ from decimal import Decimal, getcontext, ROUND_DOWN
 import cobra
 import argparse
 from Crypto.Random import atfork
+import cPickle as pickle
 
 ################################################################################
 # INPUTS
@@ -47,9 +48,9 @@ parser.add_argument('r', nargs="+", type=int, help='Necessary variable: number o
 parser.add_argument('-e', type=float, default=1E-10, help='Minimum value for active flux of reversible reactions in an irreversible model; default value: 1E-10')
 parser.add_argument('-a', type=float, default=1E-10, help='Activity threshold (above which a flux is considered to be larger than 0); default value: 1E-10')
 parser.add_argument('-t', type=float, default=1E-10, help='Activity threshold for finding active reactions; default value: 1E-10')
-#parser.add_argument('-EXrxns', type=str, default=[], help='Pickle file containing extracellular reactions list')
-#parser.add_argument('-EXtrrxns', type=str, default=[], help='Pickle file containing extracellular transport reactions list')
-#parser.add_argument('-Othertrrxns', type=str, default=[], help='Pickle file containing other compartmental transport reactions list')
+parser.add_argument('-EXrxns', type=str, help='Pickle file containing extracellular reactions list')
+parser.add_argument('-EXtrrxns', type=str, help='Pickle file containing extracellular transport reactions list')
+parser.add_argument('-Othertrrxns', type=str, help='Pickle file containing other compartmental transport reactions list')
 
 args = parser.parse_args()
 
@@ -66,15 +67,25 @@ repetitions = int(repetitions[1:-1])
 eps = args.e
 activityThreshold = args.a
 thresh = args.t
-#if args.EXrxns is not None:
-#    EXrxns_file = str(args.EXrxns)
-#    EXrxns_file = EXrxns_file[2:-2]
-#if args.EXtrrxns is not None:
-#    EXtrrxns_file = str(args.EXtrrxns)
-#    EXtrrxns_file = EXtrrxns_file[2:-2]
-#if args.Othertrrxns is not None:
-#    Othertrrxns_file = str(args.Othertrrxns)
-#    Othertrrxns_file = Othertrrxns_file[2:-2]
+#EG Create lists of extracellular reactions, extracellular transport reactions, and other compartmental transport reactions, so that the reactions can be pruned in that order first.
+if args.EXrxns is not None:
+    EXrxns_file = str(args.EXrxns)
+    md = pickle.load(open(EXrxns_file, 'rb'))
+    EXrxns = md['EXrxns']
+else:
+    EXrxns = []
+if args.EXtrrxns is not None:
+    EXtrrxns_file = str(args.EXtrrxns)
+    md = pickle.load(open(EXtrrxns_file, 'rb'))
+    EXtrrxns = md['EXtrrxns']
+else:
+    EXtrrxns = []
+if args.Othertrrxns is not None:
+    Othertrrxns_file = str(args.Othertrrxns)
+    md = pickle.load(open(Othertrrxns_file, 'rb'))
+    Othertrrxns = md['Othertrrxns']
+else:
+    Othertrrxns = []
 
 #Create necessary variables and import the model
 if model[-4:] == '.xml':
@@ -98,7 +109,7 @@ for repetition in range(repetitions):
 	################################################################################
     # INPUTS
 
-    numProc = 7# 100	#number of parallel processes used
+    numProc = 20# 100	#number of parallel processes used
     numRep =1# 10		#number of times each process is repeated
 
     md = importPickle(fModelDict)
@@ -156,13 +167,6 @@ for repetition in range(repetitions):
         cH = new_hfr & act
         act = findActiveRxns(m, thresh, cH)
         cH2 = cH & act		
-
-    #EG Create lists of extracellular reactions, extracellular transport reactions, and other compartmental transport reactions, so that the reactions can be pruned in that order first.
-    EXrxns = []
-
-    EXtrrxns = [] 
-
-    Othertrrxns = []
 
     #EG Make a directory for temporary files for every time a rxn is pruned
     mbaCandRxnsDirectorySubset = 'examoModules/data/%s_%s/' % (description, str(repetition))
