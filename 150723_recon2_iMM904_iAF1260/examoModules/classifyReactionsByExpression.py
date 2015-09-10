@@ -1,7 +1,7 @@
 # Copyright (C) 2012 Sergio Rossell
 #
 # This script is part of the EXAMO software
-# 
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -18,11 +18,13 @@
 """
 Classifying reactions by expression.
 
-Genes are classified by expression according to a high and a low threshold. Genes with intensities bellow the threshold are assigned a -1 call, genes with intesities above the high threshold are assigned a 1 call, all other genes ar assigned a 0 call.
+Genes are classified by expression according to a high and a low
+threshold. Genes with intensities bellow the threshold are assigned
+a -1 call, genes with intesities above the high threshold are assigned
+a 1 call, all other genes ar assigned a 0 call.
 """
 
-import re
-
+from collections import defaultdict
 ################################################################################
 # FUNCTIONS
 
@@ -35,17 +37,10 @@ def orderGeneNamesByLength(geneList):
     RETURNS byLengthDict [dict]: {stringLength : [list of gene ids that are
         that long]
     """
-    byLengthDict = {}
-    lengthSet = set()
+    byLengthDict = defaultdict(list)
     for gn in geneList:
-        lengthSet.add(len(gn))
-    for length in lengthSet:
-        for gn in geneList:
-            if length == len(gn):
-                try:
-                    byLengthDict[length].append(gn)
-                except KeyError:
-                    byLengthDict[length] = [gn]
+        byLengthDict[len(gn)].append(gn)
+    
     return byLengthDict
 
 def substituteGeneNamesByCalls(g2r, geneList, geneCalls, callTranslationDict):
@@ -82,7 +77,7 @@ def createRxnGeneCalls(geneCalls, gene2rxn, modelGenes):
     RETURNS
     rxnGeneCalls [dict] : {rxn : calls}, where calls may be -1, 0 or 1
     """
-    orphanRxns = set([rxn for rxn in gene2rxn if gene2rxn[rxn] == ''])
+    orphanRxns = set([rxn for rxn in gene2rxn if not gene2rxn[rxn]])
     #ordering gene names by their lenghts (some gene names are part of others
     # e.g. 'YCR024C' and 'YCR024C-A' in yeast). Hence long names should be 
     # replaced before short ones
@@ -98,23 +93,19 @@ def createRxnGeneCalls(geneCalls, gene2rxn, modelGenes):
             g2r = substituteGeneNamesByCalls(g2r, geneNamesByLength[length], 
                     geneCalls, {-1 : '-1', 0 : '0', 1 : '1'})
         g2r = str(g2r)
-        i = re.split('or',g2r)
-        count = 0
+        i = g2r.split('or')
         countdict = {}
         countdict_calls = {}
-        for j in i:
-            count += 1
-            j = re.split('and', j)
-            genedict = []
+        for count, j in enumerate(i):
+            j = j.split('and')
+            genelist = []
             for k in j:
-                k = re.sub(' ', '', k)
-                k = re.sub('\(', '', k)
-                k = re.sub('\)', '', k)
-                if k == '':
+                k = k.translate(None, ' ()')
+                if not k:
                     continue
                 else:
-                    genedict.append(k)
-            countdict[count] = genedict
+                    genelist.append(k)
+            countdict[count] = genelist
         for i in countdict:
             one_count = 0
             negative_one_count = 0

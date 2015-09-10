@@ -50,7 +50,7 @@ def findActivefromZfr(cbm, thresh, rl = []):
     # setting the objective
     s = 'cbm.linobj = LinExpr([1.0] * len(cbm.idRs), ['
     for var in cbm.guro.getVars():
-        s += 'cbm.%s, ' % var.varName
+        s += 'cbm.{}, '.format(var.varName)
     s = s.rstrip(', ')
     s += '])'
     exec s
@@ -76,7 +76,7 @@ def findActiveRxns(cbm, thresh, rl = []):
     # setting the objective
     s = 'cbm.linobj = LinExpr([1.0] * len(cbm.idRs), ['
     for var in cbm.guro.getVars():
-        s += 'cbm.%s, ' % var.varName
+        s += 'cbm.{}, '.format(var.varName)
     s = s.rstrip(', ')
     s += '])'
     exec s
@@ -95,7 +95,7 @@ def findActiveRxns(cbm, thresh, rl = []):
             if cbm.ub[cbm.idRs.index(rxn)] != 0:
                 # reseting the objective
                 cbm.guro.setObjective(0)
-                exec 'cbm.guro.setObjective(cbm.%s, GRB.MAXIMIZE)' % rxn
+                exec 'cbm.guro.setObjective(cbm.{}, GRB.MAXIMIZE)'.format(rxn)
                 cbm.guro.optimize()
                 sol = abs(array([v.x for v in cbm.guro.getVars()]))
                 indices = (sol > thresh).nonzero()[0]
@@ -109,7 +109,7 @@ def findActiveRxns(cbm, thresh, rl = []):
             if cbm.lb[cbm.idRs.index(rxn)] != 0:
                 # reseting the objective
                 cbm.guro.setObjective(0)
-                exec 'cbm.guro.setObjective(cbm.%s, GRB.MINIMIZE)' % rxn
+                exec 'cbm.guro.setObjective(cbm.{}, GRB.MINIMIZE)'.format(rxn)
                 cbm.guro.optimize()
                 sol = abs(array([v.x for v in cbm.guro.getVars()]))
                 indices = (sol > thresh).nonzero()[0]
@@ -136,10 +136,10 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         # INPUTS
         eps = 1E-10
         activityThreshold = 1E-10
-        fFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
+        fFreqBasedRxns = 'data/freqBasedRxns_{}.pkl'.format(description)
         #######################################################################
         # STATEMENTS
-        hfr = importPickle(fFreqBasedRxns % description)['hfr']
+        hfr = importPickle(fFreqBasedRxns)['hfr']
         hfr = hfr & set(m0.idRs)
         #forcing biomass production
         m0.lb[m0.idRs.index(biomassRxn)] = lb_biomass
@@ -174,10 +174,10 @@ def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
         # INPUTS
         eps = 1E-10
         activityThreshold = 1E-10
-        fFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
+        fFreqBasedRxns = 'data/freqBasedRxns_{}.pkl'.format(description)
         ###################################################################
         # STATEMENTS
-        hfr = importPickle(fFreqBasedRxns % description)['hfr']
+        hfr = importPickle(fFreqBasedRxns)['hfr']
         hfr = hfr & set(m1.idRs)
         #forcing biomass production
         m1.lb[m1.idRs.index(biomassRxn)] = lb_biomass
@@ -204,7 +204,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
     """
     solver can be 'cplex', 'glpk' or 'gurobi'
     """
-    if len(EXrxns) > 0:
+    if EXrxns:
         EXrxnsprune = list(set(list(EXrxns)) - cH)
         random.shuffle(EXrxnsprune)
         while EXrxnsprune:
@@ -227,7 +227,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                         EXrxnsprune2.append(k)
                 random.shuffle(EXrxnsprune2)
                 EXrxnsprune = EXrxnsprune2
-    if len(EXtrrxns) > 0:
+    if EXtrrxns:
         EXtrrxnsprune = list(set(list(EXtrrxns)) - cH)
         EXtrrxnsprunelist = []
         for j in EXtrrxnsprune:
