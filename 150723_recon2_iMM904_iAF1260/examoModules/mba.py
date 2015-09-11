@@ -48,11 +48,10 @@ def findActivefromZfr(cbm, thresh, rl = []):
     # reseting the objective
     cbm.guro.setObjective(0)
     # setting the objective
-    s = 'cbm.linobj = LinExpr([1.0] * len(cbm.idRs), ['
-    for var in cbm.guro.getVars():
-        s += 'cbm.{}, '.format(var.varName)
-    s = s.rstrip(', ')
-    s += '])'
+    sbegin = 'cbm.linobj = LinExpr([1.0] * len(cbm.idRs), ['
+    s = ['cbm.{}'.format(var.varName) for var in cbm.guro.getVars()]
+    s = ', '.join(s)
+    s = sbegin + s + '])'
     exec s
     #EG Initially set the objective to maximize
     cbm.guro.setObjective(cbm.linobj, 1)#1 for maximize
@@ -74,11 +73,10 @@ def findActiveRxns(cbm, thresh, rl = []):
     # reseting the objective
     cbm.guro.setObjective(0)
     # setting the objective
-    s = 'cbm.linobj = LinExpr([1.0] * len(cbm.idRs), ['
-    for var in cbm.guro.getVars():
-        s += 'cbm.{}, '.format(var.varName)
-    s = s.rstrip(', ')
-    s += '])'
+    sbegin = 'cbm.linobj = LinExpr([1.0] * len(cbm.idRs), ['
+    s = ['cbm.{}'.format(var.varName) for var in cbm.guro.getVars()]
+    s = ', '.join(s)
+    s = sbegin + s + '])'
     exec s
     #EG Initially set the objective to maximize
     cbm.guro.setObjective(cbm.linobj, 1)#1 for maximize

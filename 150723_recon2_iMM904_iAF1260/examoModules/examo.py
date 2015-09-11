@@ -1,12 +1,12 @@
 # Copyright (C) 2012 Sergio Rossell
 #
 # This script is part of the EXAMO software
-# 
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -24,13 +24,11 @@ class CbModel():
     """
     Constraint-based model class
     """
-    #{{{
     def __init__(self, S, idSp, idRs, lb, ub, rxns = {}, genes = set(),
                  descrip = ''):
         """
         S should be a sparse coo_matrix
         """
-        #{{{2
         self.S = S
         self.idSp = idSp
         self.idRs = idRs
@@ -42,7 +40,6 @@ class CbModel():
         self.gene2rxn = {}
         for rxn in self.rxns:
             self.gene2rxn[rxn] = self.rxns[rxn]['genes']
-        #}}}2
 
     def separateFwdRevRxns(self):
         """
@@ -50,7 +47,6 @@ class CbModel():
         modelSep [CbModel instance] reversible reactions separated into 
             fwd and rev
         """
-        #{{{
         #from cbModel import CbModel
         #from scipy.sparse import coo_matrix
         from numpy import concatenate
@@ -91,7 +87,6 @@ class CbModel():
                     rxns[rxn] = self.rxns[rxn]
             cbmNew.rxns = rxns
         return cbmNew 
-        #}}}
 
     def initLp(self, name = 'unnamed'):
         from numpy import array
@@ -105,16 +100,13 @@ class CbModel():
         for i, row in enumerate(self.S.toarray()):
             nz = row.nonzero()[0]
             pair = zip(row[nz], array(self.idRs)[nz])
-            s = ''
-            for p in pair:
-                s += '({} * self.{}) + '.format(p[0], p[1])
-            s = s.rstrip(' + ')
+            s = ['({} * self.{})'.format(p[0], p[1]) for p in pair]
+            s = ' + '.join(s)
             s += ' == 0.'
             exec 'self.guro.addConstr( {}, "{}")'.format(s, self.idSp[i])
 
     def setObjective(self, obj, optSense = 'max'):
-        s = ''
-        s += 'self.{}'.format(obj)
+        s = 'self.{}'.format(obj)
         if optSense == 'max':
             exec 'self.guro.setObjective({}, GRB.MAXIMIZE)'.format(s)
         elif optSense == 'min':
@@ -157,11 +149,10 @@ class CbModel():
             fv.append([rxn, fvMin[i], fvMax[i]])
         return fv
 
-    #}}}
 
 
 class MetabGeneExpModel(object):
-    #{{{
+
     def __init__(self, idSp, idRs, S, lb, ub, rH, rL, eps = 1E-10):
         """
         idSp [list] strings with the names of species
@@ -172,7 +163,6 @@ class MetabGeneExpModel(object):
         rH [list] names of reactions classified as highly expressed
         rL [list] names of reactions classified as lowly expressed
         """
-        #{{{2
         self.S = coo_matrix(S)
         self.Srows = [int(i) for i in self.S.row]
         self.Scols = [int(i) for i in self.S.col]
@@ -193,13 +183,11 @@ class MetabGeneExpModel(object):
         self.rL = rL
         self.rHrev = [rxn for i, rxn in enumerate(self.idRs) if 
                 (self.lb[i] < 0.) and (self.ub[i] > 0.) and (rxn in self.rH)]
-        #}}}2
 
     def rowAndColNames(self):
         """
         Adds names for the integer variables and constraints
         """
-        #{{{2
         for rxn in self.rH:
             self.colNames.append('yp_{}'.format(rxn))
             self.rowNames.append('cp_{}'.format(rxn))
@@ -212,10 +200,8 @@ class MetabGeneExpModel(object):
             self.colNames.append('y_{}'.format(rxn))
             self.rowNames.append('cl_{}'.format(rxn))
             self.rowNames.append('cu_{}'.format(rxn))
-        #}}}2
 
-    def buildLhsMatrix(self): 
-        #{{{2
+    def buildLhsMatrix(self):
         for rxn in self.rH:
             self.lhsRows.append(self.rowNames.index('cp_{}'.format(rxn)))
             self.lhsCols.append(self.colNames.index('yp_{}'.format(rxn)))
@@ -252,10 +238,8 @@ class MetabGeneExpModel(object):
             self.lhsRows.append(self.rowNames.index('cu_{}'.format(rxn)))
             self.lhsCols.append(self.colNames.index(rxn))
             self.lhsVals.append(1)
-        #}}}2
 
     def buildRhsAndSenses(self):
-        #{{{2
         self.senses = 'E'*len(self.idSp)
         self.rhsRows = []
         self.rhsCols = []
@@ -289,14 +273,11 @@ class MetabGeneExpModel(object):
             self.senses += 'L'
         self.rhs = list(coo_matrix((self.rhsVals, (self.rhsRows, self.
             rhsCols)), shape = (len(self.rowNames), 1)).toarray().flatten())
-        #}}}2
-    #}}}
 
 class MetabGeneExpModel_gurobi(MetabGeneExpModel):
     """
     Uses gurobi as its milp solver
     """
-    #{{{
     def initGurobi(self):
         from numpy import array
         self.guro = Model('imge')
@@ -313,10 +294,7 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
         for i, row in enumerate(lhs):
             nz = row.nonzero()[0]
             pair = zip(row[nz], array(self.colNames)[nz])
-            s = ''
-            for p in pair:
-                s += '({} * self.{}) + '.format(p[0], p[1]) 
-            s = s.rstrip(' + ')
+            s = ['({} * self.{})'.format(p[0], p[1]) for p in pair] 
             if self.senses[i] == 'E':
                 s += ' == {}'.format(self.rhs[i])
             elif self.senses[i] == 'G':
@@ -343,7 +321,6 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
     def modulateEnzymeActivityAndDirection(self, rxn):
         """
         """
-        #{{{2
         try:
             dummy =  self.initialized
         except AttributeError:
@@ -387,7 +364,7 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
 
         # 2. forcing forward direction
         exec 'self.fwd = self.{}.ub'.format(rxn) 
-        if self.fwd == 0:#if irreversible in the rev dir
+        if self.fwd == 0: #if irreversible in the rev dir
             scoreFwd = 0
             solFwd = []
             del self.fwd
@@ -443,8 +420,6 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
             elif rxn in self.rL:
                 exec 'self.d["y_{0}.ub"] = self.y_{0}.ub'.format(rxn)
                 exec "self.y_{}.setAttr('ub', 0)".format(rxn)
-            else:
-                pass
             self.guro.update()
             self.guro.optimize()
             status = self.guro.getAttr('status')
@@ -464,7 +439,6 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
             self.guro.update()
             del self.d
         return scoreZero, scoreFwd, scoreRev, (solZero, solFwd, solRev)
-    #}}}2
 
     def exploreAlternativeOptima(self, idRs):
         """
@@ -484,7 +458,6 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
                 imgeSols[rxn] = ([], [], [])
         return scores, imgeSols
 
-    #}}}
 
 class MipSeparateFwdRev(object):
     """
@@ -494,7 +467,6 @@ class MipSeparateFwdRev(object):
     fwd, rev pair can carry a flux.
     """
     def __init__(self, cbm, mfr = [], eps = 1E-10):
-        #{{{2
         self.m0 = cbm
         self.mfr = mfr
         self.eps = eps
@@ -516,20 +488,16 @@ class MipSeparateFwdRev(object):
         self.lhsVals = [float(i) for i in self.m.S.data]
         self.rowNames = self.m.idSp[:]
         self.colNames = self.m.idRs[:]
-        #}}}2
     
     def rowAndColNames(self):
-        #{{{
         for rxn in self.mfrRev:
             self.rowNames.append('cfl_{}'.format(rxn)) #constraint fwd lb
             self.rowNames.append('cfu_{}'.format(rxn)) #constraint fwd ub
             self.rowNames.append('crl_{}'.format(rxn)) #constraint rev lb
             self.rowNames.append('cru_{}'.format(rxn)) #constraint rev ub
             self.colNames.append('y_{}'.format(rxn)) #integer variable    
-        #}}}
     
     def buildLhs(self):
-        #{{{
         for rxn in self.mfrRev:
             #fwd lowerbound constrain
             self.lhsRows.append(self.rowNames.index('cfl_{}'.format(rxn)))
@@ -559,10 +527,8 @@ class MipSeparateFwdRev(object):
             self.lhsRows.append(self.rowNames.index('cru_{}'.format(rxn)))
             self.lhsCols.append(self.colNames.index('y_{}'.format(rxn)))
             self.lhsVals.append(self.m.ub[self.colNames.index(rxn + '_rev')])
-        #}}}
 
     def buildRhsAndSenses(self):
-        #{{{
         self.senses = 'E' * len(self.m.idSp)
         self.rhsRows = []
         self.rhsCols = []
@@ -596,7 +562,6 @@ class MipSeparateFwdRev(object):
 
 class MipSeparateFwdRev_gurobi(MipSeparateFwdRev):
     def initMipGurobi(self):
-        #{{{
         from numpy import array
         self.rowAndColNames()
         self.buildLhs()
@@ -626,10 +591,8 @@ class MipSeparateFwdRev_gurobi(MipSeparateFwdRev):
             elif self.senses[i] == 'L':
                 s += ' <= {}'.format(self.rhs[i])
             exec 'self.guro.addConstr( {}, "{}")'.format(s, self.rowNames[i])
-            #}}}
 
     def minSumFluxes_gurobi(self):
-        #{{{
         # setting the objective
         s = 'self.linobj = LinExpr([1.0] * len(self.m.idRs), ['
         for var in self.guro.getVars():
@@ -641,7 +604,6 @@ class MipSeparateFwdRev_gurobi(MipSeparateFwdRev):
         self.guro.setObjective(self.linobj, GRB.MINIMIZE)#1 for minimize
         self.guro.optimize()
         self.initialized = 1
-        #}}}
 
 ################################################################################
 # FUNCTIONS
