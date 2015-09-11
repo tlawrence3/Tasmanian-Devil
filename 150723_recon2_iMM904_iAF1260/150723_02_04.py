@@ -176,7 +176,6 @@ for repetition in range(repetitions):
     #Run the MBA
     for i in range(numProc):
         pid = os.fork()
-        atfork()
         if pid == 0:
             atfork()
             for j in range(numRep):
