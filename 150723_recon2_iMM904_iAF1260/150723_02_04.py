@@ -27,6 +27,7 @@ import re
 import sys
 from copy import copy
 from numpy import array
+import multiprocessing as mp
 
 from sys import path; path.append('./examoModules/')
 from examoModules import *
@@ -109,8 +110,8 @@ for repetition in range(repetitions):
 	################################################################################
     # INPUTS
 
-    numProc = 1# 100	#number of parallel processes used
-    numRep =1# 10		#number of times each process is repeated
+    number_concurrent_processes = 1
+    reps = 1
 
     md = importPickle(fModelDict)
 
@@ -173,29 +174,29 @@ for repetition in range(repetitions):
     if not os.path.exists(mbaCandRxnsDirectorySubset):
         os.mkdir(mbaCandRxnsDirectorySubset, 0777)
 
-    #Run the MBA
-    for i in range(numProc):
-        pid = os.fork()
-        if pid == 0:
-            atfork()
-            for j in range(numRep):
-                locTime = time.localtime()
-                pid = os.getpid()
-                timeStr = '%i%02i%02i%02i%02i%02i' % locTime[:6]
-                tag = '%s_%s_%s' % (description, pid, timeStr)
-                try:
-                    #EG Added despricription, repetition, and lists of compartmental reactions to the function
-                    cr = iterativePrunning(i, m, cH2, description, biomassRxn, lb_biomass, repetition, thresh, eps, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
-                    exportPickle(cr, fOutMbaCandRxns % tag)
-                except:
-                    print 'gurobi error, no solution found %s'  % description
-            os._exit(0)
+    def pruneReps():
+        locTime = time.localtime()
+        pid = os.getpid()
+        atfork()
+        for x in xrange(reps):
+            timeStr = '%i%02i%02i%02i%02i%02i' % locTime[:6]
+            tag = '%s_%s_%s_%s' % (description, pid, x, timeStr)
+            try:
+                #EG Added despricription, repetition, and lists of compartmental reactions to the function
+                cr = iterativePrunning(i, m, cH2, description, biomassRxn, lb_biomass, repetition, thresh, eps, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
+                exportPickle(cr, fOutMbaCandRxns % tag)
+            except:
+                print 'gurobi error, no solution found %s'  % description
 
-    #EG Count the number of exported pickle files, and do not proceed until all files have been written
-    file_count = 0
-    while file_count != numProc*numRep:
-        for file_directory, dirs, files in os.walk(mbaCandRxnsDirectory):
-            file_count = len(files)
+
+    processes = []
+    for _ in xrange(number_concurrent_processes):
+        p = mp.Process(target = pruneReps)
+        p.start()
+        processes.append(p)
+   
+    for p in processes:
+        p.join()
 
     #EG Delete the temporary files generated for every time a rxn is pruned
     shutil.rmtree(mbaCandRxnsDirectorySubset)
