@@ -109,7 +109,7 @@ for repetition in range(repetitions):
 	################################################################################
     # INPUTS
 
-    numProc = 20# 100	#number of parallel processes used
+    numProc = 1# 100	#number of parallel processes used
     numRep =1# 10		#number of times each process is repeated
 
     md = importPickle(fModelDict)

@@ -88,7 +88,7 @@ class CbModel():
             cbmNew.rxns = rxns
         return cbmNew 
 
-    @profile
+    #@profile
     def initLp(self, name = 'unnamed'):
         from numpy import array
         self.guro = Model(name)
@@ -572,7 +572,7 @@ class MipSeparateFwdRev_gurobi(MipSeparateFwdRev):
         self.guro.setParam('OutputFlag', 0) 
         # adding variables
         for i, rxn in enumerate(self.m.idRs):
-            exec 'self.{0} = self.guro.addVar(lb = {}, ub = {}, vtype = GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.m.lb[i], self.m.ub[i])  
+            exec 'self.{0} = self.guro.addVar(lb = {1}, ub = {2}, vtype = GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.m.lb[i], self.m.ub[i])  
         for var in [v for v in self.colNames if v not in self.m.idRs]:
             exec 'self.{0} = self.guro.addVar(lb = 0, ub = 1, vtype = GRB.BINARY, name = "{0}")'.format(var)
         self.guro.update()

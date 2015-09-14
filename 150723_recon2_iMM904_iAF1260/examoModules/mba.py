@@ -100,7 +100,7 @@ def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, repetiti
         act = findActiveRxns(m0, thresh, cH)
         cH_act = cH & act
         if (len(cH - cH_act) != 0):#not all cH rxns are active
-            #print "not all active 1"
+            print "not all active 1"
             return cbm
         #######################################################################
         # INPUTS
@@ -119,7 +119,7 @@ def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, repetiti
         #function, so that the reactants and products could be written out
         nz = getNzRxnsGurobi(mtry1result, activityThreshold, m0.rxns)[1]
     except:
-        #print "exception 1"
+        print "exception 1"
         return cbm
         #EG Identify the reactions that became inactive after the
         #reaction was deleted. If extra deleted reactions cause the
@@ -133,7 +133,7 @@ def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, repetiti
         act2 = findActiveRxns(m1, thresh, cH)
         cH_act2 = cH & act2
         if (len(cH - cH_act2) != 0):#not all cH rxns are active
-            #print rxntodelete
+            print rxntodelete
             return m0
         # STATEMENTS
         hfr = importPickle(fFreqBasedRxns % description)['hfr']
@@ -148,10 +148,10 @@ def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, repetiti
         #to the function, so that the reactants and products could
         #be written out
         nz = getNzRxnsGurobi(mtry2result, activityThreshold, m1.rxns)[1]
-        #print inact
+        print inact
         return m1
     except:
-        #print "exception 2"
+        print "exception 2"
         return m0
 
 #EG 131112 Avoided creating sets for prunableRxns so that randomness
