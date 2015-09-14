@@ -88,13 +88,14 @@ class CbModel():
             cbmNew.rxns = rxns
         return cbmNew 
 
+    @profile
     def initLp(self, name = 'unnamed'):
         from numpy import array
         self.guro = Model(name)
         #turning off the writing of the gurobi.log file
         self.guro.setParam('OutputFlag', 0) 
         for i, rxn in enumerate(self.idRs):
-            exec 'self.{} = self.guro.addVar(lb = {}, ub = {}, vtype = GRB.CONTINUOUS, name = "{}")'.format(rxn, self.lb[i], self.ub[i], rxn)
+            exec 'self.{0} = self.guro.addVar(lb = {1}, ub = {2},vtype = GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.lb[i], self.ub[i])
         self.guro.update()
         # adding constraints
         for i, row in enumerate(self.S.toarray()):
