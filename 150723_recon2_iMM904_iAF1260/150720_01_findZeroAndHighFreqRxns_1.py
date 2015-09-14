@@ -48,16 +48,35 @@ from examoModules import *
 from cobra.io import read_sbml_model
 from decimal import Decimal, getcontext, ROUND_DOWN
 import cobra
+import argparse
 
 ################################################################################
 # _01_findZeroAndHighFreqRxns.py
 
 ################################################################################
-# INPUTS
-model = sys.argv[1]
-pickle_model = sys.argv[2]
-description = sys.argv[3]
-biomassRxn = sys.argv[4]
+#Define argparse command line inputs
+parser = argparse.ArgumentParser(description='_01_findZeroAndHighFreqRxns.py')
+parser.add_argument('s', nargs="+", type=str, help='Necessary variable: SBML file')
+parser.add_argument('p', nargs="+", type=str, help='Necessary variable: pickle file')
+parser.add_argument('d', nargs="+", type=str, help='Necessary variable: condition description')
+parser.add_argument('b', nargs="+", type=str, help='Necessary variable: biomass reaction')
+parser.add_argument('-e', type=float, default=1E-1, help='Minimum value for fluxes forced to be non-zero (for the implementation of the pathway algorithm created by Shlomi); default value: 1E-1')
+parser.add_argument('-a', type=float, default=1E-10, help='Activity threshold (above which a flux is considered to be larger than 0); default value: 1E-10')
+
+args = parser.parse_args()
+
+model = str(args.s)
+model = model[2:-2]
+pickle_model = str(args.p)
+pickle_model = pickle_model[2:-2]
+description = str(args.d)
+description = description[2:-2]
+biomassRxn = str(args.b)
+biomassRxn = biomassRxn[2:-2]
+if args.e is not None:
+    eps = args.e
+if args.a is not None:
+    activityThreshold = args.a
 
 #Create necessary variables and import the model
 if model[-4:] == '.xml':
@@ -74,13 +93,6 @@ cobra_model.optimize(solver='gurobi')
 getcontext().rounding = ROUND_DOWN
 getcontext().prec = 4
 lb_biomass = Decimal(cobra_model.solution.f) + Decimal('0.0')
-
-# Algorithm variables
-#threshold above which a flux is considered to be larger than zero
-activityThreshold = 1E-10
-
-# minimum value for fluxes forced to be non-zero
-eps = 1E-1 #EG Using a higher threshold for the 1st script
 
 # files for export
 fOutRxnsByExpression = 'data/rxnsClassifiedByExprssion_%s.pkl'
@@ -127,7 +139,7 @@ model = MetabGeneExpModel_gurobi(m.idSp, m.idRs, m.S, m.lb, m.ub, rH, rL, eps)
 scores, imgeSols = model.exploreAlternativeOptima(idRs)
 
 # 3. identifying zero and high frequency reactions
-zfr, hfr = getZeroAndHighFrequencyRxns(scores, imgeSols, idRs)
+zfr, hfr = getZeroAndHighFrequencyRxns(scores, imgeSols, idRs, activityThreshold)
 exportPickle({'zfr' : zfr, 'hfr' : hfr}, fOutFreqBasedRxns % description)
 
 print 'zfr ', len(zfr)

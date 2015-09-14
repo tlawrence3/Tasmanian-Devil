@@ -32,14 +32,60 @@ from sys import path; path.append('./examoModules/')
 from examoModules import *
 from decimal import Decimal, getcontext, ROUND_DOWN
 import cobra
+import argparse
+from Crypto.Random import atfork
+import cPickle as pickle
 
 ################################################################################
 # INPUTS
-model = sys.argv[1]
-pickle_model = sys.argv[2]
-description = sys.argv[3]
-biomassRxn = sys.argv[4]
-repetitions = int(sys.argv[5])
+#Define argparse command line inputs
+parser = argparse.ArgumentParser(description='_01_findZeroAndHighFreqRxns.py')
+parser.add_argument('s', nargs="+", type=str, help='Necessary variable: SBML file')
+parser.add_argument('p', nargs="+", type=str, help='Necessary variable: pickle file')
+parser.add_argument('d', nargs="+", type=str, help='Necessary variable: condition description')
+parser.add_argument('b', nargs="+", type=str, help='Necessary variable: biomass reaction')
+parser.add_argument('r', nargs="+", type=int, help='Necessary variable: number of repetitions of the 2nd-4th scripts for final flux states')
+parser.add_argument('-e', type=float, default=1E-10, help='Minimum value for active flux of reversible reactions in an irreversible model; default value: 1E-10')
+parser.add_argument('-a', type=float, default=1E-10, help='Activity threshold (above which a flux is considered to be larger than 0); default value: 1E-10')
+parser.add_argument('-t', type=float, default=1E-10, help='Activity threshold for finding active reactions; default value: 1E-10')
+parser.add_argument('-EXrxns', type=str, help='Pickle file containing extracellular reactions list')
+parser.add_argument('-EXtrrxns', type=str, help='Pickle file containing extracellular transport reactions list')
+parser.add_argument('-Othertrrxns', type=str, help='Pickle file containing other compartmental transport reactions list')
+
+args = parser.parse_args()
+
+model = str(args.s)
+model = model[2:-2]
+pickle_model = str(args.p)
+pickle_model = pickle_model[2:-2]
+description = str(args.d)
+description = description[2:-2]
+biomassRxn = str(args.b)
+biomassRxn = biomassRxn[2:-2]
+repetitions = str(args.r)
+repetitions = int(repetitions[1:-1])
+eps = args.e
+activityThreshold = args.a
+thresh = args.t
+#EG Create lists of extracellular reactions, extracellular transport reactions, and other compartmental transport reactions, so that the reactions can be pruned in that order first.
+if args.EXrxns is not None:
+    EXrxns_file = str(args.EXrxns)
+    md = pickle.load(open(EXrxns_file, 'rb'))
+    EXrxns = md['EXrxns']
+else:
+    EXrxns = []
+if args.EXtrrxns is not None:
+    EXtrrxns_file = str(args.EXtrrxns)
+    md = pickle.load(open(EXtrrxns_file, 'rb'))
+    EXtrrxns = md['EXtrrxns']
+else:
+    EXtrrxns = []
+if args.Othertrrxns is not None:
+    Othertrrxns_file = str(args.Othertrrxns)
+    md = pickle.load(open(Othertrrxns_file, 'rb'))
+    Othertrrxns = md['Othertrrxns']
+else:
+    Othertrrxns = []
 
 #Create necessary variables and import the model
 if model[-4:] == '.xml':
@@ -47,17 +93,13 @@ if model[-4:] == '.xml':
 if model[-4:] == '.mat':
     cobra_model = cobra.io.mat.load_matlab_model('data/%s' % model)
 
-# model dictionary of the original model with blocked reactions deleted
+#model dictionary of the original model with blocked reactions deleted
 fModelDict = 'data/%s' % pickle_model
 
 cobra_model.optimize(solver='gurobi')
 getcontext().rounding = ROUND_DOWN
 getcontext().prec = 4
 lb_biomass = Decimal(cobra_model.solution.f) + Decimal('0.0')
-
-# Algorithm variables
-#threshold above which a flux is considered to be larger than zero
-activityThreshold = 1E-10
 
 for repetition in range(repetitions):
 
@@ -67,7 +109,7 @@ for repetition in range(repetitions):
 	################################################################################
     # INPUTS
 
-    numProc = 1# 100	#number of parallel processes used
+    numProc = 20# 100	#number of parallel processes used
     numRep =1# 10		#number of times each process is repeated
 
     md = importPickle(fModelDict)
@@ -103,9 +145,9 @@ for repetition in range(repetitions):
     zfr_check = 0
     try:
         m = deleteCbmRxns(m0, fbr['zfr'])
-        act = findActiveRxns(m, 1E-10, new_hfr)
+        act = findActiveRxns(m, thresh, new_hfr)
         cH = new_hfr & act
-        act = findActiveRxns(m, 1E-10, cH)
+        act = findActiveRxns(m, thresh, cH)
         cH2 = cH & act
     except:
         zfr_check = 1
@@ -115,23 +157,16 @@ for repetition in range(repetitions):
         for i in fbr['zfr']:
             try:
                 m1 = deleteCbmRxns(m0, i)
-                act = findActiveRxns(m1, 1E-10, new_hfr)
+                act = findActiveRxns(m1, thresh, new_hfr)
                 m0 = m1
                 zfr_list.append(i)
             except:
                 continue
         m = deleteCbmRxns(m0, zfr_list)
-        act = findActiveRxns(m, 1E-10, new_hfr)
+        act = findActiveRxns(m, thresh, new_hfr)
         cH = new_hfr & act
-        act = findActiveRxns(m, 1E-10, cH)
+        act = findActiveRxns(m, thresh, cH)
         cH2 = cH & act		
-
-    #EG Create lists of extracellular reactions, extracellular transport reactions, and other compartmental transport reactions, so that the reactions can be pruned in that order first.
-    EXrxns = []
-
-    EXtrrxns = [] 
-
-    Othertrrxns = []
 
     #EG Make a directory for temporary files for every time a rxn is pruned
     mbaCandRxnsDirectorySubset = 'examoModules/data/%s_%s/' % (description, str(repetition))
@@ -142,6 +177,7 @@ for repetition in range(repetitions):
     for i in range(numProc):
         pid = os.fork()
         if pid == 0:
+            atfork()
             for j in range(numRep):
                 locTime = time.localtime()
                 pid = os.getpid()
@@ -149,7 +185,7 @@ for repetition in range(repetitions):
                 tag = '%s_%s_%s' % (description, pid, timeStr)
                 try:
                     #EG Added despricription, repetition, and lists of compartmental reactions to the function
-                    cr = iterativePrunning(i, m, cH2, description, biomassRxn, lb_biomass, repetition, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
+                    cr = iterativePrunning(i, m, cH2, description, biomassRxn, lb_biomass, repetition, thresh, eps, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
                     exportPickle(cr, fOutMbaCandRxns % tag)
                 except:
                     print 'gurobi error, no solution found %s'  % description
@@ -230,7 +266,7 @@ for repetition in range(repetitions):
     orderedFreq.sort(reverse = True)
 
     # EG Making sure that all hfr reactions are active.
-    act = findActiveRxns(m, 1E-10, fbr['hfr'])
+    act = findActiveRxns(m, thresh, fbr['hfr'])
     mRxns = fbr['hfr'] & act
 
     #EG Rather than identifying which reactions need to be added to make all of the hfrs active, reactions will be added until the a flux can be achieved for the biomass reaction 
@@ -262,13 +298,9 @@ for repetition in range(repetitions):
             #EG Beginning of the 4th script
 			################################################################################
             # INPUTS
-            eps = 1E-10
-
             fModelExamo = 'data/examo_%s_%s_dict.pkl'
             fFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
-
             fOutMetabState = 'data/metabolicState_%s_%s.csv'
-
 			################################################################################
             # STATEMENTS
 
