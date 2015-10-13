@@ -1,0 +1,8 @@
+Highly expressed for Anaerobic:220
+Lowly expressed for Anaerobic:220
+Otherwise undefined Anaerobic:464
+
+Highly expressed for Aerobic:220
+Lowly expressed for Aerobic:220
+Otherwise undefined Aerobic:464
+

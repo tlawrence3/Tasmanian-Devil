@@ -1,0 +1,8 @@
+Highly expressed for Ethanol:222
+Lowly expressed for Ethanol:222
+Otherwise undefined Ethanol:460
+
+Highly expressed for Glucose:222
+Lowly expressed for Glucose:222
+Otherwise undefined Glucose:460
+

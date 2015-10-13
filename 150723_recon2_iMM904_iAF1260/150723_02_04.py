@@ -164,6 +164,7 @@ for repetition in range(repetitions):
             except:
                 continue
         m = deleteCbmRxns(m0, zfr_list)
+lp
         act = findActiveRxns(m, thresh, new_hfr)
         cH = new_hfr & act
         act = findActiveRxns(m, thresh, cH)
