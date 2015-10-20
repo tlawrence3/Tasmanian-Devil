@@ -1,0 +1,432 @@
+set(['R_ALCD26xim', 'R_TMN', 'R_EX_2mppal_e_', 'R_DHPSm', 'R_LPP_SC', 'R_ALCD24xim', 'R_PAK_SC', 'R_ACHLE1', 'R_ASNt6', 'R_ASNt7', 'R_GLYOX', 'R_LEUt6', 'R_LEUt7', 'R_EX_iamac_e_', 'R_DNMPPA', 'R_CITt2r', 'R_EX_succ_e_', 'R_FTHFCLm', 'R_ALCD2irm', 'R_2MPPALt', 'R_ALCD22yi', 'R_PHEACt', 'R_PI35BP5P_SC', 'R_ACESt', 'R_ILEt6', 'R_ILEt7', 'R_DPR', 'R_DNTPPA', 'R_SSALy', 'R_INSK', 'R_IAMOHtm', 'R_D_LACDm', 'R_SUCCt2r', 'R_PYDAMK', 'R_PMI12346PS', 'R_LGTHL', 'R_EX_ergst_e_', 'R_EX_aces_e_', 'R_EX_ibutac_e_', 'R_ALCD23yi', 'R_PMI12346PH', 'R_HYPOE', 'R_HETZK', 'R_FDNG', 'R_ETOHtm', 'R_IBUTACt', 'R_NADPPPSm', 'R_ALCD25yi', 'R_IND3ETHtm', 'R_PI3P5K_SC', 'R_IBUTOHtm', 'R_EX_pyr_e_', 'R_PMI1346PH', 'R_GLCGSDv', 'R_PI45BP5P_SC', 'R_PMI1346PS', 'R_G6PDH2er', 'R_PFK26', 'R_TYRTAim', 'R_ASPGLU2m', 'R_DRTPPD', 'R_PMDPHT', 'R_13BGH', 'R_NTD1', 'R_NTD5', 'R_NTD7', 'R_NTD6', 'R_GLNt7', 'R_GLNt6', 'R_ERGSTt', 'R_PDE1', 'R_G6Pter', 'R_PACALDtm', 'R_ACHLE2', 'R_FBP26', 'R_HSDyi', 'R_GAM6Pt', 'R_EX_pheac_e_', 'R_2OBUTtm', 'R_ID3ACALDtm', 'R_ALCD24yi', 'R_ICDHxm', 'R_OHACT1', 'R_OHACT2', 'R_OHACT3', 'R_OHACT4', 'R_OHACT5', 'R_DROPPRy', 'R_EX_2mbac_e_', 'R_D_LACDcm', 'R_RNDR4', 'R_DB4PS', 'R_GLYCt2', 'R_SBT_Dt', 'R_3MBALDtm', 'R_TMDPP', 'R_6PGLter', 'R_MEVK1', 'R_MEVK2', 'R_NADKm', 'R_EX_gam6p_e_', 'R_PUNP2', 'R_TYRt2m', 'R_THYMt3r', 'R_2PHETOHtm', 'R_2MBALDt', 'R_D_LACt2', 'R_ATPATF1', 'R_SPMDAT1', 'R_ALCD23xim', 'R_EX_sbt_D_e_', 'R_IAMACt', 'R_G3PD1ir', 'R_ALCD25xim', 'R_GLCNtv', 'R_EX_lac_D_e_', 'R_EX_thym_e_', 'R_RNDR2', 'R_RNDR3', 'R_RNDR1', 'R_GTPCII', 'R_EX_cit_e_', 'R_2MPPALtm', 'R_TYRt7', 'R_TYRt6', 'R_PI4P5K_SC', 'R_TMDK1', 'R_RBFSb', 'R_RBFSa', 'R_AP4AHr', 'R_THFATm', 'R_EX_2mbald_e_', 'R_2MBACt'])
+set(['R_ACOAHim', 'R_ACHLE3', 'R_2MBALDtm', 'R_PYR5CDm', 'R_EX_glx_e_', 'R_ALCD22xim', 'R_EX_pacald_e_', 'R_GLXt', 'R_PAPtm', 'R_EX_pap_e_', 'R_2MBTOHtm', 'R_C22STDS', 'R_EX_xan_e_', 'R_C5STDS', 'R_G5SADrm', 'R_PAPt', 'R_EX_3mop_e_', 'R_NTD9', 'R_MEVK3', 'R_PACALDt', 'R_PPNDH', 'R_PAN4Ptm', 'R_EX_acald_e_', 'R_XANt', 'R_ACALDt', 'R_ACPSm', 'R_TREt2v', 'R_GLCtv', 'R_BPNT', 'R_OAAt', 'R_TREHv', 'R_EX_oaa_e_', 'R_3MOPt', 'R_C8STI'])
+set(['R_EX_ac_e_', 'R_GUAD', 'R_DHORDi', 'R_DCTPD', 'R_EX_mal_L_e_', 'R_D_LACt2m', 'R_EX_akg_e_', 'R_POLYAO3'])
+set(['R_FECOSTt', 'R_SAM24MT', 'R_3C3HMPt', 'R_GLUSx', 'R_EX_fecost_e_', 'R_EX_3c3hmp_e_'])
+set(['R_34HPPt2m', 'R_FAS120COA', 'R_34HPLFM', 'R_FAS80COA_L', 'R_ACCOACr', 'R_4HBZCOAFm', 'R_FACOAL140', 'R_PMPK', 'R_T4HCINNMFM', 'R_THZPSN1_SC', 'R_4HBZFm', 'R_TMPPP', 'R_TTDCAtr', 'R_FAS100COA', 'R_AHMMPS', 'R_COUCOAFm', 'R_FAS140COA', 'R_EX_ttdca_e_'])
+not all active 1
+not all active 1
+set(['R_MALOAAtp', 'R_GLUt7m'])
+not all active 1
+set(['R_CYSTS', 'R_EX_4abz_e_'])
+R_MOHMT
+exception 1
+set(['R_DKMPPD2', 'R_PPNCL2', 'R_POLYAO2', 'R_ALDD22x', 'R_MTRI', 'R_UNK3', 'R_AABTN', 'R_APRTO2', 'R_PTPATi', 'R_PANTS', 'R_MTAP', 'R_DIAT', 'R_POLYAO', 'R_NABTNO', 'R_SPMS', 'R_SPRMS', 'R_2DHPtm', 'R_PANTtm', 'R_ADMDC', 'R_DPRm', 'R_ADPT', 'R_DPCOAK', 'R_PNTK', 'R_ABUTt2r', 'R_EX_4abut_e_', 'R_MDRPD', 'R_PPCDC'])
+not all active 1
+exception 1
+exception 1
+not all active 1
+not all active 1
+not all active 1
+R_EX_zymst_e_
+set(['R_HCO3En', 'R_HCO3tn', 'R_EX_dttp_e_', 'R_ZYMSTt', 'R_DTTPt'])
+exception 1
+exception 1
+set([])
+not all active 1
+exception 1
+not all active 1
+not all active 1
+R_CO2t
+not all active 1
+not all active 1
+R_EX_id3acald_e_
+not all active 1
+exception 1
+not all active 1
+R_EX_for_e_
+set(['R_TREH', 'R_GLYGS', 'R_GBEZ', 'R_EX_co2_e_', 'R_ID3ACALDt', 'R_FORt', 'R_GLUN'])
+not all active 1
+set([])
+exception 1
+R_HISt2r
+not all active 1
+not all active 1
+set(['R_ALDD2xm', 'R_EX_his_L_e_', 'R_PUNP3'])
+not all active 1
+R_GLUK
+R_FUMm
+set(['R_EX_orn_e_'])
+set(['R_ICDHy'])
+not all active 1
+set(['R_TRDOXtp', 'R_TRDRDtp'])
+set(['R_UGLT'])
+not all active 1
+not all active 1
+exception 1
+not all active 1
+not all active 1
+not all active 1
+not all active 1
+set(['R_SERt2r'])
+not all active 1
+set(['R_GLUt2r'])
+set(['R_EX_3mbald_e_'])
+set([])
+exception 1
+exception 1
+not all active 1
+R_TRPt2r
+not all active 1
+set(['R_ASPt5n', 'R_FBP', 'R_KYN', 'R_EX_hxan_e_', 'R_EX_trp_L_e_', 'R_HXANt2r'])
+set(['R_HSK'])
+set([])
+set([])
+set(['R_AKGDbm'])
+not all active 1
+not all active 1
+not all active 1
+exception 1
+set(['R_EX_ala_L_e_'])
+R_ADK4
+not all active 1
+not all active 1
+not all active 1
+exception 1
+set(['R_NDPK9'])
+not all active 1
+set(['R_ASPTAm'])
+exception 1
+set([])
+not all active 1
+set(['R_DHAD1m', 'R_ACLSm'])
+exception 1
+not all active 1
+exception 1
+exception 1
+not all active 1
+set([])
+not all active 1
+not all active 1
+set(['R_PROtm', 'R_PRO1xm'])
+set(['R_MALt2r', 'R_AKGMAL'])
+set(['R_ILEt2r'])
+not all active 1
+exception 1
+exception 1
+not all active 1
+exception 1
+not all active 1
+not all active 1
+set([])
+set([])
+exception 1
+exception 1
+not all active 1
+not all active 1
+set(['R_TYRt2r'])
+not all active 1
+set(['R_EX_arg_L_e_'])
+set([])
+set(['R_ACtr'])
+exception 1
+not all active 1
+not all active 1
+exception 1
+set(['R_EX_fum_e_'])
+exception 1
+exception 1
+not all active 1
+exception 1
+not all active 1
+not all active 1
+not all active 1
+set([])
+Wrote profile results to mba_no_fork.py.lprof
+Timer unit: 1e-06 s
+
+Total time: 10.3233 s
+File: examo.py
+Function: initLp at line 95
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    95                                               @profile
+    96                                               def initLp(self, name = 'unnamed'):
+    97       188          942      5.0      0.0          from numpy import array
+    98       188        14133     75.2      0.1          self.guro = Model(name)
+    99                                                   #turning off the writing of the gurobi.log file
+   100       188        48179    256.3      0.5          self.guro.setParam('OutputFlag', 0) 
+   101     89096        54181      0.6      0.5          for i, rxn in enumerate(self.idRs):
+   102     88908      1964078     22.1     19.0              exec 'self.%s = self.guro.addVar(lb = %f, ub = %f, vtype = GRB.CONTINUOUS, name = "%s")' % (rxn, self.lb[i], self.ub[i], rxn)
+   103       188        27122    144.3      0.3          self.guro.update()
+   104                                                   # adding constraints
+   105     75417       124527      1.7      1.2          for i, row in enumerate(self.S.toarray()):
+   106     75229       293959      3.9      2.8              nz = row.nonzero()[0]
+   107     75229      2664818     35.4     25.8              pair = zip(row[nz], array(self.idRs)[nz])
+   108     75229        44738      0.6      0.4              s = ''
+   109    300322       169784      0.6      1.6              for p in pair:
+   110    225093       442565      2.0      4.3                  s += '(%s * self.%s) + ' % (p[0], p[1])
+   111     75229        70636      0.9      0.7              s = s.rstrip(' + ')
+   112     75229        43996      0.6      0.4              s += ' == %s' % 0.
+   113     75229      4359665     58.0     42.2              exec 'self.guro.addConstr( %s, "%s")' % (s, self.idSp[i])
+
+Total time: 23.3287 s
+File: mba_no_fork.py
+Function: findActiveRxns at line 68
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    68                                           @profile
+    69                                           def findActiveRxns(cbm, thresh, rl = []):
+    70       188          193      1.0      0.0      act = set()
+    71       188         6234     33.2      0.0      arrayIdRs = array(cbm.idRs[:])
+    72       188     11061322  58836.8     47.4      init = cbm.initLp()
+    73       188          142      0.8      0.0      init 
+    74       188          152      0.8      0.0      if rl:
+    75       188          117      0.6      0.0          idRs = rl
+    76                                               else:
+    77                                                   idRs = cbm.idRs[:]
+    78                                               # maximizing all reactions at once
+    79                                               # reseting the objective
+    80       188         6623     35.2      0.0      cbm.guro.setObjective(0)
+    81                                               # setting the objective
+    82       188          123      0.7      0.0      s = 'cbm.linobj = LinExpr([1.0] * len(cbm.idRs), ['
+    83     89096        63343      0.7      0.3      for var in cbm.guro.getVars():
+    84     88908       244057      2.7      1.0          s += 'cbm.%s, ' % var.varName
+    85       188          636      3.4      0.0      s = s.rstrip(', ')
+    86       188          365      1.9      0.0      s += '])'
+    87       188       158345    842.3      0.7      exec s
+    88                                               #EG Initially set the objective to maximize
+    89       188        35228    187.4      0.2      cbm.guro.setObjective(cbm.linobj)#1 for maximize
+    90       188       306162   1628.5      1.3      cbm.guro.optimize()
+    91     78208       141276      1.8      0.6      sol = abs(array([v.x for v in cbm.guro.getVars()]))
+    92       164         1987     12.1      0.0      indices = (sol > thresh).nonzero()[0]
+    93       164         5421     33.1      0.0      act.update(arrayIdRs[indices])
+    94       164         6526     39.8      0.0      idRs = list(set(idRs) - act)
+    95                                               # maximizing
+    96     27184        14064      0.5      0.1      for rxn in idRs:
+    97     27020        16168      0.6      0.1          if rxn not in act:
+    98                                                   #EG Reduce the number of reactions that need to be investigated
+    99                                                   #based off of upper boundary constraints
+   100      7041        40592      5.8      0.2              if cbm.ub[cbm.idRs.index(rxn)] != 0:
+   101                                                           # reseting the objective
+   102      7041       170976     24.3      0.7                  cbm.guro.setObjective(0)
+   103      7041       379119     53.8      1.6                  exec 'cbm.guro.setObjective(cbm.%s, GRB.MAXIMIZE)' % rxn
+   104      7041      4164433    591.5     17.9                  cbm.guro.optimize()
+   105   3397732      5890259      1.7     25.2                  sol = abs(array([v.x for v in cbm.guro.getVars()]))
+   106      7041        61021      8.7      0.3                  indices = (sol > thresh).nonzero()[0]
+   107                                                           #act2 = act.copy()
+   108      7041       267081     37.9      1.1                  act.update(arrayIdRs[indices])
+   109                                                           #if act2 != act:
+   110                                                               #print "added 1"
+   111                                                               #if rxn in act:
+   112                                                                   #print rxn
+   113       164         2942     17.9      0.0      idRs = list(set(idRs) - act)
+   114                                               # minimizing
+   115       370          273      0.7      0.0      for rxn in idRs:
+   116       206          136      0.7      0.0          if rxn not in act:
+   117                                                   #EG Reduce the number of reactions that need to be investigated
+   118                                                   #based off of lower boundary constraints
+   119       206          850      4.1      0.0              if cbm.lb[cbm.idRs.index(rxn)] != 0:
+   120                                                           # reseting the objective
+   121       206         4792     23.3      0.0                  cbm.guro.setObjective(0)
+   122       206        10947     53.1      0.0                  exec 'cbm.guro.setObjective(cbm.%s, GRB.MINIMIZE)' % rxn
+   123       206        92913    451.0      0.4                  cbm.guro.optimize()
+   124     95367       165302      1.7      0.7                  sol = abs(array([v.x for v in cbm.guro.getVars()]))
+   125       206         1758      8.5      0.0                  indices = (sol > thresh).nonzero()[0]
+   126                                                           #act2 = act.copy()
+   127       206         6728     32.7      0.0                  act.update(arrayIdRs[indices])
+   128                                                           #if act2 != act:
+   129                                                           #    print "added 2"
+   130                                                           #    if rxn in act:
+   131                                                           #        print rxn
+   132       164           82      0.5      0.0      return act
+
+Total time: 53.8827 s
+File: mba_no_fork.py
+Function: pruneRxn at line 134
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   134                                           @profile
+   135                                           def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
+   136                                                        lb_biomass):
+   137       133           94      0.7      0.0      try:
+   138                                                   #EG Prune a reaction. If a flux soltuion cannot be obtained
+   139                                                   #or if the biomass flux becomes inactive, stop pruning.
+   140       133           82      0.6      0.0          rxntodelete = rxn
+   141       133      7809197  58715.8     14.5          m0 = deleteCbmRxns(cbm, rxntodelete)
+   142                                                   #NOTE the threshold for is set a bit higher for cH rxns
+   143       133     17396272 130799.0     32.3          act = findActiveRxns(m0, thresh, cH)
+   144       109         3481     31.9      0.0          cH_act = cH & act
+   145       109          955      8.8      0.0          if (len(cH - cH_act) != 0):#not all cH rxns are active
+   146        53          174      3.3      0.0              print "not all active 1"
+   147        53           31      0.6      0.0              return cbm
+   148                                                   #######################################################################
+   149                                                   # INPUTS
+   150        56           32      0.6      0.0          eps = 1E-10
+   151        56           29      0.5      0.0          activityThreshold = 1E-10
+   152        56           25      0.4      0.0          fFreqBasedRxns = '../data/freqBasedRxns_%s.pkl'
+   153                                                   #######################################################################
+   154                                                   # STATEMENTS
+   155        56        15477    276.4      0.0          hfr = importPickle(fFreqBasedRxns % description)['hfr']
+   156        56         3153     56.3      0.0          hfr = hfr & set(m0.idRs)
+   157                                                   #forcing biomass production
+   158        56          301      5.4      0.0          m0.lb[m0.idRs.index(biomassRxn)] = lb_biomass
+   159                                                   #minimizingg the sum of fluxes
+   160        56       596735  10656.0      1.1          mtry1result = MipSeparateFwdRev_gurobi(m0, hfr, eps)
+   161        56      8186104 146180.4     15.2          mtry1result.initMipGurobi()
+   162        56       694822  12407.5      1.3          mtry1result.minSumFluxes_gurobi()
+   163                                                   #EG Added activityThreshold and the m0.rxns dictionary to the
+   164                                                   #function, so that the reactants and products could be written out
+   165        56       643093  11483.8      1.2          nz = getNzRxnsGurobi(mtry1result, activityThreshold, m0.rxns)[1]
+   166        27           24      0.9      0.0      except:
+   167        27           88      3.3      0.0          print "exception 1"
+   168        27           19      0.7      0.0          return cbm
+   169                                                   #EG Identify the reactions that became inactive after the
+   170                                                   #reaction was deleted. If extra deleted reactions cause the
+   171                                                   #model to be unsolvable, or if extra deleted inactive reactions
+   172                                                   #cause any of the hfrs to become inactive, or if a solution
+   173                                                   #cannot be obtained with a biomass flux, only delete the one
+   174                                                   #reaction. Otherwise, delete the inactive reactions.
+   175        53           73      1.4      0.0      try:
+   176        53         4616     87.1      0.0          inact = set(m0.idRs) - act - cH
+   177        53      3205931  60489.3      5.9          m1 = deleteCbmRxns(m0, inact)
+   178        53      7627379 143912.8     14.2          act2 = findActiveRxns(m1, thresh, cH)
+   179        53         1632     30.8      0.0          cH_act2 = cH & act2
+   180        53          435      8.2      0.0          if (len(cH - cH_act2) != 0):#not all cH rxns are active
+   181        10           32      3.2      0.0              print rxntodelete
+   182        10            7      0.7      0.0              return m0
+   183                                                   ###################################################################
+   184                                                   # INPUTS
+   185        43           22      0.5      0.0          eps = 1E-10
+   186        43           24      0.6      0.0          activityThreshold = 1E-10
+   187        43           18      0.4      0.0          fFreqBasedRxns = '../data/freqBasedRxns_%s.pkl'
+   188                                                   ###################################################################
+   189                                                   # STATEMENTS
+   190        43        11376    264.6      0.0          hfr = importPickle(fFreqBasedRxns % description)['hfr']
+   191        43         2267     52.7      0.0          hfr = hfr & set(m1.idRs)
+   192                                                   #forcing biomass production
+   193        43          227      5.3      0.0          m1.lb[m1.idRs.index(biomassRxn)] = lb_biomass
+   194                                                   #minimizing the sum of fluxes
+   195        43       459480  10685.6      0.9          mtry2result = MipSeparateFwdRev_gurobi(m1, hfr, eps)
+   196        43      6178585 143688.0     11.5          mtry2result.initMipGurobi()
+   197        43       530572  12338.9      1.0          mtry2result.minSumFluxes_gurobi()
+   198                                                   #EG Added activityThreshold and the m1.rxns dictionary
+   199                                                   #to the function, so that the reactants and products could
+   200                                                   #be written out
+   201        43       509387  11846.2      0.9          nz = getNzRxnsGurobi(mtry2result, activityThreshold, m1.rxns)[1]
+   202        43          452     10.5      0.0          print inact
+   203        43           31      0.7      0.0          return m1
+   204                                               except:
+   205                                                   print "exception 2"
+   206                                                   return m0
+
+Total time: 54.1956 s
+File: mba_no_fork.py
+Function: iterativePrunning at line 211
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   211                                           @profile
+   212                                           def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
+   213                                                                 repetition, thresh = 1E-10, EXrxns = [],
+   214                                                                 EXtrrxns = [], Othertrrxns = []):
+   215                                               """
+   216                                               solver can be 'cplex', 'glpk' or 'gurobi'
+   217                                               """
+   218         1            1      1.0      0.0      if len(EXrxns) > 0:
+   219                                                   EXrxnsprune = list(set(list(EXrxns)) - cH)
+   220                                                   random.shuffle(EXrxnsprune)
+   221                                                   while EXrxnsprune:
+   222                                                       rxn1 = EXrxnsprune.pop()
+   223                                                       try:
+   224                                                           mTemp1 = pruneRxn(mTemp1, cH, rxn1, thresh, description,
+   225                                                                             repetition, biomassRxn, lb_biomass)
+   226                                                           EXrxnsprune2 = []
+   227                                                           for k in mTemp1.idRs:
+   228                                                               if k in EXrxnsprune:
+   229                                                                   EXrxnsprune2.append(k)
+   230                                                           random.shuffle(EXrxnsprune2)
+   231                                                           EXrxnsprune = EXrxnsprune2
+   232                                                       except NameError:
+   233                                                           mTemp1 = pruneRxn(m, cH, rxn1, thresh, description,
+   234                                                                             repetition, biomassRxn, lb_biomass)
+   235                                                           EXrxnsprune2 = []
+   236                                                           for k in mTemp1.idRs:
+   237                                                               if k in EXrxnsprune:
+   238                                                                   EXrxnsprune2.append(k)
+   239                                                           random.shuffle(EXrxnsprune2)
+   240                                                           EXrxnsprune = EXrxnsprune2
+   241         1            1      1.0      0.0      if len(EXtrrxns) > 0:
+   242                                                   EXtrrxnsprune = list(set(list(EXtrrxns)) - cH)
+   243                                                   EXtrrxnsprunelist = []
+   244                                                   for j in EXtrrxnsprune:
+   245                                                       if j in mTemp1.idRs:
+   246                                                           EXtrrxnsprunelist.append(j)
+   247                                                   random.shuffle(EXtrrxnsprune)
+   248                                                   while EXtrrxnsprune:
+   249                                                       rxn2 = EXtrrxnsprune.pop()
+   250                                                       try:
+   251                                                           mTemp1 = pruneRxn(mTemp1, cH, rxn2, thresh, description,
+   252                                                                             repetition, biomassRxn, lb_biomass)
+   253                                                           EXtrrxnsprune2 = []
+   254                                                           for k in mTemp1.idRs:
+   255                                                               if k in EXtrrxnsprune:
+   256                                                                   EXtrrxnsprune2.append(k)
+   257                                                           random.shuffle(EXtrrxnsprune2)
+   258                                                           EXtrrxnsprune = EXtrrxnsprune2
+   259                                                       except NameError:
+   260                                                           mTemp1 = pruneRxn(m, cH, rxn2, thresh, description,
+   261                                                                             repetition, biomassRxn, lb_biomass)
+   262                                                           EXtrrxnsprune2 = []
+   263                                                           for k in mTemp1.idRs:
+   264                                                               if k in EXtrrxnsprune:
+   265                                                                   EXtrrxnsprune2.append(k)
+   266                                                           random.shuffle(EXtrrxnsprune2)
+   267                                                           EXtrrxnsprune = EXtrrxnsprune2
+   268                                           
+   269         1            1      1.0      0.0      prunableRxns = []
+   270         1            0      0.0      0.0      try:
+   271         1            3      3.0      0.0          for j in mTemp1.idRs:
+   272                                                       if j not in list(cH):
+   273                                                           if j not in EXrxns:
+   274                                                               if j not in EXtrrxns:
+   275                                                                   if j not in Othertrrxns:
+   276                                                                       prunableRxns.append(j)
+   277         1            1      1.0      0.0      except NameError:
+   278       747          361      0.5      0.0          for j in m.idRs:
+   279       746         3667      4.9      0.0              if j not in list(cH):
+   280       397          197      0.5      0.0                  if j not in EXrxns:
+   281       397          193      0.5      0.0                      if j not in EXtrrxns:
+   282       397          182      0.5      0.0                          if j not in Othertrrxns:
+   283       397          213      0.5      0.0                              prunableRxns.append(j)
+   284         1          240    240.0      0.0      random.shuffle(prunableRxns)
+   285       134           84      0.6      0.0      while prunableRxns:
+   286       133          137      1.0      0.0          rxn3 = prunableRxns.pop()
+   287       133           62      0.5      0.0          try:
+   288       133          101      0.8      0.0              mTemp1 = pruneRxn(mTemp1, cH, rxn3, thresh, description,
+   289       132     52900954 400764.8     97.6                                repetition, biomassRxn, lb_biomass)
+   290       132          154      1.2      0.0              prunableRxns2 = []
+   291     61638        31361      0.5      0.1              for k in mTemp1.idRs:
+   292     61506        65346      1.1      0.1                  if k in prunableRxns:
+   293     11124         8646      0.8      0.0                      prunableRxns2.append(k)
+   294       132         7722     58.5      0.0              random.shuffle(prunableRxns2)
+   295       132          137      1.0      0.0              prunableRxns = prunableRxns2
+   296                                                       #prunableRxns2_appended = prunableRxns.append()
+   297                                                       #prunableRxns2_appended k for k in mTemp1.idRs if k in prunableRnxs
+   298                                                       #for k in mTemp1.idRs:
+   299                                                       #    if k in prunableRxns:
+   300                                                       #        prunableRxns2.append(k)
+   301                                                       #random.shuffle(prunableRxns2_appended)
+   302                                                       #prunableRxns = prunableRxns2_appended
+   303         1            1      1.0      0.0          except NameError:
+   304         1            1      1.0      0.0              mTemp1 = pruneRxn(m, cH, rxn3, thresh, description,
+   305         1      1173616 1173616.0      2.2                                repetition, biomassRxn, lb_biomass)
+   306         1            1      1.0      0.0              prunableRxns2 = []
+   307       613          315      0.5      0.0              for k in mTemp1.idRs:
+   308       612         1636      2.7      0.0                  if k in prunableRxns:
+   309       263          148      0.6      0.0                      prunableRxns2.append(k)
+   310         1          158    158.0      0.0              random.shuffle(prunableRxns2)
+   311         1            1      1.0      0.0              prunableRxns = prunableRxns2
+   312                                                       #prunableRxns2_appended = prunableRxns.append()
+   313                                                       #prunableRxns2_appended k for k in mTemp1.idRs if k in prunableRnxs
+   314                                                       #random.shuffle(prunableRxns2_appended)
+   315                                                       #prunableRxns = prunableRxns2_appended
+   316                                                       #for k in mTemp1.idRs:
+   317                                                       #    if k in prunableRxns:
+   318                                                       #        prunableRxns2.append(k)
+   319                                                       #random.shuffle(prunableRxns2)
+   320                                                       #prunableRxns = prunableRxns2
+   321         1            1      1.0      0.0      return mTemp1.idRs
+

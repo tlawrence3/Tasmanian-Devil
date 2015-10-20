@@ -710,6 +710,7 @@ for i in idSp_to_remove:
 lb = []
 ub = []
 for i in idRs:
+	print i
 	for rxn_mapping in rxn_lb:
 		if rxn_mapping == i:		
 			if i not in rxns_to_remove:
@@ -732,8 +733,8 @@ for i in idRs:
 S = coo_matrix(S)
 
 #Print all of the reactions in the final model
-for t in rxns:
-	print "%s -> %s" % (rxns[t]['reactants'], rxns[t]['products'])
+#for t in rxns:
+	#print "%s -> %s" % (rxns[t]['reactants'], rxns[t]['products'])
 
 #Export the model as a pickle file
 exportPickle({'idSp' : idSp, 'idRs' : idRs, 'genes' : genes, 'lb' : lb, 'ub' : ub, 'gene2rxn': gene2rxn, 'S' : S, 'rxns' : rxns }, test_model)
