@@ -1,0 +1,1756 @@
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+set(['R_LPP_SC', 'R_TMN', 'R_SUCCt2r', 'R_ALCD24xim', 'R_NTD1', 'R_PAK_SC', 'R_GLXt', 'R_ASNt6', 'R_ASNt7', 'R_EX_mal_L_e_', 'R_C22STDS', 'R_LEUt6', 'R_LEUt7', 'R_EX_iamac_e_', 'R_EX_dttp_e_', 'R_CITt2r', 'R_EX_gam6p_e_', 'R_FTHFCLm', 'R_C5STDS', 'R_ALCD2irm', 'R_ALCD22yi', 'R_DIAT', 'R_PHEACt', 'R_PI35BP5P_SC', 'R_ACESt', 'R_ILEt6', 'R_ILEt7', 'R_DPR', 'R_EX_hxan_e_', 'R_IAMOHtm', 'R_D_LACDm', 'R_DTTPt', 'R_PYDAMK', 'R_PMI12346PS', 'R_EX_ergst_e_', 'R_EX_aces_e_', 'R_SAM24MT', 'R_EX_ibutac_e_', 'R_EX_oaa_e_', 'R_ALCD23yi', 'R_PMI12346PH', 'R_HYPOE', 'R_HETZK', 'R_FDNG', 'R_ETOHtm', 'R_IBUTACt', 'R_NADPPPSm', 'R_ALCD25yi', 'R_POLYAO2', 'R_POLYAO3', 'R_EX_glx_e_', 'R_PI3P5K_SC', 'R_IBUTOHtm', 'R_EX_pyr_e_', 'R_PMI1346PH', 'R_GLCGSDv', 'R_PI45BP5P_SC', 'R_PMI1346PS', 'R_G5SADrm', 'R_GLYOX', 'R_PFK26', 'R_EX_3mop_e_', 'R_TYRTAim', 'R_ASPGLU2m', 'R_DRTPPD', 'R_NTD9', 'R_PMDPHT', 'R_13BGH', 'R_EX_pheac_e_', 'R_NTD5', 'R_NTD7', 'R_NTD6', 'R_HXANt2r', 'R_GLNt7', 'R_GLNt6', 'R_ERGSTt', 'R_PDE1', 'R_OAAt', 'R_PACALDtm', 'R_THRt2m', 'R_EX_ac_e_', 'R_ACHLE2', 'R_FBP26', 'R_ACHLE1', 'R_GAM6Pt', 'R_LGTHL', 'R_PYR5CDm', 'R_ALCD24yi', 'R_ICDHxm', 'R_OHACT2', 'R_OHACT3', 'R_OHACT4', 'R_OHACT5', 'R_DROPPRy', 'R_EX_2mbac_e_', 'R_D_LACDcm', 'R_THRD_Lm', 'R_GLYCt2', 'R_SBT_Dt', 'R_3MBALDtm', 'R_DB4PS', 'R_TMDPP', 'R_HSDxi', 'R_MEVK3', 'R_MEVK2', 'R_EX_akg_e_', 'R_MEVK4', 'R_NADKm', 'R_EX_succ_e_', 'R_ACALDt', 'R_PUNP2', 'R_TYRt2m', 'R_THYMt3r', 'R_DHORDfum', 'R_2PHETOHtm', 'R_2MBALDt', 'R_D_LACt2', 'R_ATPATF1', 'R_ALCD23xim', 'R_EX_sbt_D_e_', 'R_IAMACt', 'R_FECOSTt', 'R_G3PD1ir', 'R_ALCD25xim', 'R_GLCNtv', 'R_EX_lac_D_e_', 'R_EX_thym_e_', 'R_RNDR2', 'R_RNDR3', 'R_RNDR1', 'R_GTPCII', 'R_FOLD3m', 'R_EX_cit_e_', 'R_2MPPALtm', 'R_TYRt7', 'R_TYRt6', 'R_PI4P5K_SC', 'R_TMDK1', 'R_HPPKm', 'R_EX_fecost_e_', 'R_RBFSb', 'R_RBFSa', 'R_EX_acald_e_', 'R_AP4AHr', 'R_THFATm', 'R_3MOPt', 'R_C8STI', 'R_EX_2mbald_e_', 'R_2MBACt'])
+set(['R_ALCD26xim', 'R_TREH', 'R_ACHLE3', 'R_2MBALDtm', 'R_2MPPALt', 'R_EX_2mppal_e_', 'R_ID3ACALDtm', 'R_AHMMPS', 'R_EX_pap_e_', 'R_IND3ETHtm', 'R_ALCD22xim', 'R_OHACT1', 'R_HMPK1', 'R_PAPtm', 'R_2MBTOHtm', 'R_RNDR4', 'R_PAPt', 'R_EX_pacald_e_', 'R_SPRMS', 'R_DCTPD', 'R_PMPK', 'R_PACALDt', 'R_PPNDH', 'R_PAN4Ptm', 'R_GUAD', 'R_ACPSm', 'R_BPNT', 'R_TMPPP'])
+set(['R_34HPPt2m', 'R_34HPLFM', 'R_ALDD2xm', 'R_4HBZCOAFm', 'R_T4HCINNMFM', 'R_COUCOAFm'])
+set(['R_FAS80COA_L', 'R_FAS120COA', 'R_EX_2hb_e_', 'R_ACCOACr', 'R_G6PDH2er', 'R_AKGDam', 'R_G6Pter', 'R_3C3HMPt', 'R_FAS140COA', 'R_2HBO', 'R_TTDCAtr', 'R_2HBt2', 'R_FACOAL140', 'R_FAS100COA', 'R_6PGLter', 'R_EX_3c3hmp_e_', 'R_EX_ttdca_e_'])
+set(['R_ABTA'])
+set(['R_GLUt7m', 'R_ICDHy', 'R_GLUN'])
+not all active 1
+set(['R_ACOAHim', 'R_ARGt2r'])
+R_DPCOAK
+exception 1
+R_SERt2r
+not all active 1
+exception 1
+exception 1
+R_PANTtm
+not all active 1
+R_MDRPD
+not all active 1
+exception 1
+set(['R_DKMPPD2', 'R_PPNCL2', 'R_KYN', 'R_SPMDAT1', 'R_ALDD22x', 'R_MTRI', 'R_UNK3', 'R_AABTN', 'R_PTPATi', 'R_PROtm', 'R_PANTS', 'R_MOHMT', 'R_ME2m', 'R_MTAP', 'R_POLYAO', 'R_NABTNO', 'R_SPMS', 'R_2DHPtm', 'R_ADMDC', 'R_DPRm', 'R_APRTO2', 'R_PRO1xm', 'R_PNTK', 'R_ABUTt2r', 'R_EX_ser_L_e_', 'R_EX_4abut_e_', 'R_CYSTS', 'R_PPCDC'])
+not all active 1
+not all active 1
+set(['R_DHORDi'])
+set(['R_GLYGS', 'R_GBEZ', 'R_GALT', 'R_PUNP1'])
+not all active 1
+not all active 1
+not all active 1
+exception 1
+not all active 1
+not all active 1
+exception 1
+R_ASPt5n
+not all active 1
+set(['R_TREHv', 'R_TREt2v', 'R_ASPt2n', 'R_ME1m'])
+set(['R_GLUK', 'R_GSNK', 'R_PUNP3'])
+set(['R_EX_for_e_'])
+not all active 1
+not all active 1
+set(['R_ACONTm'])
+not all active 1
+not all active 1
+set(['R_DHAD1m', 'R_ACLSm'])
+exception 1
+not all active 1
+not all active 1
+not all active 1
+set(['R_4ABZt'])
+set(['R_GLYt2r'])
+exception 1
+not all active 1
+set(['R_EX_glu_L_e_'])
+set(['R_NDPK9'])
+set(['R_EX_thr_L_e_'])
+not all active 1
+not all active 1
+not all active 1
+set([])
+exception 1
+not all active 1
+not all active 1
+set(['R_THIORDXp', 'R_TRDRDtp'])
+set(['R_ASPt2m'])
+not all active 1
+exception 1
+not all active 1
+set([])
+set(['R_ID3ACALDt'])
+set(['R_EX_zymst_e_'])
+not all active 1
+set(['R_AKGt2r', 'R_AKGMAL'])
+not all active 1
+set([])
+not all active 1
+not all active 1
+set(['R_FBP', 'R_HISt2r'])
+not all active 1
+set(['R_INSK', 'R_EX_ile_L_e_'])
+exception 1
+not all active 1
+set(['R_EX_co2_e_'])
+not all active 1
+not all active 1
+set(['R_EX_tyr_L_e_'])
+set([])
+set([])
+set([])
+set(['R_MALOAAtp'])
+exception 1
+not all active 1
+exception 1
+set([])
+not all active 1
+exception 1
+set(['R_EX_3mbald_e_'])
+set(['R_CO2tn', 'R_HCO3tn'])
+not all active 1
+set([])
+not all active 1
+not all active 1
+set(['R_ACt2r'])
+exception 1
+exception 1
+not all active 1
+exception 1
+exception 1
+set([])
+exception 1
+exception 1
+set(['R_EX_xan_e_'])
+not all active 1
+set([])
+set(['R_ORNt2r'])
+not all active 1
+exception 1
+set([])
+not all active 1
+set([])
+exception 1
+exception 1
+set([])
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+hello
+4525
+         39547091 function calls (39545602 primitive calls) in 51.099 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+  9724086   38.916    0.000   38.916    0.000 {posix.listdir}
+        1    5.690    5.690   51.145   51.145 mba_2.py:21(<module>)
+ 19448168    4.823    0.000   43.739    0.000 os.py:209(walk)
+9748992/9748723    0.433    0.000    0.433    0.000 {len}
+        1    0.232    0.232    0.232    0.232 {_libsbml.SBMLReader_readSBML}
+        2    0.199    0.099    0.386    0.193 mba_2.py:68(findActiveRxns)
+      722    0.113    0.000    0.113    0.000 {sum}
+        2    0.075    0.038    0.174    0.087 examo.py:95(initLp)
+        1    0.054    0.054    0.544    0.544 sbml.py:49(create_cobra_model_from_sbml_file)
+     1237    0.054    0.000    0.054    0.000 {numpy.core.multiarray.array}
+        1    0.029    0.029    0.150    0.150 examo.py:694(deleteCbmRxns)
+        1    0.027    0.027    0.030    0.030 gurobi_solver.py:134(create_problem)
+        1    0.020    0.020    0.021    0.021 gurobi_solver.py:206(solve_problem)
+     2803    0.020    0.000    0.030    0.000 sbml.py:306(parse_legacy_sbml_notes)
+     2803    0.020    0.000    0.020    0.000 {_libsbml.SBase_getNotesString}
+    17531    0.019    0.000    0.048    0.000 __init__.py:5476(__getitem__)
+       10    0.017    0.002    0.130    0.013 __init__.py:1(<module>)
+     1575    0.017    0.000    0.018    0.000 Reaction.py:49(__init__)
+     1575    0.015    0.000    0.021    0.000 Reaction.py:462(add_metabolites)
+        1    0.012    0.012    0.027    0.027 Model.py:176(add_reactions)
+    22259    0.011    0.000    0.063    0.000 __init__.py:5507(__iter__)
+     1193    0.009    0.000    0.009    0.000 {method 'nonzero' of 'numpy.ndarray' objects}
+      116    0.008    0.000    0.024    0.000 __init__.py:212(__new__)
+     3156    0.008    0.000    0.008    0.000 {method 'sub' of '_sre.SRE_Pattern' objects}
+        1    0.008    0.008    0.017    0.017 __init__.py:45(<module>)
+    40422    0.007    0.000    0.007    0.000 {isinstance}
+        1    0.006    0.006    0.007    0.007 case.py:1(<module>)
+     3132    0.006    0.000    0.012    0.000 Species.py:14(__init__)
+     1575    0.006    0.000    0.029    0.000 Reaction.py:90(gene_reaction_rule)
+    22259    0.006    0.000    0.010    0.000 __init__.py:5374(size)
+     6681    0.005    0.000    0.005    0.000 {_libsbml.ListOfSpeciesReferences_get}
+        7    0.005    0.001    0.005    0.001 {imp.load_module}
+        2    0.005    0.003    0.005    0.003 {cPickle.load}
+    22259    0.005    0.000    0.005    0.000 {_libsbml.ListOf_size}
+     6126    0.004    0.000    0.004    0.000 {method 'findall' of '_sre.SRE_Pattern' objects}
+     5936    0.004    0.000    0.004    0.000 Object.py:7(__init__)
+      849    0.004    0.000    0.004    0.000 {method 'update' of 'set' objects}
+     4039    0.004    0.000    0.004    0.000 {method 'split' of '_sre.SRE_Pattern' objects}
+    18900    0.004    0.000    0.004    0.000 {method 'index' of 'str' objects}
+    10346    0.004    0.000    0.004    0.000 {hasattr}
+     7517    0.003    0.000    0.007    0.000 DictList.py:294(__getitem__)
+     7875    0.003    0.000    0.003    0.000 {_libsbml.ListOfParameters_get}
+        1    0.003    0.003    0.004    0.004 gurobi_solver.py:61(format_solution)
+   249/64    0.003    0.000    0.008    0.000 sre_parse.py:379(_parse)
+      828    0.003    0.000    0.003    0.000 {abs}
+        1    0.003    0.003    0.005    0.005 esolver.py:1(<module>)
+     7517    0.003    0.000    0.009    0.000 DictList.py:48(get_by_id)
+     2210    0.003    0.000    0.020    0.000 re.py:226(_compile)
+     6681    0.003    0.000    0.003    0.000 {_libsbml.SimpleSpeciesReference_getSpecies}
+     7875    0.002    0.000    0.002    0.000 {_libsbml.Parameter_getId}
+     4152    0.002    0.000    0.006    0.000 __init__.py:228(<lambda>)
+     7875    0.002    0.000    0.005    0.000 __init__.py:21005(get)
+        1    0.002    0.002    0.033    0.033 __init__.py:11(<module>)
+    30122    0.002    0.000    0.002    0.000 {method 'append' of 'list' objects}
+     1904    0.002    0.000    0.011    0.000 Gene.py:15(__init__)
+    18052    0.002    0.000    0.002    0.000 {method 'add' of 'set' objects}
+     1228    0.002    0.000    0.003    0.000 Formula.py:33(parse_composition)
+    20031    0.002    0.000    0.002    0.000 {method 'rstrip' of 'str' objects}
+      273    0.002    0.000    0.003    0.000 function_base.py:2945(add_newdoc)
+    19103    0.002    0.000    0.002    0.000 {method 'lstrip' of 'str' objects}
+        9    0.002    0.000    0.003    0.000 collections.py:288(namedtuple)
+    17531    0.002    0.000    0.002    0.000 __init__.py:5500(_fixNegativeIndex)
+        1    0.002    0.002    0.003    0.003 polynomial.py:55(<module>)
+     1575    0.002    0.000    0.013    0.000 Reaction.py:99(<setcomp>)
+      198    0.002    0.000    0.003    0.000 sre_compile.py:207(_optimize_charset)
+     1581    0.002    0.000    0.004    0.000 {method 'encode' of 'str' objects}
+     6681    0.002    0.000    0.007    0.000 __init__.py:29417(get)
+     1574    0.002    0.000    0.002    0.000 {built-in method __new__ of type object at 0x91f8e0}
+     7875    0.002    0.000    0.004    0.000 __init__.py:20326(getValue)
+     7875    0.002    0.000    0.004    0.000 __init__.py:20304(getId)
+   499/58    0.002    0.000    0.006    0.000 sre_compile.py:32(_compile)
+       12    0.002    0.000    0.002    0.000 {__import__}
+        1    0.002    0.002    0.002    0.002 hermite.py:59(<module>)
+        1    0.002    0.002    0.002    0.002 chebyshev.py:87(<module>)
+     1092    0.002    0.000    0.002    0.000 {zip}
+        1    0.002    0.002    0.002    0.002 laguerre.py:59(<module>)
+     6681    0.002    0.000    0.004    0.000 __init__.py:28214(getSpecies)
+        1    0.002    0.002    0.002    0.002 hermite_e.py:59(<module>)
+        1    0.002    0.002    0.002    0.002 legendre.py:83(<module>)
+     9125    0.002    0.000    0.002    0.000 {method 'replace' of 'str' objects}
+    12027    0.002    0.000    0.002    0.000 {method 'lower' of 'str' objects}
+     7875    0.002    0.000    0.002    0.000 {_libsbml.Parameter_getValue}
+     3305    0.002    0.000    0.002    0.000 sre_parse.py:182(__next)
+     6517    0.002    0.000    0.003    0.000 __init__.py:28748(getStoichiometry)
+     3132    0.002    0.000    0.003    0.000 Species.py:52(parse_composition)
+        2    0.002    0.001    0.002    0.001 {posix.fork}
+        2    0.001    0.001    0.004    0.002 __init__.py:38(<module>)
+     5577    0.001    0.000    0.001    0.000 {range}
+     1067    0.001    0.000    0.005    0.000 inspect.py:804(getargspec)
+     9996    0.001    0.000    0.001    0.000 DictList.py:33(has_id)
+     6517    0.001    0.000    0.001    0.000 {_libsbml.SpeciesReference_getStoichiometry}
+      716    0.001    0.000    0.002    0.000 inspect.py:744(getargs)
+     1575    0.001    0.000    0.001    0.000 {_libsbml.ListOfReactions_get}
+     3150    0.001    0.000    0.001    0.000 {_libsbml.Reaction_getKineticLaw}
+        1    0.001    0.001    0.001    0.001 __init__.py:88(<module>)
+     1575    0.001    0.000    0.002    0.000 six.py:552(iteritems)
+     3806    0.001    0.000    0.001    0.000 {method 'match' of '_sre.SRE_Pattern' objects}
+     1228    0.001    0.000    0.005    0.000 Formula.py:18(__init__)
+        1    0.001    0.001    0.005    0.005 decimal.py:116(<module>)
+        3    0.001    0.000    0.001    0.000 DictList.py:117(extend)
+        2    0.001    0.001    0.002    0.001 __init__.py:44(<module>)
+       17    0.001    0.000    0.001    0.000 {numpy.core.multiarray.zeros}
+     3150    0.001    0.000    0.002    0.000 __init__.py:25748(getKineticLaw)
+     2093    0.001    0.000    0.021    0.000 re.py:188(compile)
+        1    0.001    0.001    0.001    0.001 {posix.read}
+     2803    0.001    0.000    0.021    0.000 __init__.py:2614(getNotesString)
+        1    0.001    0.001    0.055    0.055 __init__.py:107(optimize)
+     3384    0.001    0.000    0.001    0.000 {method 'get' of 'dict' objects}
+     1575    0.001    0.000    0.001    0.000 {_libsbml.Reaction_getListOfReactants}
+     7528    0.001    0.000    0.001    0.000 {method 'upper' of 'str' objects}
+       45    0.001    0.000    0.001    0.000 sre_compile.py:258(_mk_bitmap)
+     1575    0.001    0.000    0.001    0.000 {_libsbml.Reaction_getId}
+        1    0.001    0.001    0.001    0.001 linalg.py:10(<module>)
+        2    0.001    0.000    0.069    0.035 __init__.py:2(<module>)
+  685/264    0.001    0.000    0.001    0.000 sre_parse.py:140(getwidth)
+      918    0.001    0.000    0.002    0.000 fnmatch.py:24(fnmatch)
+     1575    0.001    0.000    0.001    0.000 {_libsbml.KineticLaw_getListOfParameters}
+        1    0.001    0.001    0.001    0.001 main.py:1(<module>)
+        1    0.001    0.001    0.052    0.052 __init__.py:106(<module>)
+        1    0.001    0.001    0.001    0.001 result.py:1(<module>)
+        1    0.001    0.001    0.001    0.001 threading.py:1(<module>)
+      101    0.001    0.000    0.001    0.000 {method 'index' of 'list' objects}
+     7875    0.001    0.000    0.001    0.000 __init__.py:20167(<lambda>)
+        1    0.001    0.001    0.002    0.002 numeric.py:1(<module>)
+     1575    0.001    0.000    0.001    0.000 {_libsbml.Reaction_getName}
+     1575    0.001    0.000    0.001    0.000 {_libsbml.Reaction_getListOfProducts}
+     2846    0.001    0.000    0.002    0.000 sre_parse.py:201(get)
+        2    0.001    0.000    0.001    0.001 six.py:1(<module>)
+     1575    0.001    0.000    0.002    0.000 __init__.py:26916(get)
+        1    0.001    0.001    0.001    0.001 __init__.py:4(<module>)
+        1    0.001    0.001    0.005    0.005 __init__.py:197(<module>)
+     1778    0.001    0.000    0.001    0.000 {method 'items' of 'dict' objects}
+        1    0.001    0.001    0.001    0.001 Image.py:27(<module>)
+     2015    0.001    0.000    0.001    0.000 sre_parse.py:130(__getitem__)
+      904    0.001    0.000    0.001    0.000 DictList.py:102(append)
+     1228    0.001    0.000    0.004    0.000 Metabolite.py:12(__init__)
+     2912    0.001    0.000    0.001    0.000 {method 'startswith' of 'str' objects}
+        1    0.001    0.001    0.014    0.014 __init__.py:15(<module>)
+     1575    0.001    0.000    0.001    0.000 __init__.py:26328(getListOfReactants)
+     6681    0.001    0.000    0.001    0.000 __init__.py:28632(<lambda>)
+     1615    0.001    0.000    0.001    0.000 {method 'split' of 'str' objects}
+     1575    0.001    0.000    0.001    0.000 __init__.py:25726(getId)
+     4381    0.001    0.000    0.001    0.000 {method 'join' of 'str' objects}
+     6524    0.001    0.000    0.001    0.000 {method 'pop' of 'dict' objects}
+     1392    0.001    0.000    0.001    0.000 {_libsbml.ListOfSpecies_get}
+     1575    0.001    0.000    0.001    0.000 __init__.py:25737(getName)
+     1528    0.001    0.000    0.001    0.000 {method 'update' of 'dict' objects}
+     1575    0.001    0.000    0.001    0.000 __init__.py:26341(getListOfProducts)
+        2    0.001    0.000    0.001    0.000 {method 'read' of 'file' objects}
+        8    0.001    0.000    0.002    0.000 gurobi_solver.py:78(set_parameter)
+   167/58    0.001    0.000    0.008    0.000 sre_parse.py:301(_parse_sub)
+        1    0.000    0.000    0.018    0.018 __init__.py:7(<module>)
+        2    0.000    0.000    0.002    0.001 __init__.py:3(<module>)
+     1000    0.000    0.000    0.001    0.000 Reaction.py:630(_associate_gene)
+        1    0.000    0.000    0.001    0.001 __init__.py:119(<module>)
+     1575    0.000    0.000    0.001    0.000 __init__.py:27671(getListOfParameters)
+        1    0.000    0.000    0.001    0.001 Model.py:135(add_metabolites)
+     1000    0.000    0.000    0.001    0.000 Reaction.py:640(_dissociate_gene)
+     1591    0.000    0.000    0.000    0.000 {getattr}
+     1581    0.000    0.000    0.000    0.000 {method 'iteritems' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 runner.py:1(<module>)
+        1    0.000    0.000    0.002    0.002 mio5.py:8(<module>)
+     2821    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+        1    0.000    0.000    0.007    0.007 __init__.py:81(<module>)
+        1    0.000    0.000    0.000    0.000 hashlib.py:55(<module>)
+      198    0.000    0.000    0.004    0.000 sre_compile.py:178(_compile_charset)
+     1228    0.000    0.000    0.000    0.000 {_libsbml.Species_getName}
+     1228    0.000    0.000    0.000    0.000 {_libsbml.Species_getId}
+        1    0.000    0.000    0.000    0.000 gurobi_solver.py:68(<dictcomp>)
+        1    0.000    0.000    0.006    0.006 mio.py:3(<module>)
+        1    0.000    0.000    0.002    0.002 pilutil.py:7(<module>)
+        1    0.000    0.000    0.001    0.001 npyio.py:1(<module>)
+     1392    0.000    0.000    0.001    0.000 __init__.py:19992(get)
+     1228    0.000    0.000    0.001    0.000 __init__.py:18660(getName)
+     3151    0.000    0.000    0.000    0.000 {math.isnan}
+     1392    0.000    0.000    0.001    0.000 __init__.py:18814(getBoundaryCondition)
+     3151    0.000    0.000    0.000    0.000 {math.isinf}
+     1575    0.000    0.000    0.000    0.000 Reaction.py:482(<dictcomp>)
+        1    0.000    0.000    0.001    0.001 cplex_solver_java.py:4(<module>)
+        1    0.000    0.000    0.001    0.001 DictList.py:1(<module>)
+     2900    0.000    0.000    0.000    0.000 {method 'remove' of 'set' objects}
+        1    0.000    0.000    0.001    0.001 core.py:21(<module>)
+        1    0.000    0.000    0.000    0.000 gurobi_solver.py:73(<dictcomp>)
+     3150    0.000    0.000    0.000    0.000 __init__.py:27075(<lambda>)
+     1067    0.000    0.000    0.001    0.000 inspect.py:67(ismethod)
+       58    0.000    0.000    0.001    0.000 sre_compile.py:359(_compile_info)
+     1067    0.000    0.000    0.000    0.000 inspect.py:142(isfunction)
+     3150    0.000    0.000    0.000    0.000 __init__.py:29486(<lambda>)
+        1    0.000    0.000    0.001    0.001 index_tricks.py:1(<module>)
+     1228    0.000    0.000    0.000    0.000 {_libsbml.Species_getCompartment}
+     1228    0.000    0.000    0.001    0.000 __init__.py:18649(getId)
+     1228    0.000    0.000    0.001    0.000 __init__.py:18688(getCompartment)
+     1420    0.000    0.000    0.000    0.000 sre_parse.py:195(match)
+     1392    0.000    0.000    0.000    0.000 {_libsbml.Species_getBoundaryCondition}
+        2    0.000    0.000    0.001    0.000 function_base.py:1(<module>)
+      458    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+        1    0.000    0.000    0.001    0.001 base.py:1(<module>)
+     1228    0.000    0.000    0.000    0.000 __init__.py:18826(getCharge)
+        1    0.000    0.000    0.000    0.000 arrayprint.py:5(<module>)
+        1    0.000    0.000    0.001    0.001 compat.py:3(<module>)
+     1228    0.000    0.000    0.001    0.000 DictList.py:226(__contains__)
+      918    0.000    0.000    0.001    0.000 fnmatch.py:67(fnmatchcase)
+     1575    0.000    0.000    0.000    0.000 {iter}
+        1    0.000    0.000    0.009    0.009 inspect.py:25(<module>)
+        1    0.000    0.000    0.000    0.000 version.py:6(<module>)
+        1    0.000    0.000    0.000    0.000 collections.py:1(<module>)
+      666    0.000    0.000    0.000    0.000 string.py:158(convert)
+     3253    0.000    0.000    0.000    0.000 {callable}
+      716    0.000    0.000    0.000    0.000 <string>:8(__new__)
+       58    0.000    0.000    0.017    0.000 sre_compile.py:493(compile)
+        1    0.000    0.000    0.002    0.002 __init__.py:99(<module>)
+        1    0.000    0.000    0.002    0.002 __init__.py:65(<module>)
+      765    0.000    0.000    0.000    0.000 sre_parse.py:138(append)
+        1    0.000    0.000    0.000    0.000 io.py:34(<module>)
+     1575    0.000    0.000    0.000    0.000 __init__.py:25524(<lambda>)
+     1228    0.000    0.000    0.000    0.000 {_libsbml.Species_getCharge}
+      990    0.000    0.000    0.000    0.000 sre_parse.py:126(__len__)
+       58    0.000    0.000    0.009    0.000 sre_parse.py:675(parse)
+        1    0.000    0.000    0.007    0.007 examo.py:19(<module>)
+      205    0.000    0.000    0.000    0.000 sre_compile.py:354(_simple)
+      716    0.000    0.000    0.000    0.000 inspect.py:209(iscode)
+        1    0.000    0.000    0.001    0.001 ctypeslib.py:51(<module>)
+        1    0.000    0.000    0.001    0.001 pickle.py:25(<module>)
+        1    0.000    0.000    0.000    0.000 mio4.py:2(<module>)
+        1    0.000    0.000    0.002    0.002 csr.py:1(<module>)
+        1    0.000    0.000    0.001    0.001 random.py:40(<module>)
+     1575    0.000    0.000    0.000    0.000 __init__.py:21075(<lambda>)
+       17    0.000    0.000    0.000    0.000 doccer.py:128(indentcount_lines)
+        1    0.000    0.000    0.001    0.001 numerictypes.py:82(<module>)
+        1    0.000    0.000    0.007    0.007 __init__.py:23(<module>)
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:18(<module>)
+        8    0.000    0.000    0.007    0.001 __init__.py:31(add_solver)
+        1    0.000    0.000    0.000    0.000 heapq.py:31(<module>)
+        1    0.000    0.000    0.001    0.001 double_deletion.py:2(<module>)
+     1253    0.000    0.000    0.000    0.000 {min}
+        2    0.000    0.000    0.000    0.000 examo.py:28(__init__)
+        1    0.000    0.000    0.002    0.002 miobase.py:7(<module>)
+        1    0.000    0.000    0.000    0.000 netcdf.py:13(<module>)
+        8    0.000    0.000    0.001    0.000 doccer.py:12(docformat)
+        1    0.000    0.000    0.032    0.032 add_newdocs.py:10(<module>)
+        1    0.000    0.000    0.000    0.000 glpk_solver.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 _datasource.py:33(<module>)
+        1    0.000    0.000    0.000    0.000 cplex_solver.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 gurobi_solver_java.py:4(<module>)
+        1    0.000    0.000    0.000    0.000 util.py:35(<module>)
+        1    0.000    0.000    0.002    0.002 mio5_params.py:6(<module>)
+        1    0.000    0.000    0.000    0.000 ArrayBasedModel.py:1(<module>)
+        1    0.000    0.000    0.007    0.007 tokenize.py:23(<module>)
+      501    0.000    0.000    0.000    0.000 sre_parse.py:90(__init__)
+        1    0.000    0.000    0.000    0.000 hb.py:11(<module>)
+        1    0.000    0.000    0.000    0.000 _iotools.py:3(<module>)
+     1392    0.000    0.000    0.000    0.000 __init__.py:18508(<lambda>)
+        1    0.000    0.000    0.000    0.000 compressed.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 pickle.py:171(Pickler)
+       10    0.000    0.000    0.000    0.000 abc.py:86(__new__)
+        1    0.000    0.000    0.000    0.000 defmatrix.py:1(<module>)
+      904    0.000    0.000    0.000    0.000 DictList.py:36(_check)
+     1836    0.000    0.000    0.000    0.000 posixpath.py:51(normcase)
+        1    0.000    0.000    0.000    0.000 scanner.py:2(<module>)
+        1    0.000    0.000    0.000    0.000 mosek.py:1(<module>)
+        1    0.000    0.000    0.001    0.001 deletion_worker.py:1(<module>)
+        1    0.000    0.000    0.001    0.001 essentiality.py:1(<module>)
+       68    0.000    0.000    0.000    0.000 six.py:139(__init__)
+        2    0.000    0.000    0.000    0.000 __init__.py:10(<module>)
+      136    0.000    0.000    0.000    0.000 sre_parse.py:257(_escape)
+        1    0.000    0.000    0.000    0.000 utils.py:4(<module>)
+        1    0.000    0.000    0.000    0.000 _validation.py:1(<module>)
+        1    0.000    0.000    0.003    0.003 coo.py:115(__init__)
+        1    0.000    0.000    0.001    0.001 decoder.py:2(<module>)
+        1    0.000    0.000    0.001    0.001 moma.py:1(<module>)
+        3    0.000    0.000    0.000    0.000 numeric.py:346(extend_all)
+     44/4    0.000    0.000    0.000    0.000 copy.py:145(deepcopy)
+       58    0.000    0.000    0.008    0.000 sre_compile.py:478(_code)
+        1    0.000    0.000    0.000    0.000 loader.py:1(<module>)
+      275    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 defchararray.py:17(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:5522(Model)
+       58    0.000    0.000    0.000    0.000 {_sre.compile}
+        1    0.000    0.000    0.024    0.024 type_check.py:3(<module>)
+      920    0.000    0.000    0.000    0.000 {method 'group' of '_sre.SRE_Match' objects}
+       89    0.000    0.000    0.000    0.000 {method 'expandtabs' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 subprocess.py:387(<module>)
+        1    0.000    0.000    0.007    0.007 mat.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 process.py:35(<module>)
+      324    0.000    0.000    0.000    0.000 collections.py:329(<genexpr>)
+       31    0.000    0.000    0.000    0.000 nosetester.py:140(__init__)
+        1    0.000    0.000    0.007    0.007 Model.py:1(<module>)
+        1    0.000    0.000    0.002    0.002 subprocess.py:1187(_execute_child)
+        3    0.000    0.000    0.000    0.000 {_coo.coo_todense}
+    17/13    0.000    0.000    0.000    0.000 abc.py:148(__subclasscheck__)
+        1    0.000    0.000    0.000    0.000 fftpack.py:32(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:265(_reset_cache)
+       31    0.000    0.000    0.000    0.000 _inspect.py:159(formatargspec)
+        1    0.000    0.000    0.000    0.000 _util.py:1(<module>)
+        4    0.000    0.000    0.000    0.000 {eval}
+        1    0.000    0.000    0.002    0.002 polynomial.py:4(<module>)
+        1    0.000    0.000    0.000    0.000 opcode.py:5(<module>)
+        1    0.000    0.000    0.000    0.000 shutil.py:5(<module>)
+        1    0.000    0.000    0.000    0.000 dis.py:1(<module>)
+       41    0.000    0.000    0.000    0.000 posixpath.py:127(dirname)
+        1    0.000    0.000    0.001    0.001 _internal.py:6(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:26988(KineticLaw)
+        1    0.000    0.000    0.006    0.006 __init__.py:9(<module>)
+        1    0.000    0.000    0.002    0.002 json.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 weakref.py:47(__init__)
+        1    0.000    0.000    0.000    0.000 construct.py:2(<module>)
+        1    0.000    0.000    0.001    0.001 Reaction.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:79329(LayoutExtension)
+      175    0.000    0.000    0.000    0.000 six.py:173(find_module)
+       60    0.000    0.000    0.000    0.000 re.py:204(escape)
+        1    0.000    0.000    0.000    0.000 extras.py:10(<module>)
+        1    0.000    0.000    0.000    0.000 _fortran_format_parser.py:8(<module>)
+        1    0.000    0.000    0.000    0.000 Gene.py:1(<module>)
+        7    0.000    0.000    0.000    0.000 {imp.find_module}
+        4    0.000    0.000    0.000    0.000 {open}
+        1    0.000    0.000    0.000    0.000 numerictypes.py:304(_add_aliases)
+        7    0.000    0.000    0.000    0.000 {dir}
+        1    0.000    0.000    0.000    0.000 records.py:36(<module>)
+        1    0.000    0.000    0.000    0.000 fromnumeric.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:37161(ConversionOption)
+        1    0.000    0.000    0.000    0.000 lil.py:2(<module>)
+        1    0.000    0.000    0.000    0.000 polyutils.py:33(<module>)
+        1    0.000    0.000    0.000    0.000 utf_16.py:8(<module>)
+        1    0.000    0.000    0.000    0.000 format.py:136(<module>)
+       31    0.000    0.000    0.000    0.000 _inspect.py:61(getargs)
+       81    0.000    0.000    0.000    0.000 sre_parse.py:72(opengroup)
+       58    0.000    0.000    0.000    0.000 sre_parse.py:178(__init__)
+        1    0.000    0.000    0.000    0.000 compressed.py:19(_cs_matrix)
+      270    0.000    0.000    0.000    0.000 {numpy.lib._compiled_base.add_docstring}
+      116    0.000    0.000    0.000    0.000 sre_compile.py:472(isstring)
+      257    0.000    0.000    0.000    0.000 {setattr}
+        1    0.000    0.000    0.000    0.000 __init__.py:46738(XMLErrorLog)
+      599    0.000    0.000    0.000    0.000 sre_compile.py:24(_identityfunction)
+       89    0.000    0.000    0.000    0.000 {method 'splitlines' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 sbml.py:4(<module>)
+        3    0.000    0.000    0.001    0.000 coo.py:237(toarray)
+        5    0.000    0.000    0.002    0.000 __init__.py:71(search_function)
+        1    0.000    0.000    0.000    0.000 coo.py:206(_check)
+       26    0.000    0.000    0.000    0.000 numerictypes.py:232(bitname)
+        1    0.000    0.000    0.000    0.000 data.py:7(<module>)
+        1    0.000    0.000    0.000    0.000 suite.py:1(<module>)
+      708    0.000    0.000    0.000    0.000 {ord}
+        1    0.000    0.000    0.000    0.000 ascii.py:8(<module>)
+        4    0.000    0.000    0.000    0.000 miobase.py:137(convert_dtypes)
+        1    0.000    0.000    0.000    0.000 hex_codec.py:8(<module>)
+        1    0.000    0.000    0.000    0.000 scimath.py:17(<module>)
+      117    0.000    0.000    0.000    0.000 re.py:134(match)
+        1    0.000    0.000    0.000    0.000 functions.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 gurobi_solver.py:3(<module>)
+       27    0.000    0.000    0.000    0.000 core.py:822(__init__)
+        1    0.000    0.000    0.000    0.000 Formula.py:1(<module>)
+      205    0.000    0.000    0.000    0.000 sre_parse.py:134(__setitem__)
+       43    0.000    0.000    0.000    0.000 _weakrefset.py:36(__init__)
+       23    0.000    0.000    0.000    0.000 core.py:5997(getdoc)
+        1    0.000    0.000    0.054    0.054 gurobi_solver.py:220(solve)
+        3    0.000    0.000    0.000    0.000 __init__.py:78(CFUNCTYPE)
+        6    0.000    0.000    0.000    0.000 posixpath.py:336(normpath)
+        1    0.000    0.000    0.000    0.000 misc.py:3(<module>)
+        8    0.000    0.000    0.000    0.000 decimal.py:515(__new__)
+        6    0.000    0.000    0.000    0.000 {posix.stat}
+        1    0.000    0.000    0.000    0.000 idl.py:29(<module>)
+        1    0.000    0.000    0.000    0.000 encoder.py:2(<module>)
+        1    0.000    0.000    0.000    0.000 signals.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 delete.py:1(<module>)
+        4    0.000    0.000    0.000    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+       58    0.000    0.000    0.000    0.000 sre_parse.py:225(_class_escape)
+      544    0.000    0.000    0.000    0.000 {chr}
+       42    0.000    0.000    0.000    0.000 {all}
+       51    0.000    0.000    0.000    0.000 abc.py:89(<genexpr>)
+       14    0.000    0.000    0.000    0.000 __init__.py:147(_check_size)
+        1    0.000    0.000    0.000    0.000 _endian.py:4(<module>)
+        6    0.000    0.000    0.000    0.000 fnmatch.py:81(translate)
+        1    0.000    0.000    0.004    0.004 __init__.py:13(swig_import_helper)
+        4    0.000    0.000    0.000    0.000 decimal.py:3782(__init__)
+        1    0.000    0.000    0.002    0.002 fractions.py:4(<module>)
+        1    0.000    0.000    0.000    0.000 difflib.py:27(<module>)
+        3    0.000    0.000    0.000    0.000 __init__.py:493(PYFUNCTYPE)
+        1    0.000    0.000    0.000    0.000 utils.py:1(<module>)
+       23    0.000    0.000    0.000    0.000 sre_parse.py:216(isname)
+        1    0.000    0.000    0.000    0.000 precision.py:8(<module>)
+       40    0.000    0.000    0.000    0.000 core.py:109(get_object_signature)
+        6    0.000    0.000    0.000    0.000 posixpath.py:68(join)
+        1    0.000    0.000    0.000    0.000 mio5.py:497(VarWriter5)
+        4    0.000    0.000    0.000    0.000 coo.py:195(getnnz)
+        1    0.000    0.000    0.000    0.000 tempfile.py:18(<module>)
+        1    0.000    0.000    0.000    0.000 utf_32.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 FixTk.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:54246(ASTNode)
+        5    0.000    0.000    0.000    0.000 utils.py:108(__call__)
+        1    0.000    0.000    0.000    0.000 _import_tools.py:1(<module>)
+       81    0.000    0.000    0.000    0.000 sre_parse.py:83(closegroup)
+       33    0.000    0.000    0.000    0.000 _weakrefset.py:58(__iter__)
+        1    0.000    0.000    0.000    0.000 core.py:2572(MaskedArray)
+       40    0.000    0.000    0.000    0.000 _inspect.py:120(getargspec)
+       40    0.000    0.000    0.000    0.000 copy.py:267(_keep_alive)
+        1    0.000    0.000    0.000    0.000 numbers.py:6(<module>)
+       72    0.000    0.000    0.000    0.000 six.py:132(__init__)
+        1    0.000    0.000    0.000    0.000 numerictypes.py:288(_add_types)
+       58    0.000    0.000    0.000    0.000 sre_parse.py:67(__init__)
+        1    0.000    0.000    0.000    0.000 bsr.py:1(<module>)
+      148    0.000    0.000    0.000    0.000 {_sre.getlower}
+        4    0.000    0.000    0.000    0.000 copy.py:253(_deepcopy_dict)
+      128    0.000    0.000    0.000    0.000 sre_parse.py:210(isident)
+        1    0.000    0.000    0.000    0.000 {posix.remove}
+      109    0.000    0.000    0.000    0.000 six.py:82(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:2209(SBase)
+      119    0.000    0.000    0.000    0.000 {max}
+        1    0.000    0.000    0.000    0.000 six.py:614(exec_)
+        1    0.000    0.000    0.000    0.000 parameters.py:4(<module>)
+        1    0.000    0.000    0.000    0.000 six.py:539(exec_)
+        1    0.000    0.000    0.001    0.001 csr.py:13(swig_import_helper)
+        1    0.000    0.000    0.000    0.000 mmio.py:3(<module>)
+       30    0.000    0.000    0.000    0.000 numerictypes.py:450(_add_array_type)
+        1    0.000    0.000    0.000    0.000 csc.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 numerictypes.py:345(_add_integer_aliases)
+       74    0.000    0.000    0.000    0.000 _inspect.py:152(strseq)
+        1    0.000    0.000    0.000    0.000 dok.py:1(<module>)
+        3    0.000    0.000    0.001    0.000 base.py:688(_process_toarray_args)
+       52    0.000    0.000    0.000    0.000 {repr}
+        1    0.000    0.000    0.000    0.000 __init__.py:84905(Transition)
+        1    0.000    0.000    0.000    0.000 numerictypes.py:787(_construct_lookups)
+       18    0.000    0.000    0.000    0.000 core.py:902(__init__)
+       88    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 getlimits.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:12061(Unit)
+        1    0.000    0.000    0.000    0.000 typeconv.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 coo.py:1(<module>)
+        2    0.000    0.000    0.000    0.000 {posix.urandom}
+        1    0.000    0.000    0.000    0.000 memmap.py:1(<module>)
+        2    0.000    0.000    0.000    0.000 {_ctypes.POINTER}
+        1    0.000    0.000    0.002    0.002 subprocess.py:544(check_output)
+        1    0.000    0.000    0.000    0.000 <string>:2(<module>)
+        1    0.000    0.000    0.000    0.000 {method 'count' of 'list' objects}
+       21    0.000    0.000    0.000    0.000 numerictypes.py:219(_evalname)
+        1    0.000    0.000    0.000    0.000 util.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:13760(UnitDefinition)
+        8    0.000    0.000    0.000    0.000 {method 'close' of 'file' objects}
+        1    0.000    0.000    0.000    0.000 sputils.py:2(<module>)
+        4    0.000    0.000    0.001    0.000 warnings.py:45(filterwarnings)
+        1    0.000    0.000    0.000    0.000 __init__.py:33421(SBO)
+      119    0.000    0.000    0.000    0.000 opcode.py:27(def_op)
+       12    0.000    0.000    0.000    0.000 ctypeslib.py:311(prep_simple)
+        1    0.000    0.000    0.000    0.000 __init__.py:18191(Species)
+        1    0.000    0.000    0.000    0.000 dia.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:65573(Submodel)
+       21    0.000    0.000    0.000    0.000 {numpy.core.multiarray.empty}
+        1    0.000    0.000    0.000    0.000 common.py:4(<module>)
+        6    0.000    0.000    0.000    0.000 six.py:124(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:68118(FbcSpeciesPlugin)
+       41    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 utils.py:152(deprecate)
+        1    0.000    0.000    0.001    0.001 subprocess.py:768(communicate)
+       30    0.000    0.000    0.000    0.000 _weakrefset.py:83(add)
+        1    0.000    0.000    0.000    0.000 {posix.rmdir}
+        1    0.000    0.000    0.001    0.001 csr.py:11(<module>)
+        1    0.000    0.000    0.000    0.000 fractions.py:44(Fraction)
+        1    0.000    0.000    0.000    0.000 decimal.py:662(from_float)
+        1    0.000    0.000    0.000    0.000 {posix.mkdir}
+        1    0.000    0.000    0.000    0.000 token.py:1(<module>)
+        1    0.000    0.000    0.002    0.002 version.py:57(call_git_describe)
+      115    0.000    0.000    0.000    0.000 six.py:83(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:29671(Event)
+       57    0.000    0.000    0.000    0.000 {method 'newbyteorder' of 'numpy.dtype' objects}
+       83    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
+       42    0.000    0.000    0.000    0.000 {sys._getframe}
+        1    0.000    0.000    0.000    0.000 arrayterator.py:9(<module>)
+        1    0.000    0.000    0.002    0.002 subprocess.py:650(__init__)
+        9    0.000    0.000    0.000    0.000 extras.py:245(getdoc)
+       43    0.000    0.000    0.000    0.000 six.py:96(__init__)
+       23    0.000    0.000    0.000    0.000 core.py:5992(__init__)
+       13    0.000    0.000    0.000    0.000 abc.py:105(register)
+        1    0.000    0.000    0.000    0.000 {gc.enable}
+        1    0.000    0.000    0.000    0.000 glpk_solver_java.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 defchararray.py:1668(chararray)
+        1    0.000    0.000    0.000    0.000 __init__.py:25397(Reaction)
+        1    0.000    0.000    0.000    0.000 __init__.py:349(__init__)
+        2    0.000    0.000    0.005    0.003 utilities.py:25(importPickle)
+       42    0.000    0.000    0.000    0.000 collections.py:353(<genexpr>)
+        1    0.000    0.000    0.000    0.000 nosetester.py:6(<module>)
+       17    0.000    0.000    0.000    0.000 _weakrefset.py:26(__exit__)
+        1    0.000    0.000    0.000    0.000 bsr.py:11(<module>)
+    76/56    0.000    0.000    0.000    0.000 {issubclass}
+        1    0.000    0.000    0.000    0.000 __init__.py:16552(Compartment)
+        1    0.000    0.000    0.000    0.000 __init__.py:9557(SBMLDocument)
+        1    0.000    0.000    0.000    0.000 __init__.py:70895(Objective)
+       40    0.000    0.000    0.000    0.000 _inspect.py:15(ismethod)
+        1    0.000    0.000    0.000    0.000 __init__.py:67504(FbcModelPlugin)
+        1    0.000    0.000    0.000    0.000 version.py:85(read_release_version)
+       50    0.000    0.000    0.000    0.000 six.py:166(_add_module)
+        1    0.000    0.000    0.000    0.000 decimal.py:506(Decimal)
+        1    0.000    0.000    0.000    0.000 __init__.py:78228(Layout)
+        1    0.000    0.000    0.000    0.000 {posix.fdopen}
+        1    0.000    0.000    0.000    0.000 machar.py:7(<module>)
+        1    0.000    0.000    0.000    0.000 Species.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 Model.py:29(__init__)
+        3    0.000    0.000    0.000    0.000 decimal.py:441(getcontext)
+       41    0.000    0.000    0.000    0.000 six.py:95(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:69023(FluxBound)
+       42    0.000    0.000    0.000    0.000 collections.py:355(<genexpr>)
+        1    0.000    0.000    0.000    0.000 __init__.py:80847(QualExtension)
+        8    0.000    0.000    0.000    0.000 {fcntl.fcntl}
+       10    0.000    0.000    0.007    0.001 {map}
+        6    0.000    0.000    0.002    0.000 string.py:148(substitute)
+        1    0.000    0.000    0.000    0.000 __init__.py:61429(SBaseRef)
+        1    0.000    0.000    0.000    0.000 numerictypes.py:458(_set_array_types)
+        1    0.000    0.000    0.000    0.000 _fortran.py:6(<module>)
+       72    0.000    0.000    0.000    0.000 numerictypes.py:130(english_lower)
+        1    0.000    0.000    0.000    0.000 Metabolite.py:1(<module>)
+       40    0.000    0.000    0.000    0.000 _inspect.py:26(isfunction)
+        1    0.000    0.000    0.000    0.000 Object.py:1(<module>)
+        2    0.000    0.000    0.000    0.000 shape_base.py:1(<module>)
+        5    0.000    0.000    0.000    0.000 __init__.py:49(normalize_encoding)
+        1    0.000    0.000    0.000    0.000 __init__.py:22529(Rule)
+        1    0.000    0.000    0.000    0.000 __init__.py:28144(SimpleSpeciesReference)
+        1    0.000    0.000    0.000    0.000 __init__.py:42644(XMLToken)
+        1    0.000    0.000    0.000    0.000 __init__.py:69732(FluxObjective)
+        1    0.000    0.000    0.000    0.000 __init__.py:75080(ReferenceGlyph)
+        2    0.000    0.000    0.000    0.000 gurobi_solver.py:50(get_status)
+        1    0.000    0.000    0.000    0.000 __init__.py:443(string)
+       13    0.000    0.000    0.000    0.000 functions.py:63(zeros)
+        1    0.000    0.000    0.000    0.000 stride_tricks.py:7(<module>)
+        4    0.000    0.000    0.000    0.000 six.py:85(__get__)
+        2    0.000    0.000    0.000    0.000 decimal.py:1582(__float__)
+        1    0.000    0.000    0.002    0.002 version.py:105(get_version)
+        1    0.000    0.000    0.000    0.000 shutil.py:210(rmtree)
+        1    0.000    0.000    0.000    0.000 __init__.py:20064(Parameter)
+        1    0.000    0.000    0.000    0.000 Solution.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 single_deletion.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:84088(QualitativeSpecies)
+        1    0.000    0.000    0.000    0.000 __init__.py:75666(GeneralGlyph)
+        9    0.000    0.000    0.000    0.000 doccer.py:187(unindent_string)
+      117    0.000    0.000    0.000    0.000 {method 'translate' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 __init__.py:72435(BoundingBox)
+        1    0.000    0.000    0.000    0.000 pickle.py:827(Unpickler)
+       40    0.000    0.000    0.000    0.000 numerictypes.py:157(english_upper)
+        6    0.000    0.000    0.000    0.000 posixpath.py:365(abspath)
+        1    0.000    0.000    0.000    0.000 __init__.py:64656(Port)
+        1    0.000    0.000    0.000    0.000 __init__.py:24757(Constraint)
+        1    0.000    0.000    0.000    0.000 pprint.py:35(<module>)
+        1    0.000    0.000    0.000    0.000 {_warnings.warn}
+        4    0.000    0.000    0.001    0.000 DictList.py:20(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:59114(CompModelPlugin)
+       43    0.000    0.000    0.000    0.000 _inspect.py:163(<lambda>)
+        2    0.000    0.000    0.000    0.000 {method 'max' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 __init__.py:82532(Input)
+        1    0.000    0.000    0.000    0.000 __init__.py:67071(FbcExtension)
+        1    0.000    0.000    0.000    0.000 __init__.py:31094(EventAssignment)
+        1    0.000    0.000    0.000    0.000 genericpath.py:38(isdir)
+        1    0.000    0.000    0.000    0.000 __init__.py:58345(CompExtension)
+        1    0.000    0.000    0.000    0.000 __init__.py:4924(ListOf)
+        4    0.000    0.000    0.000    0.000 genericpath.py:15(exists)
+       21    0.000    0.000    0.000    0.000 _weakrefset.py:70(__contains__)
+        1    0.000    0.000    0.000    0.000 __init__.py:72138(Dimensions)
+        1    0.000    0.000    0.000    0.000 records.py:85(format_parser)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBase_getPlugin}
+        1    0.000    0.000    0.000    0.000 Reaction.py:43(Reaction)
+        1    0.000    0.000    0.000    0.000 __init__.py:62639(ExternalModelDefinition)
+        8    0.000    0.000    0.000    0.000 core.py:7204(getdoc)
+        1    0.000    0.000    0.000    0.000 __init__.py:49829(Date)
+      282    0.000    0.000    0.000    0.000 {method 'isalnum' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 precision.py:20(_get_precisions)
+        5    0.000    0.000    0.000    0.000 codecs.py:77(__new__)
+        1    0.000    0.000    0.000    0.000 decimal.py:1640(_fix)
+       17    0.000    0.000    0.000    0.000 _weakrefset.py:20(__enter__)
+        3    0.000    0.000    0.000    0.000 {posix.close}
+        1    0.000    0.000    0.000    0.000 __init__.py:70340(GeneAssociation)
+        1    0.000    0.000    0.000    0.000 __init__.py:21674(InitialAssignment)
+        1    0.000    0.000    0.000    0.000 decimal.py:1126(__add__)
+        1    0.000    0.000    0.000    0.000 __init__.py:83337(Output)
+        1    0.000    0.000    0.000    0.000 ufuncs.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 bisect.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 base.py:55(spmatrix)
+        1    0.000    0.000    0.000    0.000 __init__.py:59564(CompSBMLDocumentPlugin)
+        2    0.000    0.000    0.001    0.001 mio5_params.py:166(_convert_codecs)
+        2    0.000    0.000    0.000    0.000 threading.py:259(__init__)
+        6    0.000    0.000    0.000    0.000 hashlib.py:94(__get_openssl_constructor)
+        1    0.000    0.000    0.000    0.000 case.py:133(TestCase)
+        1    0.000    0.000    0.000    0.000 csc.py:11(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:36388(SBMLNamespaces)
+        1    0.000    0.000    0.000    0.000 <string>:7(Polynomial)
+        1    0.000    0.000    0.000    0.000 __init__.py:65199(ReplacedElement)
+        1    0.000    0.000    0.000    0.000 __init__.py:53792(SBMLExtensionRegistry)
+        1    0.000    0.000    0.000    0.000 {posix.waitpid}
+        1    0.000    0.000    0.000    0.000 __init__.py:76369(ReactionGlyph)
+        1    0.000    0.000    0.000    0.000 __init__.py:76983(TextGlyph)
+        8    0.000    0.000    0.001    0.000 doccer.py:173(decorate)
+        1    0.000    0.000    0.000    0.000 __init__.py:31952(Trigger)
+        1    0.000    0.000    0.000    0.000 numerictypes.py:386(_set_up_aliases)
+        1    0.000    0.000    0.000    0.000 __init__.py:32464(Delay)
+        1    0.000    0.000    0.000    0.000 __init__.py:58782(CompSBasePlugin)
+        1    0.000    0.000    0.000    0.000 __init__.py:15352(CompartmentType)
+        1    0.000    0.000    0.000    0.000 <string>:7(Legendre)
+        1    0.000    0.000    0.000    0.000 {method 'union' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 modify.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:45999(XMLError)
+        2    0.000    0.000    0.000    0.000 getlimits.py:244(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:50538(ModelCreator)
+        3    0.000    0.000    0.002    0.001 subprocess.py:473(_eintr_retry_call)
+        1    0.000    0.000    0.000    0.000 __init__.py:15965(SpeciesType)
+        1    0.000    0.000    0.000    0.000 __init__.py:28427(SpeciesReference)
+        1    0.000    0.000    0.000    0.000 __init__.py:73689(LineSegment)
+        1    0.000    0.000    0.000    0.000 __init__.py:51421(RDFAnnotationParser)
+        1    0.000    0.000    0.000    0.000 _iotools.py:466(StringConverter)
+        1    0.000    0.000    0.000    0.000 __init__.py:1242(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:74707(SpeciesReferenceGlyph)
+       18    0.000    0.000    0.000    0.000 data.py:82(_create_method)
+        1    0.000    0.000    0.000    0.000 numerictypes.py:435(_construct_char_code_lookup)
+        1    0.000    0.000    0.000    0.000 __init__.py:71813(Point)
+        1    0.000    0.000    0.000    0.000 __init__.py:77745(ListOfReactionGlyphs)
+       13    0.000    0.000    0.000    0.000 typeconv.py:24(convtypecode)
+        1    0.000    0.000    0.000    0.000 _methods.py:5(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:76763(SpeciesGlyph)
+        2    0.000    0.000    0.000    0.000 decimal.py:999(__str__)
+        1    0.000    0.000    0.232    0.232 __init__.py:1257(readSBML)
+        1    0.000    0.000    0.000    0.000 ArrayBasedModel.py:12(ArrayBasedModel)
+        5    0.000    0.000    0.000    0.000 fractions.py:280(_operator_fallbacks)
+        1    0.000    0.000    0.000    0.000 __init__.py:62125(Replacing)
+        1    0.000    0.000    0.000    0.000 <string>:7(Hermite)
+        1    0.000    0.000    0.000    0.000 __init__.py:44094(XMLNode)
+        1    0.000    0.000    0.000    0.000 __init__.py:73963(CubicBezier)
+        1    0.000    0.000    0.000    0.000 tempfile.py:501(SpooledTemporaryFile)
+        1    0.000    0.000    0.000    0.000 <string>:7(HermiteE)
+        2    0.000    0.000    0.000    0.000 _methods.py:15(_amax)
+       42    0.000    0.000    0.000    0.000 {method '__contains__' of 'frozenset' objects}
+        1    0.000    0.000    0.000    0.000 __init__.py:60702(CompFlatteningConverter)
+        1    0.000    0.000    0.000    0.000 hb.py:362(HBMatrixType)
+        1    0.000    0.000    0.000    0.000 threading.py:640(Thread)
+        1    0.000    0.000    0.055    0.055 Model.py:250(optimize)
+       18    0.000    0.000    0.000    0.000 {_struct.calcsize}
+        2    0.000    0.000    0.000    0.000 {posix.pipe}
+       23    0.000    0.000    0.000    0.000 precision.py:36(_lookup)
+        1    0.000    0.000    0.000    0.000 __init__.py:53262(SBMLExtension)
+        1    0.000    0.000    0.000    0.000 __future__.py:48(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:81999(ListOfFunctionTerms)
+        1    0.000    0.000    0.000    0.000 __init__.py:68565(Association)
+        1    0.000    0.000    0.000    0.000 __init__.py:51016(ModelHistory)
+        1    0.000    0.000    0.000    0.000 __init__.py:44850(XMLOutputStream)
+        1    0.000    0.000    0.000    0.000 numbers.py:34(Complex)
+        1    0.000    0.000    0.000    0.000 __init__.py:74477(Curve)
+        1    0.000    0.000    0.000    0.000 __init__.py:70657(ListOfGeneAssociations)
+        1    0.000    0.000    0.000    0.000 __init__.py:37611(ConversionProperties)
+        1    0.000    0.000    0.000    0.000 random.py:100(seed)
+        1    0.000    0.000    0.000    0.000 __init__.py:11137(FunctionDefinition)
+       13    0.000    0.000    0.000    0.000 {method 'setter' of 'property' objects}
+        1    0.000    0.000    0.000    0.000 __init__.py:52286(SBasePlugin)
+        1    0.000    0.000    0.000    0.000 arraypad.py:5(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:21079(LocalParameter)
+        6    0.000    0.000    0.000    0.000 six.py:117(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:15726(ListOfCompartmentTypes)
+       31    0.000    0.000    0.000    0.000 sre_compile.py:51(fixup)
+        1    0.000    0.000    0.000    0.000 __init__.py:37049(SBMLTransforms)
+        1    0.000    0.000    0.000    0.000 __init__.py:77503(ListOfSpeciesGlyphs)
+        1    0.000    0.000    0.000    0.000 __init__.py:35060(SyntaxChecker)
+        1    0.000    0.000    0.000    0.000 __init__.py:81679(FunctionTerm)
+        1    0.000    0.000    0.000    0.000 __init__.py:35821(StoichiometryMath)
+        9    0.000    0.000    0.000    0.000 extras.py:241(__init__)
+        3    0.000    0.000    0.000    0.000 functools.py:17(update_wrapper)
+        1    0.000    0.000    0.000    0.000 dia.py:11(<module>)
+        3    0.000    0.000    0.000    0.000 decimal.py:3724(_dec_from_triple)
+        1    0.000    0.000    0.000    0.000 decimal.py:3763(Context)
+        1    0.000    0.000    0.000    0.000 __init__.py:63399(ListOfExternalModelDefinitions)
+        8    0.000    0.000    0.000    0.000 {method 'copy' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 utf_8.py:33(getregentry)
+        1    0.000    0.000    0.000    0.000 csc.py:13(swig_import_helper)
+        1    0.000    0.000    0.000    0.000 <string>:1(Mismatch)
+       31    0.000    0.000    0.000    0.000 _inspect.py:39(iscode)
+        1    0.000    0.000    0.000    0.000 __init__.py:747(ostringstream)
+        1    0.000    0.000    0.000    0.000 __init__.py:63840(ListOfPorts)
+        1    0.000    0.000    0.000    0.000 __init__.py:45584(XMLInputStream)
+        1    0.000    0.000    0.000    0.000 __init__.py:62304(Deletion)
+        1    0.000    0.000    0.000    0.000 __init__.py:73180(ListOfGraphicalObjects)
+        1    0.000    0.000    0.000    0.000 <string>:7(Laguerre)
+        1    0.000    0.000    0.000    0.000 __init__.py:74272(ListOfLineSegments)
+        1    0.000    0.000    0.000    0.000 linalg.py:76(_determine_error_states)
+        1    0.000    0.000    0.000    0.000 <string>:7(Chebyshev)
+        1    0.000    0.000    0.000    0.000 collections.py:26(OrderedDict)
+        1    0.000    0.000    0.000    0.000 StringIO.py:30(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:72838(GraphicalObject)
+        1    0.000    0.000    0.000    0.000 __init__.py:80387(LayoutPkgNamespaces)
+        1    0.000    0.000    0.000    0.000 __init__.py:71426(ListOfObjectives)
+       36    0.000    0.000    0.000    0.000 copy.py:198(_deepcopy_atomic)
+        1    0.000    0.000    0.000    0.000 variability.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:32979(Priority)
+        1    0.000    0.000    0.000    0.000 financial.py:10(<module>)
+        2    0.000    0.000    0.000    0.000 decimal.py:3852(_raise_error)
+        1    0.000    0.000    0.000    0.000 __init__.py:15095(ListOfUnitDefinitions)
+        6    0.000    0.000    0.000    0.000 core.py:1052(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:356(SwigPyIterator)
+        1    0.000    0.000    0.000    0.000 __init__.py:60374(SBMLFileResolver)
+        1    0.000    0.000    0.000    0.000 defmatrix.py:206(matrix)
+        1    0.000    0.000    0.000    0.000 {function seed at 0x7f7823b0fc80}
+        1    0.000    0.000    0.000    0.000 __init__.py:85719(ListOfTransitions)
+        8    0.000    0.000    0.000    0.000 __init__.py:18118(get)
+        1    0.000    0.000    0.000    0.000 __init__.py:41646(XMLAttributes)
+        1    0.000    0.000    0.000    0.000 __init__.py:64282(ListOfSubmodels)
+        1    0.000    0.000    0.000    0.000 process.py:86(Process)
+       27    0.000    0.000    0.000    0.000 decimal.py:3809(<genexpr>)
+        1    0.000    0.000    0.000    0.000 glob.py:1(<module>)
+        2    0.000    0.000    0.000    0.000 six.py:86(__get__)
+        1    0.000    0.000    0.000    0.000 __init__.py:83826(ListOfOutputs)
+        2    0.000    0.000    0.000    0.000 numeric.py:2320(seterr)
+        1    0.000    0.000    0.000    0.000 polytemplate.py:11(<module>)
+        1    0.000    0.000    0.000    0.000 <string>:1(Match)
+        1    0.000    0.000    0.000    0.000 __init__.py:69503(ListOfFluxBounds)
+        1    0.000    0.000    0.000    0.000 coo.py:11(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:42229(XMLNamespaces)
+        1    0.000    0.000    0.000    0.000 __init__.py:16315(ListOfSpeciesTypes)
+        1    0.000    0.000    0.000    0.000 __init__.py:1123(ElementFilter)
+        1    0.000    0.000    0.000    0.000 __init__.py:19828(ListOfSpecies)
+        1    0.000    0.000    0.000    0.000 bsr.py:22(bsr_matrix)
+       37    0.000    0.000    0.000    0.000 abc.py:15(abstractmethod)
+        1    0.000    0.000    0.000    0.000 doccer.py:179(unindent_dict)
+        1    0.000    0.000    0.000    0.000 dia.py:13(swig_import_helper)
+        2    0.000    0.000    0.000    0.000 __config__.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:76126(ListOfSpeciesReferenceGlyphs)
+        1    0.000    0.000    0.000    0.000 arraysetops.py:26(<module>)
+        1    0.000    0.000    0.000    0.000 decoder.py:17(_floatconstants)
+        1    0.000    0.000    0.000    0.000 __init__.py:68309(CobraToFbcConverter)
+        1    0.000    0.000    0.000    0.000 <string>:1(ArgSpec)
+        1    0.000    0.000    0.000    0.000 _inspect.py:7(<module>)
+        2    0.000    0.000    0.000    0.000 subprocess.py:1161(pipe_cloexec)
+        1    0.000    0.000    0.000    0.000 __init__.py:1662(SBMLWriter)
+        1    0.000    0.000    0.000    0.000 __init__.py:29251(ListOfSpeciesReferences)
+        9    0.000    0.000    0.000    0.000 core.py:2434(getdoc)
+        4    0.000    0.000    0.000    0.000 core.py:92(doc_note)
+        2    0.000    0.000    0.000    0.000 getlimits.py:269(max)
+        1    0.000    0.000    0.000    0.000 __init__.py:1186(SBMLReader)
+        1    0.000    0.000    0.000    0.000 result.py:26(TestResult)
+        2    0.000    0.000    0.000    0.000 Solution.py:20(__init__)
+        3    0.000    0.000    0.000    0.000 {numpy.core.umath.seterrobj}
+        1    0.000    0.000    0.000    0.000 {math.exp}
+        2    0.000    0.000    0.000    0.000 {method 'rstrip' of 'unicode' objects}
+        1    0.000    0.000    0.000    0.000 __init__.py:79083(ListOfLayouts)
+        1    0.000    0.000    0.000    0.000 __init__.py:73433(CompartmentGlyph)
+        1    0.000    0.000    0.000    0.000 <string>:1(Traceback)
+        1    0.000    0.000    0.000    0.000 numbers.py:295(Integral)
+        1    0.000    0.000    0.000    0.000 _laplacian.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 lil.py:23(lil_matrix)
+        1    0.000    0.000    0.000    0.000 __init__.py:47087(SBMLErrorLog)
+        1    0.000    0.000    0.000    0.000 twodim_base.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:52851(SBMLDocumentPlugin)
+        1    0.000    0.000    0.000    0.000 subprocess.py:1371(wait)
+        1    0.000    0.000    0.000    0.000 __init__.py:81284(QualModelPlugin)
+        6    0.000    0.000    0.000    0.000 posixpath.py:59(isabs)
+        1    0.000    0.000    0.000    0.000 mmio.py:100(MMFile)
+        1    0.000    0.000    0.000    0.000 shape_base.py:60(atleast_2d)
+        1    0.000    0.000    0.000    0.000 __init__.py:48913(CVTerm)
+        1    0.000    0.000    0.000    0.000 __init__.py:57698(L3ParserSettings)
+        1    0.000    0.000    0.000    0.000 coo.py:13(swig_import_helper)
+        1    0.000    0.000    0.000    0.000 __init__.py:79930(LayoutModelPlugin)
+        3    0.000    0.000    0.000    0.000 coo.py:143(coo_todense)
+        1    0.000    0.000    0.000    0.000 subprocess.py:1099(_get_handles)
+        1    0.000    0.000    0.000    0.000 coo.py:20(coo_matrix)
+        1    0.000    0.000    0.000    0.000 __init__.py:31696(ListOfEventAssignments)
+        8    0.000    0.000    0.000    0.000 base.py:93(get_shape)
+        1    0.000    0.000    0.232    0.232 __init__.py:805(readSBML)
+        1    0.000    0.000    0.000    0.000 threading.py:656(__init__)
+        1    0.000    0.000    0.000    0.000 _components.py:1(<module>)
+       14    0.000    0.000    0.000    0.000 numerictypes.py:184(english_capitalize)
+        1    0.000    0.000    0.000    0.000 __init__.py:84658(ListOfQualitativeSpecies)
+        1    0.000    0.000    0.000    0.000 decoder.py:304(__init__)
+       17    0.000    0.000    0.000    0.000 _weakrefset.py:16(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:66841(FbcPkgNamespaces)
+        1    0.000    0.000    0.000    0.000 __init__.py:75424(ListOfReferenceGlyphs)
+        1    0.000    0.000    0.000    0.000 __init__.py:38701(SBMLFunctionDefinitionConverter)
+        1    0.000    0.000    0.000    0.000 six.py:184(load_module)
+        1    0.000    0.000    0.000    0.000 __init__.py:41224(SBMLValidator)
+        8    0.000    0.000    0.000    0.000 __init__.py:16967(getName)
+       92    0.000    0.000    0.000    0.000 {id}
+        1    0.000    0.000    0.000    0.000 threading.py:1090(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:77987(ListOfTextGlyphs)
+        1    0.000    0.000    0.000    0.000 py3k.py:4(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:29490(ModifierSpeciesReference)
+        1    0.000    0.000    0.000    0.000 decorators.py:15(<module>)
+       27    0.000    0.000    0.000    0.000 decimal.py:3816(<genexpr>)
+        1    0.000    0.000    0.000    0.000 <string>:1(ArgInfo)
+        1    0.000    0.000    0.000    0.000 csgraph.py:11(<module>)
+       32    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 __init__.py:17953(ListOfCompartments)
+        1    0.000    0.000    0.000    0.000 __init__.py:24019(AssignmentRule)
+        1    0.000    0.000    0.000    0.000 _fortran_format_parser.py:98(ExpFormat)
+        1    0.000    0.000    0.000    0.000 __init__.py:61364(CompBase)
+        1    0.000    0.000    0.000    0.000 __init__.py:22269(ListOfInitialAssignments)
+        1    0.000    0.000    0.000    0.000 bsr.py:13(swig_import_helper)
+        4    0.000    0.000    0.000    0.000 six.py:74(_import_module)
+        1    0.000    0.000    0.000    0.000 __init__.py:83073(ListOfInputs)
+        5    0.000    0.000    0.000    0.000 utils.py:103(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:65046(ReplacedBy)
+        1    0.000    0.000    0.000    0.000 <string>:1(Attribute)
+        1    0.000    0.000    0.000    0.000 nanfunctions.py:16(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:39688(SBMLLevelVersionConverter)
+        1    0.000    0.000    0.000    0.000 random.py:72(Random)
+        1    0.000    0.000    0.000    0.000 subprocess.py:647(Popen)
+        2    0.000    0.000    0.000    0.000 {posix.lstat}
+        1    0.000    0.000    0.000    0.000 __init__.py:30858(ListOfEvents)
+        1    0.000    0.000    0.000    0.000 __init__.py:40209(SBMLReactionConverter)
+        1    0.000    0.000    0.000    0.000 <string>:1(ModuleInfo)
+        1    0.000    0.000    0.000    0.000 base.py:63(__init__)
+        3    0.000    0.000    0.000    0.000 result.py:14(failfast)
+        1    0.000    0.000    0.000    0.000 dok.py:27(dok_matrix)
+        1    0.000    0.000    0.000    0.000 __init__.py:80617(QualPkgNamespaces)
+       17    0.000    0.000    0.000    0.000 {method '__subclasses__' of 'type' objects}
+        1    0.000    0.000    0.000    0.000 __init__.py:40487(SBMLRuleConverter)
+        3    0.000    0.000    0.000    0.000 {method 'ravel' of 'numpy.ndarray' objects}
+       17    0.000    0.000    0.000    0.000 _weakrefset.py:52(_commit_removals)
+        1    0.000    0.000    0.000    0.000 __init__.py:41510(SBMLExternalValidator)
+        1    0.000    0.000    0.000    0.000 _internal.py:196(_getintp_ctype)
+        1    0.000    0.000    0.000    0.000 __init__.py:66611(CompPkgNamespaces)
+        1    0.000    0.000    0.000    0.000 __init__.py:24400(RateRule)
+        1    0.000    0.000    0.000    0.000 __init__.py:25196(ListOfConstraints)
+        1    0.000    0.000    0.000    0.000 __init__.py:77261(ListOfCompartmentGlyphs)
+        1    0.000    0.000    0.000    0.000 <string>:1(DecimalTuple)
+        1    0.000    0.000    0.000    0.000 __init__.py:38212(SBMLConverter)
+        4    0.000    0.000    0.000    0.000 numeric.py:392(asarray)
+        1    0.000    0.000    0.000    0.000 __init__.py:39441(SBMLInitialAssignmentConverter)
+        1    0.000    0.000    0.000    0.000 keyword.py:11(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:63626(ListOfModelDefinitions)
+        1    0.000    0.000    0.000    0.000 __init__.py:38954(SBMLIdConverter)
+        1    0.000    0.000    0.000    0.000 __init__.py:23712(AlgebraicRule)
+        1    0.000    0.000    0.000    0.000 __init__.py:23459(ListOfRules)
+        1    0.000    0.000    0.000    0.000 Image.py:447(Image)
+        1    0.000    0.000    0.000    0.000 base.py:71(set_shape)
+        1    0.000    0.000    0.000    0.000 helper.py:4(<module>)
+        1    0.000    0.000    0.000    0.000 {posix.sysconf}
+        2    0.000    0.000    0.000    0.000 {posix.getcwd}
+        1    0.000    0.000    0.000    0.000 __init__.py:40743(SBMLStripPackageConverter)
+        1    0.000    0.000    0.000    0.000 __init__.py:70106(ListOfFluxObjectives)
+        1    0.000    0.000    0.000    0.000 __init__.py:21415(ListOfLocalParameters)
+        1    0.000    0.000    0.000    0.000 __init__.py:80123(LayoutSpeciesReferencePlugin)
+        1    0.000    0.000    0.000    0.000 <string>:1(Arguments)
+        1    0.000    0.000    0.000    0.000 __init__.py:13558(ListOfUnits)
+        1    0.000    0.000    0.000    0.000 DictList.py:12(DictList)
+       13    0.000    0.000    0.000    0.000 fromnumeric.py:2449(rank)
+        1    0.000    0.000    0.000    0.000 __init__.py:63178(ListOfDeletions)
+        1    0.000    0.000    0.000    0.000 __init__.py:52143(ISBMLExtensionNamespaces)
+        1    0.000    0.000    0.000    0.000 __init__.py:82310(DefaultTerm)
+        1    0.000    0.000    0.000    0.000 __init__.py:64503(ModelDefinition)
+        1    0.000    0.000    0.000    0.000 _iotools.py:246(NameValidator)
+        1    0.000    0.000    0.000    0.000 __init__.py:4320(getPlugin)
+        1    0.000    0.000    0.000    0.000 __init__.py:40979(SBMLUnitsConverter)
+        1    0.000    0.000    0.000    0.000 subprocess.py:1208(_close_in_parent)
+        1    0.000    0.000    0.000    0.000 __init__.py:52193(SBaseExtensionPoint)
+        1    0.000    0.000    0.000    0.000 __init__.py:60514(SBMLResolverRegistry)
+        8    0.000    0.000    0.000    0.000 {_libsbml.Compartment_getId}
+        8    0.000    0.000    0.000    0.000 {_libsbml.ListOfCompartments_get}
+        1    0.000    0.000    0.000    0.000 _internal.py:224(_ctypes)
+        1    0.000    0.000    0.000    0.000 __init__.py:26752(ListOfReactions)
+        1    0.000    0.000    0.000    0.000 atexit.py:6(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:11688(ListOfFunctionDefinitions)
+        1    0.000    0.000    0.000    0.000 {method 'as_integer_ratio' of 'float' objects}
+        8    0.000    0.000    0.000    0.000 __init__.py:16954(getId)
+        6    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 {method 'min' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 __init__.py:20841(ListOfParameters)
+        1    0.000    0.000    0.000    0.000 examo.py:23(CbModel)
+        1    0.000    0.000    0.000    0.000 array_printer.py:1(<module>)
+        8    0.000    0.000    0.000    0.000 core.py:7199(__init__)
+       50    0.000    0.000    0.000    0.000 {_ctypes.sizeof}
+        1    0.000    0.000    0.000    0.000 __init__.py:64077(ListOfReplacedElements)
+        1    0.000    0.000    0.000    0.000 {method 'decode' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 hex_codec.py:70(getregentry)
+        1    0.000    0.000    0.000    0.000 process.py:301(__init__)
+        1    0.000    0.000    0.000    0.000 csgraph.py:13(swig_import_helper)
+        1    0.000    0.000    0.000    0.000 genericpath.py:26(isfile)
+        6    0.000    0.000    0.000    0.000 {delattr}
+        1    0.000    0.000    0.000    0.000 {method 'view' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 doccer.py:2(<module>)
+        1    0.000    0.000    0.000    0.000 ascii.py:41(getregentry)
+        9    0.000    0.000    0.000    0.000 core.py:2428(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:60258(SBMLResolver)
+        1    0.000    0.000    0.000    0.000 byteordercodes.py:7(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:68440(FbcToCobraConverter)
+        1    0.000    0.000    0.000    0.000 copy_reg.py:14(pickle)
+        5    0.000    0.000    0.000    0.000 utils.py:87(_set_function_name)
+        2    0.000    0.000    0.000    0.000 _methods.py:19(_amin)
+        1    0.000    0.000    0.000    0.000 __init__.py:139(ASTNodeList)
+        1    0.000    0.000    0.000    0.000 __init__.py:60098(SBMLUri)
+        1    0.000    0.000    0.000    0.000 polynomial.py:930(poly1d)
+        1    0.000    0.000    0.000    0.000 _fortran_format_parser.py:38(IntFormat)
+        2    0.000    0.000    0.000    0.000 numeric.py:1617(set_string_function)
+        3    0.000    0.000    0.000    0.000 six.py:157(_resolve)
+        1    0.000    0.000    0.000    0.000 __init__.py:9929(getModel)
+        1    0.000    0.000    0.000    0.000 numeric.py:2701(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:1240(<lambda>)
+        1    0.000    0.000    0.000    0.000 fnmatch.py:11(<module>)
+        8    0.000    0.000    0.000    0.000 {_libsbml.Compartment_getName}
+        1    0.000    0.000    0.000    0.000 warnings.py:74(simplefilter)
+        1    0.000    0.000    0.000    0.000 deletion_worker.py:47(CobraDeletionPool)
+        3    0.000    0.000    0.000    0.000 index_tricks.py:231(__init__)
+        1    0.000    0.000    0.000    0.000 numbers.py:169(Real)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Model_getListOfCompartments}
+       44    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 weakref.py:282(__init__)
+        1    0.000    0.000    0.000    0.000 Formula.py:12(Formula)
+        2    0.000    0.000    0.000    0.000 stat.py:40(S_ISDIR)
+        1    0.000    0.000    0.000    0.000 __init__.py:1238(<lambda>)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfRules_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ModelCreatorList_swigregister}
+        1    0.000    0.000    0.000    0.000 getlimits.py:24(finfo)
+        1    0.000    0.000    0.000    0.000 __init__.py:789(conditional_abspath)
+        2    0.000    0.000    0.000    0.000 {_libsbml.Model_getId}
+        1    0.000    0.000    0.000    0.000 threading.py:560(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:53749(SBMLExtensionException)
+        1    0.000    0.000    0.000    0.000 __init__.py:38559(SBMLConverterRegistry)
+        6    0.000    0.000    0.000    0.000 opcode.py:39(jabs_op)
+        1    0.000    0.000    0.000    0.000 ufunclike.py:5(<module>)
+        2    0.000    0.000    0.000    0.000 six.py:75(_import_module)
+        1    0.000    0.000    0.000    0.000 records.py:216(record)
+        3    0.000    0.000    0.000    0.000 data.py:25(_get_dtype)
+        1    0.000    0.000    0.000    0.000 precision.py:26(_fill_table)
+        1    0.000    0.000    0.000    0.000 compat.py:110(Unpickler)
+        1    0.000    0.000    0.000    0.000 subprocess.py:802(poll)
+        1    0.000    0.000    0.000    0.000 posixpath.py:139(islink)
+        1    0.000    0.000    0.000    0.000 {_struct.unpack}
+       11    0.000    0.000    0.000    0.000 opcode.py:31(name_op)
+        1    0.000    0.000    0.000    0.000 threading.py:575(set)
+        2    0.000    0.000    0.000    0.000 {numpy.core.multiarray.set_string_function}
+        1    0.000    0.000    0.000    0.000 hex_codec.py:27(hex_decode)
+        1    0.000    0.000    0.000    0.000 extras.py:1501(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:39209(SBMLInferUnitsConverter)
+        1    0.000    0.000    0.000    0.000 __init__.py:47740(SBMLError)
+        1    0.000    0.000    0.000    0.000 extract.py:2(<module>)
+        1    0.000    0.000    0.000    0.000 dia.py:17(dia_matrix)
+        2    0.000    0.000    0.000    0.000 __init__.py:5946(getId)
+        1    0.000    0.000    0.000    0.000 hb.py:423(HBFile)
+        1    0.000    0.000    0.000    0.000 six.py:436(Module_six_moves_urllib)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Model_getListOfSpecies}
+        1    0.000    0.000    0.000    0.000 netcdf.py:81(netcdf_file)
+        2    0.000    0.000    0.000    0.000 decimal.py:700(_isnan)
+        1    0.000    0.000    0.000    0.000 Species.py:7(Species)
+        1    0.000    0.000    0.000    0.000 extras.py:1431(__init__)
+        1    0.000    0.000    0.000    0.000 utf_16.py:117(getregentry)
+        1    0.000    0.000    0.000    0.000 csc.py:21(csc_matrix)
+        2    0.000    0.000    0.000    0.000 numeric.py:2416(geterr)
+        1    0.000    0.000    0.000    0.000 tempfile.py:108(_RandomNameSequence)
+        4    0.000    0.000    0.000    0.000 subprocess.py:1148(_set_cloexec_flag)
+        1    0.000    0.000    0.000    0.000 __init__.py:44635(XMLTriple)
+        1    0.000    0.000    0.000    0.000 ascii.py:24(IncrementalDecoder)
+       75    0.000    0.000    0.000    0.000 {globals}
+        1    0.000    0.000    0.000    0.000 {math.copysign}
+        1    0.000    0.000    0.000    0.000 ImageMode.py:17(<module>)
+        1    0.000    0.000    0.000    0.000 {_libsbml.new_SBMLReader}
+        1    0.000    0.000    0.000    0.000 numpytest.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 util.py:172(Finalize)
+        1    0.000    0.000    0.000    0.000 netcdf.py:702(netcdf_variable)
+        1    0.000    0.000    0.000    0.000 info.py:34(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:39970(SBMLLocalParameterConverter)
+        1    0.000    0.000    0.000    0.000 Model.py:16(Model)
+        6    0.000    0.000    0.000    0.000 decimal.py:793(__nonzero__)
+        1    0.000    0.000    0.000    0.000 data.py:22(__init__)
+        1    0.000    0.000    0.000    0.000 miobase.py:330(MatFileReader)
+        1    0.000    0.000    0.000    0.000 arrayprint.py:532(FloatFormat)
+        4    0.000    0.000    0.000    0.000 stat.py:24(S_IFMT)
+        1    0.000    0.000    0.000    0.000 index_tricks.py:456(__init__)
+        1    0.000    0.000    0.000    0.000 mio4.py:448(VarWriter4)
+        1    0.000    0.000    0.000    0.000 __init__.py:79(ModelCreatorList)
+        1    0.000    0.000    0.000    0.000 numeric.py:2716(_setdef)
+        1    0.000    0.000    0.000    0.000 {_libsbml.UnitDefinition_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOf_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfUnitDefinitions_swigregister}
+        1    0.000    0.000    0.000    0.000 Metabolite.py:6(Metabolite)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfEvents_swigregister}
+        1    0.000    0.000    0.000    0.000 {binascii.a2b_hex}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ExternalModelDefinition_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfConstraints_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SimpleSpeciesReference_swigregister}
+        1    0.000    0.000    0.000    0.000 info.py:176(<module>)
+        1    0.000    0.000    0.000    0.000 csr.py:22(csr_matrix)
+        1    0.000    0.000    0.000    0.000 stat.py:55(S_ISLNK)
+        1    0.000    0.000    0.000    0.000 Object.py:4(Object)
+        1    0.000    0.000    0.000    0.000 {_libsbml.CompSBMLDocumentPlugin_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.Priority_swigregister}
+        1    0.000    0.000    0.000    0.000 __init__.py:7789(getListOfSpecies)
+        1    0.000    0.000    0.000    0.000 copy.py:113(_copy_with_constructor)
+        1    0.000    0.000    0.000    0.000 mio5.py:791(MatFile5Writer)
+        1    0.000    0.000    0.000    0.000 info.py:83(<module>)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Replacing_swigregister}
+        1    0.000    0.000    0.000    0.000 base.py:426(__getattr__)
+        1    0.000    0.000    0.000    0.000 six.py:368(Module_six_moves_urllib)
+        1    0.000    0.000    0.000    0.000 _datasource.py:49(_FileOpeners)
+        1    0.000    0.000    0.000    0.000 __init__.py:159(SBMLNamespacesList)
+        1    0.000    0.000    0.000    0.000 UserDict.py:58(get)
+        1    0.000    0.000    0.000    0.000 data.py:21(_data_matrix)
+        1    0.000    0.000    0.000    0.000 mio4.py:303(MatFile4Reader)
+        6    0.000    0.000    0.000    0.000 opcode.py:35(jrel_op)
+        1    0.000    0.000    0.000    0.000 __init__.py:1086(IdentifierTransformer)
+        2    0.000    0.000    0.000    0.000 threading.py:241(Condition)
+        1    0.000    0.000    0.000    0.000 __init__.py:53(_swig_getattr)
+        1    0.000    0.000    0.000    0.000 info.py:84(<module>)
+        1    0.000    0.000    0.000    0.000 getlimits.py:194(iinfo)
+        1    0.000    0.000    0.000    0.000 {_libsbml.CompartmentType_swigregister}
+        1    0.000    0.000    0.000    0.000 difflib.py:44(SequenceMatcher)
+        1    0.000    0.000    0.000    0.000 decimal.py:2508(_rescale)
+        1    0.000    0.000    0.000    0.000 core.py:5564(mvoid)
+        1    0.000    0.000    0.000    0.000 _iotools.py:155(LineSplitter)
+        3    0.000    0.000    0.000    0.000 functools.py:39(wraps)
+        1    0.000    0.000    0.000    0.000 {_libsbml.XMLError_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.CubicBezier_swigregister}
+        1    0.000    0.000    0.000    0.000 index_tricks.py:434(__init__)
+        1    0.000    0.000    0.000    0.000 {binascii.hexlify}
+        7    0.000    0.000    0.000    0.000 case.py:609(_deprecate)
+        1    0.000    0.000    0.000    0.000 subprocess.py:754(__del__)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfPorts_swigregister}
+        1    0.000    0.000    0.000    0.000 mio5.py:110(MatFile5Reader)
+        1    0.000    0.000    0.000    0.000 random.py:91(__init__)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLNamespaces_swigregister}
+        1    0.000    0.000    0.000    0.000 core.py:5767(__new__)
+        1    0.000    0.000    0.000    0.000 __init__.py:50(_swig_setattr)
+        1    0.000    0.000    0.000    0.000 __init__.py:7849(getListOfReactions)
+        1    0.000    0.000    0.000    0.000 __init__.py:1013(IdList)
+        2    0.000    0.000    0.000    0.000 version.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 utf_32.py:141(getregentry)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Rule_swigregister}
+        1    0.000    0.000    0.000    0.000 _datasource.py:150(DataSource)
+        1    0.000    0.000    0.000    0.000 pprint.py:84(PrettyPrinter)
+        4    0.000    0.000    0.000    0.000 {thread.allocate_lock}
+        1    0.000    0.000    0.000    0.000 warnings.py:339(__enter__)
+        1    0.000    0.000    0.000    0.000 {gc.disable}
+       19    0.000    0.000    0.000    0.000 tokenize.py:45(group)
+        1    0.000    0.000    0.000    0.000 {_libsbml.FunctionTerm_swigregister}
+        1    0.000    0.000    0.000    0.000 encoder.py:101(__init__)
+        2    0.000    0.000    0.001    0.000 DictList.py:175(__iadd__)
+        1    0.000    0.000    0.000    0.000 _import_tools.py:8(PackageLoader)
+        1    0.000    0.000    0.000    0.000 difflib.py:1670(HtmlDiff)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfReplacedElements_swigregister}
+        1    0.000    0.000    0.000    0.000 warnings.py:318(__init__)
+        1    0.000    0.000    0.000    0.000 {_libsbml.InitialAssignment_swigregister}
+        1    0.000    0.000    0.000    0.000 __init__.py:37(_swig_setattr_nondynamic)
+        1    0.000    0.000    0.000    0.000 arrayterator.py:21(Arrayterator)
+        1    0.000    0.000    0.000    0.000 {_libsbml.FluxObjective_swigregister}
+        1    0.000    0.000    0.000    0.000 numbers.py:270(Rational)
+        1    0.000    0.000    0.000    0.000 numeric.py:2705(__enter__)
+        1    0.000    0.000    0.000    0.000 {sorted}
+        1    0.000    0.000    0.000    0.000 six.py:150(_resolve)
+        1    0.000    0.000    0.000    0.000 __init__.py:119(CVTermList)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBaseRef_swigregister}
+        1    0.000    0.000    0.000    0.000 _fortran.py:15(FortranFile)
+        1    0.000    0.000    0.000    0.000 nosetester.py:88(NoseTester)
+        1    0.000    0.000    0.000    0.000 __init__.py:99(DateList)
+        1    0.000    0.000    0.000    0.000 {built-in method fromkeys}
+        1    0.000    0.000    0.000    0.000 __init__.py:45531(XMLOwningOutputStringStream)
+        1    0.000    0.000    0.000    0.000 __init__.py:179(SBaseList)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Input_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBase_swigregister}
+        1    0.000    0.000    0.000    0.000 _binary.py:14(<module>)
+        1    0.000    0.000    0.000    0.000 tempfile.py:372(_TemporaryFileWrapper)
+        1    0.000    0.000    0.000    0.000 threading.py:254(_Condition)
+        1    0.000    0.000    0.000    0.000 threading.py:372(notify)
+        1    0.000    0.000    0.000    0.000 {_libsbml.XMLToken_swigregister}
+        1    0.000    0.000    0.000    0.000 suite.py:78(TestSuite)
+        1    0.000    0.000    0.000    0.000 loader.py:38(TestLoader)
+        1    0.000    0.000    0.000    0.000 {_ctypes.dlopen}
+        1    0.000    0.000    0.000    0.000 hb.py:50(HBInfo)
+        1    0.000    0.000    0.000    0.000 __init__.py:45557(XMLOwningOutputFileStream)
+        1    0.000    0.000    0.000    0.000 {_libsbml.FbcModelPlugin_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.QualitativeSpecies_swigregister}
+        1    0.000    0.000    0.000    0.000 info.py:147(<module>)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfSpeciesReferenceGlyphs_swigregister}
+        1    0.000    0.000    0.000    0.000 _import_tools.py:336(PackageLoaderDebug)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfFluxObjectives_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SpeciesReference_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfSubmodels_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.QualExtension_swigregister}
+        1    0.000    0.000    0.000    0.000 npyio.py:133(NpzFile)
+        1    0.000    0.000    0.000    0.000 {_libsbml.LayoutExtension_swigregister}
+        1    0.000    0.000    0.000    0.000 {posix.WEXITSTATUS}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLLevelVersionConverter_swigregister}
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:145(GaussianBlur)
+        1    0.000    0.000    0.000    0.000 stride_tricks.py:14(DummyArray)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfFluxBounds_swigregister}
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:99(MinFilter)
+        4    0.000    0.000    0.000    0.000 threading.py:58(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:5806(<lambda>)
+        1    0.000    0.000    0.000    0.000 ascii.py:13(Codec)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Deletion_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.AssignmentRule_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.Model_getListOfReactions}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLInferUnitsConverter_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLReactionConverter_swigregister}
+        1    0.000    0.000    0.000    0.000 core.py:751(_DomainTan)
+        1    0.000    0.000    0.000    0.000 decimal.py:5672(_Log10Memoize)
+        1    0.000    0.000    0.000    0.000 runner.py:28(TextTestResult)
+        1    0.000    0.000    0.000    0.000 ctypeslib.py:158(_ndptr)
+        1    0.000    0.000    0.000    0.000 Image.py:417(_E)
+        1    0.000    0.000    0.000    0.000 examo.py:296(MetabGeneExpModel_gurobi)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Delay_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.FluxBound_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.Model_swigregister}
+        1    0.000    0.000    0.000    0.000 threading.py:399(notifyAll)
+        1    0.000    0.000    0.000    0.000 StringIO.py:42(StringIO)
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:198(DETAIL)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SwigPyIterator_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLDocumentPlugin_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfTextGlyphs_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ISBMLExtensionNamespaces_swigregister}
+        1    0.000    0.000    0.000    0.000 examo.py:490(MipSeparateFwdRev)
+        1    0.000    0.000    0.000    0.000 pickle.py:58(PickleError)
+        1    0.000    0.000    0.000    0.000 {_libsbml.QualPkgNamespaces_swigregister}
+        1    0.000    0.000    0.000    0.000 core.py:5761(MaskedConstant)
+        1    0.000    0.000    0.000    0.000 six.py:56(__len__)
+        1    0.000    0.000    0.000    0.000 core.py:729(_DomainCheckInterval)
+        1    0.000    0.000    0.000    0.000 __init__.py:730(ostream)
+        1    0.000    0.000    0.000    0.000 {_libsbml.RDFAnnotationParser_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.DateList_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ConversionProperties_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.GraphicalObject_swigregister}
+        1    0.000    0.000    0.000    0.000 case.py:1018(FunctionTestCase)
+        3    0.000    0.000    0.000    0.000 __init__.py:104(CFunctionType)
+        1    0.000    0.000    0.000    0.000 {_libsbml.CompModelPlugin_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLUri_swigregister}
+        1    0.000    0.000    0.000    0.000 {math.sqrt}
+        1    0.000    0.000    0.000    0.000 threading.py:1058(_Timer)
+        1    0.000    0.000    0.000    0.000 core.py:5938(_maximum_operation)
+        1    0.000    0.000    0.000    0.000 {_libsbml.EventAssignment_swigregister}
+        1    0.000    0.000    0.000    0.000 memmap.py:23(memmap)
+        1    0.000    0.000    0.000    0.000 utf_16.py:95(StreamReader)
+        1    0.000    0.000    0.000    0.000 ArrayBasedModel.py:372(SMatrix_lil)
+        1    0.000    0.000    0.000    0.000 {_libsbml.XMLNamespaces_swigregister}
+        1    0.000    0.000    0.000    0.000 core.py:5940(__init__)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLWriter_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ASTNodeList_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.Point_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SpeciesType_swigregister}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfDeletions_swigregister}
+        1    0.000    0.000    0.000    0.000 ArrayBasedModel.py:347(SMatrix_dok)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ModelDefinition_swigregister}
+        1    0.000    0.000    0.000    0.000 tokenize.py:179(Untokenizer)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Trigger_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfGraphicalObjects_swigregister}
+        1    0.000    0.000    0.000    0.000 core.py:7187(_convert2ma)
+        1    0.000    0.000    0.000    0.000 {_libsbml.FbcExtension_swigregister}
+        1    0.000    0.000    0.000    0.000 idl.py:639(AttrDict)
+        1    0.000    0.000    0.000    0.000 Image.py:1710(_ImageCrop)
+        1    0.000    0.000    0.000    0.000 case.py:98(_AssertRaisesContext)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfSpecies_swigregister}
+        2    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 decoder.py:274(JSONDecoder)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLExtension_swigregister}
+        1    0.000    0.000    0.000    0.000 base.py:702(isspmatrix)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLErrorLog_swigregister}
+        2    0.000    0.000    0.000    0.000 {method 'acquire' of 'thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 doccer.py:153(filldoc)
+        1    0.000    0.000    0.000    0.000 {_libsbml.CVTermList_swigregister}
+        1    0.000    0.000    0.000    0.000 {_ctypes.set_conversion_mode}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfModelDefinitions_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfGeneAssociations_swigregister}
+        1    0.000    0.000    0.000    0.000 polynomial.py:21(RankWarning)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfCompartmentTypes_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.LayoutPkgNamespaces_swigregister}
+        1    0.000    0.000    0.000    0.000 threading.py:789(_set_ident)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfReferenceGlyphs_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfSpeciesReferences_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLDocument_getModel}
+        2    0.000    0.000    0.000    0.000 index_tricks.py:145(__init__)
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:189(CONTOUR)
+        1    0.000    0.000    0.000    0.000 {_libsbml.AlgebraicRule_swigregister}
+        4    0.000    0.000    0.000    0.000 six.py:69(_add_doc)
+        1    0.000    0.000    0.000    0.000 linalg.py:43(LinAlgError)
+        1    0.000    0.000    0.000    0.000 {_libsbml.LineSegment_swigregister}
+        1    0.000    0.000    0.000    0.000 numeric.py:2639(errstate)
+        1    0.000    0.000    0.000    0.000 _datasource.py:72(__init__)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ReactionGlyph_swigregister}
+        1    0.000    0.000    0.000    0.000 records.py:286(recarray)
+        2    0.000    0.000    0.000    0.000 {math.log}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLDocument_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.Curve_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLExternalValidator_swigregister}
+        1    0.000    0.000    0.000    0.000 utils.py:1400(WarningManager)
+        1    0.000    0.000    0.000    0.000 {_libsbml.StoichiometryMath_swigregister}
+        1    0.000    0.000    0.000    0.000 index_tricks.py:584(IndexExpression)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfSpeciesTypes_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ElementFilter_swigregister}
+        1    0.000    0.000    0.000    0.000 main.py:63(TestProgram)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfParameters_swigregister}
+        1    0.000    0.000    0.000    0.000 utf_32.py:48(IncrementalDecoder)
+        1    0.000    0.000    0.000    0.000 machar.py:17(MachAr)
+        3    0.000    0.000    0.000    0.000 core.py:737(__init__)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ReplacedBy_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfLayouts_swigregister}
+        1    0.000    0.000    0.000    0.000 function_base.py:1405(vectorize)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfFunctionDefinitions_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLError_swigregister}
+        1    0.000    0.000    0.000    0.000 arrayprint.py:658(LongFloatFormat)
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:207(EDGE_ENHANCE)
+        1    0.000    0.000    0.000    0.000 _datasource.py:499(Repository)
+        1    0.000    0.000    0.000    0.000 __init__.py:168(c_short)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SyntaxChecker_swigregister}
+        1    0.000    0.000    0.000    0.000 random.py:800(SystemRandom)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLExtensionRegistry_swigregister}
+        1    0.000    0.000    0.000    0.000 warnings.py:355(__exit__)
+        1    0.000    0.000    0.000    0.000 suite.py:16(BaseTestSuite)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SpeciesGlyph_swigregister}
+        1    0.000    0.000    0.000    0.000 threading.py:422(_Semaphore)
+        1    0.000    0.000    0.000    0.000 core.py:883(_MaskedBinaryOperation)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Submodel_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfQualitativeSpecies_swigregister}
+        1    0.000    0.000    0.000    0.000 _endian.py:26(_swapped_meta)
+        1    0.000    0.000    0.000    0.000 {_libsbml.XMLNode_swigregister}
+        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 arrayprint.py:638(IntegerFormat)
+        1    0.000    0.000    0.000    0.000 extras.py:1419(MAxisConcatenator)
+        1    0.000    0.000    0.000    0.000 ArrayBasedModel.py:308(LinkedArray)
+        1    0.000    0.000    0.000    0.000 stat.py:49(S_ISREG)
+        1    0.000    0.000    0.000    0.000 sputils.py:160(IndexMixin)
+        1    0.000    0.000    0.000    0.000 six.py:80(_LazyDescr)
+        2    0.000    0.000    0.000    0.000 decimal.py:180(handle)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBasePlugin_swigregister}
+        1    0.000    0.000    0.000    0.000 suite.py:299(_DebugResult)
+        1    0.000    0.000    0.000    0.000 polyutils.py:48(RankWarning)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Compartment_swigregister}
+        1    0.000    0.000    0.000    0.000 utf_32.py:99(StreamWriter)
+        1    0.000    0.000    0.000    0.000 utils.py:961(SafeEval)
+        1    0.000    0.000    0.000    0.000 {numpy.core.multiarray.set_typeDict}
+        1    0.000    0.000    0.000    0.000 {_libsbml.Species_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SpeciesReferenceGlyph_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfCompartmentGlyphs_swigregister}
+        1    0.000    0.000    0.000    0.000 io.py:72(RawIOBase)
+        1    0.000    0.000    0.000    0.000 polyutils.py:52(PolyError)
+        1    0.000    0.000    0.000    0.000 __init__.py:14(<module>)
+        1    0.000    0.000    0.000    0.000 decimal.py:184(Clamped)
+        1    0.000    0.000    0.000    0.000 hex_codec.py:62(StreamWriter)
+        1    0.000    0.000    0.000    0.000 {_libsbml.CobraToFbcConverter_swigregister}
+        1    0.000    0.000    0.000    0.000 random.py:650(WichmannHill)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Association_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLTransforms_swigregister}
+        2    0.000    0.000    0.000    0.000 core.py:796(__init__)
+        1    0.000    0.000    0.000    0.000 decimal.py:5835(_convert_other)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLFileResolver_swigregister}
+        1    0.000    0.000    0.000    0.000 idl.py:146(Pointer)
+        1    0.000    0.000    0.000    0.000 core.py:2399(_arraymethod)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Unit_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.CompBase_swigregister}
+        1    0.000    0.000    0.000    0.000 UserDict.py:4(__init__)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfInitialAssignments_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.LayoutSpeciesReferencePlugin_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBO_swigregister}
+        1    0.000    0.000    0.000    0.000 core.py:2250(_MaskedPrintOption)
+        1    0.000    0.000    0.000    0.000 {posix.WIFSIGNALED}
+        1    0.000    0.000    0.000    0.000 decimal.py:299(Rounded)
+        1    0.000    0.000    0.000    0.000 mio4.py:98(VarReader4)
+        1    0.000    0.000    0.000    0.000 {_libsbml.GeneAssociation_swigregister}
+        1    0.000    0.000    0.000    0.000 __init__.py:68(SolverNotFound)
+        1    0.000    0.000    0.000    0.000 {_libsbml.CVTerm_swigregister}
+        1    0.000    0.000    0.000    0.000 threading.py:56(_Verbose)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLResolver_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ModifierSpeciesReference_swigregister}
+        1    0.000    0.000    0.000    0.000 Solution.py:1(Solution)
+        1    0.000    0.000    0.000    0.000 {_libsbml.XMLTriple_swigregister}
+        1    0.000    0.000    0.000    0.000 subprocess.py:1330(_handle_exitstatus)
+        1    0.000    0.000    0.000    0.000 deletion_worker.py:123(CobraDeletionMockPool)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfSpeciesGlyphs_swigregister}
+        1    0.000    0.000    0.000    0.000 numeric.py:2710(__exit__)
+        1    0.000    0.000    0.000    0.000 {_libsbml.XMLOutputStream_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.Layout_swigregister}
+        1    0.000    0.000    0.000    0.000 utf_16.py:18(IncrementalEncoder)
+        1    0.000    0.000    0.000    0.000 six.py:178(__get_module)
+        1    0.000    0.000    0.000    0.000 {_libsbml.FbcToCobraConverter_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ModelHistory_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.Dimensions_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ReferenceGlyph_swigregister}
+        6    0.000    0.000    0.000    0.000 {numpy.core.umath.geterrobj}
+        1    0.000    0.000    0.000    0.000 {_libsbml.L3ParserSettings_swigregister}
+        1    0.000    0.000    0.000    0.000 polyutils.py:56(PolyDomainError)
+        1    0.000    0.000    0.000    0.000 {_libsbml.XMLOwningOutputFileStream_swigregister}
+        1    0.000    0.000    0.000    0.000 difflib.py:764(Differ)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLExtensionException_swigregister}
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:243(SMOOTH)
+        1    0.000    0.000    0.000    0.000 _endian.py:49(BigEndianStructure)
+        1    0.000    0.000    0.000    0.000 decimal.py:235(DivisionByZero)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfTransitions_swigregister}
+        1    0.000    0.000    0.000    0.000 six.py:94(MovedModule)
+        1    0.000    0.000    0.000    0.000 six.py:218(_MovedItems)
+        1    0.000    0.000    0.000    0.000 six.py:105(_resolve)
+        1    0.000    0.000    0.000    0.000 index_tricks.py:461(ndenumerate)
+        5    0.000    0.000    0.000    0.000 six.py:170(_get_module)
+        1    0.000    0.000    0.000    0.000 {_libsbml.CompSBasePlugin_swigregister}
+        1    0.000    0.000    0.000    0.000 threading.py:1097(_set_daemon)
+        1    0.000    0.000    0.000    0.000 {_libsbml.string_swigregister}
+        1    0.000    0.000    0.000    0.000 copy.py:66(copy)
+        1    0.000    0.000    0.000    0.000 threading.py:514(_BoundedSemaphore)
+        1    0.000    0.000    0.000    0.000 six.py:155(_SixMetaPathImporter)
+        1    0.000    0.000    0.000    0.000 io.py:69(IOBase)
+        1    0.000    0.000    0.000    0.000 __init__.py:159(py_object)
+        1    0.000    0.000    0.000    0.000 {_libsbml.LayoutModelPlugin_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfEventAssignments_swigregister}
+        1    0.000    0.000    0.000    0.000 _fortran_format_parser.py:184(Tokenizer)
+        1    0.000    0.000    0.000    0.000 numbers.py:13(Number)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Output_swigregister}
+        1    0.000    0.000    0.000    0.000 six.py:122(_LazyModule)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Constraint_swigregister}
+        1    0.000    0.000    0.000    0.000 mio5_params.py:218(MatlabObject)
+        1    0.000    0.000    0.000    0.000 pickle.py:69(UnpicklingError)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfExternalModelDefinitions_swigregister}
+        1    0.000    0.000    0.000    0.000 threading.py:299(_is_owned)
+        1    0.000    0.000    0.000    0.000 suite.py:252(_ErrorHolder)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Port_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.FbcSpeciesPlugin_swigregister}
+        1    0.000    0.000    0.000    0.000 atexit.py:37(register)
+        1    0.000    0.000    0.000    0.000 decimal.py:1742(_round_down)
+        1    0.000    0.000    0.000    0.000 case.py:45(_UnexpectedSuccess)
+        1    0.000    0.000    0.000    0.000 encoder.py:70(JSONEncoder)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfLocalParameters_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.CompartmentGlyph_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.FunctionDefinition_swigregister}
+        1    0.000    0.000    0.000    0.000 decimal.py:5676(__init__)
+        1    0.000    0.000    0.000    0.000 typeconv.py:53(_oldtypecodes)
+        1    0.000    0.000    0.000    0.000 {_libsbml.QualModelPlugin_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLResolverRegistry_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.DefaultTerm_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBaseExtensionPoint_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLNamespacesList_swigregister}
+        1    0.000    0.000    0.000    0.000 utilities.py:19(<module>)
+        1    0.000    0.000    0.000    0.000 threading.py:551(_Event)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfInputs_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfFunctionTerms_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfOutputs_swigregister}
+        1    0.000    0.000    0.000    0.000 subprocess.py:400(CalledProcessError)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfUnits_swigregister}
+        1    0.000    0.000    0.000    0.000 data.py:97(_minmax_mixin)
+        8    0.000    0.000    0.000    0.000 __init__.py:16811(<lambda>)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Objective_swigregister}
+        1    0.000    0.000    0.000    0.000 __init__.py:1256(<lambda>)
+       42    0.000    0.000    0.000    0.000 {method 'isdigit' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 sputils.py:80(to_native)
+        1    0.000    0.000    0.000    0.000 mio4.py:80(VarHeader4)
+        1    0.000    0.000    0.000    0.000 threading.py:124(_RLock)
+        1    0.000    0.000    0.000    0.000 runner.py:119(TextTestRunner)
+        1    0.000    0.000    0.000    0.000 __future__.py:74(_Feature)
+        1    0.000    0.000    0.000    0.000 __init__.py:26984(<lambda>)
+        1    0.000    0.000    0.000    0.000 collections.py:387(Counter)
+        1    0.000    0.000    0.000    0.000 six.py:104(_resolve)
+        2    0.000    0.000    0.000    0.000 tokenize.py:47(maybe)
+        8    0.000    0.000    0.000    0.000 six.py:70(_add_doc)
+        1    0.000    0.000    0.000    0.000 decimal.py:3899(Etop)
+        1    0.000    0.000    0.000    0.000 {_libsbml.IdList_swigregister}
+        1    0.000    0.000    0.000    0.000 utf_32.py:13(IncrementalEncoder)
+        1    0.000    0.000    0.000    0.000 threading.py:1128(_DummyThread)
+        1    0.000    0.000    0.000    0.000 {_libsbml.KineticLaw_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfReactionGlyphs_swigregister}
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:263(SHARPEN)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Parameter_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ReplacedElement_swigregister}
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:25(Kernel)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Date_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.XMLErrorLog_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.GeneralGlyph_swigregister}
+        1    0.000    0.000    0.000    0.000 _inspect.py:162(<lambda>)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLConverter_swigregister}
+        7    0.000    0.000    0.000    0.000 __future__.py:75(__init__)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Reaction_swigregister}
+        1    0.000    0.000    0.000    0.000 core.py:5871(_extrema_operation)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLInitialAssignmentConverter_swigregister}
+        1    0.000    0.000    0.000    0.000 pickle.py:62(PicklingError)
+        1    0.000    0.000    0.000    0.000 utils.py:92(_Deprecate)
+        1    0.000    0.000    0.000    0.000 __init__.py:388(PyDLL)
+        1    0.000    0.000    0.000    0.000 core.py:2255(__init__)
+        1    0.000    0.000    0.000    0.000 npyio.py:90(BagObj)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfCompartments_swigregister}
+        1    0.000    0.000    0.000    0.000 Gene.py:7(Gene)
+        1    0.000    0.000    0.000    0.000 Reaction.py:15(Frozendict)
+        1    0.000    0.000    0.000    0.000 __init__.py:359(_FuncPtr)
+        1    0.000    0.000    0.000    0.000 {_libsbml.CompPkgNamespaces_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.TextGlyph_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.Event_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLReader_swigregister}
+        1    0.000    0.000    0.000    0.000 index_tricks.py:85(nd_grid)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfReactions_swigregister}
+        1    0.000    0.000    0.000    0.000 __init__.py:332(CDLL)
+        1    0.000    0.000    0.000    0.000 core.py:5928(__init__)
+        1    0.000    0.000    0.000    0.000 {_libsbml.Transition_swigregister}
+        1    0.000    0.000    0.000    0.000 subprocess.py:406(__init__)
+        1    0.000    0.000    0.000    0.000 {method 'find' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:21(Filter)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfLineSegments_swigregister}
+        1    0.000    0.000    0.000    0.000 core.py:128(MAError)
+        1    0.000    0.000    0.000    0.000 {_libsbml.BoundingBox_swigregister}
+        1    0.000    0.000    0.000    0.000 Image.py:33(_imaging_not_installed)
+        1    0.000    0.000    0.000    0.000 {_libsbml.LocalParameter_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ListOfObjectives_swigregister}
+        1    0.000    0.000    0.000    0.000 pickle.py:82(_Stop)
+        1    0.000    0.000    0.000    0.000 tokenize.py:46(any)
+        1    0.000    0.000    0.000    0.000 core.py:1032(_DomainedBinaryOperation)
+        1    0.000    0.000    0.000    0.000 UserDict.py:70(__contains__)
+        1    0.000    0.000    0.000    0.000 string.py:131(__init__)
+        1    0.000    0.000    0.000    0.000 arrayprint.py:688(LongComplexFormat)
+        1    0.000    0.000    0.000    0.000 core.py:5926(_minimum_operation)
+        1    0.000    0.000    0.000    0.000 threading.py:1088(_MainThread)
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:85(MedianFilter)
+        1    0.000    0.000    0.000    0.000 compat.py:117(Pickler)
+        1    0.000    0.000    0.000    0.000 subprocess.py:458(_cleanup)
+        1    0.000    0.000    0.000    0.000 six.py:81(_LazyDescr)
+        1    0.000    0.000    0.000    0.000 __init__.py:80(AuthenticationError)
+        1    0.000    0.000    0.000    0.000 process.py:299(_MainProcess)
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:178(BLUR)
+        1    0.000    0.000    0.000    0.000 ascii.py:28(StreamWriter)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLUnitsConverter_swigregister}
+        1    0.000    0.000    0.000    0.000 utils.py:1588(IgnoreException)
+        1    0.000    0.000    0.000    0.000 core.py:5982(_frommethod)
+        1    0.000    0.000    0.000    0.000 Image.py:1749(ImageTransformHandler)
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:57(BuiltinFilter)
+        3    0.000    0.000    0.000    0.000 __init__.py:494(CFunctionType)
+        1    0.000    0.000    0.000    0.000 util.py:346(ForkAwareLocal)
+        1    0.000    0.000    0.000    0.000 six.py:352(Module_six_moves_urllib_robotparser)
+        1    0.000    0.000    0.000    0.000 __init__.py:71(ProcessError)
+        1    0.000    0.000    0.000    0.000 extras.py:224(_fromnxfunction)
+        1    0.000    0.000    0.000    0.000 six.py:333(Module_six_moves_urllib_response)
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:225(EMBOSS)
+        1    0.000    0.000    0.000    0.000 decimal.py:161(DecimalException)
+        1    0.000    0.000    0.000    0.000 examo.py:598(MipSeparateFwdRev_gurobi)
+        1    0.000    0.000    0.000    0.000 decimal.py:3895(Etiny)
+        1    0.000    0.000    0.000    0.000 __init__.py:9809(<lambda>)
+        1    0.000    0.000    0.000    0.000 six.py:419(Module_six_moves_urllib_robotparser)
+        1    0.000    0.000    0.000    0.000 numerictypes.py:772(_typedict)
+        1    0.000    0.000    0.000    0.000 hex_codec.py:45(Codec)
+        1    0.000    0.000    0.000    0.000 __init__.py:20060(<lambda>)
+        1    0.000    0.000    0.000    0.000 mio4.py:586(MatFile4Writer)
+        2    0.000    0.000    0.000    0.000 {thread.get_ident}
+        4    0.000    0.000    0.000    0.000 core.py:2441(__get__)
+        1    0.000    0.000    0.000    0.000 miobase.py:31(MatWriteError)
+        1    0.000    0.000    0.000    0.000 tokenize.py:146(TokenError)
+        1    0.000    0.000    0.000    0.000 numeric.py:462(asanyarray)
+        1    0.000    0.000    0.000    0.000 index_tricks.py:213(AxisConcatenator)
+        1    0.000    0.000    0.000    0.000 ascii.py:34(StreamConverter)
+        1    0.000    0.000    0.000    0.000 core.py:782(_DomainGreater)
+        1    0.000    0.000    0.000    0.000 hb.py:36(MalformedHeader)
+        1    0.000    0.000    0.000    0.000 core.py:2469(MaskedIterator)
+        1    0.000    0.000    0.000    0.000 base.py:20(SparseFormatWarning)
+        1    0.000    0.000    0.000    0.000 __init__.py:260(c_bool)
+        1    0.000    0.000    0.000    0.000 mio5_params.py:242(MatlabOpaque)
+        1    0.000    0.000    0.000    0.000 {_libsbml.FbcPkgNamespaces_swigregister}
+        1    0.000    0.000    0.000    0.000 __init__.py:255(c_void_p)
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_md5}
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:127(ModeFilter)
+        1    0.000    0.000    0.000    0.000 __init__.py:201(c_double)
+        1    0.000    0.000    0.000    0.000 decimal.py:311(Subnormal)
+        1    0.000    0.000    0.000    0.000 Image.py:1745(ImagePointHandler)
+        1    0.000    0.000    0.000    0.000 __init__.py:205(c_longdouble)
+        1    0.000    0.000    0.000    0.000 {_libsbml.XMLOwningOutputStringStream_swigregister}
+        1    0.000    0.000    0.000    0.000 __init__.py:197(c_float)
+        1    0.000    0.000    0.000    0.000 __init__.py:7777(getListOfCompartments)
+        6    0.000    0.000    0.000    0.000 core.py:769(__init__)
+        1    0.000    0.000    0.000    0.000 six.py:515(Iterator)
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:234(FIND_EDGES)
+        1    0.000    0.000    0.000    0.000 six.py:56(X)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBaseList_swigregister}
+        1    0.000    0.000    0.000    0.000 {posix.WIFEXITED}
+        1    0.000    0.000    0.000    0.000 arrayprint.py:743(TimedeltaFormat)
+        1    0.000    0.000    0.000    0.000 core.py:131(MaskError)
+        1    0.000    0.000    0.000    0.000 mio5_params.py:235(MatlabFunction)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLLocalParameterConverter_swigregister}
+        1    0.000    0.000    0.000    0.000 version.py:69(format_git_describe)
+        1    0.000    0.000    0.000    0.000 decimal.py:251(DivisionImpossible)
+        1    0.000    0.000    0.000    0.000 __init__.py:74(BufferTooShort)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ostream_swigregister}
+        3    0.000    0.000    0.000    0.000 core.py:784(__init__)
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha224}
+        1    0.000    0.000    0.000    0.000 {_libsbml.ASTNode_swigregister}
+        1    0.000    0.000    0.000    0.000 sre_parse.py:205(tell)
+        1    0.000    0.000    0.000    0.000 six.py:456(Iterator)
+        1    0.000    0.000    0.000    0.000 index_tricks.py:340(RClass)
+        1    0.000    0.000    0.000    0.000 io.py:78(TextIOBase)
+        1    0.000    0.000    0.000    0.000 runner.py:12(_WritelnDecorator)
+        1    0.000    0.000    0.000    0.000 hex_codec.py:52(IncrementalEncoder)
+        1    0.000    0.000    0.000    0.000 core.py:805(_MaskedUnaryOperation)
+        1    0.000    0.000    0.000    0.000 arrayprint.py:699(ComplexFormat)
+        1    0.000    0.000    0.000    0.000 decimal.py:3748(_ContextManager)
+        1    0.000    0.000    0.000    0.000 signals.py:9(_InterruptHandler)
+        1    0.000    0.000    0.000    0.000 __init__.py:233(c_byte)
+        1    0.000    0.000    0.000    0.000 index_tricks.py:439(CClass)
+        1    0.000    0.000    0.000    0.000 tokenize.py:148(StopTokenizing)
+        1    0.000    0.000    0.000    0.000 __init__.py:77(TimeoutError)
+        1    0.000    0.000    0.000    0.000 copy_reg.py:27(constructor)
+        1    0.000    0.000    0.000    0.000 core.py:5770(__array_finalize__)
+        1    0.000    0.000    0.000    0.000 _internal.py:217(_missing_ctypes)
+        1    0.000    0.000    0.000    0.000 six.py:399(Module_six_moves_urllib_response)
+        1    0.000    0.000    0.000    0.000 decimal.py:196(InvalidOperation)
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:216(EDGE_ENHANCE_MORE)
+        1    0.000    0.000    0.000    0.000 ascii.py:20(IncrementalEncoder)
+        1    0.000    0.000    0.000    0.000 six.py:163(_MovedItems)
+        1    0.000    0.000    0.000    0.000 {method 'release' of 'thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 ascii.py:31(StreamReader)
+        1    0.000    0.000    0.000    0.000 __init__.py:193(c_uint)
+        1    0.000    0.000    0.000    0.000 six.py:285(Module_six_moves_urllib_request)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ostringstream_swigregister}
+        1    0.000    0.000    0.000    0.000 __init__.py:189(c_int)
+        1    0.000    0.000    0.000    0.000 _fortran_format_parser.py:226(FortranFormatParser)
+        1    0.000    0.000    0.000    0.000 hb.py:40(LineOverflow)
+        1    0.000    0.000    0.000    0.000 extras.py:1485(mr_class)
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:252(SMOOTH_MORE)
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha384}
+        1    0.000    0.000    0.000    0.000 six.py:115(_LazyModule)
+        1    0.000    0.000    0.000    0.000 precision.py:33(PrecisionError)
+        1    0.000    0.000    0.000    0.000 examo.py:164(MetabGeneExpModel)
+        1    0.000    0.000    0.000    0.000 case.py:34(_ExpectedFailure)
+        1    0.000    0.000    0.000    0.000 inspect.py:632(BlockFinder)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLValidator_swigregister}
+        1    0.000    0.000    0.000    0.000 hex_codec.py:57(IncrementalDecoder)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLFunctionDefinitionConverter_swigregister}
+        1    0.000    0.000    0.000    0.000 shutil.py:38(ExecError)
+        1    0.000    0.000    0.000    0.000 __init__.py:291(c_wchar_p)
+        1    0.000    0.000    0.000    0.000 {_libsbml.XMLAttributes_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLRuleConverter_swigregister}
+        2    0.000    0.000    0.000    0.000 {posix.getpid}
+        2    0.000    0.000    0.000    0.000 subprocess.py:1344(_internal_poll)
+        1    0.000    0.000    0.000    0.000 __init__.py:18187(<lambda>)
+        1    0.000    0.000    0.000    0.000 __init__.py:428(LibraryLoader)
+        1    0.000    0.000    0.000    0.000 shutil.py:34(SpecialFileError)
+        1    0.000    0.000    0.000    0.000 {_libsbml.CompFlatteningConverter_swigregister}
+        1    0.000    0.000    0.000    0.000 __init__.py:172(c_ushort)
+        1    0.000    0.000    0.000    0.000 _iotools.py:452(ConversionWarning)
+       17    0.000    0.000    0.000    0.000 {method '__subclasshook__' of 'object' objects}
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:62(RankFilter)
+        1    0.000    0.000    0.000    0.000 six.py:130(MovedAttribute)
+        1    0.000    0.000    0.000    0.000 six.py:299(Module_six_moves_urllib_parse)
+        1    0.000    0.000    0.000    0.000 numeric.py:2635(_unspecified)
+        1    0.000    0.000    0.000    0.000 index_tricks.py:510(ndindex)
+        1    0.000    0.000    0.000    0.000 threading.py:541(Event)
+        1    0.000    0.000    0.000    0.000 {method 'bit_length' of 'int' objects}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha256}
+        1    0.000    0.000    0.000    0.000 six.py:238(Module_six_moves_urllib_parse)
+        1    0.000    0.000    0.000    0.000 case.py:25(SkipTest)
+        1    0.000    0.000    0.000    0.000 _iotools.py:445(ConverterLockError)
+        1    0.000    0.000    0.000    0.000 six.py:93(MovedModule)
+        1    0.000    0.000    0.000    0.000 miobase.py:35(MatReadWarning)
+        1    0.000    0.000    0.000    0.000 six.py:350(Module_six_moves_urllib_request)
+        1    0.000    0.000    0.000    0.000 decimal.py:322(Overflow)
+        1    0.000    0.000    0.000    0.000 core.py:757(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:199(AutoProperty)
+        1    0.000    0.000    0.000    0.000 {gc.isenabled}
+        1    0.000    0.000    0.000    0.000 mio5_params.py:208(mat_struct)
+        1    0.000    0.000    0.000    0.000 threading.py:63(_note)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLIdConverter_swigregister}
+        1    0.000    0.000    0.000    0.000 utf_16.py:75(StreamWriter)
+        1    0.000    0.000    0.000    0.000 miobase.py:316(MatVarReader)
+        1    0.000    0.000    0.000    0.000 {_libsbml.CompExtension_swigregister}
+        1    0.000    0.000    0.000    0.000 six.py:331(Module_six_moves_urllib_error)
+        1    0.000    0.000    0.000    0.000 __init__.py:238(c_char)
+        1    0.000    0.000    0.000    0.000 core.py:767(_DomainSafeDivide)
+        1    0.000    0.000    0.000    0.000 __init__.py:180(c_ulong)
+        1    0.000    0.000    0.000    0.000 six.py:137(MovedAttribute)
+        1    0.000    0.000    0.000    0.000 miobase.py:27(MatReadError)
+        1    0.000    0.000    0.000    0.000 shutil.py:31(Error)
+        2    0.000    0.000    0.000    0.000 sre_parse.py:213(isdigit)
+        2    0.000    0.000    0.000    0.000 __init__.py:429(__init__)
+        1    0.000    0.000    0.000    0.000 process.py:285(AuthenticationString)
+        1    0.000    0.000    0.000    0.000 {method 'fileno' of 'file' objects}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha1}
+        1    0.000    0.000    0.000    0.000 inspect.py:630(EndOfBlock)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLConverterRegistry_swigregister}
+        1    0.000    0.000    0.000    0.000 decimal.py:262(DivisionUndefined)
+        1    0.000    0.000    0.000    0.000 io.py:75(BufferedIOBase)
+        1    0.000    0.000    0.000    0.000 __init__.py:294(c_wchar)
+        1    0.000    0.000    0.000    0.000 six.py:55(X)
+        1    0.000    0.000    0.000    0.000 arrayprint.py:715(DatetimeFormat)
+        1    0.000    0.000    0.000    0.000 idl.py:154(ObjectPointer)
+        1    0.000    0.000    0.000    0.000 __init__.py:226(c_ubyte)
+        1    0.000    0.000    0.000    0.000 utf_16.py:53(IncrementalDecoder)
+        2    0.000    0.000    0.000    0.000 index_tricks.py:627(__init__)
+        1    0.000    0.000    0.000    0.000 decimal.py:273(Inexact)
+        1    0.000    0.000    0.000    0.000 polyutils.py:69(PolyBase)
+        1    0.000    0.000    0.000    0.000 _iotools.py:438(ConverterError)
+        1    0.000    0.000    0.000    0.000 pickle.py:1261(_EmptyClass)
+        1    0.000    0.000    0.000    0.000 __init__.py:243(c_char_p)
+        1    0.000    0.000    0.000    0.000 decimal.py:285(InvalidContext)
+        1    0.000    0.000    0.000    0.000 utils.py:1368(WarningMessage)
+        1    0.000    0.000    0.000    0.000 decimal.py:5418(_WorkRep)
+        1    0.000    0.000    0.000    0.000 {_libsbml.XMLInputStream_swigregister}
+        1    0.000    0.000    0.000    0.000 {_libsbml.IdentifierTransformer_swigregister}
+        1    0.000    0.000    0.000    0.000 base.py:24(SparseEfficiencyWarning)
+        1    0.000    0.000    0.000    0.000 __init__.py:112(ModuleDeprecationWarning)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ModelCreator_swigregister}
+        1    0.000    0.000    0.000    0.000 _fortran_format_parser.py:171(Token)
+        1    0.000    0.000    0.000    0.000 six.py:57(__len__)
+        1    0.000    0.000    0.000    0.000 utf_32.py:119(StreamReader)
+        1    0.000    0.000    0.000    0.000 ImageMode.py:22(ModeDescriptor)
+        1    0.000    0.000    0.000    0.000 six.py:267(Module_six_moves_urllib_error)
+        1    0.000    0.000    0.000    0.000 six.py:162(__init__)
+        1    0.000    0.000    0.000    0.000 _fortran_format_parser.py:30(BadFortranFormat)
+        1    0.000    0.000    0.000    0.000 base.py:16(SparseWarning)
+        1    0.000    0.000    0.000    0.000 util.py:336(ForkAwareThreadLock)
+        1    0.000    0.000    0.000    0.000 {_libsbml.ConversionOption_swigregister}
+        1    0.000    0.000    0.000    0.000 decimal.py:360(Underflow)
+        1    0.000    0.000    0.000    0.000 numeric.py:49(ComplexWarning)
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha512}
+        2    0.000    0.000    0.000    0.000 {method 'clear' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 __init__.py:176(c_long)
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:159(UnsharpMask)
+        1    0.000    0.000    0.000    0.000 hex_codec.py:65(StreamReader)
+        1    0.000    0.000    0.000    0.000 {_libsbml.SBMLStripPackageConverter_swigregister}
+        1    0.000    0.000    0.000    0.000 decimal.py:225(ConversionSyntax)
+        1    0.000    0.000    0.000    0.000 ImageFilter.py:113(MaxFilter)
+        3    0.000    0.000    0.000    0.000 _inspect.py:161(<lambda>)
+        1    0.000    0.000    0.000    0.000 {_libsbml.RateRule_swigregister}
+        1    0.000    0.000    0.000    0.000 core.py:794(_DomainGreaterEqual)
+
+

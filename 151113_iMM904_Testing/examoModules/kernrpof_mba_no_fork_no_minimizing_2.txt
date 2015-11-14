@@ -1,0 +1,14104 @@
+added 1
+R_EX_gcald_e_
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_METB1
+added 1
+R_ALCD22xi
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_BTDt_RR
+added 1
+R_DAGCPT_SC
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_ILEtmi
+added 1
+R_GTHO
+added 1
+R_ALCD25xi
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_ASNS1
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_GLCGSD
+added 1
+R_ADK3m
+added 1
+R_NADH2_u6cm
+added 1
+R_MALS
+added 1
+R_TRDR
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_GLCP
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_THRD_L
+added 1
+R_ACALDCD
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_EX_gcald_e_
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ORNt3m
+added 1
+R_2HMHMBQMTm
+added 1
+R_BTDt_RR
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_PRMICIi
+added 1
+R_ILEtmi
+added 1
+R_PTRCt3i
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_HCYSMT
+added 1
+added 1
+R_GUAPRT
+added 1
+R_ALCD25xi
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_ALCD22xi
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_GLCGSD
+added 1
+R_TRDR
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_METB1
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_ACALDCD
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_EX_gcald_e_
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ORNt3m
+added 1
+R_2HMHMBQMTm
+added 1
+R_BTDt_RR
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_ILEtmi
+added 1
+R_GTHO
+added 1
+R_CHLPCTD
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_ASNS1
+added 1
+R_PTRCt3i
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_ALCD25xi
+added 1
+R_NTD3
+added 1
+R_NADH2_u6cm
+added 1
+R_GLCGSD
+added 1
+R_TRDR
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_GLCP
+added 1
+R_G3PT
+added 1
+R_CYSTL
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_THRD_L
+added 1
+R_HCYSMT
+added 1
+R_ACALDCD
+added 1
+R_NADH2_u6m
+added 1
+R_PYRt2
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ORNt3m
+added 1
+R_GTHP
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_MTHFD2i
+added 1
+R_ILEtmi
+added 1
+R_CHLPCTD
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_ASNS1
+added 1
+R_PYRDC2
+added 1
+R_ALCD22xi
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_GLCGSD
+added 1
+R_TRDR
+added 1
+R_ALCD23xi
+added 1
+R_GLCP
+added 1
+R_G3PT
+added 1
+R_CYSTL
+added 1
+R_4MOPDC
+added 1
+R_DDPA
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+added 1
+R_EX_lac_L_e_
+added 1
+R_HCYSMT
+added 1
+R_GLYCLm
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_EX_gcald_e_
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ALPHNH
+added 1
+R_ORNt3m
+added 1
+R_2HMHMBQMTm
+added 1
+R_BTDt_RR
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_ILEtmi
+added 1
+R_GTHO
+added 1
+R_CHLPCTD
+added 1
+R_IPPSm
+added 1
+R_PTRCt3i
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_ALCD25xi
+added 1
+R_NTD3
+added 1
+R_NADH2_u6cm
+added 1
+R_PYRt
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_TRDR
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_METB1
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_HCYSMT
+added 1
+R_ACALDCD
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_EX_gcald_e_
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ALPHNH
+added 1
+R_ORNt3m
+added 1
+R_ANPRT
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_NADK
+added 1
+R_ILEtmi
+added 1
+R_GTHO
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_ASNS1
+added 1
+R_PYRDC2
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_ALCD25xi
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_TRDR
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_G3PT
+added 1
+R_THMP
+added 1
+R_ORNDC
+added 1
+R_METB1
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_HCYSMT
+added 1
+R_NADH2_u6m
+added 1
+R_GLYCLm
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_EX_gcald_e_
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ORNt3m
+added 1
+R_ANPRT
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_VALt2m
+added 1
+R_ILEtmi
+added 1
+R_GTHO
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_GCC2bim
+added 1
+R_PYRDC2
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_ALCD25xi
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_PYRt
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_ANS
+added 1
+R_MALS
+added 1
+R_TRDR
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_G3PT
+added 1
+R_CYSTL
+added 1
+R_ORNDC
+added 1
+R_METB1
+added 1
+R_EX_lac_L_e_
+added 1
+R_HCYSMT
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_EX_gcald_e_
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ORNt3m
+added 1
+R_BTDt_RR
+added 1
+R_ALAtmi
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_ILEtmi
+added 1
+R_GTHO
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_ASNS1
+added 1
+R_PYRDC2
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_GLCGSD
+added 1
+R_MALS
+added 1
+R_TRDR
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_G3PT
+added 1
+R_THMP
+added 1
+R_CYSTL
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_HCYSMT
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_EX_gcald_e_
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ORNt3m
+added 1
+R_GTHP
+added 1
+R_ANPRT
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_VALt2m
+added 1
+R_NADK
+added 1
+R_ILEtmi
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_ASNS1
+added 1
+R_PYRDC2
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_ALCD25xi
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_PYRt
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_ANS
+added 1
+R_TRDR
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_G3PT
+added 1
+R_THMP
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_METB1
+added 1
+R_XPPT
+added 1
+R_HCYSMT
+added 1
+R_NADH2_u6m
+added 1
+R_GLYCLm
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_EX_gcald_e_
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_GTHP
+added 1
+R_ANPRT
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_MTHFD2i
+added 1
+R_VALt2m
+added 1
+R_NADK
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_ASNS1
+added 1
+R_PYRDC2
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_ALCD25xi
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_PYRt
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_ANS
+added 1
+R_MALS
+added 1
+R_TRDR
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_G3PT
+added 1
+R_THMP
+added 1
+R_CYSTL
+added 1
+R_4MOPDC
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_METB1
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_HCYSMT
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_EX_gcald_e_
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ALPHNH
+added 1
+R_GTHP
+added 1
+R_ANPRT
+added 1
+R_BTDt_RR
+added 1
+R_ADK3m
+added 1
+R_FBA3
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_VALt2m
+added 1
+R_HXPRT
+added 1
+R_ILEtmi
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_GLUDxi
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_ASNS1
+added 1
+R_PYRDC2
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_PYRt
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_ANS
+added 1
+R_MALS
+added 1
+R_TRDR
+added 1
+R_GLCP
+added 1
+R_G3PT
+added 1
+R_THMP
+added 1
+R_CYSTL
+added 1
+R_4MOPDC
+added 1
+R_DDPA
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_METB1
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_HCYSMT
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_EX_gcald_e_
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ORNt3m
+added 1
+R_GTHP
+added 1
+R_ANPRT
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_FBA3
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_NADK
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_PYRt
+added 1
+R_GLCGSD
+added 1
+R_ANS
+added 1
+R_MALS
+added 1
+R_TRDR
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_METB1
+added 1
+R_HCYSMT
+added 1
+R_NADH2_u6m
+added 1
+R_GLYCLm
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_EX_gcald_e_
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ORNt3m
+added 1
+R_GTHP
+added 1
+R_ANPRT
+added 1
+R_BTDt_RR
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_VALt2m
+added 1
+R_HXPRT
+added 1
+R_NADK
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_IPPSm
+added 1
+R_ASNS1
+added 1
+R_PYRDC2
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_TRDR
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_G3PT
+added 1
+R_THMP
+added 1
+R_CYSTL
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_XPPT
+added 1
+R_EX_lac_L_e_
+added 1
+R_HCYSMT
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_EX_gcald_e_
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ORNt3m
+added 1
+R_GTHP
+added 1
+R_ANPRT
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_VALt2m
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_GLUDxi
+added 1
+R_IPPSm
+added 1
+R_ASNS1
+added 1
+R_PYK
+added 1
+R_PYRDC2
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_PYRt
+added 1
+R_GLCGSD
+added 1
+R_ANS
+added 1
+R_TRDR
+added 1
+R_ALCD23xi
+added 1
+R_GLCP
+added 1
+R_G3PT
+added 1
+R_THMP
+added 1
+R_4MOPDC
+added 1
+R_DDPA
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_METB1
+added 1
+R_XPPT
+added 1
+R_EX_lac_L_e_
+added 1
+R_HCYSMT
+added 1
+R_NADH2_u6m
+added 1
+R_GLYCLm
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_GTHP
+added 1
+R_2HMHMBQMTm
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_VALt2m
+added 1
+R_ILEtmi
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_ASNS1
+added 1
+R_PTRCt3i
+added 1
+R_PYRDC2
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_HCYSMT
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_GTHP
+added 1
+R_2HMHMBQMTm
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_VALt2m
+added 1
+R_ILEtmi
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_ASNS1
+added 1
+R_PTRCt3i
+added 1
+R_PYRDC2
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_ALCD23xi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_HCYSMT
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ORNt3m
+added 1
+R_GTHP
+added 1
+R_2HMHMBQMTm
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_CHLPCTD
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_ASNS1
+added 1
+R_PTRCt3i
+added 1
+R_PYRDC2
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_GLCGSD
+added 1
+R_DHFS
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_ORNDC
+added 1
+R_GF6PTA
+added 1
+R_METB1
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_HCYSMT
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ORNt3m
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_VALt2m
+added 1
+R_ILEtmi
+added 1
+R_GTHO
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+added 1
+R_ASNS1
+added 1
+R_PYRDC2
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_GLCGSD
+added 1
+R_DHFS
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_CYSTL
+added 1
+R_DDPA
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_METB1
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_HCYSMT
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_GTHP
+added 1
+R_2HMHMBQMTm
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_VALt2m
+added 1
+R_ILEtmi
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_IPPSm
+added 1
+R_PTRCt3i
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_DHFS
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_GTHP
+added 1
+R_2HMHMBQMTm
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_ILEtmi
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PTRCt3i
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_GLCGSD
+added 1
+R_DHFS
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_CYSTL
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_ASNS1
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_GTHP
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_HXPRT
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_IPPSm
+added 1
+R_PTRCt3i
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_ALCD22xi
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_DHFS
+added 1
+R_EX_gua_e_
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_CYSTL
+added 1
+R_DDPA
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_XPPT
+added 1
+R_ASNS1
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_GTHP
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_HXPRT
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_IPPSm
+added 1
+R_PTRCt3i
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_ALCD22xi
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_DHFS
+added 1
+R_EX_gua_e_
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_CYSTL
+added 1
+R_DDPA
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_XPPT
+added 1
+R_ASNS1
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_GTHP
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PTRCt3i
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_ALCD22xi
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_DHFS
+added 1
+R_ALDD2ym
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_CYSTL
+added 1
+R_4MOPDC
+added 1
+R_DDPA
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_XPPT
+added 1
+R_ASNS1
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_GTHP
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PTRCt3i
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_ALCD22xi
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_DHFS
+added 1
+R_ALDD2ym
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_CYSTL
+added 1
+R_4MOPDC
+added 1
+R_DDPA
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_XPPT
+added 1
+R_ASNS1
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_GTHP
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PTRCt3i
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_ALCD22xi
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_DHFS
+added 1
+R_ALDD2ym
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_CYSTL
+added 1
+R_4MOPDC
+added 1
+R_DDPA
+added 1
+R_ORNDC
+added 1
+R_XPPT
+added 1
+R_ASNS1
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AGTi
+added 1
+R_AMPN
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ORNt3m
+added 1
+R_GTHP
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_GLUDxi
+added 1
+R_PTRCt3i
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_ALCD22xi
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_DHFS
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_CYSTL
+added 1
+R_DDPA
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_XPPT
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ORNt3m
+added 1
+R_GTHP
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_ALCD22xi
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_DHFS
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_DDPA
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_ASNS1
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_GTHP
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PTRCt3i
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_ALCD22xi
+added 1
+R_NTD4
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_CYSTL
+added 1
+R_4MOPDC
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_XPPT
+added 1
+R_ASNS1
+added 1
+R_EX_lac_L_e_
+added 1
+R_ACALDCD
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_GTHP
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_CHLPCTD
+added 1
+R_PHETA1
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PTRCt3i
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_ALCD22xi
+added 1
+R_NTD4
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_DHFS
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_CYSTL
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_XPPT
+added 1
+R_ASNS1
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_ACALDCD
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_CYSTL
+added 1
+R_ICL
+added 1
+R_PPYRDC
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_ALCD22xi
+added 1
+R_NTD4
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_GTHP
+added 1
+R_EX_lac_L_e_
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_CYSTL
+added 1
+R_GTHO
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_ALCD22xi
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_DDPA
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_ASNS1
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_PPYRDC
+added 1
+R_PTRCt3i
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_GLUDxi
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_ALCD22xi
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_DHFS
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_ASNS1
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_PPYRDC
+added 1
+R_PTRCt3i
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_GLUDxi
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_ALCD22xi
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_DHFS
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_SUCFUMtm
+added 1
+R_ORNDC
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_ASNS1
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_PPYRDC
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_GLUDxi
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_ALCD22xi
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_DHFS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_DDPA
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_ASNS1
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_PPYRDC
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_ALCD22xi
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_DHFS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_ASNS1
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_GLUDxi
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_ALCD22xi
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_GTHP
+added 1
+R_ASNS1
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_GLUDxi
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_ALCD22xi
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_GTHP
+added 1
+R_ASNS1
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR2
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_CHLPCTD
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_ALCD22xi
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_PRMICIi
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_CHLPCTD
+added 1
+R_SBTR
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_ALCD22xi
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ILEtmi
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_GTHP
+added 1
+R_ASNS1
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_ASNS1
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GCCbim
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_ASNS1
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GCCbim
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_ASNS1
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GCCbim
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_ASNS1
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GCCbim
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_ASNS1
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_NTD11
+added 1
+R_ADK3m
+added 1
+R_DDPAm
+added 1
+R_CHLPCTD
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_ALCD23xi
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ILEtmi
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_EX_gua_e_
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_BTDt_RR
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_PYRt
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_PFK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_PYK
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_GTHO
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_GTHO
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_GTHO
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_GTHO
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_GTHO
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_GTHO
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GF6PTA
+added 1
+R_3MOBDC
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_GTHO
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_3MOBDC
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_MTHFD2i
+added 1
+R_GTHO
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_MTHFD2i
+added 1
+R_GTHO
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_GTHO
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_GTHO
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_MTHFD2i
+added 1
+R_GTHO
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_MTHFD2i
+added 1
+R_GTHO
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GF6PTA
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ALPHNH
+added 1
+R_TRPTA
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ILEtmi
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_EX_lac_L_e_
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_EX_lac_L_e_
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+added 1
+R_ACALDCD
+added 1
+R_ALAtmi
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_LCADi
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_LCADi
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_ILEtmi
+added 1
+R_ALDD2ym
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GLCGSD
+added 1
+R_MALS
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_4MOPDC
+added 1
+R_SUCFUMtm
+added 1
+R_GTHP
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_ALCD24xi
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_EX_ptrc_e_
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_EX_ptrc_e_
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_MALS
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_ALAtmi
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_CSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GLCGSD
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_EX_lac_L_e_
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_ALCD22xi
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_EX_ptrc_e_
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_EX_ptrc_e_
+added 1
+R_ALDD2ym
+added 1
+R_MALS
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_ICL
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_EX_gua_e_
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ALPHNH
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ALPHNH
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_DDPAm
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_EX_lac_L_e_
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ALPHNH
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ALPHNH
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ALPHNH
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_GLYK
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_SUCFUMtm
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_ALAtmi
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ALPHNH
+added 1
+R_ACALDCD
+added 1
+R_ALAtmi
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ALPHNH
+added 1
+R_ACALDCD
+added 1
+R_ALAtmi
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_EX_gua_e_
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+added 1
+R_ACALDCD
+added 1
+R_ALAtmi
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_MALS
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_NTD3
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_EX_gua_e_
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_MTHFD
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_HKYNH
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_ACALDCD
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_EX_ptrc_e_
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_NADK
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_ALDD2y
+added 1
+R_ALPHNH
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_TYRTAi
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_ALCD26xi
+added 1
+R_GCCbim
+added 1
+R_ALDD2ym
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_NADK
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_NADK
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_NADK
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_NTD3
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_EX_ptrc_e_
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_HEX1
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_IPPS
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD3
+added 1
+R_TRDR
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GCCbim
+added 1
+R_NTD3
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GCCbim
+added 1
+R_NTD3
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_NADK
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_NTD3
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_PPYRDC
+added 1
+R_HXPRT
+added 1
+R_SBTR
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_EX_ptrc_e_
+added 1
+R_NTD3
+added 1
+R_NTD4
+added 1
+R_TRDR
+added 1
+R_GCCbim
+added 1
+R_NADH2_u6cm
+added 1
+R_THIORDXi
+added 1
+R_GLCP
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_NTD3
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD2
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_NTD3
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_NTD3
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_TRPTA
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_DDPAm
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_NTD4
+added 1
+R_NADH2_u6cm
+added 1
+R_TRDR
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_NTD3
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_GTHP
+added 1
+R_THRD_L
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_TRDR
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_NADH2_u6cm
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+added 1
+R_ACALDCD
+added 1
+R_3MOPDC
+added 1
+R_ALDD2y
+added 1
+R_ADCS
+added 1
+R_DAGCPT_SC
+added 1
+R_ADK3m
+added 1
+R_LCADi
+added 1
+R_MTHFD2i
+added 1
+R_HXPRT
+added 1
+R_PYRt
+added 1
+R_GLUDxi
+added 1
+R_GCC2bim
+added 1
+R_IPPSm
+added 1
+R_SERD_L
+added 1
+R_PYRDC2
+added 1
+R_HCYSMT
+added 1
+R_GUAPRT
+added 1
+R_TRDR
+added 1
+R_GLCGSD
+added 1
+R_GCCbim
+added 1
+R_NADH2_u6cm
+added 1
+R_THIORDXi
+added 1
+R_TMDPK
+added 1
+R_G3PT
+added 1
+R_XPPT
+added 1
+R_GTHP
+added 1
+R_NADH2_u6m
+added 1
+R_AMPN
+added 1
+R_RNTR4
+added 1
+R_ALCD2ir
+added 1
+R_RNTR3
+added 1
+R_RNTR1
+Wrote profile results to mba_no_fork_no_minimizing.py.lprof
+Timer unit: 1e-06 s
+
+Total time: 29.9585 s
+File: mba_no_fork_no_minimizing.py
+Function: findActiveRxns at line 68
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    68                                           @profile
+    69                                           def findActiveRxns(cbm, thresh, rl = []):
+    70       197          257      1.3      0.0      act = set()
+    71       197         8531     43.3      0.0      arrayIdRs = array(cbm.idRs[:])
+    72       197     13424632  68145.3     44.8      init = cbm.initLp()
+    73       197          272      1.4      0.0      init 
+    74       197          195      1.0      0.0      if rl:
+    75       197          150      0.8      0.0          idRs = rl
+    76                                               else:
+    77                                                   idRs = cbm.idRs[:]
+    78                                               # maximizing all reactions at once
+    79                                               # reseting the objective
+    80       197         8455     42.9      0.0      cbm.guro.setObjective(0)
+    81                                               # setting the objective
+    82       197          161      0.8      0.0      s = 'cbm.linobj = LinExpr([1.0] * len(cbm.idRs), ['
+    83     94130        90328      1.0      0.3      for var in cbm.guro.getVars():
+    84     93933       326119      3.5      1.1          s += 'cbm.%s, ' % var.varName
+    85       197          717      3.6      0.0      s = s.rstrip(', ')
+    86       197          437      2.2      0.0      s += '])'
+    87       197       213928   1085.9      0.7      exec s
+    88                                               #EG Initially set the objective to maximize
+    89       197        58911    299.0      0.2      cbm.guro.setObjective(cbm.linobj)#1 for maximize
+    90       197       389680   1978.1      1.3      cbm.guro.optimize()
+    91     79529       184004      2.3      0.6      sol = abs(array([v.x for v in cbm.guro.getVars()]))
+    92       165         2256     13.7      0.0      indices = (sol > thresh).nonzero()[0]
+    93       165         7143     43.3      0.0      act.update(arrayIdRs[indices])
+    94       165         7604     46.1      0.0      idRs = list(set(idRs) - act)
+    95                                               # maximizing
+    96     24989        16323      0.7      0.1      for rxn in idRs:
+    97     24824        17371      0.7      0.1          if rxn not in act:
+    98                                                       # reseting the objective
+    99      7550       229848     30.4      0.8              cbm.guro.setObjective(0)
+   100      7550       530965     70.3      1.8              exec 'cbm.guro.setObjective(cbm.%s, GRB.MAXIMIZE)' % rxn
+   101      7550      5691593    753.9     19.0              cbm.guro.optimize()
+   102   3668377      8148433      2.2     27.2              sol = abs(array([v.x for v in cbm.guro.getVars()]))
+   103      7550        78191     10.4      0.3              indices = (sol > thresh).nonzero()[0]
+   104      7550        95865     12.7      0.3              act2 = act.copy()
+   105      7550       382110     50.6      1.3              act.update(arrayIdRs[indices])
+   106      7550        12708      1.7      0.0              if act2 != act:
+   107      6931        16501      2.4      0.1                  print "added 1"
+   108      6931         6836      1.0      0.0                  if rxn in act:
+   109      6922         7841      1.1      0.0                      print rxn
+   110       165          103      0.6      0.0      return act
+
+Total time: 74.7731 s
+File: mba_no_fork_no_minimizing.py
+Function: pruneRxn at line 112
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   112                                           @profile
+   113                                           def pruneRxn(cbm, cH, rxn, thresh, description, repetition, biomassRxn,
+   114                                                        lb_biomass):
+   115       135          112      0.8      0.0      try:
+   116                                                   #EG Prune a reaction. If a flux soltuion cannot be obtained
+   117                                                   #or if the biomass flux becomes inactive, stop pruning.
+   118       135          104      0.8      0.0          rxntodelete = rxn
+   119       135      9827100  72793.3     13.1          m0 = deleteCbmRxns(cbm, rxntodelete)
+   120                                                   #NOTE the threshold for is set a bit higher for cH rxns
+   121       135     21087565 156204.2     28.2          act = findActiveRxns(m0, thresh, cH)
+   122       103         4115     40.0      0.0          cH_act = cH & act
+   123       103         1018      9.9      0.0          if (len(cH - cH_act) != 0):#not all cH rxns are active
+   124                                                       #print "not all active 1"
+   125        41           28      0.7      0.0              return cbm
+   126                                                   #######################################################################
+   127                                                   # INPUTS
+   128        62           40      0.6      0.0          eps = 1E-10
+   129        62           37      0.6      0.0          activityThreshold = 1E-10
+   130        62           40      0.6      0.0          fFreqBasedRxns = '../data/freqBasedRxns_%s.pkl'
+   131                                                   #######################################################################
+   132                                                   # STATEMENTS
+   133        62        20113    324.4      0.0          hfr = importPickle(fFreqBasedRxns % description)['hfr']
+   134        62         5264     84.9      0.0          hfr = hfr & set(m0.idRs)
+   135                                                   #forcing biomass production
+   136        62          474      7.6      0.0          m0.lb[m0.idRs.index(biomassRxn)] = lb_biomass
+   137                                                   #minimizingg the sum of fluxes
+   138        62       810154  13067.0      1.1          mtry1result = MipSeparateFwdRev_gurobi(m0, hfr, eps)
+   139        62     11816583 190590.0     15.8          mtry1result.initMipGurobi()
+   140        62       983910  15869.5      1.3          mtry1result.minSumFluxes_gurobi()
+   141                                                   #EG Added activityThreshold and the m0.rxns dictionary to the
+   142                                                   #function, so that the reactants and products could be written out
+   143        62       963579  15541.6      1.3          nz = getNzRxnsGurobi(mtry1result, activityThreshold, m0.rxns)[1]
+   144        34           38      1.1      0.0      except:
+   145                                                   #print "exception 1"
+   146        34           23      0.7      0.0          return cbm
+   147                                                   #EG Identify the reactions that became inactive after the
+   148                                                   #reaction was deleted. If extra deleted reactions cause the
+   149                                                   #model to be unsolvable, or if extra deleted inactive reactions
+   150                                                   #cause any of the hfrs to become inactive, or if a solution
+   151                                                   #cannot be obtained with a biomass flux, only delete the one
+   152                                                   #reaction. Otherwise, delete the inactive reactions.
+   153        60           93      1.6      0.0      try:
+   154        60         5781     96.3      0.0          inact = set(m0.idRs) - act - cH
+   155        60      4556646  75944.1      6.1          m1 = deleteCbmRxns(m0, inact)
+   156        60     10993666 183227.8     14.7          act2 = findActiveRxns(m1, thresh, cH)
+   157        60         2316     38.6      0.0          cH_act2 = cH & act2
+   158        60          578      9.6      0.0          if (len(cH - cH_act2) != 0):#not all cH rxns are active
+   159                                                       #print rxntodelete
+   160         1            0      0.0      0.0              return m0
+   161                                                   ###################################################################
+   162                                                   # INPUTS
+   163        59           42      0.7      0.0          eps = 1E-10
+   164        59           40      0.7      0.0          activityThreshold = 1E-10
+   165        59           36      0.6      0.0          fFreqBasedRxns = '../data/freqBasedRxns_%s.pkl'
+   166                                                   ###################################################################
+   167                                                   # STATEMENTS
+   168        59        18366    311.3      0.0          hfr = importPickle(fFreqBasedRxns % description)['hfr']
+   169        59         4927     83.5      0.0          hfr = hfr & set(m1.idRs)
+   170                                                   #forcing biomass production
+   171        59          425      7.2      0.0          m1.lb[m1.idRs.index(biomassRxn)] = lb_biomass
+   172                                                   #minimizing the sum of fluxes
+   173        59       778571  13196.1      1.0          mtry2result = MipSeparateFwdRev_gurobi(m1, hfr, eps)
+   174        59     11073634 187688.7     14.8          mtry2result.initMipGurobi()
+   175        59       919459  15584.1      1.2          mtry2result.minSumFluxes_gurobi()
+   176                                                   #EG Added activityThreshold and the m1.rxns dictionary
+   177                                                   #to the function, so that the reactants and products could
+   178                                                   #be written out
+   179        59       898114  15222.3      1.2          nz = getNzRxnsGurobi(mtry2result, activityThreshold, m1.rxns)[1]
+   180                                                   #print inact
+   181        59           97      1.6      0.0          return m1
+   182                                               except:
+   183                                                   #print "exception 2"
+   184                                                   return m0
+
+Total time: 75.21 s
+File: mba_no_fork_no_minimizing.py
+Function: iterativePrunning at line 189
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   189                                           @profile
+   190                                           def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
+   191                                                                 repetition, thresh = 1E-10, EXrxns = [],
+   192                                                                 EXtrrxns = [], Othertrrxns = []):
+   193                                               """
+   194                                               solver can be 'cplex', 'glpk' or 'gurobi'
+   195                                               """
+   196         1            1      1.0      0.0      if len(EXrxns) > 0:
+   197                                                   EXrxnsprune = list(set(list(EXrxns)) - cH)
+   198                                                   random.shuffle(EXrxnsprune)
+   199                                                   while EXrxnsprune:
+   200                                                       rxn1 = EXrxnsprune.pop()
+   201                                                       try:
+   202                                                           mTemp1 = pruneRxn(mTemp1, cH, rxn1, thresh, description,
+   203                                                                             repetition, biomassRxn, lb_biomass)
+   204                                                           EXrxnsprune2 = []
+   205                                                           for k in mTemp1.idRs:
+   206                                                               if k in EXrxnsprune:
+   207                                                                   EXrxnsprune2.append(k)
+   208                                                           random.shuffle(EXrxnsprune2)
+   209                                                           EXrxnsprune = EXrxnsprune2
+   210                                                       except NameError:
+   211                                                           mTemp1 = pruneRxn(m, cH, rxn1, thresh, description,
+   212                                                                             repetition, biomassRxn, lb_biomass)
+   213                                                           EXrxnsprune2 = []
+   214                                                           for k in mTemp1.idRs:
+   215                                                               if k in EXrxnsprune:
+   216                                                                   EXrxnsprune2.append(k)
+   217                                                           random.shuffle(EXrxnsprune2)
+   218                                                           EXrxnsprune = EXrxnsprune2
+   219         1            0      0.0      0.0      if len(EXtrrxns) > 0:
+   220                                                   EXtrrxnsprune = list(set(list(EXtrrxns)) - cH)
+   221                                                   EXtrrxnsprunelist = []
+   222                                                   for j in EXtrrxnsprune:
+   223                                                       if j in mTemp1.idRs:
+   224                                                           EXtrrxnsprunelist.append(j)
+   225                                                   random.shuffle(EXtrrxnsprune)
+   226                                                   while EXtrrxnsprune:
+   227                                                       rxn2 = EXtrrxnsprune.pop()
+   228                                                       try:
+   229                                                           mTemp1 = pruneRxn(mTemp1, cH, rxn2, thresh, description,
+   230                                                                             repetition, biomassRxn, lb_biomass)
+   231                                                           EXtrrxnsprune2 = []
+   232                                                           for k in mTemp1.idRs:
+   233                                                               if k in EXtrrxnsprune:
+   234                                                                   EXtrrxnsprune2.append(k)
+   235                                                           random.shuffle(EXtrrxnsprune2)
+   236                                                           EXtrrxnsprune = EXtrrxnsprune2
+   237                                                       except NameError:
+   238                                                           mTemp1 = pruneRxn(m, cH, rxn2, thresh, description,
+   239                                                                             repetition, biomassRxn, lb_biomass)
+   240                                                           EXtrrxnsprune2 = []
+   241                                                           for k in mTemp1.idRs:
+   242                                                               if k in EXtrrxnsprune:
+   243                                                                   EXtrrxnsprune2.append(k)
+   244                                                           random.shuffle(EXtrrxnsprune2)
+   245                                                           EXtrrxnsprune = EXtrrxnsprune2
+   246                                           
+   247         1            1      1.0      0.0      prunableRxns = []
+   248         1            1      1.0      0.0      try:
+   249         1            4      4.0      0.0          for j in mTemp1.idRs:
+   250                                                       if j not in list(cH):
+   251                                                           if j not in EXrxns:
+   252                                                               if j not in EXtrrxns:
+   253                                                                   if j not in Othertrrxns:
+   254                                                                       prunableRxns.append(j)
+   255         1            2      2.0      0.0      except NameError:
+   256       747          439      0.6      0.0          for j in m.idRs:
+   257       746         3842      5.2      0.0              if j not in list(cH):
+   258       397          210      0.5      0.0                  if j not in EXrxns:
+   259       397          216      0.5      0.0                      if j not in EXtrrxns:
+   260       397          206      0.5      0.0                          if j not in Othertrrxns:
+   261       397          236      0.6      0.0                              prunableRxns.append(j)
+   262         1          246    246.0      0.0      random.shuffle(prunableRxns)
+   263       136           98      0.7      0.0      while prunableRxns:
+   264       135          168      1.2      0.0          rxn3 = prunableRxns.pop()
+   265       135           99      0.7      0.0          try:
+   266       135          120      0.9      0.0              mTemp1 = pruneRxn(mTemp1, cH, rxn3, thresh, description,
+   267       134     74129565 553205.7     98.6                                repetition, biomassRxn, lb_biomass)
+   268       134          206      1.5      0.0              prunableRxns2 = []
+   269     62848        41490      0.7      0.1              for k in mTemp1.idRs:
+   270     62714        88948      1.4      0.1                  if k in prunableRxns:
+   271     11581        11486      1.0      0.0                      prunableRxns2.append(k)
+   272       134        10725     80.0      0.0              random.shuffle(prunableRxns2)
+   273       134          203      1.5      0.0              prunableRxns = prunableRxns2
+   274                                                       #prunableRxns2_appended = prunableRxns.append()
+   275                                                       #prunableRxns2_appended k for k in mTemp1.idRs if k in prunableRnxs
+   276                                                       #for k in mTemp1.idRs:
+   277                                                       #    if k in prunableRxns:
+   278                                                       #        prunableRxns2.append(k)
+   279                                                       #random.shuffle(prunableRxns2_appended)
+   280                                                       #prunableRxns = prunableRxns2_appended
+   281         1            1      1.0      0.0          except NameError:
+   282         1            1      1.0      0.0              mTemp1 = pruneRxn(m, cH, rxn3, thresh, description,
+   283         1       918594 918594.0      1.2                                repetition, biomassRxn, lb_biomass)
+   284         1            1      1.0      0.0              prunableRxns2 = []
+   285       746          397      0.5      0.0              for k in mTemp1.idRs:
+   286       745         1974      2.6      0.0                  if k in prunableRxns:
+   287       396          290      0.7      0.0                      prunableRxns2.append(k)
+   288         1          244    244.0      0.0              random.shuffle(prunableRxns2)
+   289         1            1      1.0      0.0              prunableRxns = prunableRxns2
+   290                                                       #prunableRxns2_appended = prunableRxns.append()
+   291                                                       #prunableRxns2_appended k for k in mTemp1.idRs if k in prunableRnxs
+   292                                                       #random.shuffle(prunableRxns2_appended)
+   293                                                       #prunableRxns = prunableRxns2_appended
+   294                                                       #for k in mTemp1.idRs:
+   295                                                       #    if k in prunableRxns:
+   296                                                       #        prunableRxns2.append(k)
+   297                                                       #random.shuffle(prunableRxns2)
+   298                                                       #prunableRxns = prunableRxns2
+   299         1            1      1.0      0.0      return mTemp1.idRs
+

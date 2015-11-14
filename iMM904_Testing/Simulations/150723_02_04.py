@@ -49,6 +49,7 @@ parser.add_argument('r', nargs="+", type=int, help='Necessary variable: number o
 parser.add_argument('-e', type=float, default=1E-10, help='Minimum value for active flux of reversible reactions in an irreversible model; default value: 1E-10')
 parser.add_argument('-a', type=float, default=1E-10, help='Activity threshold (above which a flux is considered to be larger than 0); default value: 1E-10')
 parser.add_argument('-t', type=float, default=1E-10, help='Activity threshold for finding active reactions; default value: 1E-10')
+parser.add_argument('-o', type=float, help='Defined biomass production')
 parser.add_argument('-EXrxns', type=str, help='Pickle file containing extracellular reactions list')
 parser.add_argument('-EXtrrxns', type=str, help='Pickle file containing extracellular transport reactions list')
 parser.add_argument('-Othertrrxns', type=str, help='Pickle file containing other compartmental transport reactions list')
@@ -60,6 +61,12 @@ model = model[2:-2]
 pickle_model = str(args.p)
 pickle_model = pickle_model[2:-2]
 pickle_model_name = pickle_model[:-4]
+if args.EXrxns is not None:
+    pickle_model_name = pickle_model_name + 'EX'
+if args.EXtrrxns is not None:
+    pickle_model_name = pickle_model_name + 'EXtrrxns'
+if args.Othertrrxns is not None:
+    pickle_model_name = pickle_model_name + 'Othertrrxns'
 description = str(args.d)
 description = description[2:-2]
 biomassRxn = str(args.b)
@@ -98,10 +105,13 @@ if model[-4:] == '.mat':
 #model dictionary of the original model with blocked reactions deleted
 fModelDict = 'data/%s' % pickle_model
 
-cobra_model.optimize(solver='gurobi')
-getcontext().rounding = ROUND_DOWN
-getcontext().prec = 4
-lb_biomass = Decimal(cobra_model.solution.f) + Decimal('0.0')
+if args.o is not None:
+    lb_biomass = args.o
+else:
+    cobra_model.optimize(solver='gurobi')
+    getcontext().rounding = ROUND_DOWN
+    getcontext().prec = 4
+    lb_biomass = Decimal(cobra_model.solution.f) + Decimal('0.0')
 
 for repetition in range(repetitions):
 
@@ -111,8 +121,8 @@ for repetition in range(repetitions):
 	################################################################################
     # INPUTS
 
-    number_concurrent_processes = 1
-    reps = 1
+    number_concurrent_processes = 10
+    reps = 3
 
     md = importPickle(fModelDict)
 

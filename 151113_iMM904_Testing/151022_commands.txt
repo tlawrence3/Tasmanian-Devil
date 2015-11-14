@@ -1,0 +1,378 @@
+#iMM904 simplified (fastest for testing)
+python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected.xml 150126_degapped_iMM904_with_metabolite_mapping_complexes_36_stoichiometry_lb_AA_AC_B_Polyamine_Sterol.pkl 141013_GCR1A R_biomass_published
+
+python 150723_02_04.py iMM904_NADcorrected.xml 150126_degapped_iMM904_with_metabolite_mapping_complexes_36_stoichiometry_lb_AA_AC_B_Polyamine_Sterol.pkl 141013_GCR1A R_biomass_published 1
+
+#iMM904
+python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected.xml 20150722132206_l_u_g_m_n_iMM904_NADcorrected_1127_MTHFDi.pkl 141013_GCR1A R_biomass_published
+
+python 150723_02_04.py iMM904_NADcorrected.xml 20150722132206_l_u_g_m_n_iMM904_NADcorrected_1127_MTHFDi.pkl 141013_GCR1A R_biomass_published 1
+
+#Recon2
+python 150720_01_findZeroAndHighFreqRxns_1.py Recon2.v04.mat 20150721210414_m_n_c_Recon2.v04.pkl 150708_SKCM_TM_20 R_biomass_reaction
+
+python 150720_01_findZeroAndHighFreqRxns_1.py Recon2.v04.mat 20150721210414_m_n_c_Recon2.v04.pkl 150708_SKCM_TP_20 R_biomass_reaction
+
+python 150723_02_04.py Recon2.v04.mat 20150721210414_m_n_c_Recon2.v04.pkl 150708_SKCM_TM_20 R_biomass_reaction 1
+
+python 150723_02_04.py Recon2.v04.mat 20150721210414_m_n_c_Recon2.v04.pkl 150708_SKCM_TP_20 R_biomass_reaction 1
+
+#iAF1260
+python 150720_01_findZeroAndHighFreqRxns_1.py iAF1260.xml 20150722125653_iAF1260.pkl 150616_iAF1260 R_Ec_biomass_iAF1260_core_59p81M 1
+
+python 150723_02_04.py iAF1260.xml 20150722125653_iAF1260.pkl 150616_iAF1260 R_Ec_biomass_iAF1260_core_59p81M 1
+
+
+
+
+#iMM904 Testing
+started
+python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151006_Aerobic_0.25 R_biomass_published -o 0.2879
+
+started
+python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151006_Anaerobic_0.25 R_biomass_published -o 0.2879
+
+started
+python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151012_ethanol_0.25 R_biomass_published -o 0.2879
+
+started
+python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151012_glucose_0.25 R_biomass_published -o 0.2879
+
+started
+python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151015_negative_control_0.25 R_biomass_published -o 0.2879
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151006_Aerobic_0.25 R_biomass_published -o 0.2879 &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151006_Anaerobic_0.25 R_biomass_published -o 0.2879 &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151012_ethanol_0.25 R_biomass_published -o 0.2879 &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151012_glucose_0.25 R_biomass_published -o 0.2879 &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151015_negative_control_0.25 R_biomass_published -o 0.2879 &
+
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151006_Aerobic_0.25 R_biomass_published -o 0.2879 &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151006_Anaerobic_0.25 R_biomass_published -o 0.2879 &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151012_ethanol_0.25 R_biomass_published -o 0.2879 &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151012_glucose_0.25 R_biomass_published -o 0.2879 &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151015_negative_control_0.25 R_biomass_published -o 0.2879 &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151006_Aerobic_0.25 R_biomass_published -o 0.2879 &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151006_Anaerobic_0.25 R_biomass_published -o 0.2879 &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151012_ethanol_0.25 R_biomass_published -o 0.2879 &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151012_glucose_0.25 R_biomass_published -o 0.2879 &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151015_negative_control_0.25 R_biomass_published -o 0.2879 &
+
+
+
+
+
+
+
+started
+finished
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.pkl 151006_Aerobic_0.25 R_biomass_published &
+
+started
+finished
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.pkl 151006_Anaerobic_0.25 R_biomass_published &
+
+started
+finished
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD.pkl 151012_glucose_0.25 R_biomass_published &
+
+started
+finished
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_YPEtoh.xml iMM904_NADcorrected_1127_FTHFLm_YPEtoh.pkl 151012_ethanol_0.25 R_biomass_published &
+
+started
+finished
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD.pkl 151015_negative_control_0.25 R_biomass_published &
+
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g.pkl 151006_Aerobic_0.25 R_biomass_published &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g.pkl 151006_Anaerobic_0.25 R_biomass_published &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_g.pkl 151012_glucose_0.25 R_biomass_published &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_YPEtoh.xml iMM904_NADcorrected_1127_FTHFLm_YPEtoh_g.pkl 151012_ethanol_0.25 R_biomass_published &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_g.pkl 151015_negative_control_0.25 R_biomass_published &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_m_n_c.pkl 151006_Aerobic_0.25 R_biomass_published &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_m_n_c.pkl 151006_Anaerobic_0.25 R_biomass_published &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_m_n_c.pkl 151012_glucose_0.25 R_biomass_published &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_YPEtoh.xml iMM904_NADcorrected_1127_FTHFLm_YPEtoh_m_n_c.pkl 151012_ethanol_0.25 R_biomass_published &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_m_n_c.pkl 151015_negative_control_0.25 R_biomass_published &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c.pkl 151006_Aerobic_0.25 R_biomass_published &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c.pkl 151006_Anaerobic_0.25 R_biomass_published &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_g_m_n_c.pkl 151012_glucose_0.25 R_biomass_published &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_YPEtoh.xml iMM904_NADcorrected_1127_FTHFLm_YPEtoh_g_m_n_c.pkl 151012_ethanol_0.25 R_biomass_published &
+
+started
+nohup python 150720_01_findZeroAndHighFreqRxns_1.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_g_m_n_c.pkl 151015_negative_control_0.25 R_biomass_published &
+
+
+
+
+
+Rules
+python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151006_Aerobic_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151012_ethanol_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151012_glucose_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151015_negative_control_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151006_Aerobic_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151012_ethanol_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151012_glucose_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151015_negative_control_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151006_Aerobic_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151012_ethanol_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151012_glucose_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151015_negative_control_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151006_Aerobic_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151012_ethanol_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151012_glucose_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151015_negative_control_0.25 R_biomass_published 5 -o 0.2879 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+
+
+
+
+python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.pkl 151006_Aerobic_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD.pkl 151012_glucose_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPEtoh.xml iMM904_NADcorrected_1127_FTHFLm_YPEtoh.pkl 151012_ethanol_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD.pkl 151015_negative_control_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g.pkl 151006_Aerobic_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_g.pkl 151012_glucose_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPEtoh.xml iMM904_NADcorrected_1127_FTHFLm_YPEtoh_g.pkl 151012_ethanol_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_g.pkl 151015_negative_control_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_m_n_c.pkl 151006_Aerobic_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_m_n_c.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_m_n_c.pkl 151012_glucose_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPEtoh.xml iMM904_NADcorrected_1127_FTHFLm_YPEtoh_m_n_c.pkl 151012_ethanol_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_m_n_c.pkl 151015_negative_control_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+
+
+
+python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c.pkl 151006_Aerobic_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_g_m_n_c.pkl 151012_glucose_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPEtoh.xml iMM904_NADcorrected_1127_FTHFLm_YPEtoh_g_m_n_c.pkl 151012_ethanol_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_g_m_n_c.pkl 151015_negative_control_0.25 R_biomass_published 5 -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Not running
+python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151006_Aerobic_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151012_ethanol_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151012_glucose_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm.pkl 151015_negative_control_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151006_Aerobic_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151012_ethanol_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151012_glucose_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g.pkl 151015_negative_control_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151006_Aerobic_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151012_ethanol_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151012_glucose_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_m_n_c.pkl 151015_negative_control_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151006_Aerobic_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151012_ethanol_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151012_glucose_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm.xml iMM904_NADcorrected_1127_FTHFLm_g_m_n_c.pkl 151015_negative_control_0.25 R_biomass_published 5 -o 0.2879 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+
+
+
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.pkl 151006_Aerobic_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD.pkl 151012_glucose_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPEtoh.xml iMM904_NADcorrected_1127_FTHFLm_YPEtoh.pkl 151012_ethanol_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD.pkl 151015_negative_control_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g.pkl 151006_Aerobic_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_g.pkl 151012_glucose_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPEtoh.xml iMM904_NADcorrected_1127_FTHFLm_YPEtoh_g.pkl 151012_ethanol_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_g.pkl 151015_negative_control_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_m_n_c.pkl 151006_Aerobic_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_m_n_c.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_m_n_c.pkl 151012_glucose_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPEtoh.xml iMM904_NADcorrected_1127_FTHFLm_YPEtoh_m_n_c.pkl 151012_ethanol_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_m_n_c.pkl 151015_negative_control_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c.pkl 151006_Aerobic_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c.pkl 151006_Anaerobic_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_g_m_n_c.pkl 151012_glucose_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPEtoh.xml iMM904_NADcorrected_1127_FTHFLm_YPEtoh_g_m_n_c.pkl 151012_ethanol_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+wait; python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_YPD.xml iMM904_NADcorrected_1127_FTHFLm_YPD_g_m_n_c.pkl 151015_negative_control_0.25 R_biomass_published 5 -EXrxns iMM904_EXrxns.pkl -EXtrrxns iMM904_EXtrrxns.pkl -Othertrrxns iMM904_Othertrrxns.pkl -e 1E-9 -a 1E-9 -t 1E-9 &
+
+
+
+
+
+
+
+
+
+egibb@filipp05:~/git/151022_iMM904_Testing_egibb2_debug2$ python 150723_02_04.py iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic.xml iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c.pkl 151006_Anaerobic_0.25 R_biomass_published 1 -e 1E-8 -a 1E-8 -t 1E-8
+

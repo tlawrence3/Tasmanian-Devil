@@ -53,7 +53,7 @@ locTime = time.localtime()
 test_model = args_s[:-4]
 if args.l is not None:
 	args_l = str(args.l)
-	test_model = test_model + str('_l_') + args_l[:-3]
+	test_model = test_model + str('_l_') + args_l[:-4]
 if args.u is not None:
 	test_model = test_model + str('_u')
 if args.g is not None:
@@ -245,6 +245,9 @@ for i in cobra_model.reactions:
 
 genes = set()
 for i in cobra_model.genes:
+        print i
+        if i == 'YGR282C':
+            print "yes"
 	genes.add(i.id)
 
 #Create dictionaries to look up reactions that have metabolite mappings if the argument is supplied from the command line. 
