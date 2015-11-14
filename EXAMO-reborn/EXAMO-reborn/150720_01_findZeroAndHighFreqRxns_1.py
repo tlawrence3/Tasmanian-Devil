@@ -62,6 +62,7 @@ parser.add_argument('d', nargs="+", type=str, help='Necessary variable: conditio
 parser.add_argument('b', nargs="+", type=str, help='Necessary variable: biomass reaction')
 parser.add_argument('-e', type=float, default=1E-1, help='Minimum value for fluxes forced to be non-zero (for the implementation of the pathway algorithm created by Shlomi); default value: 1E-1')
 parser.add_argument('-a', type=float, default=1E-10, help='Activity threshold (above which a flux is considered to be larger than 0); default value: 1E-10')
+parser.add_argument('-o', type=float, help='Defined biomass production')
 
 args = parser.parse_args()
 
@@ -69,6 +70,7 @@ model = str(args.s)
 model = model[2:-2]
 pickle_model = str(args.p)
 pickle_model = pickle_model[2:-2]
+pickle_model_name = pickle_model[:-4]
 description = str(args.d)
 description = description[2:-2]
 biomassRxn = str(args.b)
@@ -89,15 +91,18 @@ fModelDict = 'data/%s' % pickle_model
 
 fGeneCalls = 'data/geneCalls_%s.csv' % description#genes classified by expression
 
-cobra_model.optimize(solver='gurobi')
-getcontext().rounding = ROUND_DOWN
-getcontext().prec = 4
-lb_biomass = Decimal(cobra_model.solution.f) + Decimal('0.0')
+if args.o is not None:
+    lb_biomass = args.o
+else:
+    cobra_model.optimize(solver='gurobi')
+    getcontext().rounding = ROUND_DOWN
+    getcontext().prec = 4
+    lb_biomass = Decimal(cobra_model.solution.f) + Decimal('0.0')
 
 # files for export
-fOutRxnsByExpression = 'data/rxnsClassifiedByExprssion_%s.pkl'
+fOutRxnsByExpression = 'data/rxnsClassifiedByExprssion_%s_%s.pkl'
 
-fOutFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
+fOutFreqBasedRxns = 'data/freqBasedRxns_%s_%s.pkl'
 
 ################################################################################
 # STATEMENTS
@@ -128,7 +133,7 @@ f.close()
 
 ## Classifying reactions by expression
 rxnDict = classifyRxnsByExpression(geneCalls, m.gene2rxn, m.genes)
-exportPickle(rxnDict, fOutRxnsByExpression % description)
+exportPickle(rxnDict, fOutRxnsByExpression % (description, pickle_model_name))
 
 # 2. Maximizing agreement score and exploring alternative optima
 rH = rxnDict['rH']
@@ -140,7 +145,7 @@ scores, imgeSols = model.exploreAlternativeOptima(idRs)
 
 # 3. identifying zero and high frequency reactions
 zfr, hfr = getZeroAndHighFrequencyRxns(scores, imgeSols, idRs, activityThreshold)
-exportPickle({'zfr' : zfr, 'hfr' : hfr}, fOutFreqBasedRxns % description)
+exportPickle({'zfr' : zfr, 'hfr' : hfr}, fOutFreqBasedRxns % (description, pickle_model_name))
 
 print 'zfr ', len(zfr)
 print 'hfr ', len(hfr)

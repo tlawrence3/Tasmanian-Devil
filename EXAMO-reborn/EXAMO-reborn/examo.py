@@ -286,7 +286,7 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
         self.guro.setParam('OutputFlag', 0) 
         # Initializing variables
         for i, rxn in enumerate(self.idRs):
-            exec 'self.{} = self.guro.addVar(lb = {}, ub = {}, vtype = GRB.CONTINUOUS, name = "{}")'.format(rxn, self.lb[i], self.ub[i], rxn)
+            exec 'self.{0} = self.guro.addVar(lb = {1}, ub = {2}, vtype = GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.lb[i], self.ub[i])
         for var in [v for v in self.colNames if v not in self.idRs]:
             exec 'self.{0} = self.guro.addVar(vtype = GRB.BINARY, name = "{0}")'.format(var)
         self.guro.update()
@@ -295,14 +295,17 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
         for i, row in enumerate(lhs):
             nz = row.nonzero()[0]
             pair = zip(row[nz], array(self.colNames)[nz])
-            s = ['({} * self.{})'.format(p[0], p[1]) for p in pair] 
+            s = ''
+            for p in pair:
+                s += '(%s * self.%s) + ' % (p[0], p[1]) 
+            s = s.rstrip(' + ')
             if self.senses[i] == 'E':
-                s += ' == {}'.format(self.rhs[i])
+                s += ' == %s' % self.rhs[i]
             elif self.senses[i] == 'G':
-                s += ' >= {}'.format(self.rhs[i])
+                s += ' >= %s' % self.rhs[i]
             elif self.senses[i] == 'L':
-                s += ' <= {}'.format(self.rhs[i])
-            exec 'self.guro.addConstr( {}, "{}")'.format(s, self.rowNames[i])
+                s += ' <= %s' % self.rhs[i]
+            exec 'self.guro.addConstr( %s, "%s")' % (s, self.rowNames[i])        
         #setting the objective
         s = ''
         for name in self.colNames:

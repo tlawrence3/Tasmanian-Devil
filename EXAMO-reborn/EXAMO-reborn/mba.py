@@ -65,7 +65,8 @@ def findActiveRxns(cbm, thresh, rl = []):
     #sol = abs(array([v.x for v in cbm.guro.getVars()]))
     #indices = (sol > thresh).nonzero()[0]
     #act.update(arrayIdRs[indices])
-    idRs = list(set(idRs) - act)
+    #idRs = list(set(idRs) - act)
+    #print len(idRs)
     # maximizing
     for rxn in idRs:
         if rxn not in act:
@@ -90,24 +91,24 @@ def findActiveRxns(cbm, thresh, rl = []):
     return act
 
 #@profile
-def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, repetition, biomassRxn,
-             lb_biomass):
+def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, pickle_model_name, 
+             repetition, biomassRxn, lb_biomass):
     try:
         #EG Prune a reaction. If a flux solution cannot be obtained
         #or if the biomass flux becomes inactive, stop pruning.
         rxntodelete = rxn
         m0 = deleteCbmRxns(cbm, rxntodelete)
-        act = findActiveRxns(m0, thresh, cH)
+        act = findActiveRxns(m0, thresh)
         cH_act = cH & act
         if (len(cH - cH_act) != 0):#not all cH rxns are active
-            print "not all active 1"
+            #print "not all active 1"
             return cbm
         #######################################################################
         # INPUTS
-        fFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
+        fFreqBasedRxns = 'data/freqBasedRxns_%s_%s.pkl'
         #######################################################################
         # STATEMENTS
-        hfr = importPickle(fFreqBasedRxns % description)['hfr']
+        hfr = importPickle(fFreqBasedRxns % (description, pickle_model_name))['hfr']
         hfr = hfr & set(m0.idRs)
         #forcing biomass production
         m0.lb[m0.idRs.index(biomassRxn)] = lb_biomass
@@ -117,9 +118,11 @@ def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, repetiti
         mtry1result.minSumFluxes_gurobi()
         #EG Added activityThreshold and the m0.rxns dictionary to the
         #function, so that the reactants and products could be written out
+        #print "hello 8"
         nz = getNzRxnsGurobi(mtry1result, activityThreshold, m0.rxns)[1]
+        #print "hello 9"
     except:
-        print "exception 1"
+        #print "exception 1"
         return cbm
         #EG Identify the reactions that became inactive after the
         #reaction was deleted. If extra deleted reactions cause the
@@ -130,13 +133,13 @@ def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, repetiti
     try:
         inact = set(m0.idRs) - act - cH
         m1 = deleteCbmRxns(m0, inact)
-        act2 = findActiveRxns(m1, thresh, cH)
+        act2 = findActiveRxns(m1, thresh)
         cH_act2 = cH & act2
         if (len(cH - cH_act2) != 0):#not all cH rxns are active
-            print rxntodelete
+            #print rxntodelete
             return m0
         # STATEMENTS
-        hfr = importPickle(fFreqBasedRxns % description)['hfr']
+        hfr = importPickle(fFreqBasedRxns % (description, pickle_model_name))['hfr']
         hfr = hfr & set(m1.idRs)
         #forcing biomass production
         m1.lb[m1.idRs.index(biomassRxn)] = lb_biomass
@@ -148,17 +151,17 @@ def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, repetiti
         #to the function, so that the reactants and products could
         #be written out
         nz = getNzRxnsGurobi(mtry2result, activityThreshold, m1.rxns)[1]
-        print inact
+        #print inact
         return m1
     except:
-        print "exception 2"
+        #print "exception 2"
         return m0
 
 #EG 131112 Avoided creating sets for prunableRxns so that randomness
 #would be preserverd, and first try pruning transport reactions before
 #other reactions in the model
 #@profile
-def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
+def iterativePrunning(i, m, cH, description, pickle_model_name, biomassRxn, lb_biomass,
                       repetition, thresh = 1E-10, eps = 1E-10, activityThreshold = 1E-10, EXrxns = [],
                       EXtrrxns = [], Othertrrxns = []):
     """
@@ -172,7 +175,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
             #print rxn1
             try:
                 mTemp1 = pruneRxn(mTemp1, cH, rxn1, thresh, eps, activityThreshold, description,
-                                  repetition, biomassRxn, lb_biomass)
+                                  pickle_model_name, repetition, biomassRxn, lb_biomass)
                 EXrxnsprune2 = []
                 for k in mTemp1.idRs:
                     if k in EXrxnsprune:
@@ -181,7 +184,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                 EXrxnsprune = EXrxnsprune2
             except NameError:
                 mTemp1 = pruneRxn(m, cH, rxn1, thresh, eps, activityThreshold, description,
-                                  repetition, biomassRxn, lb_biomass)
+                                  pickle_model_name, repetition, biomassRxn, lb_biomass)
                 EXrxnsprune2 = []
                 for k in mTemp1.idRs:
                     if k in EXrxnsprune:
@@ -200,7 +203,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
             #print rxn2
             try:
                 mTemp1 = pruneRxn(mTemp1, cH, rxn2, thresh, eps, activityThreshold, description,
-                                  repetition, biomassRxn, lb_biomass)
+                                  pickle_model_name, repetition, biomassRxn, lb_biomass)
                 EXtrrxnsprune2 = []
                 for k in mTemp1.idRs:
                     if k in EXtrrxnsprune:
@@ -209,7 +212,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
                 EXtrrxnsprune = EXtrrxnsprune2
             except NameError:
                 mTemp1 = pruneRxn(m, cH, rxn2, thresh, eps, activityThreshold, description,
-                                  repetition, biomassRxn, lb_biomass)
+                                  pickle_model_name, repetition, biomassRxn, lb_biomass)
                 EXtrrxnsprune2 = []
                 for k in mTemp1.idRs:
                     if k in EXtrrxnsprune:
@@ -237,7 +240,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
         rxn3 = prunableRxns.pop()
         try:
             mTemp1 = pruneRxn(mTemp1, cH, rxn3, thresh, eps, activityThreshold, description,
-                              repetition, biomassRxn, lb_biomass)
+                              pickle_model_name, repetition, biomassRxn, lb_biomass)
             prunableRxns2 = []
             for k in mTemp1.idRs:
                 if k in prunableRxns:
@@ -246,7 +249,7 @@ def iterativePrunning(i, m, cH, description, biomassRxn, lb_biomass,
             prunableRxns = prunableRxns2
         except NameError:
             mTemp1 = pruneRxn(m, cH, rxn3, thresh, eps, activityThreshold, description,
-                              repetition, biomassRxn, lb_biomass)
+                              pickle_model_name, repetition, biomassRxn, lb_biomass)
             prunableRxns2 = []
             for k in mTemp1.idRs:
                 if k in prunableRxns:

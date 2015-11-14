@@ -49,6 +49,7 @@ parser.add_argument('r', nargs="+", type=int, help='Necessary variable: number o
 parser.add_argument('-e', type=float, default=1E-10, help='Minimum value for active flux of reversible reactions in an irreversible model; default value: 1E-10')
 parser.add_argument('-a', type=float, default=1E-10, help='Activity threshold (above which a flux is considered to be larger than 0); default value: 1E-10')
 parser.add_argument('-t', type=float, default=1E-10, help='Activity threshold for finding active reactions; default value: 1E-10')
+parser.add_argument('-o', type=float, help='Defined biomass production')
 parser.add_argument('-EXrxns', type=str, help='Pickle file containing extracellular reactions list')
 parser.add_argument('-EXtrrxns', type=str, help='Pickle file containing extracellular transport reactions list')
 parser.add_argument('-Othertrrxns', type=str, help='Pickle file containing other compartmental transport reactions list')
@@ -59,6 +60,14 @@ model = str(args.s)
 model = model[2:-2]
 pickle_model = str(args.p)
 pickle_model = pickle_model[2:-2]
+pickle_model_name = pickle_model[:-4]
+pickle_model_name_after = pickle_model_name
+if args.EXrxns is not None:
+    pickle_model_name_after = pickle_model_name_after + '_EXrxns'
+if args.EXtrrxns is not None:
+    pickle_model_name_after = pickle_model_name_after + '_EXtrrxns'
+if args.Othertrrxns is not None:
+    pickle_model_name_after = pickle_model_name_after + '_Othertrrxns'
 description = str(args.d)
 description = description[2:-2]
 biomassRxn = str(args.b)
@@ -97,10 +106,13 @@ if model[-4:] == '.mat':
 #model dictionary of the original model with blocked reactions deleted
 fModelDict = 'data/%s' % pickle_model
 
-cobra_model.optimize(solver='gurobi')
-getcontext().rounding = ROUND_DOWN
-getcontext().prec = 4
-lb_biomass = Decimal(cobra_model.solution.f) + Decimal('0.0')
+if args.o is not None:
+    lb_biomass = args.o
+else:
+    cobra_model.optimize(solver='gurobi')
+    getcontext().rounding = ROUND_DOWN
+    getcontext().prec = 4
+    lb_biomass = Decimal(cobra_model.solution.f) + Decimal('0.0')
 
 for repetition in range(repetitions):
 
@@ -110,16 +122,16 @@ for repetition in range(repetitions):
 	################################################################################
     # INPUTS
 
-    number_concurrent_processes = 1
-    reps = 1
+    number_concurrent_processes = 10
+    reps = 5
 
     md = importPickle(fModelDict)
 
     # Importing model information
-    fbr = importPickle('data/freqBasedRxns_%s.pkl' % description)
+    fbr = importPickle('data/freqBasedRxns_%s_%s.pkl' % (description, pickle_model_name))
 
     #EG Making subdirectories for candidate reactions
-    mbaCandRxnsDirectory = 'data/mbaCandRxns/%s_%s/' % (description, str(repetition))
+    mbaCandRxnsDirectory = 'data/mbaCandRxns/%s_%s_%s/' % (description, pickle_model_name_after, str(repetition))
     if os.path.exists(mbaCandRxnsDirectory):
         shutil.rmtree(mbaCandRxnsDirectory)
         os.mkdir(mbaCandRxnsDirectory, 0777)
@@ -150,6 +162,21 @@ for repetition in range(repetitions):
         cH = new_hfr & act
         act = findActiveRxns(m, thresh, cH)
         cH2 = cH & act
+
+        fFreqBasedRxns = 'data/freqBasedRxns_%s_%s.pkl'
+        #######################################################################
+        # STATEMENTS
+        hfr = importPickle(fFreqBasedRxns % (description, pickle_model_name))['hfr']
+        hfr = hfr & set(m.idRs)
+        #forcing biomass production
+        m0.lb[m0.idRs.index(biomassRxn)] = lb_biomass
+        #minimizing the sum of fluxes
+        mtry1result = MipSeparateFwdRev_gurobi(m, hfr, eps)
+        mtry1result.initMipGurobi()
+        mtry1result.minSumFluxes_gurobi()
+        #EG Added activityThreshold and the m0.rxns dictionary to the
+        #function, so that the reactants and products could be written out
+        nz = getNzRxnsGurobi(mtry1result, activityThreshold, m.rxns)[1]
     except:
         zfr_check = 1
 	
@@ -159,6 +186,21 @@ for repetition in range(repetitions):
             try:
                 m1 = deleteCbmRxns(m0, i)
                 act = findActiveRxns(m1, thresh, new_hfr)
+
+                fFreqBasedRxns = 'data/freqBasedRxns_%s_%s.pkl'
+                #######################################################################
+                # STATEMENTS
+                hfr = importPickle(fFreqBasedRxns % (description, pickle_model_name))['hfr']
+                hfr = hfr & set(m0.idRs)
+                #forcing biomass production
+                m1.lb[m1.idRs.index(biomassRxn)] = lb_biomass
+                #minimizing the sum of fluxes
+                mtry1result = MipSeparateFwdRev_gurobi(m1, hfr, eps)
+                mtry1result.initMipGurobi()
+                mtry1result.minSumFluxes_gurobi()
+                #EG Added activityThreshold and the m0.rxns dictionary to the
+                #function, so that the reactants and products could be written out
+                nz = getNzRxnsGurobi(mtry1result, activityThreshold, m1.rxns)[1]
                 m0 = m1
                 zfr_list.append(i)
             except:
@@ -170,7 +212,7 @@ for repetition in range(repetitions):
         cH2 = cH & act		
 
     #EG Make a directory for temporary files for every time a rxn is pruned
-    mbaCandRxnsDirectorySubset = 'examoModules/data/%s_%s/' % (description, str(repetition))
+    mbaCandRxnsDirectorySubset = 'examoModules/data/%s_%s_%s/' % (description, pickle_model_name_after, str(repetition))
     if not os.path.exists(mbaCandRxnsDirectorySubset):
         os.mkdir(mbaCandRxnsDirectorySubset, 0777)
 
@@ -180,10 +222,10 @@ for repetition in range(repetitions):
         atfork()
         for x in xrange(reps):
             timeStr = '%i%02i%02i%02i%02i%02i' % locTime[:6]
-            tag = '%s_%s_%s_%s' % (description, pid, x, timeStr)
+            tag = '%s_%s_%s_%s_%s' % (description, pickle_model_name_after, pid, x, timeStr)
             try:
                 #EG Added despricription, repetition, and lists of compartmental reactions to the function
-                cr = iterativePrunning(i, m, cH2, description, biomassRxn, lb_biomass, repetition, thresh, eps, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
+                cr = iterativePrunning(i, m, cH2, description, pickle_model_name, biomassRxn, lb_biomass, repetition, thresh, eps, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
                 exportPickle(cr, fOutMbaCandRxns % tag)
             except:
                 print 'gurobi error, no solution found %s'  % description
@@ -212,9 +254,9 @@ for repetition in range(repetitions):
     md = importPickle(fModelDict)
 
     # Importing model information
-    fbr = importPickle('data/freqBasedRxns_%s.pkl' % description)
+    fbr = importPickle('data/freqBasedRxns_%s_%s.pkl' % (description, pickle_model_name))
 
-    fOutModel = 'data/examo_%s_%s.pkl'
+    fOutModel = 'data/examo_%s_%s_%s.pkl'
 
 	################################################################################
     # STATEMENTS
@@ -276,7 +318,7 @@ for repetition in range(repetitions):
         excRxns = set(m.idRs) - mRxns
         try:
             m1 = deleteCbmRxns(m, excRxns)
-            exportPickle(m1, fOutModel % (description, str(repetition)))
+            exportPickle(m1, fOutModel % (description, pickle_model_name_after, str(repetition)))
             rev = [0 if val >= 0 else 1 for val in m1.lb]
             gene2rxn = {}
             rxns = {}
@@ -294,19 +336,19 @@ for repetition in range(repetitions):
                 'gene2rxn' : gene2rxn,
                 'rxns' : rxns,
 	        'descrip' : 'examo %s' % description}
-            exportPickle(mDict, fOutModel % (description, str(repetition) + '_dict'))#EG End of the original 3rd script
+            exportPickle(mDict, fOutModel % (description, pickle_model_name_after, str(repetition) + '_dict'))#EG End of the original 3rd script
 
             #EG Beginning of the 4th script
 			################################################################################
             # INPUTS
-            fModelExamo = 'data/examo_%s_%s_dict.pkl'
-            fFreqBasedRxns = 'data/freqBasedRxns_%s.pkl'
-            fOutMetabState = 'data/metabolicState_%s_%s.csv'
+            fModelExamo = 'data/examo_%s_%s_%s_dict.pkl'
+            fFreqBasedRxns = 'data/freqBasedRxns_%s_%s.pkl'
+            fOutMetabState = 'data/metabolicState_%s_%s_%s.csv'
 			################################################################################
             # STATEMENTS
 
-            hfr = importPickle(fFreqBasedRxns % description)['hfr']
-            md = importPickle(fModelExamo % (description, str(repetition)))
+            hfr = importPickle(fFreqBasedRxns % (description, pickle_model_name))['hfr']
+            md = importPickle(fModelExamo % (description, pickle_model_name_after, str(repetition)))
             mtry = CbModel(md['S'], md['idSp'], md['idRs'], md['lb'], md['ub'], md['rxns'], md['genes'])
             hfr = hfr & set(mtry.idRs)
             #forcing biomass production
@@ -324,7 +366,7 @@ for repetition in range(repetitions):
             nz = getNzRxnsGurobi(mprod, activityThreshold, md['rxns'])[1]
 
             # reporting the flux distribution obtained		
-            f = open(fOutMetabState % (description, str(repetition)), 'w')
+            f = open(fOutMetabState % (description, pickle_model_name_after, str(repetition)), 'w')
             csv.writer(f).writerows(nz)
             f.close()
             break
