@@ -247,27 +247,15 @@ for i in cobra_model.reactions:
 	rxns_original[reaction_name] = {'name': i.name, 'id': reaction_name, 'reactants': reactants_original, 'products': products_original, 'reversible': reversible, 'genes': gene2rxn[reaction_name], 'lb': rxn2lb[reaction_name], 'ub': rxn2ub[reaction_name], 'pathway': i.subsystem}  
 
 #Create list/sets/matlab cells of genes using cobrapy and array based model for reacitons
-
-description = str(cobra_model.id)
-#Think about if genes are added later
 genes_cobra = _cell(cobra_model.genes.list_attr("id"))
-
-
 grRules = _cell(cobra_model.reactions.list_attr("gene_reaction_rule"))
-
 c = array(cobra_model.reactions.list_attr("objective_coefficient")) * 1
 subsystem = _cell(cobra_model.reactions.list_attr("subsystem"))
 metNames = _cell(cobra_model.metabolites.list_attr("name"))
 metFormulas = _cell([str(m.formula) for m in cobra_model.metabolites])
 b = array(cobra_model.metabolites.list_attr("_bound")) * 1.
 
-
 #Create gene set (for EXAMO model) and list (for COBRA model)
-genes = set()
-for i in cobra_model.genes:
-	genes.add(i.id)
-
- 
 genes = set()
 genes_list = []
 for keys,values in list(gene2rxn.items()):
@@ -294,7 +282,7 @@ for i in range(0,len(cobra_model.reactions)):
 	gene_index = 0
 	rxn_index_0 = []
 	gene_index_0 = []	
-	for j in cobra_model.genes:
+	for j in genes_list:
 		gene_index += 1
 		genes_search = re.search(str(j), str(grRules[i]))
 		if genes_search is not None: 
@@ -532,14 +520,16 @@ for t in idRs:
 
 rxn_index = 0
 rxn_index_list = []
+rxn_index_list_to_delete = []
 for i in idRs:
 	rxn_index += 1
 	if i not in rxns_to_remove_2:
 		rxn_index_list.append(rxn_index-1)
 	else:
-		grRules = np.delete(grRules, rxn_index-1)
-		c = np.delete(c, rxn_index-1)
-		subsystem = np.delete(subsystem, rxn_index-1)
+		rxn_index_list_to_delete.append(rxn_index-1)
+grRules = np.delete(grRules, rxn_index_list_to_delete)
+c = np.delete(c, rxn_index_list_to_delete)
+subsystem = np.delete(subsystem, rxn_index_list_to_delete)
 
 for i in rxns_to_remove_2:
 	del rxns[i]
@@ -644,27 +634,40 @@ if args.c is not None:
 								
 	rxn_index = 0
 	rxn_index_list = []
+	rxn_index_list_to_delete = []
 	for i in idRs:
 		rxn_index += 1
 		if i not in rxns_to_remove:
 			rxn_index_list.append(rxn_index-1)
 		else:
-			grRules = np.delete(grRules, rxn_index-1)
-			c = np.delete(c, rxn_index-1)
-			subsystem = np.delete(subsystem, rxn_index-1)
+			rxn_index_list_to_delete.append(rxn_index-1)
+	grRules = np.delete(grRules, rxn_index_list_to_delete)
+	c = np.delete(c, rxn_index_list_to_delete)
+	subsystem = np.delete(subsystem, rxn_index_list_to_delete)
+
 	met_index = 0
 	met_index_list = []
+	met_index_list_to_delete = []
 	for i in idSp:
 		met_index += 1
 		if i not in met_exception_list:
 			met_index_list.append(met_index-1)
+		else:
+			if ((i[-2:] != '_b') and (i[-3:] != '_b_')):
+				met_index_list_to_delete.append(met_index-1)
+			else:
+				met_index_list.append(met_index-1)
+	metNames = np.delete(metNames, met_index_list_to_delete)
+	metFormulas = np.delete(metFormulas, met_index_list_to_delete)
+	b = np.delete(b, met_index_list_to_delete)
 
 	S = lil_matrix(csr_matrix(S)[met_index_list, :])
 	S = lil_matrix(csr_matrix(S)[:,rxn_index_list])
 
 	for met in met_exception_list:
 		if ((met[-2:] != '_b') and (met[-3:] != '_b_')):
-			idSp.remove(met)	
+			idSp.remove(met)
+	
 	#Delete reactions and gene2rxn dictionary entries for reactions that cannot be carried out due to cofactor presence
 	for t in rxns_to_remove:
 		del rxns[t]
@@ -767,14 +770,16 @@ if args.c is not None:
 	#Remove unbalanced reactions
 	rxn_index = 0
 	rxn_index_list = []
+	rxn_index_list_to_delete = []
 	for i in idRs:
 		rxn_index += 1
 		if i not in unbalanced_rxns:
 			rxn_index_list.append(rxn_index-1)
 		else:
-			grRules = np.delete(grRules, rxn_index-1)
-			c = np.delete(c, rxn_index-1)
-			subsystem = np.delete(subsystem, rxn_index-1)
+			rxn_index_list_to_delete.append(rxn_index-1)
+	grRules = np.delete(grRules, rxn_index_list_to_delete)
+	c = np.delete(c, rxn_index_list_to_delete)
+	subsystem = np.delete(subsystem, rxn_index_list_to_delete)
 
 	for i in unbalanced_rxns:
 		del rxns[i]
@@ -819,16 +824,21 @@ for i in idSp:
 	else:
 		met_index_list.append(met_index - 1)
 
+
 S = lil_matrix(csr_matrix(S)[met_index_list,:])
 
 met_index = 0
+met_index_to_delete = []
 for i in idSp:
 	met_index += 1
 	if i in idSp_to_remove:
-		idSp.remove(i)
-		metNames = np.delete(metNames, met_index-1)
-		metForumals = np.delete(metFormulas, met_index-1)
-		b = np.delete(b, met_index-1)
+		met_index_to_delete.append(met_index-1)
+metNames = np.delete(metNames, met_index_to_delete)
+metFormulas = np.delete(metFormulas, met_index_to_delete)
+b = np.delete(b, met_index_to_delete)
+
+for i in idSp_to_remove:
+	idSp.remove(i)
 
 #Remove lb and ub entries for reactions that were removed from the model, and map reversibility 
 lb = []
@@ -889,14 +899,13 @@ S = coo_matrix(S)
 
 rxnGeneMat = coo_matrix(rxnGeneMat)
 
-
-model = {'model' : {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b}}
-#Export the model as a .mat file
-scipy.io.savemat('test_model.mat', model)
+model = {test_model[:-4] : {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': test_model[:-4]}}
+#Export the model as a .mat file for COBRA MATLAB usage
+scipy.io.savemat('%s.mat' % test_model[:-4], model)
 
 #Print all of the reactions in the final model
 #for t in rxns:
 #	print "%s -> %s" % (rxns[t]['reactants'], rxns[t]['products'])
 
-#Export the model as a pickle file
+#Export the model as a pickle file for EXAMO usage
 exportPickle({'idSp' : idSp, 'idRs' : idRs, 'genes' : genes, 'lb' : lb, 'ub' : ub, 'gene2rxn': gene2rxn, 'S' : S, 'rxns' : rxns }, test_model)
