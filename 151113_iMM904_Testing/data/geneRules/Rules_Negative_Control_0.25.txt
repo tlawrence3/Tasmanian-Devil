@@ -1,0 +1,4 @@
+Highly expressed for Negative Control:226
+Lowly expressed for Negative Control:226
+Otherwise undefined for Negative Control:452
+

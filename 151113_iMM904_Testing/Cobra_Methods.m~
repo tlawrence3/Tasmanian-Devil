@@ -1,0 +1,19 @@
+function Cobra_Methods(model, description)
+  warning('off');
+  initCobraToolbox;
+  %import the models and data
+  model_string = sprintf('data/models/%s.mat',model);
+  expressionData_string = sprintf('data/geneRules/%s.mat',description);
+  m = load(model_string);
+  data = load(expressionData_string);
+  %perform pFBA
+  fluxes_ub_pFBA_max = optimizeCbModel(m,'max','one');
+  %perform GIMME
+  [model_GIMME,Rxns_GIMME] = createTissueSpecificModel(m,data,1,1,[],'GIMME',[find(m.c) 0.9],1);
+  model_GIMME_taxicab = optimizeCbModel(model_GIMME,'max','one');
+  %perform iMAT
+  [model_iMAT,Rxns_iMAT] = createTissueSpecificModel(m,data,1,1,[],'Shlomi',[],1);
+  model_iMAT_taxicab = optimizeCbModel(model_iMAT,'max','one');
+  save_string = sprintf('data/COBRAResults/Results_%s_%s.mat',description,model);
+  clear model description model_string expressionData_string
+  save(save_string);

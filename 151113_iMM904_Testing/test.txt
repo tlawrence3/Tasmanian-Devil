@@ -1,0 +1,351 @@
+
+
+R_FECOSTESTH_SCe
+carbons in original model: {'met_reactants': {'M_fecostest_SC_e': '29', 'M_h2o_e': '0'}, 'met_products': {'M_hexc_e': '26', 'M_ocdcea_e': '18', 'M_h_e': '0', 'M_hdcea_e': '16', 'M_fecost_e': '28', 'M_ocdca_e': '18', 'M_hdca_e': '16', 'M_ttdca_e': '14'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_fecostest_SC_e': 0.01, 'M_h2o_e': 1.0}, 'reversible': False, 'products': {'M_hexc_e': 0.01, 'M_ocdcea_e': 0.27, 'M_ttdca_e': 0.015, 'M_hdcea_e': 0.655, 'M_fecost_e': 0.01, 'M_ocdca_e': 0.03, 'M_hdca_e': 0.02, 'M_h_e': 1.0}, 'name': 'fecosterol ester hydrolase yeast specific extracellular', 'lb': 0.0, 'genes': 'YLR020C', 'id': 'R_FECOSTESTH_SCe', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_fecostest_SC_e': '29'}, 'met_products': {'M_hexc_e': '26', 'M_ocdcea_e': '18', 'M_hdcea_e': '16', 'M_fecost_e': '28', 'M_ocdca_e': '18', 'M_hdca_e': '16', 'M_ttdca_e': '14'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_fecostest_SC_e': 1}, 'reversible': False, 'products': {'M_hexc_e': 1, 'M_ocdcea_e': 0.27, 'M_ttdca_e': 0.015, 'M_hdcea_e': 0.655, 'M_fecost_e': 1, 'M_ocdca_e': 0.03, 'M_hdca_e': 0.02}, 'name': 'fecosterol ester hydrolase yeast specific extracellular', 'lb': 0.0, 'genes': 'YLR020C', 'id': 'R_FECOSTESTH_SCe', 'ub': 1000.0}
+carbons in reactants in adapted model: 29.0
+cabons in products in adapted model: 70.41
+
+
+R_ZYMSTAT_SC
+carbons in original model: {'met_reactants': {'M_zymst_c': '27', 'M_hexccoa_c': '47', 'M_pmtcoa_c': '37', 'M_tdcoa_c': '35', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_odecoa_c': '39'}, 'met_products': {'M_zymstest_SC_c': '28', 'M_coa_c': '21'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_zymst_c': 0.01, 'M_hexccoa_c': 0.01, 'M_pmtcoa_c': 0.02, 'M_tdcoa_c': 0.015, 'M_hdcoa_c': 0.655, 'M_stcoa_c': 0.03, 'M_odecoa_c': 0.27}, 'reversible': False, 'products': {'M_zymstest_SC_c': 0.01, 'M_coa_c': 1.0}, 'name': 'Acyl CoAzymosterol acyltransferase yeast specific', 'lb': 0.0, 'genes': 'YCR048W', 'id': 'R_ZYMSTAT_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_zymst_c': '27', 'M_hexccoa_c': '47', 'M_pmtcoa_c': '37', 'M_tdcoa_c': '35', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_odecoa_c': '39'}, 'met_products': {'M_zymstest_SC_c': '28', 'M_coa_c': '21'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_zymst_c': 1, 'M_hexccoa_c': 1, 'M_pmtcoa_c': 0.02, 'M_tdcoa_c': 0.015, 'M_hdcoa_c': 0.655, 'M_stcoa_c': 0.03, 'M_odecoa_c': 0.27}, 'reversible': False, 'products': {'M_zymstest_SC_c': 1, 'M_coa_c': 1.0}, 'name': 'Acyl CoAzymosterol acyltransferase yeast specific', 'lb': 0.0, 'genes': 'YCR048W', 'id': 'R_ZYMSTAT_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 111.2
+cabons in products in adapted model: 49.0
+
+
+R_LANOSTESTH_SCe
+carbons in original model: {'met_reactants': {'M_lanostest_SC_e': '31', 'M_h2o_e': '0'}, 'met_products': {'M_hexc_e': '26', 'M_ocdcea_e': '18', 'M_h_e': '0', 'M_hdcea_e': '16', 'M_lanost_e': '30', 'M_ocdca_e': '18', 'M_hdca_e': '16', 'M_ttdca_e': '14'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_lanostest_SC_e': 0.01, 'M_h2o_e': 1.0}, 'reversible': False, 'products': {'M_hexc_e': 0.01, 'M_ocdcea_e': 0.27, 'M_ttdca_e': 0.015, 'M_hdcea_e': 0.655, 'M_lanost_e': 0.01, 'M_ocdca_e': 0.03, 'M_hdca_e': 0.02, 'M_h_e': 1.0}, 'name': 'lanosterol ester hydrolase yeast specific extracellular ', 'lb': 0.0, 'genes': 'YLR020C', 'id': 'R_LANOSTESTH_SCe', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_lanostest_SC_e': '31'}, 'met_products': {'M_hexc_e': '26', 'M_ocdcea_e': '18', 'M_hdcea_e': '16', 'M_lanost_e': '30', 'M_ocdca_e': '18', 'M_hdca_e': '16', 'M_ttdca_e': '14'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_lanostest_SC_e': 1}, 'reversible': False, 'products': {'M_hexc_e': 1, 'M_ocdcea_e': 0.27, 'M_ttdca_e': 0.015, 'M_hdcea_e': 0.655, 'M_lanost_e': 1, 'M_ocdca_e': 0.03, 'M_hdca_e': 0.02}, 'name': 'lanosterol ester hydrolase yeast specific extracellular ', 'lb': 0.0, 'genes': 'YLR020C', 'id': 'R_LANOSTESTH_SCe', 'ub': 1000.0}
+carbons in reactants in adapted model: 31.0
+cabons in products in adapted model: 72.41
+
+
+R_PLBPC_SC
+carbons in original model: {'met_reactants': {'M_h2o_c': '0', 'M_pc_SC_c': '10'}, 'met_products': {'M_ttdca_c': '14', 'M_ocdcea_c': '18', 'M_dca_c': '10', 'M_ocdcya_c': '18', 'M_ocdca_c': '18', 'M_g3pc_c': '8', 'M_hdcea_c': '16', 'M_hdca_c': '16', 'M_h_c': '0', 'M_ddca_c': '12'}}
+stoichiometry in original model: {'pathway': 'Phospholipid Metabolism', 'reactants': {'M_h2o_c': 1.0, 'M_pc_SC_c': 0.005}, 'reversible': False, 'products': {'M_h_c': 1.0, 'M_ocdcea_c': 0.24, 'M_dca_c': 0.02, 'M_ocdcya_c': 0.09, 'M_ocdca_c': 0.05, 'M_g3pc_c': 0.5, 'M_hdcea_c': 0.17, 'M_hdca_c': 0.27, 'M_ttdca_c': 0.1, 'M_ddca_c': 0.06}, 'name': 'phospholipase B phosphatidylcholine yeast specific', 'lb': 0.0, 'genes': 'YML059C', 'id': 'R_PLBPC_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_pc_SC_c': '10'}, 'met_products': {'M_ocdcea_c': '18', 'M_dca_c': '10', 'M_ocdcya_c': '18', 'M_ocdca_c': '18', 'M_g3pc_c': '8', 'M_hdcea_c': '16', 'M_hdca_c': '16', 'M_ttdca_c': '14', 'M_ddca_c': '12'}}
+stoichiometry in adapted model: {'pathway': 'Phospholipid Metabolism', 'reactants': {'M_pc_SC_c': 0.005}, 'reversible': False, 'products': {'M_ocdcea_c': 0.24, 'M_dca_c': 0.02, 'M_ocdcya_c': 0.09, 'M_ocdca_c': 0.05, 'M_g3pc_c': 0.5, 'M_hdcea_c': 0.17, 'M_hdca_c': 0.27, 'M_ttdca_c': 0.1, 'M_ddca_c': 0.06}, 'name': 'phospholipase B phosphatidylcholine yeast specific', 'lb': 0.0, 'genes': 'YML059C', 'id': 'R_PLBPC_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 0.05
+cabons in products in adapted model: 20.2
+
+
+R_FECOSTAT_SC
+carbons in original model: {'met_reactants': {'M_hexccoa_c': '47', 'M_pmtcoa_c': '37', 'M_hdcoa_c': '37', 'M_tdcoa_c': '35', 'M_fecost_c': '28', 'M_stcoa_c': '39', 'M_odecoa_c': '39'}, 'met_products': {'M_coa_c': '21', 'M_fecostest_SC_c': '29'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_hexccoa_c': 0.01, 'M_pmtcoa_c': 0.02, 'M_stcoa_c': 0.03, 'M_tdcoa_c': 0.015, 'M_fecost_c': 0.01, 'M_odecoa_c': 0.27, 'M_hdcoa_c': 0.655}, 'reversible': False, 'products': {'M_coa_c': 1.0, 'M_fecostest_SC_c': 0.01}, 'name': 'Acyl CoAfecosterol acyltransferase yeast specific', 'lb': 0.0, 'genes': 'YCR048W', 'id': 'R_FECOSTAT_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_hexccoa_c': '47', 'M_pmtcoa_c': '37', 'M_hdcoa_c': '37', 'M_tdcoa_c': '35', 'M_fecost_c': '28', 'M_stcoa_c': '39', 'M_odecoa_c': '39'}, 'met_products': {'M_coa_c': '21', 'M_fecostest_SC_c': '29'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_hexccoa_c': 1, 'M_pmtcoa_c': 0.02, 'M_stcoa_c': 0.03, 'M_tdcoa_c': 0.015, 'M_fecost_c': 1, 'M_odecoa_c': 0.27, 'M_hdcoa_c': 0.655}, 'reversible': False, 'products': {'M_coa_c': 1.0, 'M_fecostest_SC_c': 1}, 'name': 'Acyl CoAfecosterol acyltransferase yeast specific', 'lb': 0.0, 'genes': 'YCR048W', 'id': 'R_FECOSTAT_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 112.2
+cabons in products in adapted model: 50.0
+
+
+R_EPISTESTH_SC
+carbons in original model: {'met_reactants': {'M_h2o_c': '0', 'M_epistest_SC_c': '29'}, 'met_products': {'M_h_c': '0', 'M_ocdcea_c': '18', 'M_hexc_c': '26', 'M_epist_c': '28', 'M_ocdca_c': '18', 'M_hdcea_c': '16', 'M_hdca_c': '16', 'M_ttdca_c': '14'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_h2o_c': 1.0, 'M_epistest_SC_c': 0.01}, 'reversible': False, 'products': {'M_ttdca_c': 0.015, 'M_ocdcea_c': 0.27, 'M_hexc_c': 0.01, 'M_epist_c': 0.01, 'M_ocdca_c': 0.03, 'M_hdcea_c': 0.655, 'M_hdca_c': 0.02, 'M_h_c': 1.0}, 'name': 'episterol ester hydrolase yeast specific', 'lb': 0.0, 'genes': '( YLL012W  or  YKL140W )', 'id': 'R_EPISTESTH_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_epistest_SC_c': '29'}, 'met_products': {'M_ocdcea_c': '18', 'M_hexc_c': '26', 'M_epist_c': '28', 'M_ocdca_c': '18', 'M_hdcea_c': '16', 'M_hdca_c': '16', 'M_ttdca_c': '14'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_epistest_SC_c': 1}, 'reversible': False, 'products': {'M_ttdca_c': 0.015, 'M_ocdcea_c': 0.27, 'M_hexc_c': 1, 'M_epist_c': 1, 'M_ocdca_c': 0.03, 'M_hdcea_c': 0.655, 'M_hdca_c': 0.02}, 'name': 'episterol ester hydrolase yeast specific', 'lb': 0.0, 'genes': '( YLL012W  or  YKL140W )', 'id': 'R_EPISTESTH_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 29.0
+cabons in products in adapted model: 70.41
+
+
+R_PLBPC_SCe
+carbons in original model: {'met_reactants': {'M_pc_SC_e': '10', 'M_h2o_e': '0'}, 'met_products': {'M_ocdcya_e': '18', 'M_dca_e': '10', 'M_ocdcea_e': '18', 'M_h_e': '0', 'M_hdcea_e': '16', 'M_g3pc_e': '8', 'M_ocdca_e': '18', 'M_ddca_e': '12', 'M_hdca_e': '16', 'M_ttdca_e': '14'}}
+stoichiometry in original model: {'pathway': 'Phospholipid Metabolism', 'reactants': {'M_pc_SC_e': 0.005, 'M_h2o_e': 1.0}, 'reversible': False, 'products': {'M_ocdcya_e': 0.09, 'M_dca_e': 0.02, 'M_ocdcea_e': 0.24, 'M_ttdca_e': 0.1, 'M_hdcea_e': 0.17, 'M_g3pc_e': 0.5, 'M_ocdca_e': 0.05, 'M_ddca_e': 0.06, 'M_hdca_e': 0.27, 'M_h_e': 1.0}, 'name': 'phospholipase B phosphatidylcholine yeast specific extracellular ', 'lb': 0.0, 'genes': '( YMR006C  or  YMR008C )', 'id': 'R_PLBPC_SCe', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_pc_SC_e': '10'}, 'met_products': {'M_ocdcya_e': '18', 'M_dca_e': '10', 'M_ocdcea_e': '18', 'M_hdcea_e': '16', 'M_g3pc_e': '8', 'M_ocdca_e': '18', 'M_ddca_e': '12', 'M_hdca_e': '16', 'M_ttdca_e': '14'}}
+stoichiometry in adapted model: {'pathway': 'Phospholipid Metabolism', 'reactants': {'M_pc_SC_e': 0.005}, 'reversible': False, 'products': {'M_ocdcya_e': 0.09, 'M_dca_e': 0.02, 'M_ocdcea_e': 0.24, 'M_ttdca_e': 0.1, 'M_hdcea_e': 0.17, 'M_g3pc_e': 0.5, 'M_ocdca_e': 0.05, 'M_ddca_e': 0.06, 'M_hdca_e': 0.27}, 'name': 'phospholipase B phosphatidylcholine yeast specific extracellular ', 'lb': 0.0, 'genes': '( YMR006C  or  YMR008C )', 'id': 'R_PLBPC_SCe', 'ub': 1000.0}
+carbons in reactants in adapted model: 0.05
+cabons in products in adapted model: 20.2
+
+
+R_GAT2_SC
+carbons in original model: {'met_reactants': {'M_ddcacoa_c': '33', 'M_dcacoa_c': '31', 'M_tdcoa_c': '35', 'M_ocdycacoa_c': '39', 'M_pmtcoa_c': '37', 'M_dhap_c': '3', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_odecoa_c': '39'}, 'met_products': {'M_coa_c': '21', 'M_1agly3p_SC_c': '4'}}
+stoichiometry in original model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ddcacoa_c': 0.06, 'M_dcacoa_c': 0.02, 'M_tdcoa_c': 0.1, 'M_ocdycacoa_c': 0.09, 'M_pmtcoa_c': 0.27, 'M_dhap_c': 1.0, 'M_hdcoa_c': 0.17, 'M_stcoa_c': 0.05, 'M_odecoa_c': 0.24}, 'reversible': False, 'products': {'M_1agly3p_SC_c': 0.01, 'M_coa_c': 1.0}, 'name': 'glycerol 3 phosphate acyltransferase glycerone phosphate yeast specific', 'lb': 0.0, 'genes': '( YKR067W  or  YBL011W )', 'id': 'R_GAT2_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ddcacoa_c': '33', 'M_dcacoa_c': '31', 'M_tdcoa_c': '35', 'M_ocdycacoa_c': '39', 'M_pmtcoa_c': '37', 'M_dhap_c': '3', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_odecoa_c': '39'}, 'met_products': {'M_coa_c': '21', 'M_1agly3p_SC_c': '4'}}
+stoichiometry in adapted model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ddcacoa_c': 0.06, 'M_dcacoa_c': 0.02, 'M_tdcoa_c': 0.1, 'M_ocdycacoa_c': 0.09, 'M_pmtcoa_c': 0.27, 'M_dhap_c': 1.0, 'M_hdcoa_c': 0.17, 'M_stcoa_c': 0.05, 'M_odecoa_c': 0.24}, 'reversible': False, 'products': {'M_1agly3p_SC_c': 1, 'M_coa_c': 1.0}, 'name': 'glycerol 3 phosphate acyltransferase glycerone phosphate yeast specific', 'lb': 0.0, 'genes': '( YKR067W  or  YBL011W )', 'id': 'R_GAT2_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 40.2
+cabons in products in adapted model: 25.0
+
+
+R_LANOSTAT_SC
+carbons in original model: {'met_reactants': {'M_hexccoa_c': '47', 'M_pmtcoa_c': '37', 'M_tdcoa_c': '35', 'M_hdcoa_c': '37', 'M_lanost_c': '30', 'M_stcoa_c': '39', 'M_odecoa_c': '39'}, 'met_products': {'M_lanostest_SC_c': '31', 'M_coa_c': '21'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_hexccoa_c': 0.01, 'M_pmtcoa_c': 0.02, 'M_tdcoa_c': 0.015, 'M_hdcoa_c': 0.655, 'M_lanost_c': 0.01, 'M_stcoa_c': 0.03, 'M_odecoa_c': 0.27}, 'reversible': False, 'products': {'M_lanostest_SC_c': 0.01, 'M_coa_c': 1.0}, 'name': 'Acyl CoAlanosterol acyltransferase yeast specific', 'lb': 0.0, 'genes': 'YCR048W', 'id': 'R_LANOSTAT_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_hexccoa_c': '47', 'M_pmtcoa_c': '37', 'M_tdcoa_c': '35', 'M_hdcoa_c': '37', 'M_lanost_c': '30', 'M_stcoa_c': '39', 'M_odecoa_c': '39'}, 'met_products': {'M_lanostest_SC_c': '31', 'M_coa_c': '21'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_hexccoa_c': 1, 'M_pmtcoa_c': 0.02, 'M_tdcoa_c': 0.015, 'M_hdcoa_c': 0.655, 'M_lanost_c': 1, 'M_stcoa_c': 0.03, 'M_odecoa_c': 0.27}, 'reversible': False, 'products': {'M_lanostest_SC_c': 1, 'M_coa_c': 1.0}, 'name': 'Acyl CoAlanosterol acyltransferase yeast specific', 'lb': 0.0, 'genes': 'YCR048W', 'id': 'R_LANOSTAT_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 114.2
+cabons in products in adapted model: 52.0
+
+
+R_IPC124PLC_SC
+carbons in original model: {'met_reactants': {'M_h2o_c': '0', 'M_ipc124_SC_c': '24'}, 'met_products': {'M_cer1_24_c': '42', 'M_h_c': '0', 'M_mi1p_D_c': '6'}}
+stoichiometry in original model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_h2o_c': 1.0, 'M_ipc124_SC_c': 0.01}, 'reversible': False, 'products': {'M_cer1_24_c': 1.0, 'M_h_c': 1.0, 'M_mi1p_D_c': 1.0}, 'name': 'inositol phosphorylceramide ceramide 1 24C phospholipase C', 'lb': 0.0, 'genes': 'YER019W', 'id': 'R_IPC124PLC_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ipc124_SC_c': '24'}, 'met_products': {'M_cer1_24_c': '42', 'M_mi1p_D_c': '6'}}
+stoichiometry in adapted model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_ipc124_SC_c': 1}, 'reversible': False, 'products': {'M_cer1_24_c': 1.0, 'M_mi1p_D_c': 1.0}, 'name': 'inositol phosphorylceramide ceramide 1 24C phospholipase C', 'lb': 0.0, 'genes': 'YER019W', 'id': 'R_IPC124PLC_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 24.0
+cabons in products in adapted model: 48.0
+
+
+R_EPISTESTH_SCe
+carbons in original model: {'met_reactants': {'M_epistest_SC_e': '29', 'M_h2o_e': '0'}, 'met_products': {'M_epist_e': '28', 'M_hexc_e': '26', 'M_ocdcea_e': '18', 'M_h_e': '0', 'M_hdcea_e': '16', 'M_ocdca_e': '18', 'M_hdca_e': '16', 'M_ttdca_e': '14'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_epistest_SC_e': 0.01, 'M_h2o_e': 1.0}, 'reversible': False, 'products': {'M_epist_e': 0.01, 'M_hexc_e': 0.01, 'M_ocdcea_e': 0.27, 'M_ttdca_e': 0.015, 'M_hdcea_e': 0.655, 'M_ocdca_e': 0.03, 'M_hdca_e': 0.02, 'M_h_e': 1.0}, 'name': 'episterol ester hydrolase yeast specific extracellular ', 'lb': 0.0, 'genes': 'YLR020C', 'id': 'R_EPISTESTH_SCe', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_epistest_SC_e': '29'}, 'met_products': {'M_epist_e': '28', 'M_hexc_e': '26', 'M_ocdcea_e': '18', 'M_hdcea_e': '16', 'M_ocdca_e': '18', 'M_hdca_e': '16', 'M_ttdca_e': '14'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_epistest_SC_e': 1}, 'reversible': False, 'products': {'M_epist_e': 1, 'M_hexc_e': 1, 'M_ocdcea_e': 0.27, 'M_ttdca_e': 0.015, 'M_hdcea_e': 0.655, 'M_ocdca_e': 0.03, 'M_hdca_e': 0.02}, 'name': 'episterol ester hydrolase yeast specific extracellular ', 'lb': 0.0, 'genes': 'YLR020C', 'id': 'R_EPISTESTH_SCe', 'ub': 1000.0}
+carbons in reactants in adapted model: 29.0
+cabons in products in adapted model: 70.41
+
+
+R_IPCS224_SC
+carbons in original model: {'met_reactants': {'M_cer2_24_c': '42', 'M_ptd1ino_SC_c': '11'}, 'met_products': {'M_ipc224_SC_c': '24', 'M_12dgr_SC_c': '5'}}
+stoichiometry in original model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_ptd1ino_SC_c': 0.01, 'M_cer2_24_c': 1.0}, 'reversible': False, 'products': {'M_ipc224_SC_c': 0.01, 'M_12dgr_SC_c': 0.01}, 'name': 'Inositol phosphorylceramide synthase ceramide 2 24C yeast specific', 'lb': 0.0, 'genes': 'YKL004W', 'id': 'R_IPCS224_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_cer2_24_c': '42', 'M_ptd1ino_SC_c': '11'}, 'met_products': {'M_ipc224_SC_c': '24', 'M_12dgr_SC_c': '5'}}
+stoichiometry in adapted model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_ptd1ino_SC_c': 1, 'M_cer2_24_c': 1.0}, 'reversible': False, 'products': {'M_ipc224_SC_c': 1, 'M_12dgr_SC_c': 1}, 'name': 'Inositol phosphorylceramide synthase ceramide 2 24C yeast specific', 'lb': 0.0, 'genes': 'YKL004W', 'id': 'R_IPCS224_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 53.0
+cabons in products in adapted model: 29
+
+
+R_IPCS326_SC
+carbons in original model: {'met_reactants': {'M_cer3_26_c': '44', 'M_ptd1ino_SC_c': '11'}, 'met_products': {'M_ipc326_SC_c': '26', 'M_12dgr_SC_c': '5'}}
+stoichiometry in original model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_cer3_26_c': 1.0, 'M_ptd1ino_SC_c': 0.01}, 'reversible': False, 'products': {'M_ipc326_SC_c': 0.01, 'M_12dgr_SC_c': 0.01}, 'name': 'Inositol phosphorylceramide synthase ceramide 3 26C yeast specific', 'lb': 0.0, 'genes': 'YKL004W', 'id': 'R_IPCS326_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_cer3_26_c': '44', 'M_ptd1ino_SC_c': '11'}, 'met_products': {'M_ipc326_SC_c': '26', 'M_12dgr_SC_c': '5'}}
+stoichiometry in adapted model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_cer3_26_c': 1.0, 'M_ptd1ino_SC_c': 1}, 'reversible': False, 'products': {'M_ipc326_SC_c': 1, 'M_12dgr_SC_c': 1}, 'name': 'Inositol phosphorylceramide synthase ceramide 3 26C yeast specific', 'lb': 0.0, 'genes': 'YKL004W', 'id': 'R_IPCS326_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 55.0
+cabons in products in adapted model: 31
+
+
+R_IPCS324_SC
+carbons in original model: {'met_reactants': {'M_ptd1ino_SC_c': '11', 'M_cer3_24_c': '42'}, 'met_products': {'M_ipc324_SC_c': '24', 'M_12dgr_SC_c': '5'}}
+stoichiometry in original model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_ptd1ino_SC_c': 0.01, 'M_cer3_24_c': 1.0}, 'reversible': False, 'products': {'M_ipc324_SC_c': 0.01, 'M_12dgr_SC_c': 0.01}, 'name': 'Inositol phosphorylceramide synthase ceramide 3 24C yeast specific', 'lb': 0.0, 'genes': 'YKL004W', 'id': 'R_IPCS324_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ptd1ino_SC_c': '11', 'M_cer3_24_c': '42'}, 'met_products': {'M_ipc324_SC_c': '24', 'M_12dgr_SC_c': '5'}}
+stoichiometry in adapted model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_ptd1ino_SC_c': 1, 'M_cer3_24_c': 1.0}, 'reversible': False, 'products': {'M_ipc324_SC_c': 1, 'M_12dgr_SC_c': 1}, 'name': 'Inositol phosphorylceramide synthase ceramide 3 24C yeast specific', 'lb': 0.0, 'genes': 'YKL004W', 'id': 'R_IPCS324_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 53.0
+cabons in products in adapted model: 29
+
+
+R_PSERS_SC
+carbons in original model: {'met_reactants': {'M_ser_L_c': '3', 'M_cdpdag_SC_c': '14'}, 'met_products': {'M_h_c': '0', 'M_cmp_c': '9', 'M_ps_SC_c': '6'}}
+stoichiometry in original model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ser_L_c': 1.0, 'M_cdpdag_SC_c': 0.01}, 'reversible': True, 'products': {'M_h_c': 1.0, 'M_cmp_c': 1.0, 'M_ps_SC_c': 0.01}, 'name': 'phosphatidylserine synthase yeast specific', 'lb': -1000.0, 'genes': 'YER026C', 'id': 'R_PSERS_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ser_L_c': '3', 'M_cdpdag_SC_c': '14'}, 'met_products': {'M_cmp_c': '9', 'M_ps_SC_c': '6'}}
+stoichiometry in adapted model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ser_L_c': 1.0, 'M_cdpdag_SC_c': 1}, 'reversible': True, 'products': {'M_cmp_c': 1.0, 'M_ps_SC_c': 1}, 'name': 'phosphatidylserine synthase yeast specific', 'lb': -1000.0, 'genes': 'YER026C', 'id': 'R_PSERS_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 17.0
+cabons in products in adapted model: 15.0
+
+
+R_ERGSTESTH_SCe
+carbons in original model: {'met_reactants': {'M_h2o_e': '0', 'M_ergstest_SC_e': '29'}, 'met_products': {'M_hdca_e': '16', 'M_hexc_e': '26', 'M_ocdcea_e': '18', 'M_h_e': '0', 'M_hdcea_e': '16', 'M_ocdca_e': '18', 'M_ergst_e': '28', 'M_ttdca_e': '14'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_h2o_e': 1.0, 'M_ergstest_SC_e': 0.01}, 'reversible': False, 'products': {'M_ergst_e': 0.01, 'M_hexc_e': 0.01, 'M_ocdcea_e': 0.27, 'M_ttdca_e': 0.015, 'M_hdcea_e': 0.655, 'M_ocdca_e': 0.03, 'M_hdca_e': 0.02, 'M_h_e': 1.0}, 'name': 'ergosterol ester hydrolase yeast specific extracellular ', 'lb': 0.0, 'genes': 'YLR020C', 'id': 'R_ERGSTESTH_SCe', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ergstest_SC_e': '29'}, 'met_products': {'M_hdca_e': '16', 'M_hexc_e': '26', 'M_ocdcea_e': '18', 'M_hdcea_e': '16', 'M_ocdca_e': '18', 'M_ergst_e': '28', 'M_ttdca_e': '14'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_ergstest_SC_e': 1}, 'reversible': False, 'products': {'M_ergst_e': 1, 'M_hexc_e': 1, 'M_ocdcea_e': 0.27, 'M_ttdca_e': 0.015, 'M_hdcea_e': 0.655, 'M_ocdca_e': 0.03, 'M_hdca_e': 0.02}, 'name': 'ergosterol ester hydrolase yeast specific extracellular ', 'lb': 0.0, 'genes': 'YLR020C', 'id': 'R_ERGSTESTH_SCe', 'ub': 1000.0}
+carbons in reactants in adapted model: 29.0
+cabons in products in adapted model: 70.41
+
+
+R_IPC324PLC_SC
+carbons in original model: {'met_reactants': {'M_h2o_c': '0', 'M_ipc324_SC_c': '24'}, 'met_products': {'M_h_c': '0', 'M_mi1p_D_c': '6', 'M_cer3_24_c': '42'}}
+stoichiometry in original model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_h2o_c': 1.0, 'M_ipc324_SC_c': 0.01}, 'reversible': False, 'products': {'M_h_c': 1.0, 'M_mi1p_D_c': 1.0, 'M_cer3_24_c': 1.0}, 'name': 'inositol phosphorylceramide ceramide 3 24C phospholipase C', 'lb': 0.0, 'genes': 'YER019W', 'id': 'R_IPC324PLC_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ipc324_SC_c': '24'}, 'met_products': {'M_mi1p_D_c': '6', 'M_cer3_24_c': '42'}}
+stoichiometry in adapted model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_ipc324_SC_c': 1}, 'reversible': False, 'products': {'M_mi1p_D_c': 1.0, 'M_cer3_24_c': 1.0}, 'name': 'inositol phosphorylceramide ceramide 3 24C phospholipase C', 'lb': 0.0, 'genes': 'YER019W', 'id': 'R_IPC324PLC_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 24.0
+cabons in products in adapted model: 48.0
+
+
+R_FECOSTESTH_SC
+carbons in original model: {'met_reactants': {'M_h2o_c': '0', 'M_fecostest_SC_c': '29'}, 'met_products': {'M_ttdca_c': '14', 'M_ocdcea_c': '18', 'M_hexc_c': '26', 'M_ocdca_c': '18', 'M_fecost_c': '28', 'M_hdcea_c': '16', 'M_hdca_c': '16', 'M_h_c': '0'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_h2o_c': 1.0, 'M_fecostest_SC_c': 0.01}, 'reversible': False, 'products': {'M_h_c': 1.0, 'M_ocdcea_c': 0.27, 'M_hexc_c': 0.01, 'M_ocdca_c': 0.03, 'M_fecost_c': 0.01, 'M_hdcea_c': 0.655, 'M_hdca_c': 0.02, 'M_ttdca_c': 0.015}, 'name': 'fecosterol ester hydrolase yeast specific', 'lb': 0.0, 'genes': '( YKL140W  or  YLL012W )', 'id': 'R_FECOSTESTH_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_fecostest_SC_c': '29'}, 'met_products': {'M_ocdcea_c': '18', 'M_hexc_c': '26', 'M_ocdca_c': '18', 'M_fecost_c': '28', 'M_hdcea_c': '16', 'M_hdca_c': '16', 'M_ttdca_c': '14'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_fecostest_SC_c': 1}, 'reversible': False, 'products': {'M_ocdcea_c': 0.27, 'M_hexc_c': 1, 'M_ocdca_c': 0.03, 'M_fecost_c': 1, 'M_hdcea_c': 0.655, 'M_hdca_c': 0.02, 'M_ttdca_c': 0.015}, 'name': 'fecosterol ester hydrolase yeast specific', 'lb': 0.0, 'genes': '( YKL140W  or  YLL012W )', 'id': 'R_FECOSTESTH_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 29.0
+cabons in products in adapted model: 70.41
+
+
+R_PSERDv_SC
+carbons in original model: {'met_reactants': {'M_ps_SC_v': '6', 'M_h_v': '0'}, 'met_products': {'M_co2_v': '1', 'M_pe_SC_v': '7'}}
+stoichiometry in original model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ps_SC_v': 0.01, 'M_h_v': 1.0}, 'reversible': False, 'products': {'M_pe_SC_v': 0.01, 'M_co2_v': 1.0}, 'name': 'phosphatidylserine decarboxylase yeast specific vacuolar', 'lb': 0.0, 'genes': 'YGR170W', 'id': 'R_PSERDv_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ps_SC_v': '6'}, 'met_products': {'M_co2_v': '1', 'M_pe_SC_v': '7'}}
+stoichiometry in adapted model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ps_SC_v': 1}, 'reversible': False, 'products': {'M_pe_SC_v': 1, 'M_co2_v': 1.0}, 'name': 'phosphatidylserine decarboxylase yeast specific vacuolar', 'lb': 0.0, 'genes': 'YGR170W', 'id': 'R_PSERDv_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 6
+cabons in products in adapted model: 8.0
+
+
+R_PLBP1I_SCe
+carbons in original model: {'met_reactants': {'M_ptd1ino_SC_e': '11', 'M_h2o_e': '0'}, 'met_products': {'M_g3pi_e': '9', 'M_ocdcya_e': '18', 'M_dca_e': '10', 'M_ocdcea_e': '18', 'M_h_e': '0', 'M_hdcea_e': '16', 'M_ocdca_e': '18', 'M_ddca_e': '12', 'M_hdca_e': '16', 'M_ttdca_e': '14'}}
+stoichiometry in original model: {'pathway': 'Phospholipid Metabolism', 'reactants': {'M_ptd1ino_SC_e': 0.005, 'M_h2o_e': 1.0}, 'reversible': False, 'products': {'M_g3pi_e': 0.5, 'M_ocdcya_e': 0.09, 'M_dca_e': 0.02, 'M_ocdcea_e': 0.24, 'M_ttdca_e': 0.1, 'M_hdcea_e': 0.17, 'M_ocdca_e': 0.05, 'M_ddca_e': 0.06, 'M_hdca_e': 0.27, 'M_h_e': 1.0}, 'name': 'phospholipase B phosphatidylinositol yeast specific extracellular ', 'lb': 0.0, 'genes': '( YMR008C  or  YMR006C  or  YOL011W )', 'id': 'R_PLBP1I_SCe', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ptd1ino_SC_e': '11'}, 'met_products': {'M_g3pi_e': '9', 'M_ocdcya_e': '18', 'M_dca_e': '10', 'M_ocdcea_e': '18', 'M_hdcea_e': '16', 'M_ocdca_e': '18', 'M_ddca_e': '12', 'M_hdca_e': '16', 'M_ttdca_e': '14'}}
+stoichiometry in adapted model: {'pathway': 'Phospholipid Metabolism', 'reactants': {'M_ptd1ino_SC_e': 0.005}, 'reversible': False, 'products': {'M_g3pi_e': 0.5, 'M_ocdcya_e': 0.09, 'M_dca_e': 0.02, 'M_ocdcea_e': 0.24, 'M_ttdca_e': 0.1, 'M_hdcea_e': 0.17, 'M_ocdca_e': 0.05, 'M_ddca_e': 0.06, 'M_hdca_e': 0.27}, 'name': 'phospholipase B phosphatidylinositol yeast specific extracellular ', 'lb': 0.0, 'genes': '( YMR008C  or  YMR006C  or  YOL011W )', 'id': 'R_PLBP1I_SCe', 'ub': 1000.0}
+carbons in reactants in adapted model: 0.055
+cabons in products in adapted model: 20.7
+
+
+R_ZYMSTESTH_SCe
+carbons in original model: {'met_reactants': {'M_h2o_e': '0', 'M_zymstest_SC_e': '28'}, 'met_products': {'M_zymst_e': '27', 'M_hexc_e': '26', 'M_ocdcea_e': '18', 'M_h_e': '0', 'M_hdcea_e': '16', 'M_ocdca_e': '18', 'M_hdca_e': '16', 'M_ttdca_e': '14'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_h2o_e': 1.0, 'M_zymstest_SC_e': 0.01}, 'reversible': False, 'products': {'M_zymst_e': 0.01, 'M_hexc_e': 0.01, 'M_ocdcea_e': 0.27, 'M_ttdca_e': 0.015, 'M_hdcea_e': 0.655, 'M_ocdca_e': 0.03, 'M_hdca_e': 0.02, 'M_h_e': 1.0}, 'name': 'zymosterol ester hydrolase yeast specific extracellular ', 'lb': 0.0, 'genes': 'YLR020C', 'id': 'R_ZYMSTESTH_SCe', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_zymstest_SC_e': '28'}, 'met_products': {'M_zymst_e': '27', 'M_hexc_e': '26', 'M_ocdcea_e': '18', 'M_hdcea_e': '16', 'M_ocdca_e': '18', 'M_hdca_e': '16', 'M_ttdca_e': '14'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_zymstest_SC_e': 1}, 'reversible': False, 'products': {'M_zymst_e': 1, 'M_hexc_e': 1, 'M_ocdcea_e': 0.27, 'M_ttdca_e': 0.015, 'M_hdcea_e': 0.655, 'M_ocdca_e': 0.03, 'M_hdca_e': 0.02}, 'name': 'zymosterol ester hydrolase yeast specific extracellular ', 'lb': 0.0, 'genes': 'YLR020C', 'id': 'R_ZYMSTESTH_SCe', 'ub': 1000.0}
+carbons in reactants in adapted model: 28.0
+cabons in products in adapted model: 69.41
+
+
+R_GAT1_SC
+carbons in original model: {'met_reactants': {'M_ddcacoa_c': '33', 'M_dcacoa_c': '31', 'M_tdcoa_c': '35', 'M_ocdycacoa_c': '39', 'M_pmtcoa_c': '37', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_glyc3p_c': '3', 'M_odecoa_c': '39'}, 'met_products': {'M_1ag3p_SC_c': '4', 'M_coa_c': '21'}}
+stoichiometry in original model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ddcacoa_c': 0.06, 'M_dcacoa_c': 0.02, 'M_tdcoa_c': 0.1, 'M_ocdycacoa_c': 0.09, 'M_pmtcoa_c': 0.27, 'M_hdcoa_c': 0.17, 'M_stcoa_c': 0.05, 'M_glyc3p_c': 1.0, 'M_odecoa_c': 0.24}, 'reversible': False, 'products': {'M_1ag3p_SC_c': 0.01, 'M_coa_c': 1.0}, 'name': 'glycerol 3 phosphate acyltransferase glycerol 3 phosphate yeast specific', 'lb': 0.0, 'genes': '( YKR067W  or  YBL011W )', 'id': 'R_GAT1_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ddcacoa_c': '33', 'M_dcacoa_c': '31', 'M_tdcoa_c': '35', 'M_ocdycacoa_c': '39', 'M_pmtcoa_c': '37', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_glyc3p_c': '3', 'M_odecoa_c': '39'}, 'met_products': {'M_1ag3p_SC_c': '4', 'M_coa_c': '21'}}
+stoichiometry in adapted model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ddcacoa_c': 0.06, 'M_dcacoa_c': 0.02, 'M_tdcoa_c': 0.1, 'M_ocdycacoa_c': 0.09, 'M_pmtcoa_c': 0.27, 'M_hdcoa_c': 0.17, 'M_stcoa_c': 0.05, 'M_glyc3p_c': 1.0, 'M_odecoa_c': 0.24}, 'reversible': False, 'products': {'M_1ag3p_SC_c': 1, 'M_coa_c': 1.0}, 'name': 'glycerol 3 phosphate acyltransferase glycerol 3 phosphate yeast specific', 'lb': 0.0, 'genes': '( YKR067W  or  YBL011W )', 'id': 'R_GAT1_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 40.2
+cabons in products in adapted model: 25.0
+
+
+R_IPC224PLC_SC
+carbons in original model: {'met_reactants': {'M_ipc224_SC_c': '24', 'M_h2o_c': '0'}, 'met_products': {'M_cer2_24_c': '42', 'M_h_c': '0', 'M_mi1p_D_c': '6'}}
+stoichiometry in original model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_ipc224_SC_c': 0.01, 'M_h2o_c': 1.0}, 'reversible': False, 'products': {'M_mi1p_D_c': 1.0, 'M_h_c': 1.0, 'M_cer2_24_c': 1.0}, 'name': 'inositol phosphorylceramide ceramide 2 24C phospholipase C', 'lb': 0.0, 'genes': 'YER019W', 'id': 'R_IPC224PLC_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ipc224_SC_c': '24'}, 'met_products': {'M_cer2_24_c': '42', 'M_mi1p_D_c': '6'}}
+stoichiometry in adapted model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_ipc224_SC_c': 1}, 'reversible': False, 'products': {'M_mi1p_D_c': 1.0, 'M_cer2_24_c': 1.0}, 'name': 'inositol phosphorylceramide ceramide 2 24C phospholipase C', 'lb': 0.0, 'genes': 'YER019W', 'id': 'R_IPC224PLC_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 24.0
+cabons in products in adapted model: 48.0
+
+
+R_IPCS126_SC
+carbons in original model: {'met_reactants': {'M_ptd1ino_SC_c': '11', 'M_cer1_26_c': '44'}, 'met_products': {'M_ipc126_SC_c': '26', 'M_12dgr_SC_c': '5'}}
+stoichiometry in original model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_ptd1ino_SC_c': 0.01, 'M_cer1_26_c': 1.0}, 'reversible': False, 'products': {'M_ipc126_SC_c': 0.01, 'M_12dgr_SC_c': 0.01}, 'name': 'Inositol phosphorylceramide synthase ceramide 1 26C yeast specific', 'lb': 0.0, 'genes': 'YKL004W', 'id': 'R_IPCS126_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ptd1ino_SC_c': '11', 'M_cer1_26_c': '44'}, 'met_products': {'M_ipc126_SC_c': '26', 'M_12dgr_SC_c': '5'}}
+stoichiometry in adapted model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_ptd1ino_SC_c': 1, 'M_cer1_26_c': 1.0}, 'reversible': False, 'products': {'M_ipc126_SC_c': 1, 'M_12dgr_SC_c': 1}, 'name': 'Inositol phosphorylceramide synthase ceramide 1 26C yeast specific', 'lb': 0.0, 'genes': 'YKL004W', 'id': 'R_IPCS126_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 55.0
+cabons in products in adapted model: 31
+
+
+R_biomass_published
+carbons in original model: {'met_reactants': {'M_val_L_c': '5', 'M_asp_L_c': '4', 'M_camp_c': '10', 'M_gmp_c': '10', 'M_cys_L_c': '3', 'M_q6_m': '39', 'M_fad_c': '27', 'M_dtmp_c': '10', 'M_13BDglcn_c': '6', 'M_tyr_L_c': '9', 'M_atp_c': '10', 'M_coa_c': '21', 'M_glu_L_c': '5', 'M_zymst_c': '27', 'M_pheme_m': '34', 'M_glycogen_c': '6', 'M_ala_L_c': '3', 'M_ump_c': '9', 'M_pro_L_c': '5', 'M_thr_L_c': '4', 'M_phe_L_c': '9', 'M_ile_L_c': '6', 'M_ser_L_c': '3', 'M_amp_c': '10', 'M_met_L_c': '5', 'M_ribflv_c': '17', 'M_asn_L_c': '4', 'M_thmtp_c': '12', 'M_mannan_c': '6', 'M_pa_SC_c': '5', 'M_dgmp_c': '10', 'M_cmp_c': '9', 'M_triglyc_SC_c': '6', 'M_h2o_c': '0', 'M_gln_L_c': '5', 'M_his_L_c': '6', 'M_leu_L_c': '6', 'M_ergst_c': '28', 'M_nad_c': '21', 'M_thf_c': '19', 'M_arg_L_c': '6', 'M_so4_c': '0', 'M_pe_SC_c': '7', 'M_damp_c': '10', 'M_tre_c': '12', 'M_chitin_c': '8', 'M_ptd1ino_SC_c': '11', 'M_dcmp_c': '9', 'M_pc_SC_c': '10', 'M_lys_L_c': '6', 'M_trp_L_c': '11', 'M_gly_c': '2', 'M_gthrd_c': '10', 'M_ps_SC_c': '6'}, 'met_products': {'M_pi_c': '0', 'M_h_c': '0', 'M_adp_c': '10'}}
+stoichiometry in original model: {'pathway': 'Exchange', 'reactants': {'M_val_L_c': 0.2646, 'M_his_L_c': 0.0663, 'M_gmp_c': 0.046, 'M_cys_L_c': 0.0066, 'M_phe_L_c': 0.1339, 'M_q6_m': 1e-06, 'M_fad_c': 1e-06, 'M_dtmp_c': 0.0036, 'M_tyr_L_c': 0.102, 'M_atp_c': 59.276, 'M_coa_c': 1e-06, 'M_camp_c': 1e-06, 'M_glu_L_c': 0.3018, 'M_zymst_c': 0.0015, 'M_dcmp_c': 0.0024, 'M_pheme_m': 1e-06, 'M_glycogen_c': 0.5185, 'M_ala_L_c': 0.4588, 'M_ump_c': 0.0599, 'M_pro_L_c': 0.1647, 'M_thr_L_c': 0.1914, 'M_ribflv_c': 0.00099, 'M_ile_L_c': 0.1927, 'M_ser_L_c': 0.1854, 'M_thf_c': 1e-06, 'M_met_L_c': 0.0507, 'M_asn_L_c': 0.1017, 'M_thmtp_c': 1e-06, 'M_mannan_c': 0.8079, 'M_pa_SC_c': 6e-06, 'M_dgmp_c': 0.0024, 'M_cmp_c': 0.0447, 'M_triglyc_SC_c': 6.6e-05, 'M_h2o_c': 59.276, 'M_gln_L_c': 0.1054, 'M_asp_L_c': 0.2975, 'M_leu_L_c': 0.2964, 'M_ergst_c': 0.0007, 'M_nad_c': 1e-06, 'M_amp_c': 0.046, 'M_arg_L_c': 0.1607, 'M_so4_c': 0.02, 'M_pe_SC_c': 4.5e-05, 'M_damp_c': 0.0036, 'M_tre_c': 0.0234, 'M_chitin_c': 1e-06, 'M_ptd1ino_SC_c': 5.3e-05, 'M_13BDglcn_c': 1.1348, 'M_pc_SC_c': 6e-05, 'M_lys_L_c': 0.2862, 'M_trp_L_c': 0.0284, 'M_gly_c': 0.2904, 'M_gthrd_c': 1e-06, 'M_ps_SC_c': 1.7e-05}, 'reversible': False, 'products': {'M_pi_c': 59.305, 'M_h_c': 58.70001, 'M_adp_c': 59.276}, 'name': 'biomass published', 'lb': 0.0, 'genes': '', 'id': 'R_biomass_published', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_val_L_c': '5', 'M_asp_L_c': '4', 'M_camp_c': '10', 'M_gmp_c': '10', 'M_cys_L_c': '3', 'M_q6_m': '39', 'M_fad_c': '27', 'M_dtmp_c': '10', 'M_tyr_L_c': '9', 'M_coa_c': '21', 'M_glu_L_c': '5', 'M_zymst_c': '27', 'M_pheme_m': '34', 'M_glycogen_c': '6', 'M_ala_L_c': '3', 'M_ump_c': '9', 'M_pro_L_c': '5', 'M_thr_L_c': '4', 'M_phe_L_c': '9', 'M_ile_L_c': '6', 'M_ser_L_c': '3', 'M_amp_c': '10', 'M_met_L_c': '5', 'M_ribflv_c': '17', 'M_asn_L_c': '4', 'M_thmtp_c': '12', 'M_mannan_c': '6', 'M_pa_SC_c': '5', 'M_cmp_c': '9', 'M_triglyc_SC_c': '6', 'M_pe_SC_c': '7', 'M_gln_L_c': '5', 'M_his_L_c': '6', 'M_leu_L_c': '6', 'M_ergst_c': '28', 'M_nad_c': '21', 'M_thf_c': '19', 'M_arg_L_c': '6', 'M_tre_c': '12', 'M_chitin_c': '8', 'M_ptd1ino_SC_c': '11', 'M_13BDglcn_c': '6', 'M_pc_SC_c': '10', 'M_lys_L_c': '6', 'M_trp_L_c': '11', 'M_gly_c': '2', 'M_gthrd_c': '10', 'M_ps_SC_c': '6'}, 'met_products': {}}
+stoichiometry in adapted model: {'pathway': 'Exchange', 'reactants': {'M_val_L_c': 0.2646, 'M_his_L_c': 0.0663, 'M_gmp_c': 0.0484, 'M_cys_L_c': 0.0066, 'M_phe_L_c': 0.1339, 'M_q6_m': 1e-06, 'M_fad_c': 1e-06, 'M_dtmp_c': 0.0036, 'M_tyr_L_c': 0.102, 'M_coa_c': 1e-06, 'M_camp_c': 1e-06, 'M_glu_L_c': 0.3018, 'M_zymst_c': 0.0015, 'M_pheme_m': 1e-06, 'M_glycogen_c': 0.5185, 'M_ala_L_c': 0.4588, 'M_ump_c': 0.0599, 'M_pro_L_c': 0.1647, 'M_thr_L_c': 0.1914, 'M_ribflv_c': 0.00099, 'M_ile_L_c': 0.1927, 'M_ser_L_c': 0.1854, 'M_thf_c': 1e-06, 'M_met_L_c': 0.0507, 'M_asn_L_c': 0.1017, 'M_thmtp_c': 1e-06, 'M_mannan_c': 0.8079, 'M_pa_SC_c': 6e-06, 'M_cmp_c': 0.047099999999999996, 'M_triglyc_SC_c': 6.6e-05, 'M_gln_L_c': 0.1054, 'M_asp_L_c': 0.2975, 'M_leu_L_c': 0.2964, 'M_ergst_c': 0.0007, 'M_nad_c': 1e-06, 'M_amp_c': 1.3076, 'M_arg_L_c': 0.1607, 'M_pe_SC_c': 4.5e-05, 'M_tre_c': 0.0234, 'M_chitin_c': 1e-06, 'M_ptd1ino_SC_c': 5.3e-05, 'M_13BDglcn_c': 1.1348, 'M_pc_SC_c': 6e-05, 'M_lys_L_c': 0.2862, 'M_trp_L_c': 0.0284, 'M_gly_c': 0.2904, 'M_gthrd_c': 1e-06, 'M_ps_SC_c': 1.7e-05}, 'reversible': False, 'products': {}, 'name': 'biomass published', 'lb': 0.0, 'genes': '', 'id': 'R_biomass_published', 'ub': 1000.0}
+carbons in reactants in adapted model: 47.467057
+cabons in products in adapted model: 0.0
+
+
+R_IPC126PLC_SC
+carbons in original model: {'met_reactants': {'M_h2o_c': '0', 'M_ipc126_SC_c': '26'}, 'met_products': {'M_h_c': '0', 'M_mi1p_D_c': '6', 'M_cer1_26_c': '44'}}
+stoichiometry in original model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_h2o_c': 1.0, 'M_ipc126_SC_c': 0.01}, 'reversible': False, 'products': {'M_h_c': 1.0, 'M_mi1p_D_c': 1.0, 'M_cer1_26_c': 1.0}, 'name': 'inositol phosphorylceramide ceramide 1 26C phospholipase C', 'lb': 0.0, 'genes': 'YER019W', 'id': 'R_IPC126PLC_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ipc126_SC_c': '26'}, 'met_products': {'M_mi1p_D_c': '6', 'M_cer1_26_c': '44'}}
+stoichiometry in adapted model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_ipc126_SC_c': 1}, 'reversible': False, 'products': {'M_mi1p_D_c': 1.0, 'M_cer1_26_c': 1.0}, 'name': 'inositol phosphorylceramide ceramide 1 26C phospholipase C', 'lb': 0.0, 'genes': 'YER019W', 'id': 'R_IPC126PLC_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 26.0
+cabons in products in adapted model: 50.0
+
+
+R_AGAT_SC
+carbons in original model: {'met_reactants': {'M_ddcacoa_c': '33', 'M_dcacoa_c': '31', 'M_tdcoa_c': '35', 'M_ocdycacoa_c': '39', 'M_pmtcoa_c': '37', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_odecoa_c': '39', 'M_1ag3p_SC_c': '4'}, 'met_products': {'M_pa_SC_c': '5', 'M_coa_c': '21'}}
+stoichiometry in original model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ddcacoa_c': 0.06, 'M_dcacoa_c': 0.02, 'M_tdcoa_c': 0.1, 'M_ocdycacoa_c': 0.09, 'M_pmtcoa_c': 0.27, 'M_hdcoa_c': 0.17, 'M_stcoa_c': 0.05, 'M_odecoa_c': 0.24, 'M_1ag3p_SC_c': 0.01}, 'reversible': False, 'products': {'M_pa_SC_c': 0.01, 'M_coa_c': 1.0}, 'name': '1 Acyl glycerol 3 phosphate acyltransferase yeast specific', 'lb': 0.0, 'genes': 'YDL052C', 'id': 'R_AGAT_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ddcacoa_c': '33', 'M_dcacoa_c': '31', 'M_tdcoa_c': '35', 'M_ocdycacoa_c': '39', 'M_pmtcoa_c': '37', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_odecoa_c': '39', 'M_1ag3p_SC_c': '4'}, 'met_products': {'M_pa_SC_c': '5', 'M_coa_c': '21'}}
+stoichiometry in adapted model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ddcacoa_c': 0.06, 'M_dcacoa_c': 0.02, 'M_tdcoa_c': 0.1, 'M_ocdycacoa_c': 0.09, 'M_pmtcoa_c': 0.27, 'M_hdcoa_c': 0.17, 'M_stcoa_c': 0.05, 'M_odecoa_c': 0.24, 'M_1ag3p_SC_c': 1}, 'reversible': False, 'products': {'M_pa_SC_c': 1, 'M_coa_c': 1.0}, 'name': '1 Acyl glycerol 3 phosphate acyltransferase yeast specific', 'lb': 0.0, 'genes': 'YDL052C', 'id': 'R_AGAT_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 41.2
+cabons in products in adapted model: 26.0
+
+
+R_TRIGS_SC
+carbons in original model: {'met_reactants': {'M_ddcacoa_c': '33', 'M_dcacoa_c': '31', 'M_tdcoa_c': '35', 'M_ocdycacoa_c': '39', 'M_pmtcoa_c': '37', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_odecoa_c': '39', 'M_12dgr_SC_c': '5'}, 'met_products': {'M_coa_c': '21', 'M_triglyc_SC_c': '6'}}
+stoichiometry in original model: {'pathway': 'Glycerolipid Metabolism', 'reactants': {'M_ddcacoa_c': 0.06, 'M_dcacoa_c': 0.02, 'M_tdcoa_c': 0.1, 'M_ocdycacoa_c': 0.09, 'M_pmtcoa_c': 0.27, 'M_hdcoa_c': 0.17, 'M_stcoa_c': 0.05, 'M_odecoa_c': 0.24, 'M_12dgr_SC_c': 0.01}, 'reversible': False, 'products': {'M_coa_c': 1.0, 'M_triglyc_SC_c': 0.01}, 'name': 'triglycerol synthesis', 'lb': 0.0, 'genes': '( YOR245C  or  YCR048W  or  YNR019W )', 'id': 'R_TRIGS_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ddcacoa_c': '33', 'M_dcacoa_c': '31', 'M_tdcoa_c': '35', 'M_ocdycacoa_c': '39', 'M_pmtcoa_c': '37', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_odecoa_c': '39', 'M_12dgr_SC_c': '5'}, 'met_products': {'M_coa_c': '21', 'M_triglyc_SC_c': '6'}}
+stoichiometry in adapted model: {'pathway': 'Glycerolipid Metabolism', 'reactants': {'M_ddcacoa_c': 0.06, 'M_dcacoa_c': 0.02, 'M_tdcoa_c': 0.1, 'M_ocdycacoa_c': 0.09, 'M_pmtcoa_c': 0.27, 'M_hdcoa_c': 0.17, 'M_stcoa_c': 0.05, 'M_odecoa_c': 0.24, 'M_12dgr_SC_c': 1}, 'reversible': False, 'products': {'M_coa_c': 1.0, 'M_triglyc_SC_c': 1}, 'name': 'triglycerol synthesis', 'lb': 0.0, 'genes': '( YOR245C  or  YCR048W  or  YNR019W )', 'id': 'R_TRIGS_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 42.2
+cabons in products in adapted model: 27.0
+
+
+R_PSERSm_SC
+carbons in original model: {'met_reactants': {'M_ser_L_m': '3', 'M_cdpdag_SC_m': '14'}, 'met_products': {'M_ps_SC_m': '6', 'M_cmp_m': '9', 'M_h_m': '0'}}
+stoichiometry in original model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ser_L_m': 1.0, 'M_cdpdag_SC_m': 0.01}, 'reversible': True, 'products': {'M_ps_SC_m': 0.01, 'M_cmp_m': 1.0, 'M_h_m': 1.0}, 'name': 'phosphatidylserine synthase yeast specific mitochondrial', 'lb': -1000.0, 'genes': 'YER026C', 'id': 'R_PSERSm_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ser_L_m': '3', 'M_cdpdag_SC_m': '14'}, 'met_products': {'M_ps_SC_m': '6', 'M_cmp_m': '9'}}
+stoichiometry in adapted model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ser_L_m': 1.0, 'M_cdpdag_SC_m': 1}, 'reversible': True, 'products': {'M_ps_SC_m': 1, 'M_cmp_m': 1.0}, 'name': 'phosphatidylserine synthase yeast specific mitochondrial', 'lb': -1000.0, 'genes': 'YER026C', 'id': 'R_PSERSm_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 17.0
+cabons in products in adapted model: 15.0
+
+
+R_IPCS124_SC
+carbons in original model: {'met_reactants': {'M_cer1_24_c': '42', 'M_ptd1ino_SC_c': '11'}, 'met_products': {'M_ipc124_SC_c': '24', 'M_12dgr_SC_c': '5'}}
+stoichiometry in original model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_cer1_24_c': 1.0, 'M_ptd1ino_SC_c': 0.01}, 'reversible': False, 'products': {'M_ipc124_SC_c': 0.01, 'M_12dgr_SC_c': 0.01}, 'name': 'Inositol phosphorylceramide synthase ceramide 1 24C yeast specific', 'lb': 0.0, 'genes': 'YKL004W', 'id': 'R_IPCS124_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_cer1_24_c': '42', 'M_ptd1ino_SC_c': '11'}, 'met_products': {'M_ipc124_SC_c': '24', 'M_12dgr_SC_c': '5'}}
+stoichiometry in adapted model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_cer1_24_c': 1.0, 'M_ptd1ino_SC_c': 1}, 'reversible': False, 'products': {'M_ipc124_SC_c': 1, 'M_12dgr_SC_c': 1}, 'name': 'Inositol phosphorylceramide synthase ceramide 1 24C yeast specific', 'lb': 0.0, 'genes': 'YKL004W', 'id': 'R_IPCS124_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 53.0
+cabons in products in adapted model: 29
+
+
+R_ZYMSTESTH_SC
+carbons in original model: {'met_reactants': {'M_h2o_c': '0', 'M_zymstest_SC_c': '28'}, 'met_products': {'M_zymst_c': '27', 'M_ttdca_c': '14', 'M_ocdcea_c': '18', 'M_hexc_c': '26', 'M_ocdca_c': '18', 'M_hdcea_c': '16', 'M_hdca_c': '16', 'M_h_c': '0'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_h2o_c': 1.0, 'M_zymstest_SC_c': 0.01}, 'reversible': False, 'products': {'M_zymst_c': 0.01, 'M_h_c': 1.0, 'M_ocdcea_c': 0.27, 'M_hexc_c': 0.01, 'M_ocdca_c': 0.03, 'M_hdcea_c': 0.655, 'M_hdca_c': 0.02, 'M_ttdca_c': 0.015}, 'name': 'zymosterol ester hydrolase yeast specific', 'lb': 0.0, 'genes': '( YKL140W  or  YLL012W )', 'id': 'R_ZYMSTESTH_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_zymstest_SC_c': '28'}, 'met_products': {'M_zymst_c': '27', 'M_ocdcea_c': '18', 'M_hexc_c': '26', 'M_ocdca_c': '18', 'M_hdcea_c': '16', 'M_hdca_c': '16', 'M_ttdca_c': '14'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_zymstest_SC_c': 1}, 'reversible': False, 'products': {'M_zymst_c': 1, 'M_ocdcea_c': 0.27, 'M_hexc_c': 1, 'M_ocdca_c': 0.03, 'M_hdcea_c': 0.655, 'M_hdca_c': 0.02, 'M_ttdca_c': 0.015}, 'name': 'zymosterol ester hydrolase yeast specific', 'lb': 0.0, 'genes': '( YKL140W  or  YLL012W )', 'id': 'R_ZYMSTESTH_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 28.0
+cabons in products in adapted model: 69.41
+
+
+R_EPISTAT_SC
+carbons in original model: {'met_reactants': {'M_hexccoa_c': '47', 'M_pmtcoa_c': '37', 'M_epist_c': '28', 'M_tdcoa_c': '35', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_odecoa_c': '39'}, 'met_products': {'M_epistest_SC_c': '29', 'M_coa_c': '21'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_hexccoa_c': 0.01, 'M_pmtcoa_c': 0.02, 'M_epist_c': 0.01, 'M_tdcoa_c': 0.015, 'M_hdcoa_c': 0.655, 'M_stcoa_c': 0.03, 'M_odecoa_c': 0.27}, 'reversible': False, 'products': {'M_epistest_SC_c': 0.01, 'M_coa_c': 1.0}, 'name': 'Acyl CoAepisterol acyltransferase yeast specific', 'lb': 0.0, 'genes': 'YCR048W', 'id': 'R_EPISTAT_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_hexccoa_c': '47', 'M_pmtcoa_c': '37', 'M_epist_c': '28', 'M_tdcoa_c': '35', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_odecoa_c': '39'}, 'met_products': {'M_epistest_SC_c': '29', 'M_coa_c': '21'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_hexccoa_c': 1, 'M_pmtcoa_c': 0.02, 'M_epist_c': 1, 'M_tdcoa_c': 0.015, 'M_hdcoa_c': 0.655, 'M_stcoa_c': 0.03, 'M_odecoa_c': 0.27}, 'reversible': False, 'products': {'M_epistest_SC_c': 1, 'M_coa_c': 1.0}, 'name': 'Acyl CoAepisterol acyltransferase yeast specific', 'lb': 0.0, 'genes': 'YCR048W', 'id': 'R_EPISTAT_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 112.2
+cabons in products in adapted model: 50.0
+
+
+R_LPCAT_SC
+carbons in original model: {'met_reactants': {'M_ddcacoa_c': '33', 'M_1agpc_SC_c': '9', 'M_dcacoa_c': '31', 'M_tdcoa_c': '35', 'M_ocdycacoa_c': '39', 'M_pmtcoa_c': '37', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_odecoa_c': '39'}, 'met_products': {'M_coa_c': '21', 'M_pc_SC_c': '10'}}
+stoichiometry in original model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ddcacoa_c': 0.06, 'M_1agpc_SC_c': 0.01, 'M_dcacoa_c': 0.02, 'M_tdcoa_c': 0.1, 'M_ocdycacoa_c': 0.09, 'M_pmtcoa_c': 0.27, 'M_hdcoa_c': 0.17, 'M_stcoa_c': 0.05, 'M_odecoa_c': 0.24}, 'reversible': False, 'products': {'M_coa_c': 1.0, 'M_pc_SC_c': 0.01}, 'name': 'Lyso phosphatidylcholine acyltransferase acyltransferase yeast specific', 'lb': 0.0, 'genes': 'YPR140W', 'id': 'R_LPCAT_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ddcacoa_c': '33', 'M_1agpc_SC_c': '9', 'M_dcacoa_c': '31', 'M_tdcoa_c': '35', 'M_ocdycacoa_c': '39', 'M_pmtcoa_c': '37', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_odecoa_c': '39'}, 'met_products': {'M_coa_c': '21', 'M_pc_SC_c': '10'}}
+stoichiometry in adapted model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ddcacoa_c': 0.06, 'M_1agpc_SC_c': 1, 'M_dcacoa_c': 0.02, 'M_tdcoa_c': 0.1, 'M_ocdycacoa_c': 0.09, 'M_pmtcoa_c': 0.27, 'M_hdcoa_c': 0.17, 'M_stcoa_c': 0.05, 'M_odecoa_c': 0.24}, 'reversible': False, 'products': {'M_coa_c': 1.0, 'M_pc_SC_c': 1}, 'name': 'Lyso phosphatidylcholine acyltransferase acyltransferase yeast specific', 'lb': 0.0, 'genes': 'YPR140W', 'id': 'R_LPCAT_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 46.2
+cabons in products in adapted model: 31.0
+
+
+R_PSERDm_SC
+carbons in original model: {'met_reactants': {'M_ps_SC_m': '6', 'M_h_m': '0'}, 'met_products': {'M_co2_m': '1', 'M_pe_SC_m': '7'}}
+stoichiometry in original model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ps_SC_m': 0.01, 'M_h_m': 1.0}, 'reversible': False, 'products': {'M_pe_SC_m': 0.01, 'M_co2_m': 1.0}, 'name': 'phosphatidylserine decarboxylase yeast specific mitochondrial', 'lb': 0.0, 'genes': 'YNL169C', 'id': 'R_PSERDm_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ps_SC_m': '6'}, 'met_products': {'M_co2_m': '1', 'M_pe_SC_m': '7'}}
+stoichiometry in adapted model: {'pathway': 'Phospholipid Biosynthesis', 'reactants': {'M_ps_SC_m': 1}, 'reversible': False, 'products': {'M_pe_SC_m': 1, 'M_co2_m': 1.0}, 'name': 'phosphatidylserine decarboxylase yeast specific mitochondrial', 'lb': 0.0, 'genes': 'YNL169C', 'id': 'R_PSERDm_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 6
+cabons in products in adapted model: 8.0
+
+
+R_TAGL_SC
+carbons in original model: {'met_reactants': {'M_h2o_c': '0', 'M_triglyc_SC_c': '6'}, 'met_products': {'M_ttdca_c': '14', 'M_ocdcea_c': '18', 'M_dca_c': '10', 'M_ocdcya_c': '18', 'M_ocdca_c': '18', 'M_hdcea_c': '16', 'M_hdca_c': '16', 'M_h_c': '0', 'M_ddca_c': '12', 'M_12dgr_SC_c': '5'}}
+stoichiometry in original model: {'pathway': 'Glycerolipid Metabolism', 'reactants': {'M_h2o_c': 1.0, 'M_triglyc_SC_c': 0.01}, 'reversible': False, 'products': {'M_h_c': 1.0, 'M_ocdcea_c': 0.24, 'M_dca_c': 0.02, 'M_ocdcya_c': 0.09, 'M_ocdca_c': 0.05, 'M_hdcea_c': 0.17, 'M_hdca_c': 0.27, 'M_ttdca_c': 0.1, 'M_ddca_c': 0.06, 'M_12dgr_SC_c': 0.01}, 'name': 'Triacylglycerol lipase yeast specific', 'lb': 0.0, 'genes': '( YDR058C  or  YMR313C )', 'id': 'R_TAGL_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_triglyc_SC_c': '6'}, 'met_products': {'M_ocdcea_c': '18', 'M_dca_c': '10', 'M_ocdcya_c': '18', 'M_ocdca_c': '18', 'M_hdcea_c': '16', 'M_hdca_c': '16', 'M_ttdca_c': '14', 'M_ddca_c': '12', 'M_12dgr_SC_c': '5'}}
+stoichiometry in adapted model: {'pathway': 'Glycerolipid Metabolism', 'reactants': {'M_triglyc_SC_c': 1}, 'reversible': False, 'products': {'M_ocdcea_c': 0.24, 'M_dca_c': 0.02, 'M_ocdcya_c': 0.09, 'M_ocdca_c': 0.05, 'M_hdcea_c': 0.17, 'M_hdca_c': 0.27, 'M_ttdca_c': 0.1, 'M_ddca_c': 0.06, 'M_12dgr_SC_c': 1}, 'name': 'Triacylglycerol lipase yeast specific', 'lb': 0.0, 'genes': '( YDR058C  or  YMR313C )', 'id': 'R_TAGL_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 6.0
+cabons in products in adapted model: 21.2
+
+
+R_ERGSTESTH_SC
+carbons in original model: {'met_reactants': {'M_h2o_c': '0', 'M_ergstest_SC_c': '29'}, 'met_products': {'M_ttdca_c': '14', 'M_ocdcea_c': '18', 'M_hexc_c': '26', 'M_ocdca_c': '18', 'M_hdcea_c': '16', 'M_ergst_c': '28', 'M_h_c': '0', 'M_hdca_c': '16'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_h2o_c': 1.0, 'M_ergstest_SC_c': 0.01}, 'reversible': False, 'products': {'M_h_c': 1.0, 'M_ocdcea_c': 0.27, 'M_hexc_c': 0.01, 'M_ocdca_c': 0.03, 'M_hdcea_c': 0.655, 'M_ergst_c': 0.01, 'M_ttdca_c': 0.015, 'M_hdca_c': 0.02}, 'name': 'ergosterol ester hydrolase yeast specific', 'lb': 0.0, 'genes': '( YKL140W  or  YLL012W )', 'id': 'R_ERGSTESTH_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ergstest_SC_c': '29'}, 'met_products': {'M_ocdcea_c': '18', 'M_hexc_c': '26', 'M_ocdca_c': '18', 'M_hdcea_c': '16', 'M_ergst_c': '28', 'M_ttdca_c': '14', 'M_hdca_c': '16'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_ergstest_SC_c': 1}, 'reversible': False, 'products': {'M_ocdcea_c': 0.27, 'M_hexc_c': 1, 'M_ocdca_c': 0.03, 'M_hdcea_c': 0.655, 'M_ergst_c': 1, 'M_ttdca_c': 0.015, 'M_hdca_c': 0.02}, 'name': 'ergosterol ester hydrolase yeast specific', 'lb': 0.0, 'genes': '( YKL140W  or  YLL012W )', 'id': 'R_ERGSTESTH_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 29.0
+cabons in products in adapted model: 70.41
+
+
+R_ERGSTAT_SC
+carbons in original model: {'met_reactants': {'M_hexccoa_c': '47', 'M_pmtcoa_c': '37', 'M_tdcoa_c': '35', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_odecoa_c': '39', 'M_ergst_c': '28'}, 'met_products': {'M_ergstest_SC_c': '29', 'M_coa_c': '21'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_hexccoa_c': 0.01, 'M_pmtcoa_c': 0.02, 'M_tdcoa_c': 0.015, 'M_hdcoa_c': 0.655, 'M_stcoa_c': 0.03, 'M_odecoa_c': 0.27, 'M_ergst_c': 0.01}, 'reversible': False, 'products': {'M_ergstest_SC_c': 0.01, 'M_coa_c': 1.0}, 'name': 'Acyl CoAergosterol acyltransferase yeast specific', 'lb': 0.0, 'genes': '( YCR048W  or  YNR019W )', 'id': 'R_ERGSTAT_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_hexccoa_c': '47', 'M_pmtcoa_c': '37', 'M_tdcoa_c': '35', 'M_hdcoa_c': '37', 'M_stcoa_c': '39', 'M_odecoa_c': '39', 'M_ergst_c': '28'}, 'met_products': {'M_ergstest_SC_c': '29', 'M_coa_c': '21'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_hexccoa_c': 1, 'M_pmtcoa_c': 0.02, 'M_tdcoa_c': 0.015, 'M_hdcoa_c': 0.655, 'M_stcoa_c': 0.03, 'M_odecoa_c': 0.27, 'M_ergst_c': 1}, 'reversible': False, 'products': {'M_ergstest_SC_c': 1, 'M_coa_c': 1.0}, 'name': 'Acyl CoAergosterol acyltransferase yeast specific', 'lb': 0.0, 'genes': '( YCR048W  or  YNR019W )', 'id': 'R_ERGSTAT_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 112.2
+cabons in products in adapted model: 50.0
+
+
+R_LANOSTESTH_SC
+carbons in original model: {'met_reactants': {'M_h2o_c': '0', 'M_lanostest_SC_c': '31'}, 'met_products': {'M_ttdca_c': '14', 'M_ocdcea_c': '18', 'M_hexc_c': '26', 'M_ocdca_c': '18', 'M_lanost_c': '30', 'M_hdcea_c': '16', 'M_hdca_c': '16', 'M_h_c': '0'}}
+stoichiometry in original model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_h2o_c': 1.0, 'M_lanostest_SC_c': 0.01}, 'reversible': False, 'products': {'M_h_c': 1.0, 'M_ocdcea_c': 0.27, 'M_hexc_c': 0.01, 'M_ocdca_c': 0.03, 'M_lanost_c': 0.01, 'M_hdcea_c': 0.655, 'M_hdca_c': 0.02, 'M_ttdca_c': 0.015}, 'name': 'lanosterol ester hydrolase yeast specific', 'lb': 0.0, 'genes': '( YKL140W  or  YLL012W )', 'id': 'R_LANOSTESTH_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_lanostest_SC_c': '31'}, 'met_products': {'M_ocdcea_c': '18', 'M_hexc_c': '26', 'M_ocdca_c': '18', 'M_lanost_c': '30', 'M_hdcea_c': '16', 'M_hdca_c': '16', 'M_ttdca_c': '14'}}
+stoichiometry in adapted model: {'pathway': 'Sterol Metabolism', 'reactants': {'M_lanostest_SC_c': 1}, 'reversible': False, 'products': {'M_ocdcea_c': 0.27, 'M_hexc_c': 1, 'M_ocdca_c': 0.03, 'M_lanost_c': 1, 'M_hdcea_c': 0.655, 'M_hdca_c': 0.02, 'M_ttdca_c': 0.015}, 'name': 'lanosterol ester hydrolase yeast specific', 'lb': 0.0, 'genes': '( YKL140W  or  YLL012W )', 'id': 'R_LANOSTESTH_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 31.0
+cabons in products in adapted model: 72.41
+
+
+R_IPC326PLC_SC
+carbons in original model: {'met_reactants': {'M_h2o_c': '0', 'M_ipc326_SC_c': '26'}, 'met_products': {'M_cer3_26_c': '44', 'M_h_c': '0', 'M_mi1p_D_c': '6'}}
+stoichiometry in original model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_h2o_c': 1.0, 'M_ipc326_SC_c': 0.01}, 'reversible': False, 'products': {'M_cer3_26_c': 1.0, 'M_h_c': 1.0, 'M_mi1p_D_c': 1.0}, 'name': 'inositol phosphorylceramide ceramide 3 26C phospholipase C', 'lb': 0.0, 'genes': 'YER019W', 'id': 'R_IPC326PLC_SC', 'ub': 1000.0}
+carbons in adapted model: {'met_reactants': {'M_ipc326_SC_c': '26'}, 'met_products': {'M_cer3_26_c': '44', 'M_mi1p_D_c': '6'}}
+stoichiometry in adapted model: {'pathway': 'Sphingolipid Metabolism', 'reactants': {'M_ipc326_SC_c': 1}, 'reversible': False, 'products': {'M_cer3_26_c': 1.0, 'M_mi1p_D_c': 1.0}, 'name': 'inositol phosphorylceramide ceramide 3 26C phospholipase C', 'lb': 0.0, 'genes': 'YER019W', 'id': 'R_IPC326PLC_SC', 'ub': 1000.0}
+carbons in reactants in adapted model: 26.0
+cabons in products in adapted model: 50.0

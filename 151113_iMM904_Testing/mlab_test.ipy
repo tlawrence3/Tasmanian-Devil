@@ -1,0 +1,8 @@
+import matlab_wrapper
+
+
+a = 'help_today'
+
+
+matlab = matlab_wrapper.MatlabSession()
+img = matlab.workspace(a)
