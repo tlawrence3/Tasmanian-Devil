@@ -38,6 +38,21 @@ To install cobrapy for Ubuntu, enter from the terminal:
 	sudo pip install cobra
 
 
+To install mlabwrap:
+	Downlaod mlabwrap:
+		http://sourceforge.net/projects/mlabwrap/
+		Unpack it and change into the direcotry
+		If there is a discrepancy between the Matlab license user and root privileges for distribution packages for python, change priviliges for dist-packages:				
+			sudo chmod -R ugo+rw /usr/local/lib/python2.7/dist-packages
+		install mlabwrap by:
+			python setup.py install
+		Make the following changes to symbolic links if necessary in /usr/local/MATLAB/R2015b/bin/glnxa64/:
+			sudo mv libssl.so.1.0.0 tmp-libssl.so.1.0.0
+			sudo ln -s /lib/x86_64-linux-gnu/libssl.so.1.0.0 libssl.so.1.0.0
+			sudo mv libcrypto.so.1.0.0 tmp-libcrypto.so.1.0.0
+			sudo ln -s /lib/x86_64-linux-gnu/libcrypto.so.1.0.0 libcrypto.so.1.0.0
+
+
 #To install the most recent version of cobrapy for Ubuntu (at the time cobra 0.4.0b6):
 #	sudo pip install cython
 #	clone the repository using git (set up an account on git if you do not have one):
@@ -89,6 +104,9 @@ To install python-matlab-bridge:
 	Download the .tar.gz file from the following website: http://arokem.github.io/python-matlab-bridge/
 	Unpack the files, change into the new directory, and run:
 		python setup.py install
+
+To install matlab_wrapper:
+	sudo pip install matlab_wrapper
 
 Download and install the most recent R and RStudio packages from online for importing and analyzing microarray data sets.
 

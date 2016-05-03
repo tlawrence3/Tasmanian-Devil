@@ -248,7 +248,15 @@ for i in cobra_model.reactions:
 
 #Create list/sets/matlab cells of genes using cobrapy and array based model for reacitons
 genes_cobra = _cell(cobra_model.genes.list_attr("id"))
+print dir(cobra_model.genes[1])
+genes_test = _cell(cobra_model.genes.list_attr("functional"))
+print genes_test
 grRules = _cell(cobra_model.reactions.list_attr("gene_reaction_rule"))
+print grRules
+grRules_test = _cell(cobra_model.reactions.list_attr("gene_name_reaction_rule"))
+print grRules_test
+#Rules = _cell(cobra_model.reactions.list_attr("rule"))
+print dir(cobra_model.reactions[1])
 c = array(cobra_model.reactions.list_attr("objective_coefficient")) * 1
 subsystem = _cell(cobra_model.reactions.list_attr("subsystem"))
 metNames = _cell(cobra_model.metabolites.list_attr("name"))
