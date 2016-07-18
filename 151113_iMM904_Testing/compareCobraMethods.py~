@@ -64,7 +64,7 @@ import os
 parser = argparse.ArgumentParser(description='_01_findZeroAndHighFreqRxns.py')
 parser.add_argument('m', nargs="+", type=str, help='Necessary variable: MATLAB model file')
 parser.add_argument('d', nargs="+", type=str, help='Necessary variable: condition description')
-parser.add_argument('-b', nargs="+", type=str, help='Necessary variable: biomass reaction')
+parser.add_argument('-b', nargs="+", type=str, help='biomass reaction')
 parser.add_argument('-o', type=float, help='Defined biomass production')
 
 args = parser.parse_args()
@@ -76,7 +76,7 @@ description = description[2:-2]
 if args.b is not None:
     biomass_reaction = str(args.b)
 if args.o is not None:
-    lb_biomass = args.o
+    ub_biomass = args.o
 
 ########################################
 #Classify reactions by expression
@@ -120,6 +120,6 @@ scipy.io.savemat('data/geneRules/%s.mat' % description, expressionData_object)
 #Run pFBA, GIMME and iMAT
 mlab.addpath(os.getcwd())
 try:
-	mlab.Cobra_Methods(model,description,lb_biomass,biomass_reaction)
+	mlab.Cobra_Methods(model,description,ub_biomass,biomass_reaction)
 except NameError:
-	mlab.Cobra_Methods(model_name,description)
+	mlab.Cobra_Methods_try(model,description)
