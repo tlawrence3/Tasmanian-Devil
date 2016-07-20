@@ -1,0 +1,3 @@
+[console_scripts]
+EXAMOARC = EXAMOARC.EXAMOARC:main
+
