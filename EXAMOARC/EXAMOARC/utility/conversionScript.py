@@ -91,7 +91,7 @@ def gene2rxn_set(gene2rxn_file, cobra_model):
 
 
 #Create the necesssary rxn dictionaries for EXAMO.
-def convert_cobra_to_examo(model, e)
+def convert_cobra_to_examo(model, e)
     idRs = []
     lb = []
     ub = []
