@@ -1,7 +1,7 @@
 * Examo [gene]
 ** scripts [Doesn't exist yet]
 *** files
-Gene names gene count
+model_file gene_countFile
 *** options
 -h --high set percent threshold high
 -l --low set percent threshold low
@@ -9,7 +9,7 @@ Gene names gene count
 -c --cobra set model file to COBRA format
 -s --sbml set model file to SBML format
 *** Synopsis
-Examo Gene [-hlosm] gene_file.txt model_file
+Examo Gene [-hlosm] model gene_file.txt
 * Examo [model]
 ** scripts
 conversion_script.py [main]
