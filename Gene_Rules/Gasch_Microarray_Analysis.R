@@ -1,13 +1,13 @@
 source("http://bioconductor.org/biocLite.R")
-#biocLite("GEOquery")
-#biocLite("yeast2.db")
+biocLite("GEOquery")
+biocLite("yeast2.db")
 #biocLite("affyPLM")
 library("GEOquery")
 library("yeast2.db")
 library("stringr")
 library("affyPLM")
 
-#Retrieve Rintala's data
+#Retrieve Gasch's data
 Gasch <- getGEO("GDS21")
 eset <- GDS2eSet(Gasch)
 gene_names <- eset@featureData@data$Platform_ORF

@@ -78,7 +78,6 @@ def findActiveRxns(cbm, thresh, rl = []):
             indices = (sol > thresh).nonzero()[0]
             act.update(arrayIdRs[indices])
     idRs = list(set(idRs) - act)
-    #print "hello 5"
     # minimizing
     for rxn in idRs:
         if rxn not in act:
@@ -89,7 +88,6 @@ def findActiveRxns(cbm, thresh, rl = []):
             sol = abs(array([v.x for v in cbm.guro.getVars()]))
             indices = (sol > thresh).nonzero()[0]
             act.update(arrayIdRs[indices])
-    #print "hello" 
     return act
 
 #@profile

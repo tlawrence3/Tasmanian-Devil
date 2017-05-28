@@ -31,7 +31,6 @@ from sys import path; path.append('./modules/')
 from utilities import importPickle, exportPickle
 from examo import *
 from decimal import Decimal, getcontext, ROUND_DOWN
-import cobra
 from Crypto.Random import random, atfork
 
 
