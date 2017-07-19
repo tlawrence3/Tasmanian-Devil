@@ -2887,3 +2887,11 @@ IOError: [Errno 2] No such file or directory: 'data/freqBasedRxns_151012_gluocse
 R_THZPSN2_SC
 R_MALOAAtp
 R_MEVK1
+Traceback (most recent call last):
+  File "150720_01_findZeroAndHighFreqRxns_1.py", line 48, in <module>
+    from cobra.io import read_sbml_model
+ImportError: No module named cobra.io
+Traceback (most recent call last):
+  File "150720_01_findZeroAndHighFreqRxns_1.py", line 48, in <module>
+    from cobra.io import read_sbml_model
+ImportError: No module named cobra.io
