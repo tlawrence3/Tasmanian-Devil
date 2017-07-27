@@ -562,6 +562,9 @@ for state in metabolicState_list:
 						if (stdsearch is not None):
 							std = std[2:]
 							std+='e_4'
+						else:
+							std = re.sub('\.','',std)
+							std+='e_4'
 					else:
 						std = re.sub('\.','',std)
 						std+='e_4'
@@ -779,6 +782,9 @@ for state in metabolicState_list_dataset_S2:
 						stdsearch = re.search('0\.', std)
 						if (stdsearch is not None):
 							std = std[2:]
+							std+='e_4'
+						else:
+							std = re.sub('\.','',std)
 							std+='e_4'
 					else:
 						std = re.sub('\.','',std)
@@ -998,6 +1004,9 @@ for state in metabolicState_list_dataset_S2_eps:
 						if (stdsearch is not None):
 							std = std[2:]
 							std+='e_4'
+						else:
+							std = re.sub('\.','',std)
+							std+='e_4'
 					else:
 						std = re.sub('\.','',std)
 						std+='e_4'
@@ -1216,6 +1225,9 @@ for state in metabolicState_list_dataset_S2_original_model:
 						if (stdsearch is not None):
 							std = std[2:]
 							std+='e_4'
+						else:
+							std = re.sub('\.','',std)
+							std+='e_4'
 					else:
 						std = re.sub('\.','',std)
 						std+='e_4'
@@ -1433,6 +1445,9 @@ for state in metabolicState_list_dataset_S2_original_model_eps:
 						stdsearch = re.search('0\.', std)
 						if (stdsearch is not None):
 							std = std[2:]
+							std+='e_4'
+						else:
+							std = re.sub('\.','',std)
 							std+='e_4'
 					else:
 						std = re.sub('\.','',std)
@@ -7423,3 +7438,1350 @@ plt.tight_layout(rect=[0.13,-0.1,0.93,0.99])
 #plt.subplots_adjust(top=1.04)
 fig.set_size_inches(6.69,8)
 fig.savefig('Figure_5.png',dpi=300)
+
+
+#Now adapt the CellDesigner pathways for the flux visualizations for m_n_c_EX for Aerobic and Anaerobic
+cond1fluxavgscaled = {}
+cond2fluxavgscaled = {}
+
+max1 = max(fluxavgdict['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'], key=fluxavgdict['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].get)
+max2 = max(fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'], key=fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].get)
+if fluxavgdict['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'][max1] > fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][max2]:
+	max_both = fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][max1]
+else:
+	max_both = fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][max2] 
+
+for t in sorted(pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c']['rxns']):
+	cond1fluxavgscaled[t] = float(round((abs(fluxavgdict['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'][t])/max_both)*9+1,3))
+	cond2fluxavgscaled[t] = float(round((abs(fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][t])/max_both)*9+1,3))
+
+date = '170719'
+
+pathway_list = ['Glycolysis_PPP_Serine_Alanine_shortened']
+
+
+fModelDict1_hfr = './151113_iMM904_Testing/data/freqBasedRxns_151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c.pkl'
+fbr1 = importPickle(fModelDict1_hfr)
+fModelDict2_hfr = './151113_iMM904_Testing/data/freqBasedRxns_151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c.pkl'
+fbr2 = importPickle(fModelDict2_hfr)
+
+fOutRxnsByExpression1 = './151113_iMM904_Testing/data/rxnsClassifiedByExprssion_151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c.pkl'
+gbr1 = importPickle(fOutRxnsByExpression1) 
+fOutRxnsByExpression2 = './151113_iMM904_Testing/data//rxnsClassifiedByExprssion_151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c.pkl'
+gbr2 = importPickle(fOutRxnsByExpression2)
+
+
+geneCallsFile1 = open('./151113_iMM904_Testing/data/geneCalls_151006_Aerobic_0.25.csv', 'r')
+geneCallsFile2 = open('./151113_iMM904_Testing/data/geneCalls_151006_Anaerobic_0.25.csv', 'r')
+
+csvreader1 = csv.reader(geneCallsFile1)
+csvreader2 = csv.reader(geneCallsFile2)
+
+#Import the gene rules and create dictionaries
+geneCalls1 = {}
+for row in csvreader1:
+	geneCalls1[row[0]] = int(row[1])
+geneCallsFile1.close()
+
+geneCalls2 = {}
+for row in csvreader2:
+	geneCalls2[row[0]] = int(row[1])
+geneCallsFile2.close()
+
+
+#Classify the rxns as being in rH, rL or neither and hfr, zfr, or neither for both conditions
+gbr1_rH = {}
+fbr1_hfr = {}
+gbr2_rH = {}
+fbr2_hfr = {}
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].rxns.keys():
+	if t in gbr1['rH']:
+		gbr1_rH[t] = 2
+	elif t in gbr1['rL']:
+		gbr1_rH[t] = 0
+	else:
+		gbr1_rH[t] = 1
+	if t in fbr1['hfr']:
+		fbr1_hfr[t] = 2
+	elif t in fbr1['zfr']:
+		fbr1_hfr[t] = 0
+	else:
+		fbr1_hfr[t] = 1
+
+	if t in gbr2['rH']:
+		gbr2_rH[t] = 2
+	elif t in gbr2['rL']:
+		gbr2_rH[t] = 0
+	else:
+		gbr2_rH[t] = 1
+	if t in fbr2['hfr']:
+		fbr2_hfr[t] = 2
+	elif t in fbr2['zfr']:
+		fbr2_hfr[t] = 0
+	else:
+		fbr2_hfr[t] = 1
+
+
+
+# Retrieving MBA candidate reaction lists
+mbaCandRxnsDirectory1 = './151113_iMM904_Testing/data/mbaCandRxns/151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c_0/'
+mbaCandRxnsDirectory2 = './151113_iMM904_Testing/data/mbaCandRxns/151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c_1/'
+mbaCandRxnsDirectory3 = './151113_iMM904_Testing/data/mbaCandRxns/151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c_2/'
+mbaCandRxnsDirectory4 = './151113_iMM904_Testing/data/mbaCandRxns/151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c_3/'
+mbaCandRxnsDirectory5 = './151113_iMM904_Testing/data/mbaCandRxns/151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c_4/'
+
+mbaCandRxnsDirectory6 = './151113_iMM904_Testing/data/mbaCandRxns/151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c_0/'
+mbaCandRxnsDirectory7 = './151113_iMM904_Testing/data/mbaCandRxns/151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c_1/'
+mbaCandRxnsDirectory8 = './151113_iMM904_Testing/data/mbaCandRxns/151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c_2/'
+mbaCandRxnsDirectory9 = './151113_iMM904_Testing/data/mbaCandRxns/151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c_3/'
+mbaCandRxnsDirectory10 = './151113_iMM904_Testing/data/mbaCandRxns/151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c_4/'
+
+description1 = '151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'
+description2 = '151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'
+
+files1 = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory1, description1)).read().splitlines()
+files2 = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory2, description1)).read().splitlines()
+files3 = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory3, description1)).read().splitlines()
+files4 = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory4, description1)).read().splitlines()
+files5 = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory5, description1)).read().splitlines()
+
+files6 = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory6, description2)).read().splitlines()
+files7 = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory7, description2)).read().splitlines()
+files8 = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory8, description2)).read().splitlines()
+files9 = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory9, description2)).read().splitlines()
+files10 = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory10, description2)).read().splitlines()
+
+rxnSets1 = []
+for fn in files1:
+	rxnSets1.append(importPickle(mbaCandRxnsDirectory1 + fn))
+
+rxnSets2 = []
+for fn in files2:
+	rxnSets2.append(importPickle(mbaCandRxnsDirectory2 + fn))
+
+rxnSets3 = []
+for fn in files3:
+	rxnSets3.append(importPickle(mbaCandRxnsDirectory3 + fn))
+
+rxnSets4 = []
+for fn in files4:
+	rxnSets4.append(importPickle(mbaCandRxnsDirectory4 + fn))
+
+rxnSets5 = []
+for fn in files5:
+	rxnSets5.append(importPickle(mbaCandRxnsDirectory5 + fn))
+
+rxnSets6 = []
+for fn in files6:
+	rxnSets6.append(importPickle(mbaCandRxnsDirectory6 + fn))
+
+rxnSets7 = []
+for fn in files7:
+	rxnSets7.append(importPickle(mbaCandRxnsDirectory7 + fn))
+
+rxnSets8 = []
+for fn in files8:
+	rxnSets8.append(importPickle(mbaCandRxnsDirectory8 + fn))
+
+rxnSets9 = []
+for fn in files9:
+	rxnSets9.append(importPickle(mbaCandRxnsDirectory9 + fn))
+
+rxnSets10 = []
+for fn in files10:
+	rxnSets10.append(importPickle(mbaCandRxnsDirectory10 + fn))
+
+# Quantifying the number of times a rxn is among the candidate models
+rxnFreq1 = {}
+for rs in rxnSets1:
+	for rxn in rs:
+		try:
+			rxnFreq1[rxn] += 1
+		except KeyError:
+			rxnFreq1[rxn] = 1
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].rxns.keys():
+	if t not in rxnFreq1:
+		rxnFreq1[t] = 0
+
+
+rxnFreq2 = {}
+for rs in rxnSets2:
+	for rxn in rs:
+		try:
+			rxnFreq2[rxn] += 1
+		except KeyError:
+			rxnFreq2[rxn] = 1
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].rxns.keys():
+	if t not in rxnFreq2:
+		rxnFreq2[t] = 0
+
+rxnFreq3 = {}
+for rs in rxnSets3:
+	for rxn in rs:
+		try:
+			rxnFreq3[rxn] += 1
+		except KeyError:
+			rxnFreq3[rxn] = 1
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].rxns.keys():
+	if t not in rxnFreq3:
+		rxnFreq3[t] = 0
+
+rxnFreq4 = {}
+for rs in rxnSets4:
+	for rxn in rs:
+		try:
+			rxnFreq4[rxn] += 1
+		except KeyError:
+			rxnFreq4[rxn] = 1
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].rxns.keys():
+	if t not in rxnFreq4:
+		rxnFreq4[t] = 0
+
+rxnFreq5 = {}
+for rs in rxnSets5:
+	for rxn in rs:
+		try:
+			rxnFreq5[rxn] += 1
+		except KeyError:
+			rxnFreq5[rxn] = 1
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].rxns.keys():
+	if t not in rxnFreq5:
+		rxnFreq5[t] = 0
+
+cond1freqavg = {}
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].rxns.keys():
+	freqavg = (float(rxnFreq1[t]) + float(rxnFreq2[t]) + float(rxnFreq3[t]) + float(rxnFreq4[t]) + float(rxnFreq5[t]))/5
+	#print freqavg
+	freqavg = str("%.2f" % freqavg)
+	#print freqavg
+	#print fluxavg
+	if freqavg == "0.00":
+		freqtext = [t]
+		freqtext.append("_")
+		freqtext.append("0")
+		freqtext.append("_")
+		freqtext.append("0")
+		freqtextjoin = ''.join(freqtext)
+		cond1freqavg[t] = freqtextjoin[2:]
+		#print cond1freqavg[t]
+	else:
+		frequencies = [rxnFreq1[t], rxnFreq2[t], rxnFreq3[t], rxnFreq4[t], rxnFreq5[t]]
+		#print np.std(frequencies)
+		if np.std(frequencies) != 0:
+			freqavgsearch = re.search('\.00', freqavg)
+			if (freqavgsearch is not None):
+				freqavg = freqavg[:-3]
+				#fluxavg == re.sub('0\.', '', fluxavg)
+			else:
+				freqavg = re.sub('\.','',freqavg)
+				freqavg+='e_2'
+			freqtext = [t]
+			freqtext.append("_")
+			freqtext.append(str(freqavg))
+			frequencies = [rxnFreq1[t], rxnFreq2[t], rxnFreq3[t], rxnFreq4[t], rxnFreq5[t]]
+			freqtext.append("_")
+			if np.std(frequencies) == 0:
+				freqtext.append("0")
+			else:
+				std = round(np.std(frequencies),2)
+				std = str("%.2f" % std)
+				stdsearch = re.search('\.00', std)
+				stdsearch0 = re.search('0\.', std)
+				if (stdsearch is not None):
+					std = std[:-3]
+				elif (stdsearch0 is not None):
+					std = std[2:]
+					std+='e_2'
+				else:
+					std = re.sub('\.','',std)
+					std+='e_2'
+				freqtext.append(std)
+		else:
+			freqtext = [t]
+			freqtext.append("_")
+			freqtext.append(str(freqavg[:-3]))
+			freqtext.append("_0")
+		freqtextjoin = ''.join(freqtext)
+		cond1freqavg[t] = freqtextjoin[2:]
+		#print cond1freqavg[t]
+
+
+rxnFreq6 = {}
+for rs in rxnSets6:
+	for rxn in rs:
+		try:
+			rxnFreq6[rxn] += 1
+		except KeyError:
+			rxnFreq6[rxn] = 1
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].rxns.keys():
+	if t not in rxnFreq6:
+		rxnFreq6[t] = 0
+
+rxnFreq7 = {}
+for rs in rxnSets7:
+	for rxn in rs:
+		try:
+			rxnFreq7[rxn] += 1
+		except KeyError:
+			rxnFreq7[rxn] = 1
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].rxns.keys():
+	if t not in rxnFreq7:
+		rxnFreq7[t] = 0
+
+rxnFreq8 = {}
+for rs in rxnSets8:
+	for rxn in rs:
+		try:
+			rxnFreq8[rxn] += 1
+		except KeyError:
+			rxnFreq8[rxn] = 1
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].rxns.keys():
+	if t not in rxnFreq8:
+		rxnFreq8[t] = 0
+
+rxnFreq9 = {}
+for rs in rxnSets9:
+	for rxn in rs:
+		try:
+			rxnFreq9[rxn] += 1
+		except KeyError:
+			rxnFreq9[rxn] = 1
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].rxns.keys():
+	if t not in rxnFreq9:
+		rxnFreq9[t] = 0
+
+rxnFreq10 = {}
+for rs in rxnSets10:
+	for rxn in rs:
+		try:
+			rxnFreq10[rxn] += 1
+		except KeyError:
+			rxnFreq10[rxn] = 1
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].rxns.keys():
+	if t not in rxnFreq10:
+		rxnFreq10[t] = 0
+
+cond2freqavg = {}
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].rxns.keys():
+	freqavg = (float(rxnFreq6[t]) + float(rxnFreq7[t]) + float(rxnFreq8[t]) + float(rxnFreq9[t]) + float(rxnFreq10[t]))/5
+	#print freqavg
+	freqavg = str("%.2f" % freqavg)
+	#print freqavg
+	#print freqavg
+	#print fluxavg
+	if freqavg == "0.00":
+		freqtext = [t]
+		freqtext.append("_")
+		freqtext.append("0")
+		freqtext.append("_")
+		freqtext.append("0")
+		freqtextjoin = ''.join(freqtext)
+		cond2freqavg[t] = freqtextjoin[2:]
+		#print cond2freqavg[t]
+	else:
+		frequencies = [rxnFreq6[t], rxnFreq7[t], rxnFreq8[t], rxnFreq9[t], rxnFreq10[t]]
+		#print np.std(frequencies)
+		if np.std(frequencies) != 0:
+			freqavgsearch = re.search('\.00', freqavg)
+			if (freqavgsearch is not None):
+				#print "entered"
+				freqavg = freqavg[:-3]
+				#fluxavg == re.sub('0\.', '', fluxavg)
+			else:
+				#print "entered2"
+				freqavg = re.sub('\.','',freqavg)
+				freqavg+='e_2'
+			freqtext = [t]
+			freqtext.append("_")
+			freqtext.append(str(freqavg))
+			frequencies = [rxnFreq6[t], rxnFreq7[t], rxnFreq8[t], rxnFreq9[t], rxnFreq10[t]]
+			freqtext.append("_")
+			if np.std(frequencies) == 0:
+				freqtext.append("0")
+			else:
+				std = round(np.std(frequencies),2)
+				std = str("%.2f" % std)
+				stdsearch = re.search('\.00', std)
+				stdsearch0 = re.search('0\.', std)
+				if (stdsearch is not None):
+					std = std[:-3]
+				elif (stdsearch0 is not None):
+					std = std[2:]
+					std+='e_2'
+				else:
+					std = re.sub('\.','',std)
+					std+='e_2'
+				freqtext.append(std)
+		else:
+			freqtext = [t]
+			freqtext.append("_")
+			freqtext.append(str(freqavg[:-3]))
+			freqtext.append("_0")
+		freqtextjoin = ''.join(freqtext)
+		cond2freqavg[t] = freqtextjoin[2:]
+		#print cond2freqavg[t]
+
+
+#Map raw data for every gene for every reaction 
+rxngenesandor1 = {}
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].rxns.keys():
+	genelist = str(md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].gene2rxn[t])
+	i = re.split('or',genelist)
+	count = 0
+	or_count_1 = 0
+	countdict_rules = {}
+	countdict_calls = {}
+	rxn_genes_and_or = [t]
+	for j in i:
+		count += 1
+		j = re.split('and', j)
+		genedict_rules = {}
+		gene_list = []
+		for k in j:
+			k = re.sub(' ', '', k)
+			k = re.sub('\(', '', k)
+			k = re.sub('\)', '', k)
+			if k != "":
+				if k in geneCalls1:
+					gene_list.append(k)
+					countdict_rules[count] = gene_list 				
+	for l in countdict_rules:
+		one_count = 0
+		negative_one_count = 0
+		for m in countdict_rules[l]:
+			if geneCalls1[m] == 1:
+				one_count += 1
+			if geneCalls1[m] == -1:
+				negative_one_count += 1
+		#Make it so that rules are 2, 1, and 0 instead of 1, 0, and -1 respectively, so that the descriptions can be directly given for CellDesigner
+		if len(countdict_rules[l]) == one_count:
+			countdict_calls[l] = 2
+		elif negative_one_count > 0:
+			countdict_calls[l] = 0
+		else:
+			countdict_calls[l] = 1
+		if (len(countdict_rules[l]) == 1 and len(countdict_rules) > 1):
+			or_count_1 += 1
+		else:
+			if len(countdict_rules[l]) == 1:
+				rxn_genes_and_or.extend(["_",str(len(countdict_rules[l])),"ONLY",str(countdict_calls[l])])
+			else:
+				rxn_genes_and_or.extend(["_",str(len(countdict_rules[l])),"AND",str(countdict_calls[l])])
+	if (or_count_1 > 0):
+		rxn_genes_and_or.extend(["_",str(or_count_1),"OR",str(gbr1_rH[t])])
+	rxn_genes_and_or_join = ''.join(rxn_genes_and_or)
+	rxngenesandor1[t] = rxn_genes_and_or_join
+
+#Map raw data for every gene for every reaction 
+rxngenesandor2 = {}
+for t in md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].rxns.keys():
+	genelist = str(md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].gene2rxn[t])
+	i = re.split('or',genelist)
+	count = 0
+	or_count_1 = 0
+	countdict_rules = {}
+	countdict_calls = {}
+	rxn_genes_and_or = [t]
+	for j in i:
+		count += 1
+		j = re.split('and', j)
+		genedict_rules = {}
+		gene_list = []
+		for k in j:
+			k = re.sub(' ', '', k)
+			k = re.sub('\(', '', k)
+			k = re.sub('\)', '', k)
+			if k != "":
+				if k in geneCalls2:
+					gene_list.append(k)
+					countdict_rules[count] = gene_list 				
+	for l in countdict_rules:
+		one_count = 0
+		negative_one_count = 0
+		for m in countdict_rules[l]:
+			if geneCalls2[m] == 1:
+				one_count += 1
+			if geneCalls2[m] == -1:
+				negative_one_count += 1
+		#Make it so that rules are 2, 1, and 0 instead of 1, 0, and -1 respectively, so that the descriptions can be directly given for CellDesigner
+		if len(countdict_rules[l]) == one_count:
+			countdict_calls[l] = 2
+		elif negative_one_count > 0:
+			countdict_calls[l] = 0
+		else:
+			countdict_calls[l] = 1
+		if (len(countdict_rules[l]) == 1 and len(countdict_rules) > 1):
+			or_count_1 += 1
+		else:
+			if len(countdict_rules[l]) == 1:
+				rxn_genes_and_or.extend(["_",str(len(countdict_rules[l])),"ONLY",str(countdict_calls[l])])
+			else:
+				rxn_genes_and_or.extend(["_",str(len(countdict_rules[l])),"AND",str(countdict_calls[l])])
+	if (or_count_1 > 0):
+		rxn_genes_and_or.extend(["_",str(or_count_1),"OR",str(gbr2_rH[t])])
+	rxn_genes_and_or_join = ''.join(rxn_genes_and_or)
+	rxngenesandor2[t] = rxn_genes_and_or_join
+					
+for pathway in pathway_list:
+	file_name_reference = open(pathway + '.xml')
+	reference = file_name_reference.readlines()
+	file_name_reference_out = open(date + '_' + pathway + '_Rules_Aerobic.xml','w')
+
+	for o in range(0, len(reference)):
+		reaction_name = re.search('(?<=reaction\smetaid=")(.*?)(?="\sid)',reference[o])
+		reaction_id = re.search('(?<="\sid=")(.*?)(?="\sreversible)', reference[o])
+		reaction_id_name = re.search('(?<="\sname=")(.*?)(?="\sreversible)', reference[o])
+		if (reaction_id is None) and (reaction_id_name is None):
+			continue
+		else:
+			if reaction_id_name is None:
+				if str(reaction_id.group(0))[:2] != 'R_':
+					rxn = 'R_' + str(reaction_id.group(0))
+				else:
+					rxn = str(reaction_id.group(0))
+		
+			else:
+				if str(reaction_id.group(0))[:2] != 'R_':
+					rxn = 'R_' + str(reaction_id_name.group(0))
+				else:
+					rxn = str(reaction_id_name.group(0))
+			reference[o] = re.sub(reaction_id.group(0),str(rxngenesandor1[rxn][2:]),reference[o])
+			if (md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].lb[md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].idRs.index(rxn)] < 0 and md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].ub[md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].idRs.index(rxn)] > 0):
+				reversible = re.search('(?<=reversible=")(.*?)(?=">)',reference[o])
+				reference[o] = re.sub(reversible.group(0),'true',reference[o])
+			linesjoin = reference[o:o+300]
+			linesjoined = ''.join(linesjoin)
+			reactionlength = re.findall('(?<=>)(.*?)(?=<reaction)',linesjoined, re.DOTALL)
+			if len(reactionlength) == 0:
+				reactionlength = re.findall('(?<=>)(.*?)(?=</reaction)',linesjoined,re.DOTALL)
+			reactionlength_join = ''.join(reactionlength[0])
+			countnreactionlength_join = reactionlength_join.count("\n")
+			lines2 = reference[o:o+countnreactionlength_join]
+			lines2_join = ''.join(lines2)
+			color = re.search('(?<=color=")(.*?)(?=")',lines2_join)
+			if gbr1_rH[rxn] == 2:
+				lines2_join = re.sub(color.group(0),'ffff0000',lines2_join)
+			if gbr1_rH[rxn] == 0:
+				lines2_join = re.sub(color.group(0),'ff0000ff', lines2_join)
+			lines2_join_list = re.split('\n', lines2_join)
+			lines2_join_list_remake = []
+			for i in lines2_join_list:
+				string = i + '\n'
+				lines2_join_list_remake.append(string)
+			count = -1 
+			del lines2_join_list_remake[-1]
+			for i in lines2_join_list_remake:
+				count += 1
+				reference[o+count] = re.sub(reference[o+count],i,reference[o+count])
+
+	reference2 = reference	
+	for p, item3 in enumerate(reference2):
+		file_name_reference_out.write(reference2[p])
+	file_name_reference_out.close()
+
+for pathway in pathway_list:
+	file_name_reference = open(pathway + '.xml')
+	reference = file_name_reference.readlines()
+	file_name_reference_out = open(date + '_' + pathway + '_Rules_Anaerobic.xml','w')
+
+	for o in range(0, len(reference)):
+		reaction_name = re.search('(?<=reaction\smetaid=")(.*?)(?="\sid)',reference[o])
+		reaction_id = re.search('(?<="\sid=")(.*?)(?="\sreversible)', reference[o])
+		reaction_id_name = re.search('(?<="\sname=")(.*?)(?="\sreversible)', reference[o])
+		if (reaction_id is None) and (reaction_id_name is None):
+			continue
+		else:
+			if reaction_id_name is None:
+				if str(reaction_id.group(0))[:2] != 'R_':
+					rxn = 'R_' + str(reaction_id.group(0))
+				else:
+					rxn = str(reaction_id.group(0))
+			else:
+				if str(reaction_id.group(0))[:2] != 'R_':
+					rxn = 'R_' + str(reaction_id_name.group(0))
+				else:
+					rxn = str(reaction_id_name.group(0))
+			reference[o] = re.sub(reaction_id.group(0),str(rxngenesandor2[rxn][2:]),reference[o])
+			if (md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].lb[md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].idRs.index(rxn)] < 0 and md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].ub[md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].idRs.index(rxn)] > 0):
+				reversible = re.search('(?<=reversible=")(.*?)(?=">)',reference[o])
+				reference[o] = re.sub(reversible.group(0),'true',reference[o])
+			linesjoin = reference[o:o+300]
+			linesjoined = ''.join(linesjoin)
+			reactionlength = re.findall('(?<=>)(.*?)(?=<reaction)',linesjoined, re.DOTALL)
+			if len(reactionlength) == 0:
+				reactionlength = re.findall('(?<=>)(.*?)(?=</reaction)',linesjoined,re.DOTALL)
+			reactionlength_join = ''.join(reactionlength[0])
+			countnreactionlength_join = reactionlength_join.count("\n")
+			lines2 = reference[o:o+countnreactionlength_join]
+			lines2_join = ''.join(lines2)
+			color = re.search('(?<=color=")(.*?)(?=")',lines2_join)
+			if gbr2_rH[rxn] == 2:
+				lines2_join = re.sub(color.group(0),'ffff0000',lines2_join)
+			if gbr2_rH[rxn] == 0:
+				lines2_join = re.sub(color.group(0),'ff0000ff', lines2_join)
+			lines2_join_list = re.split('\n', lines2_join)
+			lines2_join_list_remake = []
+			for i in lines2_join_list:
+				string = i + '\n'
+				lines2_join_list_remake.append(string)
+			count = -1 
+			del lines2_join_list_remake[-1]
+			for i in lines2_join_list_remake:
+				count += 1
+				reference[o+count] = re.sub(reference[o+count],i,reference[o+count])
+
+	reference2 = reference	
+	for p, item3 in enumerate(reference2):
+		file_name_reference_out.write(reference2[p])
+	file_name_reference_out.close()
+
+for pathway in pathway_list:
+	file_name_reference = open(pathway + '.xml')
+	reference = file_name_reference.readlines()
+	file_name_reference_out = open(date + '_' + pathway + '_MBA_Aerobic.xml','w')
+
+	for o in range(0, len(reference)):
+		reaction_name = re.search('(?<=reaction\smetaid=")(.*?)(?="\sid)',reference[o])
+		reaction_id = re.search('(?<="\sid=")(.*?)(?="\sreversible)', reference[o])
+		reaction_id_name = re.search('(?<="\sname=")(.*?)(?="\sreversible)', reference[o])
+		if (reaction_id is None) and (reaction_id_name is None):
+			continue
+		else:
+			if reaction_id_name is None:
+				if str(reaction_id.group(0))[:2] != 'R_':
+					rxn = 'R_' + str(reaction_id.group(0))
+				else:
+					rxn = str(reaction_id.group(0))
+			else:
+				if str(reaction_id.group(0))[:2] != 'R_':
+					rxn = 'R_' + str(reaction_id_name.group(0))
+				else:
+					rxn = str(reaction_id_name.group(0))
+			reference[o] = re.sub(reaction_id.group(0),str(cond1freqavg[rxn]),reference[o])
+			if (md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].lb[md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].idRs.index(rxn)] < 0 and md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].ub[md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].idRs.index(rxn)] > 0):
+				reversible = re.search('(?<=reversible=")(.*?)(?=">)',reference[o])
+				reference[o] = re.sub(reversible.group(0),'true',reference[o])
+			linesjoin = reference[o:o+300]
+			linesjoined = ''.join(linesjoin)
+			reactionlength = re.findall('(?<=>)(.*?)(?=<reaction)',linesjoined, re.DOTALL)
+			if len(reactionlength) == 0:
+				reactionlength = re.findall('(?<=>)(.*?)(?=</reaction)',linesjoined,re.DOTALL)
+			reactionlength_join = ''.join(reactionlength[0])
+			countnreactionlength_join = reactionlength_join.count("\n")
+			lines2 = reference[o:o+countnreactionlength_join]
+			lines2_join = ''.join(lines2)
+			color = re.search('(?<=color=")(.*?)(?=")',lines2_join)
+			if fbr1_hfr[rxn] == 2:
+				lines2_join = re.sub(color.group(0),'ffff0000',lines2_join)
+			if fbr1_hfr[rxn] == 0:
+				lines2_join = re.sub(color.group(0),'ff0000ff', lines2_join)
+			lines2_join_list = re.split('\n', lines2_join)
+			lines2_join_list_remake = []
+			for i in lines2_join_list:
+				string = i + '\n'
+				lines2_join_list_remake.append(string)
+			count = -1 
+			del lines2_join_list_remake[-1]
+			for i in lines2_join_list_remake:
+				count += 1
+				reference[o+count] = re.sub(reference[o+count],i,reference[o+count])
+
+	reference2 = reference	
+	for p, item3 in enumerate(reference2):
+		file_name_reference_out.write(reference2[p])
+	file_name_reference_out.close()
+
+for pathway in pathway_list:
+	file_name_reference = open(pathway + '.xml')
+	reference = file_name_reference.readlines()
+	file_name_reference_out = open(date + '_' + pathway + '_MBA_Anaerobic.xml','w')
+
+	for o in range(0, len(reference)):
+		reaction_name = re.search('(?<=reaction\smetaid=")(.*?)(?="\sid)',reference[o])
+		reaction_id = re.search('(?<="\sid=")(.*?)(?="\sreversible)', reference[o])
+		reaction_id_name = re.search('(?<="\sname=")(.*?)(?="\sreversible)', reference[o])
+		if (reaction_id is None) and (reaction_id_name is None):
+			continue
+		else:
+			if reaction_id_name is None:
+				if str(reaction_id.group(0))[:2] != 'R_':
+					rxn = 'R_' + str(reaction_id.group(0))
+				else:
+					rxn = str(reaction_id.group(0))
+			else:
+				if str(reaction_id.group(0))[:2] != 'R_':
+					rxn = 'R_' + str(reaction_id_name.group(0))
+				else:
+					rxn = str(reaction_id_name.group(0))
+			reference[o] = re.sub(reaction_id.group(0),str(cond2freqavg[rxn]),reference[o])
+			if (md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].lb[md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].idRs.index(rxn)] < 0 and md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].ub[md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].idRs.index(rxn)] > 0):
+				reversible = re.search('(?<=reversible=")(.*?)(?=">)',reference[o])
+				reference[o] = re.sub(reversible.group(0),'true',reference[o])
+			linesjoin = reference[o:o+300]
+			linesjoined = ''.join(linesjoin)
+			reactionlength = re.findall('(?<=>)(.*?)(?=<reaction)',linesjoined, re.DOTALL)
+			if len(reactionlength) == 0:
+				reactionlength = re.findall('(?<=>)(.*?)(?=</reaction)',linesjoined,re.DOTALL)
+			reactionlength_join = ''.join(reactionlength[0])
+			countnreactionlength_join = reactionlength_join.count("\n")
+			lines2 = reference[o:o+countnreactionlength_join]
+			lines2_join = ''.join(lines2)
+			color = re.search('(?<=color=")(.*?)(?=")',lines2_join)
+			if fbr2_hfr[rxn] == 2:
+				lines2_join = re.sub(color.group(0),'ffff0000',lines2_join)
+			if fbr2_hfr[rxn] == 0:
+				lines2_join = re.sub(color.group(0),'ff0000ff', lines2_join)
+			lines2_join_list = re.split('\n', lines2_join)
+			lines2_join_list_remake = []
+			for i in lines2_join_list:
+				string = i + '\n'
+				lines2_join_list_remake.append(string)
+			count = -1 
+			del lines2_join_list_remake[-1]
+			for i in lines2_join_list_remake:
+				count += 1
+				reference[o+count] = re.sub(reference[o+count],i,reference[o+count])
+
+	reference2 = reference	
+	for p, item3 in enumerate(reference2):
+		file_name_reference_out.write(reference2[p])
+	file_name_reference_out.close()
+
+for pathway in pathway_list:
+	file_name_reference = open(pathway + '.xml')
+	reference = file_name_reference.readlines()
+	file_name_reference_out = open(date + '_' + pathway + '_Flux_Aerobic.xml','w')
+
+	for o in range(0, len(reference)):
+		reaction_name = re.search('(?<=reaction\smetaid=")(.*?)(?="\sid)',reference[o])
+		reaction_id = re.search('(?<="\sid=")(.*?)(?="\sreversible)', reference[o])
+		reaction_id_name = re.search('(?<="\sname=")(.*?)(?="\sreversible)', reference[o])
+		if (reaction_id is None) and (reaction_id_name is None):
+			continue
+		else:
+			if reaction_id_name is None:
+				if str(reaction_id.group(0))[:2] != 'R_':
+					rxn = 'R_' + str(reaction_id.group(0))
+				else:
+					rxn = str(reaction_id.group(0))
+			else:
+				if str(reaction_id.group(0))[:2] != 'R_':
+					rxn = 'R_' + str(reaction_id_name.group(0))
+				else:
+					rxn = str(reaction_id_name.group(0))
+			reference[o] = re.sub(reaction_id.group(0),str(fluxavgdict_text['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'][rxn]),reference[o])
+			rxn_NA = str(rxn[2:]) + '_NA'
+			if (md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].lb[md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].idRs.index(rxn)] < 0 and md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].ub[md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'].idRs.index(rxn)] > 0 and fluxavgdict['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'][rxn] == 0 and fluxavgdict_text['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'][rxn] != rxn_NA):
+				reversible = re.search('(?<=reversible=")(.*?)(?=">)',reference[o])
+				reference[o] = re.sub(reversible.group(0),'true',reference[o])
+			linesjoin = reference[o:o+300]
+			linesjoined = ''.join(linesjoin)
+			reactionlength = re.findall('(?<=>)(.*?)(?=<reaction)',linesjoined, re.DOTALL)
+			if len(reactionlength) == 0:
+				reactionlength = re.findall('(?<=>)(.*?)(?=</reaction)',linesjoined,re.DOTALL)
+			reactionlength_join = ''.join(reactionlength[0])
+			countnreactionlength_join = reactionlength_join.count("\n")
+			lines2 = reference[o:o+countnreactionlength_join]
+			lines2_join = ''.join(lines2)
+			color = re.search('(?<=color=")(.*?)(?=")',lines2_join)
+			if (fluxavgdict_text['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'][rxn] == rxn_NA):
+				lines2_join = re.sub(color.group(0),'fff0f0f0',lines2_join)
+			elif fluxavgdict['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'][rxn] != 0:
+				lines2_join = re.sub(color.group(0),'ffff0000',lines2_join)
+			else:
+				continue
+			width = re.search('(?<=celldesigner:line\swidth=")(.*?\s)(?=color)',lines2_join)
+			lines2_join = re.sub(str(width.group(0)),str(cond1fluxavgscaled[rxn])+'" ',lines2_join)
+			lines2_join_list = re.split('\n', lines2_join)
+			lines2_join_list_remake = []
+			for i in lines2_join_list:
+				string = i + '\n'
+				lines2_join_list_remake.append(string)
+			count = -1 
+			del lines2_join_list_remake[-1]
+			for i in lines2_join_list_remake:
+				count += 1
+				reference[o+count] = re.sub(reference[o+count],i,reference[o+count])
+
+	reference2 = reference	
+	for p, item3 in enumerate(reference2):
+		file_name_reference_out.write(reference2[p])
+	file_name_reference_out.close()
+
+pathway_list_flux_cond1 = []
+for pathway in pathway_list:
+	pathway_list_flux_cond1.append(date + '_' + pathway + '_Flux_Aerobic')
+
+for pathway in pathway_list_flux_cond1:
+	file_name_reference = open(pathway + '.xml')
+	reference = file_name_reference.readlines()
+	file_name_reference_out = open(pathway + '_edit.xml','w')
+
+	for o in range(0, len(reference)):
+		flip = re.search('__', reference[o])
+		if flip is None:
+			continue
+		else:
+			linesjoin = reference[o:o+300]
+			linesjoined = ''.join(linesjoin)
+			reactionlength = re.findall('(?<=>)(.*?)(?=</reaction)',linesjoined, re.DOTALL)
+			reactionlength_join = ''.join(reactionlength[0])
+			countnreactionlength_join = reactionlength_join.count("\n")
+			lines2 = reference[o:o+countnreactionlength_join]
+			lines2_join = ''.join(lines2)
+			rectangleindex = re.search('(?<=rectangleIndex=")(.*?)(?=")',lines2_join)
+			annotationsubsection = re.findall('(?<=reversible="false">\n)(.*?)(?=<listOfReactants>)',lines2_join, re.DOTALL)
+			annotationsubsection_join = ''.join(annotationsubsection)
+			countnannotationsubsection_join = annotationsubsection_join.count("\n")
+			reactantssubsection = re.findall('(?<=</celldesigner:reactionType>\n)(.*?)(?=<celldesigner:baseProducts>)',lines2_join, re.DOTALL)
+			reactantssubsection_join = ''.join(reactantssubsection)
+			reactantssubsection_join = re.sub("baseReactant","baseProduct",reactantssubsection_join)
+			productssubsection = re.findall('(?<=</celldesigner:baseReactants>\n)(.*?</celldesigner:baseProducts>\n)(?=<)',lines2_join, re.DOTALL)
+			productssubsection_join = ''.join(productssubsection)
+			productssubsection_join = re.sub("baseProduct","baseReactant",productssubsection_join)
+			productsandreactants_join = ''.join((productssubsection_join,reactantssubsection_join))
+			countnproductsandreactants = productsandreactants_join.count("\n")
+			productsandreactantssplit = productsandreactants_join.split('\n')
+			for p in range(0, countnproductsandreactants-1):
+				reference[o+4+p] = ''.join((productsandreactantssplit[p],"\n"))
+			reactantlinks = re.findall('(?<=<celldesigner:listOfReactantLinks>\n)(.*?)(?=</celldesigner:listOfReactantLinks>)',lines2_join, re.DOTALL)
+			reactantlinks_join = ''.join(reactantlinks)
+			if len(reactantlinks_join) > 0:
+				reactantlinks_join = ''.join(("<celldesigner:listOfProductLinks>\n",reactantlinks_join,"</celldesigner:listOfProductLinks>\n"))
+			reactantlinks_join = re.sub("reactant","product",reactantlinks_join)
+			productlinks = re.findall('(?<=<celldesigner:listOfProductLinks>\n)(.*?)(?=</celldesigner:listOfProductLinks>)',lines2_join, re.DOTALL)
+			productlinks_join = ''.join(productlinks)
+			if len(productlinks_join) > 0:
+				productlinks_join = ''.join(("<celldesigner:listOfReactantLinks>\n",productlinks_join,"</celldesigner:listOfReactantLinks>\n"))
+			productlinks_join = re.sub("product","reactant",productlinks_join)
+			annotation_end = re.findall('(?<=rectangleIndex)(.*?)(?=</annotation>)',lines2_join,re.DOTALL)
+			annotation_end_join = ''.join(annotation_end)			
+			editPoints_reactants = re.findall('(?<=<celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',reactantlinks_join, re.DOTALL)					
+			editPoints_reactants_search = re.search('(?<=<celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',reactantlinks_join)
+			if len(editPoints_reactants) > 0:
+				editPoints_reactants_split = {}
+				editPoints_reactants_split2 = {}
+				editPoints_reactants_index = editPoints_reactants[-1]
+				editPoints_reactants_split = re.split('\s|,',editPoints_reactants_index)
+				for r in range(0, len(editPoints_reactants_split[1::2])):
+					if r == len(editPoints_reactants_split[1::2]) - 1:
+						editPoints_reactants_split2[2+r*4-1] = -float(editPoints_reactants_split[1+r*2])
+						editPoints_reactants_split2[3+r*4-1] = ' '
+					elif r == 0:
+						editPoints_reactants_split2[2] = -float(editPoints_reactants_split[1])
+					else:
+						editPoints_reactants_split2[2+r*4-1] = -float(editPoints_reactants_split[1+r*2])
+						editPoints_reactants_split2[3+r*4-1] = ' ' 
+				for s in range(0, len(editPoints_reactants_split[::2])):
+					if s == 0:
+						editPoints_reactants_split2[0] = 1-float(editPoints_reactants_split[0])
+						editPoints_reactants_split2[1] = ','
+						editPoints_reactants_split2[2] = -float(editPoints_reactants_split[1])
+					else:
+						editPoints_reactants_split2[s*4-1] = 1-float(editPoints_reactants_split[s*2])
+						editPoints_reactants_split2[1+s*4-1] = ','
+				editPoints_reactants_split2_list = []
+				for i, v in enumerate(editPoints_reactants_split2.keys()):
+					editPoints_reactants_split2_list.append(editPoints_reactants_split2[i])
+				editPoints_reactants_split3_list = {}
+				for r in range(0, len(editPoints_reactants_split2_list[1::2])):
+					if len(editPoints_reactants_split2_list) == 3:
+						rounded_r = 0
+					if len(editPoints_reactants_split2_list) > 3:
+						rounded_r = int((len(editPoints_reactants_split2_list)-3)/4)
+					if rounded_r == 0: 
+						editPoints_reactants_split3_list[0] = editPoints_reactants_split2_list[0]
+						editPoints_reactants_split3_list[1] = editPoints_reactants_split2_list[1]
+						editPoints_reactants_split3_list[2] = editPoints_reactants_split2_list[2]
+					if rounded_r > 0:
+						editPoints_reactants_split3_list[0] = editPoints_reactants_split2_list[3+4*(rounded_r-1)]
+						editPoints_reactants_split3_list[1] = editPoints_reactants_split2_list[4+4*(rounded_r-1)]
+						editPoints_reactants_split3_list[2] = editPoints_reactants_split2_list[5+4*(rounded_r-1)]
+						editPoints_reactants_split3_list[3] = editPoints_reactants_split2_list[6+4*(rounded_r-1)]
+						for i in range(0,rounded_r-1):
+							editPoints_reactants_split3_list[4+i*4] = editPoints_reactants_split2_list[3+4*(rounded_r-1-i)]
+							editPoints_reactants_split3_list[5+i*4] = editPoints_reactants_split2_list[4+4*(rounded_r-1-i)]
+							editPoints_reactants_split3_list[6+i*4] = editPoints_reactants_split2_list[5+4*(rounded_r-1-i)]
+							editPoints_reactants_split3_list[7+i*4] = editPoints_reactants_split2_list[6+4*(rounded_r-1-i)]	
+						editPoints_reactants_split3_list[4+(rounded_r-1)*4] = editPoints_reactants_split2_list[0]
+						editPoints_reactants_split3_list[5+(rounded_r-1)*4] = editPoints_reactants_split2_list[1]
+						editPoints_reactants_split3_list[6+(rounded_r-1)*4] = editPoints_reactants_split2_list[2]
+				editPoints_reactants_split4_list = []
+				editPoints_reactants_split4_string = ""
+				for i, v in enumerate(editPoints_reactants_split3_list.keys()):
+					editPoints_reactants_split4_list.append(editPoints_reactants_split3_list[i])
+					editPoints_reactants_split4_string += str(editPoints_reactants_split4_list[i])	
+				reactantlinks_join = re.sub(editPoints_reactants_search.group(0),editPoints_reactants_split4_string,reactantlinks_join)	
+			editPoints_products = re.findall('(?<=<celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',productlinks_join, re.DOTALL)
+			editPoints_products_search = re.search('(?<=<celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',productlinks_join)
+			if len(editPoints_products) > 0:
+				editPoints_products_split = {}
+				editPoints_products_split2 = {}
+				editPoints_products_index = editPoints_products[-1]
+				editPoints_products_split = re.split('\s|,',editPoints_products_index)
+				for r in range(0, len(editPoints_products_split[1::2])):
+					if r == len(editPoints_products_split[1::2]) - 1:
+						editPoints_products_split2[2+r*4-1] = -float(editPoints_products_split[1+r*2])
+						editPoints_products_split2[3+r*4-1] = ' '
+					elif r == 0:
+						editPoints_products_split2[2] = -float(editPoints_products_split[1])
+					else:
+						editPoints_products_split2[2+r*4-1] = -float(editPoints_products_split[1+r*2])
+						editPoints_products_split2[3+r*4-1] = ' ' 
+				for s in range(0, len(editPoints_products_split[::2])):
+					if s == 0:
+						editPoints_products_split2[0] = 1-float(editPoints_products_split[0])
+						editPoints_products_split2[1] = ','
+						editPoints_products_split2[2] = -float(editPoints_products_split[1])
+					else:
+						editPoints_products_split2[s*4-1] = 1-float(editPoints_products_split[s*2])
+						editPoints_products_split2[1+s*4-1] = ','
+				editPoints_products_split2_list = []
+				for i, v in enumerate(editPoints_products_split2.keys()):
+					editPoints_products_split2_list.append(editPoints_products_split2[i])
+				editPoints_products_split3_list = {}
+				for r in range(0, len(editPoints_products_split2_list[1::2])):
+					if len(editPoints_products_split2_list) == 3:
+						rounded_r = 0
+					if len(editPoints_products_split2_list) > 3:
+						rounded_r = int((len(editPoints_products_split2_list)-3)/4)
+					if rounded_r == 0: 
+						editPoints_products_split3_list[0] = editPoints_products_split2_list[0]
+						editPoints_products_split3_list[1] = editPoints_products_split2_list[1]
+						editPoints_products_split3_list[2] = editPoints_products_split2_list[2]
+					if rounded_r > 0:
+						editPoints_products_split3_list[0] = editPoints_products_split2_list[3+4*(rounded_r-1)]
+						editPoints_products_split3_list[1] = editPoints_products_split2_list[4+4*(rounded_r-1)]
+						editPoints_products_split3_list[2] = editPoints_products_split2_list[5+4*(rounded_r-1)]
+						editPoints_products_split3_list[3] = editPoints_products_split2_list[6+4*(rounded_r-1)]
+						for i in range(0,rounded_r-1):
+							editPoints_products_split3_list[4+i*4] = editPoints_products_split2_list[3+4*(rounded_r-1-i)]
+							editPoints_products_split3_list[5+i*4] = editPoints_products_split2_list[4+4*(rounded_r-1-i)]
+							editPoints_products_split3_list[6+i*4] = editPoints_products_split2_list[5+4*(rounded_r-1-i)]
+							editPoints_products_split3_list[7+i*4] = editPoints_products_split2_list[6+4*(rounded_r-1-i)]	
+						editPoints_products_split3_list[4+(rounded_r-1)*4] = editPoints_products_split2_list[0]
+						editPoints_products_split3_list[5+(rounded_r-1)*4] = editPoints_products_split2_list[1]
+						editPoints_products_split3_list[6+(rounded_r-1)*4] = editPoints_products_split2_list[2]
+				editPoints_products_split4_list = []
+				editPoints_products_split4_string = ""
+				for i, v in enumerate(editPoints_products_split3_list.keys()):
+					editPoints_products_split4_list.append(editPoints_products_split3_list[i])
+					editPoints_products_split4_string += str(editPoints_products_split4_list[i])
+				productlinks_join = re.sub(editPoints_products_search.group(0),editPoints_products_split4_string,productlinks_join)
+			editPoints_last = re.findall('(?<=<celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',annotation_end_join, re.DOTALL)
+			editPoints_last_total = re.findall('(?<=<celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',lines2_join, re.DOTALL)
+			if len(editPoints_last) > 0:
+				editPoints_last_split = {}
+				editPoints_last_split2 = {}
+				editPoints_last_index = editPoints_last[-1]
+				editPoints_last_split = re.split('\s|,',editPoints_last_index)
+				for r in range(0, len(editPoints_last_split[1::2])):
+					if r == len(editPoints_last_split[1::2]) - 1:
+						editPoints_last_split2[2+r*4-1] = -float(editPoints_last_split[1+r*2])
+						editPoints_last_split2[3+r*4-1] = ' '
+					elif r == 0:
+						editPoints_last_split2[2] = -float(editPoints_last_split[1])
+					else:
+						editPoints_last_split2[2+r*4-1] = -float(editPoints_last_split[1+r*2])
+						editPoints_last_split2[3+r*4-1] = ' '
+				for s in range(0, len(editPoints_last_split[::2])):
+					if s == 0:
+						editPoints_last_split2[0] = 1-float(editPoints_last_split[0])
+						editPoints_last_split2[1] = ','
+						editPoints_last_split2[2] = -float(editPoints_last_split[1])
+					else:
+						editPoints_last_split2[s*4-1] = 1-float(editPoints_last_split[s*2])
+						editPoints_last_split2[1+s*4-1] = ','
+				editPoints_last_split2_list = []
+				for i, v in enumerate(editPoints_last_split2.keys()):
+					editPoints_last_split2_list.append(editPoints_last_split2[i])
+				editPoints_last_split3_list = {}
+				for r in range(0, len(editPoints_last_split2_list[1::2])):
+						if len(editPoints_last_split2_list) == 3:
+							rounded_r = 0
+						if len(editPoints_last_split2_list) > 3:
+							rounded_r = int((len(editPoints_last_split2_list)-3)/4)
+						if rounded_r == 0: 
+							editPoints_last_split3_list[0] = editPoints_last_split2_list[0]
+							editPoints_last_split3_list[1] = editPoints_last_split2_list[1]
+							editPoints_last_split3_list[2] = editPoints_last_split2_list[2]
+						if rounded_r > 0:
+							editPoints_last_split3_list[0] = editPoints_last_split2_list[3+4*(rounded_r-1)]
+							editPoints_last_split3_list[1] = editPoints_last_split2_list[4+4*(rounded_r-1)]
+							editPoints_last_split3_list[2] = editPoints_last_split2_list[5+4*(rounded_r-1)]
+							editPoints_last_split3_list[3] = editPoints_last_split2_list[6+4*(rounded_r-1)]
+							for i in range(0,rounded_r-1):
+								editPoints_last_split3_list[4+i*4] = editPoints_last_split2_list[3+4*(rounded_r-1-i)]
+								editPoints_last_split3_list[5+i*4] = editPoints_last_split2_list[4+4*(rounded_r-1-i)]
+								editPoints_last_split3_list[6+i*4] = editPoints_last_split2_list[5+4*(rounded_r-1-i)]
+								editPoints_last_split3_list[7+i*4] = editPoints_last_split2_list[6+4*(rounded_r-1-i)]	
+							editPoints_last_split3_list[4+(rounded_r-1)*4] = editPoints_last_split2_list[0]
+							editPoints_last_split3_list[5+(rounded_r-1)*4] = editPoints_last_split2_list[1]
+							editPoints_last_split3_list[6+(rounded_r-1)*4] = editPoints_last_split2_list[2]
+				editPoints_last_split4_list = []
+				editPoints_last_split4_string = ""
+				for i, v in enumerate(editPoints_last_split3_list.keys()):
+					editPoints_last_split4_list.append(editPoints_last_split3_list[i])
+					editPoints_last_split4_string += str(editPoints_last_split4_list[i])
+				editPoints_until = re.findall('(?<=reaction\smetaid=")(.*?)(?=</celldesigner:editPoints>)',lines2_join, re.DOTALL)
+				editPoints_until_join = ''.join(editPoints_until)
+				editPoints_until_more = re.findall('(?<=</celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',lines2_join, re.DOTALL)
+				editPoints_last_searchable = re.findall('(?<=rectangleIndex)(.*?</celldesigner:editPoints>)(?=\n)',lines2_join, re.DOTALL)
+				editPoints_last_searchable_join_search = re.search('(?<=<celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',annotation_end_join)
+				countnedit1 = editPoints_until_join.count("\n")
+				if len(editPoints_last_total) > 1:
+					countnedit2 = editPoints_until_more[0].count("\n")
+					countnedit2_1 = countnedit1 + countnedit2 
+				if len(editPoints_last_total) > 2:
+					countnedit2 = editPoints_until_more[0].count("\n")
+					countnedit3 = editPoints_until_more[1].count("\n")
+					countnedit3_2_1 = countnedit1 + countnedit2 + countnedit3
+				if len(editPoints_last_total) == 1:
+					reference[o+countnedit1] = re.sub(editPoints_last_searchable_join_search.group(0),editPoints_last_split4_string,reference[o+countnedit1])
+				if len(editPoints_last_total) == 2:
+					reference[o+countnedit2_1] = re.sub(editPoints_last_searchable_join_search.group(0),editPoints_last_split4_string,reference[o+countnedit2_1])
+				if len(editPoints_last_total) == 3:
+					reference[o+countnedit3_2_1] = re.sub(editPoints_last_searchable_join_search.group(0),editPoints_last_split4_string,reference[o+countnedit3_2_1])
+			reactantsandproductlinks_join = ''.join((productlinks_join,reactantlinks_join))
+			if len(reactantsandproductlinks_join) > 0:	
+				countnreactantsandproductlinks = reactantsandproductlinks_join.count("\n")
+				reactantsandproductlinkssplit = reactantsandproductlinks_join.split('\n')
+				for q in range(0, countnreactantsandproductlinks):
+					reference[o+4+countnproductsandreactants+q] = ''.join((reactantsandproductlinkssplit[q],"\n"))
+			listofreactants = re.findall('(?<=<listOfReactants>\n)(.*?)(?=</listOfReactants)',lines2_join, re.DOTALL)
+			listofreactants_join = ''.join(listofreactants)
+			listofreactants_join_rename = ''.join(("<listOfReactants>\n",listofreactants_join)) 
+			listofreactants_join_rename = re.sub("Reactant","Product",listofreactants_join_rename)
+			listofproducts = re.findall('(?<=<listOfProducts>\n)(.*?)(?=</listOfProducts)',lines2_join,re.DOTALL)
+			listofproducts_join = ''.join(listofproducts)
+			listofproducts_join_rename = ''.join(("<listOfProducts>\n",listofproducts_join,"</listOfProducts>\n"))
+			listofproducts_join_rename = re.sub("Product","Reactant",listofproducts_join_rename)
+			listofreactantsandproducts_join = ''.join((listofproducts_join_rename,listofreactants_join_rename))
+			countnlistofreactantsandproducts = listofreactantsandproducts_join.count("\n")
+			listofreactantsandproductssplit = listofreactantsandproducts_join.split('\n')
+			for r in range(0, countnlistofreactantsandproducts):
+				reference[o+countnannotationsubsection_join+1+r] = ''.join((listofreactantsandproductssplit[r],"\n"))
+
+	reference2 = reference	
+	for p, item3 in enumerate(reference2):
+		file_name_reference_out.write(reference2[p])
+	file_name_reference_out.close()
+
+for pathway in pathway_list: 
+	file_name_reference = open(pathway + '.xml')
+	reference = file_name_reference.readlines()
+	file_name_reference_out = open(date + '_' + pathway + '_Flux_Anaerobic.xml','w')
+
+	for o in range(0, len(reference)):
+		reaction_name = re.search('(?<=reaction\smetaid=")(.*?)(?="\sid)',reference[o])
+		reaction_id = re.search('(?<="\sid=")(.*?)(?="\sreversible)', reference[o])
+		reaction_id_name = re.search('(?<="\sname=")(.*?)(?="\sreversible)', reference[o])
+		if (reaction_id is None) and (reaction_id_name is None):
+			continue
+		else:
+			if reaction_id_name is None:
+				if str(reaction_id.group(0))[:2] != 'R_':
+					rxn = 'R_' + str(reaction_id.group(0))
+				else:
+					rxn = str(reaction_id.group(0))
+			else:
+				if str(reaction_id.group(0))[:2] != 'R_':
+					rxn = 'R_' + str(reaction_id_name.group(0))
+				else:
+					rxn = str(reaction_id_name.group(0))
+			reference[o] = re.sub(reaction_id.group(0),str(fluxavgdict_text['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][rxn]),reference[o])
+			rxn_NA = str(rxn[2:]) + '_NA'
+			if (md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].lb[md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].idRs.index(rxn)] < 0 and md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].ub[md_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'].idRs.index(rxn)] > 0 and fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][rxn] == 0 and fluxavgdict_text['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][rxn] != rxn_NA):
+				reversible = re.search('(?<=reversible=")(.*?)(?=">)',reference[o])
+				reference[o] = re.sub(reversible.group(0),'true',reference[o])
+			linesjoin = reference[o:o+300]
+			linesjoined = ''.join(linesjoin)
+			reactionlength = re.findall('(?<=>)(.*?)(?=<reaction)',linesjoined, re.DOTALL)
+			if len(reactionlength) == 0:
+				reactionlength = re.findall('(?<=>)(.*?)(?=</reaction)',linesjoined,re.DOTALL)
+			reactionlength_join = ''.join(reactionlength[0])
+			countnreactionlength_join = reactionlength_join.count("\n")
+			lines2 = reference[o:o+countnreactionlength_join]
+			lines2_join = ''.join(lines2)
+			color = re.search('(?<=color=")(.*?)(?=")',lines2_join)
+			if (fluxavgdict_text['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][rxn] == rxn_NA):
+				lines2_join = re.sub(color.group(0),'fff0f0f0',lines2_join)
+			elif fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][rxn] != 0:
+				lines2_join = re.sub(color.group(0),'ffff0000',lines2_join)
+			else:
+				continue
+			width = re.search('(?<=celldesigner:line\swidth=")(.*?\s)(?=color)',lines2_join)
+			lines2_join = re.sub(str(width.group(0)),str(cond2fluxavgscaled[rxn])+'" ',lines2_join)
+			lines2_join_list = re.split('\n', lines2_join)
+			lines2_join_list_remake = []
+			for i in lines2_join_list:
+				string = i + '\n'
+				lines2_join_list_remake.append(string)
+			count = -1 
+			del lines2_join_list_remake[-1]
+			for i in lines2_join_list_remake:
+				count += 1
+				reference[o+count] = re.sub(reference[o+count],i,reference[o+count])
+	reference2 = reference	
+	for p, item3 in enumerate(reference2):
+		file_name_reference_out.write(reference2[p])
+	file_name_reference_out.close()
+
+pathway_list_flux_cond2 = []
+for pathway in pathway_list:
+	pathway_list_flux_cond2.append(date + '_' + pathway + '_Flux_Anaerobic')
+
+for pathway in pathway_list_flux_cond2:
+	file_name_reference = open(pathway + '.xml')
+	reference = file_name_reference.readlines()
+	file_name_reference_out = open(pathway + '_edit.xml','w')
+
+	for o in range(0, len(reference)):
+		flip = re.search('__', reference[o])
+		if flip is None:
+			continue
+		else:
+			linesjoin = reference[o:o+300]
+			linesjoined = ''.join(linesjoin)
+			reactionlength = re.findall('(?<=>)(.*?)(?=</reaction)',linesjoined, re.DOTALL)
+			reactionlength_join = ''.join(reactionlength[0])
+			countnreactionlength_join = reactionlength_join.count("\n")
+			lines2 = reference[o:o+countnreactionlength_join]
+			lines2_join = ''.join(lines2)
+			rectangleindex = re.search('(?<=rectangleIndex=")(.*?)(?=")',lines2_join)
+			annotationsubsection = re.findall('(?<=reversible="false">\n)(.*?)(?=<listOfReactants>)',lines2_join, re.DOTALL)
+			annotationsubsection_join = ''.join(annotationsubsection)
+			countnannotationsubsection_join = annotationsubsection_join.count("\n")
+			reactantssubsection = re.findall('(?<=</celldesigner:reactionType>\n)(.*?)(?=<celldesigner:baseProducts>)',lines2_join, re.DOTALL)
+			reactantssubsection_join = ''.join(reactantssubsection)
+			reactantssubsection_join = re.sub("baseReactant","baseProduct",reactantssubsection_join)
+			productssubsection = re.findall('(?<=</celldesigner:baseReactants>\n)(.*?</celldesigner:baseProducts>\n)(?=<)',lines2_join, re.DOTALL)
+			productssubsection_join = ''.join(productssubsection)
+			productssubsection_join = re.sub("baseProduct","baseReactant",productssubsection_join)
+			productsandreactants_join = ''.join((productssubsection_join,reactantssubsection_join))
+			countnproductsandreactants = productsandreactants_join.count("\n")
+			productsandreactantssplit = productsandreactants_join.split('\n')
+			for p in range(0, countnproductsandreactants-1):
+				reference[o+4+p] = ''.join((productsandreactantssplit[p],"\n"))
+			reactantlinks = re.findall('(?<=<celldesigner:listOfReactantLinks>\n)(.*?)(?=</celldesigner:listOfReactantLinks>)',lines2_join, re.DOTALL)
+			reactantlinks_join = ''.join(reactantlinks)
+			if len(reactantlinks_join) > 0:
+				reactantlinks_join = ''.join(("<celldesigner:listOfProductLinks>\n",reactantlinks_join,"</celldesigner:listOfProductLinks>\n"))
+			reactantlinks_join = re.sub("reactant","product",reactantlinks_join)
+			productlinks = re.findall('(?<=<celldesigner:listOfProductLinks>\n)(.*?)(?=</celldesigner:listOfProductLinks>)',lines2_join, re.DOTALL)
+			productlinks_join = ''.join(productlinks)
+			if len(productlinks_join) > 0:
+				productlinks_join = ''.join(("<celldesigner:listOfReactantLinks>\n",productlinks_join,"</celldesigner:listOfReactantLinks>\n"))
+			productlinks_join = re.sub("product","reactant",productlinks_join)
+			annotation_end = re.findall('(?<=rectangleIndex)(.*?)(?=</annotation>)',lines2_join,re.DOTALL)
+			annotation_end_join = ''.join(annotation_end)			
+			editPoints_reactants = re.findall('(?<=<celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',reactantlinks_join, re.DOTALL)					
+			editPoints_reactants_search = re.search('(?<=<celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',reactantlinks_join)
+			if len(editPoints_reactants) > 0:
+				editPoints_reactants_split = {}
+				editPoints_reactants_split2 = {}
+				editPoints_reactants_index = editPoints_reactants[-1]
+				editPoints_reactants_split = re.split('\s|,',editPoints_reactants_index)
+				for r in range(0, len(editPoints_reactants_split[1::2])):
+					if r == len(editPoints_reactants_split[1::2]) - 1:
+						editPoints_reactants_split2[2+r*4-1] = -float(editPoints_reactants_split[1+r*2])
+						editPoints_reactants_split2[3+r*4-1] = ' '
+					elif r == 0:
+						editPoints_reactants_split2[2] = -float(editPoints_reactants_split[1])
+					else:
+						editPoints_reactants_split2[2+r*4-1] = -float(editPoints_reactants_split[1+r*2])
+						editPoints_reactants_split2[3+r*4-1] = ' ' 
+				for s in range(0, len(editPoints_reactants_split[::2])):
+					if s == 0:
+						editPoints_reactants_split2[0] = 1-float(editPoints_reactants_split[0])
+						editPoints_reactants_split2[1] = ','
+						editPoints_reactants_split2[2] = -float(editPoints_reactants_split[1])
+					else:
+						editPoints_reactants_split2[s*4-1] = 1-float(editPoints_reactants_split[s*2])
+						editPoints_reactants_split2[1+s*4-1] = ','
+				editPoints_reactants_split2_list = []
+				for i, v in enumerate(editPoints_reactants_split2.keys()):
+					editPoints_reactants_split2_list.append(editPoints_reactants_split2[i])
+				editPoints_reactants_split3_list = {}
+				for r in range(0, len(editPoints_reactants_split2_list[1::2])):
+					if len(editPoints_reactants_split2_list) == 3:
+						rounded_r = 0
+					if len(editPoints_reactants_split2_list) > 3:
+						rounded_r = int((len(editPoints_reactants_split2_list)-3)/4)
+					if rounded_r == 0: 
+						editPoints_reactants_split3_list[0] = editPoints_reactants_split2_list[0]
+						editPoints_reactants_split3_list[1] = editPoints_reactants_split2_list[1]
+						editPoints_reactants_split3_list[2] = editPoints_reactants_split2_list[2]
+					if rounded_r > 0:
+						editPoints_reactants_split3_list[0] = editPoints_reactants_split2_list[3+4*(rounded_r-1)]
+						editPoints_reactants_split3_list[1] = editPoints_reactants_split2_list[4+4*(rounded_r-1)]
+						editPoints_reactants_split3_list[2] = editPoints_reactants_split2_list[5+4*(rounded_r-1)]
+						editPoints_reactants_split3_list[3] = editPoints_reactants_split2_list[6+4*(rounded_r-1)]
+						for i in range(0,rounded_r-1):
+							editPoints_reactants_split3_list[4+i*4] = editPoints_reactants_split2_list[3+4*(rounded_r-1-i)]
+							editPoints_reactants_split3_list[5+i*4] = editPoints_reactants_split2_list[4+4*(rounded_r-1-i)]
+							editPoints_reactants_split3_list[6+i*4] = editPoints_reactants_split2_list[5+4*(rounded_r-1-i)]
+							editPoints_reactants_split3_list[7+i*4] = editPoints_reactants_split2_list[6+4*(rounded_r-1-i)]	
+						editPoints_reactants_split3_list[4+(rounded_r-1)*4] = editPoints_reactants_split2_list[0]
+						editPoints_reactants_split3_list[5+(rounded_r-1)*4] = editPoints_reactants_split2_list[1]
+						editPoints_reactants_split3_list[6+(rounded_r-1)*4] = editPoints_reactants_split2_list[2]
+				editPoints_reactants_split4_list = []
+				editPoints_reactants_split4_string = ""
+				for i, v in enumerate(editPoints_reactants_split3_list.keys()):
+					editPoints_reactants_split4_list.append(editPoints_reactants_split3_list[i])
+					editPoints_reactants_split4_string += str(editPoints_reactants_split4_list[i])	
+				reactantlinks_join = re.sub(editPoints_reactants_search.group(0),editPoints_reactants_split4_string,reactantlinks_join)	
+			editPoints_products = re.findall('(?<=<celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',productlinks_join, re.DOTALL)
+			editPoints_products_search = re.search('(?<=<celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',productlinks_join)
+			if len(editPoints_products) > 0:
+				editPoints_products_split = {}
+				editPoints_products_split2 = {}
+				editPoints_products_index = editPoints_products[-1]
+				editPoints_products_split = re.split('\s|,',editPoints_products_index)
+				for r in range(0, len(editPoints_products_split[1::2])):
+					if r == len(editPoints_products_split[1::2]) - 1:
+						editPoints_products_split2[2+r*4-1] = -float(editPoints_products_split[1+r*2])
+						editPoints_products_split2[3+r*4-1] = ' '
+					elif r == 0:
+						editPoints_products_split2[2] = -float(editPoints_products_split[1])
+					else:
+						editPoints_products_split2[2+r*4-1] = -float(editPoints_products_split[1+r*2])
+						editPoints_products_split2[3+r*4-1] = ' ' 
+				for s in range(0, len(editPoints_products_split[::2])):
+					if s == 0:
+						editPoints_products_split2[0] = 1-float(editPoints_products_split[0])
+						editPoints_products_split2[1] = ','
+						editPoints_products_split2[2] = -float(editPoints_products_split[1])
+					else:
+						editPoints_products_split2[s*4-1] = 1-float(editPoints_products_split[s*2])
+						editPoints_products_split2[1+s*4-1] = ','
+				editPoints_products_split2_list = []
+				for i, v in enumerate(editPoints_products_split2.keys()):
+					editPoints_products_split2_list.append(editPoints_products_split2[i])
+				editPoints_products_split3_list = {}
+				for r in range(0, len(editPoints_products_split2_list[1::2])):
+					if len(editPoints_products_split2_list) == 3:
+						rounded_r = 0
+					if len(editPoints_products_split2_list) > 3:
+						rounded_r = int((len(editPoints_products_split2_list)-3)/4)
+					if rounded_r == 0: 
+						editPoints_products_split3_list[0] = editPoints_products_split2_list[0]
+						editPoints_products_split3_list[1] = editPoints_products_split2_list[1]
+						editPoints_products_split3_list[2] = editPoints_products_split2_list[2]
+					if rounded_r > 0:
+						editPoints_products_split3_list[0] = editPoints_products_split2_list[3+4*(rounded_r-1)]
+						editPoints_products_split3_list[1] = editPoints_products_split2_list[4+4*(rounded_r-1)]
+						editPoints_products_split3_list[2] = editPoints_products_split2_list[5+4*(rounded_r-1)]
+						editPoints_products_split3_list[3] = editPoints_products_split2_list[6+4*(rounded_r-1)]
+						for i in range(0,rounded_r-1):
+							editPoints_products_split3_list[4+i*4] = editPoints_products_split2_list[3+4*(rounded_r-1-i)]
+							editPoints_products_split3_list[5+i*4] = editPoints_products_split2_list[4+4*(rounded_r-1-i)]
+							editPoints_products_split3_list[6+i*4] = editPoints_products_split2_list[5+4*(rounded_r-1-i)]
+							editPoints_products_split3_list[7+i*4] = editPoints_products_split2_list[6+4*(rounded_r-1-i)]	
+						editPoints_products_split3_list[4+(rounded_r-1)*4] = editPoints_products_split2_list[0]
+						editPoints_products_split3_list[5+(rounded_r-1)*4] = editPoints_products_split2_list[1]
+						editPoints_products_split3_list[6+(rounded_r-1)*4] = editPoints_products_split2_list[2]
+				editPoints_products_split4_list = []
+				editPoints_products_split4_string = ""
+				for i, v in enumerate(editPoints_products_split3_list.keys()):
+					editPoints_products_split4_list.append(editPoints_products_split3_list[i])
+					editPoints_products_split4_string += str(editPoints_products_split4_list[i])
+				productlinks_join = re.sub(editPoints_products_search.group(0),editPoints_products_split4_string,productlinks_join)
+			editPoints_last = re.findall('(?<=<celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',annotation_end_join, re.DOTALL)
+			editPoints_last_total = re.findall('(?<=<celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',lines2_join, re.DOTALL)
+			if len(editPoints_last) > 0:
+				editPoints_last_split = {}
+				editPoints_last_split2 = {}
+				editPoints_last_index = editPoints_last[-1]
+				editPoints_last_split = re.split('\s|,',editPoints_last_index)
+				for r in range(0, len(editPoints_last_split[1::2])):
+					if r == len(editPoints_last_split[1::2]) - 1:
+						editPoints_last_split2[2+r*4-1] = -float(editPoints_last_split[1+r*2])
+						editPoints_last_split2[3+r*4-1] = ' '
+					elif r == 0:
+						editPoints_last_split2[2] = -float(editPoints_last_split[1])
+					else:
+						editPoints_last_split2[2+r*4-1] = -float(editPoints_last_split[1+r*2])
+						editPoints_last_split2[3+r*4-1] = ' '
+				for s in range(0, len(editPoints_last_split[::2])):
+					if s == 0:
+						editPoints_last_split2[0] = 1-float(editPoints_last_split[0])
+						editPoints_last_split2[1] = ','
+						editPoints_last_split2[2] = -float(editPoints_last_split[1])
+					else:
+						editPoints_last_split2[s*4-1] = 1-float(editPoints_last_split[s*2])
+						editPoints_last_split2[1+s*4-1] = ','
+				editPoints_last_split2_list = []
+				for i, v in enumerate(editPoints_last_split2.keys()):
+					editPoints_last_split2_list.append(editPoints_last_split2[i])
+				editPoints_last_split3_list = {}
+				for r in range(0, len(editPoints_last_split2_list[1::2])):
+						if len(editPoints_last_split2_list) == 3:
+							rounded_r = 0
+						if len(editPoints_last_split2_list) > 3:
+							rounded_r = int((len(editPoints_last_split2_list)-3)/4)
+						if rounded_r == 0: 
+							editPoints_last_split3_list[0] = editPoints_last_split2_list[0]
+							editPoints_last_split3_list[1] = editPoints_last_split2_list[1]
+							editPoints_last_split3_list[2] = editPoints_last_split2_list[2]
+						if rounded_r > 0:
+							editPoints_last_split3_list[0] = editPoints_last_split2_list[3+4*(rounded_r-1)]
+							editPoints_last_split3_list[1] = editPoints_last_split2_list[4+4*(rounded_r-1)]
+							editPoints_last_split3_list[2] = editPoints_last_split2_list[5+4*(rounded_r-1)]
+							editPoints_last_split3_list[3] = editPoints_last_split2_list[6+4*(rounded_r-1)]
+							for i in range(0,rounded_r-1):
+								editPoints_last_split3_list[4+i*4] = editPoints_last_split2_list[3+4*(rounded_r-1-i)]
+								editPoints_last_split3_list[5+i*4] = editPoints_last_split2_list[4+4*(rounded_r-1-i)]
+								editPoints_last_split3_list[6+i*4] = editPoints_last_split2_list[5+4*(rounded_r-1-i)]
+								editPoints_last_split3_list[7+i*4] = editPoints_last_split2_list[6+4*(rounded_r-1-i)]	
+							editPoints_last_split3_list[4+(rounded_r-1)*4] = editPoints_last_split2_list[0]
+							editPoints_last_split3_list[5+(rounded_r-1)*4] = editPoints_last_split2_list[1]
+							editPoints_last_split3_list[6+(rounded_r-1)*4] = editPoints_last_split2_list[2]
+				editPoints_last_split4_list = []
+				editPoints_last_split4_string = ""
+				for i, v in enumerate(editPoints_last_split3_list.keys()):
+					editPoints_last_split4_list.append(editPoints_last_split3_list[i])
+					editPoints_last_split4_string += str(editPoints_last_split4_list[i])
+				editPoints_until = re.findall('(?<=reaction\smetaid=")(.*?)(?=</celldesigner:editPoints>)',lines2_join, re.DOTALL)
+				editPoints_until_join = ''.join(editPoints_until)
+				editPoints_until_more = re.findall('(?<=</celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',lines2_join, re.DOTALL)
+				editPoints_last_searchable = re.findall('(?<=rectangleIndex)(.*?</celldesigner:editPoints>)(?=\n)',lines2_join, re.DOTALL)
+				editPoints_last_searchable_join_search = re.search('(?<=<celldesigner:editPoints>)(.*?)(?=</celldesigner:editPoints>)',annotation_end_join)
+				countnedit1 = editPoints_until_join.count("\n")
+				if len(editPoints_last_total) > 1:
+					countnedit2 = editPoints_until_more[0].count("\n")
+					countnedit2_1 = countnedit1 + countnedit2 
+				if len(editPoints_last_total) > 2:
+					countnedit2 = editPoints_until_more[0].count("\n")
+					countnedit3 = editPoints_until_more[1].count("\n")
+					countnedit3_2_1 = countnedit1 + countnedit2 + countnedit3
+				if len(editPoints_last_total) == 1:
+					reference[o+countnedit1] = re.sub(editPoints_last_searchable_join_search.group(0),editPoints_last_split4_string,reference[o+countnedit1])
+				if len(editPoints_last_total) == 2:
+					reference[o+countnedit2_1] = re.sub(editPoints_last_searchable_join_search.group(0),editPoints_last_split4_string,reference[o+countnedit2_1])
+				if len(editPoints_last_total) == 3:
+					reference[o+countnedit3_2_1] = re.sub(editPoints_last_searchable_join_search.group(0),editPoints_last_split4_string,reference[o+countnedit3_2_1])
+			reactantsandproductlinks_join = ''.join((productlinks_join,reactantlinks_join))
+			if len(reactantsandproductlinks_join) > 0:	
+				countnreactantsandproductlinks = reactantsandproductlinks_join.count("\n")
+				reactantsandproductlinkssplit = reactantsandproductlinks_join.split('\n')
+				for q in range(0, countnreactantsandproductlinks):
+					reference[o+4+countnproductsandreactants+q] = ''.join((reactantsandproductlinkssplit[q],"\n"))
+			listofreactants = re.findall('(?<=<listOfReactants>\n)(.*?)(?=</listOfReactants)',lines2_join, re.DOTALL)
+			listofreactants_join = ''.join(listofreactants)
+			listofreactants_join_rename = ''.join(("<listOfReactants>\n",listofreactants_join)) 
+			listofreactants_join_rename = re.sub("Reactant","Product",listofreactants_join_rename)
+			listofproducts = re.findall('(?<=<listOfProducts>\n)(.*?)(?=</listOfProducts)',lines2_join,re.DOTALL)
+			listofproducts_join = ''.join(listofproducts)
+			listofproducts_join_rename = ''.join(("<listOfProducts>\n",listofproducts_join,"</listOfProducts>\n"))
+			listofproducts_join_rename = re.sub("Product","Reactant",listofproducts_join_rename)
+			listofreactantsandproducts_join = ''.join((listofproducts_join_rename,listofreactants_join_rename))
+			countnlistofreactantsandproducts = listofreactantsandproducts_join.count("\n")
+			listofreactantsandproductssplit = listofreactantsandproducts_join.split('\n')
+			for r in range(0, countnlistofreactantsandproducts):
+				reference[o+countnannotationsubsection_join+1+r] = ''.join((listofreactantsandproductssplit[r],"\n"))
+
+	reference2 = reference	
+	for p, item3 in enumerate(reference2):
+		file_name_reference_out.write(reference2[p])
+	file_name_reference_out.close()
