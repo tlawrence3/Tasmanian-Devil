@@ -3783,7 +3783,7 @@ ax0.tick_params(labelsize=9)
 #ax[0].xticks(index + 2*bar_width, ('C_orig', 'C_orig_eps', 'C_mod', 'C_mod_eps', 'C', 'C_Ex', 'C_g', 'C_g_Ex', 'C_lb', 'C_lb_EX', 'C_lb_g', 'C_lb_g_EX', 'C_m_n_c', 'C_m_n_c_EX', 'C_m_n_c_g', 'C_m_n_c_g_EX', 'C_m_n_c_lb', 'C_m_n_c_lb_EX', 'C_m_n_c_lb_g', 'C_m_n_c_lb_g_EX'), rotation=90)
 a = ax0.legend(loc="lower right",fontsize=8)
 a.get_frame().set_alpha(1)
-a.set_title('Condition',prop={'weight':'bold','size':'9'})
+a.set_title('Conditions',prop={'weight':'bold','size':'9'})
 #plt.tight_layout()
 b = ax0.axvspan(-0.25,1.75,alpha=0.1,color='blue')
 c = ax0.axvspan(1.75,3.75,alpha=0.1,color='orange')
@@ -3812,7 +3812,7 @@ ax1.tick_params(labelsize=9)
 #plt.xticks(index + 2*bar_width, ('C_orig', 'C_orig_eps', 'C_mod', 'C_mod_eps', 'C', 'C_Ex', 'C_g', 'C_g_Ex', 'C_lb', 'C_lb_EX', 'C_lb_g', 'C_lb_g_EX', 'C_m_n_c', 'C_m_n_c_EX', 'C_m_n_c_g', 'C_m_n_c_g_EX', 'C_m_n_c_lb', 'C_m_n_c_lb_EX', 'C_m_n_c_lb_g', 'C_m_n_c_lb_g_EX'), rotation=90) 
 a = ax1.legend(loc="upper right",fontsize=8)
 a.get_frame().set_alpha(1)
-a.set_title('Condition',prop={'weight':'bold','size':'9'})
+a.set_title('Conditions',prop={'weight':'bold','size':'9'})
 #plt.tight_layout()
 b = ax1.axvspan(-0.25,1.75,alpha=0.1,color='blue')
 c = ax1.axvspan(1.75,3.75,alpha=0.1,color='orange')
@@ -3893,7 +3893,7 @@ ax2.set_xticks(index + 2*bar_width)
 ax2.set_xticklabels(('C_orig', 'C_orig_eps', 'C_mod', 'C_mod_eps', 'C', 'C_Ex', 'C_g', 'C_g_Ex', 'C_lb', 'C_lb_EX', 'C_lb_g', 'C_lb_g_EX', 'C_m_n_c', 'C_m_n_c_EX', 'C_m_n_c_g', 'C_m_n_c_g_EX', 'C_m_n_c_lb', 'C_m_n_c_lb_EX', 'C_m_n_c_lb_g', 'C_m_n_c_lb_g_EX'), rotation=90)
 a = ax2.legend([rects1,rects2,rects3,rects4,rects5],['Ethanol','Glucose','Aerobic','Anaerobic','Negative Control'],loc="upper right",fontsize=8)
 a.get_frame().set_alpha(1)
-a.set_title('Condition',prop={'weight':'bold','size':'9'})
+a.set_title('Conditions',prop={'weight':'bold','size':'9'})
 b = ax2.axvspan(-0.25,1.75,alpha=0.1,color='blue')
 c = ax2.axvspan(1.75,3.75,alpha=0.1,color='orange')
 d = ax2.axvspan(3.75,19.75,alpha=0.1,color='red')
@@ -4807,7 +4807,6 @@ aov_table_m_n_c_Aerobic_vs_C_eps.ix[0,3]
 
 
 
-
 Aerobic_average_eps = np.mean(rxn_Aerobic_tot_difference_per_dataset_S2_eps['151006_Aerobic_0.25'])
 
 Aerobic_average_m_n_c = np.mean(rxn_Aerobic_tot_difference_per['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_m_n_c']+rxn_Aerobic_tot_difference_per['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_m_n_c_EXrxns_EXtrrxns_Othertrrxns']+rxn_Aerobic_tot_difference_per['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_g_m_n_c']+rxn_Aerobic_tot_difference_per['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_g_m_n_c_EXrxns_EXtrrxns_Othertrrxns']+rxn_Aerobic_tot_difference_per['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_m_n_c']+rxn_Aerobic_tot_difference_per['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_m_n_c_EXrxns_EXtrrxns_Othertrrxns']+rxn_Aerobic_tot_difference_per['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c']+rxn_Aerobic_tot_difference_per['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c_EXrxns_EXtrrxns_Othertrrxns'])
@@ -4861,7 +4860,6 @@ Anaerobic_negative_control_std_m_n_c = np.std(rxn_Anaerobic_tot_difference_per['
 Anaerobic_negative_control_std_all = np.std(rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_EXrxns_EXtrrxns_Othertrrxns']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_g']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_g_EXrxns_EXtrrxns_Othertrrxns']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_EXrxns_EXtrrxns_Othertrrxns']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_EXrxns_EXtrrxns_Othertrrxns']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_m_n_c']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_m_n_c_EXrxns_EXtrrxns_Othertrrxns']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_g_m_n_c']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_g_m_n_c_EXrxns_EXtrrxns_Othertrrxns']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_m_n_c']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_m_n_c_EXrxns_EXtrrxns_Othertrrxns']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c']+rxn_Anaerobic_tot_difference_per['151015_negative_control_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c_EXrxns_EXtrrxns_Othertrrxns'])
 
 
-
 n_groups = 3 
 index = np.arange(n_groups)
 
@@ -4875,15 +4873,15 @@ Aerobic_negative_control_std_individual = [Aerobic_negative_control_std_eps, Aer
 Anaerobic_std_individual = [Anaerobic_std_eps, Anaerobic_std_m_n_c, Anaerobic_std_all]
 Anaerobic_negative_control_std_individual = [Anaerobic_negative_control_std_eps, Anaerobic_negative_control_std_m_n_c, Anaerobic_negative_control_std_all]
 
-fig, (ax0, ax1) = plt.subplots(2)
+fig, (ax0, ax1, ax2) = plt.subplots(3)
 
 plt.close()
 bar_width = 0.17
 error_bar_length = np.repeat(0,len(Aerobic_average_individual))
-rects1 = ax0.bar(index, Aerobic_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_std_individual], capsize = 3, color = 'b', label = 'Aerobic')
-rects2 = ax0.bar(index + bar_width, Aerobic_negative_control_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_negative_control_std_individual], capsize = 3, color = 'r', label = 'Aerobic Neg') 
-rects3 = ax0.bar(index + bar_width + bar_width, Anaerobic_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Anaerobic_std_individual], capsize = 3, color = 'g', label = 'Anaerobic') 
-rects4  = ax0.bar(index + bar_width + bar_width + bar_width, Anaerobic_negative_control_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Anaerobic_negative_control_std_individual], capsize = 3, color = 'm', label = 'Anaerobic Neg')
+rects1 = ax0.bar(index, Aerobic_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_std_individual], capsize = 3, color = 'red', label = 'Aerobic')
+rects2 = ax0.bar(index + bar_width, Aerobic_negative_control_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_negative_control_std_individual], capsize = 3, color = 'lightgrey', label = 'Aerobic Neg') 
+rects3 = ax0.bar(index + bar_width + bar_width, Anaerobic_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Anaerobic_std_individual], capsize = 3, color = 'purple', label = 'Anaerobic') 
+rects4  = ax0.bar(index + bar_width + bar_width + bar_width, Anaerobic_negative_control_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Anaerobic_negative_control_std_individual], capsize = 3, color = 'dimgray', label = 'Anaerobic Neg')
 
 props = {'connectionstyle':'bar','arrowstyle':'-','lw':2}
 ax0.annotate('***', xy=(0+bar_width/4-0.01,23+max(Aerobic_average_individual[0]+Aerobic_std_individual[0],Aerobic_negative_control_average_individual[0]+Aerobic_negative_control_std_individual[0])),fontsize=9)
@@ -4916,7 +4914,7 @@ ax0.set_xticks(index + 0.25)
 ax0.set_xticklabels(('C_eps', 'C_m_n_c Cohort', 'C_all Cohort'), rotation=0)
 a = ax0.legend(loc="upper right",fontsize=8)
 a.get_frame().set_alpha(1)
-a.set_title('Condition',prop={'weight':'bold','size':'9'})
+a.set_title('Conditions',prop={'weight':'bold','size':'9'})
 b = ax0.axvspan(-0.25,0.75,alpha=0.1,color='orange')
 c = ax0.axvspan(0.75,2.75,alpha=0.1,color='red')
 d = ax0.legend([b,c],['EXAMO with Model\nby EXAMO-ARC.V.1','EXAMO-ARC.V.1'],loc='upper left',fontsize=8)
@@ -4961,16 +4959,15 @@ props = {'connectionstyle':'bar','arrowstyle':'-', 'lw':2}
 ax1.annotate('***', xy=(0+0.075,41.5+max(Aerobic_Anaerobic_average_comparing_software_eps[0]+Aerobic_Anaerobic_std_comparing_software_eps[0],Aerobic_Anaerobic_average_comparing_software_m_n_c[0]+Aerobic_Anaerobic_std_comparing_software_m_n_c[0])),fontsize=9)
 ax1.annotate('', xy=(0,10+max(Aerobic_Anaerobic_average_comparing_software_eps[0]+Aerobic_Anaerobic_std_comparing_software_eps[0],Aerobic_Anaerobic_average_comparing_software_m_n_c[0]+Aerobic_Anaerobic_std_comparing_software_m_n_c[0])), xytext=(0+bar_width,10+max(Aerobic_Anaerobic_average_comparing_software_eps[0]+Aerobic_Anaerobic_std_comparing_software_eps[0],Aerobic_Anaerobic_average_comparing_software_m_n_c[0]+Aerobic_Anaerobic_std_comparing_software_m_n_c[0])), arrowprops=props)
 
-ax1.annotate('***', xy=(0+bar_width-0.025,80+max(Aerobic_Anaerobic_average_comparing_software_eps[0]+Aerobic_Anaerobic_std_comparing_software_eps[0],Aerobic_Anaerobic_average_comparing_software_all[0]+Aerobic_Anaerobic_std_comparing_software_all[0])),fontsize=9)
-ax1.annotate('', xy=(0,15+max(Aerobic_Anaerobic_average_comparing_software_eps[0]+Aerobic_Anaerobic_std_comparing_software_eps[0],Aerobic_Anaerobic_average_comparing_software_all[0]+Aerobic_Anaerobic_std_comparing_software_all[0])), xytext=(0+bar_width+bar_width,15+max(Aerobic_Anaerobic_average_comparing_software_eps[0]+Aerobic_Anaerobic_std_comparing_software_eps[0],Aerobic_Anaerobic_average_comparing_software_all[0]+Aerobic_Anaerobic_std_comparing_software_all[0])), arrowprops=props)
+ax1.annotate('***', xy=(0+bar_width-0.025,73.5+max(Aerobic_Anaerobic_average_comparing_software_eps[0]+Aerobic_Anaerobic_std_comparing_software_eps[0],Aerobic_Anaerobic_average_comparing_software_all[0]+Aerobic_Anaerobic_std_comparing_software_all[0])),fontsize=9)
+ax1.annotate('', xy=(0,10+max(Aerobic_Anaerobic_average_comparing_software_eps[0]+Aerobic_Anaerobic_std_comparing_software_eps[0],Aerobic_Anaerobic_average_comparing_software_all[0]+Aerobic_Anaerobic_std_comparing_software_all[0])), xytext=(0+bar_width+bar_width,10+max(Aerobic_Anaerobic_average_comparing_software_eps[0]+Aerobic_Anaerobic_std_comparing_software_eps[0],Aerobic_Anaerobic_average_comparing_software_all[0]+Aerobic_Anaerobic_std_comparing_software_all[0])), arrowprops=props)
 
 ax1.annotate('***', xy=(1+0.075,41.5+max(Aerobic_Anaerobic_average_comparing_software_eps[1]+Aerobic_Anaerobic_std_comparing_software_eps[1],Aerobic_Anaerobic_average_comparing_software_m_n_c[1]+Aerobic_Anaerobic_std_comparing_software_m_n_c[1])),fontsize=9)
 ax1.annotate('', xy=(1,10+max(Aerobic_Anaerobic_average_comparing_software_eps[1]+Aerobic_Anaerobic_std_comparing_software_eps[1],Aerobic_Anaerobic_average_comparing_software_m_n_c[1]+Aerobic_Anaerobic_std_comparing_software_m_n_c[1])), xytext=(1+bar_width,10+max(Aerobic_Anaerobic_average_comparing_software_eps[1]+Aerobic_Anaerobic_std_comparing_software_eps[1],Aerobic_Anaerobic_average_comparing_software_m_n_c[1]+Aerobic_Anaerobic_std_comparing_software_m_n_c[1])), arrowprops=props)
 
-ax1.annotate('***', xy=(1+bar_width-0.025,80+max(Aerobic_Anaerobic_average_comparing_software_eps[1]+Aerobic_Anaerobic_std_comparing_software_eps[1],Aerobic_Anaerobic_average_comparing_software_all[1]+Aerobic_Anaerobic_std_comparing_software_all[1])),fontsize=9)
-ax1.annotate('', xy=(1,15+max(Aerobic_Anaerobic_average_comparing_software_eps[1]+Aerobic_Anaerobic_std_comparing_software_eps[1],Aerobic_Anaerobic_average_comparing_software_all[1]+Aerobic_Anaerobic_std_comparing_software_all[1])), xytext=(1+bar_width+bar_width,15+max(Aerobic_Anaerobic_average_comparing_software_eps[1]+Aerobic_Anaerobic_std_comparing_software_eps[1],Aerobic_Anaerobic_average_comparing_software_all[1]+Aerobic_Anaerobic_std_comparing_software_all[1])), arrowprops=props)
+ax1.annotate('***', xy=(1+bar_width-0.025,73.5+max(Aerobic_Anaerobic_average_comparing_software_eps[1]+Aerobic_Anaerobic_std_comparing_software_eps[1],Aerobic_Anaerobic_average_comparing_software_all[1]+Aerobic_Anaerobic_std_comparing_software_all[1])),fontsize=9)
+ax1.annotate('', xy=(1,10+max(Aerobic_Anaerobic_average_comparing_software_eps[1]+Aerobic_Anaerobic_std_comparing_software_eps[1],Aerobic_Anaerobic_average_comparing_software_all[1]+Aerobic_Anaerobic_std_comparing_software_all[1])), xytext=(1+bar_width+bar_width,10+max(Aerobic_Anaerobic_average_comparing_software_eps[1]+Aerobic_Anaerobic_std_comparing_software_eps[1],Aerobic_Anaerobic_average_comparing_software_all[1]+Aerobic_Anaerobic_std_comparing_software_all[1])), arrowprops=props)
 
-ax1.set_xlabel('Conditions',fontweight='bold',fontsize=10) 
 ax1.set_ylabel('Total Absolute Flux\nDifference (mmol/h/gDW)',fontweight='bold',fontsize=10) 
 ax1.tick_params(labelsize=9)
 #plt.title('Comparison of Flux Predictions',fontweight='bold') 
@@ -4992,15 +4989,86 @@ ax1.add_artist(e)
 ax1.set_ylim(0,355)
 
 
+#Create the pahtway flux map for flux per reaction for the condition with the lowest combined absolute flux difference
+#'GlycolysisGluconeogenesis', 'Pentose Phosphate Pathway', 'Citric Acid Cycle', 'Oxidative Phosphorylation', 'Anaplerotic Reactions'/'Anaplerotic reactions',  'Transport Glycolysis_Aerobic = []
+Glycolysis_Aerobic = []
+Pentose_Phosphate_Pathway_Aerobic = []
+Citric_Acid_Cycle_Aerobic = []
+Oxidative_Phosphorylation_Aerobic = []
+Anaplerotic_Reactions_Aerobic = []
+Extracellular_Efflux_Aerobic = []
+Glycolysis_Anaerobic = []
+Pentose_Phosphate_Pathway_Anaerobic = []
+Citric_Acid_Cycle_Anaerobic = []
+Oxidative_Phosphorylation_Anaerobic = []
+Anaplerotic_Reactions_Anaerobic = []
+Extracellular_Efflux_Anaerobic = []
+
+for t in pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c']['rxns']:
+    if '_NA' not in fluxavgdict_text['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c']:
+        if pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c']['rxns'][t]['pathway'] == 'GlycolysisGluconeogenesis':
+            Glycolysis_Aerobic.append(abs(fluxavgdict['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'][t]))
+        if pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c']['rxns'][t]['pathway'] == 'Pentose Phosphate Pathway':
+            Pentose_Phosphate_Pathway_Aerobic.append(abs(fluxavgdict['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'][t]))
+        if pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c']['rxns'][t]['pathway'] == 'Citric Acid Cycle':
+            Citric_Acid_Cycle_Aerobic.append(abs(fluxavgdict['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'][t]))
+        if pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c']['rxns'][t]['pathway'] == 'Oxidative Phosphorylation':
+            Oxidative_Phosphorylation_Aerobic.append(abs(fluxavgdict['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'][t]))
+        if pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c']['rxns'][t]['pathway'] == 'Anaplerotic Reactions' or pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c']['rxns'][t]['pathway'] == 'Anaplerotic reactions':
+            Anaplerotic_Reactions_Aerobic.append(abs(fluxavgdict['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'][t]))
+        if pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c']['rxns'][t]['pathway'] == 'Transport Extracellular':
+            if fluxavgdict['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'][t] > 0:
+                Extracellular_Efflux_Aerobic.append(abs(fluxavgdict['151006_Aerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Aerobic_g_m_n_c'][t]))            
+for t in pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c']['rxns']:
+    if '_NA' not in fluxavgdict_text['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c']:
+        if pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c']['rxns'][t]['pathway'] == 'GlycolysisGluconeogenesis':
+            Glycolysis_Anaerobic.append(abs(fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][t]))
+        if pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c']['rxns'][t]['pathway'] == 'Pentose Phosphate Pathway':
+            Pentose_Phosphate_Pathway_Anaerobic.append(abs(fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][t]))
+        if pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c']['rxns'][t]['pathway'] == 'Citric Acid Cycle':
+            Citric_Acid_Cycle_Anaerobic.append(abs(fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][t]))
+        if pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c']['rxns'][t]['pathway'] == 'Oxidative Phosphorylation':
+            Oxidative_Phosphorylation_Anaerobic.append(abs(fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][t]))
+        if pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c']['rxns'][t]['pathway'] == 'Anaplerotic Reactions' or pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c']['rxns'][t]['pathway'] == 'Anaplerotic reactions':
+            Anaplerotic_Reactions_Anaerobic.append(abs(fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][t]))
+        if pickle_models['iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c']['rxns'][t]['pathway'] == 'Transport Extracellular':
+            if fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][t] > 0:
+                Extracellular_Efflux_Anaerobic.append(abs(fluxavgdict['151006_Anaerobic_0.25_iMM904_NADcorrected_1127_FTHFLm_Rintala_Anaerobic_g_m_n_c'][t]))          
+
+
+Aerobic_average = [np.mean(Glycolysis_Aerobic),np.mean(Pentose_Phosphate_Pathway_Aerobic),np.mean(Citric_Acid_Cycle_Aerobic),np.mean(Oxidative_Phosphorylation_Aerobic),np.mean(Anaplerotic_Reactions_Aerobic),np.mean(Extracellular_Efflux_Aerobic)]
+Anaerobic_average = [np.mean(Glycolysis_Anaerobic),np.mean(Pentose_Phosphate_Pathway_Anaerobic),np.mean(Citric_Acid_Cycle_Anaerobic),np.mean(Oxidative_Phosphorylation_Anaerobic),np.mean(Anaplerotic_Reactions_Anaerobic),np.mean(Extracellular_Efflux_Anaerobic)]
+Aerobic_std = [np.std(Glycolysis_Aerobic),np.std(Pentose_Phosphate_Pathway_Aerobic),np.std(Citric_Acid_Cycle_Aerobic),np.std(Oxidative_Phosphorylation_Aerobic),np.std(Anaplerotic_Reactions_Aerobic),np.std(Extracellular_Efflux_Aerobic)]
+Anaerobic_std = [np.std(Glycolysis_Anaerobic),np.std(Pentose_Phosphate_Pathway_Anaerobic),np.std(Citric_Acid_Cycle_Anaerobic),np.std(Oxidative_Phosphorylation_Anaerobic),np.std(Anaplerotic_Reactions_Anaerobic),np.std(Extracellular_Efflux_Anaerobic)] 
+
+
+plt.close()
+n_groups = 6 
+index = np.arange(n_groups)
+bar_width = 0.25
+error_bar_length = np.repeat(0,len(Aerobic_average))
+rects1 = ax2.bar(index, Aerobic_average, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_std], capsize = 2, color = 'r', label = 'Aerobic')
+rects2 = ax2.bar(index + bar_width, Anaerobic_average, bar_width, alpha = 0.8, yerr = [error_bar_length, Anaerobic_std], capsize = 2, color = 'purple', label = 'Anaerobic') 
+
+ax2.set_ylabel('Flux per Reaction\n(mmol/h/gDW)',fontweight='bold',fontsize=10) 
+plt.tick_params(labelsize=9)
+ax2.set_xticks(index + bar_width/2)
+ax2.set_xticklabels(('Glycolysis/\nGluconeogenesis', 'Pentose\nPhosphate\nPathway', 'Citric Acid\nCycle', 'Oxidative\nPhosphorylation', 'Anaplerotic\nReactions', 'Extracellular\nEfflux'), rotation=0)
+a = ax2.legend(loc="upper right",fontsize=8)
+a.set_title('Conditions',prop={'weight':'bold','size':'9'})
+a.get_frame().set_alpha(1)
+
+ax2.add_artist(a)
+
 ax0.text(-0.74,355,'a',fontsize=22)
 ax1.text(-0.365,355,'b',fontsize=22)
+ax2.text(-1.02,10.6,'c',fontsize=22)
 
 
 plt.tight_layout()
 fig.subplots_adjust(left=0.11,bottom=0.1,top=0.95,right=0.99)
-fig.set_size_inches(6.69,5.5)
+fig.set_size_inches(6.69,8.85)
 fig.savefig('Figure_4.png',dpi=300)
-
 
 
 
@@ -7437,7 +7505,7 @@ plt.tight_layout(rect=[0.13,-0.1,0.93,0.99])
 #plt.tight_layout(rect=[0.09,-0.1,0.9,1])
 #plt.subplots_adjust(top=1.04)
 fig.set_size_inches(6.69,8)
-fig.savefig('Figure_5.png',dpi=300)
+fig.savefig('Figure_3.png',dpi=300)
 
 
 #Now adapt the CellDesigner pathways for the flux visualizations for m_n_c_EX for Aerobic and Anaerobic
