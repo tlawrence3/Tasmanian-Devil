@@ -3772,10 +3772,10 @@ fig, (ax0,ax1,ax2) = plt.subplots(3, sharex=True)
 plt.close()
 bar_width = 0.17
 error_bar_length = np.repeat(0,len(sensitivity_ethanol))
-rects1 = ax0.bar(index, sensitivity_ethanol, bar_width, alpha = 0.8, yerr = [error_bar_length, sensitivity_ethanol_std], capsize = 3, color = 'b', label = 'Ethanol')
-rects2 = ax0.bar(index + bar_width, sensitivity_ethanol_negative, bar_width, alpha = 0.8, yerr = [error_bar_length, sensitivity_ethanol_negative_std], capsize = 3, color = 'r', label = 'Ethanol Neg') 
-rects3 = ax0.bar(index + bar_width + bar_width, sensitivity_glucose, bar_width, alpha = 0.8, yerr = [error_bar_length,sensitivity_glucose_std], capsize = 3, color = 'g', label = 'Glucose') 
-rects4  = ax0.bar(index + bar_width + bar_width + bar_width, sensitivity_glucose_negative, bar_width, alpha = 0.8, yerr = [error_bar_length, sensitivity_glucose_std], capsize = 3, color = 'm', label = 'Glucose Neg')
+rects1 = ax0.bar(index, sensitivity_ethanol, bar_width, alpha = 0.8, yerr = [error_bar_length, sensitivity_ethanol_std], capsize = 2, color = 'b', label = 'Ethanol')
+rects2 = ax0.bar(index + bar_width, sensitivity_ethanol_negative, bar_width, alpha = 0.8, yerr = [error_bar_length, sensitivity_ethanol_negative_std], capsize = 2, color = 'r', label = 'Ethanol Neg') 
+rects3 = ax0.bar(index + bar_width + bar_width, sensitivity_glucose, bar_width, alpha = 0.8, yerr = [error_bar_length,sensitivity_glucose_std], capsize = 2, color = 'g', label = 'Glucose') 
+rects4  = ax0.bar(index + bar_width + bar_width + bar_width, sensitivity_glucose_negative, bar_width, alpha = 0.8, yerr = [error_bar_length, sensitivity_glucose_std], capsize = 2, color = 'm', label = 'Glucose Neg')
 #plt.xlabel('Model Parameters',fontweight='bold',fontsize=10) 
 ax0.set_ylabel('Sensitivity (TP/(TP+FN))',fontweight='bold',fontsize=9)
 ax0.tick_params(labelsize=9)
@@ -3801,10 +3801,10 @@ ax0.set_ylim(0,1)
 
 bar_width = 0.17
 error_bar_length = np.repeat(0,len(PPV_ethanol))
-rects1 = ax1.bar(index, PPV_ethanol, bar_width, alpha = 0.8, yerr = [error_bar_length, PPV_ethanol_std], capsize = 3, color = 'b', label = 'Ethanol')
-rects2 = ax1.bar(index + bar_width, PPV_ethanol_negative, bar_width, alpha = 0.8, yerr = [error_bar_length, PPV_ethanol_negative_std], capsize = 3, color = 'r', label = 'Ethanol Neg') 
-rects3 = ax1.bar(index + bar_width + bar_width, PPV_glucose, bar_width, alpha = 0.8, yerr = [error_bar_length,PPV_glucose_std], capsize = 3, color = 'g', label = 'Glucose') 
-rects4  = ax1.bar(index + bar_width + bar_width + bar_width, PPV_glucose_negative, bar_width, alpha = 0.8, yerr = [error_bar_length, PPV_glucose_std], capsize = 3, color = 'm', label = 'Glucose Neg')
+rects1 = ax1.bar(index, PPV_ethanol, bar_width, alpha = 0.8, yerr = [error_bar_length, PPV_ethanol_std], capsize = 2, color = 'b', label = 'Ethanol')
+rects2 = ax1.bar(index + bar_width, PPV_ethanol_negative, bar_width, alpha = 0.8, yerr = [error_bar_length, PPV_ethanol_negative_std], capsize = 2, color = 'r', label = 'Ethanol Neg') 
+rects3 = ax1.bar(index + bar_width + bar_width, PPV_glucose, bar_width, alpha = 0.8, yerr = [error_bar_length,PPV_glucose_std], capsize = 2, color = 'g', label = 'Glucose') 
+rects4  = ax1.bar(index + bar_width + bar_width + bar_width, PPV_glucose_negative, bar_width, alpha = 0.8, yerr = [error_bar_length, PPV_glucose_std], capsize = 2, color = 'm', label = 'Glucose Neg')
 #plt.xlabel('Model Parameters',fontweight='bold',fontsize=10) 
 ax1.set_ylabel('Precision (TP/(TP+FP))',fontweight='bold',fontsize=10)
 ax1.tick_params(labelsize=9)
@@ -4920,10 +4920,10 @@ fig, (ax0, ax1, ax2) = plt.subplots(3)
 plt.close()
 bar_width = 0.17
 error_bar_length = np.repeat(0,len(Aerobic_average_individual))
-rects1 = ax0.bar(index, Aerobic_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_std_individual], capsize = 3, color = 'red', label = 'Aerobic')
-rects2 = ax0.bar(index + bar_width, Aerobic_negative_control_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_negative_control_std_individual], capsize = 3, color = 'lightgrey', label = 'Aerobic Neg') 
-rects3 = ax0.bar(index + bar_width + bar_width, Anaerobic_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Anaerobic_std_individual], capsize = 3, color = 'purple', label = 'Anaerobic') 
-rects4  = ax0.bar(index + bar_width + bar_width + bar_width, Anaerobic_negative_control_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Anaerobic_negative_control_std_individual], capsize = 3, color = 'dimgray', label = 'Anaerobic Neg')
+rects1 = ax0.bar(index, Aerobic_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_std_individual], capsize = 9, color = 'red', label = 'Aerobic')
+rects2 = ax0.bar(index + bar_width, Aerobic_negative_control_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_negative_control_std_individual], capsize = 9, color = 'lightgrey', label = 'Aerobic Neg') 
+rects3 = ax0.bar(index + bar_width + bar_width, Anaerobic_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Anaerobic_std_individual], capsize = 9, color = 'purple', label = 'Anaerobic') 
+rects4  = ax0.bar(index + bar_width + bar_width + bar_width, Anaerobic_negative_control_average_individual, bar_width, alpha = 0.8, yerr = [error_bar_length, Anaerobic_negative_control_std_individual], capsize = 9, color = 'dimgray', label = 'Anaerobic Neg')
 
 props = {'connectionstyle':'bar','arrowstyle':'-','lw':2}
 ax0.annotate('***', xy=(0+bar_width/4-0.01,23+max(Aerobic_average_individual[0]+Aerobic_std_individual[0],Aerobic_negative_control_average_individual[0]+Aerobic_negative_control_std_individual[0])),fontsize=9)
@@ -4977,7 +4977,7 @@ e.set_title('Significance',prop={'weight':'bold','size':'9'})
 ax0.add_artist(a)
 ax0.add_artist(d)
 ax0.add_artist(e)
-ax0.set_ylim(0,355)
+ax0.set_ylim(0,375)
 
 
 n_groups = 2
@@ -4992,9 +4992,9 @@ Aerobic_Anaerobic_std_comparing_software_all = [Aerobic_std_all, Anaerobic_std_n
 
 bar_width = 0.2
 error_bar_length = np.repeat(0,len(Aerobic_Anaerobic_average_comparing_software_eps))
-rects1 = ax1.bar(index, Aerobic_Anaerobic_average_comparing_software_eps, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_Anaerobic_std_comparing_software_eps], capsize = 3, color = 'orange', label = 'C_mod_eps')
-rects2 = ax1.bar(index + bar_width, Aerobic_Anaerobic_average_comparing_software_m_n_c, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_Anaerobic_std_comparing_software_m_n_c], capsize = 3, color = 'r', label = 'C_m_n_c Cohort') 
-rects3 = ax1.bar(index + bar_width + bar_width, Aerobic_Anaerobic_average_comparing_software_all, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_Anaerobic_std_comparing_software_all], capsize = 3, color = 'darkred', label = 'C_non_m_n_c Cohort') 
+rects1 = ax1.bar(index, Aerobic_Anaerobic_average_comparing_software_eps, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_Anaerobic_std_comparing_software_eps], capsize = 22, color = 'orange', label = 'C_mod_eps')
+rects2 = ax1.bar(index + bar_width, Aerobic_Anaerobic_average_comparing_software_m_n_c, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_Anaerobic_std_comparing_software_m_n_c], capsize = 22, color = 'r', label = 'C_m_n_c Cohort') 
+rects3 = ax1.bar(index + bar_width + bar_width, Aerobic_Anaerobic_average_comparing_software_all, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_Anaerobic_std_comparing_software_all], capsize = 22, color = 'darkred', label = 'C_non_m_n_c Cohort') 
 
 
 props = {'connectionstyle':'bar','arrowstyle':'-', 'lw':2}
@@ -5089,8 +5089,8 @@ n_groups = 6
 index = np.arange(n_groups)
 bar_width = 0.25
 error_bar_length = np.repeat(0,len(Aerobic_average))
-rects1 = ax2.bar(index, Aerobic_average, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_std], capsize = 2, color = 'r', label = 'Aerobic')
-rects2 = ax2.bar(index + bar_width, Anaerobic_average, bar_width, alpha = 0.8, yerr = [error_bar_length, Anaerobic_std], capsize = 2, color = 'purple', label = 'Anaerobic') 
+rects1 = ax2.bar(index, Aerobic_average, bar_width, alpha = 0.8, yerr = [error_bar_length, Aerobic_std], capsize = 7, color = 'r', label = 'Aerobic')
+rects2 = ax2.bar(index + bar_width, Anaerobic_average, bar_width, alpha = 0.8, yerr = [error_bar_length, Anaerobic_std], capsize = 7, color = 'purple', label = 'Anaerobic') 
 
 ax2.set_ylabel('Flux per Reaction\n(mmol/h/gDW)',fontweight='bold',fontsize=10) 
 plt.tick_params(labelsize=9)
@@ -5111,7 +5111,6 @@ plt.tight_layout()
 fig.subplots_adjust(left=0.11,bottom=0.1,top=0.95,right=0.99)
 fig.set_size_inches(6.69,8.85)
 fig.savefig('Figure_4.png',dpi=300)
-
 
 
 
