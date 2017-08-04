@@ -1574,7 +1574,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re41" id="ALATA_L_1520e_2_366e_2" reversible="true">
+<reaction metaid="re41" id="ALATA_L_1520E_2_366E_2" reversible="true">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1939,7 +1939,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="PGCD_20_110e_2" id="PGCD_20_110e_2" reversible="false">
+<reaction metaid="PGCD_20_110E_2" id="PGCD_20_110E_2" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1980,7 +1980,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="FBP_120e_2_75e_2" id="FBP_120e_2_75e_2" reversible="false">
+<reaction metaid="FBP_120E_2_75E_2" id="FBP_120E_2_75E_2" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -2021,7 +2021,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re72" id="PSERT_20_110e_2" reversible="false">
+<reaction metaid="re72" id="PSERT_20_110E_2" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -2476,7 +2476,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re90" id="RPE_280e_2_172e_2" reversible="true">
+<reaction metaid="re90" id="RPE_280E_2_172E_2" reversible="true">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>

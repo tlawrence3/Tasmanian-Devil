@@ -160,7 +160,7 @@ for t in md_model1.rxns.keys():
 				freqavg = freqavg[:-3]
 			else:
 				freqavg = re.sub('\.','',freqavg)
-				freqavg+='e_2'
+				freqavg+='E_2'
 			freqtext = [t]
 			freqtext.append("_")
 			freqtext.append(str(freqavg))
@@ -176,10 +176,10 @@ for t in md_model1.rxns.keys():
 					std = std[:-3]
 				elif (stdsearch0 is not None):
 					std = std[2:]
-					std+='e_2'
+					std+='E_2'
 				else:
 					std = re.sub('\.','',std)
-					std+='e_2'
+					std+='E_2'
 				freqtext.append(std)
 		else:
 			freqtext = [t]
@@ -249,15 +249,15 @@ for t in pickle_model1['rxns']:
 				fluxavgsearch = re.search('0\.', fluxavg)
 				if (fluxavgsearch is not None):
 					fluxavg = fluxavg[2:]
-					fluxavg+='e_4'
+					fluxavg+='E_4'
 				else:
 					fluxavg = re.sub('\.','',fluxavg)
-					fluxavg+='e_4'
+					fluxavg+='E_4'
 				if negative_count == 1:
 					fluxavg = "_" + fluxavg
 			else:
 				fluxavg = re.sub('\.','',fluxavg)
-				fluxavg+='e_4'
+				fluxavg+='E_4'
 				if negative_count == 1:
 					fluxavg = "_" + fluxavg
 			fluxtext = [t]
@@ -273,15 +273,16 @@ for t in pickle_model1['rxns']:
 					stdsearch = re.search('0\.', std)
 					if (stdsearch is not None):
 						std = std[2:]
-						std+='e_4'
+						std+='E_4'
 					else:
 						std = re.sub('\.','',std)
-						std+='e_4'
+						std+='E_4'
 				else:
 					std = re.sub('\.','',std)
-					std+='e_4'
-				fluxtext.append(std)		
+					std+='E_4'
+				fluxtext.append(std)
 			fluxtextjoin = ''.join(fluxtext)
+			fluxtextjoin = re.sub('E_4_0000E_4','E_4_0',fluxtextjoin)				
 			cond1fluxavg[t] = fluxtextjoin[2:]
 
 
@@ -433,7 +434,7 @@ if args.f2 is not None:
 					freqavg = freqavg[:-3]
 				else:
 					freqavg = re.sub('\.','',freqavg)
-					freqavg+='e_2'
+					freqavg+='E_2'
 				freqtext = [t]
 				freqtext.append("_")
 				freqtext.append(str(freqavg))
@@ -449,10 +450,10 @@ if args.f2 is not None:
 						std = std[:-3]
 					elif (stdsearch0 is not None):
 						std = std[2:]
-						std+='e_2'
+						std+='E_2'
 					else:
 						std = re.sub('\.','',std)
-						std+='e_2'
+						std+='E_2'
 					freqtext.append(std)
 			else:
 				freqtext = [t]
@@ -522,15 +523,15 @@ if args.f2 is not None:
 					fluxavgsearch = re.search('0\.', fluxavg)
 					if (fluxavgsearch is not None):
 						fluxavg = fluxavg[2:]
-						fluxavg+='e_4'
+						fluxavg+='E_4'
 					else:
 						fluxavg = re.sub('\.','',fluxavg)
-						fluxavg+='e_4'
+						fluxavg+='E_4'
 					if negative_count == 1:
 						fluxavg = "_" + fluxavg
 				else:
 					fluxavg = re.sub('\.','',fluxavg)
-					fluxavg+='e_4'
+					fluxavg+='E_4'
 					if negative_count == 1:
 						fluxavg = "_" + fluxavg
 				fluxtext = [t]
@@ -546,15 +547,16 @@ if args.f2 is not None:
 						stdsearch = re.search('0\.', std)
 						if (stdsearch is not None):
 							std = std[2:]
-							std+='e_4'
+							std+='E_4'
 						else:
 							std = re.sub('\.','',std)
-							std+='e_4'
+							std+='E_4'
 					else:
 						std = re.sub('\.','',std)
-						std+='e_4'
-					fluxtext.append(std)		
+						std+='E_4'
+					fluxtext.append(std)
 				fluxtextjoin = ''.join(fluxtext)
+				fluxtextjoin = re.sub('E_4_0000E_4','E_4_0',fluxtextjoin)				
 				cond2fluxavg[t] = fluxtextjoin[2:]
 	
 

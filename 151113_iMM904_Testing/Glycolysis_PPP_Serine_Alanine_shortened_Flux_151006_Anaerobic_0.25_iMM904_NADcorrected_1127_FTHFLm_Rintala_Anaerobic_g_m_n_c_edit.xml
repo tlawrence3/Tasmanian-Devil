@@ -987,7 +987,7 @@
 </species>
 </listOfSpecies>
 <listOfReactions>
-<reaction metaid="re1" id="GLCt1_75014e_4_10331e_4" reversible="false">
+<reaction metaid="re1" id="GLCt1_75014E_4_10331E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1028,7 +1028,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re4" id="HEX1_9952e_4_0957e_4" reversible="false">
+<reaction metaid="re4" id="HEX1_9952E_4_0957E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1069,7 +1069,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re5" id="GLUK_65062e_4_9375e_4" reversible="false">
+<reaction metaid="re5" id="GLUK_65062E_4_9375E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1151,7 +1151,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re9" id="G6PI3_65062e_4_9375e_4" reversible="false">
+<reaction metaid="re9" id="G6PI3_65062E_4_9375E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1233,7 +1233,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re11" id="G6PDH2_6407e_4_0957e_4" reversible="false">
+<reaction metaid="re11" id="G6PDH2_6407E_4_0957E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1274,7 +1274,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re30" id="PFK_62720e_4_9183e_4" reversible="false">
+<reaction metaid="re30" id="PFK_62720E_4_9183E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1315,7 +1315,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re31" id="FBA_62720e_4_9183e_4" reversible="false">
+<reaction metaid="re31" id="FBA_62720E_4_9183E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>DISSOCIATION</celldesigner:reactionType>
@@ -1369,7 +1369,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re32" id="GAPD_127114e_4_18558e_4" reversible="false">
+<reaction metaid="re32" id="GAPD_127114E_4_18558E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1410,7 +1410,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re34" id="PGK__127114e_4_18558e_4" reversible="false">
+<reaction metaid="re34" id="PGK__127114E_4_18558E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1451,7 +1451,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re35" id="PGM__121109e_4_18175e_4" reversible="false">
+<reaction metaid="re35" id="PGM__121109E_4_18175E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1492,7 +1492,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re36" id="ENO_121109e_4_18175e_4" reversible="false">
+<reaction metaid="re36" id="ENO_121109E_4_18175E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1533,7 +1533,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re37" id="PYK_118477e_4_17410e_4" reversible="false">
+<reaction metaid="re37" id="PYK_118477E_4_17410E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1817,7 +1817,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re63" id="biomass_published_2085e_4_0000e_4" reversible="false">
+<reaction metaid="re63" id="biomass_published_2085E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1898,7 +1898,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="TPI_63378e_4_0" id="TPI_63378e_4_0" reversible="false">
+<reaction metaid="TPI_63378E_4_0" id="TPI_63378E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1939,7 +1939,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="PGCD_6004e_4_0383e_4" id="PGCD_6004e_4_0383e_4" reversible="false">
+<reaction metaid="PGCD_6004E_4_0383E_4" id="PGCD_6004E_4_0383E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -2021,7 +2021,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re72" id="PSERT_6004e_4_0383e_4" reversible="false">
+<reaction metaid="re72" id="PSERT_6004E_4_0383E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -2098,7 +2098,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re74" id="PGL_6407e_4_0957e_4" reversible="false">
+<reaction metaid="re74" id="PGL_6407E_4_0957E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -2139,7 +2139,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re52" id="TKT2__0658e_4_0191e_4" reversible="false">
+<reaction metaid="re52" id="TKT2__0658E_4_0191E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -2299,7 +2299,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re55" id="TKT1_0658e_4_0191e_4" reversible="false">
+<reaction metaid="re55" id="TKT1_0658E_4_0191E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -2381,7 +2381,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re56" id="PFK_3_0658e_4_0191e_4" reversible="false">
+<reaction metaid="re56" id="PFK_3_0658E_4_0191E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -2422,7 +2422,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re57" id="FBA3_0658e_4_0191e_4" reversible="false">
+<reaction metaid="re57" id="FBA3_0658E_4_0191E_4" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>DISSOCIATION</celldesigner:reactionType>

@@ -1653,7 +1653,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re45" id="MGSA_1_63e_2" reversible="false">
+<reaction metaid="re45" id="MGSA_1_63E_2" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -2476,7 +2476,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re90" id="RPE_480e_2_194e_2" reversible="true">
+<reaction metaid="re90" id="RPE_480E_2_194E_2" reversible="true">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
