@@ -913,7 +913,7 @@ S = coo_matrix(S)
 
 rxnGeneMat = coo_matrix(rxnGeneMat)
 
-model = {test_model[:-4] : {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': test_model[:-4]}}
+model = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': test_model[:-4]}
 #Export the model as a .mat file for COBRA MATLAB usage
 scipy.io.savemat('data/models/%s.mat' % test_model[:-4], model)
 
