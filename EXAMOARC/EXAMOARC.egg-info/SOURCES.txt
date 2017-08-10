@@ -2,7 +2,9 @@ README.rst
 setup.py
 EXAMOARC/EXAMOARC.py
 EXAMOARC/__init__.py
+EXAMOARC/disregard.py
 EXAMOARC/gene.py
+EXAMOARC/model.py
 EXAMOARC.egg-info/PKG-INFO
 EXAMOARC.egg-info/SOURCES.txt
 EXAMOARC.egg-info/dependency_links.txt

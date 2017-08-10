@@ -323,7 +323,54 @@ def metabolite_mapping()
 
 
 def nucleotide_conversion()
-
+	if args.n is not None:
+		####Need to figure out how to import properly
+		md = pickle.load(open('data/models/%s' % args_n, 'rb'))
+		#Remove repetitive nucleotides
+		for repetitivemet in md['nucleotide_conversions']:
+			mets_to_delete = []
+			for i in md['nucleotide_conversions'][repetitivemet]:
+				met_index = 0
+				mets_to_delete.append(i)
+				met_index_to_change = []
+				met_index_to_delete = []
+				for j in idSp:
+					met_index += 1
+					metabolite = str(repetitivemet)
+					if j == metabolite:
+						met_index_to_change.append(met_index - 1) 
+				met_index = 0	
+				for j in idSp:
+					num = 0
+					met_index += 1		
+					if j == i:
+						met_index_to_delete.append(met_index - 1)
+						rxn_index = 0
+						for t in idRs:
+							rxn_index_to_change = []
+							rxn_index += 1
+							if i in rxns[t]['reactants']:
+								rxn_index_to_change.append(rxn_index - 1)
+								if metabolite not in rxns[t]['reactants']:
+									rxns[t]['reactants'].update({metabolite : rxns[t]['reactants'][i]})
+									num = -1*rxns[t]['reactants'][metabolite]
+									S[met_index_to_change, rxn_index_to_change] = num			
+								else:											
+									rxns[t]['reactants'].update({metabolite : rxns[t]['reactants'][metabolite] + rxns[t]['reactants'][i]})
+									num = -1*rxns[t]['reactants'][metabolite]
+									S[met_index_to_change, rxn_index_to_change] = num
+								S[met_index_to_delete, rxn_index_to_change] = 0
+								del rxns[t]['reactants'][i]
+							if i in rxns[t]['products']:
+								rxn_index_to_change.append(rxn_index - 1)
+								if metabolite not in rxns[t]['products']:
+									rxns[t]['products'].update({metabolite : rxns[t]['products'][i]})
+									S[met_index_to_change, rxn_index_to_change] = rxns[t]['products'][metabolite]
+								else:											
+									rxns[t]['products'].update({metabolite : rxns[t]['products'][metabolite] + rxns[t]['products'][i]})
+									S[met_index_to_change, rxn_index_to_change] = rxns[t]['products'][metabolite]
+								S[met_index_to_delete, rxn_index_to_change] = 0
+								del rxns[t]['products'][i]
 
 
 def modify()
