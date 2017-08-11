@@ -19,18 +19,15 @@ def set_parameter(cobra_model, extracellular, args_l, args_u, args_g):
 
 	idSp = []
 	for i in cobra_model.metabolites:
-		metabolite_name = re.sub("LPAREN","",str(i.id))
-		metabolite_name = re.sub("RPAREN","",metabolite_name)
-		metabolite_name = re.sub("\(","_",metabolite_name)
-		metabolite_name = re.sub("\)","_",metabolite_name)
-		metabolite_name = re.sub("\[","_",metabolite_name)
-		metabolite_name = re.sub("\]","_",metabolite_name)
-		metabolite_name = re.sub("\-","_",metabolite_name)
-		metabolite_name = re.sub("__","_",metabolite_name)
-		idSp.append(str("M_")+str(metabolite_name))
-
-	seen_set = set([x for x in idSp if idSp.count(x) > 1])
-	seen_list = list(seen_set)
+		#metabolite_name = re.sub("LPAREN","",str(i.id))
+		#metabolite_name = re.sub("RPAREN","",metabolite_name)
+		#metabolite_name = re.sub("\(","_",metabolite_name)
+		#metabolite_name = re.sub("\)","_",metabolite_name)
+		#metabolite_name = re.sub("\[","_",metabolite_name)
+		#metabolite_name = re.sub("\]","_",metabolite_name)
+		#metabolite_name = re.sub("\-","_",metabolite_name)
+		#metabolite_name = re.sub("__","_",metabolite_name)
+		idSp.append(str("M_")+str(i.id))
 
 	cobra_model = cobra.core.ArrayBasedModel(cobra_model)
 	S = sp.sparse.coo_matrix(cobra_model.S)
@@ -38,61 +35,50 @@ def set_parameter(cobra_model, extracellular, args_l, args_u, args_g):
 
 	#Import lower boundary adjustments if the argument is supplied from the command line. 
 	if args_l:
-		lb_file = open('%s' % args_l)
-		lb = lb_file.readlines()
-		for i, item1 in enumerate(lb):
-			lb[i] = item1.rstrip()
-			lb[i] = float(lb[i])
-		lb_file.close()
+		for x in args_l
+			lb.append(float(x.strip))
 		for i, item1 in enumerate(cobra_model.reactions):
-			reaction_name = re.sub("LPAREN","",str(item1))
-			reaction_name = re.sub("RPAREN","",reaction_name)
-			reaction_name = re.sub("\(","_",reaction_name)
-			reaction_name = re.sub("\)","_",reaction_name)
-			reaction_name = re.sub("\[","_",reaction_name)
-			reaction_name = re.sub("\]","_",reaction_name)
-			reaction_name = re.sub("\-","_",reaction_name)
-			reaction_name = re.sub("__","_",reaction_name)
-			reaction_name = str("R_")+reaction_name
+			#reaction_name = re.sub("LPAREN","",str(item1))
+			#reaction_name = re.sub("RPAREN","",reaction_name)
+			#reaction_name = re.sub("\(","_",reaction_name)
+			#reaction_name = re.sub("\)","_",reaction_name)
+			#reaction_name = re.sub("\[","_",reaction_name)
+			#reaction_name = re.sub("\]","_",reaction_name)
+			#reaction_name = re.sub("\-","_",reaction_name)
+			#reaction_name = re.sub("__","_",reaction_name)
+			reaction_name = str("R_")+item1
 			rxn2lb[reaction_name] = lb[i]
 
 	#Import upper boundary adjustments if the argument is supplied from the command line. 
-	if args_l:
-		ub_file = open('%s' % args_u)
-		ub = ub_file.readlines()
-		for i, item1 in enumerate(ub):
-			ub[i] = item1.strip()
-			ub[i] = float(ub[i])
-		ub_file.close()
+	if args_u:
+		for x in args_u
+			ub.append(float(x.strip))
 		for i, item1 in enumerate(cobra_model.reactions):
-			reaction_name = re.sub("LPAREN","",str(item1))
-			reaction_name = re.sub("RPAREN","",reaction_name)
-			reaction_name = re.sub("\(","_",reaction_name)
-			reaction_name = re.sub("\)","_",reaction_name)
-			reaction_name = re.sub("\[","_",reaction_name)
-			reaction_name = re.sub("\]","_",reaction_name)
-			reaction_name = re.sub("\-","_",reaction_name)
-			reaction_name = re.sub("__","_",reaction_name)
-			reaction_name = str("R_")+reaction_name
+			#reaction_name = re.sub("LPAREN","",str(item1))
+			#reaction_name = re.sub("RPAREN","",reaction_name)
+			#reaction_name = re.sub("\(","_",reaction_name)
+			#reaction_name = re.sub("\)","_",reaction_name)
+			#reaction_name = re.sub("\[","_",reaction_name)
+			#reaction_name = re.sub("\]","_",reaction_name)
+			#reaction_name = re.sub("\-","_",reaction_name)
+			#reaction_name = re.sub("__","_",reaction_name)
+			reaction_name = str("R_")+item1
 			rxn2ub[reaction_name] = ub[i]
 
 	#Import gene rule adjustments if the argument is supplied from the command line. 
 	if args_g:
-		genes_genes2rxn_file = open('%s' % args_g)
-		genes_genes2rxn = genes_genes2rxn_file.readlines()
-		for i, item1 in enumerate(genes_genes2rxn):
-			genes_genes2rxn[i] = item1.strip()
-		genes_genes2rxn_file.close()
+		for x in args_g:
+			genes_genes2rxn.append(x.strip)
 		for i, item1 in enumerate(cobra_model.reactions):
-			reaction_name = re.sub("LPAREN","",str(item1))
-			reaction_name = re.sub("RPAREN","",reaction_name)
-			reaction_name = re.sub("\(","_",reaction_name)
-			reaction_name = re.sub("\)","_",reaction_name)
-			reaction_name = re.sub("\[","_",reaction_name)
-			reaction_name = re.sub("\]","_",reaction_name)
-			reaction_name = re.sub("\-","_",reaction_name)
-			reaction_name = re.sub("__","_",reaction_name)
-			reaction_name = str("R_")+reaction_name
+			#reaction_name = re.sub("LPAREN","",str(item1))
+			#reaction_name = re.sub("RPAREN","",reaction_name)
+			#reaction_name = re.sub("\(","_",reaction_name)
+			#reaction_name = re.sub("\)","_",reaction_name)
+			#reaction_name = re.sub("\[","_",reaction_name)
+			#reaction_name = re.sub("\]","_",reaction_name)
+			#reaction_name = re.sub("\-","_",reaction_name)
+			#reaction_name = re.sub("__","_",reaction_name)
+			reaction_name = str("R_")+item1
 			gene2rxn[reaction_name] = genes_genes2rxn[i]
 
 	#Create the necesssary rxn dictionaries for EXAMO.

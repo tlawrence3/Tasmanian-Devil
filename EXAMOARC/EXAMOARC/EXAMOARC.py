@@ -7,48 +7,50 @@ def gene(args):
     gene_class.gene_classify(args.expression_set, args.upper, args.lower, args.output)
 
 def model(args):
-    if (args.metabolite-mapping-complexes or args.nucleotide-conversions or args.adaptation or args.balance) and not args.metabolite2carbon:
+    if ((args.metabolite-mapping-complexes or args.nucleotide-conversions or args.adaptation or args.balance) and not args.metabolite2carbon):
         raise RuntimeError("Must supply -d argument as well. Look at the help documentation.")
 
     #Import the metabolic reconstruction file name
-    args_s = str(args.s)
-    model_file = args_s[2:-2]
+    #args_s = args.model.name
+    #model_file = args_s[2:-2]
 
     #Import biomass reaction
-    biomassRxn = str(args.biomassRxn)
-    biomassRxn = biomassRxn[2:-2]
+    #biomassRxn = str(args.biomassRxn)
+    #biomassRxn = biomassRxn[2:-2]
 
     #Import extracellular compartment abbreviation
-    extracellular = str(args.extracellularcompartmentname)
-    extracellular = extracellular[2:-2]
+    #extracellular = str(args.extracellularcompartmentname)
+    #extracellular = extracellular[2:-2]
 
     #Import other arguments and change name of exported model file
+    #Prepend the code
     test_model = model_file[:-4]
     if args.lower-bound:
         args_l = str(args.lower-bound)
-        test_model = test_model + str('_l_') + args_l[:-4]
+        test_model = test_model + '_l_' + args_l[:-4]
     if args.upper-bound:
-        test_model = test_model + str('_u')
+        test_model = test_model + '_u'
     if args.gene2rxn:
-        test_model = test_model + str('_g')
+        test_model = test_model + '_g'
     if args.metabolite-mapping-complexes:
-        test_model = test_model + str('_m')
+        test_model = test_model + '_m'
     if args.nucleotide-conversions:
-        test_model = test_model + str('_n')
+        test_model = test_model + '_n'
     if args.balance:
-        test_model = test_model + str('_c')
+        test_model = test_model + '_c'
     if args.adaptation:
         args_a = str(args.adaptation)
         test_model = test_model + str('_mod_') + args_a[:-4]
 
     #Import the model
+    #Could just be read_sbml_model(args.model)
     if args.sbml:
-        cobra_model = cobra.io.read_sbml_model('%s' % model_file)
+        cobra_model = cobra.io.read_sbml_model(args.model)
     if args.cobra:
-        cobra_model = cobra.io.mat.load_matlab_model('%s' % model_file)
+        cobra_model = cobra.io.mat.load_matlab_model(args.model)
 
     ##Make the changes to the model
-    model = cobra_model.set_parameter(cobra_model, args.extracellular, args.lower-bound, args.upper-boound, args.gene2rxn)
+    model = model_class.set_parameter(args.model, args.sbml, args.cobra, args.extracellular, args.lower-bound, args.upper-boound, args.gene2rxn)
     #model = model.metabolite_mapping(model, args_m)
     #model = model.nucleotide_conversion(model, args_n)
     #model = model.modfiy(model, args_mod)
