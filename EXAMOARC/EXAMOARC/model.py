@@ -4,6 +4,12 @@ import scipy as sp
 import numpy as np
 
 def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g):
+	#Import the model
+	if args_s:
+		cobra_model = cobra.io.read_sbml_model(cobra_model)
+	if args_c:
+		cobra_model = cobra.io.mat.load_matlab_model(cobra_model)
+
 	idRs = []
 	lb = []
 	ub = []

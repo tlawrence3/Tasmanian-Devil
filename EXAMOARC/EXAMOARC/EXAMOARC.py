@@ -44,13 +44,15 @@ def model(args):
 
     #Import the model
     #Could just be read_sbml_model(args.model)
-    if args.sbml:
-        cobra_model = cobra.io.read_sbml_model(args.model)
-    if args.cobra:
-        cobra_model = cobra.io.mat.load_matlab_model(args.model)
+    #if args.sbml:
+    #    cobra_model = cobra.io.read_sbml_model(args.model)
+    #if args.cobra:
+    #    cobra_model = cobra.io.mat.load_matlab_model(args.model)
 
     ##Make the changes to the model
     model = model_class.set_parameter(args.model, args.sbml, args.cobra, args.extracellular, args.lower-bound, args.upper-boound, args.gene2rxn)
+    
+    print model['rxns']
     #model = model.metabolite_mapping(model, args_m)
     #model = model.nucleotide_conversion(model, args_n)
     #model = model.modfiy(model, args_mod)
