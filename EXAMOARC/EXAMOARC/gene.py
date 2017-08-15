@@ -10,4 +10,3 @@ def gene_classify(file_name, upper, lower, file_out):
 
 if __name__ == "__main__":
     gene_classify("test.txt", .75, .25, "test.counts.txt")
-

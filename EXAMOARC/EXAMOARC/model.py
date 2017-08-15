@@ -36,7 +36,7 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g):
 	#Need to change the code to import as dictionaries
 	#Import lower boundary adjustments if the argument is supplied from the command line. 
 	if args_l:
-		for x in args_l
+		for x in args_l:
 			lb.append(float(x.strip))
 		for i, item1 in enumerate(cobra_model.reactions):
 			#reaction_name = re.sub("LPAREN","",str(item1))
@@ -52,7 +52,7 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g):
 
 	#Import upper boundary adjustments if the argument is supplied from the command line. 
 	if args_u:
-		for x in args_u
+		for x in args_u:
 			ub.append(float(x.strip))
 		for i, item1 in enumerate(cobra_model.reactions):
 			#reaction_name = re.sub("LPAREN","",str(item1))
@@ -120,7 +120,7 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g):
 				#metabolite_name = re.sub("\-","_",metabolite_name)
 				#metabolite_name = re.sub("__","_",metabolite_name)
 				reactants[str("M_")+j.id] = -1*i.metabolites[j]
-				reactants_original[str("M_")+j.id)] = -1*i.metabolites[j]
+				reactants_original[str("M_")+j.id] = -1*i.metabolites[j]
 			if i.metabolites[j] > 0:
 				#metabolite_name = re.sub("LPAREN","",str(j.id))
 				#metabolite_name = re.sub("RPAREN","",metabolite_name)
