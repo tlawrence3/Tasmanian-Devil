@@ -52,7 +52,6 @@ def model(args):
     ##Make the changes to the model
     model = model_class.set_parameter(args.model, args.sbml, args.cobra, args.extracellular, args.lower-bound, args.upper-boound, args.gene2rxn)
     
-    print model['rxns']
     #model = model.metabolite_mapping(model, args_m)
     #model = model.nucleotide_conversion(model, args_n)
     #model = model.modfiy(model, args_mod)
