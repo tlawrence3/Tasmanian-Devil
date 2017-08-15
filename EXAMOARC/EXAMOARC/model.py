@@ -3,7 +3,7 @@ import cobra
 import scipy as sp
 import numpy as np
 
-def set_parameter(cobra_model, extracellular, args_l, args_u, args_g):
+def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g):
 	idRs = []
 	lb = []
 	ub = []
@@ -33,6 +33,7 @@ def set_parameter(cobra_model, extracellular, args_l, args_u, args_g):
 	S = sp.sparse.coo_matrix(cobra_model.S)
 	S = sp.sparse.lil_matrix(S)
 
+	#Need to change the code to import as dictionaries
 	#Import lower boundary adjustments if the argument is supplied from the command line. 
 	if args_l:
 		for x in args_l
@@ -84,15 +85,15 @@ def set_parameter(cobra_model, extracellular, args_l, args_u, args_g):
 	#Create the necesssary rxn dictionaries for EXAMO.
 	b_met = []
 	for i in cobra_model.reactions:
-		reaction_name = re.sub("LPAREN","",i.id)
-		reaction_name = re.sub("RPAREN","",reaction_name)
-		reaction_name = re.sub("\(","_",reaction_name)
-		reaction_name = re.sub("\)","_",reaction_name)
-		reaction_name = re.sub("\[","_",reaction_name)
-		reaction_name = re.sub("\]","_",reaction_name)
-		reaction_name = re.sub("\-","_",reaction_name)
-		reaction_name = re.sub("__","_",reaction_name)
-		reaction_name = str("R_")+reaction_name
+		#reaction_name = re.sub("LPAREN","",i.id)
+		#reaction_name = re.sub("RPAREN","",reaction_name)
+		#reaction_name = re.sub("\(","_",reaction_name)
+		#reaction_name = re.sub("\)","_",reaction_name)
+		#reaction_name = re.sub("\[","_",reaction_name)
+		#reaction_name = re.sub("\]","_",reaction_name)
+		#reaction_name = re.sub("\-","_",reaction_name)
+		#reaction_name = re.sub("__","_",reaction_name)
+		reaction_name = str("R_")+i.id
 		reactants = {}
 		reactants_original = {}
 		products = {}
@@ -110,33 +111,33 @@ def set_parameter(cobra_model, extracellular, args_l, args_u, args_g):
 		#Now need rxn
 		for j in i.metabolites:
 			if i.metabolites[j] < 0:
-				metabolite_name = re.sub("LPAREN","",str(j.id))
-				metabolite_name = re.sub("RPAREN","",metabolite_name)
-				metabolite_name = re.sub("\(","_",metabolite_name)
-				metabolite_name = re.sub("\)","_",metabolite_name)
-				metabolite_name = re.sub("\[","_",metabolite_name)
-				metabolite_name = re.sub("\]","_",metabolite_name)
-				metabolite_name = re.sub("\-","_",metabolite_name)
-				metabolite_name = re.sub("__","_",metabolite_name)
-				reactants[str("M_")+str(metabolite_name)] = -1*i.metabolites[j]
-				reactants_original[str("M_")+str(metabolite_name)] = -1*i.metabolites[j]
+				#metabolite_name = re.sub("LPAREN","",str(j.id))
+				#metabolite_name = re.sub("RPAREN","",metabolite_name)
+				#metabolite_name = re.sub("\(","_",metabolite_name)
+				#metabolite_name = re.sub("\)","_",metabolite_name)
+				#metabolite_name = re.sub("\[","_",metabolite_name)
+				#metabolite_name = re.sub("\]","_",metabolite_name)
+				#metabolite_name = re.sub("\-","_",metabolite_name)
+				#metabolite_name = re.sub("__","_",metabolite_name)
+				reactants[str("M_")+j.id] = -1*i.metabolites[j]
+				reactants_original[str("M_")+j.id)] = -1*i.metabolites[j]
 			if i.metabolites[j] > 0:
-				metabolite_name = re.sub("LPAREN","",str(j.id))
-				metabolite_name = re.sub("RPAREN","",metabolite_name)
-				metabolite_name = re.sub("\(","_",metabolite_name)
-				metabolite_name = re.sub("\)","_",metabolite_name)
-				metabolite_name = re.sub("\[","_",metabolite_name)
-				metabolite_name = re.sub("\]","_",metabolite_name)
-				metabolite_name = re.sub("\-","_",metabolite_name)
-				metabolite_name = re.sub("__","_",metabolite_name)
-				products[str("M_")+str(metabolite_name)] = i.metabolites[j]
-				products_original[str("M_")+str(metabolite_name)] = i.metabolites[j]
+				#metabolite_name = re.sub("LPAREN","",str(j.id))
+				#metabolite_name = re.sub("RPAREN","",metabolite_name)
+				#metabolite_name = re.sub("\(","_",metabolite_name)
+				#metabolite_name = re.sub("\)","_",metabolite_name)
+				#metabolite_name = re.sub("\[","_",metabolite_name)
+				#metabolite_name = re.sub("\]","_",metabolite_name)
+				#metabolite_name = re.sub("\-","_",metabolite_name)
+				#metabolite_name = re.sub("__","_",metabolite_name)
+				products[str("M_")+j.id] = i.metabolites[j]
+				products_original[str("M_")+j.id] = i.metabolites[j]
 		if len(products) == 0:
 			for j in reactants:
-				extracellular_string = extracellular + '\Z'
+				extracellular_string = args_e + '\Z'
 				idSp_e = re.search(extracellular_string, j)
 				if idSp_e is not None:
-					if extracellular[-1:] == '_':
+					if args_e[-1:] == '_':
 						products[j[:-2]+str("b_")] = reactants[j]
 						products_original[j[:-2]+str("b_")] = reactants[j]
 						b_met.append(j[:-2]+str("b_"))
@@ -222,6 +223,186 @@ def set_parameter(cobra_model, extracellular, args_l, args_u, args_g):
 			if count == count_ub:
 				rxn_ub[i] = j
 
+	#Remove metabolites that appear as both a product and a reactant. 
+	rxn_count = 0
+	for t in idRs:
+		rxn_count += 1
+		rxn_index = []
+		met_count = 0
+		for i in idSp:
+			met_index = []
+			met_count += 1
+			if i in rxns[t]['reactants']:
+				if i in rxns[t]['products']:
+				 	reactants_amount = rxns[t]['reactants'][i]
+					products_amount = rxns[t]['products'][i]
+					num = 0
+					met_index.append(met_count - 1)
+					rxn_index.append(rxn_count - 1)
+					if reactants_amount > products_amount:
+						rxns[t]['reactants'][i] = rxns[t]['reactants'][i] - products_amount
+						rxns[t]['products'][i] = 0
+						del rxns[t]['products'][i]
+						num = -1*rxns[t]['reactants'][i]
+						S[met_index, rxn_index] = num				
+					if products_amount > reactants_amount:
+						rxns[t]['products'][i] = rxns[t]['products'][i] - reactants_amount
+						rxns[t]['reactants'][i] = 0
+						del rxns[t]['reactants'][i]
+						S[met_index, rxn_index] = rxns[t]['products'][i]				
+					if reactants_amount == products_amount:
+						rxns[t]['reactants'][i] = rxns[t]['reactants'][i] - products_amount
+						rxns[t]['products'][i] = rxns[t]['products'][i] - reactants_amount
+						del rxns[t]['reactants'][i]
+						del rxns[t]['products'][i]
+						S[met_index, rxn_index] = 0				
+		if len(rxns[t]['reactants']) == 0:
+			if len(rxns[t]['products']) == 0:
+				rxns_to_remove_2.append(t)
+
+		rxn_index = 0
+		rxn_index_list = []
+		rxn_index_list_to_delete = []
+		for i in idRs:
+			rxn_index += 1
+			if i not in rxns_to_remove_2:
+				rxn_index_list.append(rxn_index-1)
+			else:
+				rxn_index_list_to_delete.append(rxn_index-1)
+		grRules = np.delete(grRules, rxn_index_list_to_delete)
+		rules = np.delete(rules, rxn_index_list_to_delete)
+		c = np.delete(c, rxn_index_list_to_delete)
+		subsystem = np.delete(subsystem, rxn_index_list_to_delete)
+
+		for i in rxns_to_remove_2:
+			del rxns[i]
+			del gene2rxn[i]
+			idRs.remove(i)
+
+		S = lil_matrix(csr_matrix(S)[:,rxn_index_list])
+
+		last_string_list = []
+		for i in idSp:
+			if i[-1] == '_':
+				b_name = '_b_'
+				if b_name not in last_string_list:
+					last_string_list.append(b_name)
+				last_string = i[-3:]
+				if last_string not in last_string_list:
+					last_string_list.append(last_string)
+			else:
+				b_name = '_b'
+				if b_name not in last_string_list:
+					last_string_list.append(b_name)
+				last_string = i[-2:]
+				if last_string not in last_string_list:
+					last_string_list.append(last_string)
+
+	#Remove mets that do not appear in any rxns##Consider deleting
+	idSp_to_remove = []
+	met_index = 0
+	met_index_list = []
+	for i in idSp:
+		met_index += 1
+		met_occurrence = 0
+		for j in rxns:
+			if i in rxns[j]['reactants']:
+				met_occurrence += 1
+			if i in rxns[j]['products']:	
+				met_occurrence += 1
+		if met_occurrence == 0:
+			idSp_to_remove.append(i)
+		else:
+			met_index_list.append(met_index - 1)
+
+
+	S = lil_matrix(csr_matrix(S)[met_index_list,:])
+
+	met_index = 0
+	met_index_to_delete = []
+	for i in idSp:
+		met_index += 1
+		if i in idSp_to_remove:
+			met_index_to_delete.append(met_index-1)
+	metNames = np.delete(metNames, met_index_to_delete)
+	metFormulas = np.delete(metFormulas, met_index_to_delete)
+	b = np.delete(b, met_index_to_delete)
+
+	for i in idSp_to_remove:
+		idSp.remove(i)
+
+	#Remove lb and ub entries for reactions that were removed from the model, and map reversibility 
+	lb = []
+	ub = []
+	rev = []
+	for i in idRs:
+		for rxn_mapping in rxn_lb:
+			if rxn_mapping == i:		
+				if i not in rxns_to_remove:
+					if i not in rxns_to_remove_2:
+						if i not in unbalanced_rxns:
+							lb.append(rxn_lb[i])
+							ub.append(rxn_ub[i])
+							if rxn_lb < 0 and rxn_ub > 0:
+								rev.append(1)
+							else:
+								rev.append(0)
+
+	#Convert EXAMO data structures into COBRA compliant data structures that can be ported to MATLAB
+	rxns_matlab = np.zeros((len(idRs),), dtype=np.object)
+	rxns_matlab[:] = idRs
+	rxns_matlab = rxns_matlab[np.newaxis].T
+
+	mets_matlab = np.zeros((len(idSp),), dtype=np.object)
+	mets_matlab[:] = idSp
+	mets_matlab = mets_matlab[np.newaxis].T
+
+	genes_matlab = np.zeros((len(genes_list),), dtype=np.object)
+	genes_matlab[:] = genes_list
+	genes_matlab = genes_matlab[np.newaxis].T
+
+	ub_matlab = np.zeros((len(ub),), dtype=np.float64)
+	ub_matlab[:] = ub
+	ub_matlab = ub_matlab[np.newaxis].T
+
+	lb_matlab = np.zeros((len(lb),), dtype=np.float64)
+	lb_matlab[:] = lb
+	lb_matlab = lb_matlab[np.newaxis].T
+
+	rev_cobra = np.zeros((len(rev),), dtype=np.float64)
+	rev_cobra[:] = rev
+	rev_cobra = rev_cobra[np.newaxis].T
+
+	grRules = grRules[np.newaxis].T
+
+	rules = rules[np.newaxis].T
+
+	c = c[np.newaxis].T
+
+	subsystem = subsystem[np.newaxis].T
+
+	metNames = metNames[np.newaxis].T
+
+	metFormulas = metFormulas[np.newaxis].T
+
+	b = b[np.newaxis].T
+
+	#Convert the matrices into coo matrices
+	S = coo_matrix(S)
+
+	rxnGeneMat = coo_matrix(rxnGeneMat)
+
+	model = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': test_model[:-4]}
+
+	#Print all of the reactions in the final model
+	#for t in rxns:
+	#	print "%s -> %s" % (rxns[t]['reactants'], rxns[t]['products'])
+
+	#Export the model as a pickle file for EXAMO usage
+	#We will no longer be using pickle file storage for the models. 
+	#exportPickle({'idSp' : idSp, 'idRs' : idRs, 'genes' : genes, 'lb' : lb, 'ub' : ub, 'gene2rxn': gene2rxn, 'S' : S, 'rxns' : rxns }, ('data/models/%s' % test_model))
+	
+	return model
 
 
 def metabolite_mapping():

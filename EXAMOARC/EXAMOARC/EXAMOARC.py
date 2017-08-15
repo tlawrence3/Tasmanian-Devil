@@ -24,23 +24,23 @@ def model(args):
 
     #Import other arguments and change name of exported model file
     #Prepend the code
-    test_model = model_file[:-4]
+    #test_model = model_file[:-4]
+    test_model = ''
     if args.lower-bound:
-        args_l = str(args.lower-bound)
-        test_model = test_model + '_l_' + args_l[:-4]
+        test_model = test_mdoel + 'l'
     if args.upper-bound:
-        test_model = test_model + '_u'
+        test_model = test_model + 'u'
     if args.gene2rxn:
-        test_model = test_model + '_g'
+        test_model = test_model + 'g'
     if args.metabolite-mapping-complexes:
-        test_model = test_model + '_m'
+        test_model = test_model + 'm'
     if args.nucleotide-conversions:
-        test_model = test_model + '_n'
+        test_model = test_model + 'n'
     if args.balance:
-        test_model = test_model + '_c'
+        test_model = test_model + 'c'
     if args.adaptation:
-        args_a = str(args.adaptation)
-        test_model = test_model + str('_mod_') + args_a[:-4]
+        test_model = test_model + 'mod'
+    test_model = test_model + args.model.name
 
     #Import the model
     #Could just be read_sbml_model(args.model)
