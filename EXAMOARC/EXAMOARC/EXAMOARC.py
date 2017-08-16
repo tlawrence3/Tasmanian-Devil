@@ -10,21 +10,7 @@ def model(args):
     if ((args.metabolitemappingcomplexes or args.nucleotideconversions or args.adaptation or args.balance) and not args.metabolite2carbon):
         raise RuntimeError("Must supply -d argument as well. Look at the help documentation.")
 
-    #Import the metabolic reconstruction file name
-    #args_s = args.model.name
-    #model_file = args_s[2:-2]
-
-    #Import biomass reaction
-    #biomassRxn = str(args.biomassRxn)
-    #biomassRxn = biomassRxn[2:-2]
-
-    #Import extracellular compartment abbreviation
-    #extracellular = str(args.extracellularcompartmentname)
-    #extracellular = extracellular[2:-2]
-
     #Import other arguments and change name of exported model file
-    #Prepend the code
-    #test_model = model_file[:-4]
     model_desc = ''
     if args.lowerbound:
         model_desc = model_desc + 'l'
@@ -40,18 +26,19 @@ def model(args):
         model_desc = model_desc + 'c'
     if args.adaptation:
         model_desc = model_desc + 'mod'
-    model_desc = model_desc + args.model.name
+    name_split = args.model.name.split('/')
+    if len(name_split) > 2:
+        model_desc = '/'.join(name_split[0:-2]) + '/' + model_desc + name_split[-1]
+    elif len(name_split) == 2:
+        model_desc = name_split[0] + '/' + model_desc + name_split[1]
+    elif len(name_split) == 1:
+        model_desc = model_desc + name_split[0]
+    else:
+        model_desc = model_desc + args.model.name
 
-    #Import the model
-    #Could just be read_sbml_model(args.model)
-    #if args.sbml:
-    #    cobra_model = cobra.io.read_sbml_model(args.model)
-    #if args.cobra:
-    #    cobra_model = cobra.io.mat.load_matlab_model(args.model)
 
     ##Make the changes to the model
-    model = model_class.set_parameter(args.model, args.sbml, args.cobra, args.extracellular, args.lowerbound, args.upperbound, args.gene2rxn, model_desc)
-    
+    model = model_class.set_parameter(args.model, args.sbml, args.cobra, args.extracellular, args.lowerbound, args.upperbound, args.gene2rxn, model_desc)    
     #model = model.metabolite_mapping(model, args_m)
     #model = model.nucleotide_conversion(model, args_n)
     #model = model.modfiy(model, args_mod)
