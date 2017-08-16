@@ -40,11 +40,11 @@ def model(args):
 
     ##Make the changes to the model
     model = model_class.set_parameter(args.model, args.sbml, args.cobra, args.extracellular, args.lowerbound, args.upperbound, args.gene2rxn, model_desc)    
-    #model = model.metabolite_mapping(model, args_m)
-    #model = model.nucleotide_conversion(model, args_n)
-    #model = model.modfiy(model, args_mod)
-    #model = mdoel.balance_reactions(model, args_c2m, args_c)
-
+    model = model_class.metabolite_mapping(model, args.metabolitemappingcomplexes)
+    #model = model_class.nucleotide_conversion(model, args_n)
+    #model = model_class.modfiy(model, args_mod)
+    #model = model_class.balance_reactions(model, args_c2m, args_c)
+    #model_class.model_export(model, model_desc)
     
 
 def flux(args):

@@ -2,6 +2,7 @@ import re
 import cobra
 import scipy as sp
 import numpy as np
+import cPickle as pickle #Remove this if we are able to get rid of all pickling
 
 def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, model_desc):
 	#Import the model
@@ -355,6 +356,111 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 							else:
 								rev.append(0)
 
+	#Create the mmodel dictionary to be able to export to other functions
+	model = {'idSp' : idSp, 'idRs' : idRs, 'genes' : genes, 'lb' : lb, 'ub' : ub, 'gene2rxn': gene2rxn, 'S' : S, 'rxns' : rxns }	
+	return model
+
+
+def metabolite_mapping(model, args_m):
+	md = pickle.load(args_m)
+	metabolite_mappings = md['metabolite_mappings']
+	met_dict_rxns = {}
+	met_dict_mets = {}
+	rxns_mets_to_delete = {}
+	reactant_count_dict = {}
+	product_count_dict = {}
+	for t in model['rxns']:
+		reactant_count = 0
+		secondary_check = 0
+		exception_reactant_count = 0
+		product_count = 0
+		exception_product_count = 0
+		proceed = 0
+		metabolite_mappings_rxn_reactant_list = []
+		metabolite_mappings_rxn_product_list = []
+		for i in metabolite_mappings:
+			j_count = 0
+			if i in model['rxns'][t]['reactants']:
+				proceed +=1
+				if proceed == 1:
+					for j in metabolite_mappings[i]:
+						if j in model['rxns'][t]['products']:
+							metabolite_mappings_rxn_reactant_list.append(i)
+							metabolite_mappings_rxn_product_list.append(j)						
+							try:
+								met_dict_mets[i].append(t)
+							except KeyError:
+								met_dict_mets[i] = [t]
+							try:
+								met_dict_mets[j].append(t)
+							except KeyError:
+								met_dict_mets[j] = [t]
+							for reactant in model['rxns'][t]['reactants']:
+								if reactant != i:
+									if reactant in metabolite_mappings:
+										for k in metabolite_mappings[reactant]:
+											if k in model['rxns'][t]['products']:
+												metabolite_mappings_rxn_reactant_list.append(reactant)
+												metabolite_mappings_rxn_product_list.append(k)
+												try:
+													met_dict_mets[reactant].append(t)
+												except KeyError:
+													met_dict_mets[reactant] = [t]
+												try:
+													met_dict_mets[k].append(t)
+												except KeyError:
+													met_dict_mets[k] = [t]
+												secondary_check += 1
+									else:
+								 		reactant_count += 1
+									#if reactant in met_exception_list:
+									#	exception_reactant_count += 1
+							#for product in rxns[t]['products']:
+							#	if product not in metabolite_mappings[i]:
+							#		if product in met_exception_list:
+							#			exception_product_count += 1
+							#To account for sink reactions, have several conditions that may result in a metabolite mapping exception
+							if (((len(model['rxns'][t]['reactants']) > secondary_check + 1) and (len(model['rxns'][t]['products']) > secondary_check + 1))  or ((len(model['rxns'][t]['reactants']) > secondary_check + 1) and (len(model['rxns'][t]['products']) == secondary_check + 1)) or ((len(model['rxns'][t]['reactants']) == secondary_check + 1) and (len(model['rxns'][t]['products']) > secondary_check + 1))): 						
+								met_dict_mets_list = metabolite_mappings_rxn_reactant_list + metabolite_mappings_rxn_product_list
+								met_dict_rxns[t] = met_dict_mets_list
+						else: 
+							j_count += 1
+						if j_count == len(metabolite_mappings[i]):					
+							proceed = 0
+
+	#Remove mets from reactions with metabolite mappings
+	rxn_index = 0	
+	for i in model['idRs']:
+		rxn_index += 1
+		met_index = 0
+		rxn_index_0 = []
+		met_index_0 = []
+		if i in met_dict_rxns:
+			rxn_index_0.append(rxn_index - 1)
+			for j in model['idSp']:
+				met_index += 1
+				if j in met_dict_rxns[i]:
+					met_index_0.append(met_index - 1)
+					if j in model['rxns'][i]['reactants']:
+						del model['rxns'][i]['reactants'][j]
+					if j in model['rxns'][i]['products']:
+						del model['rxns'][i]['products'][j]
+		model['S'][met_index_0, rxn_index_0] = 0
+	return model
+
+
+def nucleotide_conversion():
+	print "hi"
+
+
+def modify():
+	print "hi"
+
+
+def balance_reactions():
+	print "hi"
+
+def model_export(mdoel, model_desc):
 	#Convert EXAMO data structures into COBRA compliant data structures that can be ported to MATLAB
 	rxns_matlab = np.zeros((len(idRs),), dtype=np.object)
 	rxns_matlab[:] = idRs
@@ -399,30 +505,4 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 
 	rxnGeneMat = sp.sparse.coo_matrix(rxnGeneMat)
 
-	model = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc}
-
-	#Print all of the reactions in the final model
-	#for t in rxns:
-	#	print "%s -> %s" % (rxns[t]['reactants'], rxns[t]['products'])
-
-	#Export the model as a pickle file for EXAMO usage
-	#We will no longer be using pickle file storage for the models. 
-	#exportPickle({'idSp' : idSp, 'idRs' : idRs, 'genes' : genes, 'lb' : lb, 'ub' : ub, 'gene2rxn': gene2rxn, 'S' : S, 'rxns' : rxns }, ('data/models/%s' % test_model))
-	
-	return model
-
-
-def metabolite_mapping():
-	print "something"
-
-
-def nucleotide_conversion():
-	print "hi"
-
-
-def modify():
-	print "hi"
-
-
-def balance_reactions():
-	print "hi"
+	model_matlab = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc}
