@@ -26,6 +26,7 @@ def model(args):
         model_desc = model_desc + 'c'
     if args.adaptation:
         model_desc = model_desc + 'mod'
+    #perhaps consider if OS is Windows or Linux for file structure
     name_split = args.model.name.split('/')
     if len(name_split) > 2:
         model_desc = '/'.join(name_split[0:-2]) + '/' + model_desc + name_split[-1]
