@@ -39,12 +39,12 @@ def model(args):
 
 
     ##Make the changes to the model
-    model = model_class.set_parameter(args.model, args.sbml, args.cobra, args.extracellular, args.lowerbound, args.upperbound, args.gene2rxn, model_desc)    
-    model = model_class.metabolite_mapping(model, args.metabolitemappingcomplexes)
-    #model = model_class.nucleotide_conversion(model, args_n)
+    model, cobra_specific_objects = model_class.set_parameter(args.model, args.sbml, args.cobra, args.extracellular, args.lowerbound, args.upperbound, args.gene2rxn, model_desc)    
+    model, cobra_specific_objects = model_class.metabolite_mapping(model, cobra_specific_objects, args.metabolitemappingcomplexes)
+    model, cobra_specific_objects = model_class.nucleotide_conversion(model, cobra_specific_objects, args.nucleotideconversions)
     #model = model_class.modfiy(model, args_mod)
     #model = model_class.balance_reactions(model, args_c2m, args_c)
-    #model_class.model_export(model, model_desc)
+    model_class.model_export(model, cobra_specific_objects, model_desc)
     
 
 def flux(args):

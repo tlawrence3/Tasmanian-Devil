@@ -22,7 +22,6 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 	rxns = {}
 	rxns_original = {}
 	rxns_to_remove = []	
-	rxns_to_remove_2 = []
 	unbalanced_rxns = []
 
 	idSp = []
@@ -169,142 +168,23 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 	metFormulas = cobra.io.mat._cell([str(m.formula) for m in cobra_model.metabolites])
 	b = np.array(cobra_model.metabolites.list_attr('_bound')) * 1.
 
-	#Create gene set (for EXAMO model) and list (for COBRA model)
-	genes = set()
-	genes_list = []
-	for keys,values in list(gene2rxn.items()):
-	        values_split = values.split('or')
-	        for count, j in enumerate(values_split):
-	            j = j.split('and')
-	            genelist = []
-	            for k in j:
-	                k = k.translate(None, ' ()')
-	                if not k:
-	                    continue
-	                else:
-	                    genelist.append(k)
-			    if k not in genes_list:
-				genes.add(k)
-				genes_list.append(k)
-
-	#Create dictionary for gene occurrence to replace genes with their index in grRules for creation of rules object
-	genes_list_dict = {}
-	for i, j in enumerate(genes_list):
-		genes_list_dict[j] = i
-
-	#Create reaction gene matrix and rules object
-	rxnGeneMat = sp.sparse.csr_matrix((len(idRs),len(genes)))
-	rxnGeneMat = sp.sparse.lil_matrix(rxnGeneMat)
-	rxn_index = 0
-	rules = grRules.copy()
-	for i in range(0,len(cobra_model.reactions)):
-		rxn_index += 1
-		gene_index = 0
-		rxn_index_0 = []
-		gene_index_0 = []	
-		for j in genes_list:
-			gene_index += 1
-			genes_search = re.search(str(j), str(grRules[i]))
-			if genes_search is not None: 
-				rxn_index_0.append(rxn_index - 1)
-				gene_index_0.append(gene_index - 1)
-			rules[i] = re.sub(j,'x(%s)' % genes_list_dict[j],str(rules[i]))
-			rules[i] = re.sub('or','|',str(rules[i]))
-			rules[i] = re.sub('and','&',str(rules[i]))
-		rxnGeneMat[rxn_index_0, gene_index_0] = 1
-
-	#Map lb and ub to rxns based on the order in which they appear
-	rxn_lb = {}
-	rxn_ub = {}
-	rxn_gene2rxn = {}
-	count = 0 
-	for i in idRs:
-		count += 1
-		count_lb = 0
-		count_ub = 0
-		for j in lb:
-			count_lb += 1
-			if count == count_lb:
-				rxn_lb[i] = j 
-		for j in ub:
-			count_ub += 1
-			if count == count_ub:
-				rxn_ub[i] = j
-
-	#Remove metabolites that appear as both a product and a reactant. 
-	rxn_count = 0
-	for t in idRs:
-		rxn_count += 1
-		rxn_index = []
-		met_count = 0
-		for i in idSp:
-			met_index = []
-			met_count += 1
-			if i in rxns[t]['reactants']:
-				if i in rxns[t]['products']:
-				 	reactants_amount = rxns[t]['reactants'][i]
-					products_amount = rxns[t]['products'][i]
-					num = 0
-					met_index.append(met_count - 1)
-					rxn_index.append(rxn_count - 1)
-					if reactants_amount > products_amount:
-						rxns[t]['reactants'][i] = rxns[t]['reactants'][i] - products_amount
-						rxns[t]['products'][i] = 0
-						del rxns[t]['products'][i]
-						num = -1*rxns[t]['reactants'][i]
-						S[met_index, rxn_index] = num				
-					if products_amount > reactants_amount:
-						rxns[t]['products'][i] = rxns[t]['products'][i] - reactants_amount
-						rxns[t]['reactants'][i] = 0
-						del rxns[t]['reactants'][i]
-						S[met_index, rxn_index] = rxns[t]['products'][i]				
-					if reactants_amount == products_amount:
-						rxns[t]['reactants'][i] = rxns[t]['reactants'][i] - products_amount
-						rxns[t]['products'][i] = rxns[t]['products'][i] - reactants_amount
-						del rxns[t]['reactants'][i]
-						del rxns[t]['products'][i]
-						S[met_index, rxn_index] = 0				
-		if len(rxns[t]['reactants']) == 0:
-			if len(rxns[t]['products']) == 0:
-				rxns_to_remove_2.append(t)
-
-		rxn_index = 0
-		rxn_index_list = []
-		rxn_index_list_to_delete = []
-		for i in idRs:
-			rxn_index += 1
-			if i not in rxns_to_remove_2:
-				rxn_index_list.append(rxn_index-1)
-			else:
-				rxn_index_list_to_delete.append(rxn_index-1)
-		grRules = np.delete(grRules, rxn_index_list_to_delete)
-		rules = np.delete(rules, rxn_index_list_to_delete)
-		c = np.delete(c, rxn_index_list_to_delete)
-		subsystem = np.delete(subsystem, rxn_index_list_to_delete)
-
-		for i in rxns_to_remove_2:
-			del rxns[i]
-			del gene2rxn[i]
-			idRs.remove(i)
-
-		S = sp.sparse.lil_matrix(sp.sparse.csr_matrix(S)[:,rxn_index_list])
-
-		last_string_list = []
-		for i in idSp:
-			if i[-1] == '_':
-				b_name = '_b_'
-				if b_name not in last_string_list:
-					last_string_list.append(b_name)
-				last_string = i[-3:]
-				if last_string not in last_string_list:
-					last_string_list.append(last_string)
-			else:
-				b_name = '_b'
-				if b_name not in last_string_list:
-					last_string_list.append(b_name)
-				last_string = i[-2:]
-				if last_string not in last_string_list:
-					last_string_list.append(last_string)
+	#Move this to carbon balancecd section	
+	last_string_list = []
+	for i in idSp:
+		if i[-1] == '_':
+			b_name = '_b_'
+			if b_name not in last_string_list:
+				last_string_list.append(b_name)
+			last_string = i[-3:]
+			if last_string not in last_string_list:
+				last_string_list.append(last_string)
+		else:
+			b_name = '_b'
+			if b_name not in last_string_list:
+				last_string_list.append(b_name)
+			last_string = i[-2:]
+			if last_string not in last_string_list:
+				last_string_list.append(last_string)
 
 	#Remove mets that do not appear in any rxns##Consider deleting
 	idSp_to_remove = []
@@ -339,119 +219,211 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 	for i in idSp_to_remove:
 		idSp.remove(i)
 
-	#Remove lb and ub entries for reactions that were removed from the model, and map reversibility 
-	lb = []
-	ub = []
-	rev = []
-	for i in idRs:
-		for rxn_mapping in rxn_lb:
-			if rxn_mapping == i:		
-				if i not in rxns_to_remove:
-					if i not in rxns_to_remove_2:
-						if i not in unbalanced_rxns:
-							lb.append(rxn_lb[i])
-							ub.append(rxn_ub[i])
-							if rxn_lb < 0 and rxn_ub > 0:
-								rev.append(1)
-							else:
-								rev.append(0)
-
-	#Create the mmodel dictionary to be able to export to other functions
-	model = {'idSp' : idSp, 'idRs' : idRs, 'genes' : genes, 'lb' : lb, 'ub' : ub, 'gene2rxn': gene2rxn, 'S' : S, 'rxns' : rxns }	
-	return model
+	#Create the model and cobra specific objects dictionaries to be able to export to other functions
+	model = {'idSp' : idSp, 'idRs' : idRs, 'lb' : lb, 'ub' : ub, 'gene2rxn': gene2rxn, 'S' : S, 'rxns' : rxns }
+	cobra_specific_objects = {'grRules': grRules, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b}	
+	return model, cobra_specific_objects
 
 
-def metabolite_mapping(model, args_m):
-	md = pickle.load(args_m)
-	metabolite_mappings = md['metabolite_mappings']
-	met_dict_rxns = {}
-	met_dict_mets = {}
-	rxns_mets_to_delete = {}
-	reactant_count_dict = {}
-	product_count_dict = {}
-	for t in model['rxns']:
-		reactant_count = 0
-		secondary_check = 0
-		exception_reactant_count = 0
-		product_count = 0
-		exception_product_count = 0
-		proceed = 0
-		metabolite_mappings_rxn_reactant_list = []
-		metabolite_mappings_rxn_product_list = []
-		for i in metabolite_mappings:
-			j_count = 0
+def metabolite_mapping(model, cobra_specific_objects, args_m):
+	#Adjust for reactions that have metbaolite mappings
+	if args_m:
+		md = pickle.load(args_m)
+		metabolite_mappings = md['metabolite_mappings']
+		met_dict_rxns = {}
+		met_dict_mets = {}
+		rxns_mets_to_delete = {}
+		reactant_count_dict = {}
+		product_count_dict = {}
+		for t in model['rxns']:
+			reactant_count = 0
+			secondary_check = 0
+			exception_reactant_count = 0
+			product_count = 0
+			exception_product_count = 0
+			proceed = 0
+			metabolite_mappings_rxn_reactant_list = []
+			metabolite_mappings_rxn_product_list = []
+			for i in metabolite_mappings:
+				j_count = 0
+				if i in model['rxns'][t]['reactants']:
+					proceed +=1
+					if proceed == 1:
+						for j in metabolite_mappings[i]:
+							if j in model['rxns'][t]['products']:
+								metabolite_mappings_rxn_reactant_list.append(i)
+								metabolite_mappings_rxn_product_list.append(j)						
+								try:
+									met_dict_mets[i].append(t)
+								except KeyError:
+									met_dict_mets[i] = [t]
+								try:
+									met_dict_mets[j].append(t)
+								except KeyError:
+									met_dict_mets[j] = [t]
+								for reactant in model['rxns'][t]['reactants']:
+									if reactant != i:
+										if reactant in metabolite_mappings:
+											for k in metabolite_mappings[reactant]:
+												if k in model['rxns'][t]['products']:
+													metabolite_mappings_rxn_reactant_list.append(reactant)
+													metabolite_mappings_rxn_product_list.append(k)
+													try:
+														met_dict_mets[reactant].append(t)
+													except KeyError:
+														met_dict_mets[reactant] = [t]
+													try:
+														met_dict_mets[k].append(t)
+													except KeyError:
+														met_dict_mets[k] = [t]
+													secondary_check += 1
+										else:
+									 		reactant_count += 1
+										#if reactant in met_exception_list:
+										#	exception_reactant_count += 1
+								#for product in rxns[t]['products']:
+								#	if product not in metabolite_mappings[i]:
+								#		if product in met_exception_list:
+								#			exception_product_count += 1
+								#To account for sink reactions, have several conditions that may result in a metabolite mapping exception
+								if (((len(model['rxns'][t]['reactants']) > secondary_check + 1) and (len(model['rxns'][t]['products']) > secondary_check + 1))  or ((len(model['rxns'][t]['reactants']) > secondary_check + 1) and (len(model['rxns'][t]['products']) == secondary_check + 1)) or ((len(model['rxns'][t]['reactants']) == secondary_check + 1) and (len(model['rxns'][t]['products']) > secondary_check + 1))): 						
+									met_dict_mets_list = metabolite_mappings_rxn_reactant_list + metabolite_mappings_rxn_product_list
+									met_dict_rxns[t] = met_dict_mets_list
+							else: 
+								j_count += 1
+							if j_count == len(metabolite_mappings[i]):					
+								proceed = 0
+
+		#Remove mets from reactions with metabolite mappings
+		rxn_index = 0	
+		for i in model['idRs']:
+			rxn_index += 1
+			met_index = 0
+			rxn_index_0 = []
+			met_index_0 = []
+			if i in met_dict_rxns:
+				rxn_index_0.append(rxn_index - 1)
+				for j in model['idSp']:
+					met_index += 1
+					if j in met_dict_rxns[i]:
+						met_index_0.append(met_index - 1)
+						if j in model['rxns'][i]['reactants']:
+							del model['rxns'][i]['reactants'][j]
+						if j in model['rxns'][i]['products']:
+							del model['rxns'][i]['products'][j]
+			model['S'][met_index_0, rxn_index_0] = 0
+	return model, cobra_specific_objects
+
+
+def nucleotide_conversion(model, cobra_specific_objects, args_n):
+	#Remove repetitive nucleotides that share a carbon source 
+	if args_n is not None:
+		md = pickle.load(args_n)
+		#Remove repetitive nucleotides
+		for repetitivemet in md['nucleotide_conversions']:
+			mets_to_delete = []
+			for i in md['nucleotide_conversions'][repetitivemet]:
+				met_index = 0
+				mets_to_delete.append(i)
+				met_index_to_change = []
+				met_index_to_delete = []
+				for j in model['idSp']:
+					met_index += 1
+					metabolite = str(repetitivemet)
+					if j == metabolite:
+						met_index_to_change.append(met_index - 1) 
+				met_index = 0	
+				for j in model['idSp']:
+					num = 0
+					met_index += 1		
+					if j == i:
+						met_index_to_delete.append(met_index - 1)
+						rxn_index = 0
+						for t in model['idRs']:
+							rxn_index_to_change = []
+							rxn_index += 1
+							if i in model['rxns'][t]['reactants']:
+								rxn_index_to_change.append(rxn_index - 1)
+								if metabolite not in model['rxns'][t]['reactants']:
+									model['rxns'][t]['reactants'].update({metabolite : model['rxns'][t]['reactants'][i]})
+									num = -1*model['rxns'][t]['reactants'][metabolite]
+									model['S'][met_index_to_change, rxn_index_to_change] = num			
+								else:											
+									model['rxns'][t]['reactants'].update({metabolite : model['rxns'][t]['reactants'][metabolite] + model['rxns'][t]['reactants'][i]})
+									num = -1*model['rxns'][t]['reactants'][metabolite]
+									model['S'][met_index_to_change, rxn_index_to_change] = num
+								model['S'][met_index_to_delete, rxn_index_to_change] = 0
+								del model['rxns'][t]['reactants'][i]
+							if i in model['rxns'][t]['products']:
+								rxn_index_to_change.append(rxn_index - 1)
+								if metabolite not in model['rxns'][t]['products']:
+									model['rxns'][t]['products'].update({metabolite : model['rxns'][t]['products'][i]})
+									model['S'][met_index_to_change, rxn_index_to_change] = model['rxns'][t]['products'][metabolite]
+								else:											
+									model['rxns'][t]['products'].update({metabolite : model['rxns'][t]['products'][metabolite] + model['rxns'][t]['products'][i]})
+									model['S'][met_index_to_change, rxn_index_to_change] = model['rxns'][t]['products'][metabolite]
+								model['S'][met_index_to_delete, rxn_index_to_change] = 0
+								del model['rxns'][t]['products'][i]
+
+	#Remove metabolites that appear as both a product and a reactant. 
+	rxns_to_remove_2 = []	
+	rxn_count = 0
+	for t in model['idRs']:
+		rxn_count += 1
+		rxn_index = []
+		met_count = 0
+		for i in model['idSp']:
+			met_index = []
+			met_count += 1
 			if i in model['rxns'][t]['reactants']:
-				proceed +=1
-				if proceed == 1:
-					for j in metabolite_mappings[i]:
-						if j in model['rxns'][t]['products']:
-							metabolite_mappings_rxn_reactant_list.append(i)
-							metabolite_mappings_rxn_product_list.append(j)						
-							try:
-								met_dict_mets[i].append(t)
-							except KeyError:
-								met_dict_mets[i] = [t]
-							try:
-								met_dict_mets[j].append(t)
-							except KeyError:
-								met_dict_mets[j] = [t]
-							for reactant in model['rxns'][t]['reactants']:
-								if reactant != i:
-									if reactant in metabolite_mappings:
-										for k in metabolite_mappings[reactant]:
-											if k in model['rxns'][t]['products']:
-												metabolite_mappings_rxn_reactant_list.append(reactant)
-												metabolite_mappings_rxn_product_list.append(k)
-												try:
-													met_dict_mets[reactant].append(t)
-												except KeyError:
-													met_dict_mets[reactant] = [t]
-												try:
-													met_dict_mets[k].append(t)
-												except KeyError:
-													met_dict_mets[k] = [t]
-												secondary_check += 1
-									else:
-								 		reactant_count += 1
-									#if reactant in met_exception_list:
-									#	exception_reactant_count += 1
-							#for product in rxns[t]['products']:
-							#	if product not in metabolite_mappings[i]:
-							#		if product in met_exception_list:
-							#			exception_product_count += 1
-							#To account for sink reactions, have several conditions that may result in a metabolite mapping exception
-							if (((len(model['rxns'][t]['reactants']) > secondary_check + 1) and (len(model['rxns'][t]['products']) > secondary_check + 1))  or ((len(model['rxns'][t]['reactants']) > secondary_check + 1) and (len(model['rxns'][t]['products']) == secondary_check + 1)) or ((len(model['rxns'][t]['reactants']) == secondary_check + 1) and (len(model['rxns'][t]['products']) > secondary_check + 1))): 						
-								met_dict_mets_list = metabolite_mappings_rxn_reactant_list + metabolite_mappings_rxn_product_list
-								met_dict_rxns[t] = met_dict_mets_list
-						else: 
-							j_count += 1
-						if j_count == len(metabolite_mappings[i]):					
-							proceed = 0
+				if i in model['rxns'][t]['products']:
+				 	reactants_amount = model['rxns'][t]['reactants'][i]
+					products_amount = model['rxns'][t]['products'][i]
+					num = 0
+					met_index.append(met_count - 1)
+					rxn_index.append(rxn_count - 1)
+					if reactants_amount > products_amount:
+						model['rxns'][t]['reactants'][i] = model['rxns'][t]['reactants'][i] - products_amount
+						model['rxns'][t]['products'][i] = 0
+						del model['rxns'][t]['products'][i]
+						num = -1*model['rxns'][t]['reactants'][i]
+						model['S'][met_index, rxn_index] = num				
+					if products_amount > reactants_amount:
+						model['rxns'][t]['products'][i] = model['rxns'][t]['products'][i] - reactants_amount
+						model['rxns'][t]['reactants'][i] = 0
+						del model['rxns'][t]['reactants'][i]
+						model['S'][met_index, rxn_index] = model['rxns'][t]['products'][i]				
+					if reactants_amount == products_amount:
+						model['rxns'][t]['reactants'][i] = model['rxns'][t]['reactants'][i] - products_amount
+						model['rxns'][t]['products'][i] = model['rxns'][t]['products'][i] - reactants_amount
+						del model['rxns'][t]['reactants'][i]
+						del model['rxns'][t]['products'][i]
+						model['S'][met_index, rxn_index] = 0				
+		if len(model['rxns'][t]['reactants']) == 0:
+			if len(model['rxns'][t]['products']) == 0:
+				rxns_to_remove_2.append(t)
 
-	#Remove mets from reactions with metabolite mappings
-	rxn_index = 0	
+	rxn_index = 0
+	rxn_index_list = []
+	rxn_index_list_to_delete = []
 	for i in model['idRs']:
 		rxn_index += 1
-		met_index = 0
-		rxn_index_0 = []
-		met_index_0 = []
-		if i in met_dict_rxns:
-			rxn_index_0.append(rxn_index - 1)
-			for j in model['idSp']:
-				met_index += 1
-				if j in met_dict_rxns[i]:
-					met_index_0.append(met_index - 1)
-					if j in model['rxns'][i]['reactants']:
-						del model['rxns'][i]['reactants'][j]
-					if j in model['rxns'][i]['products']:
-						del model['rxns'][i]['products'][j]
-		model['S'][met_index_0, rxn_index_0] = 0
-	return model
+		if i not in rxns_to_remove_2:
+			rxn_index_list.append(rxn_index-1)
+		else:
+			rxn_index_list_to_delete.append(rxn_index-1)
+	cobra_specific_objects['grRules'] = np.delete(cobra_specific_objects['grRules'], rxn_index_list_to_delete)
+	cobra_specific_objects['c'] = np.delete(cobra_specific_objects['c'], rxn_index_list_to_delete)
+	cobra_specific_objects['subsystem'] = np.delete(cobra_specific_objects['subsystem'], rxn_index_list_to_delete)
 
+	for t in rxns_to_remove_2:
+		del model['rxns'][t]
+		del model['gene2rxn'][t]
+		model['idRs'].remove(t)
 
-def nucleotide_conversion():
-	print "hi"
+	model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[:,rxn_index_list])
 
+	return model, cobra_specific_objects
 
 def modify():
 	print "hi"
@@ -460,49 +432,110 @@ def modify():
 def balance_reactions():
 	print "hi"
 
-def model_export(mdoel, model_desc):
+def model_export(model, cobra_specific_objects, model_desc):
 	#Convert EXAMO data structures into COBRA compliant data structures that can be ported to MATLAB
-	rxns_matlab = np.zeros((len(idRs),), dtype=np.object)
-	rxns_matlab[:] = idRs
+	rxns_matlab = np.zeros((len(model['idRs']),), dtype=np.object)
+	rxns_matlab[:] = model['idRs']
 	rxns_matlab = rxns_matlab[np.newaxis].T
 
-	mets_matlab = np.zeros((len(idSp),), dtype=np.object)
-	mets_matlab[:] = idSp
+	mets_matlab = np.zeros((len(model['idSp']),), dtype=np.object)
+	mets_matlab[:] = model['idSp']
 	mets_matlab = mets_matlab[np.newaxis].T
+
+	#Create gene set (for EXAMO model) and list (for COBRA model)
+	genes = set()
+	genes_list = []
+	for t in model['idRs']:
+		for values in model['rxns'][t]['genes']:
+	        	values_split = values.split('or')
+	        	for count, j in enumerate(values_split):
+	        	    j = j.split('and')
+	        	    genelist = []
+	        	    for k in j:
+	        	        k = k.translate(None, ' ()')
+	        	        if not k:
+	        	            continue
+	        	        else:
+	        	            genelist.append(k)
+				    if k not in genes_list:
+					genes.add(k)
+					genes_list.append(k)
+
+	#Create dictionary for gene occurrence to replace genes with their index in grRules for creation of rules object
+	genes_list_dict = {}
+	for i, j in enumerate(genes_list):
+		genes_list_dict[j] = i
+
+	#Create reaction gene matrix and rules object
+	rxnGeneMat = sp.sparse.csr_matrix((len(model['idRs']),len(genes)))
+	rxnGeneMat = sp.sparse.lil_matrix(rxnGeneMat)
+	rxn_index = 0
+	rules = cobra_specific_objects['grRules'].copy()
+	for i in range(0,len(model['idRs'])):
+		rxn_index += 1
+		gene_index = 0
+		rxn_index_0 = []
+		gene_index_0 = []	
+		for j in genes_list:
+			gene_index += 1
+			genes_search = re.search(str(j), model['rxns'][t]['genes'])
+			if genes_search is not None: 
+				rxn_index_0.append(rxn_index - 1)
+				gene_index_0.append(gene_index - 1)
+			rules[i] = re.sub(j,'x(%s)' % genes_list_dict[j],str(rules[i]))
+			rules[i] = re.sub('or','|',str(rules[i]))
+			rules[i] = re.sub('and','&',str(rules[i]))
+		rxnGeneMat[rxn_index_0, gene_index_0] = 1
 
 	genes_matlab = np.zeros((len(genes_list),), dtype=np.object)
 	genes_matlab[:] = genes_list
 	genes_matlab = genes_matlab[np.newaxis].T
 
+	ub = []
+	for t in model['idRs']:
+		ub.append(model['rxns'][t]['ub'])
 	ub_matlab = np.zeros((len(ub),), dtype=np.float64)
 	ub_matlab[:] = ub
 	ub_matlab = ub_matlab[np.newaxis].T
 
+	lb = []
+	for t in model['idRs']:
+		lb.append(model['rxns'][t]['lb'])	
 	lb_matlab = np.zeros((len(lb),), dtype=np.float64)
 	lb_matlab[:] = lb
 	lb_matlab = lb_matlab[np.newaxis].T
 
+	rev = []
+	for t in model['idRs']:
+		if model['rxns'][t]['lb'] < 0 and model['rxns'][t]['ub'] > 0:
+			rev.append(1)
+		else:
+			rev.append(0)
 	rev_cobra = np.zeros((len(rev),), dtype=np.float64)
 	rev_cobra[:] = rev
 	rev_cobra = rev_cobra[np.newaxis].T
 
-	grRules = grRules[np.newaxis].T
+	grRules = cobra_specific_objects['grRules'][np.newaxis].T
 
 	rules = rules[np.newaxis].T
 
-	c = c[np.newaxis].T
+	c = cobra_specific_objects['c'][np.newaxis].T
 
-	subsystem = subsystem[np.newaxis].T
+	subsystem = cobra_specific_objects['subsystem'][np.newaxis].T
 
-	metNames = metNames[np.newaxis].T
+	metNames = cobra_specific_objects['metNames'][np.newaxis].T
 
-	metFormulas = metFormulas[np.newaxis].T
+	metFormulas = cobra_specific_objects['metFormulas'][np.newaxis].T
 
-	b = b[np.newaxis].T
+	b = cobra_specific_objects['b'][np.newaxis].T
 
 	#Convert the matrices into coo matrices
-	S = sp.sparse.coo_matrix(S)
+	S = sp.sparse.coo_matrix(model['S'])
 
 	rxnGeneMat = sp.sparse.coo_matrix(rxnGeneMat)
 
 	model_matlab = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc}
+	#Need to add genes to model and export model for EXAMO
+	model['genes'] = genes
+
+
