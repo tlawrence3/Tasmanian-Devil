@@ -39,11 +39,11 @@ def model(args):
 
 
     ##Make the changes to the model
-    model, cobra_specific_objects = model_class.set_parameter(args.model, args.sbml, args.cobra, args.extracellular, args.lowerbound, args.upperbound, args.gene2rxn, model_desc)    
+    model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original = model_class.set_parameter(args.model, args.sbml, args.cobra, args.extracellular, args.lowerbound, args.upperbound, args.gene2rxn, model_desc)    
     model, cobra_specific_objects = model_class.metabolite_mapping(model, cobra_specific_objects, args.metabolitemappingcomplexes)
     model, cobra_specific_objects = model_class.nucleotide_conversion(model, cobra_specific_objects, args.nucleotideconversions)
     #model = model_class.modfiy(model, args_mod)
-    #model = model_class.balance_reactions(model, args_c2m, args_c)
+    model, cobra_specific_objects = model_class.balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args.biomassRxn, args.metabolite2carbon, args.zerocarbons, args.balance)
     model_class.model_export(model, cobra_specific_objects, model_desc)
     
 
@@ -95,9 +95,11 @@ def main():
     parser_model.add_argument("-n", "--nucleotideconversions", type=argparse.FileType("r"), default=None,
                               help="Tab-delimited nucleotide conversions file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this.")
     parser_model.add_argument("-a", "--adaptation",  type=argparse.FileType("r"), default=None, 
-                              help='Tab delimited file to change specific reaction stoichiometries or to remove metabolites from reactions. See iMM904 example for documentation; must have -d argument as well to use this.') 
+                              help="Tab delimited file to change specific reaction stoichiometries or to remove metabolites from reactions. See iMM904 example for documentation; must have -d argument as well to use this.") 
+    parser_model.add_argument("-z", "--zerocarbons", action="store_true",
+                              help="Flag to specify whether to remove metabolites wihtout any carbons. Must have -d argument as well to use this.")
     parser_model.add_argument("-b", "--balance", action="store_true", 
-                              help='Flag to specify whether to remove carbon unbalanced reactions. Recommend using only after first inspecting reactions to be removed. Must have -d argument as well to use this.')	
+                              help="Flag to specify whether to remove carbon unbalanced reactions. Recommend using only after first inspecting reactions to be removed. Must have -d argument as well to use this.")	
     parser_model.set_defaults(func=model)
     
     # flux subcommand parser

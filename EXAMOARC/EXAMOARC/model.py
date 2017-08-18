@@ -90,7 +90,7 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 			gene2rxn[reaction_name] = genes_genes2rxn[i]
 
 	#Create the necesssary rxn dictionaries for EXAMO.
-	b_met = []
+	b_met = []	
 	for i in cobra_model.reactions:
 		#reaction_name = re.sub("LPAREN","",i.id)
 		#reaction_name = re.sub("RPAREN","",reaction_name)
@@ -143,15 +143,15 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 			for j in reactants:
 				extracellular_string = args_e + '\Z'
 				idSp_e = re.search(extracellular_string, j)
-				if idSp_e is not None:
+				if idSp_e:
 					if args_e[-1:] == '_':
 						products[j[:-2]+'b_'] = reactants[j]
 						products_original[j[:-2]+'b_'] = reactants[j]
-						b_met.append(j[:-2]+'b_')
+						b_met.append(j[:-2]+str("b_"))
 					else:
 						products[j[:-1]+'b'] = reactants[j]
 						products_original[j[:-1]+'b'] = reactants[j]
-						b_met.append(j[:-1]+'b')
+						b_met.append(j[:-1]+str("b"))
 		if (rxn2lb[reaction_name] < 0 and rxn2ub[reaction_name] > 0):
 			reversible = True
 		else:
@@ -168,61 +168,43 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 	metFormulas = cobra.io.mat._cell([str(m.formula) for m in cobra_model.metabolites])
 	b = np.array(cobra_model.metabolites.list_attr('_bound')) * 1.
 
-	#Move this to carbon balancecd section	
-	last_string_list = []
-	for i in idSp:
-		if i[-1] == '_':
-			b_name = '_b_'
-			if b_name not in last_string_list:
-				last_string_list.append(b_name)
-			last_string = i[-3:]
-			if last_string not in last_string_list:
-				last_string_list.append(last_string)
-		else:
-			b_name = '_b'
-			if b_name not in last_string_list:
-				last_string_list.append(b_name)
-			last_string = i[-2:]
-			if last_string not in last_string_list:
-				last_string_list.append(last_string)
-
-	#Remove mets that do not appear in any rxns##Consider deleting
-	idSp_to_remove = []
-	met_index = 0
-	met_index_list = []
-	for i in idSp:
-		met_index += 1
-		met_occurrence = 0
-		for j in rxns:
-			if i in rxns[j]['reactants']:
-				met_occurrence += 1
-			if i in rxns[j]['products']:	
-				met_occurrence += 1
-		if met_occurrence == 0:
-			idSp_to_remove.append(i)
-		else:
-			met_index_list.append(met_index - 1)
+	#Remove mets that do not appear in any rxns. This is a model cleanup step and may be needed for linear optimizations not to fail for EXAMO 
+	#idSp_to_remove = []
+	#met_index = 0
+	#met_index_list = []
+	#for i in idSp:
+	#	met_index += 1
+	#	met_occurrence = 0
+	#	for j in rxns:
+	#		if i in rxns[j]['reactants']:
+	#			met_occurrence += 1
+	#		if i in rxns[j]['products']:	
+	#			met_occurrence += 1
+	#	if met_occurrence == 0:
+	#		idSp_to_remove.append(i)
+	#	else:
+	#		met_index_list.append(met_index - 1)
 
 
-	S = sp.sparse.lil_matrix(sp.sparse.csr_matrix(S)[met_index_list,:])
+	#S = sp.sparse.lil_matrix(sp.sparse.csr_matrix(S)[met_index_list,:])
 
-	met_index = 0
-	met_index_to_delete = []
-	for i in idSp:
-		met_index += 1
-		if i in idSp_to_remove:
-			met_index_to_delete.append(met_index-1)
-	metNames = np.delete(metNames, met_index_to_delete)
-	metFormulas = np.delete(metFormulas, met_index_to_delete)
-	b = np.delete(b, met_index_to_delete)
+	#met_index = 0
+	#met_index_to_delete = []
+	#for i in idSp:
+	#	met_index += 1
+	#	if i in idSp_to_remove:
+	#		met_index_to_delete.append(met_index-1)
+	#metNames = np.delete(metNames, met_index_to_delete)
+	#metFormulas = np.delete(metFormulas, met_index_to_delete)
+	#b = np.delete(b, met_index_to_delete)
 
-	for i in idSp_to_remove:
-		idSp.remove(i)
-
+	#for i in idSp_to_remove:
+	#	idSp.remove(i)
+	
 	#Create the model and cobra specific objects dictionaries to be able to export to other functions
 	model = {'idSp' : idSp, 'idRs' : idRs, 'lb' : lb, 'ub' : ub, 'gene2rxn': gene2rxn, 'S' : S, 'rxns' : rxns }
 	cobra_specific_objects = {'grRules': grRules, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b}	
-	return model, cobra_specific_objects
+	return model, cobra_specific_objects, b_met, rxns_original
 
 
 def metabolite_mapping(model, cobra_specific_objects, args_m):
@@ -429,8 +411,236 @@ def modify():
 	print "hi"
 
 
-def balance_reactions():
-	print "hi"
+def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args_biomass, args_c2m, args_z, args_b):
+	#Import metabolite dictionary mapped to carbons if the argument is supplied from the command line. 
+	if args_c2m:
+		csvreader1 = csv.reader(args_c2m)
+		metabolite_dict = {}
+		metabolite_dict_csv = []
+		for row in csvreader1:
+			metabolite_dict_csv.append(row[0])
+
+		#Account for possibility of every metabolite coming from any compartment, including transport into extracellular compartment
+		last_string_list = []
+		for i in idSp:
+			if i[-1] == '_':
+				b_name = '_b_'
+				if b_name not in last_string_list:
+					last_string_list.append(b_name)
+				last_string = i[-3:]
+				if last_string not in last_string_list:
+					last_string_list.append(last_string)
+			else:
+				b_name = '_b'
+				if b_name not in last_string_list:
+					last_string_list.append(b_name)
+				last_string = i[-2:]
+				if last_string not in last_string_list:
+					last_string_list.append(last_string)
+
+		for i in metabolite_dict_csv:
+			i = re.split('\s|,|\t', i)
+			for j in last_string_list:
+				met_name = i[0]
+				met_name += j
+				metabolite_dict[met_name] = i[1]
+		
+		#Remove metabolites in the metabolite dictionary that are not in the model
+		metabolite_dict_to_delete = []
+		for i in metabolite_dict:
+			if i not in model['idSp']:
+				if i not in mets_transported_to_extracellular_comp:
+					metabolite_dict_to_delete.append(i)
+		for i in metabolite_dict_to_delete:
+			del metabolite_dict[i]	
+		
+		#Idenitfy metabolites with 0 carbons. They will be removed from the model	
+		if args_z:
+			met_exception_list = []
+			for i in metabolite_dict:
+				if int(metabolite_dict[i]) == 0:
+					met_exception_list.append(i)
+			#Remove reactions that only contain metabolites with 0 carbons for either reactants or products			
+			for t in mode['rxns']:
+				reactant_count = 0
+				product_count = 0	
+				for reactant in model['rxns'][t]['reactants']:
+					if reactant in met_exception_list:
+						reactant_count += 1
+				if reactant_count == len(model['rxns'][t]['reactants']):
+					if t != args_biomass:	
+						rxns_to_remove.append(t)
+				for met in met_exception_list:
+					if met in model['rxns'][t]['reactants']:
+						del model['rxns'][t]['reactants'][met]
+				for product in model['rxns'][t]['products']:
+					if product in met_exception_list:
+						product_count += 1
+				if product_count == len(model['rxns'][t]['products']):
+					if t not in rxns_to_remove:
+						if t != args_biomass:
+							rxns_to_remove.append(t)
+				for met in met_exception_list:
+					if met in model['rxns'][t]['products']:
+						del model['rxns'][t]['products'][met]
+								
+			rxn_index = 0
+			rxn_index_list = []
+			rxn_index_list_to_delete = []
+			for i in model['idRs']:
+				rxn_index += 1
+				if i not in rxns_to_remove:
+					rxn_index_list.append(rxn_index-1)
+				else:
+					rxn_index_list_to_delete.append(rxn_index-1)
+			cobra_specific_objects['grRules'] = np.delete(cobra_specific_objects['grRules'], rxn_index_list_to_delete)
+			cobra_specific_objects['c'] = np.delete(cobra_specific_objects['c'], rxn_index_list_to_delete)
+			cobra_specific_objects['subsystem'] = np.delete(cobra_specific_objects['subsystem'], rxn_index_list_to_delete)
+
+			met_index = 0
+			met_index_list = []
+			met_index_list_to_delete = []
+			for i in model['idSp']:
+				met_index += 1
+				if i not in met_exception_list:
+					met_index_list.append(met_index-1)
+				else:
+					met_index_list_to_delete.append(met_index-1)
+			cobra_specific_objects['metNames'] = np.delete(cobra_specific_objects['metNames'], met_index_list_to_delete)
+			cobra_specific_objects['metFormulas'] = np.delete(cobra_specific_objects['metFormulas'], met_index_list_to_delete)
+			cobra_specific_objects['b'] = np.delete(cobra_specific_objects['b'], met_index_list_to_delete)
+
+			model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[met_index_list, :])
+			model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[:,rxn_index_list])
+
+			for met in met_exception_list:
+				if ((met[-2:] != '_b') and (met[-3:] != '_b_')):
+					model['idSp'].remove(met)
+	
+			#Delete reactions and gene2rxn dictionary entries for reactions that cannot be carried out due to cofactor presence
+			for t in rxns_to_remove:
+				del model['rxns'][t]
+				del model['gene2rxn'][t]
+				model['idRs'].remove(t)
+
+		#Identify unbalanced rxns
+		#Need to adapt to print to a file
+		metabolite_dict_rxns = {}
+		metabolite_dict_rxns_original = {}
+		for t in model['rxns']:
+			metabolite_dict_reactants = {}
+			metabolite_dict_products = {}
+			for i in model['rxns'][t]['reactants']:
+				metabolite_dict_reactants[i] = metabolite_dict[i]
+			for i in model['rxns'][t]['products']:
+				metabolite_dict_products[i] = metabolite_dict[i]
+			rxnmetlist = {'met_reactants': metabolite_dict_reactants, 'met_products': metabolite_dict_products}
+			metabolite_dict_rxns[t] = rxnmetlist 
+			metabolite_dict_reactants_original = {}
+			metabolite_dict_products_original = {}
+			for j in rxns_original[t]['reactants']:
+				metabolite_dict_reactants_original[j] = metabolite_dict[j]
+			for j in rxns_original[t]['products']:
+				metabolite_dict_products_original[j] = metabolite_dict[j]
+			rxnmetlist = {'met_reactants': metabolite_dict_reactants_original, 'met_products': metabolite_dict_products_original}
+			metabolite_dict_rxns_original[t] = rxnmetlist
+
+		count = 0
+		for t in model['rxns']:
+			reactants_count = 0
+			products_count = 0
+			for i in model['rxns'][t]['reactants']:
+				reactants_count += int(metabolite_dict[i])*model['rxns'][t]['reactants'][i]
+			for i in model['rxns'][t]['products']:
+				products_count += int(metabolite_dict[i])*model['rxns'][t]['products'][i]
+			for i in rxns_original[t]['reactants']:
+				if i in met_exception_list:
+					products_count -= int(metabolite_dict[i])*rxns_original[t]['reactants'][i]
+			for i in rxns_original[t]['products']:
+				if i in met_exception_list:
+					reactants_count -= int(metabolite_dict[i])*rxns_original[t]['products'][i]
+			if round(reactants_count,3) != round(products_count,3):
+				print "\n"		
+				print t
+				print "carbons in original model: %s" % metabolite_dict_rxns_original[t]
+				print "stoichiometry in original model: %s" % rxns_original[t]
+				print "carbons in adapted model: %s" % metabolite_dict_rxns[t]
+				print "stoichiometry in adapted model: %s" % model['rxns'][t]		
+				print "carbons in reactants in adapted model: %s" % reactants_count
+				print "cabons in products in adapted model: %s" % products_count
+				count += 1
+				if t != args_biomass:
+					unbalanced_rxns.append(t)
+
+		#The rxns identified as not being balanced need to be verified whether they are due to a discrepancy in the metabolite_dict or whether the reactions are really not balanced due to an error in original model. 
+		#If verified, then the rxns can be deleted, but other adjustments may need to be made to the model.
+		#If a metabolite is not in a balanced rxn and only in an unbalanced rxn, it will be removed from the model.
+		if args_b: 
+			potential_unbalanced_mets = []
+			for i in unbalanced_rxns:
+				for k in model['rxns'][i]['reactants']:
+					if k not in potential_unbalanced_mets:		
+						potential_unbalanced_mets.append(k)
+				for k in model['rxns'][i]['products']:
+					if k not in potential_unbalanced_mets:
+						potential_unbalanced_mets.append(k)
+
+			balanced_rxns = list(set(model['idRs']) - set(unbalanced_rxns))
+
+			mets_to_remove_from_potential_unbalanced_mets = []
+			for i in potential_unbalanced_mets:
+				for j in balanced_rxns:
+					if j != args_biomass:
+						if i in model['rxns'][j]['reactants']:
+							if i not in mets_to_remove_from_potential_unbalanced_mets:
+								mets_to_remove_from_potential_unbalanced_mets.append(i)
+						if i in model['rxns'][j]['products']:
+							if i not in mets_to_remove_from_potential_unbalanced_mets:
+								mets_to_remove_from_potential_unbalanced_mets.append(i)
+
+			mets_to_remove = list(set(potential_unbalanced_mets) - set(mets_to_remove_from_potential_unbalanced_mets))
+
+			met_index = 0
+			met_index_list = []
+			met_index_list_to_delete = []
+			for i in model['idSp']:
+				met_index += 1
+				if i not in mets_to_remove:
+					met_index_list.append(met_index-1)
+				else:
+					met_index_list_to_delete.append(met_index-1)
+			cobra_specific_objects['metNames'] = np.delete(cobra_specific_objects['metNames'], met_index_list_to_delete)
+			cobra_specific_objects['metFormulas'] = np.delete(cobra_specific_objects['metFormulas'], met_index_list_to_delete)
+			cobra_specific_objects['b'] = np.delete(cobra_specific_objects['b'], met_index_list_to_delete)
+
+			model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[met_index_list, :])
+			model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[:,rxn_index_list])
+
+			for met in mets_to_remove:
+				if ((met[-2:] != '_b') and (met[-3:] != '_b_')):
+					model['idSp'].remove(met)
+
+			#Remove unbalanced reactions
+			rxn_index = 0
+			rxn_index_list = []
+			rxn_index_list_to_delete = []
+			for i in model['idRs']:
+				rxn_index += 1
+				if i not in unbalanced_rxns:
+					rxn_index_list.append(rxn_index-1)
+				else:
+					rxn_index_list_to_delete.append(rxn_index-1)
+			cobra_specific_objects['grRules'] = np.delete(cobra_specific_objects['grRules'], rxn_index_list_to_delete)
+			cobra_specific_objects['c'] = np.delete(cobra_specific_objects['c'], rxn_index_list_to_delete)
+			cobra_specific_objects['subsystem'] = np.delete(cobra_specific_objects['subsystem'], rxn_index_list_to_delete)
+
+			for i in unbalanced_rxns:
+				del model['rxns'][i]
+				del model['gene2rxn'][i]
+				model['idRs'].remove(i)
+
+			model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[:,rxn_index_list])
+
 
 def model_export(model, cobra_specific_objects, model_desc):
 	#Convert EXAMO data structures into COBRA compliant data structures that can be ported to MATLAB
@@ -507,10 +717,7 @@ def model_export(model, cobra_specific_objects, model_desc):
 
 	rev = []
 	for t in model['idRs']:
-		if model['rxns'][t]['lb'] < 0 and model['rxns'][t]['ub'] > 0:
-			rev.append(1)
-		else:
-			rev.append(0)
+		rev.append(model['rxns'][t]['reversible'])
 	rev_cobra = np.zeros((len(rev),), dtype=np.float64)
 	rev_cobra[:] = rev
 	rev_cobra = rev_cobra[np.newaxis].T
