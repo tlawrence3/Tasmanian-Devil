@@ -3,6 +3,7 @@ import cobra
 import scipy as sp
 import numpy as np
 import cPickle as pickle #Remove this if we are able to get rid of all pickling
+import csv
 
 def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, model_desc):
 	#Import the model
@@ -21,8 +22,6 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 	gene2rxn = {}
 	rxns = {}
 	rxns_original = {}
-	rxns_to_remove = []	
-	unbalanced_rxns = []
 
 	idSp = []
 	for i in cobra_model.metabolites:
@@ -76,7 +75,7 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 	#Import gene rule adjustments if the argument is supplied from the command line. 
 	if args_g:
 		for x in args_g:
-			genes_genes2rxn.append(x)
+			genes_genes2rxn.append(x.strip())
 		for i, item1 in enumerate(cobra_model.reactions):
 			#reaction_name = re.sub("LPAREN","",str(item1))
 			#reaction_name = re.sub("RPAREN","",reaction_name)
@@ -348,7 +347,7 @@ def nucleotide_conversion(model, cobra_specific_objects, args_n):
 								del model['rxns'][t]['products'][i]
 
 	#Remove metabolites that appear as both a product and a reactant. 
-	rxns_to_remove_2 = []	
+	rxns_to_remove = []	
 	rxn_count = 0
 	for t in model['idRs']:
 		rxn_count += 1
@@ -383,14 +382,14 @@ def nucleotide_conversion(model, cobra_specific_objects, args_n):
 						model['S'][met_index, rxn_index] = 0				
 		if len(model['rxns'][t]['reactants']) == 0:
 			if len(model['rxns'][t]['products']) == 0:
-				rxns_to_remove_2.append(t)
+				rxns_to_remove.append(t)
 
 	rxn_index = 0
 	rxn_index_list = []
 	rxn_index_list_to_delete = []
 	for i in model['idRs']:
 		rxn_index += 1
-		if i not in rxns_to_remove_2:
+		if i not in rxns_to_remove:
 			rxn_index_list.append(rxn_index-1)
 		else:
 			rxn_index_list_to_delete.append(rxn_index-1)
@@ -398,7 +397,7 @@ def nucleotide_conversion(model, cobra_specific_objects, args_n):
 	cobra_specific_objects['c'] = np.delete(cobra_specific_objects['c'], rxn_index_list_to_delete)
 	cobra_specific_objects['subsystem'] = np.delete(cobra_specific_objects['subsystem'], rxn_index_list_to_delete)
 
-	for t in rxns_to_remove_2:
+	for t in rxns_to_remove:
 		del model['rxns'][t]
 		del model['gene2rxn'][t]
 		model['idRs'].remove(t)
@@ -422,7 +421,7 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 
 		#Account for possibility of every metabolite coming from any compartment, including transport into extracellular compartment
 		last_string_list = []
-		for i in idSp:
+		for i in model['idSp']:
 			if i[-1] == '_':
 				b_name = '_b_'
 				if b_name not in last_string_list:
@@ -449,7 +448,7 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 		metabolite_dict_to_delete = []
 		for i in metabolite_dict:
 			if i not in model['idSp']:
-				if i not in mets_transported_to_extracellular_comp:
+				if i not in mets_to_extracellular_comp:
 					metabolite_dict_to_delete.append(i)
 		for i in metabolite_dict_to_delete:
 			del metabolite_dict[i]	
@@ -457,11 +456,12 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 		#Idenitfy metabolites with 0 carbons. They will be removed from the model	
 		if args_z:
 			met_exception_list = []
+			rxns_to_remove = []	
 			for i in metabolite_dict:
 				if int(metabolite_dict[i]) == 0:
 					met_exception_list.append(i)
 			#Remove reactions that only contain metabolites with 0 carbons for either reactants or products			
-			for t in mode['rxns']:
+			for t in model['rxns']:
 				reactant_count = 0
 				product_count = 0	
 				for reactant in model['rxns'][t]['reactants']:
@@ -527,6 +527,7 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 		#Need to adapt to print to a file
 		metabolite_dict_rxns = {}
 		metabolite_dict_rxns_original = {}
+		unbalanced_rxns = []
 		for t in model['rxns']:
 			metabolite_dict_reactants = {}
 			metabolite_dict_products = {}
@@ -549,6 +550,11 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 		for t in model['rxns']:
 			reactants_count = 0
 			products_count = 0
+			try:
+				if met_exception_list:
+					pass
+			except:
+				met_exception_list = []
 			for i in model['rxns'][t]['reactants']:
 				reactants_count += int(metabolite_dict[i])*model['rxns'][t]['reactants'][i]
 			for i in model['rxns'][t]['products']:
@@ -614,7 +620,6 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 			cobra_specific_objects['b'] = np.delete(cobra_specific_objects['b'], met_index_list_to_delete)
 
 			model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[met_index_list, :])
-			model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[:,rxn_index_list])
 
 			for met in mets_to_remove:
 				if ((met[-2:] != '_b') and (met[-3:] != '_b_')):
@@ -640,7 +645,7 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 				model['idRs'].remove(i)
 
 			model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[:,rxn_index_list])
-
+	return model, cobra_specific_objects
 
 def model_export(model, cobra_specific_objects, model_desc):
 	#Convert EXAMO data structures into COBRA compliant data structures that can be ported to MATLAB

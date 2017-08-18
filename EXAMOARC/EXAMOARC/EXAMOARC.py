@@ -62,7 +62,7 @@ def main():
                              default="gene_classification.txt", help="need to write")
     parser_gene.add_argument("-u", "--upper", type=float, default=0.75,
                              help="high help")
-    parser_gene.add_argument("-l", "--lower", type=float, default=0.2,
+    parser_gene.add_argument("-l", "--lower", type=float, default=0.25,
                              help="low help")
     parser_gene.set_defaults(func=gene)
     
