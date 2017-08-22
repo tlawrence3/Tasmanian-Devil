@@ -25,15 +25,8 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 
 	idSp = []
 	for i in cobra_model.metabolites:
-		metabolite_name = re.sub("LPAREN","",str(i.id))
-		metabolite_name = re.sub("RPAREN","",metabolite_name)
-		metabolite_name = re.sub("\(","_",metabolite_name)
-		metabolite_name = re.sub("\)","_",metabolite_name)
-		metabolite_name = re.sub("\[","_",metabolite_name)
-		metabolite_name = re.sub("\]","_",metabolite_name)
-		metabolite_name = re.sub("\-","_",metabolite_name)
-		metabolite_name = re.sub("__","_",metabolite_name)
-		idSp.append("M_"+metabolite_name)
+		name = name_sub(i.id, "M_")
+		idSp.append(name)
 
 	cobra_model = cobra.core.ArrayBasedModel(cobra_model)
 	S = sp.sparse.coo_matrix(cobra_model.S)
@@ -42,64 +35,35 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 	#Need to change the code to import as dictionaries
 	#Import lower boundary adjustments if the argument is supplied from the command line. 
 	if args_l:
-		for x in args_l:
-			lb.append(float(x))
-		for i, item1 in enumerate(cobra_model.reactions):
-			reaction_name = re.sub("LPAREN","",str(item1))
-			reaction_name = re.sub("RPAREN","",reaction_name)
-			reaction_name = re.sub("\(","_",reaction_name)
-			reaction_name = re.sub("\)","_",reaction_name)
-			reaction_name = re.sub("\[","_",reaction_name)
-			reaction_name = re.sub("\]","_",reaction_name)
-			reaction_name = re.sub("\-","_",reaction_name)
-			reaction_name = re.sub("__","_",reaction_name)
-			reaction_name = 'R_'+reaction_name
-			rxn2lb[reaction_name] = lb[i]
+		lb_dict = {}		
+		csv_reader = csv.reader(args_l)		
+		for row in csv_reader:
+			name = row[0]
+			name = name_sub(name, "R_")
+			rxn2lb[name] = row[1]
 
 	#Import upper boundary adjustments if the argument is supplied from the command line. 
 	if args_u:
-		for x in args_u:
-			ub.append(float(x))
-		for i, item1 in enumerate(cobra_model.reactions):
-			reaction_name = re.sub("LPAREN","",str(item1))
-			reaction_name = re.sub("RPAREN","",reaction_name)
-			reaction_name = re.sub("\(","_",reaction_name)
-			reaction_name = re.sub("\)","_",reaction_name)
-			reaction_name = re.sub("\[","_",reaction_name)
-			reaction_name = re.sub("\]","_",reaction_name)
-			reaction_name = re.sub("\-","_",reaction_name)
-			reaction_name = re.sub("__","_",reaction_name)
-			reaction_name = 'R_'+reaction_name
-			rxn2ub[reaction_name] = ub[i]
+		ub_dict = {}		
+		csv_reader = csv.reader(args_u)		
+		for row in csv_reader:
+			name = row[0]
+			name = name_sub(name, "R_")
+			rxn2ub[name] = row[1]
 
 	#Import gene rule adjustments if the argument is supplied from the command line. 
 	if args_g:
-		for x in args_g:
-			genes_genes2rxn.append(x.strip())
-		for i, item1 in enumerate(cobra_model.reactions):
-			reaction_name = re.sub("LPAREN","",str(item1))
-			reaction_name = re.sub("RPAREN","",reaction_name)
-			reaction_name = re.sub("\(","_",reaction_name)
-			reaction_name = re.sub("\)","_",reaction_name)
-			reaction_name = re.sub("\[","_",reaction_name)
-			reaction_name = re.sub("\]","_",reaction_name)
-			reaction_name = re.sub("\-","_",reaction_name)
-			reaction_name = re.sub("__","_",reaction_name)
-			reaction_name = 'R_'+reaction_name
-			gene2rxn[reaction_name] = genes_genes2rxn[i]
+		genes_dict = {}
+		csv_reader = csv.reader(args_g)
+		for row in csv_reader:
+			name = row[0]
+			name = name_sub(name, "R_")
+			gene2rxn[name] = row[1]
 
 	#Create the necesssary rxn dictionaries for EXAMO.
 	b_met = []	
 	for i in cobra_model.reactions:
-		reaction_name = re.sub("LPAREN","",i.id)
-		reaction_name = re.sub("RPAREN","",reaction_name)
-		reaction_name = re.sub("\(","_",reaction_name)
-		reaction_name = re.sub("\)","_",reaction_name)
-		reaction_name = re.sub("\[","_",reaction_name)
-		reaction_name = re.sub("\]","_",reaction_name)
-		eaction_name = re.sub("\-","_",reaction_name)
-		reaction_name = re.sub("__","_",reaction_name)
-		reaction_name = 'R_'+reaction_name
+		reaction_name = name_sub(i.id, "R_")
 		reactants = {}
 		reactants_original = {}
 		products = {}
@@ -117,27 +81,13 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 		#Now need rxn
 		for j in i.metabolites:
 			if i.metabolites[j] < 0:
-				metabolite_name = re.sub("LPAREN","",j.id)
-				metabolite_name = re.sub("RPAREN","",metabolite_name)
-				metabolite_name = re.sub("\(","_",metabolite_name)
-				metabolite_name = re.sub("\)","_",metabolite_name)
-				metabolite_name = re.sub("\[","_",metabolite_name)
-				metabolite_name = re.sub("\]","_",metabolite_name)
-				metabolite_name = re.sub("\-","_",metabolite_name)
-				metabolite_name = re.sub("__","_",metabolite_name)
-				reactants['M_'+metabolite_name] = -1*i.metabolites[j]
-				reactants_original['M_'+metabolite_name] = -1*i.metabolites[j]
+				metabolite_name = name_sub(j.id, "M_")
+				reactants[metabolite_name] = -1*i.metabolites[j]
+				reactants_original[metabolite_name] = -1*i.metabolites[j]
 			if i.metabolites[j] > 0:
-				metabolite_name = re.sub("LPAREN","",j.id)
-				metabolite_name = re.sub("RPAREN","",metabolite_name)
-				metabolite_name = re.sub("\(","_",metabolite_name)
-				metabolite_name = re.sub("\)","_",metabolite_name)
-				metabolite_name = re.sub("\[","_",metabolite_name)
-				metabolite_name = re.sub("\]","_",metabolite_name)
-				metabolite_name = re.sub("\-","_",metabolite_name)
-				metabolite_name = re.sub("__","_",metabolite_name)
-				products['M_'+metabolite_name] = i.metabolites[j]
-				products_original['M_'+metabolite_name] = i.metabolites[j]
+				metabolite_name = name_sub(j.id, "M_")
+				products[metabolite_name] = i.metabolites[j]
+				products_original[metabolite_name] = i.metabolites[j]
 		if len(products) == 0:
 			for j in reactants:
 				extracellular_string = args_e + '\Z'
@@ -204,6 +154,19 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 	model = {'idSp' : idSp, 'idRs' : idRs, 'lb' : lb, 'ub' : ub, 'gene2rxn': gene2rxn, 'S' : S, 'rxns' : rxns }
 	cobra_specific_objects = {'grRules': grRules, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b}	
 	return model, cobra_specific_objects, b_met, rxns_original
+
+def name_sub(string, prepend):
+	name = re.sub("LPAREN","",string)
+	name = re.sub("RPAREN","",name)
+	name = re.sub("\(","_",name)
+	name = re.sub("\)","_",name)
+	name = re.sub("\[","_",name)
+	name = re.sub("\]","_",name)
+	name = re.sub("\-","_",name)
+	name = re.sub("__","_",name)
+	if name[:2] != prepend:
+		name = prepend+name
+	return name
 
 
 def metabolite_mapping(model, cobra_specific_objects, args_m):
