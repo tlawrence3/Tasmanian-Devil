@@ -174,10 +174,8 @@ def metabolite_mapping(model, cobra_specific_objects, args_m):
 		metabolite_mappings = {}		
 		csv_file = csv.reader(args_m)
 		for row in csv_file:
-			met1 = row[0]
-			met1 = name_sub(met1, "M_")
-			met2 = row[1] 
-			met2 = name_sub(met2, "M_")
+			met1 = name_sub(row[0], "M_")
+			met2 = name_sub(row[1], "M_")
 			metabolite_mappings[row[0]] = row[1]				
 		met_dict_rxns = {}
 		met_dict_mets = {}
@@ -266,19 +264,26 @@ def metabolite_mapping(model, cobra_specific_objects, args_m):
 
 def nucleotide_conversion(model, cobra_specific_objects, args_n):
 	#Remove repetitive nucleotides that share a carbon source 
-	if args_n is not None:
-		md = pickle.load(args_n)
-		#Remove repetitive nucleotides
-		for repetitivemet in md['nucleotide_conversions']:
+	if args_n:
+		nucleotide_conversions = {}		
+		csv_file = csv.reader(args_n)
+		for row in csv_file:
+			met1 = name_sub(row[0], "M_")
+			nucleotide_conversions[met1] = []
+			for i in range(1,len(row)):
+				met = name_sub(row[i], "M_")
+				if met != "":
+					nucleotide_conversions[met1].append(met)
+		for repetitivemet in nucleotide_conversions:
 			mets_to_delete = []
-			for i in md['nucleotide_conversions'][repetitivemet]:
+			for i in nucleotide_conversions[repetitivemet]:
 				met_index = 0
 				mets_to_delete.append(i)
 				met_index_to_change = []
 				met_index_to_delete = []
 				for j in model['idSp']:
 					met_index += 1
-					metabolite = str(repetitivemet)
+					metabolite = repetitivemet
 					if j == metabolite:
 						met_index_to_change.append(met_index - 1) 
 				met_index = 0	
@@ -371,6 +376,7 @@ def nucleotide_conversion(model, cobra_specific_objects, args_n):
 		model['idRs'].remove(t)
 
 	model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[:,rxn_index_list])
+
 
 	return model, cobra_specific_objects
 
