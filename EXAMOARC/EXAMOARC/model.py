@@ -32,12 +32,11 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 	S = sp.sparse.coo_matrix(cobra_model.S)
 	S = sp.sparse.lil_matrix(S)
 
-	#Need to change the code to import as dictionaries
 	#Import lower boundary adjustments if the argument is supplied from the command line. 
 	if args_l:
 		lb_dict = {}		
-		csv_reader = csv.reader(args_l)		
-		for row in csv_reader:
+		csv_file = csv.reader(args_l)		
+		for row in csv_file:
 			name = row[0]
 			name = name_sub(name, "R_")
 			rxn2lb[name] = row[1]
@@ -45,8 +44,8 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 	#Import upper boundary adjustments if the argument is supplied from the command line. 
 	if args_u:
 		ub_dict = {}		
-		csv_reader = csv.reader(args_u)		
-		for row in csv_reader:
+		csv_file = csv.reader(args_u)		
+		for row in csv_file:
 			name = row[0]
 			name = name_sub(name, "R_")
 			rxn2ub[name] = row[1]
@@ -54,8 +53,8 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 	#Import gene rule adjustments if the argument is supplied from the command line. 
 	if args_g:
 		genes_dict = {}
-		csv_reader = csv.reader(args_g)
-		for row in csv_reader:
+		csv_file = csv.reader(args_g)
+		for row in csv_file:
 			name = row[0]
 			name = name_sub(name, "R_")
 			gene2rxn[name] = row[1]
@@ -172,8 +171,14 @@ def name_sub(string, prepend):
 def metabolite_mapping(model, cobra_specific_objects, args_m):
 	#Adjust for reactions that have metbaolite mappings
 	if args_m:
-		md = pickle.load(args_m)
-		metabolite_mappings = md['metabolite_mappings']
+		metabolite_mappings = {}		
+		csv_file = csv.reader(args_m)
+		for row in csv_file:
+			met1 = row[0]
+			met1 = name_sub(met1, "M_")
+			met2 = row[1] 
+			met2 = name_sub(met2, "M_")
+			metabolite_mappings[row[0]] = row[1]				
 		met_dict_rxns = {}
 		met_dict_mets = {}
 		rxns_mets_to_delete = {}
