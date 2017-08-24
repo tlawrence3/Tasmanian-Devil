@@ -39,7 +39,7 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 		for row in csv_file:
 			name = row[0]
 			name = name_sub(name, "R_")
-			rxn2lb[name] = row[1]
+			rxn2lb[name] = float(row[1])
 
 	#Import upper boundary adjustments if the argument is supplied from the command line. 
 	if args_u:
@@ -48,7 +48,7 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 		for row in csv_file:
 			name = row[0]
 			name = name_sub(name, "R_")
-			rxn2ub[name] = row[1]
+			rxn2ub[name] = float(row[1])
 
 	#Import gene rule adjustments if the argument is supplied from the command line. 
 	if args_g:
@@ -154,6 +154,7 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 	cobra_specific_objects = {'grRules': grRules, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b}	
 	return model, cobra_specific_objects, b_met, rxns_original
 
+
 def name_sub(string, prepend):
 	name = re.sub("LPAREN","",string)
 	name = re.sub("RPAREN","",name)
@@ -166,6 +167,40 @@ def name_sub(string, prepend):
 	if name[:2] != prepend:
 		name = prepend+name
 	return name
+
+
+def modify(model, cobra_specific_objects, args_a):
+	modifications = {}
+	csv_file = csv.reader(args_a)
+	for row in csv_file:
+		rxn = name_sub(row[0], "R_")
+		met = name_sub(row[1], "M_")
+		stoich = float(row[2])
+		if rxn not in modifications:
+			modifications[rxn] = {}
+		modifications[rxn][met] = stoich
+	rxn_index = 0
+	for t in model['idRs']:
+		rxn_index += 1
+		met_index = 0
+		rxn_index_change = []
+		met_index_0 = []
+		if t in modifications:
+			rxn_index_change = rxn_index - 1
+			for j in model['idSp']:
+				met_index += 1
+				if j in modifications[t]:
+					met_index_change = met_index - 1
+					model['S'][met_index_change, rxn_index_change] = modifications[t][j]
+					if stoich < 0:
+						model['rxns'][t]['reactants'][j] = modifications[t][j]
+						if j in model['rxns'][t]['products']:
+							del model['rxns'][t]['products'][j]
+					if stoich > 0:
+						model['rxns'][t]['products'][j] = modifications[t][j]
+						if j in model['rxns'][t]['reactants']:
+							del model['rxns'][t]['reactants'][j]
+	return model, cobra_specific_objects
 
 
 def metabolite_mapping(model, cobra_specific_objects, args_m):
@@ -379,9 +414,6 @@ def nucleotide_conversion(model, cobra_specific_objects, args_n):
 
 
 	return model, cobra_specific_objects
-
-def modify():
-	print "hi"
 
 
 def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args_biomass, args_c2m, args_z, args_b):
