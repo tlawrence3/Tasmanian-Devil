@@ -192,14 +192,19 @@ def modify(model, cobra_specific_objects, args_a):
 				if j in modifications[t]:
 					met_index_change = met_index - 1
 					model['S'][met_index_change, rxn_index_change] = modifications[t][j]
-					if stoich < 0:
-						model['rxns'][t]['reactants'][j] = modifications[t][j]
-						if j in model['rxns'][t]['products']:
+					if modifications[t][j] < 0:
+						model['rxns'][t]['reactants'][j] = -1*modifications[t][j]
+						if ((j in model['rxns'][t]['products']) or (modifications[t][j] == 0 and j in model['rxns'][t]['reactants'])):
 							del model['rxns'][t]['products'][j]
-					if stoich > 0:
+					if modifications[t][j] > 0:
 						model['rxns'][t]['products'][j] = modifications[t][j]
-						if j in model['rxns'][t]['reactants']:
+						if ((j in model['rxns'][t]['reactants']) or (modifications[t][j] == 0 and j in model['rxns'][t]['products'])):
 							del model['rxns'][t]['reactants'][j]
+					if (modifications[t][j] == 0 and j in model['rxns'][t]['reactants']):
+						del model['rxns'][t]['reactants'][j]
+					if (modifications[t][j] == 0 and j  in model['rxns'][t]['products']):
+						del model['rxns'][t]['products'][j]
+					
 	return model, cobra_specific_objects
 
 
