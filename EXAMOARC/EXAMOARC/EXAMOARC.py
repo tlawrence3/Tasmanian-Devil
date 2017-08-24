@@ -44,7 +44,7 @@ def model(args):
     model, cobra_specific_objects = model_class.metabolite_mapping(model, cobra_specific_objects, args.metabolitemappingcomplexes)
     model, cobra_specific_objects = model_class.nucleotide_conversion(model, cobra_specific_objects, args.nucleotideconversions)
     model, cobra_specific_objects = model_class.balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args.biomassRxn, args.metabolite2carbon, args.zerocarbons, args.balance)
-    model_class.model_export(model, cobra_specific_objects, model_desc)
+    model_matlab = model_class.model_export(model, cobra_specific_objects, model_desc)
     
 
 def flux(args):

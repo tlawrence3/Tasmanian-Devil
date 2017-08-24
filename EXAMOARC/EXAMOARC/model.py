@@ -672,20 +672,20 @@ def model_export(model, cobra_specific_objects, model_desc):
 	genes = set()
 	genes_list = []
 	for t in model['idRs']:
-		for values in model['rxns'][t]['genes']:
-	        	values_split = values.split('or')
-	        	for count, j in enumerate(values_split):
-	        	    j = j.split('and')
-	        	    genelist = []
-	        	    for k in j:
-	        	        k = k.translate(None, ' ()')
-	        	        if not k:
-	        	            continue
-	        	        else:
-	        	            genelist.append(k)
-				    if k not in genes_list:
-					genes.add(k)
-					genes_list.append(k)
+		values = model['rxns'][t]['genes']
+	        values_split = values.split('or')
+	        for count, j in enumerate(values_split):
+			j = j.split('and')
+			genelist = []
+			for k in j:
+				k = k.translate(None, ' ()')
+				if not k:
+					continue
+				else:
+					genelist.append(k)
+					if k not in genes_list:
+						genes.add(k)
+						genes_list.append(k)
 
 	#Create dictionary for gene occurrence to replace genes with their index in grRules for creation of rules object
 	genes_list_dict = {}
@@ -704,7 +704,7 @@ def model_export(model, cobra_specific_objects, model_desc):
 		gene_index_0 = []	
 		for j in genes_list:
 			gene_index += 1
-			genes_search = re.search(str(j), model['rxns'][t]['genes'])
+			genes_search = re.search(str(j), str(cobra_specific_objects['grRules'][i]))
 			if genes_search is not None: 
 				rxn_index_0.append(rxn_index - 1)
 				gene_index_0.append(gene_index - 1)
@@ -758,7 +758,7 @@ def model_export(model, cobra_specific_objects, model_desc):
 	rxnGeneMat = sp.sparse.coo_matrix(rxnGeneMat)
 
 	model_matlab = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc}
+	#model_matlab = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc}
 	#Need to add genes to model and export model for EXAMO
 	model['genes'] = genes
-
-
+	sp.io.savemat('%s' % model_desc[:-4], model_matlab)
