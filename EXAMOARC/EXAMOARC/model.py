@@ -216,7 +216,7 @@ def metabolite_mapping(model, cobra_specific_objects, args_m):
 		for row in csv_file:
 			met1 = name_sub(row[0], "M_")
 			met2 = name_sub(row[1], "M_")
-			metabolite_mappings[row[0]] = row[1]				
+			metabolite_mappings[met1] = met2				
 		met_dict_rxns = {}
 		met_dict_mets = {}
 		rxns_mets_to_delete = {}
@@ -231,58 +231,57 @@ def metabolite_mapping(model, cobra_specific_objects, args_m):
 			proceed = 0
 			metabolite_mappings_rxn_reactant_list = []
 			metabolite_mappings_rxn_product_list = []
-			for i in metabolite_mappings:
+			for i in metabolite_mappings.keys():
 				j_count = 0
 				if i in model['rxns'][t]['reactants']:
 					proceed +=1
 					if proceed == 1:
-						for j in metabolite_mappings[i]:
-							if j in model['rxns'][t]['products']:
-								metabolite_mappings_rxn_reactant_list.append(i)
-								metabolite_mappings_rxn_product_list.append(j)						
-								try:
-									met_dict_mets[i].append(t)
-								except KeyError:
-									met_dict_mets[i] = [t]
-								try:
-									met_dict_mets[j].append(t)
-								except KeyError:
-									met_dict_mets[j] = [t]
-								for reactant in model['rxns'][t]['reactants']:
-									if reactant != i:
-										if reactant in metabolite_mappings:
-											for k in metabolite_mappings[reactant]:
-												if k in model['rxns'][t]['products']:
-													metabolite_mappings_rxn_reactant_list.append(reactant)
-													metabolite_mappings_rxn_product_list.append(k)
-													try:
-														met_dict_mets[reactant].append(t)
-													except KeyError:
-														met_dict_mets[reactant] = [t]
-													try:
-														met_dict_mets[k].append(t)
-													except KeyError:
-														met_dict_mets[k] = [t]
-													secondary_check += 1
-										else:
-									 		reactant_count += 1
-										#if reactant in met_exception_list:
-										#	exception_reactant_count += 1
-								#for product in rxns[t]['products']:
-								#	if product not in metabolite_mappings[i]:
-								#		if product in met_exception_list:
-								#			exception_product_count += 1
-								#To account for sink reactions, have several conditions that may result in a metabolite mapping exception
-								if (((len(model['rxns'][t]['reactants']) > secondary_check + 1) and (len(model['rxns'][t]['products']) > secondary_check + 1))  or ((len(model['rxns'][t]['reactants']) > secondary_check + 1) and (len(model['rxns'][t]['products']) == secondary_check + 1)) or ((len(model['rxns'][t]['reactants']) == secondary_check + 1) and (len(model['rxns'][t]['products']) > secondary_check + 1))): 						
-									met_dict_mets_list = metabolite_mappings_rxn_reactant_list + metabolite_mappings_rxn_product_list
-									met_dict_rxns[t] = met_dict_mets_list
-							else: 
-								j_count += 1
-							if j_count == len(metabolite_mappings[i]):					
-								proceed = 0
+						if metabolite_mappings[i] in model['rxns'][t]['products']:
+							metabolite_mappings_rxn_reactant_list.append(i)
+							metabolite_mappings_rxn_product_list.append(metabolite_mappings[i])				
+							try:
+								met_dict_mets[i].append(t)
+							except KeyError:
+								met_dict_mets[i] = [t]
+							try:
+								met_dict_mets[metabolite_mappings[i]].append(t)
+							except KeyError:
+								met_dict_mets[metabolite_mappings[i]] = [t]
+							for reactant in model['rxns'][t]['reactants']:
+								if reactant != i:
+									if reactant in metabolite_mappings:
+										for k in metabolite_mappings[reactant]:
+											if k in model['rxns'][t]['products']:
+												metabolite_mappings_rxn_reactant_list.append(reactant)
+												metabolite_mappings_rxn_product_list.append(k)
+												try:
+													met_dict_mets[reactant].append(t)
+												except KeyError:
+													met_dict_mets[reactant] = [t]
+												try:
+													met_dict_mets[k].append(t)
+												except KeyError:
+													met_dict_mets[k] = [t]
+												secondary_check += 1
+									else:
+								 		reactant_count += 1
+									#if reactant in met_exception_list:
+									#	exception_reactant_count += 1
+							#for product in rxns[t]['products']:
+							#	if product not in metabolite_mappings[i]:
+							#		if product in met_exception_list:
+							#			exception_product_count += 1
+							#To account for sink reactions, have several conditions that may result in a metabolite mapping exception
+							if (((len(model['rxns'][t]['reactants']) > secondary_check + 1) and (len(model['rxns'][t]['products']) > secondary_check + 1))  or ((len(model['rxns'][t]['reactants']) > secondary_check + 1) and (len(model['rxns'][t]['products']) == secondary_check + 1)) or ((len(model['rxns'][t]['reactants']) == secondary_check + 1) and (len(model['rxns'][t]['products']) > secondary_check + 1))): 						
+								met_dict_mets_list = metabolite_mappings_rxn_reactant_list + metabolite_mappings_rxn_product_list
+								met_dict_rxns[t] = met_dict_mets_list
+						else: 
+							j_count += 1
+						if j_count == len(metabolite_mappings[i]):					
+							proceed = 0
 
 		#Remove mets from reactions with metabolite mappings
-		rxn_index = 0	
+		rxn_index = 0
 		for i in model['idRs']:
 			rxn_index += 1
 			met_index = 0
@@ -588,7 +587,6 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 				count += 1
 				if t != args_biomass:
 					unbalanced_rxns.append(t)
-
 		#The rxns identified as not being balanced need to be verified whether they are due to a discrepancy in the metabolite_dict or whether the reactions are really not balanced due to an error in original model. 
 		#If verified, then the rxns can be deleted, but other adjustments may need to be made to the model.
 		#If a metabolite is not in a balanced rxn and only in an unbalanced rxn, it will be removed from the model.
@@ -657,6 +655,42 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 
 			model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[:,rxn_index_list])
 	return model, cobra_specific_objects
+
+
+def metabolite_cleanup(model, cobra_specific_objects):
+	#Remove mets that do not appear in any rxns
+	idSp_to_remove = []
+	met_index = 0
+	met_index_list = []
+	for i in model['idSp']:
+		met_index += 1
+		met_occurrence = 0
+		for t in model['rxns']:
+			if i in model['rxns'][t]['reactants']:
+				met_occurrence += 1
+			if i in model['rxns'][t]['products']:	
+				met_occurrence += 1
+		if met_occurrence == 0:
+			idSp_to_remove.append(i)
+		else:
+			met_index_list.append(met_index - 1)
+
+	model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[met_index_list,:])
+
+	met_index = 0
+	met_index_to_delete = []
+	for i in model['idSp']:
+		met_index += 1
+		if i in idSp_to_remove:
+			met_index_to_delete.append(met_index-1)
+	cobra_specific_objects['metNames'] = np.delete(cobra_specific_objects['metNames'], met_index_to_delete)
+	cobra_specific_objects['metFormulas'] = np.delete(cobra_specific_objects['metFormulas'], met_index_to_delete)
+	cobra_specific_objects['b'] = np.delete(cobra_specific_objects['b'], met_index_to_delete)
+
+	for i in idSp_to_remove:
+		model['idSp'].remove(i)
+	return model, cobra_specific_objects
+
 
 def model_export(model, cobra_specific_objects, model_desc):
 	#Convert EXAMO data structures into COBRA compliant data structures that can be ported to MATLAB
