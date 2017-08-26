@@ -217,69 +217,17 @@ def metabolite_mapping(model, cobra_specific_objects, args_m):
 			met1 = name_sub(row[0], "M_")
 			met2 = name_sub(row[1], "M_")
 			metabolite_mappings[met1] = met2				
-		met_dict_rxns = {}
-		met_dict_mets = {}
-		rxns_mets_to_delete = {}
-		reactant_count_dict = {}
-		product_count_dict = {}
+		met_rxns = []
 		for t in model['rxns']:
 			reactant_count = 0
 			secondary_check = 0
-			exception_reactant_count = 0
 			product_count = 0
-			exception_product_count = 0
-			proceed = 0
-			metabolite_mappings_rxn_reactant_list = []
-			metabolite_mappings_rxn_product_list = []
 			for i in metabolite_mappings.keys():
-				j_count = 0
-				if i in model['rxns'][t]['reactants']:
-					proceed +=1
-					if proceed == 1:
-						if metabolite_mappings[i] in model['rxns'][t]['products']:
-							metabolite_mappings_rxn_reactant_list.append(i)
-							metabolite_mappings_rxn_product_list.append(metabolite_mappings[i])				
-							try:
-								met_dict_mets[i].append(t)
-							except KeyError:
-								met_dict_mets[i] = [t]
-							try:
-								met_dict_mets[metabolite_mappings[i]].append(t)
-							except KeyError:
-								met_dict_mets[metabolite_mappings[i]] = [t]
-							for reactant in model['rxns'][t]['reactants']:
-								if reactant != i:
-									if reactant in metabolite_mappings:
-										for k in metabolite_mappings[reactant]:
-											if k in model['rxns'][t]['products']:
-												metabolite_mappings_rxn_reactant_list.append(reactant)
-												metabolite_mappings_rxn_product_list.append(k)
-												try:
-													met_dict_mets[reactant].append(t)
-												except KeyError:
-													met_dict_mets[reactant] = [t]
-												try:
-													met_dict_mets[k].append(t)
-												except KeyError:
-													met_dict_mets[k] = [t]
-												secondary_check += 1
-									else:
-								 		reactant_count += 1
-									#if reactant in met_exception_list:
-									#	exception_reactant_count += 1
-							#for product in rxns[t]['products']:
-							#	if product not in metabolite_mappings[i]:
-							#		if product in met_exception_list:
-							#			exception_product_count += 1
-							#To account for sink reactions, have several conditions that may result in a metabolite mapping exception
-							if (((len(model['rxns'][t]['reactants']) > secondary_check + 1) and (len(model['rxns'][t]['products']) > secondary_check + 1))  or ((len(model['rxns'][t]['reactants']) > secondary_check + 1) and (len(model['rxns'][t]['products']) == secondary_check + 1)) or ((len(model['rxns'][t]['reactants']) == secondary_check + 1) and (len(model['rxns'][t]['products']) > secondary_check + 1))): 						
-								met_dict_mets_list = metabolite_mappings_rxn_reactant_list + metabolite_mappings_rxn_product_list
-								met_dict_rxns[t] = met_dict_mets_list
-						else: 
-							j_count += 1
-						if j_count == len(metabolite_mappings[i]):					
-							proceed = 0
-
+				if ((i in model['rxns'][t]['reactants']) and (metabolite_mappings[i] in model['rxns'][t]['products'])):			
+					reactant_count += 1
+					product_count += 1
+			if ((reactant_count == len(model['rxns'][t]['reactants'])) and (product_count == len(model['rxns'][t]['produts']))):
+				met_rxns.append(t)						
 		#Remove mets from reactions with metabolite mappings
 		rxn_index = 0
 		for i in model['idRs']:
@@ -287,7 +235,7 @@ def metabolite_mapping(model, cobra_specific_objects, args_m):
 			met_index = 0
 			rxn_index_0 = []
 			met_index_0 = []
-			if i in met_dict_rxns:
+			if i in met_rxns:
 				rxn_index_0.append(rxn_index - 1)
 				for j in model['idSp']:
 					met_index += 1
