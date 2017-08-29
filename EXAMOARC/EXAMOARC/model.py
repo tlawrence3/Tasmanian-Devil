@@ -170,14 +170,15 @@ def modify(model, cobra_specific_objects, args_adaptation):
 
 
 def metabolite_mapping(model, cobra_specific_objects, args_metabolitemappingcomplexes):
-	#Adjust for reactions that have metbaolite mappings
+	#Adjust for reactions that have metabolite mappings
 	if args_metabolitemappingcomplexes:
 		metabolite_mappings = {}		
 		csv_file = csv.reader(args_metabolitemappingcomplexes)
 		for row in csv_file:
 			met1 = name_sub(row[0], "M_")
 			met2 = name_sub(row[1], "M_")
-			metabolite_mappings[met1] = met2				
+			metabolite_mappings[met1] = met2
+			metabolite_mappings[met2] = met1				
 		met_rxns = []
 		for t in model['rxns']:
 			reactant_count = 0
@@ -185,10 +186,7 @@ def metabolite_mapping(model, cobra_specific_objects, args_metabolitemappingcomp
 			product_count = 0
 			for i in metabolite_mappings.keys():
 				if ((i in model['rxns'][t]['reactants']) and (metabolite_mappings[i] in model['rxns'][t]['products'])):			
-					reactant_count += 1
-					product_count += 1
-			if ((reactant_count == len(model['rxns'][t]['reactants'])) and (product_count == len(model['rxns'][t]['produts']))):
-				met_rxns.append(t)						
+					met_rxns.append(t)
 		#Remove mets from reactions with metabolite mappings
 		rxn_index = 0
 		for i in model['idRs']:
@@ -200,7 +198,7 @@ def metabolite_mapping(model, cobra_specific_objects, args_metabolitemappingcomp
 				rxn_index_0.append(rxn_index - 1)
 				for j in model['idSp']:
 					met_index += 1
-					if j in met_dict_rxns[i]:
+					if j in metabolite_mappings.keys():
 						met_index_0.append(met_index - 1)
 						if j in model['rxns'][i]['reactants']:
 							del model['rxns'][i]['reactants'][j]
@@ -490,6 +488,16 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 				count += 1
 				if t != args_biomass:
 					unbalanced_rxns.append(t)
+
+			if t == "R_SULR":
+				print "\n"		
+				print t
+				print "carbons in original model: %s" % metabolite_dict_rxns_original[t]
+				print "stoichiometry in original model: %s" % rxns_original[t]
+				print "carbons in adapted model: %s" % metabolite_dict_rxns[t]
+				print "stoichiometry in adapted model: %s" % model['rxns'][t]		
+				print "carbons in reactants in adapted model: %s" % reactants_count
+				print "cabons in products in adapted model: %s" % products_count
 		#The rxns identified as not being balanced need to be verified whether they are due to a discrepancy in the metabolite_dict or whether the reactions are really not balanced due to an error in original model. 
 		#If verified, then the rxns can be deleted, but other adjustments may need to be made to the model.
 		#If a metabolite is not in a balanced rxn and only in an unbalanced rxn, it will be removed from the model.
