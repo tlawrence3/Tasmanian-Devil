@@ -6,7 +6,7 @@ import cPickle as pickle #Remove this if we are able to get rid of all pickling
 import csv
 
 def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lowerbound, args_upperbound, args_gene2rxn, model_desc):
-	#Import the model
+	#Import the model.
 	if args_sbml:
 		cobra_model = cobra.io.read_sbml_model(args_model)
 	if args_cobra:
@@ -77,7 +77,6 @@ def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lo
 		if not args_gene2rxn:
 			gene2rxn[reaction_name] = i.gene_reaction_rule
 		pathway.append(i.subsystem)
-		#Now need rxn
 		for j in i.metabolites:
 			if i.metabolites[j] < 0:
 				metabolite_name = name_sub(j.id, "M_")
@@ -123,20 +122,15 @@ def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lo
 
 
 def name_sub(string, prepend):
-	name = re.sub("LPAREN","",string)
-	name = re.sub("RPAREN","",name)
-	name = re.sub("\(","_",name)
-	name = re.sub("\)","_",name)
-	name = re.sub("\[","_",name)
-	name = re.sub("\]","_",name)
-	name = re.sub("\-","_",name)
-	name = re.sub("__","_",name)
+	#Make sure names from imported files all match
+	name = string.replace("LPAREN","").replace("RPAREN","").replace("(","_").replace(")","_").replace("[","_").replace("]","_").replace("-","_").replace("__","_")
 	if name[:2] != prepend:
 		name = prepend+name
 	return name
 
 
 def modify(model, cobra_specific_objects, args_adaptation):
+	#Allow for changing the stoichiometry of any reactant or product for a reaction
 	modifications = {}
 	csv_file = csv.reader(args_adaptation)
 	for row in csv_file:
@@ -379,8 +373,8 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 			del metabolite_dict[i]	
 		
 		#Idenitfy metabolites with 0 carbons. They will be removed from the model	
+		met_exception_list = []		
 		if args_zerocarbons:
-			met_exception_list = []
 			rxns_to_remove = []	
 			for i in metabolite_dict:
 				if int(metabolite_dict[i]) == 0:
@@ -449,7 +443,6 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 				model['idRs'].remove(t)
 
 		#Identify unbalanced rxns
-		#Need to adapt to print to a file
 		metabolite_dict_rxns = {}
 		metabolite_dict_rxns_original = {}
 		unbalanced_rxns = []
@@ -475,11 +468,6 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 		for t in model['rxns']:
 			reactants_count = 0
 			products_count = 0
-			try:
-				if met_exception_list:
-					pass
-			except:
-				met_exception_list = []
 			for i in model['rxns'][t]['reactants']:
 				reactants_count += int(metabolite_dict[i])*model['rxns'][t]['reactants'][i]
 			for i in model['rxns'][t]['products']:
@@ -701,13 +689,9 @@ def model_export(model, cobra_specific_objects, model_desc):
 
 	b = cobra_specific_objects['b'][np.newaxis].T
 
-	#Convert the matrices into coo matrices
 	S = sp.sparse.coo_matrix(model['S'])
 
 	rxnGeneMat = sp.sparse.coo_matrix(rxnGeneMat)
 
 	model_matlab = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc}
-	#model_matlab = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc}
-	#Need to add genes to model and export model for EXAMO
-	model['genes'] = genes
 	sp.io.savemat('%s' % model_desc[:-4], model_matlab)
