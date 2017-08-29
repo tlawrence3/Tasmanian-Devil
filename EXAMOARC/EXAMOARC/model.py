@@ -5,12 +5,12 @@ import numpy as np
 import cPickle as pickle #Remove this if we are able to get rid of all pickling
 import csv
 
-def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, model_desc):
+def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lowerbound, args_upperbound, args_gene2rxn, model_desc):
 	#Import the model
-	if args_s:
-		cobra_model = cobra.io.read_sbml_model(cobra_model)
-	if args_c:
-		cobra_model = cobra.io.mat.load_matlab_model(cobra_model)
+	if args_sbml:
+		cobra_model = cobra.io.read_sbml_model(args_model)
+	if args_cobra:
+		cobra_model = cobra.io.mat.load_matlab_model(args_model)
 
 	idRs = []
 	lb = []
@@ -33,34 +33,34 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 	S = sp.sparse.lil_matrix(S)
 
 	#Import lower boundary adjustments if the argument is supplied from the command line. 
-	if args_l:
+	if args_lowerbound:
 		lb_dict = {}		
-		csv_file = csv.reader(args_l)		
+		csv_file = csv.reader(args_lowerbound)		
 		for row in csv_file:
 			name = row[0]
 			name = name_sub(name, "R_")
 			rxn2lb[name] = float(row[1])
 
 	#Import upper boundary adjustments if the argument is supplied from the command line. 
-	if args_u:
+	if args_upperbound:
 		ub_dict = {}		
-		csv_file = csv.reader(args_u)		
+		csv_file = csv.reader(args_upperbound)		
 		for row in csv_file:
 			name = row[0]
 			name = name_sub(name, "R_")
 			rxn2ub[name] = float(row[1])
 
 	#Import gene rule adjustments if the argument is supplied from the command line. 
-	if args_g:
+	if args_gene2rxn:
 		genes_dict = {}
-		csv_file = csv.reader(args_g)
+		csv_file = csv.reader(args_gene2rxn)
 		for row in csv_file:
 			name = row[0]
 			name = name_sub(name, "R_")
 			gene2rxn[name] = row[1]
 
 	#Create the necesssary rxn dictionaries for EXAMO.
-	b_met = []	
+	mets_to_extracellular_comp = []	
 	for i in cobra_model.reactions:
 		reaction_name = name_sub(i.id, "R_")
 		reactants = {}
@@ -68,13 +68,13 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 		products = {}
 		products_original = {}
 		idRs.append(reaction_name)
-		if not args_l:
+		if not args_lowerbound:
 			rxn2lb[reaction_name] = i.lower_bound
 			lb.append(float(i.lower_bound))
-		if not args_u:
+		if not args_upperbound:
 			rxn2ub[reaction_name] = i.upper_bound
 			ub.append(float(i.upper_bound))
-		if not args_g:
+		if not args_gene2rxn:
 			gene2rxn[reaction_name] = i.gene_reaction_rule
 		pathway.append(i.subsystem)
 		#Now need rxn
@@ -89,17 +89,17 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 				products_original[metabolite_name] = i.metabolites[j]
 		if len(products) == 0:
 			for j in reactants:
-				extracellular_string = args_e + '\Z'
+				extracellular_string = args_extracellular + '\Z'
 				idSp_e = re.search(extracellular_string, j)
 				if idSp_e:
-					if args_e[-1:] == '_':
+					if args_extracellular[-1:] == '_':
 						products[j[:-2]+'b_'] = reactants[j]
 						products_original[j[:-2]+'b_'] = reactants[j]
-						b_met.append(j[:-2]+str("b_"))
+						mets_to_extracellular_comp.append(j[:-2]+str("b_"))
 					else:
 						products[j[:-1]+'b'] = reactants[j]
 						products_original[j[:-1]+'b'] = reactants[j]
-						b_met.append(j[:-1]+str("b"))
+						mets_to_extracellular_comp.append(j[:-1]+str("b"))
 		if (rxn2lb[reaction_name] < 0 and rxn2ub[reaction_name] > 0):
 			reversible = True
 		else:
@@ -115,44 +115,11 @@ def set_parameter(cobra_model, args_s, args_c, args_e, args_l, args_u, args_g, m
 	metNames = cobra.io.mat._cell(cobra_model.metabolites.list_attr('name'))
 	metFormulas = cobra.io.mat._cell([str(m.formula) for m in cobra_model.metabolites])
 	b = np.array(cobra_model.metabolites.list_attr('_bound')) * 1.
-
-	#Remove mets that do not appear in any rxns. This is a model cleanup step and may be needed for linear optimizations not to fail for EXAMO 
-	#idSp_to_remove = []
-	#met_index = 0
-	#met_index_list = []
-	#for i in idSp:
-	#	met_index += 1
-	#	met_occurrence = 0
-	#	for j in rxns:
-	#		if i in rxns[j]['reactants']:
-	#			met_occurrence += 1
-	#		if i in rxns[j]['products']:	
-	#			met_occurrence += 1
-	#	if met_occurrence == 0:
-	#		idSp_to_remove.append(i)
-	#	else:
-	#		met_index_list.append(met_index - 1)
-
-
-	#S = sp.sparse.lil_matrix(sp.sparse.csr_matrix(S)[met_index_list,:])
-
-	#met_index = 0
-	#met_index_to_delete = []
-	#for i in idSp:
-	#	met_index += 1
-	#	if i in idSp_to_remove:
-	#		met_index_to_delete.append(met_index-1)
-	#metNames = np.delete(metNames, met_index_to_delete)
-	#metFormulas = np.delete(metFormulas, met_index_to_delete)
-	#b = np.delete(b, met_index_to_delete)
-
-	#for i in idSp_to_remove:
-	#	idSp.remove(i)
 	
 	#Create the model and cobra specific objects dictionaries to be able to export to other functions
 	model = {'idSp' : idSp, 'idRs' : idRs, 'lb' : lb, 'ub' : ub, 'gene2rxn': gene2rxn, 'S' : S, 'rxns' : rxns }
 	cobra_specific_objects = {'grRules': grRules, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b}	
-	return model, cobra_specific_objects, b_met, rxns_original
+	return model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original
 
 
 def name_sub(string, prepend):
@@ -169,9 +136,9 @@ def name_sub(string, prepend):
 	return name
 
 
-def modify(model, cobra_specific_objects, args_a):
+def modify(model, cobra_specific_objects, args_adaptation):
 	modifications = {}
-	csv_file = csv.reader(args_a)
+	csv_file = csv.reader(args_adaptation)
 	for row in csv_file:
 		rxn = name_sub(row[0], "R_")
 		met = name_sub(row[1], "M_")
@@ -208,11 +175,11 @@ def modify(model, cobra_specific_objects, args_a):
 	return model, cobra_specific_objects
 
 
-def metabolite_mapping(model, cobra_specific_objects, args_m):
+def metabolite_mapping(model, cobra_specific_objects, args_metabolitemappingcomplexes):
 	#Adjust for reactions that have metbaolite mappings
-	if args_m:
+	if args_metabolitemappingcomplexes:
 		metabolite_mappings = {}		
-		csv_file = csv.reader(args_m)
+		csv_file = csv.reader(args_metabolitemappingcomplexes)
 		for row in csv_file:
 			met1 = name_sub(row[0], "M_")
 			met2 = name_sub(row[1], "M_")
@@ -249,11 +216,11 @@ def metabolite_mapping(model, cobra_specific_objects, args_m):
 	return model, cobra_specific_objects
 
 
-def nucleotide_conversion(model, cobra_specific_objects, args_n):
+def nucleotide_conversion(model, cobra_specific_objects, args_nucleotideconversions):
 	#Remove repetitive nucleotides that share a carbon source 
-	if args_n:
+	if args_nucleotideconversions:
 		nucleotide_conversions = {}		
-		csv_file = csv.reader(args_n)
+		csv_file = csv.reader(args_nucleotideconversions)
 		for row in csv_file:
 			met1 = name_sub(row[0], "M_")
 			nucleotide_conversions[met1] = []
@@ -368,10 +335,10 @@ def nucleotide_conversion(model, cobra_specific_objects, args_n):
 	return model, cobra_specific_objects
 
 
-def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args_biomass, args_c2m, args_z, args_b):
+def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args_biomass, args_metabolite2carbon, args_zerocarbons, args_balance):
 	#Import metabolite dictionary mapped to carbons if the argument is supplied from the command line. 
-	if args_c2m:
-		csvreader1 = csv.reader(args_c2m)
+	if args_metabolite2carbon:
+		csvreader1 = csv.reader(args_metabolite2carbon)
 		metabolite_dict = {}
 		metabolite_dict_csv = []
 		for row in csvreader1:
@@ -412,7 +379,7 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 			del metabolite_dict[i]	
 		
 		#Idenitfy metabolites with 0 carbons. They will be removed from the model	
-		if args_z:
+		if args_zerocarbons:
 			met_exception_list = []
 			rxns_to_remove = []	
 			for i in metabolite_dict:
@@ -538,7 +505,7 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 		#The rxns identified as not being balanced need to be verified whether they are due to a discrepancy in the metabolite_dict or whether the reactions are really not balanced due to an error in original model. 
 		#If verified, then the rxns can be deleted, but other adjustments may need to be made to the model.
 		#If a metabolite is not in a balanced rxn and only in an unbalanced rxn, it will be removed from the model.
-		if args_b: 
+		if args_balance: 
 			potential_unbalanced_mets = []
 			for i in unbalanced_rxns:
 				for k in model['rxns'][i]['reactants']:
