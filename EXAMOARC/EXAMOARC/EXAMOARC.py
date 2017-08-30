@@ -3,6 +3,9 @@ import argparse
 import gene as gene_class
 import model as model_class
 
+
+import cobra
+
 def gene(args):
     gene_class.gene_classify(args.expression_set, args.upper, args.lower, args.output)
 
@@ -46,6 +49,11 @@ def model(args):
     model, cobra_specific_objects = model_class.balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args.biomassRxn, args.metabolite2carbon, args.zerocarbons, args.balance)
     model, cobra_specific_objects = model_class.metabolite_cleanup(model,cobra_specific_objects)
     model_matlab = model_class.model_export(model, cobra_specific_objects, model_desc)
+    #Test functionality
+    #print ("%s" % model_desc)
+    #cobra_model = cobra.io.mat.load_matlab_model("lgmncmodiMM904_NADcorrected_1127_MTHFDi.mat")
+    #cobra_model.optimize(solver="gurobi")
+    #print(cobra_model.solution.f)
     
 
 def flux(args):

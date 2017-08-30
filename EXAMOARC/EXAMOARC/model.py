@@ -128,6 +128,21 @@ def name_sub(string, prepend):
 		name = prepend+name
 	return name
 
+def name_sub_back(string):
+	#Make names exported for COBRA compliant with SBML	
+	name = string	
+	if string[-3] == '_':	
+		list1 = list(string)
+		list1[-3] = '('
+		list1[-1] = ')'
+		name = ''.join(list1)
+	if string[-2] == '_':
+		list1 = list(string)
+		list1[-2] = '('
+		name = ''.join(list1)
+		name = name+')'
+	name = name[2:]
+	return name
 
 def modify(model, cobra_specific_objects, args_adaptation):
 	#Allow for changing the stoichiometry of any reactant or product for a reaction
@@ -488,16 +503,11 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 				count += 1
 				if t != args_biomass:
 					unbalanced_rxns.append(t)
+		#Identify inactive reactions and remove them. 
 
-			if t == "R_SULR":
-				print "\n"		
-				print t
-				print "carbons in original model: %s" % metabolite_dict_rxns_original[t]
-				print "stoichiometry in original model: %s" % rxns_original[t]
-				print "carbons in adapted model: %s" % metabolite_dict_rxns[t]
-				print "stoichiometry in adapted model: %s" % model['rxns'][t]		
-				print "carbons in reactants in adapted model: %s" % reactants_count
-				print "cabons in products in adapted model: %s" % products_count
+
+
+
 		#The rxns identified as not being balanced need to be verified whether they are due to a discrepancy in the metabolite_dict or whether the reactions are really not balanced due to an error in original model. 
 		#If verified, then the rxns can be deleted, but other adjustments may need to be made to the model.
 		#If a metabolite is not in a balanced rxn and only in an unbalanced rxn, it will be removed from the model.
@@ -604,13 +614,23 @@ def metabolite_cleanup(model, cobra_specific_objects):
 
 
 def model_export(model, cobra_specific_objects, model_desc):
-	#Convert EXAMO data structures into COBRA compliant data structures that can be ported to MATLAB
-	rxns_matlab = np.zeros((len(model['idRs']),), dtype=np.object)
-	rxns_matlab[:] = model['idRs']
+	#Convert EXAMO data structures into COBRA compliant data structures
+	rxns_copy = model['idRs']
+	rxns_list = []
+	for i in rxns_copy:
+		rxn = name_sub_back(i)
+		rxns_list.append(rxn)
+	rxns_matlab = np.zeros((len(rxns_list),), dtype=np.object)
+	rxns_matlab[:] = rxns_list
 	rxns_matlab = rxns_matlab[np.newaxis].T
 
-	mets_matlab = np.zeros((len(model['idSp']),), dtype=np.object)
-	mets_matlab[:] = model['idSp']
+	mets_copy = model['idSp']
+	mets_list = []
+	for i in mets_copy:
+		met = name_sub_back(i)
+		mets_list.append(met)
+	mets_matlab = np.zeros((len(mets_list),), dtype=np.object)
+	mets_matlab[:] = mets_list
 	mets_matlab = mets_matlab[np.newaxis].T
 
 	#Create gene set (for EXAMO model) and list (for COBRA model)
@@ -702,4 +722,4 @@ def model_export(model, cobra_specific_objects, model_desc):
 	rxnGeneMat = sp.sparse.coo_matrix(rxnGeneMat)
 
 	model_matlab = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc}
-	sp.io.savemat('%s' % model_desc[:-4], model_matlab)
+	sp.io.savemat('%s' % model_desc[:-4], model_matlab)	
