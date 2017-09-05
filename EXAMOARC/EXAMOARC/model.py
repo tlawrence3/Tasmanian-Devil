@@ -1,5 +1,6 @@
 import re
 import cobra
+from cobra.core.arraybasedmodel import ArrayBasedModel
 import scipy as sp
 import numpy as np
 import cPickle as pickle #Remove this if we are able to get rid of all pickling
@@ -28,7 +29,7 @@ def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lo
 		name = name_sub(i.id, "M_")
 		idSp.append(name)
 
-	cobra_model = cobra.core.ArrayBasedModel(cobra_model)
+	cobra_model = ArrayBasedModel(cobra_model)
 	S = sp.sparse.coo_matrix(cobra_model.S)
 	S = sp.sparse.lil_matrix(S)
 
@@ -723,5 +724,4 @@ def model_export(model, cobra_specific_objects, model_desc):
 
 	model_matlab = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc[:-4].split('/')[-1]}
 	sp.io.savemat('%s' % model_desc[:-4], {model_desc[:-4].split('/')[-1]: model_matlab}, appendmat=True, oned_as="column")
-	cobra_model = cobra.io.load_matlab_model('%s.mat' % model_desc[:-4]) 
-	cobra.io.write_sbml_model(cobra_model, 'test.xml')	
+	cobra_model = cobra.io.load_matlab_model('%s.mat' % model_desc[:-4]) 	
