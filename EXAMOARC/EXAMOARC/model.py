@@ -131,12 +131,12 @@ def name_sub(string, prepend):
 def name_sub_back(string):
 	#Make names exported for COBRA compliant with SBML	
 	name = string	
-	if string[-3] == '_':	
+	if ((string[-3] == '_') and (string[-1] == '_')):	
 		list1 = list(string)
 		list1[-3] = '('
 		list1[-1] = ')'
 		name = ''.join(list1)
-	if string[-2] == '_':
+	if ((string[-2] == '_') and (string[-1].islower())):
 		list1 = list(string)
 		list1[-2] = '('
 		name = ''.join(list1)
@@ -717,9 +717,11 @@ def model_export(model, cobra_specific_objects, model_desc):
 
 	b = cobra_specific_objects['b'][np.newaxis].T
 
-	S = sp.sparse.coo_matrix(model['S'])
+	S = sp.sparse.coo_matrix(model['S'],dtype=np.float64)
 
-	rxnGeneMat = sp.sparse.coo_matrix(rxnGeneMat)
+	rxnGeneMat = sp.sparse.coo_matrix(rxnGeneMat,dtype=np.float64)
 
-	model_matlab = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc}
-	sp.io.savemat('%s' % model_desc[:-4], model_matlab)	
+	model_matlab = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc[:-4].split('/')[-1]}
+	sp.io.savemat('%s' % model_desc[:-4], {model_desc[:-4].split('/')[-1]: model_matlab}, appendmat=True, oned_as="column")
+	cobra_model = cobra.io.load_matlab_model('%s.mat' % model_desc[:-4]) 
+	cobra.io.write_sbml_model(cobra_model, 'test.xml')	
