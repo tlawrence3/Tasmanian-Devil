@@ -1,5 +1,6 @@
 from __future__ import print_function
 import argparse
+import cobra
 import gene as gene_class
 import model as model_class
 
@@ -10,8 +11,17 @@ def gene(args):
     gene_class.gene_classify(args.expression_set, args.upper, args.lower, args.output)
 
 def model(args):
-    if ((args.metabolitemappingcomplexes or args.nucleotideconversions or args.adaptation or args.balance) and not args.metabolite2carbon):
-        raise RuntimeError("Must supply -d argument as well. Look at the help documentation.")
+    #Make sure there is a way to check if model is carbon balanced
+    metFormulas_list = []
+    if ((args.metabolitemappingcomplexes or args.nucleotideconversions or args.adaptation or args.balance or args.zerocarbons) and not args.metabolite2carbon):
+        if args.sbml:
+            cobra_model = cobra.io.read_sbml_model(args.model)	
+        if args.cobra:
+            cobra_model = cobra.io.mat.load_matlab_model(args.model)
+        metFormulas = cobra.io.mat._cell([str(m.formula) for m in cobra_model.metabolites])
+        metFormulas_list = filter(None, metFormulas.tolist())
+        if not metFormulas_list:
+            raise RuntimeError("Must supply -d argument as well. Look at the help documetation.")
 
     #Import other arguments and change name of exported model file
     model_desc = ''
@@ -29,7 +39,7 @@ def model(args):
         model_desc = model_desc + 'c'
     if args.adaptation:
         model_desc = model_desc + 'mod'
-    #perhaps consider if OS is Windows or Linux for file structure
+    #Perhaps consider if OS is Windows or Linux for file structure
     name_split = args.model.split('/')
     if len(name_split) > 2:
         model_desc = '/'.join(name_split[0:-2]) + '/' + model_desc + name_split[-1]
@@ -46,7 +56,7 @@ def model(args):
     model, cobra_specific_objects = model_class.modify(model, cobra_specific_objects, args.adaptation)    
     model, cobra_specific_objects = model_class.metabolite_mapping(model, cobra_specific_objects, args.metabolitemappingcomplexes)
     model, cobra_specific_objects = model_class.nucleotide_conversion(model, cobra_specific_objects, args.nucleotideconversions)
-    model, cobra_specific_objects = model_class.balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args.biomassRxn, args.metabolite2carbon, args.zerocarbons, args.balance)
+    model, cobra_specific_objects = model_class.balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args.biomassRxn, args.metabolite2carbon, metFormulas_list, args.zerocarbons, args.balance)
     model, cobra_specific_objects = model_class.metabolite_cleanup(model,cobra_specific_objects)
     model_matlab = model_class.model_export(model, cobra_specific_objects, model_desc)
     #Test functionality
@@ -99,15 +109,15 @@ def main():
     parser_model.add_argument("-d", "--metabolite2carbon", type=argparse.FileType("r"), default=None,
                               help='Tab-delimited file to specify dicitonary mappings of number of carbons in every metabolite. This is to check whether the model is carbon balanced. See iMM904 example for documentation.')
     parser_model.add_argument("-m", "--metabolitemappingcomplexes", type=argparse.FileType("r"), default=None,
-                              help='Tab-delimited metabolite mapping complexes file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this.')
+                              help='Tab-delimited metabolite mapping complexes file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this if metFormulas is not in model.')
     parser_model.add_argument("-n", "--nucleotideconversions", type=argparse.FileType("r"), default=None,
-                              help='Tab-delimited nucleotide conversions file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this.')
+                              help='Tab-delimited nucleotide conversions file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this if metFormulas is not in model.')
     parser_model.add_argument("-a", "--adaptation",  type=argparse.FileType("r"), default=None, 
-                              help='Tab delimited file to change specific reaction stoichiometries or to remove metabolites from reactions. See iMM904 example for documentation; must have -d argument as well to use this.') 
+                              help='Tab delimited file to change specific reaction stoichiometries or to remove metabolites from reactions. See iMM904 example for documentation; must have -d argument as well to use this if metFormulas is not in model.') 
     parser_model.add_argument("-z", "--zerocarbons", action="store_true",
-                              help='Flag to specify whether to remove metabolites wihtout any carbons. Must have -d argument as well to use this.')
+                              help='Flag to specify whether to remove metabolites wihtout any carbons. Must have -d argument as well to use this if metFormulas is not in model.')
     parser_model.add_argument("-b", "--balance", action="store_true", 
-                              help='Flag to specify whether to remove carbon unbalanced reactions. Recommend using only after first inspecting reactions to be removed. Must have -d argument as well to use this.')	
+                              help='Flag to specify whether to remove carbon unbalanced reactions. Recommend using only after first inspecting reactions to be removed. Must have -d argument as well to use this if metFormulas is not in model.')	
     parser_model.set_defaults(func=model)
     
     # flux subcommand parser

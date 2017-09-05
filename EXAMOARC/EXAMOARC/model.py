@@ -337,11 +337,10 @@ def nucleotide_conversion(model, cobra_specific_objects, args_nucleotideconversi
 
 	model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[:,rxn_index_list])
 
-
 	return model, cobra_specific_objects
 
 
-def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args_biomass, args_metabolite2carbon, args_zerocarbons, args_balance):
+def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args_biomass, args_metabolite2carbon, metFormulas_list, args_zerocarbons, args_balance):
 	#First make sure biomass rxn follows naming convention
 	args_biomass = name_sub(args_biomass, 'R_')
 	#Import metabolite dictionary mapped to carbons if the argument is supplied from the command line. 
@@ -386,6 +385,25 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 		for i in metabolite_dict_to_delete:
 			del metabolite_dict[i]	
 		
+	#If metFormulas_list is not empty (if metabolite mapping complexes, nucleotide conversions, adaptations, balancing, or zerocarbons arguments were supplied from the command line), then use the metFormulas from the model. 		
+	if metFormulas_list:
+		metFormulas_list = filter(None, cobra_specific_objects['metFormulas'].tolist())
+		print metFormulas_list
+		print len(metFormulas_list)
+		print len(model['idSp'])
+		metabolite_dict = {}
+		for count, met in enumerate(model['idSp']):
+			try:
+				metnum = int(re.findall("C(\d+)",metFormulas_list[count])[0])
+			except:
+				metnum = 0
+			metabolite_dict[met] = metnum
+		for met in mets_to_extracellular_comp:
+			for key in metabolite_dict.keys():
+				if met[:-1] == key[:-1]:
+					metabolite_dict[met] = metabolite_dict[key]
+	print metabolite_dict
+	if(args_metabolite2carbon or metFormulas_list):
 		#Idenitfy metabolites with 0 carbons. They will be removed from the model	
 		met_exception_list = []		
 		if args_zerocarbons:
