@@ -388,9 +388,6 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 	#If metFormulas_list is not empty (if metabolite mapping complexes, nucleotide conversions, adaptations, balancing, or zerocarbons arguments were supplied from the command line), then use the metFormulas from the model. 		
 	if metFormulas_list:
 		metFormulas_list = filter(None, cobra_specific_objects['metFormulas'].tolist())
-		print metFormulas_list
-		print len(metFormulas_list)
-		print len(model['idSp'])
 		metabolite_dict = {}
 		for count, met in enumerate(model['idSp']):
 			try:
@@ -658,7 +655,7 @@ def model_export(model, cobra_specific_objects, model_desc):
 	for t in model['idRs']:
 		values = model['rxns'][t]['genes']
 	        values_split = values.split('or')
-	        for count, j in enumerate(values_split):
+	        for j in values_split:
 			j = j.split('and')
 			genelist = []
 			for k in j:
