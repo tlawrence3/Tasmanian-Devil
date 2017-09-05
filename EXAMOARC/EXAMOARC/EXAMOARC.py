@@ -30,7 +30,7 @@ def model(args):
     if args.adaptation:
         model_desc = model_desc + 'mod'
     #perhaps consider if OS is Windows or Linux for file structure
-    name_split = args.model.name.split('/')
+    name_split = args.model.split('/')
     if len(name_split) > 2:
         model_desc = '/'.join(name_split[0:-2]) + '/' + model_desc + name_split[-1]
     elif len(name_split) == 2:
@@ -38,7 +38,7 @@ def model(args):
     elif len(name_split) == 1:
         model_desc = model_desc + name_split[0]
     else:
-        model_desc = model_desc + args.model.name
+        model_desc = model_desc + args.model
 
 
     ##Make the changes to the model
@@ -78,7 +78,7 @@ def main():
     # model subcommand parser
     parser_model = subparsers.add_parser("model", help="Make modifications to models and adapt into EXAMO commpatible format")
     model_group = parser_model.add_mutually_exclusive_group(required=True)
-    parser_model.add_argument("model", type=argparse.FileType("r"), 
+    parser_model.add_argument("model", type=str, 
                               help="Necessary variable: metabolic reconstruction file")
     parser_model.add_argument("biomassRxn", type=str,
                              help="Necessary variable: biomass rxn; Append 'R_' to the front if the reaction name does not begin with this.")
