@@ -76,39 +76,38 @@ def main():
     parser_gene.set_defaults(func=gene)
     
     # model subcommand parser
-    parser_model = subparsers.add_parser("model", help="Make modifications to models and adapt into EXAMO commpatible format")
+    parser_model = subparsers.add_parser("model", help='Make modifications to models and adapt into EXAMO commpatible format.')
     model_group = parser_model.add_mutually_exclusive_group(required=True)
     parser_model.add_argument("model", type=str, 
-                              help="Necessary variable: metabolic reconstruction file")
+                              help='Necessary variable: metabolic reconstruction file.')
     parser_model.add_argument("biomassRxn", type=str,
-                             help="Necessary variable: biomass rxn; Append 'R_' to the front if the reaction name does not begin with this.")
-###Need to throw in a check here to make sure that the biomass rxn follows the naming convention.
+                             help='Necessary variable: biomass rxn name.')
     parser_model.add_argument("extracellular", type=str,
-                             help="Necessary variable: extracellular compartment abbreviation. Instead of brackets, use underscores (ex: '_e').)")
+                             help="Necessary variable: extracellular compartment abbreviation. Instead of brackets, use underscores (ex: '_e').")
     parser_model.add_argument("-o", "--output", type=argparse.FileType("w"),
-                              help="Name of model to be written out")
+                              help='Name of model to be written out')
     model_group.add_argument("-c", "--cobra", action="store_true",
                              help='Flag to specify whether model is a COBRA Toolbox (.mat) file type; must have either -xml or -mat flag.')
     model_group.add_argument("-s", "--sbml", action="store_true",
                              help='Flag to specify whether model is a SBML (.xml) file type; must have either -xml or -mat flag.')
     parser_model.add_argument("-l", "--lowerbound", type=argparse.FileType("r"), default=None,
-                              help="'lower boundary constraints file")
+                              help='lower boundary constraints file')
     parser_model.add_argument("-u", "--upperbound", type=argparse.FileType("r"), default=None,
-                              help="upper boundary constraints file")
+                              help='upper boundary constraints file')
     parser_model.add_argument("-g", "--gene2rxn", type=argparse.FileType("r"), default=None,
-                              help="'gene2rxn file'")
+                              help='gene2rxn file')
     parser_model.add_argument("-d", "--metabolite2carbon", type=argparse.FileType("r"), default=None,
-                              help="Tab-delimited file to specify dicitonary mappings of number of carbons in every metabolite. This is to check whether the model is carbon balanced. See iMM904 example for documentation.")
+                              help='Tab-delimited file to specify dicitonary mappings of number of carbons in every metabolite. This is to check whether the model is carbon balanced. See iMM904 example for documentation.')
     parser_model.add_argument("-m", "--metabolitemappingcomplexes", type=argparse.FileType("r"), default=None,
-                              help="Tab-delimited metabolite mapping complexes file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this.")
+                              help='Tab-delimited metabolite mapping complexes file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this.')
     parser_model.add_argument("-n", "--nucleotideconversions", type=argparse.FileType("r"), default=None,
-                              help="Tab-delimited nucleotide conversions file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this.")
+                              help='Tab-delimited nucleotide conversions file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this.')
     parser_model.add_argument("-a", "--adaptation",  type=argparse.FileType("r"), default=None, 
-                              help="Tab delimited file to change specific reaction stoichiometries or to remove metabolites from reactions. See iMM904 example for documentation; must have -d argument as well to use this.") 
+                              help='Tab delimited file to change specific reaction stoichiometries or to remove metabolites from reactions. See iMM904 example for documentation; must have -d argument as well to use this.') 
     parser_model.add_argument("-z", "--zerocarbons", action="store_true",
-                              help="Flag to specify whether to remove metabolites wihtout any carbons. Must have -d argument as well to use this.")
+                              help='Flag to specify whether to remove metabolites wihtout any carbons. Must have -d argument as well to use this.')
     parser_model.add_argument("-b", "--balance", action="store_true", 
-                              help="Flag to specify whether to remove carbon unbalanced reactions. Recommend using only after first inspecting reactions to be removed. Must have -d argument as well to use this.")	
+                              help='Flag to specify whether to remove carbon unbalanced reactions. Recommend using only after first inspecting reactions to be removed. Must have -d argument as well to use this.')	
     parser_model.set_defaults(func=model)
     
     # flux subcommand parser

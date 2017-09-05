@@ -342,6 +342,8 @@ def nucleotide_conversion(model, cobra_specific_objects, args_nucleotideconversi
 
 
 def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args_biomass, args_metabolite2carbon, args_zerocarbons, args_balance):
+	#First make sure biomass rxn follows naming convention
+	args_biomass = name_sub(args_biomass, 'R_')
 	#Import metabolite dictionary mapped to carbons if the argument is supplied from the command line. 
 	if args_metabolite2carbon:
 		csvreader1 = csv.reader(args_metabolite2carbon)
