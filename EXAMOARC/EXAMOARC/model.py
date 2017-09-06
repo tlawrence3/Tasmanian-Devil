@@ -1,9 +1,11 @@
 import re
 import cobra
 from cobra.core.arraybasedmodel import ArrayBasedModel
+from cobra.manipulation.delete import prune_unused_metabolites
 import scipy as sp
 import numpy as np
 import csv
+import gurobipy
 
 def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lowerbound, args_upperbound, args_gene2rxn, model_desc):	
 	#Import the model.
@@ -519,11 +521,6 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 				count += 1
 				if t != args_biomass:
 					unbalanced_rxns.append(t)
-		#Identify inactive reactions and remove them. 
-
-
-
-
 		#The rxns identified as not being balanced need to be verified whether they are due to a discrepancy in the metabolite_dict or whether the reactions are really not balanced due to an error in original model. 
 		#If verified, then the rxns can be deleted, but other adjustments may need to be made to the model.
 		#If a metabolite is not in a balanced rxn and only in an unbalanced rxn, it will be removed from the model.
@@ -739,4 +736,18 @@ def model_export(model, cobra_specific_objects, model_desc):
 
 	model_matlab = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc[:-4].split('/')[-1]}
 	sp.io.savemat('%s' % model_desc[:-4], {model_desc[:-4].split('/')[-1]: model_matlab}, appendmat=True, oned_as="column")
-	cobra_model = cobra.io.load_matlab_model('%s.mat' % model_desc[:-4])
+
+def remove_inactive_rxns_and_unused_metabolites(model_desc, args_removeinactiverxns):
+	#Remove inactive rxns if supplied from command line, and remove mets only associated with those rxns.
+	if args_removeinactiverxns:	
+		cobra_model = cobra.io.load_matlab_model('%s.mat' % model_desc[:-4])
+		cobra_model = ArrayBasedModel(cobra_model)
+		solution = cobra.flux_analysis.flux_variability_analysis(cobra_model, solver='gurobi')
+		rxn_list = []
+		for i in cobra_model.reactions:
+			if ((solution.loc[i.id,'maximum'] == 0) and (solution.loc[i.id,'minimum'] == 0)):
+				rxn_list.append(i)
+		for rxn in rxn_list:
+			rxn.remove_from_model(cobra_model)
+		mets_removed = prune_unused_metabolites(cobra_model)
+		cobra.io.save_matlab_model(cobra_model, '%s.mat' % model_desc[:-4], varname=model_desc[:-4].split('/')[-1])

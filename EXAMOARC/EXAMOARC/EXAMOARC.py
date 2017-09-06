@@ -58,7 +58,8 @@ def model(args):
     model, cobra_specific_objects = model_class.nucleotide_conversion(model, cobra_specific_objects, args.nucleotideconversions)
     model, cobra_specific_objects = model_class.balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args.biomassRxn, args.metabolite2carbon, metFormulas_list, args.zerocarbons, args.balance)
     model, cobra_specific_objects = model_class.metabolite_cleanup(model,cobra_specific_objects)
-    model_matlab = model_class.model_export(model, cobra_specific_objects, model_desc)
+    model_class.model_export(model, cobra_specific_objects, model_desc)
+    model_class.remove_inactive_rxns_and_unused_metabolites(model_desc,args.removeinactiverxns) 
     #Test functionality
     #print ("%s" % model_desc)
     #cobra_model = cobra.io.mat.load_matlab_model("lgmncmodiMM904_NADcorrected_1127_MTHFDi.mat")
@@ -117,7 +118,9 @@ def main():
     parser_model.add_argument("-z", "--zerocarbons", action="store_true",
                               help='Flag to specify whether to remove metabolites wihtout any carbons. Must have -d argument as well to use this if metFormulas is not in model.')
     parser_model.add_argument("-b", "--balance", action="store_true", 
-                              help='Flag to specify whether to remove carbon unbalanced reactions. Recommend using only after first inspecting reactions to be removed. Must have -d argument as well to use this if metFormulas is not in model.')	
+                              help='Flag to specify whether to remove carbon unbalanced reactions. Recommend using only after first inspecting reactions to be removed. Must have -d argument as well to use this if metFormulas is not in model.')
+    parser_model.add_argument("-r", "--removeinactiverxns", action="store_true",
+                              help='Flag to specify whether to remove inactive reactions from final model.')	
     parser_model.set_defaults(func=model)
     
     # flux subcommand parser
