@@ -56,15 +56,10 @@ def model(args):
     model, cobra_specific_objects = model_class.modify(model, cobra_specific_objects, args.adaptation)    
     model, cobra_specific_objects = model_class.metabolite_mapping(model, cobra_specific_objects, args.metabolitemappingcomplexes)
     model, cobra_specific_objects = model_class.nucleotide_conversion(model, cobra_specific_objects, args.nucleotideconversions)
-    model, cobra_specific_objects = model_class.balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args.biomassRxn, args.metabolite2carbon, metFormulas_list, args.zerocarbons, args.balance)
+    model, cobra_specific_objects, unbalanced_rxns_mets_unique_list, unbalanced_rxns_mets_potential_list = model_class.balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args.biomassRxn, args.metabolite2carbon, metFormulas_list, args.zerocarbons, args.balance)
     model, cobra_specific_objects = model_class.metabolite_cleanup(model,cobra_specific_objects)
     model_class.model_export(model, cobra_specific_objects, model_desc)
-    model_class.remove_inactive_rxns_and_unused_metabolites(model_desc,args.removeinactiverxns) 
-    #Test functionality
-    #print ("%s" % model_desc)
-    #cobra_model = cobra.io.mat.load_matlab_model("lgmncmodiMM904_NADcorrected_1127_MTHFDi.mat")
-    #cobra_model.optimize(solver="gurobi")
-    #print(cobra_model.solution.f)
+    model_class.remove_inactive_rxns_and_account_for_biomass(model_desc,args.removeinactiverxns, args.extracellular, args.biomassRxn, args.metabolite2carbon, metFormulas_list, args.balance) 
     
 
 def flux(args):
@@ -107,7 +102,7 @@ def main():
                               help='upper boundary constraints file')
     parser_model.add_argument("-g", "--gene2rxn", type=argparse.FileType("r"), default=None,
                               help='gene2rxn file')
-    parser_model.add_argument("-d", "--metabolite2carbon", type=argparse.FileType("r"), default=None,
+    parser_model.add_argument("-d", "--metabolite2carbon", type=str, default=None,
                               help='Tab-delimited file to specify dicitonary mappings of number of carbons in every metabolite. This is to check whether the model is carbon balanced. See iMM904 example for documentation.')
     parser_model.add_argument("-m", "--metabolitemappingcomplexes", type=argparse.FileType("r"), default=None,
                               help='Tab-delimited metabolite mapping complexes file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this if metFormulas is not in model.')
