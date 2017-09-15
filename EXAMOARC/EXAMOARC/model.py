@@ -534,11 +534,9 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 				unbalanced_rxns.append(t)
 		else:
 			balanced_rxns.append(t)
-	print "unbalanced rxns"
-	print unbalanced_rxns
-	print len(unbalanced_rxns)
+	#Argument from the command line
+	#Will be run at the end of model.py script to identify metabolites that need to be removed from the biomass rxn to make the model optimizable
 	if removed_inactive_rxns:
-		print "entered here"
 		balanced_rxns_mets_list = []
 		for t in balanced_rxns:
 			for met in model['rxns'][t]['reactants']:
@@ -780,23 +778,29 @@ def model_export(model, cobra_specific_objects, model_desc):
 
 def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactiverxns, args_e, args_biomass, args_metabolite2carbon, metFormulas_list, args_balance):
 	#Remove inactive rxns if supplied from command line, and remove mets only associated with those rxns.
-	if args_removeinactiverxns:	
+	if args_removeinactiverxns:
+		#Import the model and convert to an array based model.
 		cobra_model = cobra.io.load_matlab_model('%s.mat' % model_desc[:-4])
 		cobra_model = ArrayBasedModel(cobra_model)
-		#solution = cobra.flux_analysis.flux_variability_analysis(cobra_model, solver='gurobi')
-		#rxn_list = []
-		#for i in cobra_model.reactions:
-		#	if ((solution.loc[i.id,'maximum'] == 0) and (solution.loc[i.id,'minimum'] == 0)):
-		#		rxn_list.append(i)
-		#for rxn in rxn_list:
-		#	rxn.remove_from_model(cobra_model)
+
+		#Remove inactive rxns and unused metabolites and export the COBRA model.
+		solution = cobra.flux_analysis.flux_variability_analysis(cobra_model, solver='gurobi')
+		rxn_list = []
+		for i in cobra_model.reactions:
+			if ((solution.loc[i.id,'maximum'] == 0) and (solution.loc[i.id,'minimum'] == 0)):
+				rxn_list.append(i)
+		for rxn in rxn_list:
+			rxn.remove_from_model(cobra_model)
 		mets_removed = prune_unused_metabolites(cobra_model)
 		cobra.io.save_matlab_model(cobra_model, '%s.mat' % model_desc[:-4], varname=model_desc[:-4].split('/')[-1])
+
+		#Import back into EXAMO format to make additional changes and identify metabolites in the biomass rxn that are in unbalanced rxns. Then export back out as a COBRA model.  
 		model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original = set_parameter('%s.mat' % model_desc[:-4], False, True, '_e_', None, None, None, model_desc)
 		model, cobra_specific_objects, unbalanced_rxns_mets_unique_list, unbalanced_rxns_mets_potential_list = balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args_biomass, args_metabolite2carbon, metFormulas_list, False, args_balance, removed_inactive_rxns = True)
 		model, cobra_specific_objects = metabolite_cleanup(model,cobra_specific_objects)
 		model_export(model, cobra_specific_objects, model_desc)
-
+		
+		#Import the model and convert into an array based model. First try to remove metabolites from the biomass rxn that are only in unbalanced rxns. 
 		cobra_model = cobra.io.load_matlab_model('%s.mat' % model_desc[:-4])
 		cobra_model = ArrayBasedModel(cobra_model)
 		unbalanced_rxns_mets_unique_dict = {}
@@ -827,9 +831,9 @@ def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactive
 						return
 
 
+		#If a solution was not optimizable upon removing unbalanced and inactive rxns, remove metabolites from the biomass rxn based off of mets appearing in unbalanced rxns
 		unbalanced_rxns_mets_potential_dict = {}
 		for met in unbalanced_rxns_mets_potential_list:
-		#for met in model['rxns']['R_'+args_biomass]['reactants'].keys():
 			met_sub = name_sub_back(met)
 			unbalanced_rxns_mets_potential_dict[met_sub] = -1*model['rxns']['R_'+args_biomass]['reactants'][met]
 		combs_unbalanced_rxns_mets_potential_dict = {}
@@ -863,7 +867,8 @@ def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactive
 								mets_removed = prune_unused_metabolites(cobra_model)
 								cobra.io.save_matlab_model(cobra_model, '%s.mat' % model_desc[:-4], varname=model_desc[:-4].split('/')[-1])
 								return
-
+		
+		#Subfunction to return what metabolites need to be removed from the biomass rxn in additon to the metabolites in unbalanced rxns. 	
 		def unbalanced_rxns_mets_potential_dict_2_function():
 			unbalanced_rxns_mets_potential_dict_2 = {}
 			not_in_unbalanced_rxns_mets_potential_list = []
@@ -876,6 +881,7 @@ def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactive
 			for n in range(len(unbalanced_rxns_mets_potential_list),len(unbalanced_rxns_mets_potential_dict_2.keys())+len(unbalanced_rxns_mets_potential_list)+1):
 				combs_unbalanced_rxns_mets_potential_dict_2[n] = {}
 				combs_combined[n] = {}
+			#Add the possibility of adding 5 more additional metabolites. If add more than this, can time out in creating dictionaries depending on number of metabolites already being removed. 
 			for n in range(len(unbalanced_rxns_mets_potential_list),len(unbalanced_rxns_mets_potential_list)+5):
 				for combs in itertools.combinations(sorted(unbalanced_rxns_mets_potential_dict_2),n-len(unbalanced_rxns_mets_potential_list)):
 					combs_list = list(combs)
@@ -899,7 +905,7 @@ def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactive
 										unbalanced_rxns_mets_potential_list_2.append(met)	
 									return unbalanced_rxns_mets_potential_list_2
 
-		#If a solution was still not able to be optimized remove more metabolites from the biomass reaction/ 
+		#If a solution was still not optimizable, remove more metabolites from the biomass reaction 
 		unbalanced_rxns_mets_potential_list_2 = unbalanced_rxns_mets_potential_dict_2_function()
 
 		unbalanced_rxns_mets_potential_dict_3 = {}
