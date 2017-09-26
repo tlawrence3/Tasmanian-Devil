@@ -13,7 +13,7 @@ def gene(args):
 def model(args):
     #Make sure there is a way to check if model is carbon balanced
     metFormulas_list = []
-    if ((args.metabolitemappingcomplexes or args.nucleotideconversions or args.adaptation or args.balance or args.zerocarbons) and not args.metabolite2carbon):
+    if ((args.metabolitemappingcomplexes or args.nucleotideconversions or args.adaptation or args.zerocarbons or args.removeinactiverxnsandbalance) and not args.metabolite2carbon):
         if args.sbml:
             cobra_model = cobra.io.read_sbml_model(args.model)	
         if args.cobra:
@@ -35,7 +35,7 @@ def model(args):
         model_desc = model_desc + 'm'
     if args.nucleotideconversions:
         model_desc = model_desc + 'n'
-    if args.balance:
+    if args.removeinactiverxnsandbalance:
         model_desc = model_desc + 'c'
     if args.adaptation:
         model_desc = model_desc + 'mod'
@@ -56,10 +56,10 @@ def model(args):
     model, cobra_specific_objects = model_class.modify(model, cobra_specific_objects, args.adaptation)    
     model, cobra_specific_objects = model_class.metabolite_mapping(model, cobra_specific_objects, args.metabolitemappingcomplexes)
     model, cobra_specific_objects = model_class.nucleotide_conversion(model, cobra_specific_objects, args.nucleotideconversions)
-    model, cobra_specific_objects, unbalanced_rxns_mets_unique_list, unbalanced_rxns_mets_potential_list = model_class.balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args.biomassRxn, args.metabolite2carbon, metFormulas_list, args.zerocarbons, args.balance)
+    model, cobra_specific_objects, unbalanced_rxns_mets_unique_list, unbalanced_rxns_mets_potential_list = model_class.balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args.biomassRxn, args.metabolite2carbon, metFormulas_list, args.zerocarbons)
     model, cobra_specific_objects = model_class.metabolite_cleanup(model,cobra_specific_objects)
     model_class.model_export(model, cobra_specific_objects, model_desc)
-    model_class.remove_inactive_rxns_and_account_for_biomass(model_desc,args.removeinactiverxns, args.extracellular, args.biomassRxn, args.metabolite2carbon, metFormulas_list, args.balance) 
+    model_class.remove_inactive_rxns_and_account_for_biomass(model_desc,args.removeinactiverxnsandbalance, args.extracellular, args.biomassRxn, args.metabolite2carbon, metFormulas_list) 
     
 
 def flux(args):
@@ -112,10 +112,8 @@ def main():
                               help='Tab delimited file to change specific reaction stoichiometries or to remove metabolites from reactions. See iMM904 example for documentation; must have -d argument as well to use this if metFormulas is not in model.') 
     parser_model.add_argument("-z", "--zerocarbons", action="store_true",
                               help='Flag to specify whether to remove metabolites wihtout any carbons. Must have -d argument as well to use this if metFormulas is not in model.')
-    parser_model.add_argument("-b", "--balance", action="store_true", 
-                              help='Flag to specify whether to remove carbon unbalanced reactions. Recommend using only after first inspecting reactions to be removed. Must have -d argument as well to use this if metFormulas is not in model.')
-    parser_model.add_argument("-r", "--removeinactiverxns", action="store_true",
-                              help='Flag to specify whether to remove inactive reactions from final model.')	
+    parser_model.add_argument("-r", "--removeinactiverxnsandbalance", action="store_true",
+                              help='Flag to specify whether to remove inactive reactions from final model and remove carbon unbalanced reactions. Recommend using only after first inspecting reactions to be removed. Must have -d argument as well to use this if metFormulas is not in model.')	
     parser_model.set_defaults(func=model)
     
     # flux subcommand parser

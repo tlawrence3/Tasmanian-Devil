@@ -342,19 +342,12 @@ def nucleotide_conversion(model, cobra_specific_objects, args_nucleotideconversi
 	return model, cobra_specific_objects
 
 
-def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args_biomass, args_metabolite2carbon, metFormulas_list, args_zerocarbons, args_balance, removed_inactive_rxns = False):
+def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args_biomass, args_metabolite2carbon, metFormulas_list, args_zerocarbons, removed_inactive_rxns_and_balance = False):
 	#First make sure biomass rxn follows naming convention
 	args_biomass = name_sub(args_biomass, 'R_')
 	unbalanced_rxns_mets_unique_list = []
 	unbalanced_rxns_mets_potential_list = []
 	#Import metabolite dictionary mapped to carbons if the argument is supplied from the command line.
-	print len(model['idRs'])
-	for i in model['idRs']:
-		print i
-	print len(model['idSp'])
-	print "length of model"
-	for i in model['idSp']:
-		print i
 	if args_metabolite2carbon:
 		f = open(args_metabolite2carbon)
 		csvreader1 = csv.reader(f)
@@ -381,8 +374,6 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 				last_string = i[-2:]
 				if last_string not in last_string_list:
 					last_string_list.append(last_string)
-		print last_string_list
-		print mets_to_extracellular_comp
 		for i in metabolite_dict_csv:
 			i = re.split('\s|,|\t', i)
 			for j in last_string_list:
@@ -506,7 +497,8 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 		rxnmetlist = {'met_reactants': metabolite_dict_reactants_original, 'met_products': metabolite_dict_products_original}
 		metabolite_dict_rxns_original[t] = rxnmetlist
 
-	count = 0
+	if not removed_inactive_rxns_and_balance:
+		print "Unbalanced rxns:"
 	for t in model['rxns']:
 		reactants_count = 0
 		products_count = 0
@@ -521,22 +513,22 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 			if i in met_exception_list:
 				reactants_count -= int(metabolite_dict[i])*rxns_original[t]['products'][i]
 		if round(reactants_count,3) != round(products_count,3):
-			#print "\n"		
-			#print t
-			#print "carbons in original model: %s" % metabolite_dict_rxns_original[t]
-			#print "stoichiometry in original model: %s" % rxns_original[t]
-			#print "carbons in adapted model: %s" % metabolite_dict_rxns[t]
-			#print "stoichiometry in adapted model: %s" % model['rxns'][t]		
-			#print "carbons in reactants in adapted model: %s" % reactants_count
-			#print "cabons in products in adapted model: %s" % products_count
-			count += 1
+			if not removed_inactive_rxns_and_balance:
+				print "\n"
+				print t
+				print "carbons in original model: %s" % metabolite_dict_rxns_original[t]
+				print "stoichiometry in original model: %s" % rxns_original[t]
+				print "carbons in adapted model: %s" % metabolite_dict_rxns[t]
+				print "stoichiometry in adapted model: %s" % model['rxns'][t]		
+				print "carbons in reactants in adapted model: %s" % reactants_count
+				print "cabons in products in adapted model: %s" % products_count
 			if t != args_biomass:
 				unbalanced_rxns.append(t)
 		else:
 			balanced_rxns.append(t)
 	#Argument from the command line
 	#Will be run at the end of model.py script to identify metabolites that need to be removed from the biomass rxn to make the model optimizable
-	if removed_inactive_rxns:
+	if removed_inactive_rxns_and_balance:
 		balanced_rxns_mets_list = []
 		for t in balanced_rxns:
 			for met in model['rxns'][t]['reactants']:
@@ -558,74 +550,68 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 		#The rxns identified as not being balanced need to be verified whether they are due to a discrepancy in the metabolite_dict or whether the reactions are really not balanced due to an error in original model. 
 		#If verified, then the rxns can be deleted, but other adjustments may need to be made to the model.
 		#If a metabolite is not in a balanced rxn and only in an unbalanced rxn, it will be removed from the model.
-		if args_balance: 
-			potential_unbalanced_mets = []
-			for i in unbalanced_rxns:
-				for k in model['rxns'][i]['reactants']:
-					if k not in potential_unbalanced_mets:		
-						potential_unbalanced_mets.append(k)
-				for k in model['rxns'][i]['products']:
-					if k not in potential_unbalanced_mets:
-						potential_unbalanced_mets.append(k)
+		potential_unbalanced_mets = []
+		for i in unbalanced_rxns:
+			for k in model['rxns'][i]['reactants']:
+				if k not in potential_unbalanced_mets:		
+					potential_unbalanced_mets.append(k)
+			for k in model['rxns'][i]['products']:
+				if k not in potential_unbalanced_mets:
+					potential_unbalanced_mets.append(k)
 
-			balanced_rxns = list(set(model['idRs']) - set(unbalanced_rxns))
+		balanced_rxns = list(set(model['idRs']) - set(unbalanced_rxns))
 
-			mets_to_remove_from_potential_unbalanced_mets = []
-			for i in potential_unbalanced_mets:
-				for j in balanced_rxns:
-					if j != args_biomass:
-						if i in model['rxns'][j]['reactants']:
-							if i not in mets_to_remove_from_potential_unbalanced_mets:
-								mets_to_remove_from_potential_unbalanced_mets.append(i)
-						if i in model['rxns'][j]['products']:
-							if i not in mets_to_remove_from_potential_unbalanced_mets:
-								mets_to_remove_from_potential_unbalanced_mets.append(i)
-			print mets_to_remove_from_potential_unbalanced_mets
-			mets_to_remove = list(set(potential_unbalanced_mets) - set(mets_to_remove_from_potential_unbalanced_mets))
-			print mets_to_remove
+		mets_to_remove_from_potential_unbalanced_mets = []
+		for i in potential_unbalanced_mets:
+			for j in balanced_rxns:
+				if j != args_biomass:
+					if i in model['rxns'][j]['reactants']:
+						if i not in mets_to_remove_from_potential_unbalanced_mets:
+							mets_to_remove_from_potential_unbalanced_mets.append(i)
+					if i in model['rxns'][j]['products']:
+						if i not in mets_to_remove_from_potential_unbalanced_mets:
+							mets_to_remove_from_potential_unbalanced_mets.append(i)
+		mets_to_remove = list(set(potential_unbalanced_mets) - set(mets_to_remove_from_potential_unbalanced_mets))
 
-			met_index = 0
-			met_index_list = []
-			met_index_list_to_delete = []
-			for i in model['idSp']:
-				met_index += 1
-				if i not in mets_to_remove:
-					met_index_list.append(met_index-1)
-				else:
-					met_index_list_to_delete.append(met_index-1)
-			cobra_specific_objects['metNames'] = np.delete(cobra_specific_objects['metNames'], met_index_list_to_delete)
-			cobra_specific_objects['metFormulas'] = np.delete(cobra_specific_objects['metFormulas'], met_index_list_to_delete)
-			cobra_specific_objects['b'] = np.delete(cobra_specific_objects['b'], met_index_list_to_delete)
+		met_index = 0
+		met_index_list = []
+		met_index_list_to_delete = []
+		for i in model['idSp']:
+			met_index += 1
+			if i not in mets_to_remove:
+				met_index_list.append(met_index-1)
+			else:
+				met_index_list_to_delete.append(met_index-1)
+		cobra_specific_objects['metNames'] = np.delete(cobra_specific_objects['metNames'], met_index_list_to_delete)
+		cobra_specific_objects['metFormulas'] = np.delete(cobra_specific_objects['metFormulas'], met_index_list_to_delete)
+		cobra_specific_objects['b'] = np.delete(cobra_specific_objects['b'], met_index_list_to_delete)
 
-			model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[met_index_list, :])
+		model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[met_index_list, :])
 
-			for met in mets_to_remove:
-				if ((met[-2:] != '_b') and (met[-3:] != '_b_')):
-					model['idSp'].remove(met)
+		for met in mets_to_remove:
+			if ((met[-2:] != '_b') and (met[-3:] != '_b_')):
+				model['idSp'].remove(met)
 
-			#Remove unbalanced reactions
-			rxn_index = 0
-			rxn_index_list = []
-			rxn_index_list_to_delete = []
-			for i in model['idRs']:
-				rxn_index += 1
-				if i not in unbalanced_rxns:
-					rxn_index_list.append(rxn_index-1)
-				else:
-					rxn_index_list_to_delete.append(rxn_index-1)
-			cobra_specific_objects['grRules'] = np.delete(cobra_specific_objects['grRules'], rxn_index_list_to_delete)
-			cobra_specific_objects['c'] = np.delete(cobra_specific_objects['c'], rxn_index_list_to_delete)
-			cobra_specific_objects['subsystem'] = np.delete(cobra_specific_objects['subsystem'], rxn_index_list_to_delete)
+		#Remove unbalanced reactions
+		rxn_index = 0
+		rxn_index_list = []
+		rxn_index_list_to_delete = []
+		for i in model['idRs']:
+			rxn_index += 1
+			if i not in unbalanced_rxns:
+				rxn_index_list.append(rxn_index-1)
+			else:
+				rxn_index_list_to_delete.append(rxn_index-1)
+		cobra_specific_objects['grRules'] = np.delete(cobra_specific_objects['grRules'], rxn_index_list_to_delete)
+		cobra_specific_objects['c'] = np.delete(cobra_specific_objects['c'], rxn_index_list_to_delete)
+		cobra_specific_objects['subsystem'] = np.delete(cobra_specific_objects['subsystem'], rxn_index_list_to_delete)
 
-			for i in unbalanced_rxns:
-				del model['rxns'][i]
-				del model['gene2rxn'][i]
-				model['idRs'].remove(i)
+		for i in unbalanced_rxns:
+			del model['rxns'][i]
+			del model['gene2rxn'][i]
+			model['idRs'].remove(i)
 
-			print len(model['idRs'])
-			print len(model['idSp'])
-
-			model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[:,rxn_index_list])
+		model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[:,rxn_index_list])
 	return model, cobra_specific_objects, unbalanced_rxns_mets_unique_list, unbalanced_rxns_mets_potential_list
 
 
@@ -776,9 +762,9 @@ def model_export(model, cobra_specific_objects, model_desc):
 	model_matlab = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc[:-4].split('/')[-1]}
 	sp.io.savemat('%s' % model_desc[:-4], {model_desc[:-4].split('/')[-1]: model_matlab}, appendmat=True, oned_as="column")
 
-def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactiverxns, args_e, args_biomass, args_metabolite2carbon, metFormulas_list, args_balance):
-	#Remove inactive rxns if supplied from command line, and remove mets only associated with those rxns.
-	if args_removeinactiverxns:
+def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactiverxnsandbalance, args_e, args_biomass, args_metabolite2carbon, metFormulas_list):
+	#Remove inactive rxns if supplied from command line, and remove mets only associated with those rxns. This will then allow easier balancing of the final model and be able to account for biomass.
+	if args_removeinactiverxnsandbalance:
 		#Import the model and convert to an array based model.
 		cobra_model = cobra.io.load_matlab_model('%s.mat' % model_desc[:-4])
 		cobra_model = ArrayBasedModel(cobra_model)
@@ -796,7 +782,7 @@ def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactive
 
 		#Import back into EXAMO format to make additional changes and identify metabolites in the biomass rxn that are in unbalanced rxns. Then export back out as a COBRA model.  
 		model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original = set_parameter('%s.mat' % model_desc[:-4], False, True, '_e_', None, None, None, model_desc)
-		model, cobra_specific_objects, unbalanced_rxns_mets_unique_list, unbalanced_rxns_mets_potential_list = balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args_biomass, args_metabolite2carbon, metFormulas_list, False, args_balance, removed_inactive_rxns = True)
+		model, cobra_specific_objects, unbalanced_rxns_mets_unique_list, unbalanced_rxns_mets_potential_list = balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args_biomass, args_metabolite2carbon, metFormulas_list, False, removed_inactive_rxns_and_balance = True)
 		model, cobra_specific_objects = metabolite_cleanup(model,cobra_specific_objects)
 		model_export(model, cobra_specific_objects, model_desc)
 		
@@ -815,8 +801,10 @@ def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactive
 					solution = cobra_model.optimize(solver='gurobi')
 					if solution.f != 0:
 						if len(unbalanced_rxns_mets_unique_list) == 0:
+							print "\n"
 							print "Biomass rxn was accounted for in balancing, and no additional metabolites needed to be removed as reactants"
 						else:
+							print "\n"
 							print "Biomass rxns was accounted for in balancing by removing the following metabolites"
 							print unbalanced_rxns_mets_unique_list 
 						solution = cobra.flux_analysis.flux_variability_analysis(cobra_model, solver='gurobi')
@@ -855,6 +843,7 @@ def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactive
 							i.subtract_metabolites(combs_unbalanced_rxns_mets_potential_dict[n+1][key])
 							solution = cobra_model.optimize(solver='gurobi')
 							if solution.f != 0:
+								print "\n"
 								print "Biomass rxns was accounted for in balancing by removing the following metabolites"
 								print key 
 								solution = cobra.flux_analysis.flux_variability_analysis(cobra_model, solver='gurobi')
@@ -931,6 +920,7 @@ def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactive
 							i.subtract_metabolites(combs_unbalanced_rxns_mets_potential_dict_3[n+1][key])
 							solution = cobra_model.optimize(solver='gurobi')
 							if solution.f != 0:
+								print "\n"
 								print "Biomass rxns was accounted for in balancing by removing the following metabolites"
 								print key 
 								solution = cobra.flux_analysis.flux_variability_analysis(cobra_model, solver='gurobi')
