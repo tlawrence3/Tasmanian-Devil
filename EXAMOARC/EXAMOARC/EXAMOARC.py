@@ -52,14 +52,14 @@ def model(args):
 
 
     ##Make the changes to the model
-    model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original = model_class.set_parameter(args.model, args.sbml, args.cobra, args.extracellular, args.lowerbound, args.upperbound, args.gene2rxn, model_desc)
+    model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, biomass_rxn = model_class.set_parameter(args.model, args.sbml, args.cobra, args.extracellular, args.lowerbound, args.upperbound, args.gene2rxn, model_desc)
     model, cobra_specific_objects = model_class.modify(model, cobra_specific_objects, args.adaptation)    
     model, cobra_specific_objects = model_class.metabolite_mapping(model, cobra_specific_objects, args.metabolitemappingcomplexes)
     model, cobra_specific_objects = model_class.nucleotide_conversion(model, cobra_specific_objects, args.nucleotideconversions)
-    model, cobra_specific_objects, unbalanced_rxns_mets_unique_list, unbalanced_rxns_mets_potential_list = model_class.balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, args.biomassRxn, args.metabolite2carbon, metFormulas_list, args.zerocarbons)
+    model, cobra_specific_objects, unbalanced_rxns_mets_unique_list, unbalanced_rxns_mets_potential_list = model_class.balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, biomass_rxn, args.metabolite2carbon, metFormulas_list, args.zerocarbons)
     model, cobra_specific_objects = model_class.metabolite_cleanup(model,cobra_specific_objects)
     model_class.model_export(model, cobra_specific_objects, model_desc)
-    model_class.remove_inactive_rxns_and_account_for_biomass(model_desc,args.removeinactiverxnsandbalance, args.extracellular, args.biomassRxn, args.metabolite2carbon, metFormulas_list) 
+    model_class.remove_inactive_rxns_and_account_for_biomass(model_desc,args.removeinactiverxnsandbalance, args.extracellular, args.metabolite2carbon, metFormulas_list) 
     
 
 def flux(args):
@@ -86,8 +86,6 @@ def main():
     model_group = parser_model.add_mutually_exclusive_group(required=True)
     parser_model.add_argument("model", type=str, 
                               help='Necessary variable: metabolic reconstruction file.')
-    parser_model.add_argument("biomassRxn", type=str,
-                             help='Necessary variable: biomass rxn name.')
     parser_model.add_argument("extracellular", type=str,
                              help="Necessary variable: extracellular compartment abbreviation. Instead of brackets, use underscores (ex: '_e').")
     parser_model.add_argument("-o", "--output", type=argparse.FileType("w"),
