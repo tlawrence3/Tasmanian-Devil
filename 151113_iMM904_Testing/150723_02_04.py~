@@ -40,7 +40,7 @@ import cPickle as pickle
 ################################################################################
 # INPUTS
 #Define argparse command line inputs
-parser = argparse.ArgumentParser(description='_01_findZeroAndHighFreqRxns.py')
+parser = argparse.ArgumentParser(description='_02_04.py')
 parser.add_argument('s', nargs="+", type=str, help='Necessary variable: SBML file')
 parser.add_argument('p', nargs="+", type=str, help='Necessary variable: pickle file')
 parser.add_argument('d', nargs="+", type=str, help='Necessary variable: condition description')

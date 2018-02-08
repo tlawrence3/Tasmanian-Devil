@@ -120,8 +120,8 @@ def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lo
 			if check_objective == 1:
 				biomass_rxn = idRs[count-1]
 			else:
-				print "More than one objective being optimized for. Change objective to only be one reaction before attempting to convert."
-				quit()
+				print "More than one objective being optimized for. Change objective to be only one reaction before attempting to convert."
+				raise SystemExit
 	subsystem = cobra.io.mat._cell(cobra_model.reactions.list_attr('subsystem'))
 	metNames = cobra.io.mat._cell(cobra_model.metabolites.list_attr('name'))
 	metFormulas = cobra.io.mat._cell([str(m.formula) for m in cobra_model.metabolites])
@@ -158,40 +158,41 @@ def name_sub_back(string):
 
 def modify(model, cobra_specific_objects, args_adaptation):
 	#Allow for changing the stoichiometry of any reactant or product for a reaction
-	modifications = {}
-	csv_file = csv.reader(args_adaptation)
-	for row in csv_file:
-		rxn = name_sub(row[0], "R_")
-		met = name_sub(row[1], "M_")
-		stoich = float(row[2])
-		if rxn not in modifications:
-			modifications[rxn] = {}
-		modifications[rxn][met] = stoich
-	rxn_index = 0
-	for t in model['idRs']:
-		rxn_index += 1
-		met_index = 0
-		rxn_index_change = []
-		met_index_0 = []
-		if t in modifications:
-			rxn_index_change = rxn_index - 1
-			for j in model['idSp']:
-				met_index += 1
-				if j in modifications[t]:
-					met_index_change = met_index - 1
-					model['S'][met_index_change, rxn_index_change] = modifications[t][j]
-					if modifications[t][j] < 0:
-						model['rxns'][t]['reactants'][j] = -1*modifications[t][j]
-						if ((j in model['rxns'][t]['products']) or (modifications[t][j] == 0 and j in model['rxns'][t]['reactants'])):
-							del model['rxns'][t]['products'][j]
-					if modifications[t][j] > 0:
-						model['rxns'][t]['products'][j] = modifications[t][j]
-						if ((j in model['rxns'][t]['reactants']) or (modifications[t][j] == 0 and j in model['rxns'][t]['products'])):
+	if args_adaptation:
+		modifications = {}
+		csv_file = csv.reader(args_adaptation)
+		for row in csv_file:
+			rxn = name_sub(row[0], "R_")
+			met = name_sub(row[1], "M_")
+			stoich = float(row[2])
+			if rxn not in modifications:
+				modifications[rxn] = {}
+			modifications[rxn][met] = stoich
+		rxn_index = 0
+		for t in model['idRs']:
+			rxn_index += 1
+			met_index = 0
+			rxn_index_change = []
+			met_index_0 = []
+			if t in modifications:
+				rxn_index_change = rxn_index - 1
+				for j in model['idSp']:
+					met_index += 1
+					if j in modifications[t]:
+						met_index_change = met_index - 1
+						model['S'][met_index_change, rxn_index_change] = modifications[t][j]
+						if modifications[t][j] < 0:
+							model['rxns'][t]['reactants'][j] = -1*modifications[t][j]
+							if ((j in model['rxns'][t]['products']) or (modifications[t][j] == 0 and j in model['rxns'][t]['reactants'])):
+								del model['rxns'][t]['products'][j]
+						if modifications[t][j] > 0:
+							model['rxns'][t]['products'][j] = modifications[t][j]
+							if ((j in model['rxns'][t]['reactants']) or (modifications[t][j] == 0 and j in model['rxns'][t]['products'])):
+								del model['rxns'][t]['reactants'][j]
+						if (modifications[t][j] == 0 and j in model['rxns'][t]['reactants']):
 							del model['rxns'][t]['reactants'][j]
-					if (modifications[t][j] == 0 and j in model['rxns'][t]['reactants']):
-						del model['rxns'][t]['reactants'][j]
-					if (modifications[t][j] == 0 and j  in model['rxns'][t]['products']):
-						del model['rxns'][t]['products'][j]
+						if (modifications[t][j] == 0 and j  in model['rxns'][t]['products']):
+							del model['rxns'][t]['products'][j]
 					
 	return model, cobra_specific_objects
 
@@ -522,6 +523,14 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 		for i in rxns_original[t]['products']:
 			if i in met_exception_list:
 				reactants_count -= int(metabolite_dict[i])*rxns_original[t]['products'][i]
+		#print "\n"
+		#print t
+		#print "carbons in original model: %s" % metabolite_dict_rxns_original[t]
+		#print "stoichiometry in original model: %s" % rxns_original[t]
+		#print "carbons in adapted model: %s" % metabolite_dict_rxns[t]
+		#print "stoichiometry in adapted model: %s" % model['rxns'][t]		
+		#print "carbons in reactants in adapted model: %s" % reactants_count
+		#print "cabons in products in adapted model: %s" % products_count		
 		if round(reactants_count,3) != round(products_count,3):
 			if not removed_inactive_rxns_and_balance:
 				print "\n"
@@ -770,7 +779,24 @@ def model_export(model, cobra_specific_objects, model_desc):
 	rxnGeneMat = sp.sparse.coo_matrix(rxnGeneMat,dtype=np.float64)
 
 	model_matlab = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc[:-4].split('/')[-1]}
-	sp.io.savemat('%s' % model_desc[:-4], {model_desc[:-4].split('/')[-1]: model_matlab}, appendmat=True, oned_as="column")
+	print len(rxns_matlab)
+	print len(mets_matlab)
+	print len(ub_matlab)
+	print len(lb_matlab)
+	print S.shape
+	print len(grRules)
+	print len(rules)
+	print len(genes_matlab)
+	print rxnGeneMat.shape
+	print len(rev)
+	print len(c)
+	print len(subsystem)
+	print len(metNames)
+	print len(metFormulas)
+	print len(b)
+	print model_desc
+	sp.io.savemat('%s' % model_desc[:-4], {model_desc[:-3].replace('.','').split('/')[-1]: model_matlab}, appendmat=True)
+	#sp.io.savemat('%s' % model_desc[:-4], {model_desc[:-4].split('/')[-1]: model_matlab}, appendmat=True, oned_as="column")
 
 def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactiverxnsandbalance, args_e, args_metabolite2carbon, metFormulas_list):
 	#Remove inactive rxns if supplied from command line, and remove mets only associated with those rxns. This will then allow easier balancing of the final model and be able to account for biomass.
