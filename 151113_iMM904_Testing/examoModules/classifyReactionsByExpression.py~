@@ -89,10 +89,6 @@ def createRxnGeneCalls(geneCalls, gene2rxn, modelGenes):
         # lowly expressed genes are evaluated to -1 while higly expressed genes are evaluated to 1. Lowly expressed reactions are those
         # for which their Boolean expression evaluates to -1
         g2r = gene2rxn[rxn]
-        print g2r
-        print geneCalls['YKL174C']
-        if 'YKL174C' in modelGenes:
-            print "yes"
         for length in orderedGeneLengths:
             g2r = substituteGeneNamesByCalls(g2r, geneNamesByLength[length], 
                     geneCalls, {-1 : '-1', 0 : '0', 1 : '1'})
@@ -111,8 +107,6 @@ def createRxnGeneCalls(geneCalls, gene2rxn, modelGenes):
                     genelist.append(k)
             countdict[count] = genelist
         for i in countdict:
-            print rxn
-            print countdict[i]
             one_count = 0
             negative_one_count = 0
             for j in countdict[i]:

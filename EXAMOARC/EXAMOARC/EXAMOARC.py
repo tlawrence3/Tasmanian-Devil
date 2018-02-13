@@ -6,6 +6,8 @@ import decimal
 import os
 import shutil
 import numpy as np
+import multiprocessing as mp
+import Crypto.Random
 import gene as gene_class
 import model as model_class
 import flux as flux_class
@@ -120,6 +122,7 @@ def flux(args):
     #forcing non-zero biomass production
     m.lb[m.idRs.index(biomass_rxn)] = lb_biomass
 
+    #Not including this would cause the model to fail the iMAT if reactions are included in the model that have the following boundary constraints 
     for i in m.idRs:
         if ((md['rxns'][i]['lb'] <= 0) and (md['rxns'][i]['ub'] == 0)):
             m.ub[m.idRs.index(i)] = 1000

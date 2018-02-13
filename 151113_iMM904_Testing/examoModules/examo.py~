@@ -306,18 +306,6 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
             elif self.senses[i] == 'L':
                 s += ' <= %s' % self.rhs[i]
             exec 'self.guro.addConstr( %s, "%s")' % (s, self.rowNames[i])        
-        #for i, row in enumerate(lhs):
-        #    nz = row.nonzero()[0]
-        #    pair = zip(row[nz], array(self.colNames)[nz])
-        #    s = ['({} * self.{})'.format(p[0], p[1]) for p in pair] 
-        #    if self.senses[i] == 'E':
-        #        s += ' == {}'.format(self.rhs[i])
-        #    elif self.senses[i] == 'G':
-        #        s += ' >= {}'.format(self.rhs[i])
-        #    elif self.senses[i] == 'L':
-        #        s += ' <= {}'.format(self.rhs[i])
-        #    print s
-        #    exec 'self.guro.addConstr( {}, "{}")'.format(s, self.rowNames[i])
         #setting the objective
         s = ''
         for name in self.colNames:
