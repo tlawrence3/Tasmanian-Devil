@@ -108,13 +108,13 @@ def flux(args):
     check_objective = 0	
     for i in c:
         count += 1
-            if i == 1:
-                check_objective += 1
-                if check_objective == 1:
-                    biomass_rxn = idRs[count-1]
-                else:
-                    print "More than one objective being optimized for. Change objective to be only one reaction before attempting to convert."
-                    raise SystemExit
+        if i == 1:
+            check_objective += 1
+            if check_objective == 1:
+                biomass_rxn = idRs[count-1]
+            else:
+                print ("More than one objective being optimized for. Change objective to be only one reaction before attempting to convert.")
+                raise SystemExit
 
     #copy of rxns identifiers
     idRs = m.idRs[:]
@@ -144,16 +144,18 @@ def flux(args):
     rL = rxnDict['rL']
 
     #EG added eps to arguments
-    model = MetabGeneExpModel_gurobi(m.idSp, m.idRs, m.S, m.lb, m.ub, rH, rL, eps)
+    model = MetabGeneExpModel_gurobi(m.idSp, m.idRs, m.S, m.lb, m.ub, rH, rL, epsearly)
     scores, imgeSols = model.exploreAlternativeOptima(idRs)
 
     # 3. identifying zero and high frequency reactions
-    zfr, hfr = getZeroAndHighFrequencyRxns(scores, imgeSols, idRs, activityThreshold)
+    zfr, hfr = getZeroAndHighFrequencyRxns(scores, imgeSols, idRs, epsidentifyingfrequencies)
     exportPickle({'zfr' : zfr, 'hfr' : hfr}, fOutFreqBasedRxns)
 
     #Pint the number of HFR and ZFR genes
-    print 'zfr ', len(zfr)
-    print 'hfr ', len(hfr)
+    print ('zfr ', len(zfr))
+    print ('hfr ', len(hfr))
+
+    ######Prune model
 
 
 def main():
@@ -210,14 +212,27 @@ def main():
     parser_flux = subparsers.add_parser("flux", help='Predict condition-specific fluxes')
     flux_group = parser_flux.add_mutually_exclusive_group(required=True)
     parser_flux.add_argument("model", help='Necessary variable: metabolic reconstruction file.')
-    parser_flux.add_argument("d", type=argparse.FileType=("r"), help='Necessary variable: Comma separated gene rule file')
+    parser_flux.add_argument("d", type=argparse.FileType("r"), help='Necessary variable: comma separated gene rule file')
+    parser_flux.add_argument("r", type=int, 
+                             help='Necessary variable: number of repetitions of the 2nd-4th scripts for final flux states')
     flux_group.add_argument("-c", "--cobra", action="store_true",
                              help='Flag to specify whether model is a COBRA Toolbox (.mat) file type; must have either -xml or -mat flag.')
     flux_group.add_argument("-s", "--sbml", action="store_true",
                              help='Flag to specify whether model is a SBML (.xml) file type; must have either -xml or -mat flag.')
-    parser_flux.add_argument("-e", "--epsearly", type=float, default=1E-1, help='Minimum value for fluxes forced to be non-zero (for the implementation of the pathway algorithm created by Shlomi); default value: 1E-1')
-    parser_flux.add_argument("-a", "--activity", type=float, default=1E-10, help='Activity threshold (above which a flux is considered to be larger than 0); default value: 1E-10')
-    parser_flux.add_argument("-b", "--biomassprod", type=float, help='Defined biomass production')
+    parser_flux.add_argument("-e", "--epsearly", type=float, default=1E-1, 
+                             help='Minimum value for fluxes forced to be non-zero (for the implementation of the pathway algorithm created by Shlomi); default value: 1E-1')
+    parser_flux.add_argument("-z", "--epsidentifyingfreqencies", type=float, default=1E-10,
+                             help='Activity threshold when classifying HFR and ZFR reactions from gene rules') 
+    parser_flux.add_argument("-i", "--epsirreversiblerxns", type=float, default=1E-10,
+                             help='Minimum value for active flux of reversible reactions in an irreversible model; default value: 1E-10')
+    parser_flux.add_argument("-t", "--epspruning", type=float, default=1E-10, 
+                             help='Activity threshold for finding active reactions when pruning a model')
+    parser_flux.add_argument("-a", "--espsolving", type=float, default=1E-10, 
+                             help='Activity threshold (above which a flux is considered to be larger than 0 when minimizing the sum of fluxes); default value: 1E-10')
+    parser_flux.add_argument("-b", "--biomassprod", type=float, help='Defined biomass production') 
+    parser_flux.add_argument('-EXrxns', type=argparse.FileType("r"), help='Comma separated file containing extracellular reactions')
+    parser_flux.add_argument('-EXtrrxns', type=argparse.FileType("r"), help='Comma separated file containing extracellular transport reactions')
+    parser_flux.add_argument('-Othertrrxns', type=argparse.FileType("r"), help='Comma separated file containing other compartmental transport reactions')
     parser_flux.set_defaults(func=flux)
     
     #parse args

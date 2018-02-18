@@ -258,7 +258,6 @@ class MetabGeneExpModel(object):
                 self.rhsVals.append(self.ub[self.colNames.index(rxn)])
                 self.senses += 'L'        
                 # yp + ym <= 1
-                #NOTE cplex's L is less or equal, not strictly less!
                 self.rhsRows.append(self.rowNames.index('cYsum_{}'.format(rxn)))
                 self.rhsCols.append(0)
                 self.rhsVals.append(1)
@@ -292,7 +291,7 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
             exec 'self.{0} = self.guro.addVar(vtype = GRB.BINARY, name = "{0}")'.format(var)
         self.guro.update()
         # adding constraints
-        lhs = sp.sparse..coo_matrix((self.lhsVals, (self.lhsRows, self.lhsCols))).toarray()
+        lhs = sp.sparse.coo_matrix((self.lhsVals, (self.lhsRows, self.lhsCols))).toarray()
         for i, row in enumerate(lhs):
             nz = row.nonzero()[0]
             pair = zip(row[nz], np.array(self.colNames)[nz])
@@ -779,7 +778,7 @@ def getZeroAndHighFrequencyRxns(scores, imgeSols, idRs, activityThreshold = 1E-1
     return zfr, hfr
 
 #################
-#Define functions needed to delete reactions from model and reduce 
+#Define functions needed to delete reactions from model and reduce. 
 #################
 
 def deleteCbmRxns(cbm, rl):
@@ -863,6 +862,7 @@ def findActiveRxns(cbm, thresh, rl = []):
 
 def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, pickle_model_name, 
              repetition, biomassRxn, lb_biomass):
+######Change description and pickle_model_name to fOutFreqBasedRxns
     try:
         #Prune a reaction. If a flux solution cannot be obtained
         #or if the biomass flux becomes inactive, stop pruning.
@@ -872,12 +872,7 @@ def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, pickle_m
         cH_act = cH & act
         if (len(cH - cH_act) != 0):#not all cH rxns are active
             return cbm
-        #######################################################################
-        # INPUTS
-        fFreqBasedRxns = 'data/freqBasedRxns_%s_%s.pkl'
-        #######################################################################
-        # STATEMENTS
-        hfr = importPickle(fFreqBasedRxns % (description, pickle_model_name))['hfr']
+        hfr = importPickle(fOutFreqBasedRxns)['hfr']
         hfr = hfr & set(m0.idRs)
         #forcing biomass production
         m0.lb[m0.idRs.index(biomassRxn)] = lb_biomass
@@ -901,8 +896,7 @@ def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, pickle_m
         cH_act2 = cH & act2
         if (len(cH - cH_act2) != 0):#not all cH rxns are active
             return m0
-        # STATEMENTS
-        hfr = importPickle(fFreqBasedRxns % (description, pickle_model_name))['hfr']
+        hfr = importPickle(fOutFreqBasedRxns)['hfr']
         hfr = hfr & set(m1.idRs)
         #forcing biomass production
         m1.lb[m1.idRs.index(biomassRxn)] = lb_biomass
@@ -918,9 +912,7 @@ def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, description, pickle_m
 def iterativePrunning(i, m, cH, description, pickle_model_name, biomassRxn, lb_biomass,
                       repetition, thresh = 1E-10, eps = 1E-10, activityThreshold = 1E-10, EXrxns = [],
                       EXtrrxns = [], Othertrrxns = []):
-    """
-    solver can be 'cplex', 'glpk' or 'gurobi'
-    """
+######Change description and pickle_model_name to fOutFreqBasedRxns
     if len(EXrxns) > 0:
         EXrxnsprune = list(set(list(EXrxns)) - cH)
         Cypto.Random.random.shuffle(EXrxnsprune)
@@ -1010,8 +1002,9 @@ def iterativePrunning(i, m, cH, description, pickle_model_name, biomassRxn, lb_b
             prunableRxns = prunableRxns2
     return mTemp1.idRs
 
-######################################## 
-# Minimizing the sum of fluxes
+#################
+#Define function for minimizing the sum of fluxes.
+#################
 
 def getNzRxnsGurobi(mg, actThreshold, md):
     #computing the fluxes for reversible reactions
@@ -1037,5 +1030,4 @@ def getNzRxnsGurobi(mg, actThreshold, md):
     nzSols = [[i[0], i[1], abs(i[1]), md[i[0]]['reactants'],
                md[i[0]]['products'], md[i[0]]['lb'],
                md[i[0]]['ub']] for i in sols]
-
     return [i[0] for i in nzSols], nzSols

@@ -3,6 +3,7 @@ setup.py
 EXAMOARC/EXAMOARC.py
 EXAMOARC/__init__.py
 EXAMOARC/disregard.py
+EXAMOARC/flux.py
 EXAMOARC/gene.py
 EXAMOARC/model.py
 EXAMOARC/model2.py
