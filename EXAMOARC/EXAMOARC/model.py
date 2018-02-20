@@ -7,7 +7,7 @@ import numpy as np
 import csv
 import itertools
 
-def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lowerbound, args_upperbound, args_gene2rxn, model_desc):	
+def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lowerbound, args_upperbound, args_gene2rxn, model_desc =''):	
 	#Import the model.
 	if args_sbml:
 		cobra_model = cobra.io.read_sbml_model(args_model)
@@ -107,6 +107,25 @@ def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lo
 		rxns[reaction_name] = {'name': i.name, 'id': reaction_name, 'reactants': reactants, 'products': products, 'reversible': reversible, 'genes': gene2rxn[reaction_name], 'lb': rxn2lb[reaction_name], 'ub': rxn2ub[reaction_name], 'pathway': i.subsystem}
 		rxns_original[reaction_name] = {'name': i.name, 'id': reaction_name, 'reactants': reactants_original, 'products': products_original, 'reversible': reversible, 'genes': gene2rxn[reaction_name], 'lb': rxn2lb[reaction_name], 'ub': rxn2ub[reaction_name], 'pathway': i.subsystem}  
 
+	#Create gene set
+	genes = set()
+	genes_list = []
+	for t in model['idRs']:
+		values = model['rxns'][t]['genes']
+	        values_split = values.split('or')
+	        for j in values_split:
+			j = j.split('and')
+			genelist = []
+			for k in j:
+				k = k.translate(None, ' ()')
+				if not k:
+					continue
+				else:
+					genelist.append(k)
+					if k not in genes_list:
+						genes.add(k)
+						genes_list.append(k)
+
 	#Create list/sets/matlab cells of genes using cobrapy and array based model for reacitons
 	genes_cobra = cobra.io.mat._cell(cobra_model.genes.list_attr('id'))
 	grRules = cobra.io.mat._cell(cobra_model.reactions.list_attr('gene_reaction_rule'))
@@ -128,7 +147,7 @@ def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lo
 	b = np.array(cobra_model.metabolites.list_attr('_bound')) * 1.
 	
 	#Create the model and cobra specific objects dictionaries to be able to export to other functions
-	model = {'idSp' : idSp, 'idRs' : idRs, 'lb' : lb, 'ub' : ub, 'gene2rxn': gene2rxn, 'S' : S, 'rxns' : rxns }
+	model = {'idSp' : idSp, 'idRs' : idRs, 'lb' : lb, 'ub' : ub, 'genes': genes, 'S' : S, 'rxns' : rxns }
 	cobra_specific_objects = {'grRules': grRules, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b}	
 	return model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, biomass_rxn
 
@@ -346,7 +365,6 @@ def nucleotide_conversion(model, cobra_specific_objects, args_nucleotideconversi
 
 	for t in rxns_to_remove:
 		del model['rxns'][t]
-		del model['gene2rxn'][t]
 		model['idRs'].remove(t)
 
 	model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[:,rxn_index_list])
@@ -361,11 +379,10 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 	if (args_metabolite2carbon or metFormulas_list or args_zerocarbons):
 		#Import metabolite dictionary mapped to carbons if the argument is supplied from the command line.
 		if args_metabolite2carbon:
-			f = open(args_metabolite2carbon)
-			csvreader1 = csv.reader(f)
+			csv_file = csv.reader(args_metabolite2carbon)
 			metabolite_dict = {}
 			metabolite_dict_csv = []
-			for row in csvreader1:
+			for row in csv_file:
 				metabolite_dict_csv.append(row[0])
 			f.close()
 
@@ -483,7 +500,6 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 			#Delete reactions and gene2rxn dictionary entries for reactions that cannot be carried out due to cofactor presence
 			for t in rxns_to_remove:
 				del model['rxns'][t]
-				del model['gene2rxn'][t]
 				model['idRs'].remove(t)
 
 		#Identify unbalanced rxns
@@ -622,7 +638,6 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 
 		for i in unbalanced_rxns:
 			del model['rxns'][i]
-			del model['gene2rxn'][i]
 			model['idRs'].remove(i)
 
 		model['S'] = sp.sparse.lil_matrix(sp.sparse.csr_matrix(model['S'])[:,rxn_index_list])
@@ -685,8 +700,7 @@ def model_export(model, cobra_specific_objects, model_desc):
 	mets_matlab[:] = mets_list
 	mets_matlab = mets_matlab[np.newaxis].T
 
-	#Create gene set (for EXAMO model) and list (for COBRA model)
-	genes = set()
+	#Create gene list for COBRA model
 	genes_list = []
 	for t in model['idRs']:
 		values = model['rxns'][t]['genes']
@@ -701,7 +715,6 @@ def model_export(model, cobra_specific_objects, model_desc):
 				else:
 					genelist.append(k)
 					if k not in genes_list:
-						genes.add(k)
 						genes_list.append(k)
 
 	#Create dictionary for gene occurrence to replace genes with their index in grRules for creation of rules object
