@@ -122,7 +122,7 @@ def flux(args):
 
     #Not including this would cause the model to fail the iMAT if reactions are included in the model that have the following boundary constraints 
     for i in m.idRs:
-        if ((md['rxns'][i]['lb'] <= 0) and (md['rxns'][i]['ub'] == 0)):
+        if ((model['rxns'][i]['lb'] <= 0) and (model['rxns'][i]['ub'] == 0)):
             m.ub[m.idRs.index(i)] = 1000
 
     # 1. Classify reactions by expression
@@ -202,7 +202,7 @@ def flux(args):
         m0.lb[m0.idRs.index(biomass_rxn)] = lb_biomass
 
         for i in m0.idRs:
-            if ((md['rxns'][i]['lb'] <= 0) and (md['rxns'][i]['ub'] == 0)):
+            if ((model['rxns'][i]['lb'] <= 0) and (model['rxns'][i]['ub'] == 0)):
                 m0.ub[m0.idRs.index(i)] = 1000
 
         biomass_set = {biomassRxn}
@@ -220,8 +220,8 @@ def flux(args):
             new_hfr2 = hfr & set(m.idRs)
             #minimizing the sum of fluxes
             mtry1result = flux_class.MipSeparateFwdRev_gurobi(m, new_hfr2, eps)
-            mtry1result.flux_class.initMipGurobi()
-            mtry1result.flux_class.minSumFluxes_gurobi()
+            mtry1result.initMipGurobi()
+            mtry1result.minSumFluxes_gurobi()
             #EG Added activityThreshold and the m0.rxns dictionary to the
             #function, so that the reactants and products could be written out
             nz = flux_class.getNzRxnsGurobi(mtry1result, activityThreshold, m.rxns)[1]
@@ -239,9 +239,9 @@ def flux(args):
                     new_hfr2 = hfr & set(m0.idRs)
                     #minimizing the sum of fluxes
                     mtry1result = flux_class.MipSeparateFwdRev_gurobi(m1, new_hfr2, eps)
-                    mtry1result.flux_class.initMipGurobi()
-                    mtry1result.flux_class.minSumFluxes_gurobi()
-                    #EG Added activityThreshold and the m0.rxns dictionary to the
+                    mtry1result.initMipGurobi()
+                    mtry1result.minSumFluxes_gurobi()
+                    #Added activityThreshold and the m0.rxns dictionary to the
                     #function, so that the reactants and products could be written out
                     nz = flux_class.getNzRxnsGurobi(mtry1result, activityThreshold, m1.rxns)[1]
                     m0 = m1
@@ -254,7 +254,7 @@ def flux(args):
             act = flux_class.findActiveRxns(m, thresh, cH)
             cH2 = cH & act		
 
-        #EG Make a directory for temporary files for every time a rxn is pruned
+        #Make a directory for temporary files for every time a rxn is pruned
         mbaCandRxnsDirectorySubset = '/data/test/%s_%s/' % (model_desc, str(repetition))
         if not os.path.exists(mbaCandRxnsDirectorySubset):
             os.mkdir(mbaCandRxnsDirectorySubset, 0777)
@@ -267,11 +267,11 @@ def flux(args):
                 timeStr = '%i%02i%02i%02i%02i%02i' % locTime[:6]
                 tag = '%s_%s_%s_%s' % (model_desc, pid, x, timeStr)
                 try:
-                    #EG Added despricription, repetition, and lists of compartmental reactions to the function
-                    cr = iterativePrunning(i, m, cH2, description, pickle_model_name, biomassRxn, lb_biomass, repetition, thresh, eps, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
-                    exportPickle(cr, fOutMbaCandRxns % tag)
+                    #Added despricription, repetition, and lists of compartmental reactions to the function
+                    cr = flux_class.iterativePrunning(i, m, cH2, hfr, biomassRxn, lb_biomass, repetition, thresh, eps, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
+                    flux_class.exportPickle(cr, fOutMbaCandRxns % tag)
                 except:
-                    print 'gurobi error, no solution found %s'  % description
+                    print ('gurobi error, no solution found %s'  % model_desc)
 
 
         processes = []
@@ -288,50 +288,18 @@ def flux(args):
 
 	################################################################################
         # _03_minimizeNetwork_part_B_new.py 
-        #and 
-        # _04_predictMetabolicState.py
-        #EG combined the 3rd and 4th scripts to make sure that biomass could actuall be produced for the model generated
-
-	################################################################################
-        # INPUTS
-        md = importPickle(fModelDict)
-
-        # Importing model information
-        fbr = importPickle('data/freqBasedRxns_%s_%s.pkl' % (description, pickle_model_name))
-
-        fOutModel = 'data/examo_%s_%s_%s.pkl'
-
 	################################################################################
         # STATEMENTS
         # Instantiating CbModel 
-	################################################################################
-        # STATEMENTS
-        # Instantiating CbModel 
-        m = CbModel(md['S'], md['idSp'], md['idRs'], md['lb'], md['ub'], md['rxns'], md['genes'])
+        m = CbModel(model['S'], model['idSp'], model['idRs'], model['lb'], model['ub'], model['rxns'], model['genes'])
 
         # Retrieving MBA candidate reaction lists
         files = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory, description)).read().splitlines()
 
-
-        candRxnsMinusHFR = []
-        allRs = set()
         rxnSets = []
         for fn in files:
-            l = set(importPickle(mbaCandRxnsDirectory + fn)) - fbr['hfr']
+            l = set(flux_class.importPickle(mbaCandRxnsDirectory + fn)) - hfr
             rxnSets.append(importPickle(mbaCandRxnsDirectory + fn))
-            allRs.update(l)
-            candRxnsMinusHFR.append(l)
-
-        # checking the degree of overlap in MBA candidate reaction lists
-        overlap = []
-        l = range(len(candRxnsMinusHFR))
-        while l:
-            ind = l.pop()
-            for i in l:
-                a = candRxnsMinusHFR[ind]
-                b = candRxnsMinusHFR[i]
-                overlap.append(float(len(a & b))/(max(len(a), len(b))))
-        overlap = array(overlap)
 
         # Quantifying the number of times a rxn is among the candidate models
         rxnFreq = {}
@@ -351,17 +319,17 @@ def flux(args):
         orderedFreq = freq.keys()
         orderedFreq.sort(reverse = True)
 
-        # EG Making sure that all hfr reactions are active.
-        act = findActiveRxns(m, thresh, fbr['hfr'])
-        mRxns = fbr['hfr'] & act
+        #Making sure that all hfr reactions are active.
+        act = findActiveRxns(m, thresh, hfr)
+        mRxns = hfr & act
 
-        #EG Rather than identifying which reactions need to be added to make all of the hfrs active, reactions will be added until the a flux can be achieved for the biomass reaction 
+        #Rather than identifying which reactions need to be added to make all of the hfrs active, reactions will be added until the a flux can be achieved for the biomass reaction 
         for num in orderedFreq:
             mRxns.update(freq[num])
             excRxns = set(m.idRs) - mRxns
             try:
-                m1 = deleteCbmRxns(m, excRxns)
-                exportPickle(m1, fOutModel % (description, pickle_model_name_after, str(repetition)))
+                m1 = flux_class.deleteCbmRxns(m, excRxns)
+                flux_class.exportPickle(m1, fOutModel % (description, pickle_model_name_after, str(repetition)))
                 rev = [0 if val >= 0 else 1 for val in m1.lb]
                 gene2rxn = {}
                 rxns = {}
@@ -379,20 +347,20 @@ def flux(args):
                     'gene2rxn' : gene2rxn,
                     'rxns' : rxns,
 	            'descrip' : 'examo %s' % description}
-                exportPickle(mDict, fOutModel % (description, pickle_model_name_after, str(repetition) + '_dict'))#EG End of the original 3rd script
+                flux_class.exportPickle(mDict, fOutModel % (model_desc, str(repetition) + '_dict'))
 
-                #EG Beginning of the 4th script
-			################################################################################
-                # INPUTS
+                ################################################################################                
+                # _04_predictMetabolicState.py
+		################################################################################
+                # INPUT
                 fModelExamo = 'data/examo_%s_%s_%s_dict.pkl'
-                fFreqBasedRxns = 'data/freqBasedRxns_%s_%s.pkl'
-                fOutMetabState = 'data/metabolicState_%s_%s_%s.csv'
-			################################################################################
+                # OUTPUT
+                fOutMetabState = 'data/metabolicState_%s_%s.csv'
+		################################################################################
                 # STATEMENTS
 
-                hfr = importPickle(fFreqBasedRxns % (description, pickle_model_name))['hfr']
-                md = importPickle(fModelExamo % (description, pickle_model_name_after, str(repetition)))
-                mtry = CbModel(md['S'], md['idSp'], md['idRs'], md['lb'], md['ub'], md['rxns'], md['genes'])
+                md = flux_class.importPickle(fModelExamo % (model_desc, str(repetition)))
+                mtry = flux_class.CbModel(md['S'], md['idSp'], md['idRs'], md['lb'], md['ub'], md['rxns'], md['genes'])
                 hfr = hfr & set(mtry.idRs)
                 #forcing biomass production
                 mtry.lb[mtry.idRs.index(biomassRxn)] = lb_biomass
@@ -402,14 +370,14 @@ def flux(args):
                         mtry.ub[mtry.idRs.index(i)] = 1000
 
                 #minimizing the sum of fluxes
-                mprod = MipSeparateFwdRev_gurobi(mtry, hfr, eps)
+                mprod = flux_class.MipSeparateFwdRev_gurobi(mtry, hfr, eps)
                 mprod.initMipGurobi()
                 mprod.minSumFluxes_gurobi()
-                #EG Added activityThreshold and the md['rxns'] dictionary to the function, so that the reactants and products could be written out
-                nz = getNzRxnsGurobi(mprod, activityThreshold, md['rxns'])[1]
+                #Added activityThreshold and the md['rxns'] dictionary to the function, so that the reactants and products could be written out
+                nz = flux_class.getNzRxnsGurobi(mprod, activityThreshold, md['rxns'])[1]
 
                 # reporting the flux distribution obtained		
-                f = open(fOutMetabState % (description, pickle_model_name_after, str(repetition)), 'w')
+                f = open(fOutMetabState % (model_desc, str(repetition)), 'w')
                 csv.writer(f).writerows(nz)
                 f.close()
                 break
