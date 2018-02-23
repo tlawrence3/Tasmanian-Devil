@@ -110,8 +110,8 @@ def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lo
 	#Create gene set
 	genes = set()
 	genes_list = []
-	for t in model['idRs']:
-		values = model['rxns'][t]['genes']
+	for t in rxns:
+		values = rxns[t]['genes']
 	        values_split = values.split('or')
 	        for j in values_split:
 			j = j.split('and')

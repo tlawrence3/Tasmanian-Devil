@@ -99,7 +99,7 @@ class CbModel():
         #turning off the writing of the gurobi.log file
         self.guro.setParam('OutputFlag', 0) 
         for i, rxn in enumerate(self.idRs):
-            exec 'self.{0} = self.guro.addVar(lb = {1}, ub = {2},vtype = GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.lb[i], self.ub[i])
+            exec 'self.{0} = self.guro.addVar(lb = {1}, ub = {2},vtype = gp.GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.lb[i], self.ub[i])
         self.guro.update()
         # adding constraints
         for i, row in enumerate(self.S.toarray()):
@@ -113,9 +113,9 @@ class CbModel():
     def setObjective(self, obj, optSense = 'max'):
         s = 'self.{}'.format(obj)
         if optSense == 'max':
-            exec 'self.guro.setObjective({}, GRB.MAXIMIZE)'.format(s)
+            exec 'self.guro.setObjective({}, gp.GRB.MAXIMIZE)'.format(s)
         elif optSense == 'min':
-            exec 'self.guro.setObjective({}, GRB.MINIMIZE)'.format(s)
+            exec 'self.guro.setObjective({}, gp.GRB.MINIMIZE)'.format(s)
     
     def solveLp(self):
         self.guro.optimize()
@@ -138,7 +138,7 @@ class CbModel():
         for rxn in rl:
             # reseting the objective
             self.guro.setObjective(0)
-            exec 'self.guro.setObjective(self.{}, GRB.MAXIMIZE)'.format(rxn)
+            exec 'self.guro.setObjective(self.{}, gp.GRB.MAXIMIZE)'.format(rxn)
             self.guro.optimize()
             fvMax.append(self.guro.objVal)
         # minimizing each
@@ -146,7 +146,7 @@ class CbModel():
         for rxn in rl:
             # reseting the objective
             self.guro.setObjective(0)
-            exec 'self.guro.setObjective(self.{}, GRB.MINIMIZE)'.format(rxn)
+            exec 'self.guro.setObjective(self.{}, gp.GRB.MINIMIZE)'.format(rxn)
             self.guro.optimize()
             fvMin.append(self.guro.objVal)
         # getting the lists together
@@ -273,7 +273,7 @@ class MetabGeneExpModel(object):
             self.rhsCols.append(0)
             self.rhsVals.append(self.ub[self.colNames.index(rxn)])
             self.senses += 'L'
-        self.rhs = list(coo_matrix((self.rhsVals, (self.rhsRows, self.
+        self.rhs = list(sp.sparse.coo_matrix((self.rhsVals, (self.rhsRows, self.
             rhsCols)), shape = (len(self.rowNames), 1)).toarray().flatten())
 
 class MetabGeneExpModel_gurobi(MetabGeneExpModel):
@@ -286,9 +286,9 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
         self.guro.setParam('OutputFlag', 0) 
         # Initializing variables
         for i, rxn in enumerate(self.idRs):
-            exec 'self.{0} = self.guro.addVar(lb = {1}, ub = {2}, vtype = GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.lb[i], self.ub[i])
+            exec 'self.{0} = self.guro.addVar(lb = {1}, ub = {2}, vtype = gp.GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.lb[i], self.ub[i])
         for var in [v for v in self.colNames if v not in self.idRs]:
-            exec 'self.{0} = self.guro.addVar(vtype = GRB.BINARY, name = "{0}")'.format(var)
+            exec 'self.{0} = self.guro.addVar(vtype = gp.GRB.BINARY, name = "{0}")'.format(var)
         self.guro.update()
         # adding constraints
         lhs = sp.sparse.coo_matrix((self.lhsVals, (self.lhsRows, self.lhsCols))).toarray()
@@ -312,7 +312,7 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
             if name.startswith('y'):
                 s += 'self.{} + '.format(name)
         s = s.rstrip(' + ')
-        exec 'self.guro.setObjective({}, GRB.MAXIMIZE)'.format(s)
+        exec 'self.guro.setObjective({}, gp.GRB.MAXIMIZE)'.format(s)
 
     def solve(self):
         self.rowAndColNames()
@@ -573,9 +573,9 @@ class MipSeparateFwdRev_gurobi(MipSeparateFwdRev):
         self.guro.setParam('OutputFlag', 0) 
         # adding variables
         for i, rxn in enumerate(self.m.idRs):
-            exec 'self.{0} = self.guro.addVar(lb = {1}, ub = {2}, vtype = GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.m.lb[i], self.m.ub[i])  
+            exec 'self.{0} = self.guro.addVar(lb = {1}, ub = {2}, vtype = gp.GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.m.lb[i], self.m.ub[i])  
         for var in [v for v in self.colNames if v not in self.m.idRs]:
-            exec 'self.{0} = self.guro.addVar(lb = 0, ub = 1, vtype = GRB.BINARY, name = "{0}")'.format(var)
+            exec 'self.{0} = self.guro.addVar(lb = 0, ub = 1, vtype = gp.GRB.BINARY, name = "{0}")'.format(var)
         self.guro.update()
         # adding constraints
         lhs = sp.sparse.coo_matrix((self.lhsVals, (self.lhsRows, self.lhsCols))).toarray()
@@ -603,7 +603,7 @@ class MipSeparateFwdRev_gurobi(MipSeparateFwdRev):
         s = s.rstrip(', ')
         s += '])'
         exec s
-        self.guro.setObjective(self.linobj, GRB.MINIMIZE)#1 for minimize
+        self.guro.setObjective(self.linobj, gp.GRB.MINIMIZE)#1 for minimize
         self.guro.optimize()
         self.initialized = 1
 
@@ -830,7 +830,7 @@ def deleteCbmRxns(cbm, rl):
 
 def findActiveRxns(cbm, thresh, rl = []):
     act = set()
-    arrayIdRs = array(cbm.idRs[:])
+    arrayIdRs = np.array(cbm.idRs[:])
     init = cbm.initLp()
     init 
     if rl:
@@ -842,9 +842,9 @@ def findActiveRxns(cbm, thresh, rl = []):
         if rxn not in act:
             # reseting the objective
             cbm.guro.setObjective(0)
-            exec 'cbm.guro.setObjective(cbm.%s, GRB.MAXIMIZE)' % rxn
+            exec 'cbm.guro.setObjective(cbm.%s, gp.GRB.MAXIMIZE)' % rxn
             cbm.guro.optimize()
-            sol = abs(array([v.x for v in cbm.guro.getVars()]))
+            sol = abs(np.array([v.x for v in cbm.guro.getVars()]))
             indices = (sol > thresh).nonzero()[0]
             act.update(arrayIdRs[indices])
     idRs = list(set(idRs) - act)
@@ -853,9 +853,9 @@ def findActiveRxns(cbm, thresh, rl = []):
         if rxn not in act:
             # reseting the objective
             cbm.guro.setObjective(0)
-            exec 'cbm.guro.setObjective(cbm.%s, GRB.MINIMIZE)' % rxn
+            exec 'cbm.guro.setObjective(cbm.%s, gp.GRB.MINIMIZE)' % rxn
             cbm.guro.optimize()
-            sol = abs(array([v.x for v in cbm.guro.getVars()]))
+            sol = abs(np.array([v.x for v in cbm.guro.getVars()]))
             indices = (sol > thresh).nonzero()[0]
             act.update(arrayIdRs[indices])
     return act

@@ -5,6 +5,7 @@ import csv
 import decimal
 import os
 import shutil
+import time
 import multiprocessing as mp
 import Crypto.Random
 import gene as gene_class
@@ -69,8 +70,7 @@ def model(args):
 
 def flux(args):
     #Import the model, adjust the biomass production, and create the names for the exported files
-    description = str(args.d)
-    description = description[2:-6]
+    description = args.d.name
     if args.sbml:
         cobra_model = cobra.io.read_sbml_model(args.model)	
     if args.cobra:
@@ -79,10 +79,10 @@ def flux(args):
     if args.biomassprod:
         lb_biomass = args.biomassprod
     else:
-        cobra_model.optimize(solver='gurobi')
+        solution = cobra_model.optimize()
         decimal.getcontext().rounding = decimal.ROUND_DOWN
         decimal.getcontext().prec = 4
-        lb_biomass = decimal.Decimal(cobra_model.solution.f) + decimal.Decimal('0.0')
+        lb_biomass = decimal.Decimal(solution.objective_value) + decimal.Decimal('0.0')
     #Perhaps consider if OS is Windows or Linux for file structure
     name_split = args.model.split('/')
     description_split = description.split('/')
@@ -96,15 +96,18 @@ def flux(args):
     if len(description_split) > 2:
         fOutRxnsByExpression = '/'.join(description_split[0:-2]) + '/' + 'RxnsClassifiedByExpression_' + model_desc + description_split[-1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
         fOutFreqBasedRxns = '/'.join(description_split[0:-2]) + '/' + 'freqBasedRxns_' + model_desc + description_split[-1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
-        model_desc = model_desc + name_split[-1][:-4] + '_' + name_split[-1:-4]
-    elif (description_split) == 2:
-        fOutRxnsByExpression = '/'.join(description_split[0]) + '/' + 'RxnsClassifiedByExpression_' + model_desc + description_split[1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
-        fOutFreqBasedRxsn = '/'.join(description_split[0]) + '/' + 'freqBasedRxns_' + model_desc + description_split[1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
-        model_desc = model_desc + description_split[-1][:-4] + '_' + name_split[-1:-4]
+        model_desc = model_desc + description_split[-1][:-4] + '_' + name_split[-1][:-4]
+        file_path = '/'.join(description_split[0:-2]) + '/'
+    elif len(description_split) == 2:
+        fOutRxnsByExpression = description_split[0] + '/' + 'RxnsClassifiedByExpression_' + model_desc + description_split[1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
+        fOutFreqBasedRxns = description_split[0] + '/' + 'freqBasedRxns_' + model_desc + description_split[1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
+        model_desc = model_desc + description_split[-1][:-4] + '_' + name_split[-1][:-4]
+        file_path = description_split[0] + '/'
     elif len(description_split) == 1:
         fOutRxnsByExpression = 'RxnsClassifiedByExpression_' + model_desc + description_split[0][:-4] + '_' + name_split[-1][:-4] + '.pkl'
         fOutFreqBasedRxns = 'freqBasedRxns_' + model_desc + description_split[0][:-4] + '_' + name_split[-1][:-4] + '.pkl' 
-        model_desc = model_desc + description_split[0][:-4] + '_' + name_split[-1:-4]
+        model_desc = model_desc + description_split[0][:-4] + '_' + name_split[-1][:-4]
+        file_path = ''
 
     ######Perform iMAT
     # 0. Import model dictionary
@@ -131,7 +134,6 @@ def flux(args):
     csv_file = csv.reader(args.d)
     for line in csv_file:
         geneCalls[line[0]] = int(line[1])
-    f.close()
 
     ## Classifying reactions by expression
     rxnDict = flux_class.classifyRxnsByExpression(geneCalls, m.gene2rxn, m.genes)
@@ -142,8 +144,8 @@ def flux(args):
     rL = rxnDict['rL']
 
     #EG added eps to arguments
-    model = flux_class.MetabGeneExpModel_gurobi(m.idSp, m.idRs, m.S, m.lb, m.ub, rH, rL, args.epsearly)
-    scores, imgeSols = model.flux_class.exploreAlternativeOptima(idRs)
+    model_mgem = flux_class.MetabGeneExpModel_gurobi(m.idSp, m.idRs, m.S, m.lb, m.ub, rH, rL, args.epsearly)
+    scores, imgeSols = model_mgem.exploreAlternativeOptima(idRs)
 
     # 3. identifying zero and high frequency reactions
     zfr, hfr = flux_class.getZeroAndHighFrequencyRxns(scores, imgeSols, idRs, args.epsidentifyingfrequencies)
@@ -155,9 +157,9 @@ def flux(args):
 
     ######Prune model
     repetitions = args.r
-    eps = args.i
-    thresh = args.t
-    activityThreshold = args.a
+    eps = args.epsirreversiblerxns
+    thresh = args.epspruning
+    activityThreshold = args.espsolving
 
     #Create lists of extracellular reactions, extracellular transport reactions, and other compartmental transport reactions, so that the reactions can be pruned in that order first.
     EXrxns = []
@@ -184,20 +186,19 @@ def flux(args):
         reps = 5
 
         #Making subdirectories for candidate reactions
-        mbaCandRxnsDirectory = 'data/mbaCandRxns/%s_%s/' % (model_desc, str(repetition))
+        mbaCandRxnsDirectory = file_path + 'data/mbaCandRxns/%s_%s/' % (model_desc, str(repetition))
         if os.path.exists(mbaCandRxnsDirectory):
             shutil.rmtree(mbaCandRxnsDirectory)
-            os.mkdir(mbaCandRxnsDirectory, 0777)
+            os.makedirs(mbaCandRxnsDirectory, 0777)
         else:
-            os.mkdir(mbaCandRxnsDirectory, 0777)
+            os.makedirs(mbaCandRxnsDirectory, 0777)
 
         fOutMbaCandRxns = ''.join((mbaCandRxnsDirectory, "mbaCandRxns_%s.pkl"))
 
 	################################################################################
         # STATEMENTS
         # Instantiating CbModel 
-        m0 = flux_class.CbModel(model['S'], model['idSp'], model['idRs'], model['lb'], model['ub'], model['rxns'],
-		model['genes'])
+        m0 = flux_class.CbModel(model['S'], model['idSp'], model['idRs'], model['lb'], model['ub'], model['rxns'],model['genes'])
         #EG Changed the minimum biomass flux to be the maximum amount with default boundary constraints 
         m0.lb[m0.idRs.index(biomass_rxn)] = lb_biomass
 
@@ -205,7 +206,7 @@ def flux(args):
             if ((model['rxns'][i]['lb'] <= 0) and (model['rxns'][i]['ub'] == 0)):
                 m0.ub[m0.idRs.index(i)] = 1000
 
-        biomass_set = {biomassRxn}
+        biomass_set = {biomass_rxn}
         new_hfr = hfr.union(biomass_set)
 
         zfr_check = 0
@@ -255,9 +256,9 @@ def flux(args):
             cH2 = cH & act		
 
         #Make a directory for temporary files for every time a rxn is pruned
-        mbaCandRxnsDirectorySubset = '/data/test/%s_%s/' % (model_desc, str(repetition))
+        mbaCandRxnsDirectorySubset = file_path + 'data/test/%s_%s/' % (model_desc, str(repetition))
         if not os.path.exists(mbaCandRxnsDirectorySubset):
-            os.mkdir(mbaCandRxnsDirectorySubset, 0777)
+            os.makedirs(mbaCandRxnsDirectorySubset, 0777)
 
         def pruneReps():
             locTime = time.localtime()
@@ -268,7 +269,7 @@ def flux(args):
                 tag = '%s_%s_%s_%s' % (model_desc, pid, x, timeStr)
                 try:
                     #Added despricription, repetition, and lists of compartmental reactions to the function
-                    cr = flux_class.iterativePrunning(i, m, cH2, hfr, biomassRxn, lb_biomass, repetition, thresh, eps, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
+                    cr = flux_class.iterativePrunning(i, m, cH2, hfr, biomass_rxn, lb_biomass, repetition, thresh, eps, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
                     flux_class.exportPickle(cr, fOutMbaCandRxns % tag)
                 except:
                     print ('gurobi error, no solution found %s'  % model_desc)
@@ -290,8 +291,11 @@ def flux(args):
         # _03_minimizeNetwork_part_B_new.py 
 	################################################################################
         # STATEMENTS
+        #Create file to export
+        fOutModel = file_path + 'examo_%s_%s.pkl'
+
         # Instantiating CbModel 
-        m = CbModel(model['S'], model['idSp'], model['idRs'], model['lb'], model['ub'], model['rxns'], model['genes'])
+        m = flux_class.CbModel(model['S'], model['idSp'], model['idRs'], model['lb'], model['ub'], model['rxns'], model['genes'])
 
         # Retrieving MBA candidate reaction lists
         files = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory, description)).read().splitlines()
@@ -299,7 +303,7 @@ def flux(args):
         rxnSets = []
         for fn in files:
             l = set(flux_class.importPickle(mbaCandRxnsDirectory + fn)) - hfr
-            rxnSets.append(importPickle(mbaCandRxnsDirectory + fn))
+            rxnSets.append(flux_class.importPickle(mbaCandRxnsDirectory + fn))
 
         # Quantifying the number of times a rxn is among the candidate models
         rxnFreq = {}
@@ -320,7 +324,7 @@ def flux(args):
         orderedFreq.sort(reverse = True)
 
         #Making sure that all hfr reactions are active.
-        act = findActiveRxns(m, thresh, hfr)
+        act = flux_class.findActiveRxns(m, thresh, hfr)
         mRxns = hfr & act
 
         #Rather than identifying which reactions need to be added to make all of the hfrs active, reactions will be added until the a flux can be achieved for the biomass reaction 
@@ -329,7 +333,7 @@ def flux(args):
             excRxns = set(m.idRs) - mRxns
             try:
                 m1 = flux_class.deleteCbmRxns(m, excRxns)
-                flux_class.exportPickle(m1, fOutModel % (description, pickle_model_name_after, str(repetition)))
+                flux_class.exportPickle(m1, fOutModel % (description, str(repetition)))
                 rev = [0 if val >= 0 else 1 for val in m1.lb]
                 gene2rxn = {}
                 rxns = {}
@@ -352,18 +356,16 @@ def flux(args):
                 ################################################################################                
                 # _04_predictMetabolicState.py
 		################################################################################
-                # INPUT
-                fModelExamo = 'data/examo_%s_%s_%s_dict.pkl'
                 # OUTPUT
-                fOutMetabState = 'data/metabolicState_%s_%s.csv'
+                fOutMetabState = file_path + 'metabolicState_%s_%s.csv'
 		################################################################################
                 # STATEMENTS
 
-                md = flux_class.importPickle(fModelExamo % (model_desc, str(repetition)))
+                md = flux_class.importPickle(fOutModel % (model_desc, str(repetition) + '_dict'))
                 mtry = flux_class.CbModel(md['S'], md['idSp'], md['idRs'], md['lb'], md['ub'], md['rxns'], md['genes'])
                 hfr = hfr & set(mtry.idRs)
                 #forcing biomass production
-                mtry.lb[mtry.idRs.index(biomassRxn)] = lb_biomass
+                mtry.lb[mtry.idRs.index(biomass_rxn)] = lb_biomass
 
                 for i in mtry.idRs:
                     if ((md['rxns'][i]['lb'] <= 0) and (md['rxns'][i]['ub'] == 0)):
@@ -440,7 +442,7 @@ def main():
     flux_group = parser_flux.add_mutually_exclusive_group(required=True)
     parser_flux.add_argument("model", help='Necessary variable: metabolic reconstruction file.')
     parser_flux.add_argument("d", type=argparse.FileType("r"), help='Necessary variable: comma separated gene rule file')
-    parser_model.add_argument("extracellular", type=str,
+    parser_flux.add_argument("extracellular", type=str,
                              help="Necessary variable: extracellular compartment abbreviation. Instead of brackets or parentheses, use underscores (ex: '_e').")
     parser_flux.add_argument("r", type=int, 
                              help='Necessary variable: number of repetitions of the 2nd-4th scripts for final flux states')
@@ -450,7 +452,7 @@ def main():
                              help='Flag to specify whether model is a SBML (.xml) file type; must have either -xml or -mat flag.')
     parser_flux.add_argument("-e", "--epsearly", type=float, default=1E-1, 
                              help='Minimum value for fluxes forced to be non-zero (for the implementation of the pathway algorithm created by Shlomi); default value: 1E-1')
-    parser_flux.add_argument("-z", "--epsidentifyingfreqencies", type=float, default=1E-10,
+    parser_flux.add_argument("-z", "--epsidentifyingfrequencies", type=float, default=1E-10,
                              help='Activity threshold when classifying HFR and ZFR reactions from gene rules') 
     parser_flux.add_argument("-i", "--epsirreversiblerxns", type=float, default=1E-10,
                              help='Minimum value for active flux of reversible reactions in an irreversible model; default value: 1E-10')
