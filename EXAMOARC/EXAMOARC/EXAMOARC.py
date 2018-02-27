@@ -70,7 +70,7 @@ def model(args):
 
 def flux(args):
     #Import the model, adjust the biomass production, and create the names for the exported files
-    description = args.d.name
+    description = args.description.name
     if args.sbml:
         cobra_model = cobra.io.read_sbml_model(args.model)	
     if args.cobra:
@@ -131,7 +131,7 @@ def flux(args):
     # 1. Classify reactions by expression
     ## Importing gene calls as a dictionary
     geneCalls = {}
-    csv_file = csv.reader(args.d)
+    csv_file = csv.reader(args.description)
     for line in csv_file:
         geneCalls[line[0]] = int(line[1])
 
@@ -156,7 +156,7 @@ def flux(args):
     print ('hfr ', len(hfr))
 
     ######Prune model
-    repetitions = args.r
+    repetitions = args.repetitionsoffluxstates
     eps = args.epsirreversiblerxns
     thresh = args.epspruning
     activityThreshold = args.espsolving
@@ -177,13 +177,13 @@ def flux(args):
         csv_file = csv.reader(args.Othertrrxns)
         for line in csv_file:
             Othertrrxns.append(line[0])
-    for repetition in range(args.r): 
+    for repetition in range(repetitions): 
     ################################################################################
     # originally _02_minimizeNetwork_part_A.py in EXAMO
     ################################################################################
 
-        number_concurrent_processes = 1
-        reps = 1
+        number_concurrent_processes = args.concurrentprocesses
+        reps = args.repetitionsofconcurrentprocesses
 
         #Making subdirectories for candidate reactions
         mbaCandRxnsDirectory = file_path + 'data/mbaCandRxns/%s_%s/' % (model_desc, str(repetition))
@@ -199,7 +199,7 @@ def flux(args):
         # STATEMENTS
         # Instantiating CbModel 
         m0 = flux_class.CbModel(model['S'], model['idSp'], model['idRs'], model['lb'], model['ub'], model['rxns'],model['genes'])
-        #EG Changed the minimum biomass flux to be the maximum amount with default boundary constraints 
+        #Changed the minimum biomass flux to be the maximum amount with default boundary constraints 
         m0.lb[m0.idRs.index(biomass_rxn)] = lb_biomass
 
         for i in m0.idRs:
@@ -223,7 +223,7 @@ def flux(args):
             mtry1result = flux_class.MipSeparateFwdRev_gurobi(m, new_hfr2, eps)
             mtry1result.initMipGurobi()
             mtry1result.minSumFluxes_gurobi()
-            #EG Added activityThreshold and the m0.rxns dictionary to the
+            #Added activityThreshold and the m0.rxns dictionary to the
             #function, so that the reactants and products could be written out
             nz = flux_class.getNzRxnsGurobi(mtry1result, activityThreshold, m.rxns)[1]
         except:
@@ -437,11 +437,13 @@ def main():
     parser_flux = subparsers.add_parser("flux", help='Predict condition-specific fluxes')
     flux_group = parser_flux.add_mutually_exclusive_group(required=True)
     parser_flux.add_argument("model", help='Necessary variable: metabolic reconstruction file.')
-    parser_flux.add_argument("d", type=argparse.FileType("r"), help='Necessary variable: comma separated gene rule file')
+    parser_flux.add_argument("description", type=argparse.FileType("r"), help='Necessary variable: comma separated gene rule file')
     parser_flux.add_argument("extracellular", type=str,
                              help="Necessary variable: extracellular compartment abbreviation. Instead of brackets or parentheses, use underscores (ex: '_e').")
-    parser_flux.add_argument("r", type=int, 
-                             help='Necessary variable: number of repetitions of the 2nd-4th scripts for final flux states')
+    parser_flux.add_argument("concurrentprocesses", type=int, help='Necessary variable: number of concurrent processes for creating pruned models')
+    parser_flux.add_argument("repetitionsofconcurrentprocesses", type=int, help='Necessary variable: number of times to repeat the chosen number of processes to create the profile of models')
+    parser_flux.add_argument("repetitionsoffluxstates", type=int, 
+                             help='Necessary variable: number of repetitions to produce final flux states (csv files)')
     flux_group.add_argument("-c", "--cobra", action="store_true",
                              help='Flag to specify whether model is a COBRA Toolbox (.mat) file type; must have either -xml or -mat flag.')
     flux_group.add_argument("-s", "--sbml", action="store_true",
