@@ -182,8 +182,8 @@ def flux(args):
     # originally _02_minimizeNetwork_part_A.py in EXAMO
     ################################################################################
 
-        number_concurrent_processes = 10
-        reps = 5
+        number_concurrent_processes = 1
+        reps = 1
 
         #Making subdirectories for candidate reactions
         mbaCandRxnsDirectory = file_path + 'data/mbaCandRxns/%s_%s/' % (model_desc, str(repetition))
@@ -267,13 +267,9 @@ def flux(args):
             for x in xrange(reps):
                 timeStr = '%i%02i%02i%02i%02i%02i' % locTime[:6]
                 tag = '%s_%s_%s_%s' % (model_desc, pid, x, timeStr)
-                try:
-                    #Added despricription, repetition, and lists of compartmental reactions to the function
-                    cr = flux_class.iterativePrunning(i, m, cH2, hfr, biomass_rxn, lb_biomass, repetition, thresh, eps, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
-                    flux_class.exportPickle(cr, fOutMbaCandRxns % tag)
-                except:
-                    print ('gurobi error, no solution found %s'  % model_desc)
-
+                #Added despricription, repetition, and lists of compartmental reactions to the function
+                cr = flux_class.iterativePrunning(i, m, cH2, fOutFreqBasedRxns, biomass_rxn, lb_biomass, repetition, thresh, eps, activityThreshold, EXrxns, EXtrrxns, Othertrrxns)
+                flux_class.exportPickle(cr, fOutMbaCandRxns % tag)
 
         processes = []
         for _ in xrange(number_concurrent_processes):
@@ -298,7 +294,7 @@ def flux(args):
         m = flux_class.CbModel(model['S'], model['idSp'], model['idRs'], model['lb'], model['ub'], model['rxns'], model['genes'])
 
         # Retrieving MBA candidate reaction lists
-        files = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory, description)).read().splitlines()
+        files = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory, model_desc)).read().splitlines()
 
         rxnSets = []
         for fn in files:
@@ -326,14 +322,13 @@ def flux(args):
         #Making sure that all hfr reactions are active.
         act = flux_class.findActiveRxns(m, thresh, hfr)
         mRxns = hfr & act
-
         #Rather than identifying which reactions need to be added to make all of the hfrs active, reactions will be added until the a flux can be achieved for the biomass reaction 
         for num in orderedFreq:
             mRxns.update(freq[num])
             excRxns = set(m.idRs) - mRxns
             try:
                 m1 = flux_class.deleteCbmRxns(m, excRxns)
-                flux_class.exportPickle(m1, fOutModel % (description, str(repetition)))
+                flux_class.exportPickle(m1, fOutModel % (model_desc, str(repetition)))
                 rev = [0 if val >= 0 else 1 for val in m1.lb]
                 gene2rxn = {}
                 rxns = {}
@@ -350,9 +345,8 @@ def flux(args):
                     'genes' : m1.genes,
                     'gene2rxn' : gene2rxn,
                     'rxns' : rxns,
-	            'descrip' : 'examo %s' % description}
+	            'descrip' : 'examo %s' % model_desc}
                 flux_class.exportPickle(mDict, fOutModel % (model_desc, str(repetition) + '_dict'))
-
                 ################################################################################                
                 # _04_predictMetabolicState.py
 		################################################################################
@@ -366,7 +360,6 @@ def flux(args):
                 hfr = hfr & set(mtry.idRs)
                 #forcing biomass production
                 mtry.lb[mtry.idRs.index(biomass_rxn)] = lb_biomass
-
                 for i in mtry.idRs:
                     if ((md['rxns'][i]['lb'] <= 0) and (md['rxns'][i]['ub'] == 0)):
                         mtry.ub[mtry.idRs.index(i)] = 1000
@@ -384,6 +377,9 @@ def flux(args):
                 f.close()
                 break
             except:
+                mprod = flux_class.MipSeparateFwdRev_gurobi(mtry, hfr, eps)
+                mprod.initMipGurobi()
+                mprod.minSumFluxes_gurobi()
                 continue
 
 

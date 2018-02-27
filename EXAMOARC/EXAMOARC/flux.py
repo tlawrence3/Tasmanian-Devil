@@ -4,7 +4,7 @@ import gurobipy as gp
 import scipy as sp
 import numpy as np
 import re
-import Crypto.Random
+from Crypto.Random import random
 
 #################
 #Define functions for importing and exporting pickle files
@@ -596,7 +596,7 @@ class MipSeparateFwdRev_gurobi(MipSeparateFwdRev):
 
     def minSumFluxes_gurobi(self):
         # setting the objective
-        s = 'self.linobj = LinExpr([1.0] * len(self.m.idRs), ['
+        s = 'self.linobj = gp.LinExpr([1.0] * len(self.m.idRs), ['
         for var in self.guro.getVars():
             if not var.varName.startswith('y_'): #excluding binary variables
                 s += 'self.{}, '.format(var.varName)
@@ -860,7 +860,7 @@ def findActiveRxns(cbm, thresh, rl = []):
             act.update(arrayIdRs[indices])
     return act
 
-def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, hfr, 
+def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, fOutFreqBasedRxns, 
              repetition, biomassRxn, lb_biomass):
 ######Change description and pickle_model_name to fOutFreqBasedRxns
     try:
@@ -872,6 +872,7 @@ def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, hfr,
         cH_act = cH & act
         if (len(cH - cH_act) != 0):#not all cH rxns are active
             return cbm
+        hfr = importPickle(fOutFreqBasedRxns)['hfr']
         hfr_new = hfr & set(m0.idRs)
         #forcing biomass production
         m0.lb[m0.idRs.index(biomassRxn)] = lb_biomass
@@ -895,6 +896,7 @@ def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, hfr,
         cH_act2 = cH & act2
         if (len(cH - cH_act2) != 0):#not all cH rxns are active
             return m0
+        hfr = importPickle(fOutFreqBasedRxns)['hfr']
         hfr_new = hfr & set(m1.idRs)
         #forcing biomass production
         m1.lb[m1.idRs.index(biomassRxn)] = lb_biomass
@@ -907,7 +909,7 @@ def pruneRxn(cbm, cH, rxn, thresh, eps, activityThreshold, hfr,
     except:
         return m0
 
-def iterativePrunning(i, m, cH, hfr, biomassRxn, lb_biomass,
+def iterativePrunning(i, m, cH, fOutFreqBasedRxns, biomassRxn, lb_biomass,
                       repetition, thresh = 1E-10, eps = 1E-10, activityThreshold = 1E-10, EXrxns = [],
                       EXtrrxns = [], Othertrrxns = []):
 ######Change description and pickle_model_name to fOutFreqBasedRxns
@@ -917,22 +919,22 @@ def iterativePrunning(i, m, cH, hfr, biomassRxn, lb_biomass,
         while EXrxnsprune:
             rxn1 = EXrxnsprune.pop()
             try:
-                mTemp1 = pruneRxn(mTemp1, cH, rxn1, thresh, eps, activityThreshold, hfr,
+                mTemp1 = pruneRxn(mTemp1, cH, rxn1, thresh, eps, activityThreshold, fOutFreqBasedRxns,
                                   repetition, biomassRxn, lb_biomass)
                 EXrxnsprune2 = []
                 for k in mTemp1.idRs:
                     if k in EXrxnsprune:
                         EXrxnsprune2.append(k)
-                Crypto.Random.random.shuffle(EXrxnsprune2)
+                random.shuffle(EXrxnsprune2)
                 EXrxnsprune = EXrxnsprune2
             except NameError:
-                mTemp1 = pruneRxn(m, cH, rxn1, thresh, eps, activityThreshold, hfr,
+                mTemp1 = pruneRxn(m, cH, rxn1, thresh, eps, activityThreshold, fOutFreqBasedRxns,
                                   repetition, biomassRxn, lb_biomass)
                 EXrxnsprune2 = []
                 for k in mTemp1.idRs:
                     if k in EXrxnsprune:
                         EXrxnsprune2.append(k)
-                Crypto.Random.random.shuffle(EXrxnsprune2)
+                random.shuffle(EXrxnsprune2)
                 EXrxnsprune = EXrxnsprune2
     if len(EXtrrxns) > 0:
         EXtrrxnsprune = list(set(list(EXtrrxns)) - cH)
@@ -940,26 +942,26 @@ def iterativePrunning(i, m, cH, hfr, biomassRxn, lb_biomass,
         for j in EXtrrxnsprune:
             if j in mTemp1.idRs:
                 EXtrrxnsprunelist.append(j)
-        Crypto.Random.random.shuffle(EXtrrxnsprune)
+        random.shuffle(EXtrrxnsprune)
         while EXtrrxnsprune:
             rxn2 = EXtrrxnsprune.pop()
             try:
-                mTemp1 = pruneRxn(mTemp1, cH, rxn2, thresh, eps, activityThreshold, hfr,
+                mTemp1 = pruneRxn(mTemp1, cH, rxn2, thresh, eps, activityThreshold, fOutFreqBasedRxns,
                                   repetition, biomassRxn, lb_biomass)
                 EXtrrxnsprune2 = []
                 for k in mTemp1.idRs:
                     if k in EXtrrxnsprune:
                         EXtrrxnsprune2.append(k)
-                Crypto.Random.random.shuffle(EXtrrxnsprune2)
+                random.shuffle(EXtrrxnsprune2)
                 EXtrrxnsprune = EXtrrxnsprune2
             except NameError:
-                mTemp1 = pruneRxn(m, cH, rxn2, thresh, eps, activityThreshold, hfr,
+                mTemp1 = pruneRxn(m, cH, rxn2, thresh, eps, activityThreshold, fOutFreqBasedRxns,
                                   repetition, biomassRxn, lb_biomass)
                 EXtrrxnsprune2 = []
                 for k in mTemp1.idRs:
                     if k in EXtrrxnsprune:
                         EXtrrxnsprune2.append(k)
-                Crypto.Random.random.shuffle(EXtrrxnsprune2)
+                random.shuffle(EXtrrxnsprune2)
                 EXtrrxnsprune = EXtrrxnsprune2
 
     prunableRxns = []
@@ -977,26 +979,26 @@ def iterativePrunning(i, m, cH, hfr, biomassRxn, lb_biomass,
                     if j not in EXtrrxns:
                         if j not in Othertrrxns:
                             prunableRxns.append(j)
-    Crytpo.Random.random.shuffle(prunableRxns)
+    random.shuffle(prunableRxns)
     while prunableRxns:
         rxn3 = prunableRxns.pop()
         try:
-            mTemp1 = pruneRxn(mTemp1, cH, rxn3, thresh, eps, activityThreshold, hfr,
+            mTemp1 = pruneRxn(mTemp1, cH, rxn3, thresh, eps, activityThreshold, fOutFreqBasedRxns,
                               repetition, biomassRxn, lb_biomass)
             prunableRxns2 = []
             for k in mTemp1.idRs:
                 if k in prunableRxns:
                     prunableRxns2.append(k)
-            Crypto.Random.random.shuffle(prunableRxns2)
+            random.shuffle(prunableRxns2)
             prunableRxns = prunableRxns2
         except NameError:
-            mTemp1 = pruneRxn(m, cH, rxn3, thresh, eps, activityThreshold, hfr,
+            mTemp1 = pruneRxn(m, cH, rxn3, thresh, eps, activityThreshold, fOutFreqBasedRxns,
                               repetition, biomassRxn, lb_biomass)
             prunableRxns2 = []
             for k in mTemp1.idRs:
                 if k in prunableRxns:
                     prunableRxns2.append(k)
-            Crypto.Random.random.shuffle(prunableRxns2)
+            random.shuffle(prunableRxns2)
             prunableRxns = prunableRxns2
     return mTemp1.idRs
 
