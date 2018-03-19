@@ -11,6 +11,7 @@ import Crypto.Random
 import gene as gene_class
 import model as model_class
 import flux as flux_class
+import visualization as visualization_class
 
 
 def gene(args):
@@ -143,7 +144,7 @@ def flux(args):
     rH = rxnDict['rH']
     rL = rxnDict['rL']
 
-    #EG added eps to arguments
+    #Added eps to arguments
     model_mgem = flux_class.MetabGeneExpModel_gurobi(m.idSp, m.idRs, m.S, m.lb, m.ub, rH, rL, args.epsearly)
     scores, imgeSols = model_mgem.exploreAlternativeOptima(idRs)
 
@@ -280,7 +281,7 @@ def flux(args):
         for p in processes:
             p.join()
 
-        #EG Delete the temporary files generated for every time a rxn is pruned
+        #Delete the temporary files generated for every time a rxn is pruned
         shutil.rmtree(mbaCandRxnsDirectorySubset)
 
 	################################################################################
@@ -382,6 +383,129 @@ def flux(args):
                 mprod.minSumFluxes_gurobi()
                 continue
 
+def visualization(args):
+    if (args.geneCalls2 or args.fluxState2 or args.rxnsClassifiedByExpression2 or args.freqBasedRxns2):  
+        if not args.model2:
+            raise RuntimeError("Must supply -m2 if going to use -g2, -f2, -c2, or -b2 for second condition")
+    #Import model1
+    pickle_model1 = flux_class.importPickle(args.model1)
+    md_model1 = flux_class.CbModel(pickle_model1['S'], pickle_model1['idSp'], pickle_model1['idRs'], pickle_model1['lb'], pickle_model1['ub'], pickle_model1['rxns'], pickle_model1['genes'])
+
+    model2 = None
+    pickle_model2 = None
+    if args.model2: 
+        model2 = str(args.m2)
+        model2 = model2[2:-2]
+        pickle_model2 = importPickle('data/%s' % model2)
+        md_model2 = CbModel(pickle_model2['S'], pickle_model2['idSp'], pickle_model2['idRs'], pickle_model2['lb'], pickle_model2['ub'], pickle_model2['rxns'], pickle_model2['genes'])
+
+    #Store number of repetitions
+    repetitions = args.repetitionoffluxstates
+
+    #Import the gene rules and create dictionaries
+    csvreader1 = csv.reader(args.geneCalls1)
+    prepend_split = args.geneCalls1.split('/')
+    if len(prepend_split) > 2:
+        prepend = '/'.join(name_split[0:-2]) 
+    elif len(name_split) == 2:
+        prepend = name_split[0] 
+    elif len(name_split) == 1:
+        prepend = ''
+    geneCalls1 = {}
+    for row in csvreader1:
+        geneCalls1[row[0]] = int(row[1])
+    geneCallsFile1.close()
+
+    
+    geneCalls2 = None
+    if args.geneCalls2:
+        csvreader2 = csv.reader(args.geneCalls2)
+        geneCalls2 = {}
+        for row in csvreader2:
+            geneCalls2[row[0]] = int(row[1])
+        geneCallsFile2.close()
+
+
+    #Import the name of the flux states
+    fluxstate1 = str(args.fluxState1)
+    fluxstate1 = fluxstate1[2:-2]
+
+    fluxstate2 = str(args.flusState2)
+    fluxstate2 = fluxstate2[2:-2]
+
+    #Classify the rxns as being in rH, rL or neither and hfr, zfr, or neither
+    gbr1_rH = None
+    if args.rxnsClassifiedbyExpression1:
+        gbr1 = flux_class.importPickle(args.rxnsClassifiedbyExpression1) 
+        gbr1_rH = {}
+        for t in md_model1.rxns.keys():
+            if t in gbr1['rH']:
+                gbr1_rH[t] = 2
+            elif t in gbr1['rL']:
+                gbr1_rH[t] = 0
+            else:
+	        gbr1_rH[t] = 1
+    
+    fbr1_hfr = None
+    if args.freqBasedRxns1:
+        fbr1 = flux_class.importPickle(args.freqBasedRxns1)
+        fbr1_hfr = {}
+        for t in md_model1.rxns.keys():
+            if t in fbr1['hfr']:
+                fbr1_hfr[t] = 2
+            elif t in fbr1['zfr']:
+                fbr1_hfr[t] = 0
+            else:
+                fbr1_hfr[t] = 1
+
+    gbr2_rH = None
+    if args.rxnsClassifiedbyExpression2:
+        gbr2 = flux_class.importPickle(args.rxnsClassifiedbyExpression2)
+        gbr2_rH = {} 
+        for t in md_model2.rxns.keys():
+            if t in gbr2['rH']:
+                gbr2_rH[t] = 2
+            elif t in gbr2['rL']:
+                gbr2_rH[t] = 0
+            else:
+	        gbr2_rH[t] = 1
+    
+    fbr2_hfr = None
+    if args.freqBasedRxns2:
+        fbr2 = flux_class.importPickle(args.freqBasedRxns2)
+        fbr2_hfr = {}
+        for t in md_model2.rxns.keys():
+            if t in fbr2['hfr']:
+                fbr2_hfr[t] = 2
+            elif t in fbr2['zfr']:
+                fbr2_hfr[t] = 0
+            else:
+                fbr2_hfr[t] = 1
+
+    #Define which pathways are going to be visualized
+    pathway_list = []
+    for pathway in args.pathways:
+        pathway_list.append(pathway)
+
+    #Create the necessary objects to map the models accordingly
+    rxngenesandor1, cond1freqavg, cond1fluxavg, fluxavgdict1 = visualization_class.cond(pickle_model1, md_model1, fluxstate1, prepend, geneCalls1, gbr1_rH, fbr1_hfr, repetitions)
+    if fluxState2: 
+        rxngenesandor2, cond2freqavg, cond2fluxavg, fluxavgdict2 = visualization_class.cond(pickle_model2, md_model2, fluxstate2, prepend, geneCalls2, gbr2_rH, fbr2_hfr, repetitions)
+    #Scale the fluxes between conditions, if appropriate
+    cond1fluxavgscaled, cond2fluxavgscaled = visualization_class.scaleflux(fluxavgdict1, fluxavgdict2, pickle_model1, pickle_model2)
+    #Create the rule, frequency, and flux maps
+    if gbr1_rH:
+        visualization_class.visualizeRules(pathway_list, md_model1, fluxState1, prepend, gbr1_rH, rxngenesandor1)
+    if gbr2_rH:
+        visualization_class.visualizeRules(pathway_list, md_model2, fluxState2, prepend, gbr2_rH, rxngenesandor2)
+    if fbr1_hfr:       
+        visualization_class.visualizeFrequency(pathway_list, md_model1, cond1freqavg, fluxState1, prepend, fbr1_hfr)
+    if fbr2_hfr:
+        visualization_class.visualizeFrequency(pathway_list, md_model2, cond2freqavg, fluxState2, prepend, fbr2_hfr)
+    visualization_class.visaulizeFlux(pathway_list, md_model1, cond1fluxavg, fluxavgdict1, fluxState1, prepend)
+    if fluxState2:
+        visualization_class.visualizeFlux(pathway_list, md_model2, cond2fluxavg, fluxavgdict2, fluxState2, prepend)
+    
 
 def main():
     parser = argparse.ArgumentParser(prog="EXAMO-ARC")
@@ -436,7 +560,7 @@ def main():
     # flux subcommand parser
     parser_flux = subparsers.add_parser("flux", help='Predict condition-specific fluxes')
     flux_group = parser_flux.add_mutually_exclusive_group(required=True)
-    parser_flux.add_argument("model", help='Necessary variable: metabolic reconstruction file.')
+    parser_flux.add_argument("model", help='Necessary variable: metabolic reconstruction file')
     parser_flux.add_argument("description", type=argparse.FileType("r"), help='Necessary variable: comma separated gene rule file')
     parser_flux.add_argument("extracellular", type=str,
                              help="Necessary variable: extracellular compartment abbreviation. Instead of brackets or parentheses, use underscores (ex: '_e').")
@@ -459,10 +583,26 @@ def main():
     parser_flux.add_argument("-a", "--espsolving", type=float, default=1E-10, 
                              help='Activity threshold (above which a flux is considered to be larger than 0 when minimizing the sum of fluxes); default value: 1E-10')
     parser_flux.add_argument("-b", "--biomassprod", type=float, help='Defined biomass production') 
-    parser_flux.add_argument('-EXrxns', type=argparse.FileType("r"), help='Comma separated file containing extracellular reactions')
-    parser_flux.add_argument('-EXtrrxns', type=argparse.FileType("r"), help='Comma separated file containing extracellular transport reactions')
-    parser_flux.add_argument('-Othertrrxns', type=argparse.FileType("r"), help='Comma separated file containing other compartmental transport reactions')
+    parser_flux.add_argument("-EXrxns", type=argparse.FileType("r"), help='Comma separated file containing extracellular reactions')
+    parser_flux.add_argument("-EXtrrxns", type=argparse.FileType("r"), help='Comma separated file containing extracellular transport reactions')
+    parser_flux.add_argument("-Othertrrxns", type=argparse.FileType("r"), help='Comma separated file containing other compartmental transport reactions')
     parser_flux.set_defaults(func=flux)
+    
+    #vizualization subcommand parser
+    parser_visualization = subparsers.add_parser("visualization", help='Visualize fluxes on predefined maps')
+    parser_visualization.add_argument("model1", type=str, help='Necessary variable: metabolic reconstruction file 1')
+    parser_visualization.add_argument("geneCalls1", type=str, help='Necessary variable: comma separated gene rule file 1')
+    parser_visualization.add_argument("fluxState1", type=str, help='Necessary variable: Name of flux state 1')
+    parser_visualization.add_argument("pathways", nargs="+", type=str, help='Necessary variable: name of pathway(s)')
+    parser_visualization.add_argument("repetitionsoffluxstates", type=int, help='Necessary variable: number of repetitions to produce final flux states (csv files)')
+    parser_visualization.add_argument("-c1", "--rxnsClassifiedByExpression1", type=argparse.FileType("r"), help='Reactions classified by expression pickle file 1 from flux module')
+    parser_visualization.add_argument("-b1", "--freqBasedRxns1", type=str, help='Reactions classified by frequency pickle file 1 from flux module')
+    parser_visualization.add_argument("-m2", "--model2", type=str, help='Metabolic reconstruction file 2')
+    parser_visualization.add_argument("-g2", "--geneCalls2", type=str, help='Comma separated gene rule file 2')
+    parser_visualization.add_argument("-f2", "--fluxState2", type=str, help='Name of flux state 2')
+    parser_visualization.add_argument("-c2", "--rxnsClassifiedByExpression2", type=str, help='Reactions classified by expression pickle file 2 from flux module')
+    parser_visualization.add_argument("-b2", "--freqBasedRxns2", type=str, help='Reactions classified by frequency pickle file 2 from flux module')
+    parser_visualization.set_defaults(func=visualization)
     
     #parse args
     args = parser.parse_args()
