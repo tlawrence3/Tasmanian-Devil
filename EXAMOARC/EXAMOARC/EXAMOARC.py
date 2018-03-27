@@ -417,7 +417,6 @@ def visualization(args):
         geneCalls2 = {}
         for row in csvreader2:
             geneCalls2[row[0]] = int(row[1])
-        geneCallsFile2.close()
 
 
     #Declare the names of the flux states
@@ -436,6 +435,7 @@ def visualization(args):
     if fluxstate2:
         prepend_split = fluxstate2.split('/')
         fluxstate2 = prepend_split[-1]
+        print (fluxstate2[15:])
 
     #Classify the rxns as being in rH, rL or neither and hfr, zfr, or neither
     gbr1_rH = None
