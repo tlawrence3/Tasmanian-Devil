@@ -1,6 +1,7 @@
 import re
 import numpy as np
 import os
+import csv
 
 def cond(pickle_model, md_model, fluxstate, prepend, geneCalls, gbr_rH, fbr_hfr, repetitions):
     #Map raw data for every gene for every reaction if rxnsClassifiedByExpression was given
@@ -56,6 +57,7 @@ def cond(pickle_model, md_model, fluxstate, prepend, geneCalls, gbr_rH, fbr_hfr,
 
     # Retrieve MBA candidate reaction lists and store information for frequency of reactions in models if freqBasedRxns was provided
     rxnFreq = {}
+    condfreqavg = {}
     if fbr_hfr:
         for i in range(0,repetitions):
             mbaCandRxnsDirectory = '%s/data/mbaCandRxns/%s_%d/' % (prepend, fluxstate, i)
@@ -74,7 +76,6 @@ def cond(pickle_model, md_model, fluxstate, prepend, geneCalls, gbr_rH, fbr_hfr,
             for t in md_model.rxns.keys():
                 if t not in rxnFreq[i]:
                     rxnFreq[i][t] = 0
-        cond1freqavg = {}
         for t in md_model.rxns.keys():
             freqavg_list = []
             for i in range(0,repetitions):
@@ -126,7 +127,7 @@ def cond(pickle_model, md_model, fluxstate, prepend, geneCalls, gbr_rH, fbr_hfr,
                     freqtext.append(str(freqavg[:-3]))
                     freqtext.append("_0")
                 freqtextjoin = ''.join(freqtext)
-                cond1freqavg[t] = freqtextjoin[2:]
+                condfreqavg[t] = freqtextjoin[2:]
     #Create information from the flux data
     fluxdict = {}
     fluxavgdict = {}
@@ -135,7 +136,7 @@ def cond(pickle_model, md_model, fluxstate, prepend, geneCalls, gbr_rH, fbr_hfr,
     idRsflux = {}
     notincond = {}
     for i in range(0,repetitions):
-        metabolicState_file = open('%s/%s_%d.csv' % (prepend, fluxstate, i), 'r')
+        metabolicState_file = open('%s/%s_%d.csv' % (prepend,fluxstate, i), 'r')
         csvreader = csv.reader(metabolicState_file)
         idRsflux[i] = {}
         idRscsv = []
@@ -161,7 +162,7 @@ def cond(pickle_model, md_model, fluxstate, prepend, geneCalls, gbr_rH, fbr_hfr,
             fluxtext = [t]
             fluxtext.append("_NA")
             fluxtextjoin = ''.join(fluxtext)
-            cond1fluxavg[t] = fluxtextjoin[2:]
+            condfluxavg[t] = fluxtextjoin[2:]
             fluxavgdict[t] = 0
             fluxvardict[t] = 0
             fluxstddict[t] = 0
@@ -246,15 +247,15 @@ def scaleflux(fluxavgdict1, fluxavgdict2, pickle_model1, pickle_model2):
         cond2fluxavgscaled = {}	 
         max1 = max(fluxavgdict1, key=fluxavgdict1.get)
         for t in sorted(pickle_model1['rxns']):
-            cond1fluxavgscaled[t] = float(round((abs(fluxavgdict1[t])/max1)*9+1,3))
+            cond1fluxavgscaled[t] = float(round((abs(fluxavgdict1[t])/fluxavgdict1[max1])*9+1,3))
     return(cond1fluxavgscaled, cond2fluxavgscaled)
 
 
-def visualizeRules(pathway_list, md_model, fluxState, prepend, gbr_rH):
+def visualizeRules(pathway_list, md_model, fluxstate, prepend, gbr_rH, rxngenesandor):
     for pathway in pathway_list:
-        file_name_reference = open('%s/' + pathway + '.xml' % prepend)
+        file_name_reference = open(('%s/' + pathway + '.xml') % prepend)
         reference = file_name_reference.readlines()
-        file_name_reference_out = open('%s/' + pathway + '_Rules_%s.xml' % (prepend, fluxstate),'w')
+        file_name_reference_out = open(('%s/' + pathway + '_Rules_%s.xml') % (prepend, fluxstate),'w')
 
         for o in range(0, len(reference)):
             reaction_name = re.search('(?<=reaction\smetaid=")(.*?)(?="\sid)',reference[o])
@@ -308,11 +309,11 @@ def visualizeRules(pathway_list, md_model, fluxState, prepend, gbr_rH):
             file_name_reference_out.write(reference2[p])
         file_name_reference_out.close()
 
-def visualizeFrequency(pathway_list, md_model, condfreqavg, fluxState, prepend, fbr_hfr):
+def visualizeFrequency(pathway_list, md_model, condfreqavg, fluxstate, prepend, fbr_hfr):
     for pathway in pathway_list:
-        file_name_reference = open('%s/' + pathway + '.xml' % prepend)
+        file_name_reference = open(('%s/' + pathway + '.xml') % prepend)
         reference = file_name_reference.readlines()
-        file_name_reference_out = open('%s/' + pathway + '_MBA_%s.xml' % (prepend, fluxstate),'w')
+        file_name_reference_out = open(('%s/' + pathway + '_MBA_%s.xml') % (prepend, fluxstate),'w')
     
         for o in range(0, len(reference)):
             reaction_name = re.search('(?<=reaction\smetaid=")(.*?)(?="\sid)',reference[o])
@@ -365,12 +366,13 @@ def visualizeFrequency(pathway_list, md_model, condfreqavg, fluxState, prepend, 
             file_name_reference_out.write(reference2[p])
         file_name_reference_out.close()
 
-def visualizeFlux(pathway_list, md_model, condfluxavg, fluxState, prepend):
+def visualizeFlux(pathway_list, md_model, condfluxavg, fluxavgdict, condfluxavgscaled, fluxstate, prepend):
     for pathway in pathway_list:
-        file_name_reference = open('%s/' + pathway + '.xml' % prepend)
+        file_name  = ('%s/' + pathway + '.xml') % prepend
+        file_name_reference = open(('%s/' + pathway + '.xml') % prepend)
         reference = file_name_reference.readlines()
-        file_name_reference_out = open('%s/' + pathway + '_Flux_%s.xml' % (prepend, fluxstate),'w')
-    
+        file_name_reference_out = open(('%s/' + pathway + '_Flux_%s.xml') % (prepend, fluxstate),'w')
+
         for o in range(0, len(reference)):
             reaction_name = re.search('(?<=reaction\smetaid=")(.*?)(?="\sid)',reference[o])
             reaction_id = re.search('(?<="\sid=")(.*?)(?="\sreversible)', reference[o])
@@ -410,7 +412,7 @@ def visualizeFlux(pathway_list, md_model, condfluxavg, fluxState, prepend):
                 else:
                     continue
                 width = re.search('(?<=celldesigner:line\swidth=")(.*?\s)(?=color)',lines2_join)
-                lines2_join = re.sub(str(width.group(0)),str(cond1fluxavgscaled[rxn])+'" ',lines2_join)
+                lines2_join = re.sub(str(width.group(0)),str(condfluxavgscaled[rxn])+'" ',lines2_join)
                 lines2_join_list = re.split('\n', lines2_join)
                 lines2_join_list_remake = []
                 for i in lines2_join_list:
@@ -429,7 +431,7 @@ def visualizeFlux(pathway_list, md_model, condfluxavg, fluxState, prepend):
     
     pathway_list_flux_cond1 = []
     for pathway in pathway_list:
-        pathway_list_flux_cond1.append('%s/' + pathway + '_Flux_%s' % (prepend, fluxstate))
+        pathway_list_flux_cond1.append(('%s/' + pathway + '_Flux_%s') % (prepend, fluxstate))
     
     for pathway in pathway_list_flux_cond1:
         file_name_reference = open(pathway + '.xml')

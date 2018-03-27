@@ -388,33 +388,27 @@ def visualization(args):
         if not args.model2:
             raise RuntimeError("Must supply -m2 if going to use -g2, -f2, -c2, or -b2 for second condition")
     #Import model1
-    pickle_model1 = flux_class.importPickle(args.model1)
+    args_lowerbound = None
+    args_upperbound = None
+    args_gene2rxn = None
+    pickle_model1, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, biomass_rxn = model_class.set_parameter(args.model1, args.sbml, args.cobra, args.extracellular, args_lowerbound, args_upperbound, args_gene2rxn)
     md_model1 = flux_class.CbModel(pickle_model1['S'], pickle_model1['idSp'], pickle_model1['idRs'], pickle_model1['lb'], pickle_model1['ub'], pickle_model1['rxns'], pickle_model1['genes'])
 
+    #Import model2
     model2 = None
     pickle_model2 = None
     if args.model2: 
-        model2 = str(args.m2)
-        model2 = model2[2:-2]
-        pickle_model2 = importPickle('data/%s' % model2)
-        md_model2 = CbModel(pickle_model2['S'], pickle_model2['idSp'], pickle_model2['idRs'], pickle_model2['lb'], pickle_model2['ub'], pickle_model2['rxns'], pickle_model2['genes'])
+        pickle_model2, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, biomass_rxn = model_class.set_parameter(args.model2, args.sbml, args.cobra, args.extracellular, args_lowerbound, args_upperbound, args_gene2rxn)
+        md_model2 = flux_class.CbModel(pickle_model2['S'], pickle_model2['idSp'], pickle_model2['idRs'], pickle_model2['lb'], pickle_model2['ub'], pickle_model2['rxns'], pickle_model2['genes'])
 
     #Store number of repetitions
-    repetitions = args.repetitionoffluxstates
+    repetitions = args.repetitionsoffluxstates
 
     #Import the gene rules and create dictionaries
     csvreader1 = csv.reader(args.geneCalls1)
-    prepend_split = args.geneCalls1.split('/')
-    if len(prepend_split) > 2:
-        prepend = '/'.join(name_split[0:-2]) 
-    elif len(name_split) == 2:
-        prepend = name_split[0] 
-    elif len(name_split) == 1:
-        prepend = ''
     geneCalls1 = {}
     for row in csvreader1:
         geneCalls1[row[0]] = int(row[1])
-    geneCallsFile1.close()
 
     
     geneCalls2 = None
@@ -426,17 +420,27 @@ def visualization(args):
         geneCallsFile2.close()
 
 
-    #Import the name of the flux states
-    fluxstate1 = str(args.fluxState1)
-    fluxstate1 = fluxstate1[2:-2]
-
-    fluxstate2 = str(args.flusState2)
-    fluxstate2 = fluxstate2[2:-2]
+    #Declare the names of the flux states
+    fluxstate1 = args.fluxState1
+    prepend_split = fluxstate1.split('/')
+    if len(prepend_split) > 2:
+        prepend = '/'.join(prepend_split[0:-2])
+        fluxstate1 = prepend_split[-1]
+    elif len(prepend_split) == 2:
+        prepend = prepend_split[0]
+        fluxstate1 = prepend_split[-1]
+    elif len(prepend_split) == 1:
+        prepend = ''
+        fluxstate1 = prepend_split[0]
+    fluxstate2 = args.fluxState2
+    if fluxstate2:
+        prepend_split = fluxstate2.split('/')
+        fluxstate2 = prepend_split[-1]
 
     #Classify the rxns as being in rH, rL or neither and hfr, zfr, or neither
     gbr1_rH = None
-    if args.rxnsClassifiedbyExpression1:
-        gbr1 = flux_class.importPickle(args.rxnsClassifiedbyExpression1) 
+    if args.rxnsClassifiedByExpression1:
+        gbr1 = flux_class.importPickle(args.rxnsClassifiedByExpression1) 
         gbr1_rH = {}
         for t in md_model1.rxns.keys():
             if t in gbr1['rH']:
@@ -459,8 +463,8 @@ def visualization(args):
                 fbr1_hfr[t] = 1
 
     gbr2_rH = None
-    if args.rxnsClassifiedbyExpression2:
-        gbr2 = flux_class.importPickle(args.rxnsClassifiedbyExpression2)
+    if args.rxnsClassifiedByExpression2:
+        gbr2 = flux_class.importPickle(args.rxnsClassifiedByExpression2)
         gbr2_rH = {} 
         for t in md_model2.rxns.keys():
             if t in gbr2['rH']:
@@ -489,22 +493,24 @@ def visualization(args):
 
     #Create the necessary objects to map the models accordingly
     rxngenesandor1, cond1freqavg, cond1fluxavg, fluxavgdict1 = visualization_class.cond(pickle_model1, md_model1, fluxstate1, prepend, geneCalls1, gbr1_rH, fbr1_hfr, repetitions)
-    if fluxState2: 
+    if args.fluxState2: 
         rxngenesandor2, cond2freqavg, cond2fluxavg, fluxavgdict2 = visualization_class.cond(pickle_model2, md_model2, fluxstate2, prepend, geneCalls2, gbr2_rH, fbr2_hfr, repetitions)
+    else: 
+        fluxavgdict2 = {}
     #Scale the fluxes between conditions, if appropriate
     cond1fluxavgscaled, cond2fluxavgscaled = visualization_class.scaleflux(fluxavgdict1, fluxavgdict2, pickle_model1, pickle_model2)
     #Create the rule, frequency, and flux maps
     if gbr1_rH:
-        visualization_class.visualizeRules(pathway_list, md_model1, fluxState1, prepend, gbr1_rH, rxngenesandor1)
+        visualization_class.visualizeRules(pathway_list, md_model1, fluxstate1, prepend, gbr1_rH, rxngenesandor1)
     if gbr2_rH:
-        visualization_class.visualizeRules(pathway_list, md_model2, fluxState2, prepend, gbr2_rH, rxngenesandor2)
+        visualization_class.visualizeRules(pathway_list, md_model2, fluxstate2, prepend, gbr2_rH, rxngenesandor2)
     if fbr1_hfr:       
-        visualization_class.visualizeFrequency(pathway_list, md_model1, cond1freqavg, fluxState1, prepend, fbr1_hfr)
+        visualization_class.visualizeFrequency(pathway_list, md_model1, cond1freqavg, fluxstate1, prepend, fbr1_hfr)
     if fbr2_hfr:
-        visualization_class.visualizeFrequency(pathway_list, md_model2, cond2freqavg, fluxState2, prepend, fbr2_hfr)
-    visualization_class.visaulizeFlux(pathway_list, md_model1, cond1fluxavg, fluxavgdict1, fluxState1, prepend)
-    if fluxState2:
-        visualization_class.visualizeFlux(pathway_list, md_model2, cond2fluxavg, fluxavgdict2, fluxState2, prepend)
+        visualization_class.visualizeFrequency(pathway_list, md_model2, cond2freqavg, fluxstate2, prepend, fbr2_hfr)
+    visualization_class.visualizeFlux(pathway_list, md_model1, cond1fluxavg, fluxavgdict1, cond1fluxavgscaled, fluxstate1, prepend)
+    if args.fluxState2:
+        visualization_class.visualizeFlux(pathway_list, md_model2, cond2fluxavg, fluxavgdict2, cond2fluxavgscaled, fluxstate2, prepend)
     
 
 def main():
@@ -590,15 +596,22 @@ def main():
     
     #vizualization subcommand parser
     parser_visualization = subparsers.add_parser("visualization", help='Visualize fluxes on predefined maps')
+    visualization_group = parser_visualization.add_mutually_exclusive_group(required=True)
     parser_visualization.add_argument("model1", type=str, help='Necessary variable: metabolic reconstruction file 1')
-    parser_visualization.add_argument("geneCalls1", type=str, help='Necessary variable: comma separated gene rule file 1')
+    parser_visualization.add_argument("geneCalls1", type=argparse.FileType("r"), help='Necessary variable: comma separated gene rule file 1')
     parser_visualization.add_argument("fluxState1", type=str, help='Necessary variable: Name of flux state 1')
     parser_visualization.add_argument("pathways", nargs="+", type=str, help='Necessary variable: name of pathway(s)')
     parser_visualization.add_argument("repetitionsoffluxstates", type=int, help='Necessary variable: number of repetitions to produce final flux states (csv files)')
-    parser_visualization.add_argument("-c1", "--rxnsClassifiedByExpression1", type=argparse.FileType("r"), help='Reactions classified by expression pickle file 1 from flux module')
+    parser_visualization.add_argument("extracellular", type=str,
+                             help="Necessary variable: extracellular compartment abbreviation. Instead of brackets or parentheses, use underscores (ex: '_e').")
+    visualization_group.add_argument("-c", "--cobra", action="store_true",
+                             help='Flag to specify whether model is a COBRA Toolbox (.mat) file type; must have either -xml or -mat flag.')
+    visualization_group.add_argument("-s", "--sbml", action="store_true",
+                             help='Flag to specify whether model is a SBML (.xml) file type; must have either -xml or -mat flag.')
+    parser_visualization.add_argument("-c1", "--rxnsClassifiedByExpression1", type=str, help='Reactions classified by expression pickle file 1 from flux module')
     parser_visualization.add_argument("-b1", "--freqBasedRxns1", type=str, help='Reactions classified by frequency pickle file 1 from flux module')
     parser_visualization.add_argument("-m2", "--model2", type=str, help='Metabolic reconstruction file 2')
-    parser_visualization.add_argument("-g2", "--geneCalls2", type=str, help='Comma separated gene rule file 2')
+    parser_visualization.add_argument("-g2", "--geneCalls2", type=argparse.FileType("r"), help='Comma separated gene rule file 2')
     parser_visualization.add_argument("-f2", "--fluxState2", type=str, help='Name of flux state 2')
     parser_visualization.add_argument("-c2", "--rxnsClassifiedByExpression2", type=str, help='Reactions classified by expression pickle file 2 from flux module')
     parser_visualization.add_argument("-b2", "--freqBasedRxns2", type=str, help='Reactions classified by frequency pickle file 2 from flux module')
