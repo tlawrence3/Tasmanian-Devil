@@ -2,6 +2,7 @@ import re
 import numpy as np
 import os
 import csv
+import cPickle as pickle
 
 def cond(pickle_model, md_model, fluxstate, prepend, geneCalls, gbr_rH, fbr_hfr, repetitions):
     #Map raw data for every gene for every reaction if rxnsClassifiedByExpression was given
@@ -61,7 +62,7 @@ def cond(pickle_model, md_model, fluxstate, prepend, geneCalls, gbr_rH, fbr_hfr,
     if fbr_hfr:
         for i in range(0,repetitions):
             mbaCandRxnsDirectory = '%s/data/mbaCandRxns/%s_%d/' % (prepend, fluxstate[15:], i)
-            files = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory, fluxstate)).read().splitlines()
+            files = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory, fluxstate[15:])).read().splitlines()
             rxnSets = []
             for fn in files:
                 rxnSets.append(importPickle(mbaCandRxnsDirectory + fn))
@@ -90,7 +91,7 @@ def cond(pickle_model, md_model, fluxstate, prepend, geneCalls, gbr_rH, fbr_hfr,
                 freqtext.append("0")
                 freqtextjoin = ''.join(freqtext)
                 condfreqavg[t] = freqtextjoin[2:]
-    	else:
+    	    else:
                 frequencies = []
                 for i in range(0,repetitions):
                     frequencies.append(rxnFreq[i][t])
@@ -687,4 +688,13 @@ def visualizeFlux(pathway_list, md_model, condfluxavg, fluxavgdict, condfluxavgs
         for p, item3 in enumerate(reference2):
             file_name_reference_out.write(reference2[p])
         file_name_reference_out.close()
+
+
+def importPickle(fileName, mode = 'rb'):
+    """
+    Imports a pickle object. By default it reads as binary (rb). Setting
+    mode allows other ways of opening the file (e.g. mode = 'r')
+    """
+    f = open(fileName, mode)
+    return pickle.load(f)
 
