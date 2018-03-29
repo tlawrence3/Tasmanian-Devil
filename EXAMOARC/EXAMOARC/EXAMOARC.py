@@ -13,10 +13,6 @@ import model as model_class
 import flux as flux_class
 import visualization as visualization_class
 
-
-def gene(args):
-    gene_class.gene_classify(args.expression_set, args.upper, args.lower, args.output)
-
 def model(args):
     #Make sure there is a way to check if model is carbon balanced
     metFormulas_list = []
@@ -68,6 +64,19 @@ def model(args):
     model_class.model_export(model, cobra_specific_objects, model_desc)
     model_class.remove_inactive_rxns_and_account_for_biomass(model_desc,args.removeinactiverxnsandbalance, args.extracellular, args.metabolite2carbon, metFormulas_list) 
     
+
+def gene(args):
+    #Import model if provided
+    if args.model:         
+        if not args.sbml or args.cobra:
+            raise RuntimeError("Must specify model type if providing model. Use -c or -s")
+    cobra_model = None
+    if args.sbml: 
+        cobra_model = cobra.io.read_sbml_model(args.model)
+    if args.cobra:
+        cobra_model = cobra.io.mat.load_matlab_model(args.model)	    
+    gene_class.gene_classify(args.expression_set, args.upper, args.lower, args.output, cobra_model)
+
 
 def flux(args):
     #Import the model, adjust the biomass production, and create the names for the exported files
@@ -517,19 +526,6 @@ def main():
     parser = argparse.ArgumentParser(prog="EXAMO-ARC")
     subparsers = parser.add_subparsers(help="sub-command help")
     
-    # gene subcommand parser
-    ####Need to include the genes from the model as an additional argument to filter better. 
-    parser_gene = subparsers.add_parser("gene", help="need to write")
-    
-    parser_gene.add_argument("expression_set", type=argparse.FileType("r"), help="need to write")
-    parser_gene.add_argument("-o", "--output", type=argparse.FileType("w"), 
-                             default="gene_classification.txt", help="need to write")
-    parser_gene.add_argument("-u", "--upper", type=float, default=0.75,
-                             help="high help")
-    parser_gene.add_argument("-l", "--lower", type=float, default=0.25,
-                             help="low help")
-    parser_gene.set_defaults(func=gene)
-    
     # model subcommand parser
     parser_model = subparsers.add_parser("model", help='Make modifications to models and adapt into flux module commpatible format.')
     model_group = parser_model.add_mutually_exclusive_group(required=True)
@@ -562,6 +558,22 @@ def main():
     parser_model.add_argument("-r", "--removeinactiverxnsandbalance", action="store_true",
                               help='Flag to specify whether to remove inactive reactions from final model and remove carbon unbalanced reactions. Recommend using only after first inspecting reactions to be removed. Must have -d argument as well to use this if metFormulas is not in model.')	
     parser_model.set_defaults(func=model)
+
+    # gene subcommand parser
+    parser_gene = subparsers.add_parser("gene", help="need to write")
+    parser_gene.add_argument("expression_set", type=argparse.FileType("r"), help='Name of tab delimited gene file with counts')
+    parser_gene.add_argument("-m", "--model", type=str, help='Metabolic reconstruction file')
+    parser_gene.add_argument("-c", "--cobra", action="store_true",
+                             help='Flag to specify whether model is a COBRA Toolbox (.mat) file type; must have either -xml or -mat flag.')
+    parser_gene.add_argument("-s", "--sbml", action="store_true", 
+                             help='Flag to specify whether model is a SBML (.xml) file type; must have either -xml or -mat flag.')
+    parser_gene.add_argument("-o", "--output", type=argparse.FileType("w"), 
+                             default="gene_classification.csv", help='Name of csv gene rule file to be written out')
+    parser_gene.add_argument("-u", "--upper", type=float, default=0.75,
+                             help='upper threshold by which to define genes as being active; default value: upper 25% of genes')
+    parser_gene.add_argument("-l", "--lower", type=float, default=0.25,
+                             help='lower threshold by which to define genes as being inactive; default value: lower 25% of genes')
+    parser_gene.set_defaults(func=gene)
     
     # flux subcommand parser
     parser_flux = subparsers.add_parser("flux", help='Predict condition-specific fluxes')
