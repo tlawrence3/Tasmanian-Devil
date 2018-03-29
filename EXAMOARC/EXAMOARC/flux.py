@@ -915,7 +915,7 @@ def iterativePrunning(i, m, cH, fOutFreqBasedRxns, biomassRxn, lb_biomass,
 ######Change description and pickle_model_name to fOutFreqBasedRxns
     if len(EXrxns) > 0:
         EXrxnsprune = list(set(list(EXrxns)) - cH)
-        Cypto.Random.random.shuffle(EXrxnsprune)
+        random.shuffle(EXrxnsprune)
         while EXrxnsprune:
             rxn1 = EXrxnsprune.pop()
             try:
