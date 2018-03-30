@@ -172,6 +172,10 @@ def name_sub_back(string):
 		list1[-2] = '('
 		name = ''.join(list1)
 		name = name+')'
+        if ((string[-1].isdigit()) and (string[-3] == '_')):
+		list1 = list(string)
+                list1[-3] = '('
+                name = ''.join(list1[0:-1]) + ')' + list1[-1]
 	name = name[2:]
 	return name
 
@@ -510,8 +514,6 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 		for t in model['rxns']:
 			metabolite_dict_reactants = {}
 			metabolite_dict_products = {}
-			print metabolite_dict
-			print metFormulas_list
 			for i in model['rxns'][t]['reactants']:
 				metabolite_dict_reactants[i] = metabolite_dict[i]
 			for i in model['rxns'][t]['products']:
@@ -680,9 +682,32 @@ def metabolite_cleanup(model, cobra_specific_objects):
 	return model, cobra_specific_objects
 
 
+def account_for_duplicate_entries(seq, dups):
+	count_dict = {}
+	seq_copy = []
+	for i in seq:
+		if i in dups:
+			if i not in count_dict:
+				count_dict[i] = 1
+			else:
+				count_dict[i] += 1
+			seq_copy.append(i+str(count_dict[i]))
+		else:
+			seq_copy.append(i)
+	return seq_copy
+
+
+def find_duplicate_entries(seq):
+        seen = set()
+        seen_add = seen.add
+        seen_dups = set(x for x in seq if x in seen or seen_add(x))
+        return list(seen_dups) 
+
+
 def model_export(model, cobra_specific_objects, model_desc):
 	#Convert EXAMO data structures into COBRA compliant data structures
-	rxns_copy = model['idRs']
+        dups = find_duplicate_entries(model['idRs'])
+        rxns_copy = account_for_duplicate_entries(model['idRs'],dups)
 	rxns_list = []
 	for i in rxns_copy:
 		rxn = name_sub_back(i)
@@ -691,7 +716,8 @@ def model_export(model, cobra_specific_objects, model_desc):
 	rxns_matlab[:] = rxns_list
 	rxns_matlab = rxns_matlab[np.newaxis].T
 
-	mets_copy = model['idSp']
+	dups = find_duplicate_entries(model['idSp'])
+	mets_copy = account_for_duplicate_entries(model['idSp'],dups)
 	mets_list = []
 	for i in mets_copy:
 		met = name_sub_back(i)
@@ -723,7 +749,7 @@ def model_export(model, cobra_specific_objects, model_desc):
 		genes_list_dict[j] = i
 
 	#Create reaction gene matrix and rules object
-	rxnGeneMat = sp.sparse.csr_matrix((len(model['idRs']),len(genes)))
+	rxnGeneMat = sp.sparse.csr_matrix((len(model['idRs']),len(genes_list)))
 	rxnGeneMat = sp.sparse.lil_matrix(rxnGeneMat)
 	rxn_index = 0
 	rules = cobra_specific_objects['grRules'].copy()
@@ -787,22 +813,6 @@ def model_export(model, cobra_specific_objects, model_desc):
 	rxnGeneMat = sp.sparse.coo_matrix(rxnGeneMat,dtype=np.float64)
 
 	model_matlab = {'rxns': rxns_matlab, 'mets': mets_matlab, 'ub': ub_matlab, 'lb': lb_matlab, 'S': S, 'grRules': grRules, 'rules': rules, 'genes': genes_matlab, 'rxnGeneMat': rxnGeneMat, 'rev': rev_cobra, 'c': c, 'subsystem': subsystem, 'metNames': metNames, 'metFormulas': metFormulas, 'b': b, 'description': model_desc[:-4].split('/')[-1]}
-	print len(rxns_matlab)
-	print len(mets_matlab)
-	print len(ub_matlab)
-	print len(lb_matlab)
-	print S.shape
-	print len(grRules)
-	print len(rules)
-	print len(genes_matlab)
-	print rxnGeneMat.shape
-	print len(rev)
-	print len(c)
-	print len(subsystem)
-	print len(metNames)
-	print len(metFormulas)
-	print len(b)
-	print model_desc
 	sp.io.savemat('%s' % model_desc[:-4], {model_desc[:-3].replace('.','').split('/')[-1]: model_matlab}, appendmat=True)
 	#sp.io.savemat('%s' % model_desc[:-4], {model_desc[:-4].split('/')[-1]: model_matlab}, appendmat=True, oned_as="column")
 
