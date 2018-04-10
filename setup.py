@@ -8,13 +8,13 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
  
-setup(name = "EXAMOARC",
+setup(name = "TASMANIAN-DEVIL",
       setup_requires=['numpy', 'pandas'],
-      install_requires=['numpy', 'scipy', 'pandas', 'patsy'],
-      packages = ["EXAMOARC"],
-      entry_points = {"console_scripts": ['EXAMOARC = EXAMOARC.EXAMOARC:main']},
+      install_requires=['numpy', 'scipy', 'pandas', 'patsy', 'cobrapy==0.8.2', 'gurobipy'],
+      packages = ["TASMANIAN-DEVIL"],
+      entry_points = {"console_scripts": ['tas = TASMANIAN-DEVIL.TASMANIAN-DEVIL:main']},
       version = "0.1.0",
-      description = "Something Something EXAMOARC",
+      description = "Something Something TASMANIAN-DEVIL",
       long_description=long_description,
       license='GPLv3',
       url = "www.nowhere.com",)
