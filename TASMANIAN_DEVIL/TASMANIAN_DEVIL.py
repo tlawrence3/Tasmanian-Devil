@@ -45,7 +45,7 @@ def model(args):
     #Perhaps consider if OS is Windows or Linux for file structure
     name_split = args.model.split('/')
     if len(name_split) > 2:
-        model_desc = '/'.join(name_split[0:-2]) + '/' + model_desc + name_split[-1]
+        model_desc = '/'.join(name_split[0:-1]) + '/' + model_desc + name_split[-1]
     elif len(name_split) == 2:
         model_desc = name_split[0] + '/' + model_desc + name_split[1]
     elif len(name_split) == 1:
@@ -68,7 +68,7 @@ def model(args):
 def gene(args):
     #Import model if provided
     if args.model:         
-        if not args.sbml or args.cobra:
+        if not (args.sbml or args.cobra):
             raise RuntimeError("Must specify model type if providing model. Use -c or -s")
     cobra_model = None
     if args.sbml: 
@@ -104,10 +104,10 @@ def flux(args):
     if args.Othertrrxns:
         model_desc = model_desc + 'Othertrrxns'
     if len(description_split) > 2:
-        fOutRxnsByExpression = '/'.join(description_split[0:-2]) + '/' + 'RxnsClassifiedByExpression_' + model_desc + description_split[-1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
-        fOutFreqBasedRxns = '/'.join(description_split[0:-2]) + '/' + 'freqBasedRxns_' + model_desc + description_split[-1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
+        fOutRxnsByExpression = '/'.join(description_split[0:-1]) + '/' + 'RxnsClassifiedByExpression_' + model_desc + description_split[-1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
+        fOutFreqBasedRxns = '/'.join(description_split[0:-1]) + '/' + 'freqBasedRxns_' + model_desc + description_split[-1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
         model_desc = model_desc + description_split[-1][:-4] + '_' + name_split[-1][:-4]
-        file_path = '/'.join(description_split[0:-2]) + '/'
+        file_path = '/'.join(description_split[0:-1]) + '/'
     elif len(description_split) == 2:
         fOutRxnsByExpression = description_split[0] + '/' + 'RxnsClassifiedByExpression_' + model_desc + description_split[1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
         fOutFreqBasedRxns = description_split[0] + '/' + 'freqBasedRxns_' + model_desc + description_split[1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
@@ -432,7 +432,7 @@ def visualization(args):
     fluxstate1 = args.fluxState1
     prepend_split = fluxstate1.split('/')
     if len(prepend_split) > 2:
-        prepend = '/'.join(prepend_split[0:-2])
+        prepend = '/'.join(prepend_split[0:-1])
         fluxstate1 = prepend_split[-1]
     elif len(prepend_split) == 2:
         prepend = prepend_split[0]
@@ -444,7 +444,6 @@ def visualization(args):
     if fluxstate2:
         prepend_split = fluxstate2.split('/')
         fluxstate2 = prepend_split[-1]
-        print (fluxstate2[15:])
 
     #Classify the rxns as being in rH, rL or neither and hfr, zfr, or neither
     gbr1_rH = None
@@ -545,7 +544,7 @@ def main():
                               help='upper boundary constraints file')
     parser_model.add_argument("-g", "--gene2rxn", type=argparse.FileType("r"), default=None,
                               help='gene2rxn file')
-    parser_model.add_argument("-d", "--metabolite2carbon", type=str, default=None,
+    parser_model.add_argument("-d", "--metabolite2carbon", type=argparse.FileType("r"), default=None,
                               help='Tab-delimited file to specify dicitonary mappings of number of carbons in every metabolite. This is to check whether the model is carbon balanced. See iMM904 example for documentation.')
     parser_model.add_argument("-m", "--metabolitemappingcomplexes", type=argparse.FileType("r"), default=None,
                               help='Tab-delimited metabolite mapping complexes file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this if metFormulas is not in model.')

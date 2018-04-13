@@ -61,7 +61,7 @@ def cond(pickle_model, md_model, fluxstate, prepend, geneCalls, gbr_rH, fbr_hfr,
     condfreqavg = {}
     if fbr_hfr:
         for i in range(0,repetitions):
-            mbaCandRxnsDirectory = '%s/data/mbaCandRxns/%s_%d/' % (prepend, fluxstate[15:], i)
+            mbaCandRxnsDirectory = '%s/mbaCandRxns/%s_%d/' % (prepend, fluxstate[15:], i)
             files = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory, fluxstate[15:])).read().splitlines()
             rxnSets = []
             for fn in files:

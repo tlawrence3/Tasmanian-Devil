@@ -1,3 +1,4 @@
+from __future__ import print_function
 import re
 import cobra
 from cobra.core.arraybasedmodel import ArrayBasedModel
@@ -139,7 +140,7 @@ def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lo
 			if check_objective == 1:
 				biomass_rxn = idRs[count-1]
 			else:
-				print "More than one objective being optimized for. Change objective to be only one reaction before attempting to convert."
+				print ("More than one objective being optimized for. Change objective to be only one reaction before attempting to convert.")
 				raise SystemExit
 	subsystem = cobra.io.mat._cell(cobra_model.reactions.list_attr('subsystem'))
 	metNames = cobra.io.mat._cell(cobra_model.metabolites.list_attr('name'))
@@ -385,10 +386,13 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 		if args_metabolite2carbon:
 			csv_file = csv.reader(args_metabolite2carbon)
 			metabolite_dict = {}
+			metabolite_dict_pre = {}
 			metabolite_dict_csv = []
 			for row in csv_file:
 				metabolite_dict_csv.append(row[0])
-			f.close()
+				metabolite_dict_pre[row[0]] = row[1]
+			print (metabolite_dict_pre)
+			print (metabolite_dict_csv)
 
 			#Account for possibility of every metabolite coming from any compartment, including transport into extracellular compartment
 			last_string_list = []
@@ -408,11 +412,10 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 					if last_string not in last_string_list:
 						last_string_list.append(last_string)
 			for i in metabolite_dict_csv:
-				i = re.split('\s|,|\t', i)
 				for j in last_string_list:
-					met_name = i[0]
+					met_name = i
 					met_name += j
-					metabolite_dict[met_name] = i[1]
+					metabolite_dict[met_name] = metabolite_dict_pre[i]
 	
 			#Remove metabolites in the metabolite dictionary that are not in the model
 			metabolite_dict_to_delete = []
@@ -422,6 +425,7 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 						metabolite_dict_to_delete.append(i)
 			for i in metabolite_dict_to_delete:
 				del metabolite_dict[i]	
+                        print (metabolite_dict)
 	
 		#If metFormulas_list is not empty (if metabolite mapping complexes, nucleotide conversions, adaptations, balancing, or zerocarbons arguments were supplied from the command line), then use the metFormulas from the model. 		
 		if metFormulas_list:
@@ -511,6 +515,8 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 		metabolite_dict_rxns_original = {}
 		unbalanced_rxns = []
 		balanced_rxns = []
+		print (metabolite_dict)
+		print (model['rxns']['R_PYK']['reactants'])
 		for t in model['rxns']:
 			metabolite_dict_reactants = {}
 			metabolite_dict_products = {}
@@ -530,7 +536,7 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 			metabolite_dict_rxns_original[t] = rxnmetlist
 
 		if not removed_inactive_rxns_and_balance:
-			print "Unbalanced rxns:"
+			print ("Unbalanced rxns:")
 		for t in model['rxns']:
 			reactants_count = 0
 			products_count = 0
@@ -546,14 +552,14 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 					reactants_count -= int(metabolite_dict[i])*rxns_original[t]['products'][i]	
 			if round(reactants_count,3) != round(products_count,3):
 				if not removed_inactive_rxns_and_balance:
-					print "\n"
-					print t
-					print "carbons in original model: %s" % metabolite_dict_rxns_original[t]
-					print "stoichiometry in original model: %s" % rxns_original[t]
-					print "carbons in adapted model: %s" % metabolite_dict_rxns[t]
-					print "stoichiometry in adapted model: %s" % model['rxns'][t]		
-					print "carbons in reactants in adapted model: %s" % reactants_count
-					print "cabons in products in adapted model: %s" % products_count
+					print ("\n")
+					print (t)
+					print ("carbons in original model: %s" % metabolite_dict_rxns_original[t])
+					print ("stoichiometry in original model: %s" % rxns_original[t])
+					print ("carbons in adapted model: %s" % metabolite_dict_rxns[t])
+					print ("stoichiometry in adapted model: %s" % model['rxns'][t])		
+					print ("carbons in reactants in adapted model: %s" % reactants_count)
+					print ("cabons in products in adapted model: %s" % products_count)
 				if t != biomass_rxn:
 					unbalanced_rxns.append(t)
 			else:
@@ -855,12 +861,12 @@ def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactive
 					solution = cobra_model.optimize(solver='gurobi')
 					if solution.f != 0:
 						if len(unbalanced_rxns_mets_unique_list) == 0:
-							print "\n"
-							print "Biomass rxn was accounted for in balancing, and no additional metabolites needed to be removed as reactants"
+							print ("\n")
+							print ("Biomass rxn was accounted for in balancing, and no additional metabolites needed to be removed as reactants")
 						else:
-							print "\n"
-							print "Biomass rxns was accounted for in balancing by removing the following metabolites"
-							print unbalanced_rxns_mets_unique_list 
+							print ("\n")
+							print ("Biomass rxns was accounted for in balancing by removing the following metabolites")
+							print (unbalanced_rxns_mets_unique_list) 
 						solution = cobra.flux_analysis.flux_variability_analysis(cobra_model, solver='gurobi')
 						rxn_list = []
 						for i in cobra_model.reactions:
@@ -897,9 +903,9 @@ def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactive
 							i.subtract_metabolites(combs_unbalanced_rxns_mets_potential_dict[n+1][key])
 							solution = cobra_model.optimize(solver='gurobi')
 							if solution.f != 0:
-								print "\n"
-								print "Biomass rxns was accounted for in balancing by removing the following metabolites"
-								print key 
+								print ("\n")
+								print ("Biomass rxns was accounted for in balancing by removing the following metabolites")
+								print (key) 
 								solution = cobra.flux_analysis.flux_variability_analysis(cobra_model, solver='gurobi')
 								rxn_list = []
 								for i in cobra_model.reactions:
@@ -974,9 +980,9 @@ def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactive
 							i.subtract_metabolites(combs_unbalanced_rxns_mets_potential_dict_3[n+1][key])
 							solution = cobra_model.optimize(solver='gurobi')
 							if solution.f != 0:
-								print "\n"
-								print "Biomass rxns was accounted for in balancing by removing the following metabolites"
-								print key 
+								print ("\n")
+								print ("Biomass rxns was accounted for in balancing by removing the following metabolites")
+								print (key) 
 								solution = cobra.flux_analysis.flux_variability_analysis(cobra_model, solver='gurobi')
 								rxn_list = []
 								for i in cobra_model.reactions:
