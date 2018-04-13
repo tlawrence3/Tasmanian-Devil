@@ -1,7 +1,7 @@
 # Tasmanian Devil
 **gene module**: <br />
 ```bash
-tas gene TASMANIAN_DEVIL/data/testing/151012_Gasch_glucose.txt -m TASMANIAN_DEVIL/data/testing/lgmncmodiMM904_NADcorrected_1127_MTHFDi.mat -o TASMANIAN_DEVIL/data/testing/151012_glucose_0.25.csv -c
+tas gene <TASMANIAN_DEVIL/data/testing/151012_Gasch_glucose.txt> -m <TASMANIAN_DEVIL/data/testing/lgmncmodiMM904_NADcorrected_1127_MTHFDi.mat> -o <TASMANIAN_DEVIL/data/testing/151012_glucose_0.25.csv> -c
 ```
 **flux module**: <br />
 simplest command
