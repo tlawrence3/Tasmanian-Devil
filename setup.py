@@ -15,7 +15,7 @@ setup(name = "TASMANIAN_DEVIL",
       #Need to include cobra
       #install_requires=['numpy', 'scipy', 'pandas', 'patsy', 'cobra==0.8.2'],
       #install_requires=['numpy', 'scipy', 'pandas', 'argparse', 'crypto', 'cobra'],
-      install_requires=['numpy', 'scipy', 'pandas', 'crypto', 'argparse'],
+      install_requires=['numpy', 'scipy', 'pandas', 'pycrypto', 'argparse', 'cobra==0.8.2', 'sympy', 'python-libsbml'],
       packages = ["TASMANIAN_DEVIL"],
       entry_points = {"console_scripts": ['tas = TASMANIAN_DEVIL.TASMANIAN_DEVIL:main']},
       version = "0.1.0",
