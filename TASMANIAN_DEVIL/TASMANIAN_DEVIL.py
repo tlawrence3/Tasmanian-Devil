@@ -544,7 +544,7 @@ def main():
                               help='upper boundary constraints file')
     parser_model.add_argument("-g", "--gene2rxn", type=argparse.FileType("r"), default=None,
                               help='gene2rxn file')
-    parser_model.add_argument("-d", "--metabolite2carbon", type=argparse.FileType("r"), default=None,
+    parser_model.add_argument("-d", "--metabolite2carbon", type=str, default=None,
                               help='Tab-delimited file to specify dicitonary mappings of number of carbons in every metabolite. This is to check whether the model is carbon balanced. See iMM904 example for documentation.')
     parser_model.add_argument("-m", "--metabolitemappingcomplexes", type=argparse.FileType("r"), default=None,
                               help='Tab-delimited metabolite mapping complexes file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this if metFormulas is not in model.')

@@ -384,15 +384,15 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 	if (args_metabolite2carbon or metFormulas_list or args_zerocarbons):
 		#Import metabolite dictionary mapped to carbons if the argument is supplied from the command line.
 		if args_metabolite2carbon:
-			csv_file = csv.reader(args_metabolite2carbon)
+			f = open(args_metabolite2carbon, 'rb')
+			csv_file = csv.reader(f)
 			metabolite_dict = {}
 			metabolite_dict_pre = {}
 			metabolite_dict_csv = []
 			for row in csv_file:
 				metabolite_dict_csv.append(row[0])
 				metabolite_dict_pre[row[0]] = row[1]
-			print (metabolite_dict_pre)
-			print (metabolite_dict_csv)
+			f.close()
 
 			#Account for possibility of every metabolite coming from any compartment, including transport into extracellular compartment
 			last_string_list = []
@@ -425,7 +425,6 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 						metabolite_dict_to_delete.append(i)
 			for i in metabolite_dict_to_delete:
 				del metabolite_dict[i]	
-                        print (metabolite_dict)
 	
 		#If metFormulas_list is not empty (if metabolite mapping complexes, nucleotide conversions, adaptations, balancing, or zerocarbons arguments were supplied from the command line), then use the metFormulas from the model. 		
 		if metFormulas_list:
@@ -515,8 +514,6 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
 		metabolite_dict_rxns_original = {}
 		unbalanced_rxns = []
 		balanced_rxns = []
-		print (metabolite_dict)
-		print (model['rxns']['R_PYK']['reactants'])
 		for t in model['rxns']:
 			metabolite_dict_reactants = {}
 			metabolite_dict_products = {}
