@@ -54,7 +54,7 @@ def cond(pickle_model, md_model, fluxstate, prepend, geneCalls, gbr_rH, fbr_hfr,
             if (or_count_1 > 0):
                 rxn_genes_and_or.extend(["_",str(or_count_1),"OR",str(gbr_rH[t])])
             rxn_genes_and_or_join = ''.join(rxn_genes_and_or)
-    	    rxngenesandor[t] = rxn_genes_and_or_join
+            rxngenesandor[t] = rxn_genes_and_or_join
 
     # Retrieve MBA candidate reaction lists and store information for frequency of reactions in models if freqBasedRxns was provided
     rxnFreq = {}

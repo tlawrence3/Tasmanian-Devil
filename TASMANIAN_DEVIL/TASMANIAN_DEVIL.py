@@ -177,7 +177,7 @@ def flux(args):
     Othertrrxns = []
     if args.EXrxns:
         csv_file = csv.reader(args.EXrxns)
-	for line in csv_file:
+        for line in csv_file:
             EXrxns.append(line[0])
     if args.EXtrrxns:
         csv_file = csv.reader(args.EXtrrxns)
