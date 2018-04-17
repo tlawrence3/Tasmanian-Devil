@@ -1,13 +1,13 @@
 INSTALLATION INSTRUCTIONS
-To install LibSBML for Ubuntu, enter from the terminal: (pip install python-libsbml)
+To install LibSBML for Ubuntu for the model module, enter from the terminal: 
 	sudo apt-get install python-dev
 	sudo apt-get install libxml2-dev
-	sudo apt-get install libz-dev
+	sudo apt-get install zlib1g-dev
 	sudo apt-get install libbz2-dev
 	sudo apt-get install python-pip
 	sudo pip install python-libsbml
 	
-Install the Gurobi MILP solver following the protocol on Gurobi's website: 
+Gurobi is the linear optimization solver of choice. It is free for academic users. Install the Gurobi MILP solver following the protocol on Gurobi's website: 
 	http://user.gurobi.com/download/gurobi-optimizer
 In brief, change into the Gurobi directory with the setup.py file and type:
 	python setup.py install	
@@ -16,6 +16,8 @@ After installing Gurobi, set Gurobi's path accordingly as descibed in Gurobi's i
 	export PATH="${PATH}:${GUROBI_HOME}/bin"
 	export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 Then go back to gurobi.com and download a free academic licencse. Enter your specific grbgetkey command for your license to activate Gurobi.
+
+
 Add the path of the install in MATLAB by Add with Suubfolders. To save the path, first you may have to change the read/write privileges for the folder that pathdef.m is in, such as:
 		sudo chmod -R 777 /usr/local/MATLAB/R2015b/toolbox/local/
 
