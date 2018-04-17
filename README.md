@@ -1,11 +1,11 @@
 # Tasmanian Devil
-Each module's help page contains documentation about usage. The following are test examples and general advice for using each module.
+Each module's help page contains documentation about usage. The following are test examples and general advice for using each module. <br />
 **model module**: <br />
 Simplest command for yeast metabolism:
 ```bash
 tas model TASMANIAN_DEVIL/data/testing/iMM904_NADcorrected_1127_MTHFDi.xml _e -s > test_iMM904_1.txt
 ```
-Adjusting for lower boundaries, gene2rxn mapings, and 1st attempt at adding adaptations to test fixing the biomass reaction for yeast metabolism:
+Adjusting for lower boundaries, gene2rxn mappings, and 1st attempt at adding adaptations to test fixing the biomass reaction for yeast metabolism:
 ```bash
 tas model TASMANIAN_DEVIL/data/testing/iMM904_NADcorrected_1127_MTHFDi.xml _e -l TASMANIAN_DEVIL/data/testing/YPD_lb.csv -g TASMANIAN_DEVIL/data/testing/iMM904_NADcorrected_1127_MTHFDi_genes_genes2rxns.csv -a TASMANIAN_DEVIL/data/testing/iMM904_NADcorrected_1127_MTHFDi_adaptations_V1.csv -d TASMANIAN_DEVIL/data/testing/iMM904_NADcorrected_1127_MTHFDi_metabolite_dict.csv -s > test_iMM904_2.txt
 ```
