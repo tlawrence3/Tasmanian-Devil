@@ -2,7 +2,7 @@ import re
 import numpy as np
 import os
 import csv
-import cPickle as pickle
+import pickle
 
 def cond(pickle_model, md_model, fluxstate, prepend, geneCalls, gbr_rH, fbr_hfr, repetitions):
     #Map raw data for every gene for every reaction if rxnsClassifiedByExpression was given
@@ -91,7 +91,7 @@ def cond(pickle_model, md_model, fluxstate, prepend, geneCalls, gbr_rH, fbr_hfr,
                 freqtext.append("0")
                 freqtextjoin = ''.join(freqtext)
                 condfreqavg[t] = freqtextjoin[2:]
-    	    else:
+            else:
                 frequencies = []
                 for i in range(0,repetitions):
                     frequencies.append(rxnFreq[i][t])
