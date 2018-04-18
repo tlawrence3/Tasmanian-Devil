@@ -2182,7 +2182,7 @@
 <celldesigner:lineDirection index="2" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:editPoints>0.2515527950309999,-0.24534161490699957 0.7484472049690003,-0.24534161490699957</celldesigner:editPoints>
+<celldesigner:editPoints>0.251552795031,-0.245341614907 0.748447204969,-0.245341614907</celldesigner:editPoints>
 <celldesigner:line width="1.523" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
@@ -2333,7 +2333,7 @@
 <celldesigner:lineDirection index="1" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:editPoints>0.15404834232600262,0.31701699268410133</celldesigner:editPoints>
+<celldesigner:editPoints>0.154048342326,0.317016992684</celldesigner:editPoints>
 <celldesigner:line width="1.362" color="ffff0000" type="Straight"/>
 </celldesigner:productLink>
 </celldesigner:listOfProductLinks>
@@ -2344,7 +2344,7 @@
 <celldesigner:lineDirection index="2" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:editPoints>0.22869293016506909,-0.30828711802509456 0.4749690908829023,-0.2718144597097081</celldesigner:editPoints>
+<celldesigner:editPoints>0.228692930165,-0.308287118025 0.474969090883,-0.27181445971</celldesigner:editPoints>
 <celldesigner:line width="1.047" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
