@@ -99,7 +99,7 @@ class CbModel():
         #turning off the writing of the gurobi.log file
         self.guro.setParam('OutputFlag', 0) 
         for i, rxn in enumerate(self.idRs):
-            exec 'self.{0} = self.guro.addVar(lb = {1}, ub = {2},vtype = gp.GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.lb[i], self.ub[i])
+            exec('self.{0} = self.guro.addVar(lb = {1}, ub = {2},vtype = gp.GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.lb[i], self.ub[i]))
         self.guro.update()
         # adding constraints
         for i, row in enumerate(self.S.toarray()):
@@ -108,14 +108,14 @@ class CbModel():
             s = ['({} * self.{})'.format(p[0], p[1]) for p in pair]
             s = ' + '.join(s)
             s += ' == 0.'
-            exec 'self.guro.addConstr( {}, "{}")'.format(s, self.idSp[i])
+            exec('self.guro.addConstr( {}, "{}")'.format(s, self.idSp[i]))
 
     def setObjective(self, obj, optSense = 'max'):
         s = 'self.{}'.format(obj)
         if optSense == 'max':
-            exec 'self.guro.setObjective({}, gp.GRB.MAXIMIZE)'.format(s)
+            exec('self.guro.setObjective({}, gp.GRB.MAXIMIZE)'.format(s))
         elif optSense == 'min':
-            exec 'self.guro.setObjective({}, gp.GRB.MINIMIZE)'.format(s)
+            exec('self.guro.setObjective({}, gp.GRB.MINIMIZE)'.format(s))
     
     def solveLp(self):
         self.guro.optimize()
@@ -138,7 +138,7 @@ class CbModel():
         for rxn in rl:
             # reseting the objective
             self.guro.setObjective(0)
-            exec 'self.guro.setObjective(self.{}, gp.GRB.MAXIMIZE)'.format(rxn)
+            exec('self.guro.setObjective(self.{}, gp.GRB.MAXIMIZE)'.format(rxn))
             self.guro.optimize()
             fvMax.append(self.guro.objVal)
         # minimizing each
@@ -146,7 +146,7 @@ class CbModel():
         for rxn in rl:
             # reseting the objective
             self.guro.setObjective(0)
-            exec 'self.guro.setObjective(self.{}, gp.GRB.MINIMIZE)'.format(rxn)
+            exec('self.guro.setObjective(self.{}, gp.GRB.MINIMIZE)'.format(rxn))
             self.guro.optimize()
             fvMin.append(self.guro.objVal)
         # getting the lists together
@@ -286,9 +286,9 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
         self.guro.setParam('OutputFlag', 0) 
         # Initializing variables
         for i, rxn in enumerate(self.idRs):
-            exec 'self.{0} = self.guro.addVar(lb = {1}, ub = {2}, vtype = gp.GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.lb[i], self.ub[i])
+            exec('self.{0} = self.guro.addVar(lb = {1}, ub = {2}, vtype = gp.GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.lb[i], self.ub[i]))
         for var in [v for v in self.colNames if v not in self.idRs]:
-            exec 'self.{0} = self.guro.addVar(vtype = gp.GRB.BINARY, name = "{0}")'.format(var)
+            exec('self.{0} = self.guro.addVar(vtype = gp.GRB.BINARY, name = "{0}")'.format(var))
         self.guro.update()
         # adding constraints
         lhs = sp.sparse.coo_matrix((self.lhsVals, (self.lhsRows, self.lhsCols))).toarray()
@@ -305,14 +305,14 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
                 s += ' >= %s' % self.rhs[i]
             elif self.senses[i] == 'L':
                 s += ' <= %s' % self.rhs[i]
-            exec 'self.guro.addConstr( %s, "%s")' % (s, self.rowNames[i])        
+            exec('self.guro.addConstr( %s, "%s")' % (s, self.rowNames[i]))     
         #setting the objective
         s = ''
         for name in self.colNames:
             if name.startswith('y'):
                 s += 'self.{} + '.format(name)
         s = s.rstrip(' + ')
-        exec 'self.guro.setObjective({}, gp.GRB.MAXIMIZE)'.format(s)
+        exec('self.guro.setObjective({}, gp.GRB.MAXIMIZE)'.format(s))
 
     def solve(self):
         self.rowAndColNames()
@@ -332,21 +332,19 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
         # 1. forcing rxn to be inactive reaction
         # The original bounds are saved in self.d before changing them
         self.d = {}
-        exec 'self.d["{0}.lb"] = self.{0}.lb'.format(rxn)
-        exec 'self.d["{0}.ub"] = self.{0}.ub'.format(rxn)
-        exec "self.{}.setAttr('lb', 0.)".format(rxn)
-        exec "self.{}.setAttr('ub', 0.)".format(rxn)
+        exec('self.d["{0}.lb"] = self.{0}.lb'.format(rxn))
+        exec('self.d["{0}.ub"] = self.{0}.ub'.format(rxn))
+        exec("self.{}.setAttr('lb', 0.)".format(rxn))
+        exec("self.{}.setAttr('ub', 0.)".format(rxn))
         if rxn in self.rH:
-            exec 'self.d["yp_{0}.ub"] = self.yp_{0}.ub'.format(rxn)
-            exec "self.yp_{}.setAttr('ub', 0)".format(rxn)
+            exec('self.d["yp_{0}.ub"] = self.yp_{0}.ub'.format(rxn))
+            exec("self.yp_{}.setAttr('ub', 0)".format(rxn))
             if rxn in self.rHrev:
-                exec 'self.d["ym_{0}.ub"] = self.ym_{0}.ub'.format(rxn)
-                exec "self.ym_{}.setAttr('ub', 0)".format(rxn)
+                exec('self.d["ym_{0}.ub"] = self.ym_{0}.ub'.format(rxn))
+                exec("self.ym_{}.setAttr('ub', 0)".format(rxn))
         elif rxn in self.rL:
-            exec 'self.d["y_{0}.lb"] = self.y_{0}.lb'.format(rxn) #saving lb
-            exec "self.y_{}.setAttr('lb', 1)".format(rxn) #changing lb
-        else:
-            pass# i.e. rxns without binary variables associated to them
+            exec('self.d["y_{0}.lb"] = self.y_{0}.lb'.format(rxn)) #saving lb
+            exec("self.y_{}.setAttr('lb', 1)".format(rxn)) #changing lb
         self.guro.update()
         self.guro.optimize()
         status = self.guro.getAttr('status')
@@ -360,31 +358,31 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
         for key in self.d:
             try:
                 l = key.split('.')
-                exec "self.{}.setAttr('{}', {})".format(l[0], l[1], self.d[key])
+                exec("self.{}.setAttr('{}', {})".format(l[0], l[1], self.d[key]))
             except AttributeError:
                 pass
         self.guro.update()
         del self.d
 
         # 2. forcing forward direction
-        exec 'self.fwd = self.{}.ub'.format(rxn) 
+        exec('self.fwd = self.{}.ub'.format(rxn)) 
         if self.fwd == 0: #if irreversible in the rev dir
             scoreFwd = 0
             solFwd = []
             del self.fwd
         else:
             self.d = {}
-            exec 'self.d["{0}.lb"] = self.{0}.lb'.format(rxn)
-            exec "self.{}.setAttr('lb', self.eps)".format(rxn)
+            exec('self.d["{0}.lb"] = self.{0}.lb'.format(rxn))
+            exec("self.{}.setAttr('lb', self.eps)".format(rxn))
             if rxn in self.rH:
-                exec 'self.d["yp_{0}.lb"] = self.yp_{0}.lb'.format(rxn)
-                exec "self.yp_{}.setAttr('lb', 1)".format(rxn)
+                exec('self.d["yp_{0}.lb"] = self.yp_{0}.lb'.format(rxn))
+                exec("self.yp_{}.setAttr('lb', 1)".format(rxn))
                 if rxn in self.rHrev:
-                    exec 'self.d["ym_{0}.ub"] = self.ym_{0}.ub'.format(rxn)
-                    exec "self.ym_{}.setAttr('ub', 0)".format(rxn)
+                    exec('self.d["ym_{0}.ub"] = self.ym_{0}.ub'.format(rxn))
+                    exec("self.ym_{}.setAttr('ub', 0)".format(rxn))
             elif rxn in self.rL:
-                    exec 'self.d["y_{0}.ub"] = self.y_{0}.ub'.format(rxn)
-                    exec "self.y_{}.setAttr('ub', 0)".format(rxn)
+                    exec('self.d["y_{0}.ub"] = self.y_{0}.ub'.format(rxn))
+                    exec("self.y_{}.setAttr('ub', 0)".format(rxn))
         self.guro.update()
         self.guro.optimize()
         status = self.guro.getAttr('status')
@@ -398,7 +396,7 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
         for key in self.d:
             try:
                 l = key.split('.')
-                exec "self.{}.setAttr('{}', {})".format(l[0], l[1], self.d[key])
+                exec("self.{}.setAttr('{}', {})".format(l[0], l[1], self.d[key]))
             except AttributeError:
                 pass
         self.guro.update()
@@ -406,24 +404,24 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
 
         # 3. forcing reverse direction
         # forcing reverse direction
-        exec 'self.rev = self.{}.lb'.format(rxn)
+        exec('self.rev = self.{}.lb'.format(rxn))
         if self.rev == 0: #if irreversible
             scoreRev = 0
             solRev = []
             del self.rev
         else:
             self.d = {}
-            exec 'self.d["{0}.ub"] = self.{0}.ub'.format(rxn)
-            exec "self.{}.setAttr('ub', -self.eps)".format(rxn)
+            exec('self.d["{0}.ub"] = self.{0}.ub'.format(rxn))
+            exec("self.{}.setAttr('ub', -self.eps)".format(rxn))
             if rxn in self.rH:
-                exec 'self.d["yp_{0}.ub"] = self.yp_{0}.ub'.format(rxn)
-                exec "self.yp_{}.setAttr('ub', 0)".format(rxn)
+                exec('self.d["yp_{0}.ub"] = self.yp_{0}.ub'.format(rxn))
+                exec("self.yp_{}.setAttr('ub', 0)".format(rxn))
                 if rxn in self.rHrev:
-                    exec 'self.d["ym_{0}.lb"] = self.ym_{0}.lb'.format(rxn)
-                    exec "self.ym_{}.setAttr('lb', 1)".format(rxn)
+                    exec('self.d["ym_{0}.lb"] = self.ym_{0}.lb'.format(rxn))
+                    exec("self.ym_{}.setAttr('lb', 1)".format(rxn))
             elif rxn in self.rL:
-                exec 'self.d["y_{0}.ub"] = self.y_{0}.ub'.format(rxn)
-                exec "self.y_{}.setAttr('ub', 0)".format(rxn)
+                exec('self.d["y_{0}.ub"] = self.y_{0}.ub'.format(rxn))
+                exec("self.y_{}.setAttr('ub', 0)".format(rxn))
             self.guro.update()
             self.guro.optimize()
             status = self.guro.getAttr('status')
@@ -437,7 +435,7 @@ class MetabGeneExpModel_gurobi(MetabGeneExpModel):
             for key in self.d:
                 try:
                     l = key.split('.')
-                    exec "self.{}.setAttr('{}', {})".format(l[0], l[1], self.d[key])
+                    exec("self.{}.setAttr('{}', {})".format(l[0], l[1], self.d[key]))
                 except AttributeError:
                     pass
             self.guro.update()
@@ -573,9 +571,9 @@ class MipSeparateFwdRev_gurobi(MipSeparateFwdRev):
         self.guro.setParam('OutputFlag', 0) 
         # adding variables
         for i, rxn in enumerate(self.m.idRs):
-            exec 'self.{0} = self.guro.addVar(lb = {1}, ub = {2}, vtype = gp.GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.m.lb[i], self.m.ub[i])  
+            exec('self.{0} = self.guro.addVar(lb = {1}, ub = {2}, vtype = gp.GRB.CONTINUOUS, name = "{0}")'.format(rxn, self.m.lb[i], self.m.ub[i])) 
         for var in [v for v in self.colNames if v not in self.m.idRs]:
-            exec 'self.{0} = self.guro.addVar(lb = 0, ub = 1, vtype = gp.GRB.BINARY, name = "{0}")'.format(var)
+            exec('self.{0} = self.guro.addVar(lb = 0, ub = 1, vtype = gp.GRB.BINARY, name = "{0}")'.format(var))
         self.guro.update()
         # adding constraints
         lhs = sp.sparse.coo_matrix((self.lhsVals, (self.lhsRows, self.lhsCols))).toarray()
@@ -592,7 +590,7 @@ class MipSeparateFwdRev_gurobi(MipSeparateFwdRev):
                 s += ' >= {}'.format(self.rhs[i])
             elif self.senses[i] == 'L':
                 s += ' <= {}'.format(self.rhs[i])
-            exec 'self.guro.addConstr( {}, "{}")'.format(s, self.rowNames[i])
+            exec('self.guro.addConstr( {}, "{}")'.format(s, self.rowNames[i]))
 
     def minSumFluxes_gurobi(self):
         # setting the objective
@@ -602,7 +600,7 @@ class MipSeparateFwdRev_gurobi(MipSeparateFwdRev):
                 s += 'self.{}, '.format(var.varName)
         s = s.rstrip(', ')
         s += '])'
-        exec s
+        exec(s)
         self.guro.setObjective(self.linobj, gp.GRB.MINIMIZE)#1 for minimize
         self.guro.optimize()
         self.initialized = 1
@@ -842,7 +840,7 @@ def findActiveRxns(cbm, thresh, rl = []):
         if rxn not in act:
             # reseting the objective
             cbm.guro.setObjective(0)
-            exec 'cbm.guro.setObjective(cbm.%s, gp.GRB.MAXIMIZE)' % rxn
+            exec('cbm.guro.setObjective(cbm.%s, gp.GRB.MAXIMIZE)' % rxn)
             cbm.guro.optimize()
             sol = abs(np.array([v.x for v in cbm.guro.getVars()]))
             indices = (sol > thresh).nonzero()[0]
@@ -853,7 +851,7 @@ def findActiveRxns(cbm, thresh, rl = []):
         if rxn not in act:
             # reseting the objective
             cbm.guro.setObjective(0)
-            exec 'cbm.guro.setObjective(cbm.%s, gp.GRB.MINIMIZE)' % rxn
+            exec('cbm.guro.setObjective(cbm.%s, gp.GRB.MINIMIZE)' % rxn)
             cbm.guro.optimize()
             sol = abs(np.array([v.x for v in cbm.guro.getVars()]))
             indices = (sol > thresh).nonzero()[0]
@@ -1013,8 +1011,8 @@ def getNzRxnsGurobi(mg, actThreshold, md):
     revRxnsIds = []
     for rxn in revRxns:
         fwd = rxn[:-4]
-        exec 'valRev = mg.{}.x'.format(rxn)
-        exec 'valFwd = mg.{}.x'.format(fwd)
+        exec('valRev = mg.{}.x'.format(rxn))
+        exec('valFwd = mg.{}.x'.format(fwd))
         revRxnsSols.append(valFwd - valRev)
         revRxnsIds.append(fwd)
     sols = []
