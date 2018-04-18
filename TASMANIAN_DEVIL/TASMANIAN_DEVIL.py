@@ -1,4 +1,5 @@
 from __future__ import print_function
+from builtins import range
 import argparse
 import cobra
 import csv
@@ -8,10 +9,10 @@ import shutil
 import time
 import multiprocessing as mp
 import Crypto.Random
-import gene as gene_class
-import model as model_class
-import flux as flux_class
-import visualization as visualization_class
+from . import gene as gene_class
+from . import model as model_class
+from . import flux as flux_class
+from . import visualization as visualization_class
 
 def model(args):
     #Make sure there is a way to check if model is carbon balanced
@@ -274,7 +275,7 @@ def flux(args):
             locTime = time.localtime()
             pid = os.getpid()
             Crypto.Random.atfork()
-            for x in xrange(reps):
+            for x in range(reps):
                 timeStr = '%i%02i%02i%02i%02i%02i' % locTime[:6]
                 tag = '%s_%s_%s_%s' % (model_desc, pid, x, timeStr)
                 #Added despricription, repetition, and lists of compartmental reactions to the function
@@ -282,7 +283,7 @@ def flux(args):
                 flux_class.exportPickle(cr, fOutMbaCandRxns % tag)
 
         processes = []
-        for _ in xrange(number_concurrent_processes):
+        for _ in range(number_concurrent_processes):
             p = mp.Process(target = pruneReps)
             p.start()
             processes.append(p)
@@ -326,7 +327,7 @@ def flux(args):
                 freq[rxnFreq[rxn]].add(rxn)
             except KeyError:
                 freq[rxnFreq[rxn]] = set([rxn])
-        orderedFreq = freq.keys()
+        orderedFreq = list(freq)
         orderedFreq.sort(reverse = True)
 
         #Making sure that all hfr reactions are active.
@@ -456,7 +457,7 @@ def visualization(args):
             elif t in gbr1['rL']:
                 gbr1_rH[t] = 0
             else:
-	        gbr1_rH[t] = 1
+                gbr1_rH[t] = 1
     
     fbr1_hfr = None
     if args.freqBasedRxns1:
@@ -480,7 +481,7 @@ def visualization(args):
             elif t in gbr2['rL']:
                 gbr2_rH[t] = 0
             else:
-	        gbr2_rH[t] = 1
+                gbr2_rH[t] = 1
     
     fbr2_hfr = None
     if args.freqBasedRxns2:

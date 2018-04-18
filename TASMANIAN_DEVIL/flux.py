@@ -1,4 +1,4 @@
-import cPickle as pickle
+import pickle
 import collections
 import gurobipy as gp
 import scipy as sp
@@ -660,7 +660,7 @@ def createRxnGeneCalls(geneCalls, gene2rxn, modelGenes):
     # e.g. 'YCR024C' and 'YCR024C-A' in yeast). Hence long names should be 
     # replaced before short ones
     geneNamesByLength = orderGeneNamesByLength(modelGenes)
-    orderedGeneLengths = geneNamesByLength.keys()
+    orderedGeneLengths = list(geneNamesByLength)
     orderedGeneLengths.sort(reverse = True)
     rxnGeneCalls = {}
     for rxn in set(gene2rxn.keys()) - orphanRxns:
@@ -677,7 +677,9 @@ def createRxnGeneCalls(geneCalls, gene2rxn, modelGenes):
             j = j.split('and')
             genelist = []
             for k in j:
-                k = k.translate(None, ' ()')
+                k = k.replace(" ", "")
+                k = k.replace("(", "")
+                k = k.replace(")", "")
                 if not k:
                     continue
                 else:

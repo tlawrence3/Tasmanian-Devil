@@ -118,7 +118,9 @@ def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lo
             j = j.split('and')
             genelist = []
             for k in j:
-                k = k.translate(None, ' ()')
+                k = k.replace(" ", "")
+                k = k.replace("(", "")
+                k = k.replace(")", "")
                 if not k:
                     continue
                 else:
@@ -738,7 +740,9 @@ def model_export(model, cobra_specific_objects, model_desc):
             j = j.split('and')
             genelist = []
             for k in j:
-                k = k.translate(None, ' ()')
+                k = k.replace(" ", "")
+                k = k.replace("(", "")
+                k = k.replace(")", "")
                 if not k:
                     continue
                 else:
