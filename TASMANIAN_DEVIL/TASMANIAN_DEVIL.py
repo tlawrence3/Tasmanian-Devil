@@ -199,9 +199,9 @@ def flux(args):
         mbaCandRxnsDirectory = file_path + 'data/mbaCandRxns/%s_%s/' % (model_desc, str(repetition))
         if os.path.exists(mbaCandRxnsDirectory):
             shutil.rmtree(mbaCandRxnsDirectory)
-            os.makedirs(mbaCandRxnsDirectory, 0777)
+            os.makedirs(mbaCandRxnsDirectory)
         else:
-            os.makedirs(mbaCandRxnsDirectory, 0777)
+            os.makedirs(mbaCandRxnsDirectory)
 
         fOutMbaCandRxns = ''.join((mbaCandRxnsDirectory, "mbaCandRxns_%s.pkl"))
 
@@ -268,7 +268,7 @@ def flux(args):
         #Make a directory for temporary files for every time a rxn is pruned
         mbaCandRxnsDirectorySubset = file_path + 'data/test/%s_%s/' % (model_desc, str(repetition))
         if not os.path.exists(mbaCandRxnsDirectorySubset):
-            os.makedirs(mbaCandRxnsDirectorySubset, 0777)
+            os.makedirs(mbaCandRxnsDirectorySubset)
 
         def pruneReps():
             locTime = time.localtime()
