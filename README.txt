@@ -1,11 +1,20 @@
+Different versions of gurobi give different optimum. 
+
 INSTALLATION INSTRUCTIONS
-To install LibSBML for Ubuntu for the model module, enter from the terminal: 
-	sudo apt-get install python-dev
-	sudo apt-get install libxml2-dev
-	sudo apt-get install zlib1g-dev
-	sudo apt-get install libbz2-dev
-	sudo apt-get install python-pip
-	sudo pip install python-libsbml
+#To install COBRA, need to do the following first if you have a Linux machine (Ubuntu 14.04 tested):
+	For Linux:
+		sudo apt-get install swig
+	For Mac OSX:
+		Need to include brew
+		brew install glpk
+
+#To install LibSBML for Ubuntu for the model module, enter from the terminal: 
+#	sudo apt-get install python-dev
+#	sudo apt-get install libxml2-dev
+#	sudo apt-get install zlib1g-dev
+#	sudo apt-get install libbz2-dev
+#	sudo apt-get install python-pip
+#	sudo pip install python-libsbml
 	
 Gurobi is the linear optimization solver of choice. It is free for academic users. Install the Gurobi MILP solver following the protocol on Gurobi's website: 
 	http://user.gurobi.com/download/gurobi-optimizer
@@ -16,6 +25,10 @@ After installing Gurobi, set Gurobi's path accordingly as descibed in Gurobi's i
 	export PATH="${PATH}:${GUROBI_HOME}/bin"
 	export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 Then go back to gurobi.com and download a free academic licencse. Enter your specific grbgetkey command for your license to activate Gurobi.
+
+
+For people who do not know where the setyp.py is, it is \Library\gurobi***\mac64
+
 
 
 Add the path of the install in MATLAB by Add with Suubfolders. To save the path, first you may have to change the read/write privileges for the folder that pathdef.m is in, such as:
