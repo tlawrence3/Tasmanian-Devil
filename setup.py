@@ -9,8 +9,8 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
  
 setup(name = "TASMANIAN_DEVIL",
-      setup_requires=['numpy', 'scipy'],
-      install_requires=['numpy', 'scipy', 'pandas', 'pycrypto', 'argparse', 'cobra==0.8.2', 'sympy', 'python-libsbml'],
+      setup_requires=['numpy', 'scipy<1.0'],
+      install_requires=['numpy', 'scipy<1.0', 'pandas', 'pycrypto', 'argparse', 'cobra==0.8.2', 'sympy', 'python-libsbml'],
       packages = ["TASMANIAN_DEVIL"],
       entry_points = {"console_scripts": ['tas = TASMANIAN_DEVIL.TASMANIAN_DEVIL:main']},
       version = "0.1.0",
