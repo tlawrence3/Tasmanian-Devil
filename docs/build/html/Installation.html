@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Installation &#8212; Tasmanian-Devil 1.0 documentation</title>
+    <title>INSTALLATION &#8212; Tasmanian-Devil 1.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -42,7 +42,79 @@
           <div class="body" role="main">
             
   <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<h1>INSTALLATION<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>This installation will only work with Python 2.7 or Python 3.6. We highly recommend using a conda environment, as this will manage the pip versions better than a virtual environment when running setup.py.</p>
+<dl class="docutils">
+<dt>To install COBRA, need to do the following first if you have a Linux machine (Ubuntu 14.04 tested):</dt>
+<dd><ul class="first last simple">
+<li>First install pip</li>
+<li>pip install numpy scipy</li>
+<li><dl class="first docutils">
+<dt>For Linux:</dt>
+<dd><ul class="first last">
+<li>sudo apt-get install swig</li>
+<li><dl class="first docutils">
+<dt>For pythhon 2.7:</dt>
+<dd><ul class="first last">
+<li>sudo apt-get install libglpk-dev</li>
+<li>sudo apt-get install glpk-utils</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>For Mac OSX:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Need to install brew:</dt>
+<dd><ul class="first last">
+<li><a class="reference external" href="https://docs.brew.sh/Installation">https://docs.brew.sh/Installation</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>brew install glpk</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Downlaod anaconda from the website:</dt>
+<dd><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>First install Anaconda with Python 2.7 or Python 3.6:</dt>
+<dd><ul class="first last">
+<li><a class="reference external" href="https://www.anaconda.com/download/">https://www.anaconda.com/download/</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Create a conda environment:</dt>
+<dd><ul class="first last">
+<li><a class="reference external" href="https://conda.io/docs/user-guide/tasks/manage-environments.html">https://conda.io/docs/user-guide/tasks/manage-environments.html</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Then install Gurobi using conda:</dt>
+<dd><ul class="first last">
+<li>conda install gurobipy</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Then install a Gurobi academic key from their website usirng grbketkey</li>
+</ul>
+</dd>
+</dl>
+<p>Then run test commands found in README.md</p>
 </div>
 
 
@@ -64,7 +136,7 @@
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">INSTALLATION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tutorial.html">Tutorial</a></li>
 </ul>
 

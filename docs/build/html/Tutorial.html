@@ -24,7 +24,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Installation" href="Installation.html" />
+    <link rel="prev" title="INSTALLATION" href="Installation.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -42,122 +42,6 @@
             
   <div class="section" id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
-<dl class="option">
-<dt id="cmdoption-tsfm-i">
-<code class="descname">-i</code><code class="descclassname"> (infernal)</code><code class="descclassname">, </code><code class="descname">--infernal</code><code class="descclassname"> (infernal)</code><a class="headerlink" href="#cmdoption-tsfm-i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Secondary structure annotation file in infernal format</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tsfm-c">
-<code class="descname">-c</code><code class="descclassname"> (cove)</code><code class="descclassname">, </code><code class="descname">--cove</code><code class="descclassname"> (cove)</code><a class="headerlink" href="#cmdoption-tsfm-c" title="Permalink to this definition">¶</a></dt>
-<dd><p>Secondary structure annotation file in cove format</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tsfm-t">
-<code class="descname">-t</code><code class="descclassname"> (text)</code><code class="descclassname">, </code><code class="descname">--text</code><code class="descclassname"> (text)</code><a class="headerlink" href="#cmdoption-tsfm-t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Secondary structure annotation file in text format</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tsfm-f">
-<code class="descname">-f</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--file</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-tsfm-f" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read previous results from file(s)</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tsfm-p">
-<code class="descname">-p</code><code class="descclassname"> &lt;proc&gt;. --proc &lt;proc&gt;</code><a class="headerlink" href="#cmdoption-tsfm-p" title="Permalink to this definition">¶</a></dt>
-<dd><p>Number of processor cores to use for concurrent processes. Default is
-the number of cores reported by the OS.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tsfm-v">
-<code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--inverse</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-tsfm-v" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate anti-determinates</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tsfm-a">
-<code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--alpha</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-tsfm-a" title="Permalink to this definition">¶</a></dt>
-<dd><p>Alpha value used to determine statistical significance for
-visualization and data filtering (not implemented).</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tsfm-e">
-<code class="descname">-e</code><code class="descclassname"> &lt;entropy&gt;</code><code class="descclassname">, </code><code class="descname">--entropy</code><code class="descclassname"> &lt;entropy&gt;</code><a class="headerlink" href="#cmdoption-tsfm-e" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method of entropy estimation. NSB &lt;NSB&gt; and Miller-Maddow &lt;Miller&gt;
-entropy esitmators are implemented. Default is NSB.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tsfm-x">
-<code class="descname">-x</code><code class="descclassname"> &lt;N&gt;</code><code class="descclassname">, </code><code class="descname">--max</code><code class="descclassname"> &lt;N&gt;</code><a class="headerlink" href="#cmdoption-tsfm-x" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the exact method of small sample size correction for up to N samples.
-This method is fully described in Schneider et al 1986. This calculation is
-polynomial in sample size. It becomes prohibitively expensive to calculate beyond
-a sample size of 16. The correction factor of each sample size will be calculated
-in parallel up to <code class="xref std std-option docutils literal"><span class="pre">--proc</span></code> at a time. Default: 10.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tsfm-logo">
-<code class="descname">--logo</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-tsfm-logo" title="Permalink to this definition">¶</a></dt>
-<dd><p>Produce function logo postscript files</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tsfm-b">
-<code class="descname">-B</code><code class="descclassname"> &lt;B&gt;</code><a class="headerlink" href="#cmdoption-tsfm-b" title="Permalink to this definition">¶</a></dt>
-<dd><p>Number of permutations used to estimate discrete probability
-distributions for statisical testing. Default: 100.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tsfm-m">
-<code class="descname">-M</code><code class="descclassname"> &lt;M&gt;</code><a class="headerlink" href="#cmdoption-tsfm-m" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method to correct p-values for multiple-comparisons. Current
-methods available: bonferroni, holm, hommel, BH, BY, and hochberg-simes.
-Default value: BH.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tsfm-j">
-<code class="descname">-j</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--jsd</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-tsfm-j" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the pairwise square root of the Jensen-Shannon divergence for all
-pairwise combinations of datasets.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tsfm-arg-file-prefix">
-<code class="descname">file_prefix</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-tsfm-arg-file-prefix" title="Permalink to this definition">¶</a></dt>
-<dd><p>Positional argument listing the file prefixes of the sequence alignment
-files. Sequence alignment files are required to be in clustal format with
-each functional class having its own file for each prefix. Alignment files
-must conform to the naming standard fileprefix_functionalclass.aln.</p>
-<p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">calculate</span> <span class="n">functional</span> <span class="n">information</span> <span class="k">for</span> <span class="n">the</span> <span class="n">two</span> <span class="n">datasets</span> <span class="n">below</span>
-<span class="n">file_prefix</span> <span class="n">would</span> <span class="n">be</span><span class="p">:</span> <span class="n">DataSet1</span> <span class="n">DataSet2</span>
-
-<span class="o">-</span> <span class="n">DataSet1_A</span><span class="o">.</span><span class="n">aln</span>
-<span class="o">-</span> <span class="n">DataSet1_C</span><span class="o">.</span><span class="n">aln</span>
-<span class="o">-</span> <span class="n">DataSet1_D</span><span class="o">.</span><span class="n">aln</span>
-<span class="o">-</span> <span class="n">DataSet1_E</span><span class="o">.</span><span class="n">aln</span>
-<span class="o">-</span> <span class="n">DataSet1_F</span><span class="o">.</span><span class="n">aln</span>
-<span class="o">-</span> <span class="n">DataSet1_G</span><span class="o">.</span><span class="n">aln</span>
-<span class="o">-</span> <span class="n">DataSet2_A</span><span class="o">.</span><span class="n">aln</span>
-<span class="o">-</span> <span class="n">DataSet2_C</span><span class="o">.</span><span class="n">aln</span>
-<span class="o">-</span> <span class="n">DataSet2_D</span><span class="o">.</span><span class="n">aln</span>
-<span class="o">-</span> <span class="n">DataSet2_E</span><span class="o">.</span><span class="n">aln</span>
-<span class="o">-</span> <span class="n">DataSet2_F</span><span class="o">.</span><span class="n">aln</span>
-<span class="o">-</span> <span class="n">DataSet2_G</span><span class="o">.</span><span class="n">aln</span>
-</pre></div>
-</div>
-</dd></dl>
-
 </div>
 
 
@@ -179,7 +63,7 @@ must conform to the naming standard fileprefix_functionalclass.aln.</p>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">INSTALLATION</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a></li>
 </ul>
 
@@ -187,7 +71,7 @@ must conform to the naming standard fileprefix_functionalclass.aln.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="Installation.html" title="previous chapter">Installation</a></li>
+      <li>Previous: <a href="Installation.html" title="previous chapter">INSTALLATION</a></li>
   </ul></li>
 </ul>
 </div>
