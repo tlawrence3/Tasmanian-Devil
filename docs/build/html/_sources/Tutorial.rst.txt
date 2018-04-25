@@ -1,6 +1,8 @@
 Tutorial
 ========
 
+Each module's help page contains documentation about usage. The following are test examples and general advice for using each module.
+
 model module
 ~~~~~~~~~~~~
 
@@ -52,16 +54,20 @@ tas model test_data/Recon2_v04.xml _e \
 -n test_data/150721_Recon2.v04_nucleotide_conversions.csv \ 
 -d test_data/Recon2_metabolite_carbon_dict4.csv -s -z -r > test_Recon2_2.txt
 ``
+
 gene module
 ~~~~~~~~~~~
+
 
 ``
 tas gene test_data/151012_Gasch_glucose.txt \ 
 -m test_data/lgmncmodiMM904_NADcorrected_1127_MTHFDi.mat \ 
 -o test_data/151012_glucose_0.25.csv -c
 ``
+
 flux module
 ~~~~~~~~~~~
+
 
 simplest command:
 ``
@@ -76,8 +82,10 @@ test_data/151012_ethanol_0.25.csv _e 2 2 2 -c -b 0.2879 \
 -EXtrrxns test_data/EXtrrxns.csv \ 
 -Othertrrxns test_data/Othertrrxns.csv
 ``
+
 visualization module
 ~~~~~~~~~~~~~~~~~~~~
+
 
 Visualizing 1 condition
 ``

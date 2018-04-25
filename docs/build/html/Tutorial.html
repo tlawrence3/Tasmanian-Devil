@@ -42,6 +42,7 @@
             
   <div class="section" id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<p>Each module’s help page contains documentation about usage. The following are test examples and general advice for using each module.</p>
 <div class="section" id="model-module">
 <h2>model module<a class="headerlink" href="#model-module" title="Permalink to this headline">¶</a></h2>
 <p>Simplest command for yeast metabolism:
@@ -69,14 +70,16 @@ tas model test_data/Recon2_v04.xml _e -s &gt; test_Recon2_1.txt
 Model for human metabolism accounting for nucleoside conversions and metabolite mapping complexes, removing metabolites without carbons, and removing inactive reactions and carbon balancing the model:
 ``
 tas model test_data/Recon2_v04.xml _e -m test_data/150722_Recon2.v04_metabolite_mappings.csv -n test_data/150721_Recon2.v04_nucleotide_conversions.csv -d test_data/Recon2_metabolite_carbon_dict4.csv -s -z -r &gt; test_Recon2_2.txt
-``
-gene module
-~~~~~~~~~~~</p>
+``</p>
+</div>
+<div class="section" id="gene-module">
+<h2>gene module<a class="headerlink" href="#gene-module" title="Permalink to this headline">¶</a></h2>
 <p>``
 tas gene test_data/151012_Gasch_glucose.txt -m test_data/lgmncmodiMM904_NADcorrected_1127_MTHFDi.mat -o test_data/151012_glucose_0.25.csv -c
-``
-flux module
-~~~~~~~~~~~</p>
+``</p>
+</div>
+<div class="section" id="flux-module">
+<h2>flux module<a class="headerlink" href="#flux-module" title="Permalink to this headline">¶</a></h2>
 <p>simplest command:
 ``
 tas flux test_data/lgmncmodiMM904_NADcorrected_1127_MTHFDi.mat test_data/151012_ethanol_0.25.csv _e 1 1 1 -c
@@ -84,9 +87,10 @@ tas flux test_data/lgmncmodiMM904_NADcorrected_1127_MTHFDi.mat test_data/151012_
 For multiple concurrent processes, repetitions of concurrent processes and repetitions with pruning reactions in a desired order by compartment:
 ``
 tas flux test_data/lgmncmodiMM904_NADcorrected_1127_MTHFDi.mat test_data/151012_ethanol_0.25.csv _e 2 2 2 -c -b 0.2879 -EXrxns test_data/EXrxns.csv -EXtrrxns test_data/EXtrrxns.csv -Othertrrxns test_data/Othertrrxns.csv
-``
-visualization module
-~~~~~~~~~~~~~~~~~~~~</p>
+``</p>
+</div>
+<div class="section" id="visualization-module">
+<h2>visualization module<a class="headerlink" href="#visualization-module" title="Permalink to this headline">¶</a></h2>
 <p>Visualizing 1 condition
 ``
 tas visualization test_data/lgmncmodiMM904_NADcorrected_1127_MTHFDi.mat test_data/151012_glucose_0.25.csv test_data/metabolicState_151012_glucose_0.25_lgmncmodiMM904_NADcorrected_1127_MTHFDi Glycolysis_PPP_Serine_Alanine_shortened 1 _e -c -c1 test_data/RxnsClassifiedByExpression_151012_glucose_0.25_lgmncmodiMM904_NADcorrected_1127_MTHFDi.pkl -b1 test_data/freqBasedRxns_151012_glucose_0.25_lgmncmodiMM904_NADcorrected_1127_MTHFDi.pkl
@@ -120,6 +124,9 @@ tas visualization test_data/lgmncmodiMM904_NADcorrected_1127_MTHFDi.mat test_dat
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#model-module">model module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gene-module">gene module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flux-module">flux module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visualization-module">visualization module</a></li>
 </ul>
 </li>
 </ul>
