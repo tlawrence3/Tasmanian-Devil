@@ -20,9 +20,9 @@ To install COBRA, need to do the following first if you have a Linux machine (Ub
 Downlaod anaconda from the website: 
 * First install Anaconda with Python 2.7 or Python 3.6:
 	* https://www.anaconda.com/download/
-* Create a conda environment:
+* Create a conda environment and activate it:
 	* https://conda.io/docs/user-guide/tasks/manage-environments.html	
-* Then install Gurobi using conda:	
+* Then install Gurobi using conda from within the conda environment:	
 	* conda install gurobipy
 * Then install a Gurobi academic key from their website usirng grbketkey
 * conda uninstall scipy

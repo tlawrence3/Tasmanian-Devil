@@ -19,7 +19,7 @@ Downlaod anaconda from the website:
 		* https://www.anaconda.com/download/
 	- Create a conda environment:
 		* https://conda.io/docs/user-guide/tasks/manage-environments.html	
-	- Then install Gurobi using conda:	
+	- Then install Gurobi using conda from within the conda environment:	
 		* conda install gurobipy
 	- Then install a Gurobi academic key from their website usirng grbketkey
 	- conda uninstall scipy
