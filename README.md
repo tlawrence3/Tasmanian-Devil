@@ -1,32 +1,38 @@
 # INTRODUCTION
 
-  We have developed The Algorithm for Simplified Metabolic ANalysIs by Altering Networks and Deducing flux Estimates for VIsuaLization (TASMANIAN DEVIL). There are four separate modules that comprise this software package: gene activity determination, genome-scale metabolic model importation and simplification to reduce network complexity, robust heuristic model building and metabolic flux prediction, and flux visualization from a reference network topology. All modules can be utilized independently or in conjunction with one another. TASMANIAN DEVIL has the potential to be adopted by a wide spectrum of researchers using Linux or macOS platforms. More information for the individual modules can be found at https://tlawrence3.github.io/Tasmanian-Devil/build/html/index.html.
+We have developed The Algorithm for Simplified Metabolic ANalysIs by Altering Networks and Deducing flux Estimates for VIsuaLization (TASMANIAN DEVIL). There are four separate commands that comprise this software package: gene activity determination, genome-scale metabolic model importation and simplification to reduce network complexity, robust heuristic model building and metabolic flux prediction, and flux visualization from a reference network topology. All modules can be utilized independently or in conjunction with one another. TASMANIAN DEVIL has the potential to be adopted by a wide spectrum of researchers using Linux or macOSX platforms. More information for the individual modules can be found at https://tlawrence3.github.io/Tasmanian-Devil/build/html/index.html.
 
 # INSTALLATION
 
-This installation will only work with Python 2.7 or Python 3.6. We highly recommend using a conda environment, as this will manage the pip versions better than a virtual environment when running setup.py.
+We use Gurobi as our mathematical programming solver because of this TASMANIAN DEVIL requires Python 2.7 or Python 3.6. Currently, we only support and strongly recommend installation of TASMANIAN DEVIL using Anaconda.
 
-To install COBRA, need to do the following first:
-* For Linux:
-	* sudo apt-get install swig
-	* For pythhon 2.7:
-		* sudo apt-get install libglpk-dev
-		* sudo apt-get install glpk-utils
-* For macOS:
-	* Need to install brew:
-		* https://docs.brew.sh/Installation
-	* brew install glpk
-
-Downlaod anaconda and build a conda environment: 
-* First install Anaconda with Python 2.7 or Python 3.6:
+* Install Anaconda with Python 2.7 or Python 3.6:
 	* https://www.anaconda.com/download/
-* Create a conda environment and activate it:
-	* https://conda.io/docs/user-guide/tasks/manage-environments.html	
-* Then install Gurobi using conda from within the conda environment:	
-	* conda install gurobipy
-* Then install a Gurobi academic key from their website usirng grbketkey
-* conda uninstall scipy
-	* We are currently relying on an older version of scipy installed in the setup.py script 
+* After install Anaconda open a terminal window and run the following commands to set up additional channels:
+```bash
+conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --add channels bioconda
+conda config --add channels http://conda.anaconda.org/gurobi
+```
+	
+* Create and activate a new Anaconda environment:
+```bash
+conda create -n tas python=3.6 scipy=0.19.1 gurobi glpk
+source activate tas
+```
+
+* Install the current version of Gurobi
+	* http://www.gurobi.com/downloads/gurobi-optimizer
+	
+* Obtain a Gurobi license (free academic licenses are available)
+	* http://www.gurobi.com/downloads/licenses/license-center
+
+* Activate your Gurobi installations using your license key using the command below:
+```bash
+grbketkey <your-license-key>
+```
+ 
 	
 Install TASMANIAN-DEVIL:
 * git clone https://github.com/tlawrence3/Tasmanian-Devil
