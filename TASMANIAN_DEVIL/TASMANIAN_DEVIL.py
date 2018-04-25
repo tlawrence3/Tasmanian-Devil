@@ -523,7 +523,7 @@ def visualization(args):
     
 
 def main():
-    parser = argparse.ArgumentParser(prog="TASMANIAN-DEVIL")
+    parser = argparse.ArgumentParser(prog="tas")
     subparsers = parser.add_subparsers(help="sub-command help")
     
     # model subcommand parser
