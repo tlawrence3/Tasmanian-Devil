@@ -6,7 +6,7 @@
 
 This installation will only work with Python 2.7 or Python 3.6. We highly recommend using a conda environment, as this will manage the pip versions better than a virtual environment when running setup.py.
 
-To install COBRA, need to do the following first if you have a Linux machine (Ubuntu 14.04 tested):
+To install COBRA, need to do the following first:
 * For Linux:
 	* sudo apt-get install swig
 	* For pythhon 2.7:
@@ -17,7 +17,7 @@ To install COBRA, need to do the following first if you have a Linux machine (Ub
 		* https://docs.brew.sh/Installation
 	* brew install glpk
 
-Downlaod anaconda from the website: 
+Downlaod anaconda and build a conda environment: 
 * First install Anaconda with Python 2.7 or Python 3.6:
 	* https://www.anaconda.com/download/
 * Create a conda environment and activate it:
