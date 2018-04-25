@@ -47,8 +47,6 @@
 <dl class="docutils">
 <dt>To install COBRA, need to do the following first if you have a Linux machine (Ubuntu 14.04 tested):</dt>
 <dd><ul class="first last simple">
-<li>First install pip</li>
-<li>pip install numpy scipy</li>
 <li><dl class="first docutils">
 <dt>For Linux:</dt>
 <dd><ul class="first last">
@@ -67,7 +65,7 @@
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>For Mac OSX:</dt>
+<dt>For macOS:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
 <dt>Need to install brew:</dt>
@@ -111,10 +109,31 @@
 </dl>
 </li>
 <li>Then install a Gurobi academic key from their website usirng grbketkey</li>
+<li><dl class="first docutils">
+<dt>conda uninstall scipy</dt>
+<dd><ul class="first last">
+<li>We are currently relying on an older version of scipy installed in the setup.py script</li>
 </ul>
 </dd>
 </dl>
-<p>Then run test commands found in README.md</p>
+</li>
+</ul>
+</dd>
+<dt>Install TASMANIAN-DEVIL:</dt>
+<dd><ul class="first last simple">
+<li>git clone <a class="reference external" href="https://github.com/tlawrence3/Tasmanian-Devil">https://github.com/tlawrence3/Tasmanian-Devil</a></li>
+<li><dl class="first docutils">
+<dt>Change into the TASMANIAN-DEVIL folder</dt>
+<dd><ul class="first last">
+<li>python setup.py install</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>Then run test commands found in README.md to test functionality</p>
 </div>
 
 
@@ -167,7 +186,7 @@
       &copy;2018, Edwin H. Gibb and Travis Lawrence.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
