@@ -4,8 +4,6 @@ INSTALLATION
 This installation will only work with Python 2.7 or Python 3.6. We highly recommend using a conda environment, as this will manage the pip versions better than a virtual environment when running setup.py. 
 
 To install COBRA, need to do the following first if you have a Linux machine (Ubuntu 14.04 tested):
-	- First install pip
-	- pip install numpy scipy
 	- For Linux:
 		* sudo apt-get install swig
 		* For pythhon 2.7:
@@ -24,6 +22,13 @@ Downlaod anaconda from the website:
 	- Then install Gurobi using conda:	
 		* conda install gurobipy
 	- Then install a Gurobi academic key from their website usirng grbketkey
+	- conda uninstall scipy
+		* We are currently relying on an older version of scipy installed in the setup.py script 
+	
+Install TASMANIAN-DEVIL:
+	- git clone https://github.com/tlawrence3/Tasmanian-Devil
+	- Change into the TASMANIAN-DEVIL folder
+		* python setup.py install
 
-Then run test commands found in README.md 
+Then run test commands found in README.md to test functionality 
 
