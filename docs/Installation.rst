@@ -1,4 +1,4 @@
-INSTALLATION
+Installation
 ============
 
 This installation will only work with Python 2.7 or Python 3.6. We highly recommend using a conda environment, as this will manage the pip versions better than a virtual environment when running setup.py. 
@@ -29,6 +29,3 @@ Install TASMANIAN-DEVIL:
 	- git clone https://github.com/tlawrence3/Tasmanian-Devil
 	- Change into the TASMANIAN-DEVIL folder
 		* python setup.py install
-
-Then run test commands found in README.md to test functionality 
-

@@ -33,9 +33,7 @@ Install TASMANIAN-DEVIL:
 * Change into the TASMANIAN-DEVIL folder
 	* python setup.py install
 
-Then run test commands found in README.md to test functionality 
-
-# TEST COMMANDS
+# TUTORIAL
 
 Each module's help page contains documentation about usage. The following are test examples and general advice for using each module.
 
