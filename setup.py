@@ -14,8 +14,8 @@ setup(name = "TASMANIAN_DEVIL",
       packages = ["TASMANIAN_DEVIL"],
       entry_points = {"console_scripts": ['tas = TASMANIAN_DEVIL.TASMANIAN_DEVIL:main']},
       version = "0.1.0",
-      description = "Something Something TASMANIAN_DEVIL",
+      description = "TASMANIAN_DEVIL: a software package for classifying gene activity from omics data sets, simplifying metabolic networks, and visualizing the estimated phenotypic fluxes of nutrients",
       long_description=long_description,
       license='GPLv3',
-      url = "www.nowhere.com",)
+      url = "https://tlawrence3.github.io/Tasmanian-Devil/build/html/index.html",)
 
