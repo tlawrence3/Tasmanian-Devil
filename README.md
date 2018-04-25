@@ -6,6 +6,12 @@ We have developed The Algorithm for Simplified Metabolic ANalysIs by Altering Ne
 
 We use Gurobi as our mathematical programming solver because of this TASMANIAN DEVIL requires Python 2.7 or Python 3.6. Currently, we only support and strongly recommend installation of TASMANIAN DEVIL using Anaconda.
 
+* Install the current version of Gurobi
+	* http://www.gurobi.com/downloads/gurobi-optimizer
+	
+* Obtain a Gurobi license (free academic licenses are available)
+	* http://www.gurobi.com/downloads/licenses/license-center
+
 * Install Anaconda with Python 2.7 or Python 3.6:
 	* https://www.anaconda.com/download/
 
@@ -22,12 +28,6 @@ conda config --add channels http://conda.anaconda.org/gurobi
 conda create -n tas python=3.6 scipy=0.19.1 gurobi glpk
 source activate tas
 ```
-
-* Install the current version of Gurobi
-	* http://www.gurobi.com/downloads/gurobi-optimizer
-	
-* Obtain a Gurobi license (free academic licenses are available)
-	* http://www.gurobi.com/downloads/licenses/license-center
 
 * Activate your Gurobi installations using your license key using the command below:
 ```bash
