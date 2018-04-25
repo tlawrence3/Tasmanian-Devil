@@ -9,7 +9,7 @@ To install COBRA, need to do the following first if you have a Linux machine (Ub
 		* For pythhon 2.7:
 			+ sudo apt-get install libglpk-dev
 			+ sudo apt-get install glpk-utils
-	- For Mac OSX:
+	- For macOS:
 		* Need to install brew:
 			+ https://docs.brew.sh/Installation
 		* brew install glpk

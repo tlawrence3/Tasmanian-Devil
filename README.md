@@ -1,6 +1,6 @@
 # INTRODUCTION
 
-  We have developed The Algorithm for Simplified Metabolic ANalysIs by Altering Networks and Deducing flux Estimates for VIsuaLization (TASMANIAN DEVIL). There are four separate modules that comprise this software package: gene activity determination, genome-scale metabolic model importation and simplification to reduce network complexity, robust heuristic model building and metabolic flux prediction, and flux visualization from a reference network topology. All modules can be utilized independently or in conjunction with one another. TASMANIAN DEVIL has the potential to be adopted by a wide spectrum of researchers using Linux or macOS platforms.
+  We have developed The Algorithm for Simplified Metabolic ANalysIs by Altering Networks and Deducing flux Estimates for VIsuaLization (TASMANIAN DEVIL). There are four separate modules that comprise this software package: gene activity determination, genome-scale metabolic model importation and simplification to reduce network complexity, robust heuristic model building and metabolic flux prediction, and flux visualization from a reference network topology. All modules can be utilized independently or in conjunction with one another. TASMANIAN DEVIL has the potential to be adopted by a wide spectrum of researchers using Linux or macOS platforms. More information for the individual modules can be found at https://tlawrence3.github.io/Tasmanian-Devil/build/html/index.html.
 
 # INSTALLATION
 
@@ -12,7 +12,7 @@ To install COBRA, need to do the following first if you have a Linux machine (Ub
 	* For pythhon 2.7:
 		* sudo apt-get install libglpk-dev
 		* sudo apt-get install glpk-utils
-* For Mac OSX:
+* For macOS:
 	* Need to install brew:
 		* https://docs.brew.sh/Installation
 	* brew install glpk
