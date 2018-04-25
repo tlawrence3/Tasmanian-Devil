@@ -1,6 +1,7 @@
 Installation
 ============
 
+
 This installation will only work with Python 2.7 or Python 3.6. We highly recommend using a conda environment, as this will manage the pip versions better than a virtual environment when running setup.py. 
 
 To install COBRA, need to do the following first:

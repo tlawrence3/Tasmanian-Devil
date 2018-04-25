@@ -1,6 +1,7 @@
 Introduction
 ============
 
+
 Background
 ~~~~~~~~~~
 
@@ -15,3 +16,4 @@ Conclusions
 ~~~~~~~~~~~
 
 We have designed software that can import the metabolic reconstruction of any model organism and predict and visualize fluxes for a condition based on gene activity rules. We have also proposed and tested a paradigm change to metabolic modeling to decrease the inherent complexity of the models, which demonstrated to be beneficial for flux predictions. Advancements to the model building algorithm enhanced essential reaction determination and flux prediction. Predicting condition-specific in silico fluxes has widespread applications ranging from engineering bacterial and yeast strains for biomass production, to predicting tissue-specific models for drug discovery, to characterizing general metabolic phenotypes for an experiment. TASMANIAN DEVIL has the potential to be adopted by a wide spectrum of researchers using Linux or macOS platforms and is freely available https://github.com/tlawrence3/Tasmanian-Devil.
+
