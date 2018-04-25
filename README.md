@@ -8,7 +8,8 @@ We use Gurobi as our mathematical programming solver because of this TASMANIAN D
 
 * Install Anaconda with Python 2.7 or Python 3.6:
 	* https://www.anaconda.com/download/
-* After install Anaconda open a terminal window and run the following commands to set up additional channels:
+
+* After installing Anaconda open a terminal window (we will be using the terminal for the remainder of the installation process) and run the following commands to set up additional channels:
 ```bash
 conda config --add channels defaults
 conda config --add channels conda-forge
@@ -33,11 +34,12 @@ source activate tas
 grbketkey <your-license-key>
 ```
  
-	
-Install TASMANIAN-DEVIL:
-* git clone https://github.com/tlawrence3/Tasmanian-Devil
-* Change into the TASMANIAN-DEVIL folder
-	* python setup.py install
+* Clone TASMANIAN-DEVIL from GitHub and install using setup script:
+```bash
+git clone https://github.com/tlawrence3/Tasmanian-Devil
+cd Tasmanian-Devil
+python setup.py install
+```
 
 # TUTORIAL
 
