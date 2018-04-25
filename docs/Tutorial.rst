@@ -8,10 +8,7 @@ model module
 ~~~~~~~~~~~~
 
 Simplest command for yeast metabolism:
-``
-tas model test_data/iMM904_NADcorrected_1127_MTHFDi.xml _e \
--s > test_iMM904_1.txt
-``
+``tas model test_data/iMM904_NADcorrected_1127_MTHFDi.xml _e \ -s > test_iMM904_1.txt``
 Adjusting for lower boundaries, gene2rxn mappings, and 1st attempt at adding adaptations to test fixing the biomass reaction for yeast metabolism:
 ``
 tas model test_data/iMM904_NADcorrected_1127_MTHFDi.xml _e \
