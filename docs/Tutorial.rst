@@ -63,7 +63,7 @@ gene module
 ~~~~~~~~~~~
 
 
-Using default 25% thresholds to classify active and inactive genes
+Using default 25% thresholds to classify active and inactive genes::
 
 	tas gene test_data/151012_Gasch_glucose.txt \ 
 	-m test_data/lgmncmodiMM904_NADcorrected_1127_MTHFDi.mat \ 
