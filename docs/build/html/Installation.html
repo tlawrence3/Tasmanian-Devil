@@ -43,96 +43,61 @@
             
   <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>This installation will only work with Python 2.7 or Python 3.6. We highly recommend using a conda environment, as this will manage the pip versions better than a virtual environment when running setup.py.</p>
-<dl class="docutils">
-<dt>To install COBRA, need to do the following first:</dt>
+<p>We use Gurobi as our mathematical programming solver. Because of this, TASMANIAN DEVIL requires Python 2.7 or Python 3.6. Currently, we only support and strongly recommend installing TASMANIAN DEVIL using Anaconda.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Install the current version of Gurobi</dt>
+<dd><ul class="first last">
+<li><a class="reference external" href="http://www.gurobi.com/downloads/gurobi-optimizer">http://www.gurobi.com/downloads/gurobi-optimizer</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<ul>
+<li><dl class="first docutils">
+<dt>Obtain a Gurobi license (free academic licenses are available)</dt>
 <dd><ul class="first last simple">
-<li><dl class="first docutils">
-<dt>For Linux:</dt>
-<dd><ul class="first last">
-<li>sudo apt-get install swig</li>
-<li><dl class="first docutils">
-<dt>For pythhon 2.7:</dt>
-<dd><ul class="first last">
-<li>sudo apt-get install libglpk-dev</li>
-<li>sudo apt-get install glpk-utils</li>
-</ul>
-</dd>
-</dl>
-</li>
+<li><a class="reference external" href="http://www.gurobi.com/downloads/licenses/license-center">http://www.gurobi.com/downloads/licenses/license-center</a></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>For macOS:</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>Need to install brew:</dt>
-<dd><ul class="first last">
-<li><a class="reference external" href="https://docs.brew.sh/Installation">https://docs.brew.sh/Installation</a></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li>brew install glpk</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-<dt>Downlaod anaconda and build a conda environment:</dt>
+<dt>Install Anaconda with Python 2.7 or Python 3.6:</dt>
 <dd><ul class="first last simple">
-<li><dl class="first docutils">
-<dt>First install Anaconda with Python 2.7 or Python 3.6:</dt>
-<dd><ul class="first last">
 <li><a class="reference external" href="https://www.anaconda.com/download/">https://www.anaconda.com/download/</a></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Create a conda environment:</dt>
-<dd><ul class="first last">
-<li><a class="reference external" href="https://conda.io/docs/user-guide/tasks/manage-environments.html">https://conda.io/docs/user-guide/tasks/manage-environments.html</a></li>
-</ul>
-</dd>
-</dl>
+<li><p class="first">After installing Anaconda open a terminal window (we will be using the terminal for the remainder of the installation process) and run the following commands to set up additional channels:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">defaults</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">bioconda</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">conda</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">gurobi</span>
+</pre></div>
+</div>
 </li>
-<li><dl class="first docutils">
-<dt>Then install Gurobi using conda from within the conda environment:</dt>
-<dd><ul class="first last">
-<li>conda install gurobipy</li>
-</ul>
-</dd>
-</dl>
+<li><p class="first">Create and activate a new Anaconda environment with the version of Python that you downloaded Anaconda with. Note that you must activate your conda environment every time you want to use TASMANIAN-DEVIL:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">tas</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.6</span> <span class="n">scipy</span><span class="o">=</span><span class="mf">0.19</span><span class="o">.</span><span class="mi">1</span> <span class="n">gurobi</span> <span class="n">glpk</span>
+<span class="n">source</span> <span class="n">activate</span> <span class="n">tas</span>
+</pre></div>
+</div>
 </li>
-<li>Then install a Gurobi academic key from their website usirng grbketkey</li>
-<li><dl class="first docutils">
-<dt>conda uninstall scipy</dt>
-<dd><ul class="first last">
-<li>We are currently relying on an older version of scipy installed in the setup.py script</li>
-</ul>
-</dd>
-</dl>
+<li><p class="first">Activate your Gurobi installations using your license key (obtained through Gurobi’s website) using the command below:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">grbketkey</span> <span class="o">&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">license</span><span class="o">-</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 </li>
-</ul>
-</dd>
-<dt>Install TASMANIAN-DEVIL:</dt>
-<dd><ul class="first last simple">
-<li>git clone <a class="reference external" href="https://github.com/tlawrence3/Tasmanian-Devil">https://github.com/tlawrence3/Tasmanian-Devil</a></li>
-<li><dl class="first docutils">
-<dt>Change into the TASMANIAN-DEVIL folder</dt>
-<dd><ul class="first last">
-<li>python setup.py install</li>
-</ul>
-</dd>
-</dl>
+<li><p class="first">Clone TASMANIAN-DEVIL from GitHub and install using setup script:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">tlawrence3</span><span class="o">/</span><span class="n">Tasmanian</span><span class="o">-</span><span class="n">Devil</span>
+<span class="n">cd</span> <span class="n">Tasmanian</span><span class="o">-</span><span class="n">Devil</span>
+<span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+</pre></div>
+</div>
 </li>
 </ul>
-</dd>
-</dl>
 </div>
 
 
