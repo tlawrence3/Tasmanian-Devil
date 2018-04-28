@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# TASMANIAN DEVIL documentation build configuration file, created by
+# Tasmanian-Devil documentation build configuration file, created by
 # sphinx-quickstart on Tue Apr  3 14:11:13 2018.
 #
 # This file is execfile()d with the current directory set to its
@@ -47,7 +47,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'TASMANIAN DEVIL'
+project = 'Tasmanian-Devil'
 copyright = '2018, Edwin H. Gibb and Travis Lawrence'
 author = 'Edwin H. Gibb and Travis Lawrence'
 
@@ -116,7 +116,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'TASMANIAN-DEVILdoc'
+htmlhelp_basename = 'Tasmanian-Devildoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -143,7 +143,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'TASMANIAN-DEVIL.tex', 'TASMANIAN DEVIL Documentation',
+    (master_doc, 'Tasmanian-Devil.tex', 'Tasmanian-Devil Documentation',
      'Edwin H. Gibb and Travis Lawrence', 'manual'),
 ]
 
@@ -153,7 +153,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'tasmanian-devil', 'TASMANIAN DEVIL Documentation',
+    (master_doc, 'tasmanian-devil', 'Tasmanian-Devil Documentation',
      [author], 1)
 ]
 
@@ -164,8 +164,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'TASMANIAN-DEVIL', 'TASMANIAN-DEVIL Documentation',
-     author, 'TASMANIAN DEVIL', 'TASMANIAN DEVIL: a software package for classifying gene activity from omics data sets, simplifying metabolic networks, and visualizing the estimated phenotypic fluxes of nutrients.',
+    (master_doc, 'Tasmanian-Devil', 'Tasmanian-Devil Documentation',
+     author, 'Tasmanian-Devil', 'One line description of project.',
      'Miscellaneous'),
 ]
 
