@@ -1,7 +1,6 @@
 Installation
 ============
 
-
 We use Gurobi as our mathematical programming solver. Because of this, TASMANIAN DEVIL requires Python 2.7 or Python 3.6. Currently, we only support and strongly recommend installing TASMANIAN DEVIL using Anaconda.
 
 - Install the current version of Gurobi
