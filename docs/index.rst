@@ -14,12 +14,3 @@ Welcome to TASMANIN DEVIL's Documentation!
    Installation.rst
    Tutorial.rst
    Modules.rst
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

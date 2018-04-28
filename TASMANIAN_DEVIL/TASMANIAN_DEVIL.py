@@ -607,7 +607,7 @@ def main():
     parser_flux.set_defaults(func=flux)
     
     #vizualization subcommand parser
-    parser_visualization = subparsers.add_parser("visualization", help='Visualize fluxes on predefined maps')
+    parser_visualization = subparsers.add_parser("visualization", help='Visualize fluxes on predefined maps. Look to help page on website for more detailed instructions for creating predefined maps')
     visualization_group = parser_visualization.add_mutually_exclusive_group(required=True)
     parser_visualization.add_argument("model1", type=str, help='Necessary variable: metabolic reconstruction file 1')
     parser_visualization.add_argument("geneCalls1", type=argparse.FileType("r"), help='Necessary variable: comma separated gene rule file 1')

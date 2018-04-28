@@ -34,7 +34,7 @@ source activate tas
 grbketkey <your-license-key>
 ```
  
-* Clone TASMANIAN-DEVIL from GitHub and install using setup script:
+* Clone TASMANIAN DEVIL from GitHub and install using setup script:
 ```bash
 git clone https://github.com/tlawrence3/Tasmanian-Devil
 cd Tasmanian-Devil

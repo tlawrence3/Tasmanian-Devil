@@ -28,7 +28,7 @@ We use Gurobi as our mathematical programming solver. Because of this, TASMANIAN
 
 	grbketkey <your-license-key>
 
-* Clone TASMANIAN-DEVIL from GitHub and install using setup script::
+* Clone TASMANIAN DEVIL from GitHub and install using setup script::
 
 	git clone https://github.com/tlawrence3/Tasmanian-Devil
 	cd Tasmanian-Devil
