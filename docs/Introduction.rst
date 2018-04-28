@@ -1,14 +1,6 @@
 Introduction
 ============
 
-Testing
-
-
-
-
-
-
-
 
 Background
 ~~~~~~~~~~
