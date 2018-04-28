@@ -47,7 +47,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Tasmanian-Devil'
+project = 'TASMANIAN DEVIL'
 copyright = '2018, Edwin H. Gibb and Travis Lawrence'
 author = 'Edwin H. Gibb and Travis Lawrence'
 
