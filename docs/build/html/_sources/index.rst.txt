@@ -13,6 +13,7 @@ Welcome to Tasmanian-Devil's documentation!
    Introduction.rst
    Installation.rst
    Tutorial.rst
+   Modules.rst
 
 
 

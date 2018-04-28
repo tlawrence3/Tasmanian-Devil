@@ -527,18 +527,18 @@ def main():
     subparsers = parser.add_subparsers(help="sub-command help")
     
     # model subcommand parser
-    parser_model = subparsers.add_parser("model", help='Make modifications to models and adapt into flux module commpatible format.')
+    parser_model = subparsers.add_parser("model", help='Make modifications to SBML or COBRA models. Look at iMM904 example in test_data folder of installation for examples of formatting files')
     model_group = parser_model.add_mutually_exclusive_group(required=True)
     parser_model.add_argument("model", type=str, 
-                              help='Necessary variable: metabolic reconstruction file.')
+                              help='Necessary variable: metabolic reconstruction file')
     parser_model.add_argument("extracellular", type=str,
-                             help="Necessary variable: extracellular compartment abbreviation. Instead of brackets or parentheses, use underscores (ex: '_e').")
+                             help="Necessary variable: extracellular compartment abbreviation. Instead of brackets or parentheses, use underscores (ex: '_e')")
     parser_model.add_argument("-o", "--output", type=argparse.FileType("w"),
                               help='Name of model to be written out')
     model_group.add_argument("-c", "--cobra", action="store_true",
-                             help='Flag to specify whether model is a COBRA Toolbox (.mat) file type; must have either -xml or -mat flag.')
+                             help='Flag to specify whether model is a COBRA Toolbox (.mat) file type; must have either -xml or -mat flag')
     model_group.add_argument("-s", "--sbml", action="store_true",
-                             help='Flag to specify whether model is a SBML (.xml) file type; must have either -xml or -mat flag.')
+                             help='Flag to specify whether model is a SBML (.xml) file type; must have either -xml or -mat flag')
     parser_model.add_argument("-l", "--lowerbound", type=argparse.FileType("r"), default=None,
                               help='lower boundary constraints file')
     parser_model.add_argument("-u", "--upperbound", type=argparse.FileType("r"), default=None,
@@ -546,33 +546,33 @@ def main():
     parser_model.add_argument("-g", "--gene2rxn", type=argparse.FileType("r"), default=None,
                               help='gene2rxn file')
     parser_model.add_argument("-d", "--metabolite2carbon", type=str, default=None,
-                              help='Tab-delimited file to specify dicitonary mappings of number of carbons in every metabolite. This is to check whether the model is carbon balanced. See iMM904 example for documentation.')
+                              help='Tab-delimited file to specify dicitonary mappings of number of carbons in every metabolite. This is to check whether the model is carbon balanced. See iMM904 example for documentation')
     parser_model.add_argument("-m", "--metabolitemappingcomplexes", type=argparse.FileType("r"), default=None,
-                              help='Tab-delimited metabolite mapping complexes file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this if metFormulas is not in model.')
+                              help='Tab-delimited metabolite mapping complexes file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this if metFormulas is not in model')
     parser_model.add_argument("-n", "--nucleotideconversions", type=argparse.FileType("r"), default=None,
-                              help='Tab-delimited nucleotide conversions file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this if metFormulas is not in model.')
+                              help='Tab-delimited nucleotide conversions file. See iMM904 example for documentation. Make sure model is carbon balanced if you use this; must have -d argument as well to use this if metFormulas is not in model')
     parser_model.add_argument("-a", "--adaptation",  type=argparse.FileType("r"), default=None, 
-                              help='Tab delimited file to change specific reaction stoichiometries or to remove metabolites from reactions. See iMM904 example for documentation; must have -d argument as well to use this if metFormulas is not in model.') 
+                              help='Tab delimited file to change specific reaction stoichiometries or to remove metabolites from reactions. See iMM904 example for documentation; must have -d argument as well to use this if metFormulas is not in model') 
     parser_model.add_argument("-z", "--zerocarbons", action="store_true",
-                              help='Flag to specify whether to remove metabolites wihtout any carbons. Must have -d argument as well to use this if metFormulas is not in model.')
+                              help='Flag to specify whether to remove metabolites wihtout any carbons. Must have -d argument as well to use this if metFormulas is not in model')
     parser_model.add_argument("-r", "--removeinactiverxnsandbalance", action="store_true",
-                              help='Flag to specify whether to remove inactive reactions from final model and remove carbon unbalanced reactions. Recommend using only after first inspecting reactions to be removed. Must have -d argument as well to use this if metFormulas is not in model.')	
+                              help='Flag to specify whether to remove inactive reactions from final model and remove carbon unbalanced reactions. Recommend using only after first inspecting reactions to be removed. Must have -d argument as well to use this if metFormulas is not in model')	
     parser_model.set_defaults(func=model)
 
     # gene subcommand parser
-    parser_gene = subparsers.add_parser("gene", help="need to write")
+    parser_gene = subparsers.add_parser("gene", help="Classify gene activity in the context of a model")
     parser_gene.add_argument("expression_set", type=argparse.FileType("r"), help='Name of tab delimited gene file with counts')
     parser_gene.add_argument("-m", "--model", type=str, help='Metabolic reconstruction file')
     parser_gene.add_argument("-c", "--cobra", action="store_true",
-                             help='Flag to specify whether model is a COBRA Toolbox (.mat) file type; must have either -xml or -mat flag.')
+                             help='Flag to specify whether model is a COBRA Toolbox (.mat) file type; must have either -xml or -mat flag')
     parser_gene.add_argument("-s", "--sbml", action="store_true", 
-                             help='Flag to specify whether model is a SBML (.xml) file type; must have either -xml or -mat flag.')
+                             help='Flag to specify whether model is a SBML (.xml) file type; must have either -xml or -mat flag')
     parser_gene.add_argument("-o", "--output", type=argparse.FileType("w"), 
                              default="gene_classification.csv", help='Name of csv gene rule file to be written out')
     parser_gene.add_argument("-u", "--upper", type=float, default=0.75,
-                             help='upper threshold by which to define genes as being active; default value: upper 25% of genes')
+                             help='upper threshold by which to define genes as being active; default value: upper 25% of genes mapped to reactions')
     parser_gene.add_argument("-l", "--lower", type=float, default=0.25,
-                             help='lower threshold by which to define genes as being inactive; default value: lower 25% of genes')
+                             help='lower threshold by which to define genes as being inactive; default value: lower 25% of genes mapped to reactions')
     parser_gene.set_defaults(func=gene)
     
     # flux subcommand parser
@@ -581,15 +581,15 @@ def main():
     parser_flux.add_argument("model", help='Necessary variable: metabolic reconstruction file')
     parser_flux.add_argument("description", type=argparse.FileType("r"), help='Necessary variable: comma separated gene rule file')
     parser_flux.add_argument("extracellular", type=str,
-                             help="Necessary variable: extracellular compartment abbreviation. Instead of brackets or parentheses, use underscores (ex: '_e').")
+                             help="Necessary variable: extracellular compartment abbreviation. Instead of brackets or parentheses, use underscores (ex: '_e')")
     parser_flux.add_argument("concurrentprocesses", type=int, help='Necessary variable: number of concurrent processes for creating pruned models')
     parser_flux.add_argument("repetitionsofconcurrentprocesses", type=int, help='Necessary variable: number of times to repeat the chosen number of processes to create the profile of models')
     parser_flux.add_argument("repetitionsoffluxstates", type=int, 
                              help='Necessary variable: number of repetitions to produce final flux states (csv files)')
     flux_group.add_argument("-c", "--cobra", action="store_true",
-                             help='Flag to specify whether model is a COBRA Toolbox (.mat) file type; must have either -xml or -mat flag.')
+                             help='Flag to specify whether model is a COBRA Toolbox (.mat) file type; must have either -xml or -mat flag')
     flux_group.add_argument("-s", "--sbml", action="store_true",
-                             help='Flag to specify whether model is a SBML (.xml) file type; must have either -xml or -mat flag.')
+                             help='Flag to specify whether model is a SBML (.xml) file type; must have either -xml or -mat flag')
     parser_flux.add_argument("-e", "--epsearly", type=float, default=1E-1, 
                              help='Minimum value for fluxes forced to be non-zero (for the implementation of the pathway algorithm created by Shlomi); default value: 1E-1')
     parser_flux.add_argument("-z", "--epsidentifyingfrequencies", type=float, default=1E-10,
