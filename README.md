@@ -1,6 +1,6 @@
 # INTRODUCTION
 
-We have developed The Algorithm for Simplified Metabolic ANalysIs by Altering Networks and Deducing flux Estimates for VIsuaLization (TASMANIAN DEVIL). There are four separate commands that comprise this software package: gene activity determination, genome-scale metabolic model importation and simplification to reduce network complexity, robust heuristic model building and metabolic flux prediction, and flux visualization from a reference network topology. All modules can be utilized independently or in conjunction with one another. TASMANIAN DEVIL has the potential to be adopted by a wide spectrum of researchers using Linux or macOSX platforms. More information for the individual modules can be found at https://tlawrence3.github.io/Tasmanian-Devil/build/html/index.html.
+We have developed The Algorithm for Simplified Metabolic ANalysIs by Altering Networks and Deducing flux Estimates for VIsuaLization (TASMANIAN DEVIL). There are four separate commands that comprise this software package: gene activity determination, genome-scale metabolic model importation and simplification to reduce network complexity, robust heuristic model building and metabolic flux prediction, and flux visualization from a reference network topology. All modules can be utilized independently or in conjunction with one another. TASMANIAN DEVIL has the potential to be adopted by a wide spectrum of researchers using Linux or macOSX platforms. More information for the individual modules can be found at https://tlawrence3.github.io/Tasmanian-Devil.
 
 # INSTALLATION
 
