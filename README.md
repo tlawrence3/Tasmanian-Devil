@@ -23,7 +23,7 @@ conda config --add channels bioconda
 conda config --add channels http://conda.anaconda.org/gurobi
 ```
 	
-* Create and activate a new Anaconda environment with the version of Python with which you downloaded Anaconda. Note that you must activate your conda environment every time you want to use TASMANIAN DEVIL:
+* Create and activate a new Anaconda environment. Note that you must activate your conda environment every time you want to use TASMANIAN DEVIL:
 ```bash
 conda create -n tas python=3.6 scipy=0.19.1 gurobi glpk
 source activate tas
