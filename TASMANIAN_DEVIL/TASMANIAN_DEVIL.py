@@ -631,4 +631,7 @@ def main():
     
     #parse args
     args = parser.parse_args()
-    args.func(args)
+    try:
+        args.func(args)
+    except AttributeError:
+        print("ERROR: Missing subcommand. Try tas -h")
