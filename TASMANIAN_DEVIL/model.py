@@ -8,7 +8,7 @@ import numpy as np
 import csv
 import itertools
 
-def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lowerbound, args_upperbound, args_gene2rxn, model_desc =''):    
+def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lowerbound, args_upperbound, args_gene2rxn):    
     #Import the model.
     if args_sbml:
         cobra_model = cobra.io.read_sbml_model(args_model)
