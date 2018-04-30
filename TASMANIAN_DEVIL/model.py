@@ -386,7 +386,7 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
     if (args_metabolite2carbon or metFormulas_list or args_zerocarbons):
         #Import metabolite dictionary mapped to carbons if the argument is supplied from the command line.
         if args_metabolite2carbon:
-            f = open(args_metabolite2carbon, 'rb')
+            f = open(args_metabolite2carbon, 'r')
             csv_file = csv.reader(f)
             metabolite_dict = {}
             metabolite_dict_pre = {}
@@ -842,7 +842,7 @@ def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactive
         cobra.io.save_matlab_model(cobra_model, '%s.mat' % model_desc[:-4], varname=model_desc[:-4].split('/')[-1])
 
         #Import back into EXAMO format to make additional changes and identify metabolites in the biomass rxn that are in unbalanced rxns. Then export back out as a COBRA model.  
-        model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, biomass_rxn = set_parameter('%s.mat' % model_desc[:-4], False, True, '_e_', None, None, None, model_desc)
+        model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, biomass_rxn = set_parameter('%s.mat' % model_desc[:-4], False, True, '_e_', None, None, None)
         model, cobra_specific_objects, unbalanced_rxns_mets_unique_list, unbalanced_rxns_mets_potential_list = balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, biomass_rxn, args_metabolite2carbon, metFormulas_list, False, removed_inactive_rxns_and_balance = True)
         model, cobra_specific_objects = metabolite_cleanup(model,cobra_specific_objects)
         model_export(model, cobra_specific_objects, model_desc)
@@ -940,7 +940,7 @@ def remove_inactive_rxns_and_account_for_biomass(model_desc, args_removeinactive
                     combs_combined[n][string2] = {}
                     for key in combs:
                         combs_unbalanced_rxns_mets_potential_dict_2[n][string2][key] = unbalanced_rxns_mets_potential_dict_2[key]
-                    combs_combined[n][string2] = dict(combs_unbalanced_rxns_mets_potential_dict_2[n][string2].items()+combs_unbalanced_rxns_mets_potential_dict[len(unbalanced_rxns_mets_potential_list)][string].items())  
+                    combs_combined[n][string2] = dict(list(combs_unbalanced_rxns_mets_potential_dict_2[n][string2].items())+list(combs_unbalanced_rxns_mets_potential_dict[len(unbalanced_rxns_mets_potential_list)][string].items()))  
             unbalanced_rxns_mets_potential_list_2 = list(unbalanced_rxns_mets_potential_list)
             for n in range(len(unbalanced_rxns_mets_potential_list),len(unbalanced_rxns_mets_potential_dict_2.keys())+len(unbalanced_rxns_mets_potential_list)+1):
                 for key in combs_combined[n].keys():
