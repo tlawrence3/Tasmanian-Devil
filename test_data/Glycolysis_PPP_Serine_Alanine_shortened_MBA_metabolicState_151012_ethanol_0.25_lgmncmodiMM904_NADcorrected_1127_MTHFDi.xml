@@ -1069,7 +1069,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re5" id="GLUK_0_0" reversible="false">
+<reaction metaid="re5" id="GLUK_1_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1151,7 +1151,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re9" id="G6PI3_0_0" reversible="true">
+<reaction metaid="re9" id="G6PI3_1_0" reversible="true">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1369,7 +1369,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re32" id="GAPD_1_0" reversible="true">
+<reaction metaid="re32" id="GAPD_0_0" reversible="true">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1410,7 +1410,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re34" id="PGK_1_0" reversible="true">
+<reaction metaid="re34" id="PGK_0_0" reversible="true">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1451,7 +1451,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re35" id="PGM_1_0" reversible="true">
+<reaction metaid="re35" id="PGM_0_0" reversible="true">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1492,7 +1492,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re36" id="ENO_1_0" reversible="true">
+<reaction metaid="re36" id="ENO_0_0" reversible="true">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1533,7 +1533,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re37" id="PYK_1_0" reversible="false">
+<reaction metaid="re37" id="PYK_0_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1898,7 +1898,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="TPI_0_0" id="TPI_0_0" reversible="true">
+<reaction metaid="TPI_1_0" id="TPI_1_0" reversible="true">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>

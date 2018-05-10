@@ -22,6 +22,7 @@ def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lo
     rxn2lb = {}
     rxn2ub = {}
     gene2rxn = {}
+    gene_reaction_rule = []
     rxns = {}
     rxns_original = {}
 
@@ -60,6 +61,7 @@ def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lo
             name = row[0]
             name = name_sub(name, "R_")
             gene2rxn[name] = row[1]
+            gene_reaction_rule.append(row[1])
 
     #Create the necesssary rxn dictionaries for EXAMO.
     mets_to_extracellular_comp = []    
@@ -78,6 +80,7 @@ def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lo
             ub.append(float(i.upper_bound))
         if not args_gene2rxn:
             gene2rxn[reaction_name] = i.gene_reaction_rule
+            gene_reaction_rule.append(i.gene_reaction_rule)
         pathway.append(i.subsystem)
         for j in i.metabolites:
             if i.metabolites[j] < 0:
@@ -131,7 +134,7 @@ def set_parameter(args_model, args_sbml, args_cobra, args_extracellular, args_lo
 
     #Create list/sets/matlab cells of genes using cobrapy and array based model for reacitons
     genes_cobra = cobra.io.mat._cell(cobra_model.genes.list_attr('id'))
-    grRules = cobra.io.mat._cell(cobra_model.reactions.list_attr('gene_reaction_rule'))
+    grRules = cobra.io.mat._cell(gene_reaction_rule)
     c = np.array(cobra_model.reactions.list_attr('objective_coefficient')) * 1
     count = 0
     check_objective = 0    
@@ -506,7 +509,7 @@ def balance_reactions(model, cobra_specific_objects, mets_to_extracellular_comp,
                 if ((met[-2:] != '_b') and (met[-3:] != '_b_')):
                     model['idSp'].remove(met)
 
-            #Delete reactions and gene2rxn dictionary entries for reactions that cannot be carried out due to cofactor presence
+            #Delete reactions that cannot be carried out due to cofactor presence
             for t in rxns_to_remove:
                 del model['rxns'][t]
                 model['idRs'].remove(t)

@@ -987,7 +987,7 @@
 </species>
 </listOfSpecies>
 <listOfReactions>
-<reaction metaid="re1" id="GLCt1_200000E_4_0" reversible="false">
+<reaction metaid="re1" id="GLCt1_199999E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1028,7 +1028,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re4" id="HEX1_68704E_4_0" reversible="false">
+<reaction metaid="re4" id="HEX1_199999E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1047,7 +1047,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="2.686" color="ffff0000"/>
+<celldesigner:line width="5.908" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -1069,7 +1069,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re5" id="GLUK_131296E_4_0" reversible="false">
+<reaction metaid="re5" id="GLUK_0_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1088,7 +1088,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="4.222" color="ffff0000"/>
+<celldesigner:line width="1.0" color="ff000000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -1110,7 +1110,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re8" id="G6PI_0_0" reversible="true">
+<reaction metaid="re8" id="G6PI_131129E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1129,7 +1129,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="1.0" color="ff000000"/>
+<celldesigner:line width="4.218" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -1151,7 +1151,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re9" id="G6PI3_131296E_4_0" reversible="false">
+<reaction metaid="re9" id="G6PI3_131129E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1170,7 +1170,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="4.222" color="ffff0000"/>
+<celldesigner:line width="4.218" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -1233,7 +1233,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re11" id="G6PDH2_25487E_4_0" reversible="false">
+<reaction metaid="re11" id="G6PDH2_0_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1252,7 +1252,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="1.625" color="ffff0000"/>
+<celldesigner:line width="1.0" color="ff000000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -1274,7 +1274,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re30" id="PFK_99442E_4_0" reversible="false">
+<reaction metaid="re30" id="PFK_99401E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1293,7 +1293,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="3.44" color="ffff0000"/>
+<celldesigner:line width="3.439" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -1315,7 +1315,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re31" id="FBA_99442E_4_0" reversible="false">
+<reaction metaid="re31" id="FBA_99401E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>DISSOCIATION</celldesigner:reactionType>
@@ -1340,7 +1340,7 @@
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
 <celldesigner:editPoints num0="0" num1="0" num2="0" tShapeIndex="0">0.4500000000000002,0.11249999999999893</celldesigner:editPoints>
-<celldesigner:line width="3.44" color="ffff0000"/>
+<celldesigner:line width="3.439" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -1369,7 +1369,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re32" id="GAPD_91067E_4_0" reversible="false">
+<reaction metaid="re32" id="GAPD_91089E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1410,7 +1410,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re34" id="PGK__91067E_4_0" reversible="false">
+<reaction metaid="re34" id="PGK__91089E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1451,7 +1451,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re35" id="PGM__91067E_4_0" reversible="false">
+<reaction metaid="re35" id="PGM__91089E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1492,7 +1492,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re36" id="ENO_91067E_4_0" reversible="false">
+<reaction metaid="re36" id="ENO_91089E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1533,7 +1533,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re37" id="PYK_77980E_4_0" reversible="false">
+<reaction metaid="re37" id="PYK_78001E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1552,7 +1552,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="2.913" color="ffff0000"/>
+<celldesigner:line width="2.914" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -1574,7 +1574,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re41" id="ALATA_L__53373E_4_0" reversible="false">
+<reaction metaid="re41" id="ALATA_L__53322E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1596,7 +1596,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="2.31" color="ffff0000" type="Straight"/>
+<celldesigner:line width="2.308" color="ffff0000" type="Straight"/>
 </celldesigner:reactantLink>
 </celldesigner:listOfReactantLinks>
 <celldesigner:listOfProductLinks>
@@ -1609,7 +1609,7 @@
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
 <celldesigner:editPoints>0.299444664026,0.235555841211</celldesigner:editPoints>
-<celldesigner:line width="2.31" color="ffff0000" type="Straight"/>
+<celldesigner:line width="2.308" color="ffff0000" type="Straight"/>
 </celldesigner:productLink>
 </celldesigner:listOfProductLinks>
 <celldesigner:connectScheme connectPolicy="direct" rectangleIndex="0">
@@ -1617,7 +1617,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="2.31" color="ffff0000"/>
+<celldesigner:line width="2.308" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -1653,7 +1653,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re45" id="MGSA_99442E_4_0" reversible="false">
+<reaction metaid="re45" id="MGSA_99401E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1672,7 +1672,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="3.44" color="ffff0000"/>
+<celldesigner:line width="3.439" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -1694,7 +1694,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re48" id="LALDO3_99442E_4_0" reversible="false">
+<reaction metaid="re48" id="LALDO3_99401E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1713,7 +1713,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="3.44" color="ffff0000"/>
+<celldesigner:line width="3.439" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -1735,7 +1735,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re49" id="LCADi_99442E_4_0" reversible="false">
+<reaction metaid="re49" id="LCADi_99401E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1754,7 +1754,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="3.44" color="ffff0000"/>
+<celldesigner:line width="3.439" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -1776,7 +1776,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re50" id="L_LACD2cm_99442E_4_0" reversible="false">
+<reaction metaid="re50" id="L_LACD2cm_99401E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -1795,7 +1795,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="3.44" color="ffff0000"/>
+<celldesigner:line width="3.439" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -2098,7 +2098,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re74" id="PGL_25487E_4_0" reversible="false">
+<reaction metaid="re74" id="PGL_25654E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -2117,7 +2117,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="1.625" color="ffff0000"/>
+<celldesigner:line width="1.629" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -2139,7 +2139,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re52" id="TKT2__8930E_4_0" reversible="false">
+<reaction metaid="re52" id="TKT2__8867E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -2161,7 +2161,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="1.219" color="ffff0000" type="Straight"/>
+<celldesigner:line width="1.218" color="ffff0000" type="Straight"/>
 </celldesigner:reactantLink>
 </celldesigner:listOfReactantLinks>
 <celldesigner:listOfProductLinks>
@@ -2172,7 +2172,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="1.219" color="ffff0000" type="Straight"/>
+<celldesigner:line width="1.218" color="ffff0000" type="Straight"/>
 </celldesigner:productLink>
 </celldesigner:listOfProductLinks>
 <celldesigner:connectScheme connectPolicy="direct" rectangleIndex="1">
@@ -2183,7 +2183,7 @@
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
 <celldesigner:editPoints>0.251552795031,-0.245341614907 0.748447204969,-0.245341614907</celldesigner:editPoints>
-<celldesigner:line width="1.219" color="ffff0000"/>
+<celldesigner:line width="1.218" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
@@ -2299,7 +2299,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re55" id="TKT1__2387E_4_0" reversible="false">
+<reaction metaid="re55" id="TKT1__2324E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -2334,7 +2334,7 @@
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
 <celldesigner:editPoints>0.154048342326,0.317016992684</celldesigner:editPoints>
-<celldesigner:line width="1.059" color="ffff0000" type="Straight"/>
+<celldesigner:line width="1.057" color="ffff0000" type="Straight"/>
 </celldesigner:productLink>
 </celldesigner:listOfProductLinks>
 <celldesigner:connectScheme connectPolicy="direct" rectangleIndex="1">
@@ -2476,7 +2476,7 @@
 </speciesReference>
 </listOfProducts>
 </reaction>
-<reaction metaid="re90" id="RPE__11317E_4_0" reversible="false">
+<reaction metaid="re90" id="RPE__11191E_4_0" reversible="false">
 <annotation>
 <celldesigner:extension>
 <celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
@@ -2495,7 +2495,7 @@
 <celldesigner:lineDirection index="0" value="unknown"/>
 </celldesigner:listOfLineDirection>
 </celldesigner:connectScheme>
-<celldesigner:line width="1.278" color="ffff0000"/>
+<celldesigner:line width="1.275" color="ffff0000"/>
 </celldesigner:extension>
 </annotation>
 <listOfReactants>
