@@ -44,19 +44,12 @@ def model(args):
     if args.adaptation:
         model_desc = model_desc + 'mod'
     #Perhaps consider if OS is Windows or Linux for file structure
-    name_split = args.model.split('/')
-    if len(name_split) > 2:
-        model_desc = '/'.join(name_split[0:-1]) + '/' + model_desc + name_split[-1]
-    elif len(name_split) == 2:
-        model_desc = name_split[0] + '/' + model_desc + name_split[1]
-    elif len(name_split) == 1:
-        model_desc = model_desc + name_split[0]
-    else:
-        model_desc = model_desc + args.model
+    name = args.model.split('/')[-1]
+    model_desc = model_desc + "_" + name
 
 
     ##Make the changes to the model
-    model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, biomass_rxn = model_class.set_parameter(args.model, args.sbml, args.cobra, args.extracellular, args.lowerbound, args.upperbound, args.gene2rxn, model_desc)
+    model, cobra_specific_objects, mets_to_extracellular_comp, rxns_original, biomass_rxn = model_class.set_parameter(args.model, args.sbml, args.cobra, args.extracellular, args.lowerbound, args.upperbound, args.gene2rxn)
     model, cobra_specific_objects = model_class.modify(model, cobra_specific_objects, args.adaptation)    
     model, cobra_specific_objects = model_class.metabolite_mapping(model, cobra_specific_objects, args.metabolitemappingcomplexes)
     model, cobra_specific_objects = model_class.nucleotide_conversion(model, cobra_specific_objects, args.nucleotideconversions)
@@ -95,8 +88,8 @@ def flux(args):
         decimal.getcontext().prec = 4
         lb_biomass = decimal.Decimal(solution.objective_value) + decimal.Decimal('0.0')
     #Perhaps consider if OS is Windows or Linux for file structure
-    name_split = args.model.split('/')
-    description_split = description.split('/')
+    name_split = os.path.splitext(args.model)[0].split("/")[-1]
+    description_split = os.path.splitext(description)[0].split("/")[-1]
     model_desc = ''
     if args.EXrxns:
         model_desc = model_desc + 'EXrxns'
@@ -104,21 +97,10 @@ def flux(args):
         model_desc = model_desc + 'EXtrrxns'
     if args.Othertrrxns:
         model_desc = model_desc + 'Othertrrxns'
-    if len(description_split) > 2:
-        fOutRxnsByExpression = '/'.join(description_split[0:-1]) + '/' + 'RxnsClassifiedByExpression_' + model_desc + description_split[-1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
-        fOutFreqBasedRxns = '/'.join(description_split[0:-1]) + '/' + 'freqBasedRxns_' + model_desc + description_split[-1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
-        model_desc = model_desc + description_split[-1][:-4] + '_' + name_split[-1][:-4]
-        file_path = '/'.join(description_split[0:-1]) + '/'
-    elif len(description_split) == 2:
-        fOutRxnsByExpression = description_split[0] + '/' + 'RxnsClassifiedByExpression_' + model_desc + description_split[1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
-        fOutFreqBasedRxns = description_split[0] + '/' + 'freqBasedRxns_' + model_desc + description_split[1][:-4] + '_' + name_split[-1][:-4] + '.pkl'
-        model_desc = model_desc + description_split[-1][:-4] + '_' + name_split[-1][:-4]
-        file_path = description_split[0] + '/'
-    elif len(description_split) == 1:
-        fOutRxnsByExpression = 'RxnsClassifiedByExpression_' + model_desc + description_split[0][:-4] + '_' + name_split[-1][:-4] + '.pkl'
-        fOutFreqBasedRxns = 'freqBasedRxns_' + model_desc + description_split[0][:-4] + '_' + name_split[-1][:-4] + '.pkl' 
-        model_desc = model_desc + description_split[0][:-4] + '_' + name_split[-1][:-4]
-        file_path = ''
+
+    fOutRxnsByExpression = 'RxnsClassifiedByExpression_' + model_desc + description_split + '_' + name_split + '.pkl'
+    fOutFreqBasedRxns = 'freqBasedRxns_' + model_desc + description_split + '_' + name_split + '.pkl' 
+    model_desc = model_desc + description_split + '_' + name_split
 
     ######Perform iMAT
     # 0. Import model dictionary
@@ -197,7 +179,7 @@ def flux(args):
         reps = args.repetitionsofconcurrentprocesses
 
         #Making subdirectories for candidate reactions
-        mbaCandRxnsDirectory = file_path + 'data/mbaCandRxns/%s_%s/' % (model_desc, str(repetition))
+        mbaCandRxnsDirectory = 'data/mbaCandRxns/{}_{}/'.format(model_desc, repetition)
         if os.path.exists(mbaCandRxnsDirectory):
             shutil.rmtree(mbaCandRxnsDirectory)
             os.makedirs(mbaCandRxnsDirectory)
@@ -267,7 +249,7 @@ def flux(args):
             cH2 = cH & act		
 
         #Make a directory for temporary files for every time a rxn is pruned
-        mbaCandRxnsDirectorySubset = file_path + 'data/test/%s_%s/' % (model_desc, str(repetition))
+        mbaCandRxnsDirectorySubset = 'data/temp/{}_{}/'.format(model_desc, repetition)
         if not os.path.exists(mbaCandRxnsDirectorySubset):
             os.makedirs(mbaCandRxnsDirectorySubset)
 
@@ -299,13 +281,13 @@ def flux(args):
 	################################################################################
         # STATEMENTS
         #Create file to export
-        fOutModel = file_path + 'examo_%s_%s.pkl'
+        fOutModel = 'examo_%s_%s.pkl'
 
         # Instantiating CbModel 
         m = flux_class.CbModel(model['S'], model['idSp'], model['idRs'], model['lb'], model['ub'], model['rxns'], model['genes'])
 
         # Retrieving MBA candidate reaction lists
-        files = os.popen('ls %s | grep %s' % (mbaCandRxnsDirectory, model_desc)).read().splitlines()
+        files = os.popen('ls {} | grep {}'.format(mbaCandRxnsDirectory, model_desc)).read().splitlines()
 
         rxnSets = []
         for fn in files:
@@ -362,7 +344,7 @@ def flux(args):
                 # _04_predictMetabolicState.py
 		################################################################################
                 # OUTPUT
-                fOutMetabState = file_path + 'metabolicState_%s_%s.csv'
+                fOutMetabState = 'metabolicState_%s_%s.csv'
 		################################################################################
                 # STATEMENTS
 
@@ -631,4 +613,7 @@ def main():
     
     #parse args
     args = parser.parse_args()
-    args.func(args)
+    try:
+        args.func(args)
+    except AttributeError:
+        print("ERROR: Missing subcommand. Try tas -h")

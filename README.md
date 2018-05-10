@@ -1,6 +1,6 @@
 # INTRODUCTION
 
-We have developed The Algorithm for Simplified Metabolic ANalysIs by Altering Networks and Deducing flux Estimates for VIsuaLization (TASMANIAN DEVIL). There are four separate commands that comprise this software package: gene activity determination, genome-scale metabolic model importation and simplification to reduce network complexity, robust heuristic model building and metabolic flux prediction, and flux visualization from a reference network topology. All modules can be utilized independently or in conjunction with one another. TASMANIAN DEVIL has the potential to be adopted by a wide spectrum of researchers using Linux or macOSX platforms. More information for the individual modules can be found at https://tlawrence3.github.io/Tasmanian-Devil/build/html/index.html.
+We have developed The Algorithm for Simplified Metabolic ANalysIs by Altering Networks and Deducing flux Estimates for VIsuaLization (TASMANIAN DEVIL). There are four separate commands that comprise this software package: gene activity determination, genome-scale metabolic model importation and simplification to reduce network complexity, robust heuristic model building and metabolic flux prediction, and flux visualization from a reference network topology. All modules can be utilized independently or in conjunction with one another. TASMANIAN DEVIL has the potential to be adopted by a wide spectrum of researchers using Linux or macOSX platforms. More information for the individual modules can be found at https://tlawrence3.github.io/Tasmanian-Devil.
 
 # INSTALLATION
 
@@ -23,7 +23,7 @@ conda config --add channels bioconda
 conda config --add channels http://conda.anaconda.org/gurobi
 ```
 	
-* Create and activate a new Anaconda environment with the version of Python with which you downloaded Anaconda. Note that you must activate your conda environment every time you want to use TASMANIAN DEVIL:
+* Create and activate a new Anaconda environment. Note that you must activate your conda environment every time you want to use TASMANIAN DEVIL:
 ```bash
 conda create -n tas python=3.6 scipy=0.19.1 gurobi glpk
 source activate tas
